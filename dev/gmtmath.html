@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>math &#8212; GMT 6.0.0_6a82a05_2019.05.28 documentation</title>
+    <title>math &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -39,9 +39,9 @@
         <li class="right" >
           <a href="mapproject.html" title="mapproject"
              accesskey="P">previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="M.html" accesskey="U">M</a> &#187;</li>
 <li class="right">
@@ -224,12 +224,12 @@ For details on array creation, see <a class="reference internal" href="#generate
 <dd>Skip or produce header record(s).  </dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>] <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select input columns and transformations (0 is first column).</dd>
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select input columns and transformations (0 is first column, <em>t</em> is trailing text, append <em>word</em> to read one word only).</dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-o</strong><em>cols</em>[,…] <a class="reference internal" href="gmt.html#ocols-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select output columns (0 is first column).</dd>
+<dt><strong>-o</strong><em>cols</em>[,…][<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#ocols-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select output columns (0 is first column; <em>t</em> is trailing text, append <em>word</em> to write one word only).</dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-s</strong>[<em>cols</em>][<strong>+a</strong>|<strong>+r</strong>] <a class="reference internal" href="gmt.html#s-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -545,81 +545,105 @@ and output arguments.</p>
 <td>2 1</td>
 <td>1 if A &gt; B, else 0</td>
 </tr>
-<tr class="row-even"><td><strong>HYPOT</strong></td>
+<tr class="row-even"><td><strong>HSV2LAB</strong></td>
+<td>3 3</td>
+<td>Convert h,s,v triplets to l,a,b triplets, with h = A (0-360), s = B and v = C (0-1)</td>
+</tr>
+<tr class="row-odd"><td><strong>HSV2RGB</strong></td>
+<td>3 3</td>
+<td>Convert h,s,v triplets to r,g,b triplets, with h = A (0-360), s = B and v = C (0-1)</td>
+</tr>
+<tr class="row-even"><td><strong>HSV2XYZ</strong></td>
+<td>3 3</td>
+<td>Convert h,s,v triplets to x,t,z triplets, with h = A (0-360), s = B and v = C (0-1)</td>
+</tr>
+<tr class="row-odd"><td><strong>HYPOT</strong></td>
 <td>2 1</td>
 <td>hypot (A, B) = sqrt (A*A + B*B)</td>
 </tr>
-<tr class="row-odd"><td><strong>I0</strong></td>
+<tr class="row-even"><td><strong>I0</strong></td>
 <td>1 1</td>
 <td>Modified Bessel function of A (1st kind, order 0)</td>
 </tr>
-<tr class="row-even"><td><strong>I1</strong></td>
+<tr class="row-odd"><td><strong>I1</strong></td>
 <td>1 1</td>
 <td>Modified Bessel function of A (1st kind, order 1)</td>
 </tr>
-<tr class="row-odd"><td><strong>IFELSE</strong></td>
+<tr class="row-even"><td><strong>IFELSE</strong></td>
 <td>3 1</td>
 <td>B if A != 0, else C</td>
 </tr>
-<tr class="row-even"><td><strong>IN</strong></td>
+<tr class="row-odd"><td><strong>IN</strong></td>
 <td>2 1</td>
 <td>Modified Bessel function of A (1st kind, order B)</td>
 </tr>
-<tr class="row-odd"><td><strong>INRANGE</strong></td>
+<tr class="row-even"><td><strong>INRANGE</strong></td>
 <td>3 1</td>
 <td>1 if B &lt;= A &lt;= C, else 0</td>
 </tr>
-<tr class="row-even"><td><strong>INT</strong></td>
+<tr class="row-odd"><td><strong>INT</strong></td>
 <td>1 1</td>
 <td>Numerically integrate A</td>
 </tr>
-<tr class="row-odd"><td><strong>INV</strong></td>
+<tr class="row-even"><td><strong>INV</strong></td>
 <td>1 1</td>
 <td>1 / A</td>
 </tr>
-<tr class="row-even"><td><strong>ISFINITE</strong></td>
+<tr class="row-odd"><td><strong>ISFINITE</strong></td>
 <td>1 1</td>
 <td>1 if A is finite, else 0</td>
 </tr>
-<tr class="row-odd"><td><strong>ISNAN</strong></td>
+<tr class="row-even"><td><strong>ISNAN</strong></td>
 <td>1 1</td>
 <td>1 if A == NaN, else 0</td>
 </tr>
-<tr class="row-even"><td><strong>J0</strong></td>
+<tr class="row-odd"><td><strong>J0</strong></td>
 <td>1 1</td>
 <td>Bessel function of A (1st kind, order 0)</td>
 </tr>
-<tr class="row-odd"><td><strong>J1</strong></td>
+<tr class="row-even"><td><strong>J1</strong></td>
 <td>1 1</td>
 <td>Bessel function of A (1st kind, order 1)</td>
 </tr>
-<tr class="row-even"><td><strong>JN</strong></td>
+<tr class="row-odd"><td><strong>JN</strong></td>
 <td>2 1</td>
 <td>Bessel function of A (1st kind, order B)</td>
 </tr>
-<tr class="row-odd"><td><strong>K0</strong></td>
+<tr class="row-even"><td><strong>K0</strong></td>
 <td>1 1</td>
 <td>Modified Kelvin function of A (2nd kind, order 0)</td>
 </tr>
-<tr class="row-even"><td><strong>K1</strong></td>
+<tr class="row-odd"><td><strong>K1</strong></td>
 <td>1 1</td>
 <td>Modified Bessel function of A (2nd kind, order 1)</td>
 </tr>
-<tr class="row-odd"><td><strong>KN</strong></td>
+<tr class="row-even"><td><strong>KN</strong></td>
 <td>2 1</td>
 <td>Modified Bessel function of A (2nd kind, order B)</td>
 </tr>
-<tr class="row-even"><td><strong>KEI</strong></td>
+<tr class="row-odd"><td><strong>KEI</strong></td>
 <td>1 1</td>
 <td>kei (A)</td>
 </tr>
-<tr class="row-odd"><td><strong>KER</strong></td>
+<tr class="row-even"><td><strong>KER</strong></td>
 <td>1 1</td>
 <td>ker (A)</td>
 </tr>
-<tr class="row-even"><td><strong>KURT</strong></td>
+<tr class="row-odd"><td><strong>KURT</strong></td>
 <td>1 1</td>
 <td>Kurtosis of A</td>
+</tr>
+<tr class="row-even"><td><strong>LAB2HSV</strong></td>
+<td>3 3</td>
+<td>Convert l,a,b triplets to h,s,v triplets</td>
+</tr>
+<tr class="row-odd"><td><strong>LAB2RGB</strong></td>
+<td>3 3</td>
+<td>Convert l,a,b triplets to r,g,b triplets</td>
+</tr>
+<tr class="row-even"><td><strong>LAB2XYZ</strong></td>
+<td>3 3</td>
+<td>Convert l,a,b triplets to x,y,z triplets</td>
 </tr>
 <tr class="row-odd"><td><strong>LCDF</strong></td>
 <td>1 1</td>
@@ -821,153 +845,177 @@ and output arguments.</p>
 <td>1 1</td>
 <td>Rayleigh distribution critical value for alpha = A</td>
 </tr>
-<tr class="row-odd"><td><strong>RINT</strong></td>
+<tr class="row-odd"><td><strong>RGB2HSV</strong></td>
+<td>3 3</td>
+<td>Convert r,g,b triplets to h,s,v triplets, with r = A, g = B, and b = C (in 0-255 range)</td>
+</tr>
+<tr class="row-even"><td><strong>RGB2LAB</strong></td>
+<td>3 3</td>
+<td>Convert r,g,b triplets to l,a,b triplets, with r = A, g = B, and b = C (in 0-255 range)</td>
+</tr>
+<tr class="row-odd"><td><strong>RGB2XYZ</strong></td>
+<td>3 3</td>
+<td>Convert r,g,b triplets to x,y,x triplets, with r = A, g = B, and b = C (in 0-255 range)</td>
+</tr>
+<tr class="row-even"><td><strong>RINT</strong></td>
 <td>1 1</td>
 <td>rint (A) (round to integral value nearest to A)</td>
 </tr>
-<tr class="row-even"><td><strong>RMS</strong></td>
+<tr class="row-odd"><td><strong>RMS</strong></td>
 <td>1 1</td>
 <td>Root-mean-square of A</td>
 </tr>
-<tr class="row-odd"><td><strong>RMSW</strong></td>
+<tr class="row-even"><td><strong>RMSW</strong></td>
 <td>1 1</td>
 <td>Weighted root-mean-square of A for weights in B</td>
 </tr>
-<tr class="row-even"><td><strong>RPDF</strong></td>
+<tr class="row-odd"><td><strong>RPDF</strong></td>
 <td>1 1</td>
 <td>Rayleigh probability density function for z = A</td>
 </tr>
-<tr class="row-odd"><td><strong>ROLL</strong></td>
+<tr class="row-even"><td><strong>ROLL</strong></td>
 <td>2 0</td>
 <td>Cyclicly shifts the top A stack items by an amount B</td>
 </tr>
-<tr class="row-even"><td><strong>ROTT</strong></td>
+<tr class="row-odd"><td><strong>ROTT</strong></td>
 <td>2 1</td>
 <td>Rotate A by the (constant) shift B in the t-direction</td>
 </tr>
-<tr class="row-odd"><td><strong>SEC</strong></td>
+<tr class="row-even"><td><strong>SEC</strong></td>
 <td>1 1</td>
 <td>sec (A) (A in radians)</td>
 </tr>
-<tr class="row-even"><td><strong>SECD</strong></td>
+<tr class="row-odd"><td><strong>SECD</strong></td>
 <td>1 1</td>
 <td>sec (A) (A in degrees)</td>
 </tr>
-<tr class="row-odd"><td><strong>SIGN</strong></td>
+<tr class="row-even"><td><strong>SIGN</strong></td>
 <td>1 1</td>
 <td>sign (+1 or -1) of A</td>
 </tr>
-<tr class="row-even"><td><strong>SIN</strong></td>
+<tr class="row-odd"><td><strong>SIN</strong></td>
 <td>1 1</td>
 <td>sin (A) (A in radians)</td>
 </tr>
-<tr class="row-odd"><td><strong>SINC</strong></td>
+<tr class="row-even"><td><strong>SINC</strong></td>
 <td>1 1</td>
 <td>sinc (A) (sin (pi*A)/(pi*A))</td>
 </tr>
-<tr class="row-even"><td><strong>SIND</strong></td>
+<tr class="row-odd"><td><strong>SIND</strong></td>
 <td>1 1</td>
 <td>sin (A) (A in degrees)</td>
 </tr>
-<tr class="row-odd"><td><strong>SINH</strong></td>
+<tr class="row-even"><td><strong>SINH</strong></td>
 <td>1 1</td>
 <td>sinh (A)</td>
 </tr>
-<tr class="row-even"><td><strong>SKEW</strong></td>
+<tr class="row-odd"><td><strong>SKEW</strong></td>
 <td>1 1</td>
 <td>Skewness of A</td>
 </tr>
-<tr class="row-odd"><td><strong>SQR</strong></td>
+<tr class="row-even"><td><strong>SQR</strong></td>
 <td>1 1</td>
 <td>A^2</td>
 </tr>
-<tr class="row-even"><td><strong>SQRT</strong></td>
+<tr class="row-odd"><td><strong>SQRT</strong></td>
 <td>1 1</td>
 <td>sqrt (A)</td>
 </tr>
-<tr class="row-odd"><td><strong>STD</strong></td>
+<tr class="row-even"><td><strong>STD</strong></td>
 <td>1 1</td>
 <td>Standard deviation of A</td>
 </tr>
-<tr class="row-even"><td><strong>STDW</strong></td>
+<tr class="row-odd"><td><strong>STDW</strong></td>
 <td>2 1</td>
 <td>Weighted standard deviation of A for weights in B</td>
 </tr>
-<tr class="row-odd"><td><strong>STEP</strong></td>
+<tr class="row-even"><td><strong>STEP</strong></td>
 <td>1 1</td>
 <td>Heaviside step function H(A)</td>
 </tr>
-<tr class="row-even"><td><strong>STEPT</strong></td>
+<tr class="row-odd"><td><strong>STEPT</strong></td>
 <td>1 1</td>
 <td>Heaviside step function H(t-A)</td>
 </tr>
-<tr class="row-odd"><td><strong>SUB</strong></td>
+<tr class="row-even"><td><strong>SUB</strong></td>
 <td>2 1</td>
 <td>A - B</td>
 </tr>
-<tr class="row-even"><td><strong>SUM</strong></td>
+<tr class="row-odd"><td><strong>SUM</strong></td>
 <td>1 1</td>
 <td>Cumulative sum of A</td>
 </tr>
-<tr class="row-odd"><td><strong>TAN</strong></td>
+<tr class="row-even"><td><strong>TAN</strong></td>
 <td>1 1</td>
 <td>tan (A) (A in radians)</td>
 </tr>
-<tr class="row-even"><td><strong>TAND</strong></td>
+<tr class="row-odd"><td><strong>TAND</strong></td>
 <td>1 1</td>
 <td>tan (A) (A in degrees)</td>
 </tr>
-<tr class="row-odd"><td><strong>TANH</strong></td>
+<tr class="row-even"><td><strong>TANH</strong></td>
 <td>1 1</td>
 <td>tanh (A)</td>
 </tr>
-<tr class="row-even"><td><strong>TAPER</strong></td>
+<tr class="row-odd"><td><strong>TAPER</strong></td>
 <td>1 1</td>
 <td>Unit weights cosine-tapered to zero within A of end margins</td>
 </tr>
-<tr class="row-odd"><td><strong>TN</strong></td>
+<tr class="row-even"><td><strong>TN</strong></td>
 <td>2 1</td>
 <td>Chebyshev polynomial Tn(-1&lt;A&lt;+1) of degree B</td>
 </tr>
-<tr class="row-even"><td><strong>TCRIT</strong></td>
+<tr class="row-odd"><td><strong>TCRIT</strong></td>
 <td>2 1</td>
 <td>Student’s t distribution critical value for alpha = A and nu = B</td>
 </tr>
-<tr class="row-odd"><td><strong>TPDF</strong></td>
+<tr class="row-even"><td><strong>TPDF</strong></td>
 <td>2 1</td>
 <td>Student’s t probability density function for t = A, and nu = B</td>
 </tr>
-<tr class="row-even"><td><strong>TCDF</strong></td>
+<tr class="row-odd"><td><strong>TCDF</strong></td>
 <td>2 1</td>
 <td>Student’s t cumulative distribution function for t = A, and nu = B</td>
 </tr>
-<tr class="row-odd"><td><strong>UPPER</strong></td>
+<tr class="row-even"><td><strong>UPPER</strong></td>
 <td>1 1</td>
 <td>The highest (maximum) value of A</td>
 </tr>
-<tr class="row-even"><td><strong>VAR</strong></td>
+<tr class="row-odd"><td><strong>VAR</strong></td>
 <td>1 1</td>
 <td>Variance of A</td>
 </tr>
-<tr class="row-odd"><td><strong>VARW</strong></td>
+<tr class="row-even"><td><strong>VARW</strong></td>
 <td>2 1</td>
 <td>Weighted variance of A for weights in B</td>
 </tr>
-<tr class="row-even"><td><strong>WCDF</strong></td>
+<tr class="row-odd"><td><strong>WCDF</strong></td>
 <td>3 1</td>
 <td>Weibull cumulative distribution function for x = A, scale = B, and shape = C</td>
 </tr>
-<tr class="row-odd"><td><strong>WCRIT</strong></td>
+<tr class="row-even"><td><strong>WCRIT</strong></td>
 <td>3 1</td>
 <td>Weibull distribution critical value for alpha = A, scale = B, and shape = C</td>
 </tr>
-<tr class="row-even"><td><strong>WPDF</strong></td>
+<tr class="row-odd"><td><strong>WPDF</strong></td>
 <td>3 1</td>
 <td>Weibull density distribution P(x,scale,shape), with x = A, scale = B, and shape = C</td>
 </tr>
-<tr class="row-odd"><td><strong>XOR</strong></td>
+<tr class="row-even"><td><strong>XOR</strong></td>
 <td>2 1</td>
 <td>B if A == NaN, else A</td>
+</tr>
+<tr class="row-odd"><td><strong>XYZ2HSV</strong></td>
+<td>3 3</td>
+<td>Convert x,y,z triplets to h,s,v triplets</td>
+</tr>
+<tr class="row-even"><td><strong>XYZ2LAB</strong></td>
+<td>3 3</td>
+<td>Convert x,y,z triplets to l,a,b triplets</td>
+</tr>
+<tr class="row-odd"><td><strong>XYZ2RGB</strong></td>
+<td>3 3</td>
+<td>Convert x,y,z triplets to r,g,b triplets</td>
 </tr>
 <tr class="row-even"><td><strong>Y0</strong></td>
 <td>1 1</td>
@@ -1069,28 +1117,24 @@ specify more decimals using the <a class="reference internal" href="gmt.conf.htm
 </div>
 <div class="section" id="notes-on-operators">
 <h2>Notes On Operators<a class="headerlink" href="#notes-on-operators" title="Permalink to this headline">¶</a></h2>
-<p>1. The operators <strong>PLM</strong> and <strong>PLMg</strong> calculate the associated Legendre
+<ol class="arabic simple">
+<li>The operators <strong>PLM</strong> and <strong>PLMg</strong> calculate the associated Legendre
 polynomial of degree L and order M in x which must satisfy -1 &lt;= x &lt;= +1
 and 0 &lt;= M &lt;= L. x, L, and M are the three arguments preceding the
 operator. <strong>PLM</strong> is not normalized and includes the Condon-Shortley
 phase (-1)^M. <strong>PLMg</strong> is normalized in the way that is most commonly
 used in geophysics. The C-S phase can be added by using -M as argument.
 <strong>PLM</strong> will overflow at higher degrees, whereas <strong>PLMg</strong> is stable
-until ultra high degrees (at least 3000).</p>
-<p>2. Files that have the same names as some operators, e.g., <strong>ADD</strong>,
+until ultra high degrees (at least 3000).</li>
+<li>Files that have the same names as some operators, e.g., <strong>ADD</strong>,
 <strong>SIGN</strong>, <strong>=</strong>, etc. should be identified by prepending the current
-directory (i.e., ./).</p>
-<ol class="arabic simple" start="3">
+directory (i.e., ./).</li>
 <li>The stack depth limit is hard-wired to 100.</li>
-</ol>
-<p>4. All functions expecting a positive radius (e.g., <strong>LOG</strong>, <strong>KEI</strong>,
-etc.) are passed the absolute value of their argument.</p>
-<ol class="arabic simple" start="5">
+<li>All functions expecting a positive radius (e.g., <strong>LOG</strong>, <strong>KEI</strong>,
+etc.) are passed the absolute value of their argument.</li>
 <li>The <strong>DDT</strong> and <strong>D2DT2</strong> functions only work on regularly spaced data.</li>
-</ol>
-<p>6. All derivatives are based on central finite differences, with
-natural boundary conditions.</p>
-<ol class="arabic simple" start="7">
+<li>All derivatives are based on central finite differences, with
+natural boundary conditions.</li>
 <li><strong>ROOTS</strong> must be the last operator on the stack, only followed by <strong>=</strong>.</li>
 </ol>
 </div>
@@ -1105,7 +1149,8 @@ is the name you choose to give the quantity. To recall the stored result
 to the stack at a later time, use [<strong>RCL</strong>]&#64;<em>label</em>, i.e., <strong>RCL</strong>
 is optional. To clear memory you may use <strong>CLR</strong>&#64;<em>label</em>. Note that
 <strong>STO</strong> and <strong>CLR</strong> leave the stack unchanged.</p>
-<p>8. The bitwise operators
+<ol class="arabic simple">
+<li>The bitwise operators
 (<strong>BITAND</strong>, <strong>BITLEFT</strong>, <strong>BITNOT</strong>, <strong>BITOR</strong>, <strong>BITRIGHT</strong>,
 <strong>BITTEST</strong>, and <strong>BITXOR</strong>) convert a tables’s double precision values
 to unsigned 64-bit ints to perform the bitwise operations. Consequently,
@@ -1113,10 +1158,20 @@ the largest whole integer value that can be stored in a double precision
 value is 2^53 or 9,007,199,254,740,992. Any higher result will be masked
 to fit in the lower 54 bits.  Thus, bit operations are effectively limited
 to 54 bits.  All bitwise operators return NaN if given NaN arguments or
-bit-settings &lt;= 0.</p>
-<p>9. TAPER will interpret its argument to be a width in the same units as
+bit-settings &lt;= 0.</li>
+<li>TAPER will interpret its argument to be a width in the same units as
 the time-axis, but if no time is provided (i.e., plain data tables) then
-the width is taken to be given in number of rows.</p>
+the width is taken to be given in number of rows.</li>
+<li>The color-triplet conversion functions (<strong>RGB2HSV</strong>, etc.) includes not
+only r,g,b and h,s,v triplet conversions, but also l,a,b (CIE L a b ) and
+sRGB (x, y, z) conversions between all four color spaces.  These functions
+behave differently whether <strong>-Q</strong> is used or not.  With <strong>-Q</strong> we expect
+three input constants and we place three output results on the stack.  Since
+only the top stack item is printed, you must use operators such as POP and
+ROLL to get to the item of interest.  Without <strong>-Q</strong>, these operators work
+across the three columns and modify the three column entries, returning their
+result as a single three-column item on the stack.</li>
+</ol>
 </div>
 <div class="section" id="macros">
 <h2>Macros<a class="headerlink" href="#macros" title="Permalink to this headline">¶</a></h2>
@@ -1210,6 +1265,12 @@ As an example, we will calculate the value of Kei (((1 + 1.75)/2.2) +
 cos (60)) and store the result in the shell variable z:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>set z = `gmt math -Q 1 1.75 ADD 2.2 DIV 60 COSD ADD KEI =`
+</pre></div>
+</div>
+</div></blockquote>
+<p>To convert the r,g,b value for yellow to h,s,v and save the hue, try</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>set hue = `gmt math -Q 255 255 0 RGB2HSV POP POP =`
 </pre></div>
 </div>
 </div></blockquote>
@@ -1330,9 +1391,9 @@ Publishing Corp.</p>
         <li class="right" >
           <a href="mapproject.html" title="mapproject"
              >previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="M.html" >M</a> &#187;</li>
 <li class="right">
@@ -1350,8 +1411,8 @@ Publishing Corp.</p>
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on May 29, 2019.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Jul 28, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

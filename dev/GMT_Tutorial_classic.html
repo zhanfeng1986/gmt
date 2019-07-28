@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>Introduction &#8212; GMT 6.0.0_6a82a05_2019.05.28 documentation</title>
+    <title>1. Introduction &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -23,7 +23,9 @@
     <script type="text/javascript" src="_static/searchtools.js"></script>
     <script type="text/javascript" src="_static/rtd-sidebar.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="The GMT Cookbook (Classic Mode)" href="cookbook_classic.html" />
+    <link rel="prev" title="Tutorial (Classic Mode)" href="tutorial_classic.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -31,10 +33,17 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+        <li class="right" >
+          <a href="cookbook_classic.html" title="The GMT Cookbook (Classic Mode)"
+             accesskey="N">next</a> </li>
+        <li class="right" >
+          <a href="tutorial_classic.html" title="Tutorial (Classic Mode)"
+             accesskey="P">previous</a> </li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
+          <li class="nav-item nav-item-1"><a href="tutorial_classic.html" accesskey="U">Tutorial (Classic Mode)</a> &#187;</li>
 <li class="right">
 <form class="search" accept-charset="UTF-8" action="search.html" method="get">
   <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
@@ -68,7 +77,7 @@
 <p><strong>Florian Wobbe</strong></p>
 <p><strong>Alfred Wegener Institute, Germany</strong></p>
 <div class="section" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<h1>1. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 <p>The purpose of this tutorial is to introduce new users to GMT,
 outline the GMT environment, and enable you to make several
 forms of graphics without having to know too much about UNIX
@@ -78,9 +87,9 @@ sufficient detail.  Nevertheless, it is hoped that the exposure
 will prompt the users to improve their GMT and UNIX skills
 after completion of this short tutorial.</p>
 <div class="section" id="gmt-overview-history-philosophy-and-usage">
-<h2>GMT overview: History, philosophy, and usage<a class="headerlink" href="#gmt-overview-history-philosophy-and-usage" title="Permalink to this headline">¶</a></h2>
+<h2>1.1. GMT overview: History, philosophy, and usage<a class="headerlink" href="#gmt-overview-history-philosophy-and-usage" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="historical-highlights">
-<h3>Historical highlights<a class="headerlink" href="#historical-highlights" title="Permalink to this headline">¶</a></h3>
+<h3>1.1.1. Historical highlights<a class="headerlink" href="#historical-highlights" title="Permalink to this headline">¶</a></h3>
 <p>The GMT system was initiated in late 1987 at Lamont-Doherty
 Earth Observatory, Columbia University by graduate students Paul
 Wessel and Walter H. F. Smith.  Version 1 was officially introduced
@@ -98,7 +107,7 @@ backwards compatible with GMT 4 syntax.
 GMT is used by tens of thousands of users worldwide in a broad range of disciplines.</p>
 </div>
 <div class="section" id="philosophy">
-<h3>Philosophy<a class="headerlink" href="#philosophy" title="Permalink to this headline">¶</a></h3>
+<h3>1.1.2. Philosophy<a class="headerlink" href="#philosophy" title="Permalink to this headline">¶</a></h3>
 <p>GMT follows the UNIX philosophy in which complex tasks are broken
 down into smaller and more manageable components.  Individual GMT
 modules are small, easy to maintain, and can be used as any other
@@ -112,7 +121,7 @@ coastlines, GMT completely decouples data retrieval from the main
 GMT modules.  GMT uses architecture-independent file formats.</p>
 </div>
 <div class="section" id="gmt-installation-considerations">
-<h3>GMT installation considerations<a class="headerlink" href="#gmt-installation-considerations" title="Permalink to this headline">¶</a></h3>
+<h3>1.1.3. GMT installation considerations<a class="headerlink" href="#gmt-installation-considerations" title="Permalink to this headline">¶</a></h3>
 <p>See the GMT wiki for how to install GMT.  In addition, we recommend
 access to a PostScript previewer (e.g., gv (or ghostview or plain ghostscript)),
 and any flavor of the UNIX operating system (UNIX, Linux, OS X, Cygwin, MinGW, etc.).
@@ -121,9 +130,9 @@ We do not recommend using the DOS command window under Windows.</p>
 </div>
 </div>
 <div class="section" id="session-one">
-<h1>Session One<a class="headerlink" href="#session-one" title="Permalink to this headline">¶</a></h1>
+<h1>2. Session One<a class="headerlink" href="#session-one" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="tutorial-setup">
-<h2>Tutorial setup<a class="headerlink" href="#tutorial-setup" title="Permalink to this headline">¶</a></h2>
+<h2>2.1. Tutorial setup<a class="headerlink" href="#tutorial-setup" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p class="first">We assume that GMT has been properly and fully
 installed and that the GMT executables are in your executable path
@@ -183,7 +192,7 @@ now ready to start.</p>
 </ol>
 </div>
 <div class="section" id="the-gmt-environment-what-happens-when-you-run-gmt">
-<h2>The GMT environment: What happens when you run GMT ?<a class="headerlink" href="#the-gmt-environment-what-happens-when-you-run-gmt" title="Permalink to this headline">¶</a></h2>
+<h2>2.2. The GMT environment: What happens when you run GMT ?<a class="headerlink" href="#the-gmt-environment-what-happens-when-you-run-gmt" title="Permalink to this headline">¶</a></h2>
 <p>To get a good grasp on GMT one must understand what is going on “under
 the hood”.  The <a class="reference internal" href="#gmt-environ"><span class="std std-ref">GMT Run-Time Environment</span></a> illustrates the relationships
 you need to be aware of at run-time.</p>
@@ -195,7 +204,7 @@ GMT parameters via the <em>--PAR=value</em> technique, and supply module options
 will read hidden data (like coastlines) but most will explicitly need to be given user data.</span></p>
 </div>
 <div class="section" id="input-data">
-<h3>Input data<a class="headerlink" href="#input-data" title="Permalink to this headline">¶</a></h3>
+<h3>2.2.1. Input data<a class="headerlink" href="#input-data" title="Permalink to this headline">¶</a></h3>
 <p>A GMT module may or may not take input files.  Three different
 types of input are recognized (more details can be found in Appendix
 B in the Technical Reference):</p>
@@ -230,7 +239,7 @@ We will discuss these later.</p>
 </ol>
 </div>
 <div class="section" id="job-control">
-<h3>Job Control<a class="headerlink" href="#job-control" title="Permalink to this headline">¶</a></h3>
+<h3>2.2.2. Job Control<a class="headerlink" href="#job-control" title="Permalink to this headline">¶</a></h3>
 <p>GMT modules may get operational parameters from several places:</p>
 <ol class="arabic simple">
 <li>Supplied command line options/switches or module defaults.</li>
@@ -242,7 +251,7 @@ We will discuss these later.</p>
 </ol>
 </div>
 <div class="section" id="output-data">
-<h3>Output data<a class="headerlink" href="#output-data" title="Permalink to this headline">¶</a></h3>
+<h3>2.2.3. Output data<a class="headerlink" href="#output-data" title="Permalink to this headline">¶</a></h3>
 <p>There are 6 general categories of output produced by GMT:</p>
 <ol class="arabic simple">
 <li>PostScript plot commands.</li>
@@ -261,9 +270,9 @@ the relationships shown in Figure <a class="reference internal" href="#gmt-envir
 </div>
 </div>
 <div class="section" id="the-unix-environment-entry-level-knowledge">
-<h2>The UNIX Environment: Entry Level Knowledge<a class="headerlink" href="#the-unix-environment-entry-level-knowledge" title="Permalink to this headline">¶</a></h2>
+<h2>2.3. The UNIX Environment: Entry Level Knowledge<a class="headerlink" href="#the-unix-environment-entry-level-knowledge" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="redirection">
-<h3>Redirection<a class="headerlink" href="#redirection" title="Permalink to this headline">¶</a></h3>
+<h3>2.3.1. Redirection<a class="headerlink" href="#redirection" title="Permalink to this headline">¶</a></h3>
 <p>Most GMT modules read their input from the terminal (called
 <em>stdin</em>) or from files, and write their output to the
 terminal (called <em>stdout</em>).  To use files instead one can
@@ -280,7 +289,7 @@ variable <strong>noclobber</strong> set. If you do, it prevents accidental overw
 That may be a noble cause, but it is extremely annoying. So please, <strong>unset noclobber</strong>.</p>
 </div>
 <div class="section" id="piping">
-<h3>Piping (|)<a class="headerlink" href="#piping" title="Permalink to this headline">¶</a></h3>
+<h3>2.3.2. Piping (|)<a class="headerlink" href="#piping" title="Permalink to this headline">¶</a></h3>
 <p>Sometimes we want to use the output from one module as input
 to another module.  This is achieved with <em>pipes</em>:</p>
 <blockquote>
@@ -290,7 +299,7 @@ to another module.  This is achieved with <em>pipes</em>:</p>
 </div></blockquote>
 </div>
 <div class="section" id="standard-error-stderr">
-<h3>Standard error (<em>stderr</em>)<a class="headerlink" href="#standard-error-stderr" title="Permalink to this headline">¶</a></h3>
+<h3>2.3.3. Standard error (<em>stderr</em>)<a class="headerlink" href="#standard-error-stderr" title="Permalink to this headline">¶</a></h3>
 <p>Most programs and GMT modules will on occasion write error messages.
 These are typically written to a separate data stream called
 <em>stderr</em> and can be redirected separately from the standard
@@ -310,7 +319,7 @@ separate files we use the following syntax:</p>
 </div></blockquote>
 </div>
 <div class="section" id="file-name-expansion-or-wild-cards">
-<h3>File name expansion or “wild cards”<a class="headerlink" href="#file-name-expansion-or-wild-cards" title="Permalink to this headline">¶</a></h3>
+<h3>2.3.4. File name expansion or “wild cards”<a class="headerlink" href="#file-name-expansion-or-wild-cards" title="Permalink to this headline">¶</a></h3>
 <p>UNIX provides several ways to select groups of files based
 on name patterns:</p>
 <blockquote>
@@ -356,7 +365,7 @@ gets both part 1 and 2.</li>
 </div>
 </div>
 <div class="section" id="laboratory-exercises">
-<h2>Laboratory Exercises<a class="headerlink" href="#laboratory-exercises" title="Permalink to this headline">¶</a></h2>
+<h2>2.4. Laboratory Exercises<a class="headerlink" href="#laboratory-exercises" title="Permalink to this headline">¶</a></h2>
 <p>We will begin our adventure by making some simple plot axes and
 coastline basemaps.  We will do this in order to introduce the
 all-important common options <strong>-B</strong>, <strong>-J</strong>, and <strong>-R</strong> and to familiarize
@@ -364,7 +373,7 @@ ourselves with a few selected GMT projections.  The GMT modules
 we will utilize are <a class="reference internal" href="psbasemap.html"><span class="doc">psbasemap</span></a> and <a class="reference internal" href="pscoast.html"><span class="doc">pscoast</span></a>.  Please
 consult their manual pages for reference.</p>
 <div class="section" id="linear-projection">
-<h3>Linear projection<a class="headerlink" href="#linear-projection" title="Permalink to this headline">¶</a></h3>
+<h3>2.4.1. Linear projection<a class="headerlink" href="#linear-projection" title="Permalink to this headline">¶</a></h3>
 <p>We start by making the basemap frame for a linear <em>x-y</em> plot.
 We want it to go from 10 to 70 in <em>x</em> and
 from -3 to 8 in <em>y</em>, with automatic annotation intervals.  Finally,
@@ -390,7 +399,7 @@ Examine the <a class="reference internal" href="psbasemap.html"><span class="doc
 </ol>
 </div>
 <div class="section" id="logarithmic-projection">
-<h3>Logarithmic projection<a class="headerlink" href="#logarithmic-projection" title="Permalink to this headline">¶</a></h3>
+<h3>2.4.2. Logarithmic projection<a class="headerlink" href="#logarithmic-projection" title="Permalink to this headline">¶</a></h3>
 <p>We next will show how to do a basemap for a log–log plot.  We have
 no data set yet but we will
 imagine that the raw <em>x</em> data range from 3 to 9613 and that <em>y</em>
@@ -413,7 +422,7 @@ ranges from 3.2 10^20 to 6.8 10^24.  One possibility is</p>
 </ol>
 </div>
 <div class="section" id="mercator-projection">
-<h3>Mercator projection<a class="headerlink" href="#mercator-projection" title="Permalink to this headline">¶</a></h3>
+<h3>2.4.3. Mercator projection<a class="headerlink" href="#mercator-projection" title="Permalink to this headline">¶</a></h3>
 <p>Despite the problems of extreme horizontal exaggeration at high
 latitudes, the conformal Mercator projection (<strong>-JM</strong>) remains
 the stalwart of location maps used by scientists.  It is one
@@ -489,7 +498,7 @@ to another setting (see the <a class="reference internal" href="gmt.conf.html"><
 </ol>
 </div>
 <div class="section" id="albers-projection">
-<h3>Albers projection<a class="headerlink" href="#albers-projection" title="Permalink to this headline">¶</a></h3>
+<h3>2.4.4. Albers projection<a class="headerlink" href="#albers-projection" title="Permalink to this headline">¶</a></h3>
 <p>The Albers projection (<strong>-JB</strong>) is an equal-area conical projection;
 its conformal cousin is the Lambert conic projection (<strong>-JL</strong>).
 Their usages are almost identical so we will only use the Albers here.
@@ -517,7 +526,7 @@ minimum and maximum values.</li>
 </ol>
 </div>
 <div class="section" id="orthographic-projection">
-<h3>Orthographic projection<a class="headerlink" href="#orthographic-projection" title="Permalink to this headline">¶</a></h3>
+<h3>2.4.5. Orthographic projection<a class="headerlink" href="#orthographic-projection" title="Permalink to this headline">¶</a></h3>
 <p>The azimuthal orthographic projection (<strong>-JG</strong>) is one of several
 projections with similar syntax and behavior; the one we have
 chosen mimics viewing the Earth from space at an infinite distance;
@@ -543,7 +552,7 @@ showing the US only.</li>
 </ol>
 </div>
 <div class="section" id="eckert-iv-and-vi-projection">
-<h3>Eckert IV and VI projection<a class="headerlink" href="#eckert-iv-and-vi-projection" title="Permalink to this headline">¶</a></h3>
+<h3>2.4.6. Eckert IV and VI projection<a class="headerlink" href="#eckert-iv-and-vi-projection" title="Permalink to this headline">¶</a></h3>
 <p>We conclude the survey of map projections with the Eckert IV and VI projections
 (<strong>-JK</strong>), two of several projections used for global thematic maps; They
 are both equal-area projections whose syntax is</p>
@@ -571,9 +580,9 @@ is thus generated by</p>
 </div>
 </div>
 <div class="section" id="session-two">
-<h1>Session Two<a class="headerlink" href="#session-two" title="Permalink to this headline">¶</a></h1>
+<h1>3. Session Two<a class="headerlink" href="#session-two" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="general-information">
-<h2>General Information<a class="headerlink" href="#general-information" title="Permalink to this headline">¶</a></h2>
+<h2>3.1. General Information<a class="headerlink" href="#general-information" title="Permalink to this headline">¶</a></h2>
 <p>There are 18 GMT modules that directly create (or add overlays to)
 plots; the remaining 45 are mostly concerned with data
 processing.  This session will focus on the task of plotting
@@ -991,7 +1000,7 @@ sizes are interpreted to be in cm.  Your plot should look like <a class="referen
 <p class="caption"><span class="caption-text">Result of GMT Tutorial example 9</span></p>
 </div>
 <div class="section" id="more-exercises">
-<h3>More exercises<a class="headerlink" href="#more-exercises" title="Permalink to this headline">¶</a></h3>
+<h3>3.1.1. More exercises<a class="headerlink" href="#more-exercises" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li>Select another symbol.</li>
 <li>Let the deep earthquakes be cyan instead of blue.</li>
@@ -999,7 +1008,7 @@ sizes are interpreted to be in cm.  Your plot should look like <a class="referen
 </div>
 </div>
 <div class="section" id="plotting-text-strings">
-<h2>Plotting text strings<a class="headerlink" href="#plotting-text-strings" title="Permalink to this headline">¶</a></h2>
+<h2>3.2. Plotting text strings<a class="headerlink" href="#plotting-text-strings" title="Permalink to this headline">¶</a></h2>
 <p>In many situations we need to annotate plots or maps with text strings;
 in GMT this is done using <a class="reference internal" href="pstext.html"><span class="doc">pstext</span></a>.  Apart from the common
 switches, there are 9 options that are particularly useful.</p>
@@ -1191,9 +1200,9 @@ Your plot should look like <a class="reference internal" href="#gmt-tut-10"><spa
 </div>
 </div>
 <div class="section" id="session-three">
-<h1>Session Three<a class="headerlink" href="#session-three" title="Permalink to this headline">¶</a></h1>
+<h1>4. Session Three<a class="headerlink" href="#session-three" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="contouring-gridded-data-sets">
-<h2>Contouring gridded data sets<a class="headerlink" href="#contouring-gridded-data-sets" title="Permalink to this headline">¶</a></h2>
+<h2>4.1. Contouring gridded data sets<a class="headerlink" href="#contouring-gridded-data-sets" title="Permalink to this headline">¶</a></h2>
 <p>GMT comes with several utilities that can create gridded data
 sets; we will discuss two such modules later this session.  The
 data sets needed for this tutorial are obtained via the Internet
@@ -1302,7 +1311,7 @@ Mercator plot and annotate the borders every 2º:</p>
 </ol>
 </div>
 <div class="section" id="gridding-of-arbitrarily-spaced-data">
-<h2>Gridding of arbitrarily spaced data<a class="headerlink" href="#gridding-of-arbitrarily-spaced-data" title="Permalink to this headline">¶</a></h2>
+<h2>4.2. Gridding of arbitrarily spaced data<a class="headerlink" href="#gridding-of-arbitrarily-spaced-data" title="Permalink to this headline">¶</a></h2>
 <p>Except in the situation above when a grid file is available, we must
 convert our data to the right format readable by GMT before we can
 make contour plots and color-coded images.  We distinguish between
@@ -1343,7 +1352,7 @@ user must specify the grid domain and output filename:</p>
 </table>
 </div></blockquote>
 <div class="section" id="nearest-neighbor-gridding">
-<h3>Nearest neighbor gridding<a class="headerlink" href="#nearest-neighbor-gridding" title="Permalink to this headline">¶</a></h3>
+<h3>4.2.1. Nearest neighbor gridding<a class="headerlink" href="#nearest-neighbor-gridding" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-center" id="id13">
 <span id="gmt-nearneighbor"></span><a class="reference internal image-reference" href="_images/GMT_nearneighbor.png"><img alt="_images/GMT_nearneighbor.png" src="_images/GMT_nearneighbor.png" style="width: 200px;" /></a>
 <p class="caption"><span class="caption-text">Search geometry for nearneighbor.</span></p>
@@ -1416,7 +1425,7 @@ you can try one of those as well on the same grid.</p>
 </ol>
 </div>
 <div class="section" id="gridding-with-splines-in-tension">
-<h3>Gridding with Splines in Tension<a class="headerlink" href="#gridding-with-splines-in-tension" title="Permalink to this headline">¶</a></h3>
+<h3>4.2.2. Gridding with Splines in Tension<a class="headerlink" href="#gridding-with-splines-in-tension" title="Permalink to this headline">¶</a></h3>
 <p>As an alternative, we may use a global procedure to grid our data.
 This approach, implemented in the module <a class="reference internal" href="surface.html"><span class="doc">surface</span></a>, represents
 an improvement over standard minimum curvature algorithms by allowing
@@ -1461,7 +1470,7 @@ switches for this module are indicated below.</p>
 </div>
 </div>
 <div class="section" id="preprocessing">
-<h2>Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this headline">¶</a></h2>
+<h2>4.3. Preprocessing<a class="headerlink" href="#preprocessing" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="surface.html"><span class="doc">surface</span></a> module assumes that the data have been
 preprocessed to eliminate aliasing, hence we must ensure that
 this step is completed prior to gridding.  GMT comes with
@@ -1543,7 +1552,7 @@ gmt psmask -C -O &gt;&gt; GMT_tut_13.ps
 </div>
 </div>
 <div class="section" id="session-four">
-<h1>Session Four<a class="headerlink" href="#session-four" title="Permalink to this headline">¶</a></h1>
+<h1>5. Session Four<a class="headerlink" href="#session-four" title="Permalink to this headline">¶</a></h1>
 <p>In our final session we will concentrate on color images and
 perspective views of gridded data sets.  Before we start that
 discussion we need to cover three important aspects of plotting
@@ -1554,7 +1563,7 @@ that must be understood.  These are</p>
 <li>Multi-dimensional grids.</li>
 </ol>
 <div class="section" id="cpts">
-<h2>CPTs<a class="headerlink" href="#cpts" title="Permalink to this headline">¶</a></h2>
+<h2>5.1. CPTs<a class="headerlink" href="#cpts" title="Permalink to this headline">¶</a></h2>
 <p>The CPT is discussed in detail in the GMT Technical Reference
 and Cookbook.  Please review the format before experimenting
 further.</p>
@@ -1665,7 +1674,7 @@ gmt psscale -Dx1i/7i+w4i/0.5i+h -Ccont.cpt -B+tcontinuous -I0.5 -O &gt;&gt; GMT_
 </ol>
 </div>
 <div class="section" id="illumination-and-intensities">
-<h2>Illumination and intensities<a class="headerlink" href="#illumination-and-intensities" title="Permalink to this headline">¶</a></h2>
+<h2>5.2. Illumination and intensities<a class="headerlink" href="#illumination-and-intensities" title="Permalink to this headline">¶</a></h2>
 <p>GMT allows for artificial illumination and shading.  What this
 means is that we imagine an artificial sun placed at infinity in
 some azimuth and elevation position illuminating our surface.
@@ -1708,7 +1717,7 @@ GMT shading operations involve translating from RGB to HSV, do the
 illumination effect, and transform back the modified RGB values.</p>
 </div>
 <div class="section" id="color-images">
-<h2>Color images<a class="headerlink" href="#color-images" title="Permalink to this headline">¶</a></h2>
+<h2>5.3. Color images<a class="headerlink" href="#color-images" title="Permalink to this headline">¶</a></h2>
 <p>Once a CPT has been made it is relatively straightforward to generate
 a color image of a gridded data.  Here, we will extract a subset of the
 global 30” DEM called SRTM30+:</p>
@@ -1842,7 +1851,7 @@ gmt psscale -DjTC+w5i/0.25i+h+o0/-1i -Rtut_relief.nc -J -Ctopo.cpt -I0.4 -By+lm 
 </ol>
 </div>
 <div class="section" id="multi-dimensional-maps">
-<h2>Multi-dimensional maps<a class="headerlink" href="#multi-dimensional-maps" title="Permalink to this headline">¶</a></h2>
+<h2>5.4. Multi-dimensional maps<a class="headerlink" href="#multi-dimensional-maps" title="Permalink to this headline">¶</a></h2>
 <p>Climate data, like ocean temperatures or atmospheric pressure, are often provided as
 multi-dimensional (3-D, 4-D or 5-D) grids in netCDF format. This section will demonstrate
 that GMT is able to plot “horizontal”
@@ -1892,7 +1901,7 @@ figure out what level number that is).</li>
 </ol>
 </div>
 <div class="section" id="perspective-views">
-<h2>Perspective views<a class="headerlink" href="#perspective-views" title="Permalink to this headline">¶</a></h2>
+<h2>5.5. Perspective views<a class="headerlink" href="#perspective-views" title="Permalink to this headline">¶</a></h2>
 <p>Our final undertaking in this tutorial is to examine three-dimensional
 perspective views.  The
 GMT module that produces perspective views of gridded data files is
@@ -1946,7 +1955,7 @@ GMT module that produces perspective views of gridded data files is
 </table>
 </div></blockquote>
 <div class="section" id="mesh-plot">
-<h3>Mesh-plot<a class="headerlink" href="#mesh-plot" title="Permalink to this headline">¶</a></h3>
+<h3>5.5.1. Mesh-plot<a class="headerlink" href="#mesh-plot" title="Permalink to this headline">¶</a></h3>
 <p>Mesh plots work best on smaller data sets.  We again use the small
 subset of the ETOPO5 data over Bermuda and make a quick-and-dirty
 CPT:</p>
@@ -1972,7 +1981,7 @@ CPT:</p>
 </ol>
 </div>
 <div class="section" id="color-coded-view">
-<h3>Color-coded view<a class="headerlink" href="#color-coded-view" title="Permalink to this headline">¶</a></h3>
+<h3>5.5.2. Color-coded view<a class="headerlink" href="#color-coded-view" title="Permalink to this headline">¶</a></h3>
 <p>We will make a perspective, color-coded view of the US Rockies
 from the southeast.  This is done using</p>
 <blockquote>
@@ -2007,73 +2016,79 @@ appropriate <em>dpi</em> for the final output device and let it rip.</p>
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Introduction</a><ul>
-<li><a class="reference internal" href="#gmt-overview-history-philosophy-and-usage">GMT overview: History, philosophy, and usage</a><ul>
-<li><a class="reference internal" href="#historical-highlights">Historical highlights</a></li>
-<li><a class="reference internal" href="#philosophy">Philosophy</a></li>
-<li><a class="reference internal" href="#gmt-installation-considerations">GMT installation considerations</a></li>
+<li><a class="reference internal" href="#">1. Introduction</a><ul>
+<li><a class="reference internal" href="#gmt-overview-history-philosophy-and-usage">1.1. GMT overview: History, philosophy, and usage</a><ul>
+<li><a class="reference internal" href="#historical-highlights">1.1.1. Historical highlights</a></li>
+<li><a class="reference internal" href="#philosophy">1.1.2. Philosophy</a></li>
+<li><a class="reference internal" href="#gmt-installation-considerations">1.1.3. GMT installation considerations</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#session-one">Session One</a><ul>
-<li><a class="reference internal" href="#tutorial-setup">Tutorial setup</a></li>
-<li><a class="reference internal" href="#the-gmt-environment-what-happens-when-you-run-gmt">The GMT environment: What happens when you run GMT ?</a><ul>
-<li><a class="reference internal" href="#input-data">Input data</a></li>
-<li><a class="reference internal" href="#job-control">Job Control</a></li>
-<li><a class="reference internal" href="#output-data">Output data</a></li>
+<li><a class="reference internal" href="#session-one">2. Session One</a><ul>
+<li><a class="reference internal" href="#tutorial-setup">2.1. Tutorial setup</a></li>
+<li><a class="reference internal" href="#the-gmt-environment-what-happens-when-you-run-gmt">2.2. The GMT environment: What happens when you run GMT ?</a><ul>
+<li><a class="reference internal" href="#input-data">2.2.1. Input data</a></li>
+<li><a class="reference internal" href="#job-control">2.2.2. Job Control</a></li>
+<li><a class="reference internal" href="#output-data">2.2.3. Output data</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#the-unix-environment-entry-level-knowledge">The UNIX Environment: Entry Level Knowledge</a><ul>
-<li><a class="reference internal" href="#redirection">Redirection</a></li>
-<li><a class="reference internal" href="#piping">Piping (|)</a></li>
-<li><a class="reference internal" href="#standard-error-stderr">Standard error (<em>stderr</em>)</a></li>
-<li><a class="reference internal" href="#file-name-expansion-or-wild-cards">File name expansion or “wild cards”</a></li>
+<li><a class="reference internal" href="#the-unix-environment-entry-level-knowledge">2.3. The UNIX Environment: Entry Level Knowledge</a><ul>
+<li><a class="reference internal" href="#redirection">2.3.1. Redirection</a></li>
+<li><a class="reference internal" href="#piping">2.3.2. Piping (|)</a></li>
+<li><a class="reference internal" href="#standard-error-stderr">2.3.3. Standard error (<em>stderr</em>)</a></li>
+<li><a class="reference internal" href="#file-name-expansion-or-wild-cards">2.3.4. File name expansion or “wild cards”</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#laboratory-exercises">Laboratory Exercises</a><ul>
-<li><a class="reference internal" href="#linear-projection">Linear projection</a></li>
-<li><a class="reference internal" href="#logarithmic-projection">Logarithmic projection</a></li>
-<li><a class="reference internal" href="#mercator-projection">Mercator projection</a></li>
-<li><a class="reference internal" href="#albers-projection">Albers projection</a></li>
-<li><a class="reference internal" href="#orthographic-projection">Orthographic projection</a></li>
-<li><a class="reference internal" href="#eckert-iv-and-vi-projection">Eckert IV and VI projection</a></li>
+<li><a class="reference internal" href="#laboratory-exercises">2.4. Laboratory Exercises</a><ul>
+<li><a class="reference internal" href="#linear-projection">2.4.1. Linear projection</a></li>
+<li><a class="reference internal" href="#logarithmic-projection">2.4.2. Logarithmic projection</a></li>
+<li><a class="reference internal" href="#mercator-projection">2.4.3. Mercator projection</a></li>
+<li><a class="reference internal" href="#albers-projection">2.4.4. Albers projection</a></li>
+<li><a class="reference internal" href="#orthographic-projection">2.4.5. Orthographic projection</a></li>
+<li><a class="reference internal" href="#eckert-iv-and-vi-projection">2.4.6. Eckert IV and VI projection</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#session-two">Session Two</a><ul>
-<li><a class="reference internal" href="#general-information">General Information</a><ul>
-<li><a class="reference internal" href="#more-exercises">More exercises</a></li>
+<li><a class="reference internal" href="#session-two">3. Session Two</a><ul>
+<li><a class="reference internal" href="#general-information">3.1. General Information</a><ul>
+<li><a class="reference internal" href="#more-exercises">3.1.1. More exercises</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#plotting-text-strings">Plotting text strings</a></li>
+<li><a class="reference internal" href="#plotting-text-strings">3.2. Plotting text strings</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#session-three">Session Three</a><ul>
-<li><a class="reference internal" href="#contouring-gridded-data-sets">Contouring gridded data sets</a></li>
-<li><a class="reference internal" href="#gridding-of-arbitrarily-spaced-data">Gridding of arbitrarily spaced data</a><ul>
-<li><a class="reference internal" href="#nearest-neighbor-gridding">Nearest neighbor gridding</a></li>
-<li><a class="reference internal" href="#gridding-with-splines-in-tension">Gridding with Splines in Tension</a></li>
+<li><a class="reference internal" href="#session-three">4. Session Three</a><ul>
+<li><a class="reference internal" href="#contouring-gridded-data-sets">4.1. Contouring gridded data sets</a></li>
+<li><a class="reference internal" href="#gridding-of-arbitrarily-spaced-data">4.2. Gridding of arbitrarily spaced data</a><ul>
+<li><a class="reference internal" href="#nearest-neighbor-gridding">4.2.1. Nearest neighbor gridding</a></li>
+<li><a class="reference internal" href="#gridding-with-splines-in-tension">4.2.2. Gridding with Splines in Tension</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#preprocessing">Preprocessing</a></li>
+<li><a class="reference internal" href="#preprocessing">4.3. Preprocessing</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#session-four">Session Four</a><ul>
-<li><a class="reference internal" href="#cpts">CPTs</a></li>
-<li><a class="reference internal" href="#illumination-and-intensities">Illumination and intensities</a></li>
-<li><a class="reference internal" href="#color-images">Color images</a></li>
-<li><a class="reference internal" href="#multi-dimensional-maps">Multi-dimensional maps</a></li>
-<li><a class="reference internal" href="#perspective-views">Perspective views</a><ul>
-<li><a class="reference internal" href="#mesh-plot">Mesh-plot</a></li>
-<li><a class="reference internal" href="#color-coded-view">Color-coded view</a></li>
+<li><a class="reference internal" href="#session-four">5. Session Four</a><ul>
+<li><a class="reference internal" href="#cpts">5.1. CPTs</a></li>
+<li><a class="reference internal" href="#illumination-and-intensities">5.2. Illumination and intensities</a></li>
+<li><a class="reference internal" href="#color-images">5.3. Color images</a></li>
+<li><a class="reference internal" href="#multi-dimensional-maps">5.4. Multi-dimensional maps</a></li>
+<li><a class="reference internal" href="#perspective-views">5.5. Perspective views</a><ul>
+<li><a class="reference internal" href="#mesh-plot">5.5.1. Mesh-plot</a></li>
+<li><a class="reference internal" href="#color-coded-view">5.5.2. Color-coded view</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="tutorial_classic.html"
+                        title="previous chapter">Tutorial (Classic Mode)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cookbook_classic.html"
+                        title="next chapter">The GMT Cookbook (Classic Mode)</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -2091,10 +2106,17 @@ appropriate <em>dpi</em> for the final output device and let it rip.</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+        <li class="right" >
+          <a href="cookbook_classic.html" title="The GMT Cookbook (Classic Mode)"
+             >next</a> </li>
+        <li class="right" >
+          <a href="tutorial_classic.html" title="Tutorial (Classic Mode)"
+             >previous</a> </li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
+          <li class="nav-item nav-item-1"><a href="tutorial_classic.html" >Tutorial (Classic Mode)</a> &#187;</li>
 <li class="right">
 <form class="search" accept-charset="UTF-8" action="search.html" method="get">
   <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
@@ -2110,8 +2132,8 @@ appropriate <em>dpi</em> for the final output device and let it rip.</p>
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on May 29, 2019.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Jul 28, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

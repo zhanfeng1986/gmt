@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>psrose &#8212; GMT 6.0.0_6a82a05_2019.05.28 documentation</title>
+    <title>psrose &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -39,9 +39,9 @@
         <li class="right" >
           <a href="psxyz.html" title="psxyz"
              accesskey="P">previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="PS_classic.html" accesskey="U">Classic Mode Mapping</a> &#187;</li>
 <li class="right">
@@ -145,7 +145,8 @@ diagram instead of sector diagram.</dd>
 <dl class="docutils" id="c">
 <dt><strong>-C</strong><em>cpt</em></dt>
 <dd>Give a CPT. The r-value for each sector is used to
-look-up the sector color.  Cannot be used with a rose diagram.</dd>
+look-up the sector color.  Cannot be used with a rose diagram.
+If modern mode and no argument is given then we select the current CPT.</dd>
 </dl>
 <dl class="docutils" id="d">
 <dt><strong>-D</strong></dt>
@@ -273,8 +274,8 @@ scaling].</dd>
 <dd>Skip or produce header record(s).  </dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>] <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select input columns and transformations (0 is first column).</dd>
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select input columns and transformations (0 is first column, <em>t</em> is trailing text, append <em>word</em> to read one word only).</dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-p</strong>[<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>azim</em>[/<em>elev</em>[/<em>zlevel</em>]][<strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>z0</em>]][<strong>+v</strong><em>x0</em>/<em>y0</em>] <a class="reference internal" href="gmt.html#perspective-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -331,7 +332,8 @@ half-sides of this head [both sides].  Cannot be combined with <strong>+b</stron
 <p><strong>+n</strong><em>norm</em> scales down vector attributes (pen thickness, head size)
 with decreasing length, where vector plot lengths shorter than <em>norm</em> will have
 their attributes scaled by length/<em>norm</em> [arrow attributes remains
-invariant to length].</p>
+invariant to length]. For Cartesian vectors specify a length in plot units, while
+for geovectors specify a length in km.</p>
 <p><strong>+o</strong>[<em>plon</em>/<em>plat</em>] specifies the oblique pole for the great or
 small circles.  Only needed for great circles if <strong>+q</strong> is given. If no
 pole is appended then we default to the north pole.</p>
@@ -479,9 +481,9 @@ must run the module with <strong>-I</strong> to find max length in binned data s
         <li class="right" >
           <a href="psxyz.html" title="psxyz"
              >previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="PS_classic.html" >Classic Mode Mapping</a> &#187;</li>
 <li class="right">
@@ -499,8 +501,8 @@ must run the module with <strong>-I</strong> to find max length in binned data s
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on May 29, 2019.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Jul 28, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

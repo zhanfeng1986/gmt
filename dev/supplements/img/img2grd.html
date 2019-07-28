@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>img2grd &#8212; GMT 6.0.0_6a82a05_2019.05.28 documentation</title>
+    <title>img2grd &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -25,7 +25,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="img2google" href="img2google.html" />
-    <link rel="prev" title="IMGSRC" href="../../SUP_IMGSRC.html" /> 
+    <link rel="prev" title="IMG" href="../../SUP_IMG.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -37,13 +37,13 @@
           <a href="img2google.html" title="img2google"
              accesskey="N">next</a> </li>
         <li class="right" >
-          <a href="../../SUP_IMGSRC.html" title="IMGSRC"
+          <a href="../../SUP_IMG.html" title="IMG"
              accesskey="P">previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="../../SUP_IMGSRC.html" accesskey="U">IMGSRC</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../SUP_IMG.html" accesskey="U">IMG</a> &#187;</li>
 <li class="right">
 <form class="search" accept-charset="UTF-8" action="search.html" method="get">
   <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
@@ -294,16 +294,16 @@ To extract data in the region <strong>-R</strong>-40/40/-70/-30 from
 can extract this original region string using <a class="reference internal" href="../../grdinfo.html"><span class="doc">grdinfo</span></a> <strong>-Ii</strong>.
 Furthermore, we can also use <a class="reference internal" href="../../grdinfo.html"><span class="doc">grdinfo</span></a>
 to find that the grid file header shows its region to be
-<strong>-R</strong>0/80/0/67.9666667. This is the range of x,y we will get from a
+<strong>-R</strong>-40/40/-99.4333333333/-31.4666666667. This is the range of x,y we will get from a
 Spherical Mercator projection using
 <strong>-R</strong>-40/40/-70.0004681551/-29.9945810754 and <strong>-Jm</strong>1. Thus, to take
 ship.lonlatgrav and use it to sample the merc_grav.nc, we can do this:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="nb">set</span> <span class="n">PROJ_ELLIPSOID</span> <span class="n">Sphere</span>
 
-<span class="n">gmt</span> <span class="n">mapproject</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">40</span><span class="o">/</span><span class="mi">40</span><span class="o">/-</span><span class="mf">70.0004681551</span><span class="o">/-</span><span class="mf">29.9945810754</span> <span class="o">-</span><span class="n">Jm1i</span> <span class="n">ship</span><span class="o">.</span><span class="n">lonlatgrav</span> <span class="o">|</span>
+<span class="n">gmt</span> <span class="n">mapproject</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">40</span><span class="o">/</span><span class="mi">40</span><span class="o">/-</span><span class="mf">70.0004681551</span><span class="o">/-</span><span class="mf">29.9945810754</span> <span class="o">-</span><span class="n">Jm1i</span> <span class="o">-</span><span class="n">C</span> <span class="n">ship</span><span class="o">.</span><span class="n">lonlatgrav</span> <span class="o">|</span>
           <span class="n">gmt</span> <span class="n">grdtrack</span> <span class="o">-</span><span class="n">Gmerc_grav</span><span class="o">.</span><span class="n">nc</span> <span class="o">|</span> <span class="n">gmt</span> <span class="n">mapproject</span>
-          <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">40</span><span class="o">/</span><span class="mi">40</span><span class="o">/-</span><span class="mf">70.0004681551</span><span class="o">/-</span><span class="mf">29.9945810754</span> <span class="o">-</span><span class="n">Jm1i</span> <span class="o">-</span><span class="n">I</span> <span class="o">&gt;</span> <span class="n">ship</span><span class="o">.</span><span class="n">lonlatgravsat</span>
+          <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">40</span><span class="o">/</span><span class="mi">40</span><span class="o">/-</span><span class="mf">70.0004681551</span><span class="o">/-</span><span class="mf">29.9945810754</span> <span class="o">-</span><span class="n">Jm1i</span> <span class="o">-</span><span class="n">I</span> <span class="o">-</span><span class="n">C</span> <span class="o">&gt;</span> <span class="n">ship</span><span class="o">.</span><span class="n">lonlatgravsat</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -364,8 +364,8 @@ illumination file for this using <a class="reference internal" href="../../grdgr
 shaded relief map like this:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">begin</span>
-<span class="n">gmt</span> <span class="n">grdimage</span> <span class="n">merc_grav_2</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Iillum</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Cgrav</span><span class="o">.</span><span class="n">cpt</span> <span class="o">-</span><span class="n">Jx0</span><span class="o">.</span><span class="mi">1</span><span class="n">i</span>
-<span class="n">gmt</span> <span class="n">basemap</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">40</span><span class="o">/</span><span class="mi">40</span><span class="o">/-</span><span class="mf">70.023256525</span><span class="o">/-</span><span class="mf">29.9368261101</span> <span class="o">-</span><span class="n">Jm0</span><span class="o">.</span><span class="mi">1</span><span class="n">i</span> <span class="o">-</span><span class="n">Ba10</span>
+  <span class="n">gmt</span> <span class="n">grdimage</span> <span class="n">merc_grav_2</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Iillum</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Cgrav</span><span class="o">.</span><span class="n">cpt</span> <span class="o">-</span><span class="n">Jx0</span><span class="o">.</span><span class="mi">1</span><span class="n">i</span>
+  <span class="n">gmt</span> <span class="n">basemap</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">40</span><span class="o">/</span><span class="mi">40</span><span class="o">/-</span><span class="mf">70.023256525</span><span class="o">/-</span><span class="mf">29.9368261101</span> <span class="o">-</span><span class="n">Jm0</span><span class="o">.</span><span class="mi">1</span><span class="n">i</span> <span class="o">-</span><span class="n">Ba10</span>
 <span class="n">gmtend</span>
 </pre></div>
 </div>
@@ -402,8 +402,8 @@ eliminate NaNs, and pipe through <a class="reference internal" href="../../mappr
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../../SUP_IMGSRC.html"
-                        title="previous chapter">IMGSRC</a></p>
+  <p class="topless"><a href="../../SUP_IMG.html"
+                        title="previous chapter">IMG</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="img2google.html"
                         title="next chapter">img2google</a></p>
@@ -428,13 +428,13 @@ eliminate NaNs, and pipe through <a class="reference internal" href="../../mappr
           <a href="img2google.html" title="img2google"
              >next</a> </li>
         <li class="right" >
-          <a href="../../SUP_IMGSRC.html" title="IMGSRC"
+          <a href="../../SUP_IMG.html" title="IMG"
              >previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="../../SUP_IMGSRC.html" >IMGSRC</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../SUP_IMG.html" >IMG</a> &#187;</li>
 <li class="right">
 <form class="search" accept-charset="UTF-8" action="search.html" method="get">
   <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
@@ -450,8 +450,8 @@ eliminate NaNs, and pipe through <a class="reference internal" href="../../mappr
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on May 29, 2019.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Jul 28, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

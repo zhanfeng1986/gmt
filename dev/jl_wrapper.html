@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>Julia Wrapper &#8212; GMT 6.0.0_6a82a05_2019.05.28 documentation</title>
+    <title>Julia Wrapper &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/rtd-sidebar.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Introduction" href="julia_wrapper.html" />
+    <link rel="next" title="&lt;no title&gt;" href="examples_options.html" />
     <link rel="prev" title="1. Introduction" href="matlab_wrapper.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -34,14 +34,14 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="julia_wrapper.html" title="1. Introduction"
+          <a href="examples_options.html" title="&lt;no title&gt;"
              accesskey="N">next</a> </li>
         <li class="right" >
           <a href="matlab_wrapper.html" title="1. Introduction"
              accesskey="P">previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
 <li class="right">
 <form class="search" accept-charset="UTF-8" action="search.html" method="get">
@@ -65,13 +65,25 @@
             
   <div class="section" id="julia-wrapper">
 <h1>Julia Wrapper<a class="headerlink" href="#julia-wrapper" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="julia_wrapper.html">1. Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="julia_wrapper.html#installing">2. Installing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="julia_wrapper.html#using">3. Using</a></li>
-</ul>
+<p><strong>The Generic Mapping Tools</strong></p>
+<p><strong>The Julia Interface</strong></p>
+<p><strong>Joaquim F. Luis</strong></p>
+<p><strong>Universidade do Algarve, Faro, Portugal</strong></p>
+<p><strong>Pål (Paul) Wessel</strong></p>
+<p><strong>SOEST, University of Hawai’i at Manoa</strong></p>
+<p>The <a class="reference external" href="http://julialang.org">Julia</a> wrapper is a companion to the MATLAB wrapper that works in a very similar way to it. However, besides the so called <a class="reference external" href="https://www.generic-mapping-tools.org/GMT.jl/latest/monolitic/">Monolithic</a> mode it also provides a more modern and verbose interface to the GMT modules. For example, instead of using the GMT classic syntax to do a line plot:</p>
+<blockquote>
+<div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psxy</span> <span class="n">filename</span> <span class="o">-</span><span class="n">R0</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">5</span> <span class="o">-</span><span class="n">JX12</span> <span class="o">-</span><span class="n">W1p</span> <span class="o">-</span><span class="n">Ba</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">psfile</span><span class="p">.</span><span class="n">ps</span>
+</pre></div>
 </div>
+</div></blockquote>
+<p>one can simply do:</p>
+<blockquote>
+<div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="s">&quot;filename&quot;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="nb">true</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Details and installing instructions at <a class="reference external" href="https://github.com/GenericMappingTools/GMT.jl">GMT.jl</a></p>
 </div>
 
 
@@ -84,8 +96,8 @@
   <p class="topless"><a href="matlab_wrapper.html"
                         title="previous chapter">1. Introduction</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="julia_wrapper.html"
-                        title="next chapter">1. Introduction</a></p>
+  <p class="topless"><a href="examples_options.html"
+                        title="next chapter">&lt;no title&gt;</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -104,14 +116,14 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="julia_wrapper.html" title="1. Introduction"
+          <a href="examples_options.html" title="&lt;no title&gt;"
              >next</a> </li>
         <li class="right" >
           <a href="matlab_wrapper.html" title="1. Introduction"
              >previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
 <li class="right">
 <form class="search" accept-charset="UTF-8" action="search.html" method="get">
@@ -128,8 +140,8 @@
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on May 29, 2019.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Jul 28, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

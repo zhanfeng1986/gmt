@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>makecpt &#8212; GMT 6.0.0_6a82a05_2019.05.28 documentation</title>
+    <title>makecpt &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -39,9 +39,9 @@
         <li class="right" >
           <a href="M.html" title="M"
              accesskey="P">previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="M.html" accesskey="U">M</a> &#187;</li>
 <li class="right">
@@ -75,8 +75,11 @@
 [ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong>[<em>nlevels</em>] ]
 [ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong>[<strong>R</strong>|<strong>r</strong>|<strong>h</strong>|<strong>c</strong>][<strong>+c</strong>]]
 [ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>zlo</em>/<em>zhi</em> ]
-[ <a class="reference internal" href="#i"><span> <strong>-I</strong></span></a></strong>[<strong>c</strong>][<strong>z</strong>] ] [ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong> ]
-[ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong> ] [ <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong> ]
+[ <a class="reference internal" href="#h"><span> <strong>-H</strong></span></a></strong> ]
+[ <a class="reference internal" href="#i"><span> <strong>-I</strong></span></a></strong>[<strong>c</strong>][<strong>z</strong>] ]
+[ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong> ]
+[ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong> ]
+[ <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong> ]
 [ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>mode</em> ]
 [ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong>[<em>min</em>/<em>max</em>/<em>inc</em>[<strong>+n</strong>]|<em>file</em>|<em>list</em>] ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
@@ -91,7 +94,9 @@
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>makecpt</strong> is a module that will help you make static color palette tables
-(CPTs). You define an equidistant set of contour intervals or pass
+(CPTs). In classic mode we write the CMT to standard output, while under
+modern mode we simply save the CPT as the current session CPT (but see <strong>-H</strong>).
+You define an equidistant set of contour intervals or pass
 your own z-table or list, and create a new CPT based on an existing master (dynamic)
 CPT. The resulting CPT can be reversed relative to the master
 cpt, and can be made continuous or discrete.  For color tables beyond the
@@ -168,6 +173,12 @@ append <strong>+c</strong> to write discrete palettes in categorical format.</dd
 are to <em>zlo</em> and <em>zhi</em>.  If one of these equal NaN then
 we leave that end of the CPT alone.  The truncation takes place
 before any resampling. See also <a class="reference internal" href="GMT_Docs_classic.html#manipulating-cpts"><span class="std std-ref">Manipulating CPTs</span></a></dd>
+</dl>
+<dl class="docutils" id="h">
+<dt><strong>-H</strong></dt>
+<dd>Modern mode only: Write the CPT to standard output as well [Default saves
+the CPT as the session current CPT]. Required for scripts used to make
+animations via <a class="reference internal" href="movie.html"><span class="doc">movie</span></a> where we must pass named CPT files.</dd>
 </dl>
 <dl class="docutils" id="i">
 <dt><strong>-I</strong>[<strong>c</strong>][<strong>z</strong>]</dt>
@@ -251,8 +262,8 @@ range <em>z_min</em>/<em>z_max</em>.</dd>
 <dd>Replace input columns that equal <em>nodata</em> with NaN.  </dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>] <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select input columns and transformations (0 is first column).</dd>
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select input columns and transformations (0 is first column, <em>t</em> is trailing text, append <em>word</em> to read one word only).</dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-^</strong> or just <strong>-</strong></dt>
@@ -464,9 +475,9 @@ directory.</p>
         <li class="right" >
           <a href="M.html" title="M"
              >previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="M.html" >M</a> &#187;</li>
 <li class="right">
@@ -484,8 +495,8 @@ directory.</p>
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on May 29, 2019.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Jul 28, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>(48) Line networks, map embellishments, and curved titles &#8212; GMT 6.0.0_6a82a05_2019.05.28 documentation</title>
+    <title>(48) Line networks, map embellishments, and curved titles &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -39,9 +39,9 @@
         <li class="right" >
           <a href="ex47.html" title="(47) Linear regression using different norms and types"
              accesskey="P">previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" accesskey="U">The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -104,8 +104,8 @@ gmt psxy -R -J -O -K -SW2000k/250k+a250k+r15 -W0.5p -Gwhite@40 airports.txt &gt;
 gmt pscoast -R -J -Gblack -A500 -O -K -Bafg &gt;&gt; <span class="nv">$ps</span>
 <span class="c1"># Then place custom labels.</span>
 <span class="k">while</span> <span class="nb">read</span> lon lat az1 az2 label just off<span class="p">;</span> <span class="k">do</span>
-	<span class="nb">echo</span> <span class="nv">$lon</span> <span class="nv">$lat</span> <span class="nv">$label</span> <span class="p">|</span> gmt pstext -Rg -JG205/-10/7i -O -K -DJ<span class="si">${</span><span class="nv">off</span><span class="si">}</span>+v0.5p,white -F+f16p+j<span class="si">${</span><span class="nv">just</span><span class="si">}</span> -N &gt;&gt; <span class="nv">$ps</span>
-	<span class="nb">echo</span> <span class="nv">$lon</span> <span class="nv">$lat</span> <span class="nv">$label</span> <span class="p">|</span> gmt pstext -Rg -JG205/-10/7i -O -K -DJ<span class="si">${</span><span class="nv">off</span><span class="si">}</span>+v0.25p -F+f16p+j<span class="si">${</span><span class="nv">just</span><span class="si">}</span> -N -Gwhite -W0.25p -C+tO &gt;&gt; <span class="nv">$ps</span>
+	<span class="nb">echo</span> <span class="nv">$lon</span> <span class="nv">$lat</span> <span class="nv">$label</span> <span class="p">|</span> gmt pstext -R -J -O -K -DJ<span class="si">${</span><span class="nv">off</span><span class="si">}</span>+v0.5p,white -F+f16p+j<span class="si">${</span><span class="nv">just</span><span class="si">}</span> -N &gt;&gt; <span class="nv">$ps</span>
+	<span class="nb">echo</span> <span class="nv">$lon</span> <span class="nv">$lat</span> <span class="nv">$label</span> <span class="p">|</span> gmt pstext -R -J -O -K -DJ<span class="si">${</span><span class="nv">off</span><span class="si">}</span>+v0.25p -F+f16p+j<span class="si">${</span><span class="nv">just</span><span class="si">}</span> -N -Gwhite -W0.25p -C+tO &gt;&gt; <span class="nv">$ps</span>
 <span class="k">done</span> &lt; airports.txt
 <span class="c1"># Plot trimmed lines and overlay airport locations</span>
 gmt psxy airports.txt -R -J -O -K -Fn -W1.5p+o250k+v0.2i+gred+h0.5 &gt;&gt; <span class="nv">$ps</span>
@@ -158,9 +158,9 @@ rm -f airports.txt g.cpt t.cpt near_area.txt path.txt
         <li class="right" >
           <a href="ex47.html" title="(47) Linear regression using different norms and types"
              >previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" >The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -178,8 +178,8 @@ rm -f airports.txt g.cpt t.cpt near_area.txt path.txt
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on May 29, 2019.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Jul 28, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

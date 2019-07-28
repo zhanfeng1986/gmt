@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>(31) Using non-default fonts in PostScript &#8212; GMT 6.0.0_6a82a05_2019.05.28 documentation</title>
+    <title>(31) Using non-default fonts in PostScript &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -39,9 +39,9 @@
         <li class="right" >
           <a href="ex30.html" title="(30) Trigonometric functions plotted in graph mode"
              accesskey="P">previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" accesskey="U">The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -148,12 +148,12 @@ cat <span class="s">&lt;&lt; EOF &gt; legend.txt</span>
 <span class="s">S 0.15c c 0.15c 196/80/80 1.25p 0.5c &gt; 1 Million inhabitants</span>
 <span class="s">N 1</span>
 <span class="s">G 0.15c</span>
-<span class="s">L 8p,LinBiolinumOB L Population in Millions </span>
+<span class="s">L 8p,LinBiolinumOB L Population in Millions</span>
 <span class="s">N 6</span>
 <span class="s">EOF</span>
 
 <span class="c1"># append city names and population to legend</span>
-<span class="nv">$AWK</span> <span class="s1">&#39;BEGIN {FS=&quot;,&quot;; f=&quot;L 8 LinBiolinumO L&quot;}</span>
+<span class="nv">$AWK</span> <span class="s1">&#39;BEGIN {FS=&quot;,&quot;; f=&quot;L 8p,LinBiolinumO L&quot;}</span>
 <span class="s1">  $4 &gt; 1000000 {printf &quot;%s %s:\n%s %.2f\n&quot;, f, $3, f, $4/1e6}&#39;</span> <span class="se">\</span>
   <span class="nv">$capitals</span> &gt;&gt; legend.txt
 
@@ -232,9 +232,9 @@ rm -f gmt.history gmt.conf PSL_custom_fonts.txt legend.txt ex31CropNoLogo.eps
         <li class="right" >
           <a href="ex30.html" title="(30) Trigonometric functions plotted in graph mode"
              >previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" >The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -252,8 +252,8 @@ rm -f gmt.history gmt.conf PSL_custom_fonts.txt legend.txt ex31CropNoLogo.eps
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on May 29, 2019.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Jul 28, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

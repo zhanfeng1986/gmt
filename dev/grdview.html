@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>grdview &#8212; GMT 6.0.0_6a82a05_2019.05.28 documentation</title>
+    <title>grdview &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -39,9 +39,9 @@
         <li class="right" >
           <a href="grdvector.html" title="grdvector"
              accesskey="P">previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="PS.html" accesskey="U">Modern Mode Mapping</a> &#187;</li>
 <li class="right">
@@ -130,9 +130,11 @@ GRID FILE FORMAT below.)</dd>
 <strong>-Qi</strong>). For <strong>-Qs</strong>: You can specify that you want to skip a
 z-slice by setting the red r/g/b component to -; to use a pattern give red =
 <strong>P|p</strong><em>pattern</em>[<strong>+b</strong><em>color</em>][<strong>+f</strong><em>color</em>][<strong>+r</strong><em>dpi</em>].
-Alternatively, supply the name of a GMT color master dynamic CPT [rainbow] to
+Alternatively, supply the name of a GMT color master dynamic CPT [rainbow, but
+geo for &#64;earth_relief and srtm for &#64;srtm_relief data] to
 automatically determine a continuous CPT from
-the grid’s z-range; you may round up/down the z-range by adding <strong>+i</strong><em>zinc</em>..</dd>
+the grid’s z-range; you may round up/down the z-range by adding <strong>+i</strong><em>zinc</em>.
+If no argument is given to <strong>-C</strong> then under modern mode we select the current CPT.</dd>
 </dl>
 <dl class="docutils" id="g">
 <dt><a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>drapegrid</em> | <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>grd_r</em> <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>grd_g</em> <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>grd_b</em></dt>
@@ -396,9 +398,9 @@ variations within polygons by using scanline conversion to image the polygons.</
         <li class="right" >
           <a href="grdvector.html" title="grdvector"
              >previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="PS.html" >Modern Mode Mapping</a> &#187;</li>
 <li class="right">
@@ -416,8 +418,8 @@ variations within polygons by using scanline conversion to image the polygons.</
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on May 29, 2019.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Jul 28, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

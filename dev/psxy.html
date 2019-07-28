@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>psxy &#8212; GMT 6.0.0_6a82a05_2019.05.28 documentation</title>
+    <title>psxy &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -39,9 +39,9 @@
         <li class="right" >
           <a href="psmask.html" title="psmask"
              accesskey="P">previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="PS_classic.html" accesskey="U">Classic Mode Mapping</a> &#187;</li>
 <li class="right">
@@ -73,7 +73,8 @@
 <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>]
 [ <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong>[<strong>m</strong>|<strong>p</strong>|<strong>x</strong>|<strong>y</strong>] ]
 [ <a class="reference internal" href="#b"><span> <strong>-B</strong></span></a></strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> ]
-[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>cpt</em> ] [ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>dx</em>/<em>dy</em> ]
+[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>cpt</em> ]
+[ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>dx</em>/<em>dy</em> ]
 [ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong>[<strong>x</strong>|<strong>y</strong>|<strong>X</strong>|<strong>Y</strong>][<strong>+a</strong>][<strong>+cl</strong>|<strong>f</strong>][<strong>+n</strong>][<strong>+w</strong><em>cap</em>][<strong>+p</strong><em>pen</em>] ]
 [ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong>[<strong>c</strong>|<strong>n</strong>|<strong>r</strong>][<strong>a</strong>|<strong>f</strong>|<strong>s</strong>|<strong>r</strong>|<em>refpoint</em>] ]
 [ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>fill</em> ]
@@ -89,6 +90,7 @@
 [ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong>[<em>pen</em>][<em>attr</em>] ]
 [ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] ]
 [ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] ]
+[ <a class="reference internal" href="#z"><span> <strong>-Z</strong></span></a></strong>[<strong>l</strong>|<strong>f</strong>] <em>value</em> ]
 [ <strong>-a</strong><a class="reference internal" href="gmt.html#aspatial-full"><span class="std std-ref">flags</span></a> ]
 [ <strong>-bi</strong><a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">binary</span></a> ]
 [ <strong>-di</strong><a class="reference internal" href="gmt.html#di-full"><span class="std std-ref">nodata</span></a> ]
@@ -159,7 +161,8 @@ shifted over by one column (optional size would be 4th rather than 3rd
 field, etc.). If <strong>-S</strong> is not set, then it expects the user to
 supply a multisegment file where each segment header contains a
 <strong>-Z</strong><em>val</em> string. The <em>val</em> will control the color of the line or
-polygon (if <strong>-L</strong> is set) via the CPT.</dd>
+polygon (if <strong>-L</strong> is set) via the CPT.  If modern mode and no argument is given
+then we select the current CPT.</dd>
 </dl>
 <dl class="docutils" id="d">
 <dt><strong>-D</strong><em>dx</em>/<em>dy</em></dt>
@@ -472,7 +475,7 @@ specify the color [Default is <a class="reference internal" href="gmt.conf.html#
 <dd>Sets label justification [Default is MC]. Ignored when
 <strong>-SqN</strong>|<strong>n</strong>+|-1 is used.</dd>
 <dt><strong>+l</strong><em>label</em></dt>
-<dd>Sets the constant label text.</dd>
+<dd>Sets the constant label text. Warning: if the text length exceeds the line length then no text will appear.</dd>
 <dt><strong>+L</strong><em>flag</em></dt>
 <dd><p class="first">Sets the label text according to the specified flag:</p>
 <p class="last"><strong>+Lh</strong>
@@ -721,6 +724,12 @@ See the <a class="reference internal" href="#vec-attributes"><span class="std st
 <dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Shift plot origin.</dd>
 </dl>
+<dl class="docutils" id="z">
+<dt><strong>-Z</strong>[<strong>l</strong>|<strong>f</strong>] <em>value</em></dt>
+<dd>Instead of specifying a symbol or polygon fill and outline color via <strong>-G</strong> and <strong>-W</strong>,
+give both a <em>level</em> value via <strong>-Z</strong> and a color lookup table via <strong>-C</strong>.  To just set the
+fill or outline, use <strong>-Zf</strong> or <strong>-Zl</strong>, respectively.</dd>
+</dl>
 <dl class="docutils">
 <dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Select native binary format for primary input. [Default is the required number of columns given the chosen settings].</dd>
@@ -750,8 +759,8 @@ See the <a class="reference internal" href="#vec-attributes"><span class="std st
 <dd>Skip or produce header record(s).  </dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>] <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select input columns and transformations (0 is first column).</dd>
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select input columns and transformations (0 is first column, <em>t</em> is trailing text, append <em>word</em> to read one word only).</dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="gmt.html#colon-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -824,7 +833,8 @@ half-sides of this head [both sides].  Cannot be combined with <strong>+b</stron
 <p><strong>+n</strong><em>norm</em> scales down vector attributes (pen thickness, head size)
 with decreasing length, where vector plot lengths shorter than <em>norm</em> will have
 their attributes scaled by length/<em>norm</em> [arrow attributes remains
-invariant to length].</p>
+invariant to length]. For Cartesian vectors specify a length in plot units, while
+for geovectors specify a length in km.</p>
 <p><strong>+o</strong>[<em>plon</em>/<em>plat</em>] specifies the oblique pole for the great or
 small circles.  Only needed for great circles if <strong>+q</strong> is given. If no
 pole is appended then we default to the north pole.</p>
@@ -891,7 +901,13 @@ the third using the CPT rgb.cpt on a linear map, use</p>
 <p>To plot the file trench.txt on a Mercator map, with white triangles with
 sides 0.25 inch on the left side of the line, spaced every 0.8 inch, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psxy</span> <span class="n">trench</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">R150</span><span class="o">/</span><span class="mi">200</span><span class="o">/</span><span class="mi">20</span><span class="o">/</span><span class="mi">50</span> <span class="o">-</span><span class="n">Jm0</span><span class="o">.</span><span class="mi">15</span><span class="n">i</span> <span class="o">-</span><span class="n">Sf0</span><span class="o">.</span><span class="mi">8</span><span class="n">i</span><span class="o">/</span><span class="mf">0.1</span><span class="n">i</span><span class="o">+</span><span class="n">l</span><span class="o">+</span><span class="n">t</span> <span class="o">-</span><span class="n">Gwhite</span> <span class="o">-</span><span class="n">W</span> <span class="o">-</span><span class="n">B10</span> <span class="o">&gt;</span> <span class="nb">map</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psxy</span> <span class="n">trench</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">R150</span><span class="o">/</span><span class="mi">200</span><span class="o">/</span><span class="mi">20</span><span class="o">/</span><span class="mi">50</span> <span class="o">-</span><span class="n">Jm0</span><span class="o">.</span><span class="mi">15</span><span class="n">i</span> <span class="o">-</span><span class="n">Sf0</span><span class="o">.</span><span class="mi">8</span><span class="n">i</span><span class="o">/</span><span class="mf">0.1</span><span class="n">i</span><span class="o">+</span><span class="n">l</span><span class="o">+</span><span class="n">t</span> <span class="o">-</span><span class="n">Gwhite</span> <span class="o">-</span><span class="n">W</span> <span class="o">-</span><span class="n">Baf</span> <span class="o">&gt;</span> <span class="nb">map</span><span class="o">.</span><span class="n">ps</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To plot a point with color dictated by the <em>t.cpt</em> file for the <em>z</em>-value 65, try</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="mi">175</span> <span class="mi">30</span> <span class="o">|</span> <span class="n">gmt</span> <span class="n">psxy</span> <span class="o">-</span><span class="n">R150</span><span class="o">/</span><span class="mi">200</span><span class="o">/</span><span class="mi">20</span><span class="o">/</span><span class="mi">50</span> <span class="o">-</span><span class="n">JX15c</span> <span class="o">-</span><span class="n">Sc0</span><span class="o">.</span><span class="mi">5</span><span class="n">c</span> <span class="o">-</span><span class="n">Zf65</span> <span class="o">-</span><span class="n">Ct</span><span class="o">.</span><span class="n">cpt</span> <span class="o">&gt;</span> <span class="nb">map</span><span class="o">.</span><span class="n">ps</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -1057,9 +1073,9 @@ doctored polygons may be misrepresented in GMT.</p>
         <li class="right" >
           <a href="psmask.html" title="psmask"
              >previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="PS_classic.html" >Classic Mode Mapping</a> &#187;</li>
 <li class="right">
@@ -1077,8 +1093,8 @@ doctored polygons may be misrepresented in GMT.</p>
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on May 29, 2019.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Jul 28, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

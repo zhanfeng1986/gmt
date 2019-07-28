@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>(3) Spectral estimation and xy-plots &#8212; GMT 6.0.0_6a82a05_2019.05.28 documentation</title>
+    <title>(3) Spectral estimation and xy-plots &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -39,9 +39,9 @@
         <li class="right" >
           <a href="ex02.html" title="(2) Image presentations"
              accesskey="P">previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" accesskey="U">The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -103,7 +103,7 @@ specify positions in inches directly. Thus, the complete automated script reads:
 <span class="c1"># Purpose:	Resample track data, do spectral analysis, and plot</span>
 <span class="c1"># GMT modules:	filter1d, fitcircle, gmtconvert, gmtinfo, project, sample1d</span>
 <span class="c1"># GMT modules:	spectrum1d, trend1d, pshistogram, psxy, pstext</span>
-<span class="c1"># Unix progs:	echo, rm</span>
+<span class="c1"># Unix progs:	rm</span>
 <span class="c1">#</span>
 <span class="c1"># This example begins with data files &quot;ship_03.txt&quot; and &quot;sat_03.txt&quot; which</span>
 <span class="c1"># are measurements of a quantity &quot;g&quot; (a &quot;gravity anomaly&quot; which is an</span>
@@ -177,13 +177,13 @@ gmt math -T<span class="nv">$bounds</span>/1 -N1/0 <span class="nv">T</span> <sp
 <span class="c1">#</span>
 <span class="c1"># Now we can resample the gmt projected satellite data:</span>
 <span class="c1">#</span>
-gmt sample1d sat.pg -Nsamp.x &gt; samp_sat.pg
+gmt sample1d sat.pg -Tsamp.x &gt; samp_sat.pg
 <span class="c1">#</span>
 <span class="c1"># For reasons above, we use gmt filter1d to pre-treat the ship data.  We also need to sample</span>
 <span class="c1"># it because of the gaps &gt; 1 km we found.  So we use gmt filter1d | gmt sample1d.  We also</span>
 <span class="c1"># use the -E on gmt filter1d to use the data all the way out to bounds :</span>
 <span class="c1">#</span>
-gmt filter1d ship.pg -Fm1 -T<span class="nv">$bounds</span>/1 -E <span class="p">|</span> gmt sample1d -Nsamp.x &gt; samp_ship.pg
+gmt filter1d ship.pg -Fm1 -T<span class="nv">$bounds</span>/1 -E <span class="p">|</span> gmt sample1d -Tsamp.x &gt; samp_ship.pg
 <span class="c1">#</span>
 <span class="c1"># Now we plot them again to see if we have done the right thing:</span>
 <span class="c1">#</span>
@@ -205,13 +205,12 @@ gmt convert -A samp_ship.pg samp_sat.pg -o1,3 <span class="p">|</span> gmt spect
 gmt psxy spectrum.coh -Bxa1f3p+l<span class="s2">&quot;Wavelength (km)&quot;</span> -Bya0.25f0.05+l<span class="s2">&quot;Coherency@+2@+&quot;</span> <span class="se">\</span>
 	-BWeSn+g240/255/240 -JX-4il/3.75i -R1/1000/0/1 -P -K -X2.5i -Sc0.07i -Gpurple <span class="se">\</span>
 	-Ey+p0.5p -Y1.5i &gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="s2">&quot;Coherency@+2@+&quot;</span> <span class="p">|</span> gmt pstext -R -J -F+cTR+f18p,Helvetica-Bold -Dj0.1i <span class="se">\</span>
-	-O -K &gt;&gt; <span class="nv">$ps</span>
+gmt pstext -R -J -F+cTR+f18p,Helvetica-Bold+tCoherency@+2@+ -Dj0.1i -O -K &gt;&gt; <span class="nv">$ps</span>
 gmt psxy spectrum.xpower -Bxa1f3p -Bya1f3p+l<span class="s2">&quot;Power (mGal@+2@+km)&quot;</span> <span class="se">\</span>
 	-BWeSn+t<span class="s2">&quot;Ship and Satellite Gravity&quot;</span>+g240/255/240 <span class="se">\</span>
 	-Gred -ST0.07i -O -R1/1000/0.1/10000 -JX-4il/3.75il -Y4.2i -K -Ey+p0.5p &gt;&gt; <span class="nv">$ps</span>
 gmt psxy spectrum.ypower -R -JX -O -K -Gblue -Sc0.07i -Ey+p0.5p &gt;&gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="s2">&quot;Input Power&quot;</span> <span class="p">|</span> gmt pstext -R0/4/0/3.75 -Jx1i -F+cTR+f18p,Helvetica-Bold -Dj0.1i -O -K &gt;&gt; <span class="nv">$ps</span>
+gmt pstext -R0/4/0/3.75 -Jx1i -F+cTR+f18p,Helvetica-Bold+t<span class="s2">&quot;Input Power&quot;</span> -Dj0.1i -O -K &gt;&gt; <span class="nv">$ps</span>
 gmt pslegend -R -J -O -DjBL+w1.2i+o0.25i -F+gwhite+pthicker --FONT_ANNOT_PRIMARY<span class="o">=</span>14p,Helvetica-Bold <span class="s">&lt;&lt; EOF &gt;&gt; $ps</span>
 <span class="s">S 0.1i T 0.07i red - 0.3i Ship</span>
 <span class="s">S 0.1i c 0.07i blue - 0.3i Satellite</span>
@@ -236,9 +235,9 @@ gmt psxy <span class="nv">$R</span> -JX8i/1.1i -O -Y4.25i -Bxf100 -Bya0.5f0.1+l<
 <span class="c1"># and this time we also use gmt trend1d to return the residual from the model fit (the </span>
 <span class="c1"># de-trended data):</span>
 gmt trend1d -Fxrw -Np1+r samp_ship.pg <span class="p">|</span> gmt <span class="k">select</span> -Z0/0.6 -o0,1 -Iz <span class="se">\</span>
-	<span class="p">|</span> gmt sample1d -Nsamp.x &gt; samp2_ship.pg
+	<span class="p">|</span> gmt sample1d -Tsamp.x &gt; samp2_ship.pg
 gmt trend1d -Fxrw -Np1+r samp_sat.pg  <span class="p">|</span> gmt <span class="k">select</span> -Z0/0.6 -o0,1 -Iz <span class="se">\</span>
-	<span class="p">|</span> gmt sample1d -Nsamp.x &gt; samp2_sat.pg
+	<span class="p">|</span> gmt sample1d -Tsamp.x &gt; samp2_sat.pg
 <span class="c1">#</span>
 <span class="c1"># We plot these to see how they look:</span>
 <span class="c1">#</span>
@@ -257,14 +256,12 @@ gmt convert -A samp2_ship.pg samp2_sat.pg -o1,3 <span class="p">|</span> gmt spe
 gmt psxy spectrum.coh -Bxa1f3p+l<span class="s2">&quot;Wavelength (km)&quot;</span> -Bya0.25f0.05+l<span class="s2">&quot;Coherency@+2@+&quot;</span> -BWeSn <span class="se">\</span>
 	-JX-4il/3.75i -R1/1000/0/1 -U<span class="s2">&quot;Example 3f in Cookbook&quot;</span>+o-2.25i/-1.25i -P -K -X2.5i <span class="se">\</span>
 	-Sc0.07i -Gblack -Ey+p0.5p -Y1.5i &gt; example_03f.ps
-<span class="nb">echo</span> <span class="s2">&quot;Coherency@+2@+&quot;</span> <span class="p">|</span> gmt pstext -R -J -F+cTR+f18p,Helvetica-Bold -Dj0.1i <span class="se">\</span>
-	-O -K -Wthicker -C0.1i &gt;&gt; example_03f.ps
+gmt pstext -R -J -F+cTR+f18p,Helvetica-Bold+t<span class="s2">&quot;Coherency@+2@+&quot;</span> -Dj0.1i -O -K -Wthicker -C0.1i &gt;&gt; example_03f.ps
 gmt psxy -Bxa1f3p -Bya1f3p+l<span class="s2">&quot;Power (mGal@+2@+km)&quot;</span> -BWeSn+t<span class="s2">&quot;Ship and Satellite Gravity&quot;</span> <span class="se">\</span>
 	spectrum.xpower -ST0.07i -O -R1/1000/0.1/10000 -JX-4il/3.75il -Y4.2i -K -Ey+p0.5p <span class="se">\</span>
 	&gt;&gt; example_03f.ps
 gmt psxy spectrum.ypower -R -J -O -K -Gblack -Sc0.07i -Ey+p0.5p &gt;&gt; example_03f.ps
-<span class="nb">echo</span> <span class="s2">&quot;Input Power&quot;</span> <span class="p">|</span> gmt pstext -R -J -F+cTR+f18p,Helvetica-Bold -Dj0.1i <span class="se">\</span>
-	-O -K -Wthicker -C0.1i &gt;&gt; example_03f.ps
+gmt pstext -R -J -F+cTR+f18p,Helvetica-Bold+t<span class="s2">&quot;Input Power&quot;</span> -Dj0.1i -O -K -Wthicker -C0.1i &gt;&gt; example_03f.ps
 gmt pslegend -R0/4/0/3.75 -Jx -O -DjBL+w1.2i+o0.25i -F+glightgray+pthicker <span class="se">\</span>
 	--FONT_ANNOT_PRIMARY<span class="o">=</span>14p,Helvetica-Bold <span class="s">&lt;&lt; EOF &gt;&gt; example_03f.ps</span>
 <span class="s">S 0.1i T 0.07i black - 0.3i Ship</span>
@@ -319,9 +316,9 @@ improves dramatically for wavelengths &gt; 20 km.</p>
         <li class="right" >
           <a href="ex02.html" title="(2) Image presentations"
              >previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" >The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -339,8 +336,8 @@ improves dramatically for wavelengths &gt; 20 km.</p>
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on May 29, 2019.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Jul 28, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

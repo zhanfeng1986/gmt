@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>docs &#8212; GMT 6.0.0_6a82a05_2019.05.28 documentation</title>
+    <title>docs &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -39,9 +39,9 @@
         <li class="right" >
           <a href="end.html" title="end"
              accesskey="P">previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
 <li class="right">
 <form class="search" accept-charset="UTF-8" action="search.html" method="get">
@@ -65,10 +65,10 @@
             
   <div class="section" id="docs">
 <h1>docs<a class="headerlink" href="#docs" title="Permalink to this headline">¶</a></h1>
-<p id="index-0">Show the HTML documentation for selected module</p>
+<p id="index-0">Show the HTML documentation for selected module or display plots</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<p><strong>gmt docs</strong> [ <strong>-Q</strong> ] <em>module-name</em> [<em>-option</em>]</p>
+<p><strong>gmt docs</strong> [ <strong>-Q</strong> ] [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ] [ <em>module-name</em> [<em>-option</em>] ] [ <em>figs</em> ]</p>
 <p><strong>Note:</strong> No space is allowed between the option flag and the associated arguments.</p>
 </div>
 <div class="section" id="description">
@@ -77,7 +77,7 @@
 For the time being, only modern mode module names are displayed. That is, if user asks for
 <em>gmt docs psxy</em> she will see the (near-equivalent) <em>plot</em> documentation. Besides the modules names, the special
 forms <em>cookbook</em>, <em>gallery</em>, <em>gmt.conf</em>, <em>api</em> and <em>tutorial</em> are also accepted.</p>
-<p>However, <strong>docs</strong> can also be used to open local files such as PDF or image files or even
+<p>However, <strong>docs</strong> can also be used to open local files (<em>figs</em>) such as PDF or image files or even
 web link addresses.</p>
 </div>
 <div class="section" id="optional-arguments">
@@ -85,8 +85,13 @@ web link addresses.</p>
 <dl class="docutils">
 <dt><strong>-Q</strong></dt>
 <dd>This option means we are doing a “dry-run” and simply want the final URL to be
-printed to standard output.  No browser command will take place. This is useful
-if you are working remotely on a server and do not wish to launch a GUI browser.</dd>
+printed to standard output.  No file open command will take place. This is useful
+if you are working remotely on a server and do not wish to launch a GUI browser.
+If used, <strong>-Q</strong> must be the first option to <strong>docs</strong>.</dd>
+</dl>
+<dl class="docutils" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select verbosity level [c].  </dd>
 </dl>
 </div>
 <div class="section" id="optional-module-arguments">
@@ -133,6 +138,12 @@ We then display the <em>module</em> documentation positioned at that specific op
 <p>To display the URL to the surface man page,.run</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">docs</span> <span class="o">-</span><span class="n">Q</span> <span class="n">surface</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>To open all png files in current directory and the documentation for <a class="reference internal" href="movie.html"><span class="doc">movie</span></a>, run</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">docs</span> <span class="n">movie</span> <span class="o">*.</span><span class="n">png</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -197,9 +208,9 @@ We then display the <em>module</em> documentation positioned at that specific op
         <li class="right" >
           <a href="end.html" title="end"
              >previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
 <li class="right">
 <form class="search" accept-charset="UTF-8" action="search.html" method="get">
@@ -216,8 +227,8 @@ We then display the <em>module</em> documentation positioned at that specific op
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on May 29, 2019.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Jul 28, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

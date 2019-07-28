@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>1. Introduction &#8212; GMT 6.0.0_6a82a05_2019.05.28 documentation</title>
+    <title>1. Introduction &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -39,9 +39,9 @@
         <li class="right" >
           <a href="api.html" title="GMT_API"
              accesskey="P">previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="api.html" accesskey="U">GMT_API</a> &#187;</li>
 <li class="right">
@@ -805,70 +805,73 @@ any of them to see the full syntax of each function.</p>
 <tr class="row-even"><td><a class="reference internal" href="#gmt-init-virtualfile">GMT_Init_VirtualFile</a></td>
 <td>Reset a virtual file for reuse</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-make-option">GMT_Make_Option</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#gmt-inquire-virtualfile">GMT_Inquire_VirtualFile</a></td>
+<td>Get family of a virtual file</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#gmt-make-option">GMT_Make_Option</a></td>
 <td>Create an option structure</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-message">GMT_Message</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#gmt-message">GMT_Message</a></td>
 <td>Issue a message, optionally with time stamp</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-open-virtualfile">GMT_Open_VirtualFile</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#gmt-open-virtualfile">GMT_Open_VirtualFile</a></td>
 <td>Select memory location as input or output for module</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-option">GMT_Option</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#gmt-option">GMT_Option</a></td>
 <td>Explain one or more GMT common options</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-parse-common">GMT_Parse_Common</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#gmt-parse-common">GMT_Parse_Common</a></td>
 <td>Parse the GMT common options</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-put-matrix">GMT_Put_Matrix</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#gmt-put-matrix">GMT_Put_Matrix</a></td>
 <td>Put user matrix into container</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-put-record">GMT_Put_Record</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#gmt-put-record">GMT_Put_Record</a></td>
 <td>Export a data record</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-put-row">GMT_Put_Row</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#gmt-put-row">GMT_Put_Row</a></td>
 <td>Export a grid row</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-put-strings">GMT_Put_Strings</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#gmt-put-strings">GMT_Put_Strings</a></td>
 <td>Put user strings into vector or matrix container</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-put-vector">GMT_Put_Vector</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#gmt-put-vector">GMT_Put_Vector</a></td>
 <td>Put user vector into container</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-read-data">GMT_Read_Data</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#gmt-read-data">GMT_Read_Data</a></td>
 <td>Import a data resource or file</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-read-group">GMT_Read_Group</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#gmt-read-group">GMT_Read_Group</a></td>
 <td>Import a group of data resources or files</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-read-virtualfile">GMT_Read_VirtualFile</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#gmt-read-virtualfile">GMT_Read_VirtualFile</a></td>
 <td>Access the output from a module via memory</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-register-io">GMT_Register_IO</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#gmt-register-io">GMT_Register_IO</a></td>
 <td>Register a resources for i/o</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-report">GMT_Report</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#gmt-report">GMT_Report</a></td>
 <td>Issue a message contingent upon verbosity level</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-set-default">GMT_Set_Default</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#gmt-set-default">GMT_Set_Default</a></td>
 <td>Set one of the API or GMT default settings</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-set-comment">GMT_Set_Comment</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#gmt-set-comment">GMT_Set_Comment</a></td>
 <td>Assign a comment to a data resource</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-set-columns">GMT_Set_Columns</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#gmt-set-columns">GMT_Set_Columns</a></td>
 <td>Specify how many columns to use for rec-by-rec i/o</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-set-geometry">GMT_Set_Geometry</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#gmt-set-geometry">GMT_Set_Geometry</a></td>
 <td>Specify data geometry for rec-by-rec i/o</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-set-index">GMT_Set_Index</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#gmt-set-index">GMT_Set_Index</a></td>
 <td>Convert row, col into a grid or image index</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-update-option">GMT_Update_Option</a></td>
+<tr class="row-even"><td><a class="reference internal" href="#gmt-update-option">GMT_Update_Option</a></td>
 <td>Modify an option structure</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-write-data">GMT_Write_Data</a></td>
+<tr class="row-odd"><td><a class="reference internal" href="#gmt-write-data">GMT_Write_Data</a></td>
 <td>Export a data resource</td>
 </tr>
 </tbody>
@@ -1690,8 +1693,20 @@ the output filename you obtained from <a class="reference internal" href="#gmt-o
 <p>The function requires the output filename via <code class="docutils literal notranslate"><span class="pre">filename</span></code> and then returns
 the data object, similar to what <a class="reference internal" href="#gmt-read-data">GMT_Read_Data</a> does.</p>
 </div>
+<div class="section" id="inquire-a-virtual-file-for-family">
+<h3>3.6.6. Inquire a virtual file for family<a class="headerlink" href="#inquire-a-virtual-file-for-family" title="Permalink to this headline">¶</a></h3>
+<p>If you do not know what family is being represented by a virtual file
+then you should first obtain the family via <a class="reference internal" href="#gmt-inquire-virtualfile">GMT_Inquire_VirtualFile</a>.  The syntax is</p>
+<blockquote id="gmt-inquire-virtualfile">
+<div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">GMT_Inquire_VirtualFile</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">API</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">filename</span><span class="p">);</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>The function requires the virtual file’s <code class="docutils literal notranslate"><span class="pre">filename</span></code> and then returns the
+family of the data object.</p>
+</div>
 <div class="section" id="reset-a-virtual-file-for-reuse">
-<h3>3.6.6. Reset a virtual file for reuse<a class="headerlink" href="#reset-a-virtual-file-for-reuse" title="Permalink to this headline">¶</a></h3>
+<h3>3.6.7. Reset a virtual file for reuse<a class="headerlink" href="#reset-a-virtual-file-for-reuse" title="Permalink to this headline">¶</a></h3>
 <p>Should you need to read a virtual file again then you must first reset
 it to its original state with <a class="reference internal" href="#gmt-init-virtualfile">GMT_Init_VirtualFile</a>.  The syntax is</p>
 <blockquote id="gmt-init-virtualfile">
@@ -1704,7 +1719,7 @@ internal counters (e.g., record numbers and other book-keeping parameters).
 The <code class="docutils literal notranslate"><span class="pre">mode</span></code> is presently not used.</p>
 </div>
 <div class="section" id="close-a-virtual-file">
-<h3>3.6.7. Close a virtual file<a class="headerlink" href="#close-a-virtual-file" title="Permalink to this headline">¶</a></h3>
+<h3>3.6.8. Close a virtual file<a class="headerlink" href="#close-a-virtual-file" title="Permalink to this headline">¶</a></h3>
 <p>Once you have finished using a virtual file you need to close it.
 This will reset its internal settings back to what it was before you
 used it as a virtual file.  The syntax is</p>
@@ -3825,8 +3840,9 @@ own threads.</td></tr>
 <li><a class="reference internal" href="#using-user-arrays-in-gmt">3.6.3. Using user arrays in GMT</a></li>
 <li><a class="reference internal" href="#open-a-virtual-file-memory-location">3.6.4. Open a virtual file (memory location)</a></li>
 <li><a class="reference internal" href="#import-from-a-virtual-file">3.6.5. Import from a virtual file</a></li>
-<li><a class="reference internal" href="#reset-a-virtual-file-for-reuse">3.6.6. Reset a virtual file for reuse</a></li>
-<li><a class="reference internal" href="#close-a-virtual-file">3.6.7. Close a virtual file</a></li>
+<li><a class="reference internal" href="#inquire-a-virtual-file-for-family">3.6.6. Inquire a virtual file for family</a></li>
+<li><a class="reference internal" href="#reset-a-virtual-file-for-reuse">3.6.7. Reset a virtual file for reuse</a></li>
+<li><a class="reference internal" href="#close-a-virtual-file">3.6.8. Close a virtual file</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#record-by-record-input">3.7. Record-by-record input</a><ul>
@@ -3977,9 +3993,9 @@ own threads.</td></tr>
         <li class="right" >
           <a href="api.html" title="GMT_API"
              >previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="api.html" >GMT_API</a> &#187;</li>
 <li class="right">
@@ -3997,8 +4013,8 @@ own threads.</td></tr>
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on May 29, 2019.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Jul 28, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

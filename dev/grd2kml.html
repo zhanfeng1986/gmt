@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>grd2kml &#8212; GMT 6.0.0_6a82a05_2019.05.28 documentation</title>
+    <title>grd2kml &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -39,9 +39,9 @@
         <li class="right" >
           <a href="grd2cpt.html" title="grd2cpt"
              accesskey="P">previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="GR.html" accesskey="U">GR</a> &#187;</li>
 <li class="right">
@@ -79,6 +79,7 @@
 [ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong><em>prefix</em> ]
 [ <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong> ]
 [ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>title</em> ]
+[ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong><em>cfile</em>|<em>pen</em> ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
 [ <strong>-f</strong><a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">flags</span></a> ]
 [ <strong>--PAR</strong>=<em>value</em> ]</p>
@@ -94,7 +95,7 @@ filters can be selected as well.
 Optionally, illumination may be added by providing a grid file with
 intensities in the (-1,+1) range or by giving instructions to derive intensities
 from the input data grid automatically (see <strong>-I</strong>). Values outside the (-1,+1) intensity range will be
-clipped. Map colors are specified via a color palette lookup table.</p>
+clipped. Map colors are specified via a color palette lookup table. Contour overlays are optional.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
@@ -140,12 +141,12 @@ to psconvert (same as <strong>-H</strong> option in psconvert) [no sub-pixel smo
 <dl class="docutils" id="i">
 <dt><strong>-I</strong>[<em>intensfile</em>|<em>intensity</em>|<em>modifiers</em>]</dt>
 <dd>Gives the name of a grid file with intensities in the (-1,+1) range,
-or a constant intensity to apply everywhere; this simply affects the
-ambient light.  If just <strong>+</strong> is given then we derive an intensity
-grid from the input data grid <em>grd_z</em> via a call to <a class="reference internal" href="grdgradient.html"><span class="doc">grdgradient</span></a>
-using the arguments <strong>-A</strong>-45 and <strong>-Nt</strong>1 for that module. You can
-append <strong>+a</strong><em>azimuth</em> and <strong>+n</strong><em>args</em> to override those values.  If you want
-more specific intensities then run <a class="reference internal" href="grdgradient.html"><span class="doc">grdgradient</span></a> separately first.
+or a constant intensity to apply everywhere (affects the ambient light).
+Alternatively, derive an intensity grid from the input data grid <em>grid</em>
+via a call to <a class="reference internal" href="grdgradient.html"><span class="doc">grdgradient</span></a>; append <strong>+a</strong><em>azimuth</em> and <strong>+n</strong><em>args</em>
+to specify azimuth and intensity arguments for that module or just give <strong>+d</strong>
+to select the default arguments (<strong>+a</strong>-45<strong>+nt</strong>1). If you want a more
+specific intensity scenario then run <a class="reference internal" href="grdgradient.html"><span class="doc">grdgradient</span></a> separately first.
 [Default is no illumination].</dd>
 </dl>
 <dl class="docutils" id="l">
@@ -171,6 +172,13 @@ feature in PostScript Level 3 (the PS device must support PS Level 3).</dd>
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Select verbosity level [c].  </dd>
 </dl>
+<dl class="docutils" id="w">
+<dt><strong>-W</strong><em>cfile</em>|<em>pen</em></dt>
+<dd>Supply a file with records each holding a contour value and a contour pen.
+We then overlay the selected contour lines on top of the image [no contours].
+If <em>cfile</em> is not a valid file we assume you instead gave a <em>pen</em> and want
+to draw all the contours implied by the <em>cpt</em> in effect.</dd>
+</dl>
 <dl class="docutils">
 <dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Specify data types of input and/or output columns.  </dd>
@@ -188,9 +196,9 @@ illumination angle the automatic illumination can be used instead.</p>
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>To make a quadtree image representation of the large topography grid file ellice_basin.nc, using
 the default tile size, supply automatic shading based on the topography, and use the larger 512x512 tiles,
-supplying a suitable title, try</p>
+supplying a suitable title, and using color masking for unmapped area, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grd2kml</span> <span class="n">ellice_basin</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">I</span><span class="o">+</span> <span class="o">-</span><span class="n">Nellice</span> <span class="o">-</span><span class="n">L512</span> <span class="o">-</span><span class="n">T</span><span class="s2">&quot;Ellice Basin Bathymetry&quot;</span>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grd2kml</span> <span class="n">ellice_basin</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">I</span><span class="o">+</span><span class="n">d</span> <span class="o">-</span><span class="n">Nellice</span> <span class="o">-</span><span class="n">L512</span> <span class="o">-</span><span class="n">Q</span> <span class="o">-</span><span class="n">T</span><span class="s2">&quot;Ellice Basin Bathymetry&quot;</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -258,9 +266,9 @@ supplying a suitable title, try</p>
         <li class="right" >
           <a href="grd2cpt.html" title="grd2cpt"
              >previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="GR.html" >GR</a> &#187;</li>
 <li class="right">
@@ -278,8 +286,8 @@ supplying a suitable title, try</p>
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on May 29, 2019.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Jul 28, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

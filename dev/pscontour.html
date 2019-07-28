@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>pscontour &#8212; GMT 6.0.0_6a82a05_2019.05.28 documentation</title>
+    <title>pscontour &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -39,9 +39,9 @@
         <li class="right" >
           <a href="psscale.html" title="psscale"
              accesskey="P">previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="PS_classic.html" accesskey="U">Classic Mode Mapping</a> &#187;</li>
 <li class="right">
@@ -76,7 +76,7 @@
 [ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>contours</em> ]
 [ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong>[<em>template</em>] ] [ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong><em>indexfile</em> ]
 [ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong>[<strong>d</strong>|<strong>f</strong>|<strong>n</strong>|<strong>l</strong>|<strong>L</strong>|<strong>x</strong>|<strong>X</strong>]<em>params</em> ]
-[ <a class="reference internal" href="#i"><span> <strong>-I</strong></span></a></strong> ] [ <a class="reference internal" href="#j"><span> <strong>-J</strong></span></a></strong><strong>z</strong>|<strong>Z</strong><em>parameters</em> ]
+[ <a class="reference internal" href="#i"><span> <strong>-I</strong></span></a></strong> ]
 [ <a class="reference internal" href="#k"><span> <strong>-K</strong></span></a></strong> ]
 [ <a class="reference internal" href="#l"><span> <strong>-L</strong></span></a></strong><em>pen</em> ] [ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong> ]
 [ <a class="reference internal" href="#o"><span> <strong>-O</strong></span></a></strong> ]
@@ -134,7 +134,7 @@ table file(s) holding a number of data columns. If no tables are given
 then we read from standard input.  </dd>
 </dl>
 <dl class="docutils" id="a">
-<dt><strong>-A</strong>[<strong>-</strong>|*contours*][<em>labelinfo</em>]</dt>
+<dt><strong>-A</strong>[<strong>-</strong>|<em>contours</em>][<em>labelinfo</em>]</dt>
 <dd><em>contours</em> is annotation interval in data units; it is ignored if
 contour levels are given in a file vua <strong>-C</strong>. [Default is no annotations]. Prepend
 <strong>-</strong> to disable all annotations implied by <strong>-C</strong>. To just select a few specific
@@ -229,12 +229,14 @@ C(ontour) OR A(nnotate) in
 col 2. The levels marked C (or c) are contoured, the levels marked A
 (or a) are contoured and annotated. Optionally, a third column may
 be present and contain the fixed annotation angle for this contour
-level.</li>
+level. If so, an optional fourth column may be present and hold a
+contour-specific pen.</li>
 <li>If <em>contours</em> is a string with comma-separated values it is interpreted
 as those specific contours only.  To indicate a single specific contour
 you must append a trailing comma to separate it from a contour interval.
 The <strong>-A</strong> option offers the same list choice so they may be used together
 to plot only specific annotated and non-annotated contours.</li>
+<li>If no argument is given in modern mode then we select the current CPT.</li>
 <li>Otherwise, <em>contours</em> is interpreted as a constant contour interval.</li>
 </ol>
 <p class="last">If a file is given and <strong>-T</strong> is set, then only contours marked with
@@ -331,10 +333,6 @@ label separation in the x-y plane [no limitation].</p>
 <dt><strong>-I</strong></dt>
 <dd>Color the triangles using the CPT.</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-Jz</strong>|<strong>Z</strong><em>parameters</em> <a class="reference internal" href="gmt.html#jz-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set z-axis scaling; same syntax as <strong>-Jx</strong>.</dd>
-</dl>
 <dl class="docutils" id="l">
 <dt><strong>-L</strong><em>pen</em> <a class="reference internal" href="gmt.html#set-pens"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Draw the underlying triangular mesh using the specified pen
@@ -423,8 +421,8 @@ file is applied to the contour annotations.  Select <strong>+c</strong> for both
 <dd>Skip or produce header record(s).  </dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>] <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select input columns and transformations (0 is first column).</dd>
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select input columns and transformations (0 is first column, <em>t</em> is trailing text, append <em>word</em> to read one word only).</dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="gmt.html#colon-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -584,9 +582,9 @@ Geometry (Philadelphia, PA), 124-133, ACM, May 1996.</p>
         <li class="right" >
           <a href="psscale.html" title="psscale"
              >previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="PS_classic.html" >Classic Mode Mapping</a> &#187;</li>
 <li class="right">
@@ -604,8 +602,8 @@ Geometry (Philadelphia, PA), 124-133, ACM, May 1996.</p>
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on May 29, 2019.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Jul 28, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

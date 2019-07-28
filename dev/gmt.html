@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>gmt &#8212; GMT 6.0.0_6a82a05_2019.05.28 documentation</title>
+    <title>gmt &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -39,9 +39,9 @@
         <li class="right" >
           <a href="gmtget.html" title="get"
              accesskey="P">previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="G.html" accesskey="U">G</a> &#187;</li>
 <li class="right">
@@ -92,8 +92,7 @@ file in the current directory), <strong>cache</strong> (deletes the user’s cac
 and all of its content), or <strong>all</strong> (does all of the above).</p>
 <p><strong>gmt begin</strong> [<em>session-prefix</em>] [<em>format</em>]</p>
 <p>Initializes a new GMT session under <em>modern</em> mode [Default is <em>classic</em> mode].
-This is experimental; see <a class="reference external" href="http://gmt.soest.hawaii.edu/projects/gmt/wiki/Modernization">http://gmt.soest.hawaii.edu/projects/gmt/wiki/Modernization</a>
-for the current description.  All work is performed in a temporary work directory.
+All work is performed in a temporary work directory.
 The optional <em>session-prefix</em> assigns a name to the session, and this may be used
 as figure name for single-figure sessions [gmtsession].  Likewise, the optional
 <em>format</em> can be used to override the default graphics format [PDF].</p>
@@ -104,7 +103,12 @@ will be directed to this current figure until another <strong>gmt figure</strong
 or the session ends.  The <em>prefix</em> is used to build final figure names when extensions
 are automatically appended. The <em>format</em> setting is a comma-separated list of desired
 extensions (e.g., pdf,png).</p>
-<p><strong>gmt end</strong></p>
+<p><strong>gmt inset</strong> [<em>arguments</em>]</p>
+<p>Allows users to place a map inset by temporarily changing where plotting takes place
+as well as the region and projection, then resets to previous stage.</p>
+<p><strong>gmt subplot</strong> [<em>arguments</em>]</p>
+<p>Allows users to create a matrix of panels with automatic labeling and advancement.</p>
+<p><strong>gmt end</strong> [<strong>show</strong>]</p>
 <p>Terminates a GMT modern mode session and automatically converts the registered
 illustration(s) to the specified formats, then eliminates the temporary work
 directory.  The figures are placed in the current directory.</p>
@@ -255,199 +259,193 @@ each program can be found in the separate manual pages.</p>
 <tr class="row-even"><td><strong>grdinfo</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>grdlandmask</strong></td>
+<tr class="row-odd"><td><strong>grdinterpolate</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>grdmask</strong></td>
+<tr class="row-even"><td><strong>grdlandmask</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>grdmath</strong></td>
+<tr class="row-odd"><td><strong>grdmask</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>grdpaste</strong></td>
+<tr class="row-even"><td><strong>grdmath</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>grdproject</strong></td>
+<tr class="row-odd"><td><strong>grdpaste</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>grdsample</strong></td>
+<tr class="row-even"><td><strong>grdproject</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>grdtrack</strong></td>
+<tr class="row-odd"><td><strong>grdsample</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>grdtrend</strong></td>
+<tr class="row-even"><td><strong>grdtrack</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>grdvector</strong></td>
+<tr class="row-odd"><td><strong>grdtrend</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>grdview</strong></td>
+<tr class="row-even"><td><strong>grdvector</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>grdvolume</strong></td>
+<tr class="row-odd"><td><strong>grdview</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>greenspline</strong></td>
+<tr class="row-even"><td><strong>grdvolume</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>kml2gmt</strong></td>
+<tr class="row-odd"><td><strong>greenspline</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>makecpt</strong></td>
+<tr class="row-even"><td><strong>kml2gmt</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>mapproject</strong></td>
+<tr class="row-odd"><td><strong>makecpt</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>nearneighbor</strong></td>
+<tr class="row-even"><td><strong>mapproject</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>project</strong></td>
+<tr class="row-odd"><td><strong>nearneighbor</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>basemap</strong></td>
+<tr class="row-even"><td><strong>project</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>clip</strong></td>
+<tr class="row-odd"><td><strong>basemap</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>coast</strong></td>
+<tr class="row-even"><td><strong>clip</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>contour</strong></td>
+<tr class="row-odd"><td><strong>coast</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>events</strong></td>
+<tr class="row-even"><td><strong>contour</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>psconvert</strong></td>
+<tr class="row-odd"><td><strong>events</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>histogram</strong></td>
+<tr class="row-even"><td><strong>psconvert</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>image</strong></td>
+<tr class="row-odd"><td><strong>histogram</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>legend</strong></td>
+<tr class="row-even"><td><strong>image</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>mask</strong></td>
+<tr class="row-odd"><td><strong>legend</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>rose</strong></td>
+<tr class="row-even"><td><strong>mask</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>colorbar</strong></td>
+<tr class="row-odd"><td><strong>rose</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>text</strong></td>
+<tr class="row-even"><td><strong>colorbar</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>wiggle</strong></td>
+<tr class="row-odd"><td><strong>text</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>plot</strong></td>
+<tr class="row-even"><td><strong>wiggle</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>plot3d</strong></td>
+<tr class="row-odd"><td><strong>plot</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>sample1d</strong></td>
+<tr class="row-even"><td><strong>plot3d</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>spectrum1d</strong></td>
+<tr class="row-odd"><td><strong>sample1d</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>splitxyz</strong></td>
+<tr class="row-even"><td><strong>spectrum1d</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>surface</strong></td>
+<tr class="row-odd"><td><strong>splitxyz</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>trend1d</strong></td>
+<tr class="row-even"><td><strong>surface</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>trend2d</strong></td>
+<tr class="row-odd"><td><strong>trend1d</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>triangulate</strong></td>
+<tr class="row-even"><td><strong>trend2d</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>xyz2grd</strong></td>
+<tr class="row-odd"><td><strong>triangulate</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>&#160;</td>
-<td>Supplement <em>gshhg</em>:</td>
-</tr>
-<tr class="row-odd"><td><strong>gshhg</strong></td>
+<tr class="row-even"><td><strong>xyz2grd</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>&#160;</td>
-<td>Supplement <em>img</em>:</td>
-</tr>
-<tr class="row-odd"><td><strong>img2grd</strong></td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td>&#160;</td>
-<td>Supplement <em>meca</em>:</td>
-</tr>
-<tr class="row-odd"><td><strong>coupe</strong></td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>meca</strong></td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>polar</strong></td>
-<td>&#160;</td>
+<tr class="row-odd"><td>&#160;</td>
+<td>Supplement <em>geodesy</em>:</td>
 </tr>
 <tr class="row-even"><td><strong>velo</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>sac</strong></td>
+<tr class="row-odd"><td><strong>earthtide</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>&#160;</td>
+<tr class="row-even"><td><strong>gpsgridder</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>Supplement <em>gshhg</em>:</td>
+</tr>
+<tr class="row-even"><td><strong>gshhg</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>Supplement <em>img</em>:</td>
+</tr>
+<tr class="row-even"><td><strong>img2grd</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
 <td>Supplement <em>mgd77</em>:</td>
 </tr>
-<tr class="row-odd"><td><strong>mgd77convert</strong></td>
+<tr class="row-even"><td><strong>mgd77convert</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>mgd77header</strong></td>
+<tr class="row-odd"><td><strong>mgd77header</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>mgd77info</strong></td>
+<tr class="row-even"><td><strong>mgd77info</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>mgd77list</strong></td>
+<tr class="row-odd"><td><strong>mgd77list</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>mgd77magref</strong></td>
+<tr class="row-even"><td><strong>mgd77magref</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>mgd77manage</strong></td>
+<tr class="row-odd"><td><strong>mgd77manage</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>mgd77path</strong></td>
+<tr class="row-even"><td><strong>mgd77path</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>mgd77sniffer</strong></td>
+<tr class="row-odd"><td><strong>mgd77sniffer</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>mgd77track</strong></td>
+<tr class="row-even"><td><strong>mgd77track</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>&#160;</td>
+<tr class="row-odd"><td>&#160;</td>
 <td>Supplement <em>potential</em>:</td>
 </tr>
-<tr class="row-odd"><td><strong>gravmag3d</strong></td>
+<tr class="row-even"><td><strong>gravmag3d</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>flexure</strong></td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>gpsgridder</strong></td>
+<tr class="row-odd"><td><strong>flexure</strong></td>
 <td>&#160;</td>
 </tr>
 <tr class="row-even"><td><strong>gravfft</strong></td>
@@ -484,81 +482,96 @@ each program can be found in the separate manual pages.</p>
 <td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>&#160;</td>
-<td>Supplement <em>sph</em>:</td>
+<td>Supplement <em>seis</em>:</td>
 </tr>
-<tr class="row-even"><td><strong>sphdistance</strong></td>
+<tr class="row-even"><td><strong>coupe</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>sphinterpolate</strong></td>
+<tr class="row-odd"><td><strong>meca</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>sphtriangulate</strong></td>
+<tr class="row-even"><td><strong>polar</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>&#160;</td>
-<td>Supplement <em>spotter</em>:</td>
-</tr>
-<tr class="row-even"><td><strong>backtracker</strong></td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>pmodeler</strong></td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>grdpmodeler</strong></td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>grdrotater</strong></td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>grdspotter</strong></td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>hotspotter</strong></td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>originater</strong></td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>polespotter</strong></td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td><strong>rotconverter</strong></td>
-<td>&#160;</td>
-</tr>
-<tr class="row-odd"><td><strong>rotsmoother</strong></td>
+<tr class="row-odd"><td><strong>sac</strong></td>
 <td>&#160;</td>
 </tr>
 <tr class="row-even"><td>&#160;</td>
+<td>Supplement <em>sph</em>:</td>
+</tr>
+<tr class="row-odd"><td><strong>sphdistance</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>sphinterpolate</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>sphtriangulate</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>Supplement <em>spotter</em>:</td>
+</tr>
+<tr class="row-odd"><td><strong>backtracker</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>pmodeler</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>grdpmodeler</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>grdrotater</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>grdspotter</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>hotspotter</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>originater</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>polespotter</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><strong>rotconverter</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td><strong>rotsmoother</strong></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
 <td>Supplement <em>x2sys</em>:</td>
 </tr>
-<tr class="row-odd"><td><strong>x2sys_binlist</strong></td>
+<tr class="row-even"><td><strong>x2sys_binlist</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>x2sys_cross</strong></td>
+<tr class="row-odd"><td><strong>x2sys_cross</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>x2sys_datalist</strong></td>
+<tr class="row-even"><td><strong>x2sys_datalist</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>x2sys_get</strong></td>
+<tr class="row-odd"><td><strong>x2sys_get</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>x2sys_init</strong></td>
+<tr class="row-even"><td><strong>x2sys_init</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>x2sys_list</strong></td>
+<tr class="row-odd"><td><strong>x2sys_list</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>x2sys_merge</strong></td>
+<tr class="row-even"><td><strong>x2sys_merge</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>x2sys_put</strong></td>
+<tr class="row-odd"><td><strong>x2sys_put</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td><strong>x2sys_report</strong></td>
+<tr class="row-even"><td><strong>x2sys_report</strong></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td><strong>x2sys_solve</strong></td>
+<tr class="row-odd"><td><strong>x2sys_solve</strong></td>
 <td>&#160;</td>
 </tr>
 </tbody>
@@ -1287,7 +1300,9 @@ not supported.</dd>
 <dt><strong>-c</strong>[<em>row</em>,<em>col</em>]</dt>
 <dd>Used to advance to the selected subplot panel.  Only allowed when in
 subplot mode.  Available to all plot modules.  If no arguments are
-given then we advance to the next panel in the selected order.</dd>
+given then we advance to the next panel in the selected order. If
+no <strong>-c</strong> is given and we just entered subplot mode then the first
+panel (top, left) is selected.</dd>
 </dl>
 <dl class="docutils" id="d-full">
 <dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em></dt>
@@ -1378,7 +1393,7 @@ If used with native binary data we interpret <em>n</em> to instead mean the
 number of bytes to skip on input or pad on output.</dd>
 </dl>
 <dl class="docutils" id="icols-full">
-<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>]</dt>
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]]</dt>
 <dd>Select specific data columns for primary input, in arbitrary order. Columns
 not listed will be skipped. Give individual columns (or column ranges
 in the format <em>start</em>[:<em>inc</em>]:<em>stop</em>, where <em>inc</em> defaults to 1 if
@@ -1387,9 +1402,10 @@ starting with the first column (0)]. Columns may be repeated.  To each
 column, optionally add any of  the following: <strong>+l</strong> takes <strong>log10</strong> of
 the input values first; <strong>+s</strong><em>scale</em>, subsequently multiplies by a
 given  scale factor [1]; <strong>+o</strong><em>offset</em>, finally adds a given offset [0].
-Normally, any trailing text is read but when <strong>i</strong> is used you must add
-the column <strong>t</strong> to retain the text. Finally, <strong>-in</strong> will simply read
-the numerical input and skip any trailing text.</dd>
+Normally, any trailing text is read but when <strong>i</strong> is used you must explicitly add
+the column <em>t</em> to retain the text. To only ingest a single word from the
+trailing text, append the word number (first word is 0).  Finally, <strong>-in</strong>
+will simply read the numerical input and skip any trailing text.</dd>
 </dl>
 <dl class="docutils" id="distcalc-full">
 <dt><strong>-je</strong>|<strong>f</strong>|<strong>g</strong></dt>
@@ -1426,14 +1442,15 @@ of 0.5, using geographic (if grid is known to be geographic) or
 natural boundary conditions].</dd>
 </dl>
 <dl class="docutils" id="ocols-full">
-<dt><strong>-o</strong><em>cols</em>[,…]</dt>
+<dt><strong>-o</strong><em>cols</em>[,…][<em>t</em>[<em>word</em>]]</dt>
 <dd>Select specific data columns for primary output, in arbitrary order. Columns
 not listed will be skipped. Give columns (or column ranges
 in the format <em>start</em>[:<em>inc</em>]:<em>stop</em>, where <em>inc</em> defaults to 1 if
 not specified) separated by commas.  Columns may be repeated.
 [Default writes all columns in order].
 Normally, any trailing text in the internal records will be written but
-when <strong>-o</strong> is used you must add the column <strong>t</strong>. Finally, <strong>-on</strong> will
+when <strong>-o</strong> is used you must explicitly add the column <em>t</em>. To only output a single word from the
+trailing text, append the word number (first word is 0).  Finally, <strong>-on</strong> will
 simply write the numerical output only and skip any trailing text.</dd>
 </dl>
 <dl class="docutils" id="perspective-full">
@@ -1445,11 +1462,11 @@ z-level all 2D material, like the plot frame, is plotted (in
 perspective). [Default is at the bottom of the z-axis]. Use <strong>-px</strong>
 or <strong>-py</strong> to plot against the “wall” x = level or y = level
 (default is on the horizontal plane, which is the same as using
-<strong>-pz</strong>). For frames used for animation, you may want to append
-<strong>+</strong> to fix the center of your data domain (or specify a particular
-world coordinate point with <strong>+w</strong><em>lon0</em>/<em>lat</em>[/<em>z</em>]) which will
-project to the center of your page size (or specify the coordinates
-of the projected view point with <strong>+v</strong><em>x0</em>/<em>y0</em>. When <strong>-p</strong> is
+<strong>-pz</strong>). For frames used for animation, note we fix the center of your
+data domain.  Specify another center using a particular
+world coordinate point with <strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>z0</em>]) which will
+project to the center of your page size, or specify the coordinates
+of the projected 2-D view point with <strong>+v</strong><em>x0</em>/<em>y0</em>. When <strong>-p</strong> is
 used without any further arguments, the values from the last use of
 <strong>-p</strong> in a previous GMT command will be used.  Alternatively, you
 can perform a simple rotation about the z-axis by just giving the
@@ -1693,7 +1710,7 @@ command line].</dd>
 directories. For an explanation of the various GMT settings in this
 man page (like <a class="reference internal" href="gmt.conf.html#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a>), see the man page of the GMT
 configuration file <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a>. Information is also available on the
-GMT home page <a class="reference external" href="http://gmt.soest.hawaii.edu/">http://gmt.soest.hawaii.edu/</a></p>
+GMT documentation site <a class="reference external" href="https://docs.generic-mapping-tools.org/">https://docs.generic-mapping-tools.org/</a></p>
 </div>
 </div>
 
@@ -1756,9 +1773,9 @@ GMT home page <a class="reference external" href="http://gmt.soest.hawaii.edu/">
         <li class="right" >
           <a href="gmtget.html" title="get"
              >previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="G.html" >G</a> &#187;</li>
 <li class="right">
@@ -1776,8 +1793,8 @@ GMT home page <a class="reference external" href="http://gmt.soest.hawaii.edu/">
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on May 29, 2019.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Jul 28, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

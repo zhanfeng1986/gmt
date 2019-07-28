@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>grdimage &#8212; GMT 6.0.0_6a82a05_2019.05.28 documentation</title>
+    <title>grdimage &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -39,9 +39,9 @@
         <li class="right" >
           <a href="events.html" title="events"
              accesskey="P">previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="PS.html" accesskey="U">Modern Mode Mapping</a> &#187;</li>
 <li class="right">
@@ -77,7 +77,6 @@
 [ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong>[<strong>i</strong>|<em>dpi</em>] ] <a class="reference internal" href="#j"><span> <strong>-J</strong></span></a></strong><em>parameters</em>
 [ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>color</em>[<strong>+b</strong>|<strong>+f</strong>] ]
 [ <a class="reference internal" href="#i"><span> <strong>-I</strong></span></a></strong>[<em>intensfile</em>|<em>intensity</em>|<em>modifiers</em>] ]
-[ <a class="reference internal" href="#j"><span> <strong>-J</strong></span></a></strong><strong>z</strong>|<strong>-Z</strong><em>parameters</em> ]
 [ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong> ] [ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong> ]
 [ <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong> ]
 [ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>] ]
@@ -156,13 +155,15 @@ otherwise a plain tiff file is produced. (2) Any vector elements will be lost.</
 <dl class="docutils" id="c">
 <dt><strong>-C</strong>[<em>cpt</em> |<em>master</em>[<strong>+i</strong><em>zinc</em>] |<em>color1,color2</em>[,<em>color3</em>,…]]</dt>
 <dd>Name of the CPT (for <em>grd_z</em> only). Alternatively,
-supply the name of a GMT color master dynamic CPT [rainbow] to
+supply the name of a GMT color master dynamic CPT [rainbow, but geo
+for &#64;earth_relief and srtm for &#64;srtm_relief data] to
 automatically determine a continuous CPT from
 the grid’s z-range; you may round up/down the z-range by adding <strong>+i</strong><em>zinc</em>.
 Yet another option is to specify <strong>-C</strong><em>color1</em>,<em>color2</em>[,<em>color3</em>,…]
 to build a linear continuous CPT from those colors automatically.
 In this case <em>color1</em> etc can be a r/g/b triplet, a color name,
-or an HTML hexadecimal color (e.g. #aabbcc ).</dd>
+or an HTML hexadecimal color (e.g. #aabbcc ).  If no argument is given to <strong>-C</strong>
+then under modern mode we select the current CPT.</dd>
 </dl>
 <dl class="docutils" id="d">
 <dt><strong>-D</strong>[<strong>r</strong>]</dt>
@@ -196,15 +197,12 @@ pixels (1) or <strong>+f</strong> for the foreground pixels [Default].</dd>
 <dd>Gives the name of a grid file with intensities in the (-1,+1) range,
 or a constant intensity to apply everywhere (affects the ambient light).
 Alternatively, derive an intensity grid from the input data grid <em>grd_z</em>
-via a call to <a class="reference internal" href="grdgradient.html"><span class="doc">grdgradient</span></a>; append <strong>+a</strong><em>azimuth</em> and <strong>+n</strong><em>args</em>
-to specify azimuth and intensity arguments for that module or just give <strong>+d</strong>
-to select the default arguments (<strong>+a</strong>-45<strong>+nt</strong>1). If you want a more
+via a call to <a class="reference internal" href="grdgradient.html"><span class="doc">grdgradient</span></a>; append <strong>+a</strong><em>azimuth</em>, <strong>+n</strong><em>args</em>,
+and <strong>+m</strong><em>ambient</em> to specify azimuth, intensity, and ambient arguments
+for that module, or just give <strong>+d</strong> to select the
+default arguments (<strong>+a</strong>-45<strong>+nt</strong>1<strong>+m</strong>0). If you want a more
 specific intensity scenario then run <a class="reference internal" href="grdgradient.html"><span class="doc">grdgradient</span></a> separately first.
 [Default is no illumination].</dd>
-</dl>
-<dl class="docutils">
-<dt><strong>-Jz</strong>|<strong>Z</strong><em>parameters</em> <a class="reference internal" href="gmt.html#jz-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set z-axis scaling; same syntax as <strong>-Jx</strong>.</dd>
 </dl>
 <dl class="docutils" id="m">
 <dt><strong>-M</strong></dt>
@@ -518,9 +516,9 @@ remotely located Jessica Rabbit</p>
         <li class="right" >
           <a href="events.html" title="events"
              >previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="PS.html" >Modern Mode Mapping</a> &#187;</li>
 <li class="right">
@@ -538,8 +536,8 @@ remotely located Jessica Rabbit</p>
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on May 29, 2019.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Jul 28, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

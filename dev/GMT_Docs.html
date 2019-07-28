@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>1. The Generic Mapping Tools &#8212; GMT 6.0.0_6a82a05_2019.05.28 documentation</title>
+    <title>1. The Generic Mapping Tools &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -24,8 +24,8 @@
     <script type="text/javascript" src="_static/rtd-sidebar.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Modern Mode" href="tutorial.html" />
-    <link rel="prev" title="Modern Mode" href="cookbook.html" /> 
+    <link rel="next" title="Tutorial (Classic Mode)" href="tutorial_classic.html" />
+    <link rel="prev" title="The GMT Cookbook (Modern Mode)" href="cookbook.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -34,16 +34,16 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="tutorial.html" title="Modern Mode"
+          <a href="tutorial_classic.html" title="Tutorial (Classic Mode)"
              accesskey="N">next</a> </li>
         <li class="right" >
-          <a href="cookbook.html" title="Modern Mode"
+          <a href="cookbook.html" title="The GMT Cookbook (Modern Mode)"
              accesskey="P">previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="cookbook.html" accesskey="U">Modern Mode</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cookbook.html" accesskey="U">The GMT Cookbook (Modern Mode)</a> &#187;</li>
 <li class="right">
 <form class="search" accept-charset="UTF-8" action="search.html" method="get">
   <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
@@ -187,8 +187,7 @@ such decisions by supporting the GMT project.</p>
 </div>
 <div class="section" id="copyright-and-caveat-emptor">
 <h1>3. Copyright and Caveat Emptor!<a class="headerlink" href="#copyright-and-caveat-emptor" title="Permalink to this headline">¶</a></h1>
-<p>Copyright ©1991–2019 by P. Wessel, W. H. F. Smith, R. Scharroo, J.
-Luis and F. Wobbe</p>
+<p>Copyright ©1991–2019 by the GMT Team (<a class="reference external" href="https://www.generic-mapping-tools.org/team.html">https://www.generic-mapping-tools.org/team.html</a>)</p>
 <p>The Generic Mapping Tools (GMT) is free software; you can
 redistribute it and/or modify it under the terms of the GNU Lesser
 General Public License as published by the Free Software Foundation.</p>
@@ -237,7 +236,7 @@ on GitHub (<a class="reference external" href="https://github.com/GenericMapping
 <span id="id2"></span><h2>4.1. Command-line completion<a class="headerlink" href="#command-line-completion" title="Permalink to this headline">¶</a></h2>
 <p>GMT provides basic command-line completion (tab completion) for bash.
 The easiest way to use the feature is to install the
-<a class="reference external" href="http://bash-completion.alioth.debian.org/">bash-completion</a> package
+<a class="reference external" href="https://github.com/scop/bash-completion/">bash-completion</a> package
 which is available in many operating system distributions.</p>
 <p>Depending on the distribution, you may still need to source it from
 <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code>, e.g.:</p>
@@ -408,7 +407,7 @@ the standard error stream and can therefore be separated from ASCII
 table output.</li>
 </ul>
 <p>GMT is available over the Internet at no charge. To obtain a copy,
-goto GMT home page <a class="reference external" href="http://gmt.soest.hawaii.edu/">http://gmt.soest.hawaii.edu/</a> and follow instructions.
+goto GMT home page <a class="reference external" href="https://www.generic-mapping-tools.org">https://www.generic-mapping-tools.org</a> and follow instructions.
 We also maintain user forums and a bug and feature tracking system on
 the same page.</p>
 <p>GMT has served a multitude of scientists very well, and their
@@ -634,145 +633,148 @@ listing sorted by program purpose, see Section <a class="reference internal" hre
 <tr class="row-odd"><td><a class="reference internal" href="grdinfo.html"><span class="doc">grdinfo</span></a></td>
 <td>Get information about grid files</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="grdlandmask.html"><span class="doc">grdlandmask</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="grdinterpolate.html"><span class="doc">grdinterpolate</span></a></td>
+<td>Interpolate new layer(s) from a 3-D netCDF data cube</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="grdlandmask.html"><span class="doc">grdlandmask</span></a></td>
 <td>Create masking grid files from shoreline data base</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="grdmask.html"><span class="doc">grdmask</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="grdmask.html"><span class="doc">grdmask</span></a></td>
 <td>Reset grid nodes in/outside a clip path to constants</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="grdmath.html"><span class="doc">grdmath</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="grdmath.html"><span class="doc">grdmath</span></a></td>
 <td>Mathematical operations on grid files</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="grdpaste.html"><span class="doc">grdpaste</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="grdpaste.html"><span class="doc">grdpaste</span></a></td>
 <td>Paste together grid files along a common edge</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="grdproject.html"><span class="doc">grdproject</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="grdproject.html"><span class="doc">grdproject</span></a></td>
 <td>Project gridded data sets onto a new coordinate system</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="grdsample.html"><span class="doc">grdsample</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="grdsample.html"><span class="doc">grdsample</span></a></td>
 <td>Resample a 2-D gridded data set onto a new grid</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="grdtrack.html"><span class="doc">grdtrack</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="grdtrack.html"><span class="doc">grdtrack</span></a></td>
 <td>Sampling of 2-D gridded data set(s) along 1-D track</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="grdtrend.html"><span class="doc">grdtrend</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="grdtrend.html"><span class="doc">grdtrend</span></a></td>
 <td>Fits polynomial trends to grid files</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="grdvector.html"><span class="doc">grdvector</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="grdvector.html"><span class="doc">grdvector</span></a></td>
 <td>Plotting of 2-D gridded vector fields</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="grdview.html"><span class="doc">grdview</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="grdview.html"><span class="doc">grdview</span></a></td>
 <td>3-D perspective imaging of 2-D gridded data sets</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="grdvolume.html"><span class="doc">grdvolume</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="grdvolume.html"><span class="doc">grdvolume</span></a></td>
 <td>Calculate volumes under a surface within specified contour</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="greenspline.html"><span class="doc">greenspline</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="greenspline.html"><span class="doc">greenspline</span></a></td>
 <td>Interpolation with Green’s functions for splines in 1–3 D</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="kml2gmt.html"><span class="doc">kml2gmt</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="kml2gmt.html"><span class="doc">kml2gmt</span></a></td>
 <td>Extracts coordinates from Google Earth KML files</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="makecpt.html"><span class="doc">makecpt</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="makecpt.html"><span class="doc">makecpt</span></a></td>
 <td>Make color palette tables</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="mapproject.html"><span class="doc">mapproject</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="mapproject.html"><span class="doc">mapproject</span></a></td>
 <td>Transformation of coordinate systems for table data</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="movie.html"><span class="doc">movie</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="movie.html"><span class="doc">movie</span></a></td>
 <td>Create animation sequences and movies</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="nearneighbor.html"><span class="doc">nearneighbor</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="nearneighbor.html"><span class="doc">nearneighbor</span></a></td>
 <td>Nearest-neighbor gridding scheme</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="project.html"><span class="doc">project</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="project.html"><span class="doc">project</span></a></td>
 <td>Project table data onto lines or great circles</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="basemap.html"><span class="doc">basemap</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="basemap.html"><span class="doc">basemap</span></a></td>
 <td>Create a basemap plot</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="clip.html"><span class="doc">clip</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="clip.html"><span class="doc">clip</span></a></td>
 <td>Use polygon files to define clipping paths</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="coast.html"><span class="doc">coast</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="coast.html"><span class="doc">coast</span></a></td>
 <td>Plot (and fill) coastlines, borders, and rivers on maps</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="contour.html"><span class="doc">contour</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="contour.html"><span class="doc">contour</span></a></td>
 <td>Contour or image raw table data by triangulation</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="psconvert.html"><span class="doc">psconvert</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="psconvert.html"><span class="doc">psconvert</span></a></td>
 <td>Crop and convert PostScript files to raster images, EPS, and PDF</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="histogram.html"><span class="doc">histogram</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="histogram.html"><span class="doc">histogram</span></a></td>
 <td>Plot a histogram</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="image.html"><span class="doc">image</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="image.html"><span class="doc">image</span></a></td>
 <td>Plot Sun raster files on a map</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="inset.html"><span class="doc">inset</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="inset.html"><span class="doc">inset</span></a></td>
 <td>Manage figure inset setup and completion</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="legend.html"><span class="doc">legend</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="legend.html"><span class="doc">legend</span></a></td>
 <td>Plot a legend on a map</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="mask.html"><span class="doc">mask</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="mask.html"><span class="doc">mask</span></a></td>
 <td>Create overlay to mask out regions on maps</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="rose.html"><span class="doc">rose</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="rose.html"><span class="doc">rose</span></a></td>
 <td>Plot sector or rose diagrams</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="colorbar.html"><span class="doc">colorbar</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="colorbar.html"><span class="doc">colorbar</span></a></td>
 <td>Plot gray scale or color scale on maps</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="text.html"><span class="doc">text</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="text.html"><span class="doc">text</span></a></td>
 <td>Plot text strings on maps</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="wiggle.html"><span class="doc">wiggle</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="wiggle.html"><span class="doc">wiggle</span></a></td>
 <td>Draw table data time-series along track on maps</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="plot.html"><span class="doc">plot</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="plot.html"><span class="doc">plot</span></a></td>
 <td>Plot symbols, polygons, and lines on maps</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="plot3d.html"><span class="doc">plot3d</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="plot3d.html"><span class="doc">plot3d</span></a></td>
 <td>Plot symbols, polygons, and lines in 3-D</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="sample1d.html"><span class="doc">sample1d</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="sample1d.html"><span class="doc">sample1d</span></a></td>
 <td>Resampling of 1-D table data sets</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="spectrum1d.html"><span class="doc">spectrum1d</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="spectrum1d.html"><span class="doc">spectrum1d</span></a></td>
 <td>Compute various spectral estimates from time-series</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="sph2grd.html"><span class="doc">sph2grd</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="sph2grd.html"><span class="doc">sph2grd</span></a></td>
 <td>Compute grid from spherical harmonic coefficients</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="sphdistance.html"><span class="doc">sphdistance</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="sphdistance.html"><span class="doc">sphdistance</span></a></td>
 <td>Create grid of NN or distances to nearest points on a sphere</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="sphinterpolate.html"><span class="doc">sphinterpolate</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="sphinterpolate.html"><span class="doc">sphinterpolate</span></a></td>
 <td>Spherical gridding in tension of data on a sphere</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="sphtriangulate.html"><span class="doc">sphtriangulate</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="sphtriangulate.html"><span class="doc">sphtriangulate</span></a></td>
 <td>Delaunay or Voronoi construction of spherical lon,lat data</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="splitxyz.html"><span class="doc">splitxyz</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="splitxyz.html"><span class="doc">splitxyz</span></a></td>
 <td>Split <em>xyz</em> files into several segments</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="subplot.html"><span class="doc">subplot</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="subplot.html"><span class="doc">subplot</span></a></td>
 <td>Manage figure subplot configuration and selection</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="surface.html"><span class="doc">surface</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="surface.html"><span class="doc">surface</span></a></td>
 <td>A continuous curvature gridding algorithm</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="trend1d.html"><span class="doc">trend1d</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="trend1d.html"><span class="doc">trend1d</span></a></td>
 <td>Fits polynomial or Fourier trends to <span class="math notranslate nohighlight">\(y = f(x)\)</span> series</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="trend2d.html"><span class="doc">trend2d</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="trend2d.html"><span class="doc">trend2d</span></a></td>
 <td>Fits polynomial trends to <span class="math notranslate nohighlight">\(z = f(x,y)\)</span> series</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="triangulate.html"><span class="doc">triangulate</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="triangulate.html"><span class="doc">triangulate</span></a></td>
 <td>Perform optimal Delauney triangulation and gridding</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="xyz2grd.html"><span class="doc">xyz2grd</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="xyz2grd.html"><span class="doc">xyz2grd</span></a></td>
 <td>Convert an equidistant table <em>xyz</em> file to a 2-D grid file</td>
 </tr>
 </tbody>
@@ -799,124 +801,130 @@ summary of the standard command line options and a breakdown of the
 <td>Initiate a new GMT session using modern mode</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="clear.html"><span class="doc">clear</span></a></td>
-<td>Delete current history, conf, cpt, or the cache directory</td>
+<td>Delete current history, conf, cpt, sessions, data or cache</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="end.html"><span class="doc">end</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="docs.html"><span class="doc">docs</span></a></td>
+<td>Show HTML documentation of specified module or display graphics</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="end.html"><span class="doc">end</span></a></td>
 <td>Terminate GMT modern mode session and produce optional graphics</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="figure.html"><span class="doc">figure</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="figure.html"><span class="doc">figure</span></a></td>
 <td>Set attributes for the current figure</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="inset.html"><span class="doc">inset</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="inset.html"><span class="doc">inset</span></a></td>
 <td>Manage figure inset setup and completion</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="subplot.html"><span class="doc">subplot</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="subplot.html"><span class="doc">subplot</span></a></td>
 <td>Manage figure subplot configuration and selection</td>
 </tr>
-<tr class="row-even"><td>&#160;</td>
+<tr class="row-odd"><td>&#160;</td>
 <td><strong>Filtering of 1-D and 2-D Data</strong></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="blockmean.html"><span class="doc">blockmean</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="blockmean.html"><span class="doc">blockmean</span></a></td>
 <td>L<span class="math notranslate nohighlight">\(_2\)</span> (<em>x</em>,<em>y</em>,<em>z</em>) table data filter/decimator</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="blockmedian.html"><span class="doc">blockmedian</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="blockmedian.html"><span class="doc">blockmedian</span></a></td>
 <td>L<span class="math notranslate nohighlight">\(_1\)</span> (<em>x</em>,<em>y</em>,<em>z</em>) table data filter/decimator</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="blockmode.html"><span class="doc">blockmode</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="blockmode.html"><span class="doc">blockmode</span></a></td>
 <td>Mode estimate (<em>x</em>,<em>y</em>,<em>z</em>) table data filter/decimator</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="filter1d.html"><span class="doc">filter1d</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="filter1d.html"><span class="doc">filter1d</span></a></td>
 <td>Time domain filtering of 1-D data tables</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="grdfilter.html"><span class="doc">grdfilter</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="grdfilter.html"><span class="doc">grdfilter</span></a></td>
 <td>Filter 2-D gridded data sets in the space domain</td>
 </tr>
-<tr class="row-even"><td>&#160;</td>
+<tr class="row-odd"><td>&#160;</td>
 <td><strong>Plotting of 1-D and 2-D Data</strong></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="gmtlogo.html"><span class="doc">gmtlogo</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="gmtlogo.html"><span class="doc">gmtlogo</span></a></td>
 <td>Plot the GMT logo on maps</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="grdcontour.html"><span class="doc">grdcontour</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="grdcontour.html"><span class="doc">grdcontour</span></a></td>
 <td>Contouring of 2-D gridded data sets</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="grdimage.html"><span class="doc">grdimage</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="grdimage.html"><span class="doc">grdimage</span></a></td>
 <td>Produce images from 2-D gridded data sets</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="grdvector.html"><span class="doc">grdvector</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="grdvector.html"><span class="doc">grdvector</span></a></td>
 <td>Plotting of 2-D gridded vector fields</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="grdview.html"><span class="doc">grdview</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="grdview.html"><span class="doc">grdview</span></a></td>
 <td>3-D perspective imaging of 2-D gridded data sets</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="basemap.html"><span class="doc">basemap</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="basemap.html"><span class="doc">basemap</span></a></td>
 <td>Create a basemap plot</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="clip.html"><span class="doc">clip</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="clip.html"><span class="doc">clip</span></a></td>
 <td>Use polygon files to define clipping paths</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="coast.html"><span class="doc">coast</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="coast.html"><span class="doc">coast</span></a></td>
 <td>Plot (and fill) coastlines, borders, and rivers on maps</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="contour.html"><span class="doc">contour</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="contour.html"><span class="doc">contour</span></a></td>
 <td>Contour or image raw table data by triangulation</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="events.html"><span class="doc">events</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="events.html"><span class="doc">events</span></a></td>
 <td>Plot event symbols and labels for a moment in time</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="histogram.html"><span class="doc">histogram</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="histogram.html"><span class="doc">histogram</span></a></td>
 <td>Plot a histogram</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="image.html"><span class="doc">image</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="image.html"><span class="doc">image</span></a></td>
 <td>Plot Sun raster files on a map</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="legend.html"><span class="doc">legend</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="legend.html"><span class="doc">legend</span></a></td>
 <td>Plot a legend on a map</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="mask.html"><span class="doc">mask</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="mask.html"><span class="doc">mask</span></a></td>
 <td>Create overlay to mask out regions on maps</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="rose.html"><span class="doc">rose</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="rose.html"><span class="doc">rose</span></a></td>
 <td>Plot sector or rose diagrams</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="colorbar.html"><span class="doc">colorbar</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="colorbar.html"><span class="doc">colorbar</span></a></td>
 <td>Plot gray scale or color scale on maps</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="ternary.html"><span class="doc">ternary</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="ternary.html"><span class="doc">ternary</span></a></td>
 <td>Plot data on ternary diagrams</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="text.html"><span class="doc">text</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="text.html"><span class="doc">text</span></a></td>
 <td>Plot text strings on maps</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="wiggle.html"><span class="doc">wiggle</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="wiggle.html"><span class="doc">wiggle</span></a></td>
 <td>Draw table data time-series along track on maps</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="plot.html"><span class="doc">plot</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="plot.html"><span class="doc">plot</span></a></td>
 <td>Plot symbols, polygons, and lines on maps</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="plot3d.html"><span class="doc">plot3d</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="plot3d.html"><span class="doc">plot3d</span></a></td>
 <td>Plot symbols, polygons, and lines in 3-D</td>
 </tr>
-<tr class="row-even"><td>&#160;</td>
+<tr class="row-odd"><td>&#160;</td>
 <td><strong>Gridding of Data Tables</strong></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="greenspline.html"><span class="doc">greenspline</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="greenspline.html"><span class="doc">greenspline</span></a></td>
 <td>Interpolation with Green’s functions for splines in 1–3 D</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="nearneighbor.html"><span class="doc">nearneighbor</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="nearneighbor.html"><span class="doc">nearneighbor</span></a></td>
 <td>Nearest-neighbor gridding scheme</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="sphinterpolate.html"><span class="doc">sphinterpolate</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="sphinterpolate.html"><span class="doc">sphinterpolate</span></a></td>
 <td>Spherical gridding in tension of data on a sphere</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="surface.html"><span class="doc">surface</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="surface.html"><span class="doc">surface</span></a></td>
 <td>A continuous curvature gridding algorithm</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="triangulate.html"><span class="doc">triangulate</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="triangulate.html"><span class="doc">triangulate</span></a></td>
 <td>Perform optimal Delauney triangulation and gridding</td>
 </tr>
-<tr class="row-even"><td>&#160;</td>
-<td><strong>Sampling of 1-D and 2-D Data</strong></td>
+<tr class="row-odd"><td>&#160;</td>
+<td><strong>Sampling of 1-D, 2-D, and 3-D Data</strong></td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="grdinterpolate.html"><span class="doc">grdinterpolate</span></a></td>
+<td>Interpolate new layer(s) from a 3-D netCDF data cube</td>
 </tr>
 <tr class="row-odd"><td><a class="reference internal" href="gmtsimplify.html"><span class="doc">simplify</span></a></td>
 <td>Line reduction using the Douglas-Peucker algorithm</td>
@@ -1656,12 +1664,6 @@ via the <strong>-</strong><strong>-</strong><em>PAR=value</em> mechanism. For in
 set the output format for floating points to have lots of decimals,
 say, for map projection coordinate output, append
 <strong>-</strong><strong>-</strong><a class="reference internal" href="gmt.conf.html#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a>=%.16lg to the command in question.</p>
-</li>
-<li><p class="first">Finally, GMT provides to possibility to override the settings only
-during the running of a single script, reverting to the original
-settings after the script is run, as if the script was run in
-“isolation”. The isolation mode is discussed in
-Section <a class="reference internal" href="#running-gmt-in-isolation-mode">Running GMT in isolation mode</a>.</p>
 </li>
 </ul>
 <p>In addition to those parameters that directly affect the plot there are
@@ -2711,8 +2713,10 @@ implies we should first take <span class="math notranslate nohighlight">\(\log_{
 is]. Next, we may scale the result by the given <em>scale</em> [1]. Finally, we
 add in the specified <em>offset</em> [0].  If you want the trailing text to remain
 part of your subset logical record then also select the special column
-by requesting column <strong>t</strong>, otherwise we ignore trailing text.  Finally,
-to use the entire numerical record and ignoring trailing text, use <strong>-in</strong>.</p>
+by requesting column <strong>t</strong>, otherwise we ignore trailing text.  If you only
+want to select one word from the trailing text, then append the word number
+(0 is the first word).  Finally, to use the entire numerical record and
+ignore trailing text, use <strong>-in</strong>.</p>
 <div class="figure align-center" id="id110">
 <span id="gmt-record"></span><a class="reference internal image-reference" href="_images/GMT_record.png"><img alt="_images/GMT_record.png" src="_images/GMT_record.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-text">The physical, logical (input) and output record in GMT.  Here, we are
@@ -2727,9 +2731,10 @@ can be used to specify column types in the logical record if it is not clear
 from the data themselves (such as when reading a binary file).  Finally, if
 a module needs to write out only a portion of the current logical record then
 you may use the corresponding <strong>-o</strong> option to select desired columns, including
-the trailing text column <strong>t</strong>.  Note that these column numbers now refer to
-the logical record, not the physical, since after reading the data there is no
-physical record, only the logical record in memory.</span></p>
+the trailing text column <strong>t</strong>.  If you only want to output one word from the
+trailing text, then append the word number (0 is the first word).  Note that
+these column numbers now refer to the logical record, not the physical, since
+after reading the data there is no physical record, only the logical record in memory.</span></p>
 </div>
 </div>
 <div class="section" id="grid-interpolation-parameters-the-n-option">
@@ -2763,9 +2768,11 @@ You can also use a column more than once, e.g., <strong>-o</strong>3,1,3, to
 duplicate a column on output.  Finally, if your logical record in memory
 contains trailing text then you can include that by including the special
 column <strong>t</strong> to your selections.  The text is always written after any
-numerical columns.  Note that if you wanted to scale or shift the output
-values you need to do so during reading, using the <strong>-i</strong> option.
-To output all numerical columns and ignoring trailing text, use <strong>-on</strong>.</p>
+numerical columns.  If you only want to output one word from the trailing
+text, then append the word number (0 is the first word).  Note that if you
+wanted to scale or shift the output values you need to do so during reading,
+using the <strong>-i</strong> option. To output all numerical columns and ignoring
+trailing text, use <strong>-on</strong>.</p>
 </div>
 <div class="section" id="perspective-view-the-p-option">
 <h3>7.4.17. Perspective view: The <strong>-p</strong> option<a class="headerlink" href="#perspective-view-the-p-option" title="Permalink to this headline">¶</a></h3>
@@ -3230,11 +3237,11 @@ specify “solid” for style.  The lengths of dots and dashes are scaled
 relative to the pen width (dots has a length that equals the pen
 width while dashes are 8 times as long; gaps between segments are 4
 times the pen width). For more detailed attributes including exact
-dimensions you may specify <em>string</em>:<em>offset</em>, where <em>string</em> is a
+dimensions you may specify <em>string</em>[:<em>offset</em>], where <em>string</em> is a
 series of numbers separated by underscores. These numbers represent
 a pattern by indicating the length of line segments and the gap
-between segments. The <em>offset</em> phase-shifts the pattern from the
-beginning the line. For example, if you want a yellow line of width
+between segments. The optional <em>offset</em> phase-shifts the pattern from the
+beginning the line [0]. For example, if you want a yellow line of width
 0.1 cm that alternates between long dashes (4 points), an 8 point
 gap, then a 5 point dash, then another 8 point gap, with pattern
 offset by 2 points from the origin, specify
@@ -3285,7 +3292,7 @@ straight lines of finite thickness should behave when joined at a common
 point. By default, line segments have rectangular ends, but this can
 change to give rounded ends. When <a class="reference internal" href="gmt.conf.html#ps-line-cap"><span class="std std-ref">PS_LINE_CAP</span></a> is set to round the
 a segment length of zero will appear as a circle. This can be used to
-created circular dotted lines, and by manipulating the phase shift in
+create circular dotted lines, and by manipulating the phase shift in
 the <em>style</em> attribute and plotting the same line twice one can even
 alternate the color of adjacent items.
 Figure <a class="reference internal" href="GMT_Docs_classic.html#line-appearance"><span class="std std-ref">Line appearance</span></a> shows various lines made in this
@@ -3862,6 +3869,14 @@ applications only the last transformation is needed.</p>
 <p class="caption"><span class="caption-text">Examples of two user CPTs for the range -0.5 to 3 created from the same master.  One (left) extracted a
 subset of the master before scaling while the other (right) used the entire range.</span></p>
 </div>
+</div>
+<div class="section" id="automatic-cpts">
+<h3>7.20.6. Automatic CPTs<a class="headerlink" href="#automatic-cpts" title="Permalink to this headline">¶</a></h3>
+<p>A few modules (<a class="reference internal" href="grdimage.html"><span class="doc">grdimage</span></a>, <a class="reference internal" href="grdview.html"><span class="doc">grdview</span></a>) that expects a CPT option will
+provide a default CPT if none is provided.  By default, the default CPT is the
+“rainbow” color table, but this is overridden if the user uses the &#64;eart_relief
+(we select “geo”) or &#64;srtm_relief (we select “srtm”) data sets.  After selection,
+these CPTs are read and scaled to match the range of the grid values.</p>
 </div>
 </div>
 <div class="section" id="the-drawing-of-vectors">
@@ -5106,7 +5121,7 @@ when a file is specified on the command line and it is not present in
 the current directory. This allows maintainers to consolidate large
 data files and to simplify scripting that use these files since the
 absolute path need not be specified. Separate multiple directories
-with colons (:) – under Windows use semi-colons (;). Any directory
+with commas. Any directory
 name that ends in a trailing slash (/) will be searched recursively
 (not under Windows).</dd>
 <dt>Variable $GMT_USERDIR</dt>
@@ -5126,8 +5141,7 @@ directory can be emptied by running gmt <strong>gmt clear cache</strong>.</dd>
 <dt>Variable $GMT_TMPDIR</dt>
 <dd>may indicate the location, where GMT will write its state parameters
 via the two files <code class="docutils literal notranslate"><span class="pre">gmt.history</span></code> and <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code>. If $GMT_TMPDIR is not
-set, these files are written to the current directory. See Section
-<a class="reference internal" href="#isolation-mode">Isolation mode</a> for more information.</dd>
+set, these files are written to the current directory.</dd>
 <dt>Parameter DIR_DCW</dt>
 <dd>specifies where to look for the optional Digital Charts of the World
 database (for country coloring or selections).</dd>
@@ -6582,18 +6596,15 @@ GMT coastlines derive). The package is maintained by Paul Wessel.</p>
 global gravity and predicted topography solutions derived from satellite
 altimetry <a class="footnote-reference" href="#id73" id="id33">[23]</a>. The package is maintained by Walter Smith and Paul Wessel.</p>
 </div>
-<div class="section" id="meca-seismology-and-geodesy-symbols">
-<h2>12.3. meca: seismology and geodesy symbols<a class="headerlink" href="#meca-seismology-and-geodesy-symbols" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="geodesy-geodesy">
+<h2>12.3. geodesy: Geodesy<a class="headerlink" href="#geodesy-geodesy" title="Permalink to this headline">¶</a></h2>
 <p>This package contains the programs
-<a class="reference internal" href="supplements/meca/coupe.html"><span class="doc">coupe</span></a>,
-<a class="reference internal" href="supplements/meca/meca.html"><span class="doc">meca</span></a>,
-<a class="reference internal" href="supplements/meca/polar.html"><span class="doc">polar</span></a>,
-<a class="reference internal" href="supplements/meca/velo.html"><span class="doc">velo</span></a>, and
-<a class="reference internal" href="supplements/meca/sac.html"><span class="doc">sac</span></a> which are used by seismologists
-and geodesists for plotting focal mechanisms (including cross-sections
-and polarities), error ellipses, velocity arrows, rotational wedges, and
-more. The package was developed by Kurt Feigl and Genevieve
-Patau with contributions from Dongdong Tian but is now maintained by the GMT team.</p>
+<a class="reference internal" href="supplements/geodesy/earthtide.html"><span class="doc">earthtide</span></a> for computing solid Earth tides,
+<a class="reference internal" href="supplements/geodesy/gpsgridder.html"><span class="doc">gpsgridder</span></a> for gridding GPS velocity components, and
+<a class="reference internal" href="supplements/geodesy/velo.html"><span class="doc">velo</span></a> for plotting error ellipses, velocity arrows, and rotational wedges.
+The velo program was developed by Kurt Feigl and Genevieve
+Patau and is now maintained by the GMT team. The earthtide program is a translation to C of a
+program written by Dennis Milbert and distributed with his permission.</p>
 </div>
 <div class="section" id="mgd77-mgd77-extractor-and-plotting-tools">
 <h2>12.4. mgd77: MGD77 extractor and plotting tools<a class="headerlink" href="#mgd77-mgd77-extractor-and-plotting-tools" title="Permalink to this headline">¶</a></h2>
@@ -6633,8 +6644,20 @@ which uses the methods of Talwani to compute various geopotential components
 from 2-D <a class="footnote-reference" href="#id76" id="id36">[26]</a> or 3-D <a class="footnote-reference" href="#id77" id="id37">[27]</a> bodies.
 The package is maintained by Joaquim Luis and Paul Wessel.</p>
 </div>
-<div class="section" id="segyprogs-plotting-segy-seismic-data">
-<h2>12.6. segyprogs: plotting SEGY seismic data<a class="headerlink" href="#segyprogs-plotting-segy-seismic-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="seis-seismology">
+<h2>12.6. seis: Seismology<a class="headerlink" href="#seis-seismology" title="Permalink to this headline">¶</a></h2>
+<p>This package contains the programs
+<a class="reference internal" href="supplements/seis/coupe.html"><span class="doc">coupe</span></a>,
+<a class="reference internal" href="supplements/seis/meca.html"><span class="doc">meca</span></a>,
+<a class="reference internal" href="supplements/seis/polar.html"><span class="doc">polar</span></a>, and
+<a class="reference internal" href="supplements/seis/sac.html"><span class="doc">sac</span></a> which are used by seismologists
+for plotting focal mechanisms (including cross-sections
+and polarities) and SAC files.
+The coupe, meca, and polar were developed by Kurt Feigl and Genevieve
+Patau, while Dongdong Tian added sac; the package is now maintained by the GMT team.</p>
+</div>
+<div class="section" id="segy-plotting-segy-seismic-data">
+<h2>12.7. segy: plotting SEGY seismic data<a class="headerlink" href="#segy-plotting-segy-seismic-data" title="Permalink to this headline">¶</a></h2>
 <p>This package contains programs to plot SEGY seismic data files using the
 GMT mapping transformations and postscript library.
 <a class="reference internal" href="supplements/segy/segy.html"><span class="doc">segy</span></a> generates a 2-D plot (x:location
@@ -6645,7 +6668,7 @@ trace header. Finally, <a class="reference internal" href="supplements/segy/segy
 convert SEGY data to a GMT grid file. The package is maintained by Tim Henstock <a class="footnote-reference" href="#id78" id="id38">[28]</a>.</p>
 </div>
 <div class="section" id="spotter-backtracking-and-hotspotting">
-<h2>12.7. spotter: backtracking and hotspotting<a class="headerlink" href="#spotter-backtracking-and-hotspotting" title="Permalink to this headline">¶</a></h2>
+<h2>12.8. spotter: backtracking and hotspotting<a class="headerlink" href="#spotter-backtracking-and-hotspotting" title="Permalink to this headline">¶</a></h2>
 <p>This package contains the plate tectonic programs
 <a class="reference internal" href="supplements/spotter/backtracker.html"><span class="doc">backtracker</span></a>, which you can use to
 move geologic markers forward or backward in time,
@@ -6666,7 +6689,7 @@ operations involving finite rotations on a sphere. The package is
 maintained by Paul Wessel.</p>
 </div>
 <div class="section" id="x2sys-track-crossover-error-estimation">
-<h2>12.8. x2sys: track crossover error estimation<a class="headerlink" href="#x2sys-track-crossover-error-estimation" title="Permalink to this headline">¶</a></h2>
+<h2>12.9. x2sys: track crossover error estimation<a class="headerlink" href="#x2sys-track-crossover-error-estimation" title="Permalink to this headline">¶</a></h2>
 <p>This package contains the tools
 <a class="reference internal" href="supplements/x2sys/x2sys_datalist.html"><span class="doc">x2sys_datalist</span></a>, which allows
 you to extract data from almost any binary or ASCII data file, and
@@ -6745,8 +6768,8 @@ used by Matlab or Octave). When these markers are used then no other
 segment header will be considered. Note that <a class="reference internal" href="gmt.conf.html#io-segment-marker"><span class="std std-ref">IO_SEGMENT_MARKER</span></a> can
 be set differently for input and output.  Finally, if a segment represents
 a closed polygon that is a hole inside another polygon you indicate this
-with <strong>-Ph</strong>.  This setting will be read and processed if converting a
-file to the OGR format.</p>
+by including <strong>-Ph</strong> in the segment header.  This setting will be read
+and processed if converting a file to the OGR format.</p>
 </div>
 </div>
 <div class="section" id="binary-tables">
@@ -6777,7 +6800,7 @@ reads, but does not write, netCDF tabular data.</p>
 <h3>13.1.4. Shapefiles<a class="headerlink" href="#shapefiles" title="Permalink to this headline">¶</a></h3>
 <p>GMT programs that read tables also support ESRI shapefiles, provided GMT was compiled
 with GDAL support.  By default, only the geographic coordinates are read.  To select
-some or all aspatial fields, see the <a class="reference internal" href="gmt.html#aspatial-full"><span class="std std-ref">**-a** option</span></a></p>
+some or all aspatial fields, see the <a class="reference internal" href="gmt.html#aspatial-full"><span class="std std-ref">-a option</span></a>.</p>
 </div>
 </div>
 <div class="section" id="grid-files">
@@ -8371,7 +8394,7 @@ GMT on Windows.</p>
 <div class="section" id="built-in-color-palette-tables-cpt">
 <h2>22.1. Built-in color palette tables (CPT)<a class="headerlink" href="#built-in-color-palette-tables-cpt" title="Permalink to this headline">¶</a></h2>
 <p>Figures <a class="reference internal" href="GMT_Docs_classic.html#cpt-files-a"><span class="std std-ref">CPTs a</span></a>, <a class="reference internal" href="GMT_Docs_classic.html#cpt-files-b"><span class="std std-ref">b</span></a> and
-<a class="reference internal" href="GMT_Docs_classic.html#cpt-files-c"><span class="std std-ref">b</span></a> show the ~60 built-in
+<a class="reference internal" href="GMT_Docs_classic.html#cpt-files-c"><span class="std std-ref">b</span></a> show the 68 built-in
 color palettes, stored in so-called CPTs <a class="footnote-reference" href="#id85" id="id46">[35]</a>. The programs
 <a class="reference internal" href="makecpt.html"><span class="doc">makecpt</span></a> and
 <a class="reference internal" href="grd2cpt.html"><span class="doc">grd2cpt</span></a> are used to access these
@@ -8391,7 +8414,7 @@ bar are built by using <a class="reference internal" href="makecpt.html"><span c
 </div>
 <div class="figure align-center" id="id196">
 <span id="cpt-files-c"></span><a class="reference internal image-reference" href="_images/GMT_App_M_1c.png"><img alt="_images/GMT_App_M_1c.png" src="_images/GMT_App_M_1c.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-text">The 18 scientific color maps by Fabio Crameri supported by GMT.</span></p>
+<p class="caption"><span class="caption-text">The 24 scientific color maps by Fabio Crameri supported by GMT.</span></p>
 </div>
 <p>For additional color tables, visit
 <a class="reference external" href="http://soliton.vm.bytemark.co.uk/pub/cpt-city/">cpt-city</a> and
@@ -8694,7 +8717,7 @@ each data record.  Such custom symbols must be invoked with <strong>-SK</strong>
 you can also obtain the entire string from your input file via a single symbol
 variable <strong>$t</strong> that must be declared with type <strong>s</strong> (string).  The string will be taken
 as all trialing text in your data record.  To select a single word from the trailing text
-you just use $k, where k starts at 1 for the first word, regardless of how many numerical
+you just use <strong>$t</strong><em>k</em>, where <em>k</em> starts at 0 for the first word, regardless of how many numerical
 columns that precede it.  For each word you plan to use you must add a type <strong>s</strong> above.
 Words must be separated by one tab or space only.  To place the dollar sign $ itself you must
 use octal \044 so as to not confuse the parser with a symbol variable.
@@ -9384,78 +9407,6 @@ that New York will experience a large tsunami about 8 hours after the event.</sp
 </div>
 <div class="section" id="special-operations">
 <h1>25. Special Operations<a class="headerlink" href="#special-operations" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="running-gmt-in-isolation-mode">
-<span id="isolation-mode"></span><h2>25.1. Running GMT in <em>isolation mode</em><a class="headerlink" href="#running-gmt-in-isolation-mode" title="Permalink to this headline">¶</a></h2>
-<p>In Chapter <a class="reference internal" href="#general-features">General features</a> it is described how GMT creates
-several (temporary) files to communicate between the different commands
-that make up the script that finally creates a plot. Among those files
-are:</p>
-<blockquote>
-<div><dl class="docutils">
-<dt><strong>gmt.conf</strong> This file covers about 150 different settings that influence the</dt>
-<dd>layout of your plot, from font sizes to tick lengths and date
-formats (See Section <a class="reference internal" href="#gmt-defaults">GMT defaults</a>). Those settings can be altered
-by editing the file, or by running the
-<a class="reference internal" href="gmtset.html"><span class="doc">set</span></a> command. A problem may arise
-when those settings are changed half-way through the script: the
-next time you run the script it will start with the modified
-settings and hence might alter your scripts results. It is therefore
-often necessary to revert to the original <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code> file. <em>Isolation mode</em>
-avoids that issue.</dd>
-<dt><strong>gmt.history</strong> This file is created to communicate the command line history from</dt>
-<dd>one command to the next (Section <a class="reference internal" href="#command-line-history">Command line history</a>) so that
-shorthands like <strong>-R</strong> or <strong>-J</strong> can be used once it has been set in
-a previous GMT command. The existence of this file makes if
-impossible to run two GMT scripts simultaneously in the same
-directory, since those <code class="docutils literal notranslate"><span class="pre">gmt.history</span></code> files may clash (contain different histories)
-and adversely affect the results of both scripts.</dd>
-</dl>
-</div></blockquote>
-<p>A cure to all these woes is the <em>isolation mode</em> introduced in
-GMT version 4.2.2. This mode allows you to run a GMT script without
-leaving any traces other than the resulting PostScript  or data files,
-and not altering the <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code> or <code class="docutils literal notranslate"><span class="pre">gmt.history</span></code> files. Those files will be placed in a temporary
-directory instead. And if properly set up, this temporary directory will
-only be used by a single script, even if another GMT script is running
-simultaneously. This also provides the opportunity to create any other
-temporary files that the script might create in the same directory.</p>
-<p>The example below shows how <em>isolation mode</em> works.</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">ps</span><span class="o">=</span>GMT_App_P_1.ps
-
-<span class="c1"># Create a temporary directory. $GMT_TMPDIR will be set to its pathname.</span>
-<span class="c1"># XXXXXX is replaced by a unique random combination of characters.</span>
-<span class="nb">export</span> <span class="nv">GMT_TMPDIR</span><span class="o">=</span><span class="sb">`</span>mktemp -d /tmp/gmt.XXXXXX<span class="sb">`</span>
-
-<span class="c1"># These settings will be local to this script only since it writes to</span>
-<span class="c1"># $GMT_TMPDIR/gmt.conf</span>
-gmt <span class="nb">set</span> COLOR_MODEL rgb FONT_ANNOT_PRIMARY 14p
-
-<span class="c1"># Make grid file and color map in temporary directory</span>
-gmt grdmath -Rd -I1 <span class="nv">Y</span> <span class="o">=</span> <span class="nv">$GMT_TMPDIR</span>/lat.nc
-gmt makecpt -Crainbow -T-90/90/180 -Z &gt; <span class="nv">$GMT_TMPDIR</span>/lat.cpt
-
-<span class="c1"># The gmt grdimage command creates the history file $GMT_TMPDIR/gmt.history</span>
-gmt grdimage <span class="nv">$GMT_TMPDIR</span>/lat.nc -JK6.5i -C<span class="nv">$GMT_TMPDIR</span>/lat.cpt -P -K -nl &gt; <span class="nv">$ps</span>
-gmt coast -R -J -O -Dc -A5000 -Gwhite -Bx60g30 -By30g30 &gt;&gt; <span class="nv">$ps</span>
-
-<span class="c1"># Clean up all temporary files and the temporary directory</span>
-rm -rf <span class="nv">$GMT_TMPDIR</span>
-</pre></div>
-</div>
-</div></blockquote>
-<div class="figure align-center" id="id207">
-<a class="reference internal image-reference" href="_images/GMT_App_P_2.png"><img alt="_images/GMT_App_P_2.png" src="_images/GMT_App_P_2.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-text">Example created in isolation mode</span></p>
-</div>
-<p>The files <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code> and <code class="docutils literal notranslate"><span class="pre">gmt.history</span></code> are automatically created in the temporary directory
-<code class="docutils literal notranslate"><span class="pre">$GMT_TMPDIR</span></code>. The script is also adjusted such that the temporary grid file <code class="docutils literal notranslate"><span class="pre">lat.nc</span></code> and colormap
-<code class="docutils literal notranslate"><span class="pre">lat.cpt</span></code> are created in that directory as well. To make things even more easy,
-GMT now provides a set of handy shell functions in <a class="reference internal" href="gmt_shell_functions.sh.html"><span class="doc">gmt_shell_functions.sh</span></a>:
-simply include that file in the script and the creation and the removal
-of the temporary directory is reduced to the single commands <strong>gmt_init_tmpdir</strong> and
-<strong>gmt_remove_tmpdir</strong>, respectively.</p>
-</div>
 </div>
 <div class="section" id="the-gmt-vector-data-format-for-ogr-compatibility">
 <span id="ogr-compat"></span><h1>26. The GMT Vector Data Format for OGR Compatibility<a class="headerlink" href="#the-gmt-vector-data-format-for-ogr-compatibility" title="Permalink to this headline">¶</a></h1>
@@ -10293,6 +10244,7 @@ colors suitable for categorical plots.</td></tr>
 <li><a class="reference internal" href="#master-dynamic-cpts">7.20.3. Master (dynamic) CPTs</a></li>
 <li><a class="reference internal" href="#cyclic-wrapped-cpts">7.20.4. Cyclic (wrapped) CPTs</a></li>
 <li><a class="reference internal" href="#manipulating-cpts">7.20.5. Manipulating CPTs</a></li>
+<li><a class="reference internal" href="#automatic-cpts">7.20.6. Automatic CPTs</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#the-drawing-of-vectors">7.21. The Drawing of Vectors</a></li>
@@ -10398,12 +10350,13 @@ colors suitable for categorical plots.</td></tr>
 <li><a class="reference internal" href="#gmt-supplemental-packages">12. GMT Supplemental Packages</a><ul>
 <li><a class="reference internal" href="#gshhg-gshhg-data-extractor">12.1. gshhg: GSHHG data extractor</a></li>
 <li><a class="reference internal" href="#img-gridded-altimetry-extractor">12.2. img: gridded altimetry extractor</a></li>
-<li><a class="reference internal" href="#meca-seismology-and-geodesy-symbols">12.3. meca: seismology and geodesy symbols</a></li>
+<li><a class="reference internal" href="#geodesy-geodesy">12.3. geodesy: Geodesy</a></li>
 <li><a class="reference internal" href="#mgd77-mgd77-extractor-and-plotting-tools">12.4. mgd77: MGD77 extractor and plotting tools</a></li>
 <li><a class="reference internal" href="#potential-geopotential-tools">12.5. potential: Geopotential tools</a></li>
-<li><a class="reference internal" href="#segyprogs-plotting-segy-seismic-data">12.6. segyprogs: plotting SEGY seismic data</a></li>
-<li><a class="reference internal" href="#spotter-backtracking-and-hotspotting">12.7. spotter: backtracking and hotspotting</a></li>
-<li><a class="reference internal" href="#x2sys-track-crossover-error-estimation">12.8. x2sys: track crossover error estimation</a></li>
+<li><a class="reference internal" href="#seis-seismology">12.6. seis: Seismology</a></li>
+<li><a class="reference internal" href="#segy-plotting-segy-seismic-data">12.7. segy: plotting SEGY seismic data</a></li>
+<li><a class="reference internal" href="#spotter-backtracking-and-hotspotting">12.8. spotter: backtracking and hotspotting</a></li>
+<li><a class="reference internal" href="#x2sys-track-crossover-error-estimation">12.9. x2sys: track crossover error estimation</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#gmt-file-formats">13. GMT File Formats</a><ul>
@@ -10529,10 +10482,7 @@ colors suitable for categorical plots.</td></tr>
 <li><a class="reference internal" href="#putting-it-all-together">24.5. Putting it all together</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#special-operations">25. Special Operations</a><ul>
-<li><a class="reference internal" href="#running-gmt-in-isolation-mode">25.1. Running GMT in <em>isolation mode</em></a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#special-operations">25. Special Operations</a></li>
 <li><a class="reference internal" href="#the-gmt-vector-data-format-for-ogr-compatibility">26. The GMT Vector Data Format for OGR Compatibility</a><ul>
 <li><a class="reference internal" href="#id50">26.1. Background</a></li>
 <li><a class="reference internal" href="#the-ogr-gmt-format">26.2. The OGR/GMT format</a></li>
@@ -10555,10 +10505,10 @@ colors suitable for categorical plots.</td></tr>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="cookbook.html"
-                        title="previous chapter">Modern Mode</a></p>
+                        title="previous chapter">The GMT Cookbook (Modern Mode)</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="tutorial.html"
-                        title="next chapter">Modern Mode</a></p>
+  <p class="topless"><a href="tutorial_classic.html"
+                        title="next chapter">Tutorial (Classic Mode)</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -10577,16 +10527,16 @@ colors suitable for categorical plots.</td></tr>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="tutorial.html" title="Modern Mode"
+          <a href="tutorial_classic.html" title="Tutorial (Classic Mode)"
              >next</a> </li>
         <li class="right" >
-          <a href="cookbook.html" title="Modern Mode"
+          <a href="cookbook.html" title="The GMT Cookbook (Modern Mode)"
              >previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="cookbook.html" >Modern Mode</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cookbook.html" >The GMT Cookbook (Modern Mode)</a> &#187;</li>
 <li class="right">
 <form class="search" accept-charset="UTF-8" action="search.html" method="get">
   <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
@@ -10602,8 +10552,8 @@ colors suitable for categorical plots.</td></tr>
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on May 29, 2019.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Jul 28, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

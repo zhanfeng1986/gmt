@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>Quick Reference (Modern Mode) &#8212; GMT 6.0.0_6a82a05_2019.05.28 documentation</title>
+    <title>Quick Reference (Modern Mode) &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -35,9 +35,9 @@
         <li class="right" >
           <a href="quick_ref.html" title="Module Purpose"
              accesskey="N">next</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="#">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="#">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
 <li class="right">
 <form class="search" accept-charset="UTF-8" action="search.html" method="get">
@@ -316,6 +316,7 @@
 <li class="toctree-l2"><a class="reference internal" href="grdgradient.html">grdgradient</a></li>
 <li class="toctree-l2"><a class="reference internal" href="grdhisteq.html">grdhisteq</a></li>
 <li class="toctree-l2"><a class="reference internal" href="grdinfo.html">grdinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grdinterpolate.html">grdinterpolate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="grdlandmask.html">grdlandmask</a></li>
 <li class="toctree-l2"><a class="reference internal" href="grdmask.html">grdmask</a></li>
 <li class="toctree-l2"><a class="reference internal" href="grdmath.html">grdmath</a></li>
@@ -425,21 +426,19 @@
 <tbody valign="top">
 <tr class="row-odd"><td><div class="toctree-wrapper first last compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="SUP_GEODESY.html">GEODESY</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="supplements/geodesy/earthtide.html">earthtide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supplements/geodesy/gpsgridder.html">gpsgridder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supplements/geodesy/velo.html">velo</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="SUP_GSHHS.html">GSHHG</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="supplements/gshhg/gshhg.html">gshhg</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="SUP_IMGSRC.html">IMGSRC</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="SUP_IMG.html">IMG</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="supplements/img/img2grd.html">img2grd</a></li>
 <li class="toctree-l2"><a class="reference internal" href="supplements/img/img2google.html">img2google</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="SUP_MECA.html">MECA</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="supplements/meca/coupe.html">coupe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="supplements/meca/meca.html">meca</a></li>
-<li class="toctree-l2"><a class="reference internal" href="supplements/meca/polar.html">polar</a></li>
-<li class="toctree-l2"><a class="reference internal" href="supplements/meca/velo.html">velo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="supplements/meca/sac.html">sac</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="SUP_MGD77.html">MGD77</a><ul>
@@ -460,10 +459,8 @@
 <td><div class="toctree-wrapper first last compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="SUP_POTENTIAL.html">POTENTIAL</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="supplements/potential/earthtide.html">earthtide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="supplements/potential/gmtgravmag3d.html">gravmag3d</a></li>
 <li class="toctree-l2"><a class="reference internal" href="supplements/potential/gmtflexure.html">flexure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="supplements/potential/gpsgridder.html">gpsgridder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="supplements/potential/gravfft.html">gravfft</a></li>
 <li class="toctree-l2"><a class="reference internal" href="supplements/potential/grdflexure.html">grdflexure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="supplements/potential/grdgravmag3d.html">grdgravmag3d</a></li>
@@ -497,6 +494,13 @@
 <li class="toctree-l2"><a class="reference internal" href="supplements/segy/segy2grd.html">segy2grd</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="SUP_SEIS.html">SEIS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="supplements/seis/coupe.html">coupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supplements/seis/meca.html">meca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supplements/seis/polar.html">polar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supplements/seis/sac.html">sac</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="SUP_X2SYS.html">X2SYS</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="supplements/x2sys/x2sys_binlist.html">x2sys_binlist</a></li>
 <li class="toctree-l2"><a class="reference internal" href="supplements/x2sys/x2sys_cross.html">x2sys_cross</a></li>
@@ -521,19 +525,16 @@
 <h1>Supplements (Classic Mode)<a class="headerlink" href="#supplements-classic-mode" title="Permalink to this headline">¶</a></h1>
 <table border="1" class="docutils">
 <colgroup>
-<col width="32%" />
-<col width="34%" />
-<col width="34%" />
+<col width="25%" />
+<col width="24%" />
+<col width="24%" />
+<col width="26%" />
 </colgroup>
 <tbody valign="top">
 <tr class="row-odd"><td><div class="toctree-wrapper first last compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="SUP_MECA_classic.html">MECA</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="supplements/meca/pscoupe.html">pscoupe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="supplements/meca/psmeca.html">psmeca</a></li>
-<li class="toctree-l2"><a class="reference internal" href="supplements/meca/pspolar.html">pspolar</a></li>
-<li class="toctree-l2"><a class="reference internal" href="supplements/meca/psvelo.html">psvelo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="supplements/meca/pssac.html">pssac</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SUP_GEODESY_classic.html">GEODESY</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="supplements/geodesy/psvelo.html">psvelo</a></li>
 </ul>
 </li>
 </ul>
@@ -553,6 +554,18 @@
 <li class="toctree-l1"><a class="reference internal" href="SUP_SEGY_classic.html">SEGY</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="supplements/segy/pssegy.html">pssegy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="supplements/segy/pssegyz.html">pssegyz</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</td>
+<td><div class="toctree-wrapper first last compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="SUP_SEIS_classic.html">SEIS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="supplements/seis/pscoupe.html">pscoupe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supplements/seis/psmeca.html">psmeca</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supplements/seis/pspolar.html">pspolar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supplements/seis/pssac.html">pssac</a></li>
 </ul>
 </li>
 </ul>
@@ -590,74 +603,22 @@
 </tbody>
 </table>
 </div>
-<div class="section" id="the-cookbook">
-<h1>The CookBook<a class="headerlink" href="#the-cookbook" title="Permalink to this headline">¶</a></h1>
-<table border="1" class="docutils">
-<colgroup>
-<col width="100%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><div class="toctree-wrapper first last compound">
+<div class="section" id="documentations">
+<h1>Documentations<a class="headerlink" href="#documentations" title="Permalink to this headline">¶</a></h1>
+<p><strong>Modern mode</strong></p>
+<div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="cookbook.html">Modern Mode</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Docs.html">1. The Generic Mapping Tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Docs.html#a-reminder">2. A Reminder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Docs.html#copyright-and-caveat-emptor">3. Copyright and Caveat Emptor!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Docs.html#preface">4. Preface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Docs.html#introduction">5. Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Docs.html#gmt-overview-and-quick-reference">6. GMT Overview and Quick Reference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Docs.html#general-features">7. General Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Docs.html#gmt-coordinate-transformations">8. GMT Coordinate Transformations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Docs.html#gmt-map-projections">9. GMT Map Projections</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Docs.html#creating-gmt-graphics">10. Creating GMT Graphics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Docs.html#creating-gmt-animations">11. Creating GMT Animations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Docs.html#gmt-supplemental-packages">12. GMT Supplemental Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Docs.html#gmt-file-formats">13. GMT File Formats</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Docs.html#including-gmt-graphics-into-your-documents">14. Including GMT Graphics into your Documents</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Docs.html#predefined-bit-and-hachure-patterns-in-gmt">15. Predefined Bit and Hachure Patterns in GMT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Docs.html#chart-of-octal-codes-for-characters">16. Chart of Octal Codes for Characters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Docs.html#postscript-fonts-used-by-gmt">17. PostScript Fonts Used by GMT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Docs.html#color-space-the-final-frontier">18. Color Space: The Final Frontier</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Docs.html#filtering-of-data-in-gmt">19. Filtering of Data in GMT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Docs.html#the-gmt-high-resolution-coastline-data">20. The GMT High-Resolution Coastline Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Docs.html#gmt-on-non-unix-platforms">21. GMT on non-UNIX Platforms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Docs.html#of-colors-and-color-legends">22. Of Colors and Color Legends</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Docs.html#app-custom-symbols">23. Custom Plot Symbols</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Docs.html#annotation-of-contours-and-quoted-lines">24. Annotation of Contours and “Quoted Lines”</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Docs.html#special-operations">25. Special Operations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Docs.html#the-gmt-vector-data-format-for-ogr-compatibility">26. The GMT Vector Data Format for OGR Compatibility</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial (Modern Mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cookbook.html">The GMT Cookbook (Modern Mode)</a></li>
 </ul>
 </div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="the-tutorial">
-<h1>The Tutorial<a class="headerlink" href="#the-tutorial" title="Permalink to this headline">¶</a></h1>
-<table border="1" class="docutils">
-<colgroup>
-<col width="100%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><div class="toctree-wrapper first last compound">
+<p><strong>Classic mode</strong></p>
+<div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Modern Mode</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Tutorial.html">1. Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Tutorial.html#session-one">2. Session One</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Tutorial.html#session-two">3. Session Two</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Tutorial.html#session-three">4. Session Three</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_Tutorial.html#session-four">5. Session Four</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_classic.html">Tutorial (Classic Mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cookbook_classic.html">The GMT Cookbook (Classic Mode)</a></li>
 </ul>
 </div>
-</td>
-</tr>
-</tbody>
-</table>
 </div>
 <div class="section" id="gmt-data-sets">
 <h1>GMT Data Sets<a class="headerlink" href="#gmt-data-sets" title="Permalink to this headline">¶</a></h1>
@@ -712,72 +673,13 @@
 </div>
 <div class="section" id="api-reference">
 <h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
-<table border="1" class="docutils">
-<colgroup>
-<col width="100%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><div class="toctree-wrapper first last compound">
+<div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="api.html">GMT_API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="GMT_API.html">1. Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_API.html#overview-of-the-gmt-c-application-program-interface">2. Overview of the GMT C Application Program Interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_API.html#the-gmt-c-application-program-interface">3. The GMT C Application Program Interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_API.html#the-gmt-fft-interface">4. The GMT FFT Interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_API.html#fortran-support">5. FORTRAN Support</a></li>
-<li class="toctree-l2"><a class="reference internal" href="GMT_API.html#external-interfaces">6. External Interfaces</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">GMT_API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ml_wrapper.html">MATLAB Wrapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jl_wrapper.html">Julia Wrapper</a></li>
 </ul>
 </div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="matlab-wrapper">
-<h1>MATLAB Wrapper<a class="headerlink" href="#matlab-wrapper" title="Permalink to this headline">¶</a></h1>
-<table border="1" class="docutils">
-<colgroup>
-<col width="100%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><div class="toctree-wrapper first last compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ml_wrapper.html">MATLAB Wrapper</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="matlab_wrapper.html">1. Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="matlab_wrapper.html#installing">2. Installing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="matlab_wrapper.html#using">3. Using</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="julia-wrapper">
-<h1>Julia Wrapper<a class="headerlink" href="#julia-wrapper" title="Permalink to this headline">¶</a></h1>
-<table border="1" class="docutils">
-<colgroup>
-<col width="100%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><div class="toctree-wrapper first last compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="jl_wrapper.html">Julia Wrapper</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="julia_wrapper.html">1. Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="julia_wrapper.html#installing">2. Installing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="julia_wrapper.html#using">3. Using</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -812,15 +714,14 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#gallery">Gallery</a></li>
-<li><a class="reference internal" href="#the-cookbook">The CookBook</a></li>
-<li><a class="reference internal" href="#the-tutorial">The Tutorial</a></li>
+<li><a class="reference internal" href="#documentations">Documentations</a><ul>
+</ul>
+</li>
 <li><a class="reference internal" href="#gmt-data-sets">GMT Data Sets</a></li>
 <li><a class="reference internal" href="#the-software">The Software</a><ul>
 </ul>
 </li>
-<li><a class="reference internal" href="#api-reference">API Reference</a></li>
-<li><a class="reference internal" href="#matlab-wrapper">MATLAB Wrapper</a></li>
-<li><a class="reference internal" href="#julia-wrapper">Julia Wrapper</a><ul>
+<li><a class="reference internal" href="#api-reference">API Reference</a><ul>
 </ul>
 </li>
 </ul>
@@ -848,9 +749,9 @@
         <li class="right" >
           <a href="quick_ref.html" title="Module Purpose"
              >next</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="#">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="#">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
 <li class="right">
 <form class="search" accept-charset="UTF-8" action="search.html" method="get">
@@ -867,8 +768,8 @@
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on May 29, 2019.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Jul 28, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

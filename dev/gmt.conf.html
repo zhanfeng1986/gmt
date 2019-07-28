@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>gmt.conf &#8212; GMT 6.0.0_6a82a05_2019.05.28 documentation</title>
+    <title>gmt.conf &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -39,9 +39,9 @@
         <li class="right" >
           <a href="Defaults.html" title="Defaults"
              accesskey="P">previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="Defaults.html" accesskey="U">Defaults</a> &#187;</li>
 <li class="right">
@@ -741,7 +741,15 @@ projections, polar projections). For situations where all boundary
 ticks and annotations must be inside the maps (e.g., for preparing
 geotiffs), chose <strong>inside</strong>.  Finally, for Cartesian plots you can
 also choose <strong>graph</strong>, which adds a vector to the end of each axis.
-This works best when you reduce the number of axes plotted.</dd>
+This works best when you reduce the number of axes plotted to one
+per dimension.  By default, the vector tip extends the length of each
+axis by 7.5%. Alternatively, append ,<em>length</em>[<strong>u</strong>], where <strong>u</strong>
+can be % (then <em>length</em> is the alternate extension in percent) or one
+of <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> (then <em>length</em> is the absolute extension
+of the axis to the start of the vector base instead).  The vector stem
+is set to match <a class="reference internal" href="#map-frame-width"><span class="std std-ref">MAP_FRAME_WIDTH</span></a>, while the vector
+head length and width are 10 and 5 times this width, respectively.  You
+may control its shape via <a class="reference internal" href="#map-vector-shape"><span class="std std-ref">MAP_VECTOR_SHAPE</span></a>.</dd>
 </dl>
 <dl class="docutils" id="map-frame-width">
 <dt><strong>MAP_FRAME_WIDTH</strong></dt>
@@ -1292,9 +1300,9 @@ correspond to 1800 through 1828. [1950].</dd>
         <li class="right" >
           <a href="Defaults.html" title="Defaults"
              >previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="Defaults.html" >Defaults</a> &#187;</li>
 <li class="right">
@@ -1312,8 +1320,8 @@ correspond to 1800 through 1828. [1950].</dd>
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on May 29, 2019.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Jul 28, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

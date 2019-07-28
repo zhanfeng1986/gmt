@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>grdvector &#8212; GMT 6.0.0_6a82a05_2019.05.28 documentation</title>
+    <title>grdvector &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -39,9 +39,9 @@
         <li class="right" >
           <a href="grdcontour.html" title="grdcontour"
              accesskey="P">previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="PS.html" accesskey="U">Modern Mode Mapping</a> &#187;</li>
 <li class="right">
@@ -130,7 +130,8 @@ the grid’s z-range; you may round up/down the z-range by adding <strong>+i</st
 Yet another option is to specify <strong>-C</strong><em>color1,color2</em>[,<em>color3</em>,…]
 to build a linear continuous cpt from those colors automatically.
 In this case <em>color</em><strong>n</strong> can be a r/g/b triplet, a color name,
-or an HTML hexadecimal color (e.g. #aabbcc ).</dd>
+or an HTML hexadecimal color (e.g. #aabbcc ).  If no argument is given to <strong>-C</strong>
+then under modern mode we select the current CPT.</dd>
 </dl>
 <dl class="docutils" id="g">
 <dt><strong>-G</strong><em>fill</em></dt>
@@ -281,7 +282,8 @@ half-sides of this head [both sides].  Cannot be combined with <strong>+b</stron
 <p><strong>+n</strong><em>norm</em> scales down vector attributes (pen thickness, head size)
 with decreasing length, where vector plot lengths shorter than <em>norm</em> will have
 their attributes scaled by length/<em>norm</em> [arrow attributes remains
-invariant to length].</p>
+invariant to length]. For Cartesian vectors specify a length in plot units, while
+for geovectors specify a length in km.</p>
 <p><strong>+o</strong>[<em>plon</em>/<em>plat</em>] specifies the oblique pole for the great or
 small circles.  Only needed for great circles if <strong>+q</strong> is given. If no
 pole is appended then we default to the north pole.</p>
@@ -395,9 +397,9 @@ larger grid increment and use these grids instead of the originals.</p>
         <li class="right" >
           <a href="grdcontour.html" title="grdcontour"
              >previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="PS.html" >Modern Mode Mapping</a> &#187;</li>
 <li class="right">
@@ -415,8 +417,8 @@ larger grid increment and use these grids instead of the originals.</p>
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on May 29, 2019.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Jul 28, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

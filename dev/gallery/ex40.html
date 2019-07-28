@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>(40) Line simplification &#8212; GMT 6.0.0_6a82a05_2019.05.28 documentation</title>
+    <title>(40) Line simplification &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -39,9 +39,9 @@
         <li class="right" >
           <a href="ex39.html" title="(39) Evaluation of spherical harmonics coefficients"
              accesskey="P">previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" accesskey="U">The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -88,7 +88,7 @@ gmt spatial @GSHHS_h_Australia.txt -fg -Qk <span class="p">|</span> <span class=
 gmt spatial T500k.txt -fg -Qk <span class="p">|</span> <span class="nv">$AWK</span> <span class="s1">&#39;{printf &quot;Reduced area = %.0f km@+2@+\n&quot;, $3}&#39;</span> &gt; area_T500k.txt
 gmt psxy -R -J -O -K -W1p,blue T500k.txt &gt;&gt; <span class="nv">$ps</span>
 gmt psxy -R -J -O -K -Sx0.3i -W3p centroid.txt &gt;&gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="nv">T</span> <span class="o">=</span> <span class="m">500</span> km <span class="p">|</span> gmt pstext -R -J -O -K -Dj0.1i/0.1i -F+cLT+jTL+f18p &gt;&gt; <span class="nv">$ps</span>
+gmt pstext -R -J -O -K -Dj0.1i/0.1i -F+cLT+jTL+f18p+t<span class="s2">&quot;T = 500 km&quot;</span> &gt;&gt; <span class="nv">$ps</span>
 gmt pstext -R -J -O -K area.txt -F+f14p+cCM &gt;&gt; <span class="nv">$ps</span>
 gmt pstext -R -J -O -K area_T500k.txt -F+f14p+cLB -Dj0.2i &gt;&gt; <span class="nv">$ps</span>
 gmt psbasemap -R -J -O -K -B20+lightgray -BWsne+g240/255/240 -Y4.7i &gt;&gt; <span class="nv">$ps</span>
@@ -98,7 +98,7 @@ gmt simplify @GSHHS_h_Australia.txt -T100k &gt; T100k.txt
 gmt spatial T100k.txt -fg -Qk <span class="p">|</span> <span class="nv">$AWK</span> <span class="s1">&#39;{printf &quot;Reduced area = %.0f km@+2@+\n&quot;, $3}&#39;</span> &gt; area_T100k.txt
 gmt psxy -R -J -O -K -W1p,blue T100k.txt &gt;&gt; <span class="nv">$ps</span>
 gmt psxy -R -J -O -K -Sx0.3i -W3p centroid.txt &gt;&gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="nv">T</span> <span class="o">=</span> <span class="m">100</span> km <span class="p">|</span> gmt pstext -R -J -O -K -Dj0.1i/0.1i -F+cLT+jTL+f18p &gt;&gt; <span class="nv">$ps</span>
+gmt pstext -R -J -O -K -Dj0.1i/0.1i -F+cLT+jTL+f18p+t<span class="s2">&quot;T = 100 km&quot;</span> &gt;&gt; <span class="nv">$ps</span>
 gmt pstext -R -J -O -K area.txt -F+f14p+cCM &gt;&gt; <span class="nv">$ps</span>
 gmt pstext -R -J -O -K area_T100k.txt -F+f14p+cLB -Dj0.2i &gt;&gt; <span class="nv">$ps</span>
 gmt psxy -R -J -O -T &gt;&gt; <span class="nv">$ps</span>
@@ -146,9 +146,9 @@ rm -f centroid.txt area*.txt T*.txt
         <li class="right" >
           <a href="ex39.html" title="(39) Evaluation of spherical harmonics coefficients"
              >previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" >The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -166,8 +166,8 @@ rm -f centroid.txt area*.txt T*.txt
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on May 29, 2019.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Jul 28, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

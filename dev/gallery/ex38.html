@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>(38) Histogram equalization of bathymetry grids &#8212; GMT 6.0.0_6a82a05_2019.05.28 documentation</title>
+    <title>(38) Histogram equalization of bathymetry grids &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -39,9 +39,9 @@
         <li class="right" >
           <a href="ex37.html" title="(37) Spectral coherence between gravity and bathymetry grids"
              accesskey="P">previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" accesskey="U">The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -82,20 +82,20 @@ gmt makecpt -Crainbow -T0/1700 &gt; t.cpt
 gmt makecpt -Crainbow -T0/15/1 &gt; c.cpt
 gmt grdhisteq @topo_38.nc -Gout.nc -C16
 gmt grdimage @topo_38.nc -I+d -Ct.cpt -JM3i -Y6i -K -P -B5 -BWSne &gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="s2">&quot;315 -10 Original&quot;</span> <span class="p">|</span> gmt pstext -R@topo_38.nc -J -O -K -F+jTR+f14p -T -Gwhite -W1p -Dj0.1i &gt;&gt; <span class="nv">$ps</span>
-gmt grdimage out.nc -Cc.cpt -J -X3.5i -K -O -B5 -BWSne &gt;&gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="s2">&quot;315 -10 Equalized&quot;</span> <span class="p">|</span> gmt pstext -R -J -O -K -F+jTR+f14p -T -Gwhite -W1p -Dj0.1i &gt;&gt; <span class="nv">$ps</span>
-gmt psscale -Dx0i/-0.4i+jTC+w5i/0.15i+h+e+n -O -K -Ct.cpt -Ba500 -By+lm &gt;&gt; <span class="nv">$ps</span>
+<span class="nb">echo</span> <span class="s2">&quot;315 -10 Original&quot;</span> <span class="p">|</span> gmt pstext -R@topo_38.nc -J -O -K -F+jTR+f14p -Gwhite -W1p -Dj0.1i &gt;&gt; <span class="nv">$ps</span>
+gmt grdimage out.nc -Cc.cpt -J -X3.8i -K -O -B5 -BWSne &gt;&gt; <span class="nv">$ps</span>
+<span class="nb">echo</span> <span class="s2">&quot;315 -10 Equalized&quot;</span> <span class="p">|</span> gmt pstext -R -J -O -K -F+jTR+f14p -Gwhite -W1p -Dj0.1i &gt;&gt; <span class="nv">$ps</span>
+gmt psscale -Dx-0.2i/-0.4i+jTC+w5i/0.15i+h+e+n -O -K -Ct.cpt -Ba500 -By+lm &gt;&gt; <span class="nv">$ps</span>
 gmt grdhisteq @topo_38.nc -Gout.nc -N
 gmt makecpt -Crainbow -T-3/3 &gt; c.cpt
-gmt grdimage out.nc -Cc.cpt -J -X-3.5i -Y-3.3i -K -O -B5 -BWSne &gt;&gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="s2">&quot;315 -10 Normalized&quot;</span> <span class="p">|</span> gmt pstext -R -J -O -K -F+jTR+f14p -T -Gwhite -W1p -Dj0.1i &gt;&gt; <span class="nv">$ps</span>
+gmt grdimage out.nc -Cc.cpt -J -X-3.8i -Y-3.3i -K -O -B5 -BWSne &gt;&gt; <span class="nv">$ps</span>
+<span class="nb">echo</span> <span class="s2">&quot;315 -10 Normalized&quot;</span> <span class="p">|</span> gmt pstext -R -J -O -K -F+jTR+f14p -Gwhite -W1p -Dj0.1i &gt;&gt; <span class="nv">$ps</span>
 gmt grdhisteq @topo_38.nc -Gout.nc -Q
 gmt makecpt -Crainbow -T0/15 &gt; q.cpt
-gmt grdimage out.nc -Cq.cpt -J -X3.5i -K -O -B5 -BWSne &gt;&gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="s2">&quot;315 -10 Quadratic&quot;</span> <span class="p">|</span> gmt pstext -R -J -O -K -F+jTR+f14p -T -Gwhite -W1p -Dj0.1i &gt;&gt; <span class="nv">$ps</span>
-gmt psscale -Dx0i/-0.4i+w5i/0.15i+h+jTC+e+n -O -K -Cc.cpt -Bx1 -By+l<span class="s2">&quot;z@-n@-&quot;</span> &gt;&gt; <span class="nv">$ps</span>
-gmt psscale -Dx0i/-1.0i+w5i/0.15i+h+jTC+e+n -O -Cq.cpt -Bx1 -By+l<span class="s2">&quot;z@-q@-&quot;</span> &gt;&gt; <span class="nv">$ps</span>
+gmt grdimage out.nc -Cq.cpt -J -X3.8i -K -O -B5 -BWSne &gt;&gt; <span class="nv">$ps</span>
+<span class="nb">echo</span> <span class="s2">&quot;315 -10 Quadratic&quot;</span> <span class="p">|</span> gmt pstext -R -J -O -K -F+jTR+f14p -Gwhite -W1p -Dj0.1i &gt;&gt; <span class="nv">$ps</span>
+gmt psscale -Dx-0.2i/-0.4i+w5i/0.15i+h+jTC+e+n -O -K -Cc.cpt -Bx1 -By+l<span class="s2">&quot;z@-n@-&quot;</span> &gt;&gt; <span class="nv">$ps</span>
+gmt psscale -Dx-0.2i/-1.0i+w5i/0.15i+h+jTC+e+n -O -Cq.cpt -Bx1 -By+l<span class="s2">&quot;z@-q@-&quot;</span> &gt;&gt; <span class="nv">$ps</span>
 rm -f out.nc ?.cpt
 </pre></div>
 </div>
@@ -140,9 +140,9 @@ rm -f out.nc ?.cpt
         <li class="right" >
           <a href="ex37.html" title="(37) Spectral coherence between gravity and bathymetry grids"
              >previous</a> </li>
-  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.0.0_6a82a05_2019.05.28 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" >The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -160,8 +160,8 @@ rm -f out.nc ?.cpt
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on May 29, 2019.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Jul 28, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

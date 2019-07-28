@@ -41,8 +41,7 @@ and all of its content), or **all** (does all of the above).
 **gmt begin** [*session-prefix*] [*format*]
 
 Initializes a new GMT session under *modern* mode [Default is *classic* mode].
-This is experimental; see http://gmt.soest.hawaii.edu/projects/gmt/wiki/Modernization
-for the current description.  All work is performed in a temporary work directory.
+All work is performed in a temporary work directory.
 The optional *session-prefix* assigns a name to the session, and this may be used
 as figure name for single-figure sessions [gmtsession].  Likewise, the optional
 *format* can be used to override the default graphics format [PDF].
@@ -54,9 +53,18 @@ be passed to :doc:`psconvert` when producing this figure.  All subsequent plotti
 will be directed to this current figure until another **gmt figure** command is issued
 or the session ends.  The *prefix* is used to build final figure names when extensions
 are automatically appended. The *format* setting is a comma-separated list of desired
-extensions (e.g., pdf,png). 
+extensions (e.g., pdf,png).
 
-**gmt end**
+**gmt inset** [*arguments*]
+
+Allows users to place a map inset by temporarily changing where plotting takes place
+as well as the region and projection, then resets to previous stage.
+
+**gmt subplot** [*arguments*]
+
+Allows users to create a matrix of panels with automatic labeling and advancement.
+
+**gmt end** [**show**]
 
 Terminates a GMT modern mode session and automatically converts the registered
 illustration(s) to the specified formats, then eliminates the temporary work
@@ -71,7 +79,7 @@ several other options are available:
 **-**\ **-show-cores**
     Show number of available cores.
 
-**-**\ **-show-bindir** 
+**-**\ **-show-bindir**
     Show directory of executables and exit.
 
 **-**\ **-show-datadir**
@@ -260,4 +268,4 @@ Look up the individual man pages for more details and full syntax. Run
 directories. For an explanation of the various GMT settings in this
 man page (like :ref:`FORMAT_FLOAT_OUT <FORMAT_FLOAT_OUT>`), see the man page of the GMT
 configuration file :doc:`gmt.conf`. Information is also available on the
-GMT home page http://gmt.soest.hawaii.edu/
+GMT documentation site https://docs.generic-mapping-tools.org/
