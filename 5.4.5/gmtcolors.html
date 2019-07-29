@@ -1,0 +1,2730 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>gmtcolors &#8212; GMT 5.4.5 documentation</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+
+
+    <link rel="stylesheet" href="_static/rtd.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/searchtools.js"></script>
+    <script type="text/javascript" src="_static/rtd-sidebar.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="gmtconnect" href="gmtconnect.html" />
+    <link rel="prev" title="gmt5syntax" href="gmt5syntax.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="gmtconnect.html" title="gmtconnect"
+             accesskey="N">next</a> </li>
+        <li class="right" >
+          <a href="gmt5syntax.html" title="gmt5syntax"
+             accesskey="P">previous</a> </li>
+  <li><a href="https://www.generic-mapping-tools.org">Project Home</a>  &#187;</li>
+  
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 5.4.5 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="man_pages.html" accesskey="U">Man Pages</a> &#187;</li>
+<li class="right">
+<form class="search" accept-charset="UTF-8" action="search.html" method="get">
+  <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+  <label for="q">
+    <a class="search" href="search.html" accesskey="s" original-title="">Search:</a>
+  </label>
+  <input accesskey="f" class="small" id="q" name="q" size="20" type="text">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form></li>
+   
+
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="gmtcolors">
+<span id="index-0"></span><h1>gmtcolors<a class="headerlink" href="#gmtcolors" title="Permalink to this headline">¶</a></h1>
+<p>gmtcolors - Explanation of color codes in GMT</p>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Colors can be specified in GMT as arguments to commands, generally
+as part of the <strong>-G</strong> or <strong>-W</strong> options to select polygon fill or
+outline pen. Colors are also used in color palette tables (CPTs)
+that help convert numerical values to colors.</p>
+<p>GMT allows several ways to represent a color:</p>
+<dl class="simple">
+<dt><strong>Colorname</strong></dt><dd><p>Specify one of the named colors below. All names are case-insensitive.</p>
+</dd>
+<dt><strong>R/G/B</strong></dt><dd><p>Specify <strong>R</strong>ed, <strong>G</strong>reen, and <strong>B</strong>lue levels. Each value is
+separated by a slash and is in the range from 0 (dark) to 255
+(light). This representation is used to color monitors.</p>
+</dd>
+<dt><strong>#RRGGBB</strong></dt><dd><p>Specify <strong>R</strong>ed, <strong>G</strong>reen, and <strong>B</strong>lue levels in the way
+that it is done in HTML. Use two characters for each color channel,
+ranging from 00 (dark) to FF (light). Upper and lower case are allowed.</p>
+</dd>
+<dt><strong>Graylevel</strong></dt><dd><p>For shades of gray, <strong>R</strong> = <strong>G</strong> = <strong>B</strong>, and only one number needs to be used.
+This representation is popular with black and white printers.</p>
+</dd>
+<dt><strong>H-S-V</strong></dt><dd><p>Specify <strong>H</strong>ue in the range 0 to 360 (degrees), <strong>S</strong> saturation
+between 0 (not saturated) and 1 (fully saturated), and value <strong>V</strong>
+between 0 (dark) and 1 (light). Number are separated by hyphens.
+This representation can be helpful when hue varies a lot.</p>
+</dd>
+<dt><strong>C/M/Y/K</strong></dt><dd><p>Specify <strong>C</strong>yan, <strong>M</strong>agenta, <strong>Y</strong>ellow, and blac<strong>K</strong>. Each
+number is in the range from 0 (no paint) to 1 (maximum paint). This
+representation is used by most color printers.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="list-of-colors">
+<h2>List Of Colors<a class="headerlink" href="#list-of-colors" title="Permalink to this headline">¶</a></h2>
+<p>The following list contains the named colors that can be used in GMT
+and their equivalent color codes.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 59%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><em>R</em></p></th>
+<th class="head"><p><em>G</em></p></th>
+<th class="head"><p><em>B</em></p></th>
+<th class="head"><p><em>Name</em></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>255</p></td>
+<td><p>250</p></td>
+<td><p>250</p></td>
+<td><p>snow</p></td>
+</tr>
+<tr class="row-odd"><td><p>248</p></td>
+<td><p>248</p></td>
+<td><p>255</p></td>
+<td><p>ghostwite</p></td>
+</tr>
+<tr class="row-even"><td><p>255</p></td>
+<td><p>250</p></td>
+<td><p>240</p></td>
+<td><p>floralwhite</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>245</p></td>
+<td><p>238</p></td>
+<td><p>seashell</p></td>
+</tr>
+<tr class="row-even"><td><p>253</p></td>
+<td><p>245</p></td>
+<td><p>230</p></td>
+<td><p>oldlace</p></td>
+</tr>
+<tr class="row-odd"><td><p>250</p></td>
+<td><p>240</p></td>
+<td><p>230</p></td>
+<td><p>linen</p></td>
+</tr>
+<tr class="row-even"><td><p>250</p></td>
+<td><p>235</p></td>
+<td><p>215</p></td>
+<td><p>antiquewhite</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>239</p></td>
+<td><p>213</p></td>
+<td><p>papayawhip</p></td>
+</tr>
+<tr class="row-even"><td><p>255</p></td>
+<td><p>235</p></td>
+<td><p>205</p></td>
+<td><p>blanchedalmond</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>228</p></td>
+<td><p>196</p></td>
+<td><p>bisque</p></td>
+</tr>
+<tr class="row-even"><td><p>255</p></td>
+<td><p>218</p></td>
+<td><p>185</p></td>
+<td><p>peachpuff</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>222</p></td>
+<td><p>173</p></td>
+<td><p>navajowhite</p></td>
+</tr>
+<tr class="row-even"><td><p>255</p></td>
+<td><p>228</p></td>
+<td><p>181</p></td>
+<td><p>moccasin</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>250</p></td>
+<td><p>205</p></td>
+<td><p>lemonchiffon</p></td>
+</tr>
+<tr class="row-even"><td><p>255</p></td>
+<td><p>248</p></td>
+<td><p>220</p></td>
+<td><p>cornsilk</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>255</p></td>
+<td><p>240</p></td>
+<td><p>ivory</p></td>
+</tr>
+<tr class="row-even"><td><p>240</p></td>
+<td><p>255</p></td>
+<td><p>240</p></td>
+<td><p>honeydew</p></td>
+</tr>
+<tr class="row-odd"><td><p>245</p></td>
+<td><p>255</p></td>
+<td><p>250</p></td>
+<td><p>mintcream</p></td>
+</tr>
+<tr class="row-even"><td><p>240</p></td>
+<td><p>255</p></td>
+<td><p>255</p></td>
+<td><p>azure</p></td>
+</tr>
+<tr class="row-odd"><td><p>240</p></td>
+<td><p>248</p></td>
+<td><p>255</p></td>
+<td><p>aliceblue</p></td>
+</tr>
+<tr class="row-even"><td><p>230</p></td>
+<td><p>230</p></td>
+<td><p>250</p></td>
+<td><p>lavender</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>240</p></td>
+<td><p>245</p></td>
+<td><p>lavenderblush</p></td>
+</tr>
+<tr class="row-even"><td><p>255</p></td>
+<td><p>228</p></td>
+<td><p>225</p></td>
+<td><p>mistyrose</p></td>
+</tr>
+<tr class="row-odd"><td><p>100</p></td>
+<td><p>149</p></td>
+<td><p>237</p></td>
+<td><p>cornflowerblue</p></td>
+</tr>
+<tr class="row-even"><td><p>106</p></td>
+<td><p>90</p></td>
+<td><p>205</p></td>
+<td><p>slateblue</p></td>
+</tr>
+<tr class="row-odd"><td><p>123</p></td>
+<td><p>104</p></td>
+<td><p>238</p></td>
+<td><p>mediumslateblue</p></td>
+</tr>
+<tr class="row-even"><td><p>132</p></td>
+<td><p>112</p></td>
+<td><p>255</p></td>
+<td><p>lightslateblue</p></td>
+</tr>
+<tr class="row-odd"><td><p>135</p></td>
+<td><p>206</p></td>
+<td><p>235</p></td>
+<td><p>skyblue</p></td>
+</tr>
+<tr class="row-even"><td><p>135</p></td>
+<td><p>206</p></td>
+<td><p>250</p></td>
+<td><p>lightskyblue</p></td>
+</tr>
+<tr class="row-odd"><td><p>119</p></td>
+<td><p>136</p></td>
+<td><p>153</p></td>
+<td><p>lightslategray</p></td>
+</tr>
+<tr class="row-even"><td><p>119</p></td>
+<td><p>136</p></td>
+<td><p>153</p></td>
+<td><p>lightslategrey</p></td>
+</tr>
+<tr class="row-odd"><td><p>112</p></td>
+<td><p>128</p></td>
+<td><p>144</p></td>
+<td><p>slategray</p></td>
+</tr>
+<tr class="row-even"><td><p>112</p></td>
+<td><p>128</p></td>
+<td><p>144</p></td>
+<td><p>slategrey</p></td>
+</tr>
+<tr class="row-odd"><td><p>176</p></td>
+<td><p>196</p></td>
+<td><p>222</p></td>
+<td><p>lightsteelblue</p></td>
+</tr>
+<tr class="row-even"><td><p>173</p></td>
+<td><p>216</p></td>
+<td><p>230</p></td>
+<td><p>lightblue</p></td>
+</tr>
+<tr class="row-odd"><td><p>224</p></td>
+<td><p>255</p></td>
+<td><p>255</p></td>
+<td><p>lightcyan</p></td>
+</tr>
+<tr class="row-even"><td><p>176</p></td>
+<td><p>224</p></td>
+<td><p>230</p></td>
+<td><p>powderblue</p></td>
+</tr>
+<tr class="row-odd"><td><p>175</p></td>
+<td><p>238</p></td>
+<td><p>238</p></td>
+<td><p>paleturquoise</p></td>
+</tr>
+<tr class="row-even"><td><p>102</p></td>
+<td><p>205</p></td>
+<td><p>170</p></td>
+<td><p>mediumaquamarine</p></td>
+</tr>
+<tr class="row-odd"><td><p>127</p></td>
+<td><p>255</p></td>
+<td><p>212</p></td>
+<td><p>aquamarine</p></td>
+</tr>
+<tr class="row-even"><td><p>144</p></td>
+<td><p>238</p></td>
+<td><p>144</p></td>
+<td><p>lightgreen</p></td>
+</tr>
+<tr class="row-odd"><td><p>143</p></td>
+<td><p>188</p></td>
+<td><p>143</p></td>
+<td><p>darkseagreen</p></td>
+</tr>
+<tr class="row-even"><td><p>152</p></td>
+<td><p>251</p></td>
+<td><p>152</p></td>
+<td><p>palegreen</p></td>
+</tr>
+<tr class="row-odd"><td><p>124</p></td>
+<td><p>252</p></td>
+<td><p>0</p></td>
+<td><p>lawngreen</p></td>
+</tr>
+<tr class="row-even"><td><p>127</p></td>
+<td><p>255</p></td>
+<td><p>0</p></td>
+<td><p>chartreuse</p></td>
+</tr>
+<tr class="row-odd"><td><p>173</p></td>
+<td><p>255</p></td>
+<td><p>47</p></td>
+<td><p>greenyellow</p></td>
+</tr>
+<tr class="row-even"><td><p>154</p></td>
+<td><p>205</p></td>
+<td><p>50</p></td>
+<td><p>yellowgreen</p></td>
+</tr>
+<tr class="row-odd"><td><p>107</p></td>
+<td><p>142</p></td>
+<td><p>35</p></td>
+<td><p>olivedrab</p></td>
+</tr>
+<tr class="row-even"><td><p>189</p></td>
+<td><p>183</p></td>
+<td><p>107</p></td>
+<td><p>darkkhaki</p></td>
+</tr>
+<tr class="row-odd"><td><p>240</p></td>
+<td><p>230</p></td>
+<td><p>140</p></td>
+<td><p>khaki</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>232</p></td>
+<td><p>170</p></td>
+<td><p>palegoldenrod</p></td>
+</tr>
+<tr class="row-odd"><td><p>238</p></td>
+<td><p>221</p></td>
+<td><p>130</p></td>
+<td><p>lightgoldenrod</p></td>
+</tr>
+<tr class="row-even"><td><p>255</p></td>
+<td><p>255</p></td>
+<td><p>224</p></td>
+<td><p>lightyellow</p></td>
+</tr>
+<tr class="row-odd"><td><p>250</p></td>
+<td><p>250</p></td>
+<td><p>210</p></td>
+<td><p>lightgoldenrodyellow</p></td>
+</tr>
+<tr class="row-even"><td><p>255</p></td>
+<td><p>255</p></td>
+<td><p>0</p></td>
+<td><p>yellow</p></td>
+</tr>
+<tr class="row-odd"><td><p>128</p></td>
+<td><p>128</p></td>
+<td><p>0</p></td>
+<td><p>darkyellow</p></td>
+</tr>
+<tr class="row-even"><td><p>255</p></td>
+<td><p>215</p></td>
+<td><p>0</p></td>
+<td><p>gold</p></td>
+</tr>
+<tr class="row-odd"><td><p>218</p></td>
+<td><p>165</p></td>
+<td><p>32</p></td>
+<td><p>goldenrod</p></td>
+</tr>
+<tr class="row-even"><td><p>184</p></td>
+<td><p>134</p></td>
+<td><p>11</p></td>
+<td><p>darkgoldenrod</p></td>
+</tr>
+<tr class="row-odd"><td><p>188</p></td>
+<td><p>143</p></td>
+<td><p>143</p></td>
+<td><p>rosybrown</p></td>
+</tr>
+<tr class="row-even"><td><p>205</p></td>
+<td><p>92</p></td>
+<td><p>92</p></td>
+<td><p>indianred</p></td>
+</tr>
+<tr class="row-odd"><td><p>139</p></td>
+<td><p>69</p></td>
+<td><p>19</p></td>
+<td><p>saddlebrown</p></td>
+</tr>
+<tr class="row-even"><td><p>160</p></td>
+<td><p>82</p></td>
+<td><p>45</p></td>
+<td><p>sienna</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>133</p></td>
+<td><p>63</p></td>
+<td><p>peru</p></td>
+</tr>
+<tr class="row-even"><td><p>222</p></td>
+<td><p>184</p></td>
+<td><p>135</p></td>
+<td><p>burlywood</p></td>
+</tr>
+<tr class="row-odd"><td><p>245</p></td>
+<td><p>245</p></td>
+<td><p>220</p></td>
+<td><p>beige</p></td>
+</tr>
+<tr class="row-even"><td><p>245</p></td>
+<td><p>222</p></td>
+<td><p>179</p></td>
+<td><p>wheat</p></td>
+</tr>
+<tr class="row-odd"><td><p>244</p></td>
+<td><p>164</p></td>
+<td><p>96</p></td>
+<td><p>sandybrown</p></td>
+</tr>
+<tr class="row-even"><td><p>210</p></td>
+<td><p>180</p></td>
+<td><p>140</p></td>
+<td><p>tan</p></td>
+</tr>
+<tr class="row-odd"><td><p>210</p></td>
+<td><p>105</p></td>
+<td><p>30</p></td>
+<td><p>chocolate</p></td>
+</tr>
+<tr class="row-even"><td><p>178</p></td>
+<td><p>34</p></td>
+<td><p>34</p></td>
+<td><p>firebrick</p></td>
+</tr>
+<tr class="row-odd"><td><p>235</p></td>
+<td><p>190</p></td>
+<td><p>85</p></td>
+<td><p>lightbrown</p></td>
+</tr>
+<tr class="row-even"><td><p>165</p></td>
+<td><p>42</p></td>
+<td><p>42</p></td>
+<td><p>brown</p></td>
+</tr>
+<tr class="row-odd"><td><p>120</p></td>
+<td><p>60</p></td>
+<td><p>30</p></td>
+<td><p>darkbrown</p></td>
+</tr>
+<tr class="row-even"><td><p>233</p></td>
+<td><p>150</p></td>
+<td><p>122</p></td>
+<td><p>darksalmon</p></td>
+</tr>
+<tr class="row-odd"><td><p>250</p></td>
+<td><p>128</p></td>
+<td><p>114</p></td>
+<td><p>salmon</p></td>
+</tr>
+<tr class="row-even"><td><p>255</p></td>
+<td><p>160</p></td>
+<td><p>122</p></td>
+<td><p>lightsalmon</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>192</p></td>
+<td><p>128</p></td>
+<td><p>lightorange</p></td>
+</tr>
+<tr class="row-even"><td><p>255</p></td>
+<td><p>165</p></td>
+<td><p>0</p></td>
+<td><p>orange</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>140</p></td>
+<td><p>0</p></td>
+<td><p>darkorange</p></td>
+</tr>
+<tr class="row-even"><td><p>255</p></td>
+<td><p>127</p></td>
+<td><p>80</p></td>
+<td><p>coral</p></td>
+</tr>
+<tr class="row-odd"><td><p>240</p></td>
+<td><p>128</p></td>
+<td><p>128</p></td>
+<td><p>lightcoral</p></td>
+</tr>
+<tr class="row-even"><td><p>255</p></td>
+<td><p>99</p></td>
+<td><p>71</p></td>
+<td><p>tomato</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>69</p></td>
+<td><p>0</p></td>
+<td><p>orangered</p></td>
+</tr>
+<tr class="row-even"><td><p>255</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>red</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>128</p></td>
+<td><p>128</p></td>
+<td><p>lightred</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>darkred</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>20</p></td>
+<td><p>147</p></td>
+<td><p>deeppink</p></td>
+</tr>
+<tr class="row-even"><td><p>255</p></td>
+<td><p>105</p></td>
+<td><p>180</p></td>
+<td><p>hotpink</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>192</p></td>
+<td><p>203</p></td>
+<td><p>pink</p></td>
+</tr>
+<tr class="row-even"><td><p>255</p></td>
+<td><p>182</p></td>
+<td><p>193</p></td>
+<td><p>lightpink</p></td>
+</tr>
+<tr class="row-odd"><td><p>219</p></td>
+<td><p>112</p></td>
+<td><p>147</p></td>
+<td><p>palevioletred</p></td>
+</tr>
+<tr class="row-even"><td><p>176</p></td>
+<td><p>48</p></td>
+<td><p>96</p></td>
+<td><p>maroon</p></td>
+</tr>
+<tr class="row-odd"><td><p>199</p></td>
+<td><p>21</p></td>
+<td><p>133</p></td>
+<td><p>mediumvioletred</p></td>
+</tr>
+<tr class="row-even"><td><p>208</p></td>
+<td><p>32</p></td>
+<td><p>144</p></td>
+<td><p>violetred</p></td>
+</tr>
+<tr class="row-odd"><td><p>139</p></td>
+<td><p>0</p></td>
+<td><p>139</p></td>
+<td><p>darkmagenta</p></td>
+</tr>
+<tr class="row-even"><td><p>255</p></td>
+<td><p>0</p></td>
+<td><p>255</p></td>
+<td><p>magenta</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>128</p></td>
+<td><p>255</p></td>
+<td><p>lightmagenta</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>130</p></td>
+<td><p>238</p></td>
+<td><p>violet</p></td>
+</tr>
+<tr class="row-odd"><td><p>218</p></td>
+<td><p>112</p></td>
+<td><p>214</p></td>
+<td><p>orchid</p></td>
+</tr>
+<tr class="row-even"><td><p>221</p></td>
+<td><p>160</p></td>
+<td><p>221</p></td>
+<td><p>plum</p></td>
+</tr>
+<tr class="row-odd"><td><p>186</p></td>
+<td><p>85</p></td>
+<td><p>211</p></td>
+<td><p>mediumorchid</p></td>
+</tr>
+<tr class="row-even"><td><p>153</p></td>
+<td><p>50</p></td>
+<td><p>204</p></td>
+<td><p>darkorchid</p></td>
+</tr>
+<tr class="row-odd"><td><p>148</p></td>
+<td><p>0</p></td>
+<td><p>211</p></td>
+<td><p>darkviolet</p></td>
+</tr>
+<tr class="row-even"><td><p>138</p></td>
+<td><p>43</p></td>
+<td><p>226</p></td>
+<td><p>blueviolet</p></td>
+</tr>
+<tr class="row-odd"><td><p>160</p></td>
+<td><p>32</p></td>
+<td><p>240</p></td>
+<td><p>purple</p></td>
+</tr>
+<tr class="row-even"><td><p>147</p></td>
+<td><p>112</p></td>
+<td><p>219</p></td>
+<td><p>mediumpurple</p></td>
+</tr>
+<tr class="row-odd"><td><p>216</p></td>
+<td><p>191</p></td>
+<td><p>216</p></td>
+<td><p>thistle</p></td>
+</tr>
+<tr class="row-even"><td><p>105</p></td>
+<td><p>105</p></td>
+<td><p>105</p></td>
+<td><p>dimgray</p></td>
+</tr>
+<tr class="row-odd"><td><p>105</p></td>
+<td><p>105</p></td>
+<td><p>105</p></td>
+<td><p>dimgrey</p></td>
+</tr>
+<tr class="row-even"><td><p>169</p></td>
+<td><p>169</p></td>
+<td><p>169</p></td>
+<td><p>darkgray</p></td>
+</tr>
+<tr class="row-odd"><td><p>169</p></td>
+<td><p>169</p></td>
+<td><p>169</p></td>
+<td><p>darkgrey</p></td>
+</tr>
+<tr class="row-even"><td><p>190</p></td>
+<td><p>190</p></td>
+<td><p>190</p></td>
+<td><p>gray</p></td>
+</tr>
+<tr class="row-odd"><td><p>190</p></td>
+<td><p>190</p></td>
+<td><p>190</p></td>
+<td><p>grey</p></td>
+</tr>
+<tr class="row-even"><td><p>211</p></td>
+<td><p>211</p></td>
+<td><p>211</p></td>
+<td><p>lightgrey</p></td>
+</tr>
+<tr class="row-odd"><td><p>211</p></td>
+<td><p>211</p></td>
+<td><p>211</p></td>
+<td><p>lightgray</p></td>
+</tr>
+<tr class="row-even"><td><p>220</p></td>
+<td><p>220</p></td>
+<td><p>220</p></td>
+<td><p>gainsboro</p></td>
+</tr>
+<tr class="row-odd"><td><p>245</p></td>
+<td><p>245</p></td>
+<td><p>245</p></td>
+<td><p>whitesmoke</p></td>
+</tr>
+<tr class="row-even"><td><p>255</p></td>
+<td><p>255</p></td>
+<td><p>255</p></td>
+<td><p>white</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>250</p></td>
+<td><p>250</p></td>
+<td><p>snow1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>233</p></td>
+<td><p>233</p></td>
+<td><p>snow2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>201</p></td>
+<td><p>201</p></td>
+<td><p>snow3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>137</p></td>
+<td><p>137</p></td>
+<td><p>snow4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>245</p></td>
+<td><p>238</p></td>
+<td><p>seashell1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>229</p></td>
+<td><p>222</p></td>
+<td><p>seashell2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>197</p></td>
+<td><p>191</p></td>
+<td><p>seashell3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>134</p></td>
+<td><p>130</p></td>
+<td><p>seashell4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>239</p></td>
+<td><p>219</p></td>
+<td><p>antiquewhite1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>223</p></td>
+<td><p>204</p></td>
+<td><p>antiquewhite2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>192</p></td>
+<td><p>176</p></td>
+<td><p>antiquewhite3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>131</p></td>
+<td><p>120</p></td>
+<td><p>antiquewhite4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>228</p></td>
+<td><p>196</p></td>
+<td><p>bisque1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>213</p></td>
+<td><p>183</p></td>
+<td><p>bisque2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>183</p></td>
+<td><p>158</p></td>
+<td><p>bisque3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>125</p></td>
+<td><p>107</p></td>
+<td><p>bisque4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>218</p></td>
+<td><p>185</p></td>
+<td><p>peachpuff1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>203</p></td>
+<td><p>173</p></td>
+<td><p>peachpuff2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>175</p></td>
+<td><p>149</p></td>
+<td><p>peachpuff3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>119</p></td>
+<td><p>101</p></td>
+<td><p>peachpuff4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>222</p></td>
+<td><p>173</p></td>
+<td><p>navajowhite1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>207</p></td>
+<td><p>161</p></td>
+<td><p>navajowhite2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>179</p></td>
+<td><p>139</p></td>
+<td><p>navajowhite3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>121</p></td>
+<td><p>94</p></td>
+<td><p>navajowhite4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>250</p></td>
+<td><p>205</p></td>
+<td><p>lemonchiffon1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>233</p></td>
+<td><p>191</p></td>
+<td><p>lemonchiffon2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>201</p></td>
+<td><p>165</p></td>
+<td><p>lemonchiffon3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>137</p></td>
+<td><p>112</p></td>
+<td><p>lemonchiffon4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>248</p></td>
+<td><p>220</p></td>
+<td><p>cornsilk1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>232</p></td>
+<td><p>205</p></td>
+<td><p>cornsilk2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>200</p></td>
+<td><p>177</p></td>
+<td><p>cornsilk3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>136</p></td>
+<td><p>120</p></td>
+<td><p>cornsilk4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>255</p></td>
+<td><p>240</p></td>
+<td><p>ivory1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>238</p></td>
+<td><p>224</p></td>
+<td><p>ivory2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>205</p></td>
+<td><p>193</p></td>
+<td><p>ivory3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>139</p></td>
+<td><p>131</p></td>
+<td><p>ivory4</p></td>
+</tr>
+<tr class="row-odd"><td><p>240</p></td>
+<td><p>255</p></td>
+<td><p>240</p></td>
+<td><p>honeydew1</p></td>
+</tr>
+<tr class="row-even"><td><p>224</p></td>
+<td><p>238</p></td>
+<td><p>224</p></td>
+<td><p>honeydew2</p></td>
+</tr>
+<tr class="row-odd"><td><p>193</p></td>
+<td><p>205</p></td>
+<td><p>193</p></td>
+<td><p>honeydew3</p></td>
+</tr>
+<tr class="row-even"><td><p>131</p></td>
+<td><p>139</p></td>
+<td><p>131</p></td>
+<td><p>honeydew4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>240</p></td>
+<td><p>245</p></td>
+<td><p>lavenderblush1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>224</p></td>
+<td><p>229</p></td>
+<td><p>lavenderblush2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>193</p></td>
+<td><p>197</p></td>
+<td><p>lavenderblush3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>131</p></td>
+<td><p>134</p></td>
+<td><p>lavenderblush4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>228</p></td>
+<td><p>225</p></td>
+<td><p>mistyrose1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>213</p></td>
+<td><p>210</p></td>
+<td><p>mistyrose2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>183</p></td>
+<td><p>181</p></td>
+<td><p>mistyrose3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>125</p></td>
+<td><p>123</p></td>
+<td><p>mistyrose4</p></td>
+</tr>
+<tr class="row-odd"><td><p>240</p></td>
+<td><p>255</p></td>
+<td><p>255</p></td>
+<td><p>azure1</p></td>
+</tr>
+<tr class="row-even"><td><p>224</p></td>
+<td><p>238</p></td>
+<td><p>238</p></td>
+<td><p>azure2</p></td>
+</tr>
+<tr class="row-odd"><td><p>193</p></td>
+<td><p>205</p></td>
+<td><p>205</p></td>
+<td><p>azure3</p></td>
+</tr>
+<tr class="row-even"><td><p>131</p></td>
+<td><p>139</p></td>
+<td><p>139</p></td>
+<td><p>azure4</p></td>
+</tr>
+<tr class="row-odd"><td><p>131</p></td>
+<td><p>111</p></td>
+<td><p>255</p></td>
+<td><p>slateblue1</p></td>
+</tr>
+<tr class="row-even"><td><p>122</p></td>
+<td><p>103</p></td>
+<td><p>238</p></td>
+<td><p>slateblue2</p></td>
+</tr>
+<tr class="row-odd"><td><p>105</p></td>
+<td><p>89</p></td>
+<td><p>205</p></td>
+<td><p>slateblue3</p></td>
+</tr>
+<tr class="row-even"><td><p>135</p></td>
+<td><p>206</p></td>
+<td><p>255</p></td>
+<td><p>skyblue1</p></td>
+</tr>
+<tr class="row-odd"><td><p>126</p></td>
+<td><p>192</p></td>
+<td><p>238</p></td>
+<td><p>skyblue2</p></td>
+</tr>
+<tr class="row-even"><td><p>108</p></td>
+<td><p>166</p></td>
+<td><p>205</p></td>
+<td><p>skyblue3</p></td>
+</tr>
+<tr class="row-odd"><td><p>176</p></td>
+<td><p>226</p></td>
+<td><p>255</p></td>
+<td><p>lightskyblue1</p></td>
+</tr>
+<tr class="row-even"><td><p>164</p></td>
+<td><p>211</p></td>
+<td><p>238</p></td>
+<td><p>lightskyblue2</p></td>
+</tr>
+<tr class="row-odd"><td><p>141</p></td>
+<td><p>182</p></td>
+<td><p>205</p></td>
+<td><p>lightskyblue3</p></td>
+</tr>
+<tr class="row-even"><td><p>198</p></td>
+<td><p>226</p></td>
+<td><p>255</p></td>
+<td><p>slategray1</p></td>
+</tr>
+<tr class="row-odd"><td><p>185</p></td>
+<td><p>211</p></td>
+<td><p>238</p></td>
+<td><p>slategray2</p></td>
+</tr>
+<tr class="row-even"><td><p>159</p></td>
+<td><p>182</p></td>
+<td><p>205</p></td>
+<td><p>slategray3</p></td>
+</tr>
+<tr class="row-odd"><td><p>108</p></td>
+<td><p>123</p></td>
+<td><p>139</p></td>
+<td><p>slategray4</p></td>
+</tr>
+<tr class="row-even"><td><p>202</p></td>
+<td><p>225</p></td>
+<td><p>255</p></td>
+<td><p>lightsteelblue1</p></td>
+</tr>
+<tr class="row-odd"><td><p>188</p></td>
+<td><p>210</p></td>
+<td><p>238</p></td>
+<td><p>lightsteelblue2</p></td>
+</tr>
+<tr class="row-even"><td><p>162</p></td>
+<td><p>181</p></td>
+<td><p>205</p></td>
+<td><p>lightsteelblue3</p></td>
+</tr>
+<tr class="row-odd"><td><p>110</p></td>
+<td><p>123</p></td>
+<td><p>139</p></td>
+<td><p>lightsteelblue4</p></td>
+</tr>
+<tr class="row-even"><td><p>191</p></td>
+<td><p>239</p></td>
+<td><p>255</p></td>
+<td><p>lightblue1</p></td>
+</tr>
+<tr class="row-odd"><td><p>178</p></td>
+<td><p>223</p></td>
+<td><p>238</p></td>
+<td><p>lightblue2</p></td>
+</tr>
+<tr class="row-even"><td><p>154</p></td>
+<td><p>192</p></td>
+<td><p>205</p></td>
+<td><p>lightblue3</p></td>
+</tr>
+<tr class="row-odd"><td><p>104</p></td>
+<td><p>131</p></td>
+<td><p>139</p></td>
+<td><p>lightblue4</p></td>
+</tr>
+<tr class="row-even"><td><p>224</p></td>
+<td><p>255</p></td>
+<td><p>255</p></td>
+<td><p>lightcyan1</p></td>
+</tr>
+<tr class="row-odd"><td><p>209</p></td>
+<td><p>238</p></td>
+<td><p>238</p></td>
+<td><p>lightcyan2</p></td>
+</tr>
+<tr class="row-even"><td><p>180</p></td>
+<td><p>205</p></td>
+<td><p>205</p></td>
+<td><p>lightcyan3</p></td>
+</tr>
+<tr class="row-odd"><td><p>122</p></td>
+<td><p>139</p></td>
+<td><p>139</p></td>
+<td><p>lightcyan4</p></td>
+</tr>
+<tr class="row-even"><td><p>187</p></td>
+<td><p>255</p></td>
+<td><p>255</p></td>
+<td><p>paleturquoise1</p></td>
+</tr>
+<tr class="row-odd"><td><p>174</p></td>
+<td><p>238</p></td>
+<td><p>238</p></td>
+<td><p>paleturquoise2</p></td>
+</tr>
+<tr class="row-even"><td><p>150</p></td>
+<td><p>205</p></td>
+<td><p>205</p></td>
+<td><p>paleturquoise3</p></td>
+</tr>
+<tr class="row-odd"><td><p>102</p></td>
+<td><p>139</p></td>
+<td><p>139</p></td>
+<td><p>paleturquoise4</p></td>
+</tr>
+<tr class="row-even"><td><p>152</p></td>
+<td><p>245</p></td>
+<td><p>255</p></td>
+<td><p>cadetblue1</p></td>
+</tr>
+<tr class="row-odd"><td><p>142</p></td>
+<td><p>229</p></td>
+<td><p>238</p></td>
+<td><p>cadetblue2</p></td>
+</tr>
+<tr class="row-even"><td><p>122</p></td>
+<td><p>197</p></td>
+<td><p>205</p></td>
+<td><p>cadetblue3</p></td>
+</tr>
+<tr class="row-odd"><td><p>151</p></td>
+<td><p>255</p></td>
+<td><p>255</p></td>
+<td><p>darkslategray1</p></td>
+</tr>
+<tr class="row-even"><td><p>141</p></td>
+<td><p>238</p></td>
+<td><p>238</p></td>
+<td><p>darkslategray2</p></td>
+</tr>
+<tr class="row-odd"><td><p>121</p></td>
+<td><p>205</p></td>
+<td><p>205</p></td>
+<td><p>darkslategray3</p></td>
+</tr>
+<tr class="row-even"><td><p>127</p></td>
+<td><p>255</p></td>
+<td><p>212</p></td>
+<td><p>aquamarine1</p></td>
+</tr>
+<tr class="row-odd"><td><p>118</p></td>
+<td><p>238</p></td>
+<td><p>198</p></td>
+<td><p>aquamarine2</p></td>
+</tr>
+<tr class="row-even"><td><p>102</p></td>
+<td><p>205</p></td>
+<td><p>170</p></td>
+<td><p>aquamarine3</p></td>
+</tr>
+<tr class="row-odd"><td><p>193</p></td>
+<td><p>255</p></td>
+<td><p>193</p></td>
+<td><p>darkseagreen1</p></td>
+</tr>
+<tr class="row-even"><td><p>180</p></td>
+<td><p>238</p></td>
+<td><p>180</p></td>
+<td><p>darkseagreen2</p></td>
+</tr>
+<tr class="row-odd"><td><p>155</p></td>
+<td><p>205</p></td>
+<td><p>155</p></td>
+<td><p>darkseagreen3</p></td>
+</tr>
+<tr class="row-even"><td><p>105</p></td>
+<td><p>139</p></td>
+<td><p>105</p></td>
+<td><p>darkseagreen4</p></td>
+</tr>
+<tr class="row-odd"><td><p>154</p></td>
+<td><p>255</p></td>
+<td><p>154</p></td>
+<td><p>palegreen1</p></td>
+</tr>
+<tr class="row-even"><td><p>144</p></td>
+<td><p>238</p></td>
+<td><p>144</p></td>
+<td><p>palegreen2</p></td>
+</tr>
+<tr class="row-odd"><td><p>124</p></td>
+<td><p>205</p></td>
+<td><p>124</p></td>
+<td><p>palegreen3</p></td>
+</tr>
+<tr class="row-even"><td><p>127</p></td>
+<td><p>255</p></td>
+<td><p>0</p></td>
+<td><p>chartreuse1</p></td>
+</tr>
+<tr class="row-odd"><td><p>118</p></td>
+<td><p>238</p></td>
+<td><p>0</p></td>
+<td><p>chartreuse2</p></td>
+</tr>
+<tr class="row-even"><td><p>102</p></td>
+<td><p>205</p></td>
+<td><p>0</p></td>
+<td><p>chartreuse3</p></td>
+</tr>
+<tr class="row-odd"><td><p>192</p></td>
+<td><p>255</p></td>
+<td><p>62</p></td>
+<td><p>olivedrab1</p></td>
+</tr>
+<tr class="row-even"><td><p>179</p></td>
+<td><p>238</p></td>
+<td><p>58</p></td>
+<td><p>olivedrab2</p></td>
+</tr>
+<tr class="row-odd"><td><p>154</p></td>
+<td><p>205</p></td>
+<td><p>50</p></td>
+<td><p>olivedrab3</p></td>
+</tr>
+<tr class="row-even"><td><p>105</p></td>
+<td><p>139</p></td>
+<td><p>34</p></td>
+<td><p>olivedrab4</p></td>
+</tr>
+<tr class="row-odd"><td><p>202</p></td>
+<td><p>255</p></td>
+<td><p>112</p></td>
+<td><p>darkolivegreen1</p></td>
+</tr>
+<tr class="row-even"><td><p>188</p></td>
+<td><p>238</p></td>
+<td><p>104</p></td>
+<td><p>darkolivegreen2</p></td>
+</tr>
+<tr class="row-odd"><td><p>162</p></td>
+<td><p>205</p></td>
+<td><p>90</p></td>
+<td><p>darkolivegreen3</p></td>
+</tr>
+<tr class="row-even"><td><p>110</p></td>
+<td><p>139</p></td>
+<td><p>61</p></td>
+<td><p>darkolivegreen4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>246</p></td>
+<td><p>143</p></td>
+<td><p>khaki1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>230</p></td>
+<td><p>133</p></td>
+<td><p>khaki2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>198</p></td>
+<td><p>115</p></td>
+<td><p>khaki3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>134</p></td>
+<td><p>78</p></td>
+<td><p>khaki4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>236</p></td>
+<td><p>139</p></td>
+<td><p>lightgoldenrod1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>220</p></td>
+<td><p>130</p></td>
+<td><p>lightgoldenrod2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>190</p></td>
+<td><p>112</p></td>
+<td><p>lightgoldenrod3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>129</p></td>
+<td><p>76</p></td>
+<td><p>lightgoldenrod4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>255</p></td>
+<td><p>224</p></td>
+<td><p>lightyellow1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>238</p></td>
+<td><p>209</p></td>
+<td><p>lightyellow2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>205</p></td>
+<td><p>180</p></td>
+<td><p>lightyellow3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>139</p></td>
+<td><p>122</p></td>
+<td><p>lightyellow4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>255</p></td>
+<td><p>0</p></td>
+<td><p>yellow1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>238</p></td>
+<td><p>0</p></td>
+<td><p>yellow2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>205</p></td>
+<td><p>0</p></td>
+<td><p>yellow3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>139</p></td>
+<td><p>0</p></td>
+<td><p>yellow4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>215</p></td>
+<td><p>0</p></td>
+<td><p>gold1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>201</p></td>
+<td><p>0</p></td>
+<td><p>gold2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>173</p></td>
+<td><p>0</p></td>
+<td><p>gold3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>117</p></td>
+<td><p>0</p></td>
+<td><p>gold4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>193</p></td>
+<td><p>37</p></td>
+<td><p>goldenrod1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>180</p></td>
+<td><p>34</p></td>
+<td><p>goldenrod2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>155</p></td>
+<td><p>29</p></td>
+<td><p>goldenrod3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>105</p></td>
+<td><p>20</p></td>
+<td><p>goldenrod4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>185</p></td>
+<td><p>15</p></td>
+<td><p>darkgoldenrod1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>173</p></td>
+<td><p>14</p></td>
+<td><p>darkgoldenrod2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>149</p></td>
+<td><p>12</p></td>
+<td><p>darkgoldenrod3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>101</p></td>
+<td><p>8</p></td>
+<td><p>darkgoldenrod4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>193</p></td>
+<td><p>193</p></td>
+<td><p>rosybrown1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>180</p></td>
+<td><p>180</p></td>
+<td><p>rosybrown2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>155</p></td>
+<td><p>155</p></td>
+<td><p>rosybrown3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>105</p></td>
+<td><p>105</p></td>
+<td><p>rosybrown4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>106</p></td>
+<td><p>106</p></td>
+<td><p>indianred1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>99</p></td>
+<td><p>99</p></td>
+<td><p>indianred2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>85</p></td>
+<td><p>85</p></td>
+<td><p>indianred3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>58</p></td>
+<td><p>58</p></td>
+<td><p>indianred4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>130</p></td>
+<td><p>71</p></td>
+<td><p>sienna1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>121</p></td>
+<td><p>66</p></td>
+<td><p>sienna2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>104</p></td>
+<td><p>57</p></td>
+<td><p>sienna3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>71</p></td>
+<td><p>38</p></td>
+<td><p>sienna4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>211</p></td>
+<td><p>155</p></td>
+<td><p>burlywood1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>197</p></td>
+<td><p>145</p></td>
+<td><p>burlywood2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>170</p></td>
+<td><p>125</p></td>
+<td><p>burlywood3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>115</p></td>
+<td><p>85</p></td>
+<td><p>burlywood4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>231</p></td>
+<td><p>186</p></td>
+<td><p>wheat1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>216</p></td>
+<td><p>174</p></td>
+<td><p>wheat2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>186</p></td>
+<td><p>150</p></td>
+<td><p>wheat3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>126</p></td>
+<td><p>102</p></td>
+<td><p>wheat4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>165</p></td>
+<td><p>79</p></td>
+<td><p>tan1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>154</p></td>
+<td><p>73</p></td>
+<td><p>tan2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>133</p></td>
+<td><p>63</p></td>
+<td><p>tan3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>90</p></td>
+<td><p>43</p></td>
+<td><p>tan4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>127</p></td>
+<td><p>36</p></td>
+<td><p>chocolate1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>118</p></td>
+<td><p>33</p></td>
+<td><p>chocolate2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>102</p></td>
+<td><p>29</p></td>
+<td><p>chocolate3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>69</p></td>
+<td><p>19</p></td>
+<td><p>chocolate4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>48</p></td>
+<td><p>48</p></td>
+<td><p>firebrick1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>44</p></td>
+<td><p>44</p></td>
+<td><p>firebrick2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>38</p></td>
+<td><p>38</p></td>
+<td><p>firebrick3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>26</p></td>
+<td><p>26</p></td>
+<td><p>firebrick4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>64</p></td>
+<td><p>64</p></td>
+<td><p>brown1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>59</p></td>
+<td><p>59</p></td>
+<td><p>brown2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>51</p></td>
+<td><p>51</p></td>
+<td><p>brown3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>35</p></td>
+<td><p>35</p></td>
+<td><p>brown4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>140</p></td>
+<td><p>105</p></td>
+<td><p>salmon1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>130</p></td>
+<td><p>98</p></td>
+<td><p>salmon2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>112</p></td>
+<td><p>84</p></td>
+<td><p>salmon3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>76</p></td>
+<td><p>57</p></td>
+<td><p>salmon4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>160</p></td>
+<td><p>122</p></td>
+<td><p>lightsalmon1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>149</p></td>
+<td><p>114</p></td>
+<td><p>lightsalmon2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>129</p></td>
+<td><p>98</p></td>
+<td><p>lightsalmon3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>87</p></td>
+<td><p>66</p></td>
+<td><p>lightsalmon4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>165</p></td>
+<td><p>0</p></td>
+<td><p>orange1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>154</p></td>
+<td><p>0</p></td>
+<td><p>orange2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>133</p></td>
+<td><p>0</p></td>
+<td><p>orange3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>90</p></td>
+<td><p>0</p></td>
+<td><p>orange4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>127</p></td>
+<td><p>0</p></td>
+<td><p>darkorange1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>118</p></td>
+<td><p>0</p></td>
+<td><p>darkorange2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>102</p></td>
+<td><p>0</p></td>
+<td><p>darkorange3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>69</p></td>
+<td><p>0</p></td>
+<td><p>darkorange4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>114</p></td>
+<td><p>86</p></td>
+<td><p>coral1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>106</p></td>
+<td><p>80</p></td>
+<td><p>coral2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>91</p></td>
+<td><p>69</p></td>
+<td><p>coral3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>62</p></td>
+<td><p>47</p></td>
+<td><p>coral4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>99</p></td>
+<td><p>71</p></td>
+<td><p>tomato1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>92</p></td>
+<td><p>66</p></td>
+<td><p>tomato2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>79</p></td>
+<td><p>57</p></td>
+<td><p>tomato3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>54</p></td>
+<td><p>38</p></td>
+<td><p>tomato4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>69</p></td>
+<td><p>0</p></td>
+<td><p>orangered1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>64</p></td>
+<td><p>0</p></td>
+<td><p>orangered2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>55</p></td>
+<td><p>0</p></td>
+<td><p>orangered3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>37</p></td>
+<td><p>0</p></td>
+<td><p>orangered4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>red1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>red2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>red3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>red4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>20</p></td>
+<td><p>147</p></td>
+<td><p>deeppink1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>18</p></td>
+<td><p>137</p></td>
+<td><p>deeppink2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>16</p></td>
+<td><p>118</p></td>
+<td><p>deeppink3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>10</p></td>
+<td><p>80</p></td>
+<td><p>deeppink4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>110</p></td>
+<td><p>180</p></td>
+<td><p>hotpink1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>106</p></td>
+<td><p>167</p></td>
+<td><p>hotpink2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>96</p></td>
+<td><p>144</p></td>
+<td><p>hotpink3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>58</p></td>
+<td><p>98</p></td>
+<td><p>hotpink4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>181</p></td>
+<td><p>197</p></td>
+<td><p>pink1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>169</p></td>
+<td><p>184</p></td>
+<td><p>pink2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>145</p></td>
+<td><p>158</p></td>
+<td><p>pink3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>99</p></td>
+<td><p>108</p></td>
+<td><p>pink4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>174</p></td>
+<td><p>185</p></td>
+<td><p>lightpink1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>162</p></td>
+<td><p>173</p></td>
+<td><p>lightpink2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>140</p></td>
+<td><p>149</p></td>
+<td><p>lightpink3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>95</p></td>
+<td><p>101</p></td>
+<td><p>lightpink4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>130</p></td>
+<td><p>171</p></td>
+<td><p>palevioletred1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>121</p></td>
+<td><p>159</p></td>
+<td><p>palevioletred2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>104</p></td>
+<td><p>137</p></td>
+<td><p>palevioletred3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>71</p></td>
+<td><p>93</p></td>
+<td><p>palevioletred4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>52</p></td>
+<td><p>179</p></td>
+<td><p>maroon1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>48</p></td>
+<td><p>167</p></td>
+<td><p>maroon2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>41</p></td>
+<td><p>144</p></td>
+<td><p>maroon3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>28</p></td>
+<td><p>98</p></td>
+<td><p>maroon4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>62</p></td>
+<td><p>150</p></td>
+<td><p>violetred1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>58</p></td>
+<td><p>140</p></td>
+<td><p>violetred2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>50</p></td>
+<td><p>120</p></td>
+<td><p>violetred3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>34</p></td>
+<td><p>82</p></td>
+<td><p>violetred4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>0</p></td>
+<td><p>255</p></td>
+<td><p>magenta1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>0</p></td>
+<td><p>238</p></td>
+<td><p>magenta2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>0</p></td>
+<td><p>205</p></td>
+<td><p>magenta3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>0</p></td>
+<td><p>139</p></td>
+<td><p>magenta4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>131</p></td>
+<td><p>250</p></td>
+<td><p>orchid1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>122</p></td>
+<td><p>233</p></td>
+<td><p>orchid2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>105</p></td>
+<td><p>201</p></td>
+<td><p>orchid3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>71</p></td>
+<td><p>137</p></td>
+<td><p>orchid4</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>187</p></td>
+<td><p>255</p></td>
+<td><p>plum1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>174</p></td>
+<td><p>238</p></td>
+<td><p>plum2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>150</p></td>
+<td><p>205</p></td>
+<td><p>plum3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>102</p></td>
+<td><p>139</p></td>
+<td><p>plum4</p></td>
+</tr>
+<tr class="row-odd"><td><p>224</p></td>
+<td><p>102</p></td>
+<td><p>255</p></td>
+<td><p>mediumorchid1</p></td>
+</tr>
+<tr class="row-even"><td><p>209</p></td>
+<td><p>95</p></td>
+<td><p>238</p></td>
+<td><p>mediumorchid2</p></td>
+</tr>
+<tr class="row-odd"><td><p>180</p></td>
+<td><p>82</p></td>
+<td><p>205</p></td>
+<td><p>mediumorchid3</p></td>
+</tr>
+<tr class="row-even"><td><p>122</p></td>
+<td><p>55</p></td>
+<td><p>139</p></td>
+<td><p>mediumorchid4</p></td>
+</tr>
+<tr class="row-odd"><td><p>191</p></td>
+<td><p>62</p></td>
+<td><p>255</p></td>
+<td><p>darkorchid1</p></td>
+</tr>
+<tr class="row-even"><td><p>178</p></td>
+<td><p>58</p></td>
+<td><p>238</p></td>
+<td><p>darkorchid2</p></td>
+</tr>
+<tr class="row-odd"><td><p>154</p></td>
+<td><p>50</p></td>
+<td><p>205</p></td>
+<td><p>darkorchid3</p></td>
+</tr>
+<tr class="row-even"><td><p>104</p></td>
+<td><p>34</p></td>
+<td><p>139</p></td>
+<td><p>darkorchid4</p></td>
+</tr>
+<tr class="row-odd"><td><p>155</p></td>
+<td><p>48</p></td>
+<td><p>255</p></td>
+<td><p>purple1</p></td>
+</tr>
+<tr class="row-even"><td><p>145</p></td>
+<td><p>44</p></td>
+<td><p>238</p></td>
+<td><p>purple2</p></td>
+</tr>
+<tr class="row-odd"><td><p>125</p></td>
+<td><p>38</p></td>
+<td><p>205</p></td>
+<td><p>purple3</p></td>
+</tr>
+<tr class="row-even"><td><p>171</p></td>
+<td><p>130</p></td>
+<td><p>255</p></td>
+<td><p>mediumpurple1</p></td>
+</tr>
+<tr class="row-odd"><td><p>159</p></td>
+<td><p>121</p></td>
+<td><p>238</p></td>
+<td><p>mediumpurple2</p></td>
+</tr>
+<tr class="row-even"><td><p>137</p></td>
+<td><p>104</p></td>
+<td><p>205</p></td>
+<td><p>mediumpurple3</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>225</p></td>
+<td><p>255</p></td>
+<td><p>thistle1</p></td>
+</tr>
+<tr class="row-even"><td><p>238</p></td>
+<td><p>210</p></td>
+<td><p>238</p></td>
+<td><p>thistle2</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>181</p></td>
+<td><p>205</p></td>
+<td><p>thistle3</p></td>
+</tr>
+<tr class="row-even"><td><p>139</p></td>
+<td><p>123</p></td>
+<td><p>139</p></td>
+<td><p>thistle4</p></td>
+</tr>
+<tr class="row-odd"><td><p>102</p></td>
+<td><p>102</p></td>
+<td><p>102</p></td>
+<td><p>gray40</p></td>
+</tr>
+<tr class="row-even"><td><p>102</p></td>
+<td><p>102</p></td>
+<td><p>102</p></td>
+<td><p>grey40</p></td>
+</tr>
+<tr class="row-odd"><td><p>105</p></td>
+<td><p>105</p></td>
+<td><p>105</p></td>
+<td><p>gray41</p></td>
+</tr>
+<tr class="row-even"><td><p>105</p></td>
+<td><p>105</p></td>
+<td><p>105</p></td>
+<td><p>grey41</p></td>
+</tr>
+<tr class="row-odd"><td><p>107</p></td>
+<td><p>107</p></td>
+<td><p>107</p></td>
+<td><p>gray42</p></td>
+</tr>
+<tr class="row-even"><td><p>107</p></td>
+<td><p>107</p></td>
+<td><p>107</p></td>
+<td><p>grey42</p></td>
+</tr>
+<tr class="row-odd"><td><p>110</p></td>
+<td><p>110</p></td>
+<td><p>110</p></td>
+<td><p>gray43</p></td>
+</tr>
+<tr class="row-even"><td><p>110</p></td>
+<td><p>110</p></td>
+<td><p>110</p></td>
+<td><p>grey43</p></td>
+</tr>
+<tr class="row-odd"><td><p>112</p></td>
+<td><p>112</p></td>
+<td><p>112</p></td>
+<td><p>gray44</p></td>
+</tr>
+<tr class="row-even"><td><p>112</p></td>
+<td><p>112</p></td>
+<td><p>112</p></td>
+<td><p>grey44</p></td>
+</tr>
+<tr class="row-odd"><td><p>115</p></td>
+<td><p>115</p></td>
+<td><p>115</p></td>
+<td><p>gray45</p></td>
+</tr>
+<tr class="row-even"><td><p>115</p></td>
+<td><p>115</p></td>
+<td><p>115</p></td>
+<td><p>grey45</p></td>
+</tr>
+<tr class="row-odd"><td><p>117</p></td>
+<td><p>117</p></td>
+<td><p>117</p></td>
+<td><p>gray46</p></td>
+</tr>
+<tr class="row-even"><td><p>117</p></td>
+<td><p>117</p></td>
+<td><p>117</p></td>
+<td><p>grey46</p></td>
+</tr>
+<tr class="row-odd"><td><p>120</p></td>
+<td><p>120</p></td>
+<td><p>120</p></td>
+<td><p>gray47</p></td>
+</tr>
+<tr class="row-even"><td><p>120</p></td>
+<td><p>120</p></td>
+<td><p>120</p></td>
+<td><p>grey47</p></td>
+</tr>
+<tr class="row-odd"><td><p>122</p></td>
+<td><p>122</p></td>
+<td><p>122</p></td>
+<td><p>gray48</p></td>
+</tr>
+<tr class="row-even"><td><p>122</p></td>
+<td><p>122</p></td>
+<td><p>122</p></td>
+<td><p>grey48</p></td>
+</tr>
+<tr class="row-odd"><td><p>125</p></td>
+<td><p>125</p></td>
+<td><p>125</p></td>
+<td><p>gray49</p></td>
+</tr>
+<tr class="row-even"><td><p>125</p></td>
+<td><p>125</p></td>
+<td><p>125</p></td>
+<td><p>grey49</p></td>
+</tr>
+<tr class="row-odd"><td><p>127</p></td>
+<td><p>127</p></td>
+<td><p>127</p></td>
+<td><p>gray50</p></td>
+</tr>
+<tr class="row-even"><td><p>127</p></td>
+<td><p>127</p></td>
+<td><p>127</p></td>
+<td><p>grey50</p></td>
+</tr>
+<tr class="row-odd"><td><p>130</p></td>
+<td><p>130</p></td>
+<td><p>130</p></td>
+<td><p>gray51</p></td>
+</tr>
+<tr class="row-even"><td><p>130</p></td>
+<td><p>130</p></td>
+<td><p>130</p></td>
+<td><p>grey51</p></td>
+</tr>
+<tr class="row-odd"><td><p>133</p></td>
+<td><p>133</p></td>
+<td><p>133</p></td>
+<td><p>gray52</p></td>
+</tr>
+<tr class="row-even"><td><p>133</p></td>
+<td><p>133</p></td>
+<td><p>133</p></td>
+<td><p>grey52</p></td>
+</tr>
+<tr class="row-odd"><td><p>135</p></td>
+<td><p>135</p></td>
+<td><p>135</p></td>
+<td><p>gray53</p></td>
+</tr>
+<tr class="row-even"><td><p>135</p></td>
+<td><p>135</p></td>
+<td><p>135</p></td>
+<td><p>grey53</p></td>
+</tr>
+<tr class="row-odd"><td><p>138</p></td>
+<td><p>138</p></td>
+<td><p>138</p></td>
+<td><p>gray54</p></td>
+</tr>
+<tr class="row-even"><td><p>138</p></td>
+<td><p>138</p></td>
+<td><p>138</p></td>
+<td><p>grey54</p></td>
+</tr>
+<tr class="row-odd"><td><p>140</p></td>
+<td><p>140</p></td>
+<td><p>140</p></td>
+<td><p>gray55</p></td>
+</tr>
+<tr class="row-even"><td><p>140</p></td>
+<td><p>140</p></td>
+<td><p>140</p></td>
+<td><p>grey55</p></td>
+</tr>
+<tr class="row-odd"><td><p>143</p></td>
+<td><p>143</p></td>
+<td><p>143</p></td>
+<td><p>gray56</p></td>
+</tr>
+<tr class="row-even"><td><p>143</p></td>
+<td><p>143</p></td>
+<td><p>143</p></td>
+<td><p>grey56</p></td>
+</tr>
+<tr class="row-odd"><td><p>145</p></td>
+<td><p>145</p></td>
+<td><p>145</p></td>
+<td><p>gray57</p></td>
+</tr>
+<tr class="row-even"><td><p>145</p></td>
+<td><p>145</p></td>
+<td><p>145</p></td>
+<td><p>grey57</p></td>
+</tr>
+<tr class="row-odd"><td><p>148</p></td>
+<td><p>148</p></td>
+<td><p>148</p></td>
+<td><p>gray58</p></td>
+</tr>
+<tr class="row-even"><td><p>148</p></td>
+<td><p>148</p></td>
+<td><p>148</p></td>
+<td><p>grey58</p></td>
+</tr>
+<tr class="row-odd"><td><p>150</p></td>
+<td><p>150</p></td>
+<td><p>150</p></td>
+<td><p>gray59</p></td>
+</tr>
+<tr class="row-even"><td><p>150</p></td>
+<td><p>150</p></td>
+<td><p>150</p></td>
+<td><p>grey59</p></td>
+</tr>
+<tr class="row-odd"><td><p>153</p></td>
+<td><p>153</p></td>
+<td><p>153</p></td>
+<td><p>gray60</p></td>
+</tr>
+<tr class="row-even"><td><p>153</p></td>
+<td><p>153</p></td>
+<td><p>153</p></td>
+<td><p>grey60</p></td>
+</tr>
+<tr class="row-odd"><td><p>156</p></td>
+<td><p>156</p></td>
+<td><p>156</p></td>
+<td><p>gray61</p></td>
+</tr>
+<tr class="row-even"><td><p>156</p></td>
+<td><p>156</p></td>
+<td><p>156</p></td>
+<td><p>grey61</p></td>
+</tr>
+<tr class="row-odd"><td><p>158</p></td>
+<td><p>158</p></td>
+<td><p>158</p></td>
+<td><p>gray62</p></td>
+</tr>
+<tr class="row-even"><td><p>158</p></td>
+<td><p>158</p></td>
+<td><p>158</p></td>
+<td><p>grey62</p></td>
+</tr>
+<tr class="row-odd"><td><p>161</p></td>
+<td><p>161</p></td>
+<td><p>161</p></td>
+<td><p>gray63</p></td>
+</tr>
+<tr class="row-even"><td><p>161</p></td>
+<td><p>161</p></td>
+<td><p>161</p></td>
+<td><p>grey63</p></td>
+</tr>
+<tr class="row-odd"><td><p>163</p></td>
+<td><p>163</p></td>
+<td><p>163</p></td>
+<td><p>gray64</p></td>
+</tr>
+<tr class="row-even"><td><p>163</p></td>
+<td><p>163</p></td>
+<td><p>163</p></td>
+<td><p>grey64</p></td>
+</tr>
+<tr class="row-odd"><td><p>166</p></td>
+<td><p>166</p></td>
+<td><p>166</p></td>
+<td><p>gray65</p></td>
+</tr>
+<tr class="row-even"><td><p>166</p></td>
+<td><p>166</p></td>
+<td><p>166</p></td>
+<td><p>grey65</p></td>
+</tr>
+<tr class="row-odd"><td><p>168</p></td>
+<td><p>168</p></td>
+<td><p>168</p></td>
+<td><p>gray66</p></td>
+</tr>
+<tr class="row-even"><td><p>168</p></td>
+<td><p>168</p></td>
+<td><p>168</p></td>
+<td><p>grey66</p></td>
+</tr>
+<tr class="row-odd"><td><p>171</p></td>
+<td><p>171</p></td>
+<td><p>171</p></td>
+<td><p>gray67</p></td>
+</tr>
+<tr class="row-even"><td><p>171</p></td>
+<td><p>171</p></td>
+<td><p>171</p></td>
+<td><p>grey67</p></td>
+</tr>
+<tr class="row-odd"><td><p>173</p></td>
+<td><p>173</p></td>
+<td><p>173</p></td>
+<td><p>gray68</p></td>
+</tr>
+<tr class="row-even"><td><p>173</p></td>
+<td><p>173</p></td>
+<td><p>173</p></td>
+<td><p>grey68</p></td>
+</tr>
+<tr class="row-odd"><td><p>176</p></td>
+<td><p>176</p></td>
+<td><p>176</p></td>
+<td><p>gray69</p></td>
+</tr>
+<tr class="row-even"><td><p>176</p></td>
+<td><p>176</p></td>
+<td><p>176</p></td>
+<td><p>grey69</p></td>
+</tr>
+<tr class="row-odd"><td><p>179</p></td>
+<td><p>179</p></td>
+<td><p>179</p></td>
+<td><p>gray70</p></td>
+</tr>
+<tr class="row-even"><td><p>179</p></td>
+<td><p>179</p></td>
+<td><p>179</p></td>
+<td><p>grey70</p></td>
+</tr>
+<tr class="row-odd"><td><p>181</p></td>
+<td><p>181</p></td>
+<td><p>181</p></td>
+<td><p>gray71</p></td>
+</tr>
+<tr class="row-even"><td><p>181</p></td>
+<td><p>181</p></td>
+<td><p>181</p></td>
+<td><p>grey71</p></td>
+</tr>
+<tr class="row-odd"><td><p>184</p></td>
+<td><p>184</p></td>
+<td><p>184</p></td>
+<td><p>gray72</p></td>
+</tr>
+<tr class="row-even"><td><p>184</p></td>
+<td><p>184</p></td>
+<td><p>184</p></td>
+<td><p>grey72</p></td>
+</tr>
+<tr class="row-odd"><td><p>186</p></td>
+<td><p>186</p></td>
+<td><p>186</p></td>
+<td><p>gray73</p></td>
+</tr>
+<tr class="row-even"><td><p>186</p></td>
+<td><p>186</p></td>
+<td><p>186</p></td>
+<td><p>grey73</p></td>
+</tr>
+<tr class="row-odd"><td><p>189</p></td>
+<td><p>189</p></td>
+<td><p>189</p></td>
+<td><p>gray74</p></td>
+</tr>
+<tr class="row-even"><td><p>189</p></td>
+<td><p>189</p></td>
+<td><p>189</p></td>
+<td><p>grey74</p></td>
+</tr>
+<tr class="row-odd"><td><p>191</p></td>
+<td><p>191</p></td>
+<td><p>191</p></td>
+<td><p>gray75</p></td>
+</tr>
+<tr class="row-even"><td><p>191</p></td>
+<td><p>191</p></td>
+<td><p>191</p></td>
+<td><p>grey75</p></td>
+</tr>
+<tr class="row-odd"><td><p>194</p></td>
+<td><p>194</p></td>
+<td><p>194</p></td>
+<td><p>gray76</p></td>
+</tr>
+<tr class="row-even"><td><p>194</p></td>
+<td><p>194</p></td>
+<td><p>194</p></td>
+<td><p>grey76</p></td>
+</tr>
+<tr class="row-odd"><td><p>196</p></td>
+<td><p>196</p></td>
+<td><p>196</p></td>
+<td><p>gray77</p></td>
+</tr>
+<tr class="row-even"><td><p>196</p></td>
+<td><p>196</p></td>
+<td><p>196</p></td>
+<td><p>grey77</p></td>
+</tr>
+<tr class="row-odd"><td><p>199</p></td>
+<td><p>199</p></td>
+<td><p>199</p></td>
+<td><p>gray78</p></td>
+</tr>
+<tr class="row-even"><td><p>199</p></td>
+<td><p>199</p></td>
+<td><p>199</p></td>
+<td><p>grey78</p></td>
+</tr>
+<tr class="row-odd"><td><p>201</p></td>
+<td><p>201</p></td>
+<td><p>201</p></td>
+<td><p>gray79</p></td>
+</tr>
+<tr class="row-even"><td><p>201</p></td>
+<td><p>201</p></td>
+<td><p>201</p></td>
+<td><p>grey79</p></td>
+</tr>
+<tr class="row-odd"><td><p>204</p></td>
+<td><p>204</p></td>
+<td><p>204</p></td>
+<td><p>gray80</p></td>
+</tr>
+<tr class="row-even"><td><p>204</p></td>
+<td><p>204</p></td>
+<td><p>204</p></td>
+<td><p>grey80</p></td>
+</tr>
+<tr class="row-odd"><td><p>207</p></td>
+<td><p>207</p></td>
+<td><p>207</p></td>
+<td><p>gray81</p></td>
+</tr>
+<tr class="row-even"><td><p>207</p></td>
+<td><p>207</p></td>
+<td><p>207</p></td>
+<td><p>grey81</p></td>
+</tr>
+<tr class="row-odd"><td><p>209</p></td>
+<td><p>209</p></td>
+<td><p>209</p></td>
+<td><p>gray82</p></td>
+</tr>
+<tr class="row-even"><td><p>209</p></td>
+<td><p>209</p></td>
+<td><p>209</p></td>
+<td><p>grey82</p></td>
+</tr>
+<tr class="row-odd"><td><p>212</p></td>
+<td><p>212</p></td>
+<td><p>212</p></td>
+<td><p>gray83</p></td>
+</tr>
+<tr class="row-even"><td><p>212</p></td>
+<td><p>212</p></td>
+<td><p>212</p></td>
+<td><p>grey83</p></td>
+</tr>
+<tr class="row-odd"><td><p>214</p></td>
+<td><p>214</p></td>
+<td><p>214</p></td>
+<td><p>gray84</p></td>
+</tr>
+<tr class="row-even"><td><p>214</p></td>
+<td><p>214</p></td>
+<td><p>214</p></td>
+<td><p>grey84</p></td>
+</tr>
+<tr class="row-odd"><td><p>217</p></td>
+<td><p>217</p></td>
+<td><p>217</p></td>
+<td><p>gray85</p></td>
+</tr>
+<tr class="row-even"><td><p>217</p></td>
+<td><p>217</p></td>
+<td><p>217</p></td>
+<td><p>grey85</p></td>
+</tr>
+<tr class="row-odd"><td><p>219</p></td>
+<td><p>219</p></td>
+<td><p>219</p></td>
+<td><p>gray86</p></td>
+</tr>
+<tr class="row-even"><td><p>219</p></td>
+<td><p>219</p></td>
+<td><p>219</p></td>
+<td><p>grey86</p></td>
+</tr>
+<tr class="row-odd"><td><p>222</p></td>
+<td><p>222</p></td>
+<td><p>222</p></td>
+<td><p>gray87</p></td>
+</tr>
+<tr class="row-even"><td><p>222</p></td>
+<td><p>222</p></td>
+<td><p>222</p></td>
+<td><p>grey87</p></td>
+</tr>
+<tr class="row-odd"><td><p>224</p></td>
+<td><p>224</p></td>
+<td><p>224</p></td>
+<td><p>gray88</p></td>
+</tr>
+<tr class="row-even"><td><p>224</p></td>
+<td><p>224</p></td>
+<td><p>224</p></td>
+<td><p>grey88</p></td>
+</tr>
+<tr class="row-odd"><td><p>227</p></td>
+<td><p>227</p></td>
+<td><p>227</p></td>
+<td><p>gray89</p></td>
+</tr>
+<tr class="row-even"><td><p>227</p></td>
+<td><p>227</p></td>
+<td><p>227</p></td>
+<td><p>grey89</p></td>
+</tr>
+<tr class="row-odd"><td><p>229</p></td>
+<td><p>229</p></td>
+<td><p>229</p></td>
+<td><p>gray90</p></td>
+</tr>
+<tr class="row-even"><td><p>229</p></td>
+<td><p>229</p></td>
+<td><p>229</p></td>
+<td><p>grey90</p></td>
+</tr>
+<tr class="row-odd"><td><p>232</p></td>
+<td><p>232</p></td>
+<td><p>232</p></td>
+<td><p>gray91</p></td>
+</tr>
+<tr class="row-even"><td><p>232</p></td>
+<td><p>232</p></td>
+<td><p>232</p></td>
+<td><p>grey91</p></td>
+</tr>
+<tr class="row-odd"><td><p>235</p></td>
+<td><p>235</p></td>
+<td><p>235</p></td>
+<td><p>gray92</p></td>
+</tr>
+<tr class="row-even"><td><p>235</p></td>
+<td><p>235</p></td>
+<td><p>235</p></td>
+<td><p>grey92</p></td>
+</tr>
+<tr class="row-odd"><td><p>237</p></td>
+<td><p>237</p></td>
+<td><p>237</p></td>
+<td><p>gray93</p></td>
+</tr>
+<tr class="row-even"><td><p>237</p></td>
+<td><p>237</p></td>
+<td><p>237</p></td>
+<td><p>grey93</p></td>
+</tr>
+<tr class="row-odd"><td><p>240</p></td>
+<td><p>240</p></td>
+<td><p>240</p></td>
+<td><p>gray94</p></td>
+</tr>
+<tr class="row-even"><td><p>240</p></td>
+<td><p>240</p></td>
+<td><p>240</p></td>
+<td><p>grey94</p></td>
+</tr>
+<tr class="row-odd"><td><p>242</p></td>
+<td><p>242</p></td>
+<td><p>242</p></td>
+<td><p>gray95</p></td>
+</tr>
+<tr class="row-even"><td><p>242</p></td>
+<td><p>242</p></td>
+<td><p>242</p></td>
+<td><p>grey95</p></td>
+</tr>
+<tr class="row-odd"><td><p>245</p></td>
+<td><p>245</p></td>
+<td><p>245</p></td>
+<td><p>gray96</p></td>
+</tr>
+<tr class="row-even"><td><p>245</p></td>
+<td><p>245</p></td>
+<td><p>245</p></td>
+<td><p>grey96</p></td>
+</tr>
+<tr class="row-odd"><td><p>247</p></td>
+<td><p>247</p></td>
+<td><p>247</p></td>
+<td><p>gray97</p></td>
+</tr>
+<tr class="row-even"><td><p>247</p></td>
+<td><p>247</p></td>
+<td><p>247</p></td>
+<td><p>grey97</p></td>
+</tr>
+<tr class="row-odd"><td><p>250</p></td>
+<td><p>250</p></td>
+<td><p>250</p></td>
+<td><p>gray98</p></td>
+</tr>
+<tr class="row-even"><td><p>250</p></td>
+<td><p>250</p></td>
+<td><p>250</p></td>
+<td><p>grey98</p></td>
+</tr>
+<tr class="row-odd"><td><p>252</p></td>
+<td><p>252</p></td>
+<td><p>252</p></td>
+<td><p>gray99</p></td>
+</tr>
+<tr class="row-even"><td><p>252</p></td>
+<td><p>252</p></td>
+<td><p>252</p></td>
+<td><p>grey99</p></td>
+</tr>
+<tr class="row-odd"><td><p>255</p></td>
+<td><p>255</p></td>
+<td><p>255</p></td>
+<td><p>gray100</p></td>
+</tr>
+<tr class="row-even"><td><p>255</p></td>
+<td><p>255</p></td>
+<td><p>255</p></td>
+<td><p>grey100</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="further-information">
+<h2>Further Information<a class="headerlink" href="#further-information" title="Permalink to this headline">¶</a></h2>
+<p>For more information on the use of color, read Chapter <a class="reference internal" href="GMT_Docs.html#color-space"><span class="std std-ref">Color Space: The Final Frontier</span></a> of the <strong>CookBook</strong>.</p>
+</div>
+<div class="section" id="see-also">
+<h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> , <a class="reference internal" href="gmtlogo.html"><span class="doc">gmtlogo</span></a> ,
+<a class="reference internal" href="grdcontour.html"><span class="doc">grdcontour</span></a> ,
+<a class="reference internal" href="grdvector.html"><span class="doc">grdvector</span></a> , <a class="reference internal" href="grdview.html"><span class="doc">grdview</span></a>
+<a class="reference internal" href="psbasemap.html"><span class="doc">psbasemap</span></a> ,
+<a class="reference internal" href="pscoast.html"><span class="doc">pscoast</span></a> , <a class="reference internal" href="pscontour.html"><span class="doc">pscontour</span></a>,
+<a class="reference internal" href="pshistogram.html"><span class="doc">pshistogram</span></a> ,
+<a class="reference internal" href="psimage.html"><span class="doc">psimage</span></a> , <a class="reference internal" href="pslegend.html"><span class="doc">pslegend</span></a> ,
+<a class="reference internal" href="psmask.html"><span class="doc">psmask</span></a> , <a class="reference internal" href="psrose.html"><span class="doc">psrose</span></a> ,
+<a class="reference internal" href="pstext.html"><span class="doc">pstext</span></a> , <a class="reference internal" href="pswiggle.html"><span class="doc">pswiggle</span></a> ,
+<a class="reference internal" href="psxy.html"><span class="doc">psxy</span></a> , <a class="reference internal" href="psxyz.html"><span class="doc">psxyz</span></a></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">gmtcolors</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#list-of-colors">List Of Colors</a></li>
+<li><a class="reference internal" href="#further-information">Further Information</a></li>
+<li><a class="reference internal" href="#see-also">See Also</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="gmt5syntax.html"
+                        title="previous chapter">gmt5syntax</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="gmtconnect.html"
+                        title="next chapter">gmtconnect</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/gmtcolors.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="gmtconnect.html" title="gmtconnect"
+             >next</a> </li>
+        <li class="right" >
+          <a href="gmt5syntax.html" title="gmt5syntax"
+             >previous</a> </li>
+  <li><a href="https://www.generic-mapping-tools.org">Project Home</a>  &#187;</li>
+  
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 5.4.5 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="man_pages.html" >Man Pages</a> &#187;</li>
+<li class="right">
+<form class="search" accept-charset="UTF-8" action="search.html" method="get">
+  <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+  <label for="q">
+    <a class="search" href="search.html" accesskey="s" original-title="">Search:</a>
+  </label>
+  <input accesskey="f" class="small" id="q" name="q" size="20" type="text">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form></li>
+   
+
+      </ul>
+    </div>
+<div class="footer">
+    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
+  Last updated on Jul 29, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.1.2.
+  <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
+
+</div>
+
+
+  </body>
+</html>
