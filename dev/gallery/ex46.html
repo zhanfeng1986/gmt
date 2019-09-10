@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>(46) Day-light terminators and other sunlight parameters &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
+    <title>(46) Day-light terminators and other sunlight parameters &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +41,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" accesskey="U">The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -74,21 +74,22 @@ to be plotted with <a class="reference internal" href="../plot.html"><span class
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 <span class="c1">#               GMT EXAMPLE 46</span>
 <span class="c1">#</span>
-<span class="c1"># Purpose:      Illustrate use of pssolar to plot day/night terminators</span>
-<span class="c1"># GMT modules:  pssolar, pscoast, psxy</span>
+<span class="c1"># Purpose:      Illustrate use of solar to plot day/night terminators</span>
+<span class="c1"># GMT modules:  solar, coast, plot</span>
 <span class="c1">#</span>
 
-<span class="nv">ps</span><span class="o">=</span>example_46.ps
-gmt pscoast -Rd -JKs0/10i -Dl -A5000 -W0.5p -N1/0.5p,gray -S175/210/255 -Bafg --MAP_FRAME_TYPE<span class="o">=</span>plain -K -Xc &gt; <span class="nv">$ps</span>
-gmt pssolar -R  -J -Td+d2016-02-09T16:00:00 -Gnavy@95 -K -O &gt;&gt; <span class="nv">$ps</span>
-gmt pssolar -R  -J -Tc+d2016-02-09T16:00:00 -Gnavy@85 -K -O &gt;&gt; <span class="nv">$ps</span>
-gmt pssolar -R  -J -Tn+d2016-02-09T16:00:00 -Gnavy@80 -K -O &gt;&gt; <span class="nv">$ps</span>
-gmt pssolar -R  -J -Ta+d2016-02-09T16:00:00 -Gnavy@80 -K -O &gt;&gt; <span class="nv">$ps</span>
-gmt pssolar -I+d2016-02-09T16:00:00 -C <span class="p">|</span> gmt psxy -R -J -Sk@sunglasses/1.5c -O &gt;&gt; <span class="nv">$ps</span>
+gmt begin ex46
+	gmt coast -Rd -JKs0/10i -A5000 -W0.5p -N1/0.5p,gray -S175/210/255 -Bafg --MAP_FRAME_TYPE<span class="o">=</span>plain -Xc
+	gmt solar -Td+d2016-02-09T16:00:00 -Gnavy@95
+	gmt solar -Tc+d2016-02-09T16:00:00 -Gnavy@85
+	gmt solar -Tn+d2016-02-09T16:00:00 -Gnavy@80
+	gmt solar -Ta+d2016-02-09T16:00:00 -Gnavy@80
+	gmt solar -I+d2016-02-09T16:00:00 -C <span class="p">|</span> gmt plot -Sk@sunglasses/1.5c
+gmt end
 </pre></div>
 </div>
 <div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/example_46.png"><img alt="../_images/example_46.png" src="../_images/example_46.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/ex46.png"><img alt="../_images/ex46.png" src="../_images/ex46.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Day-light terminators.</span></p>
 </div>
 </div>
@@ -130,7 +131,7 @@ gmt pssolar -I+d2016-02-09T16:00:00 -C <span class="p">|</span> gmt psxy -R -J -
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" >The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -149,7 +150,7 @@ gmt pssolar -I+d2016-02-09T16:00:00 -C <span class="p">|</span> gmt psxy -R -J -
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Jul 28, 2019.
+  Last updated on Sep 10, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

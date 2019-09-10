@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>(14) Gridding of data and trend surfaces &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
+    <title>(14) Gridding of data and trend surfaces &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +41,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" accesskey="U">The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -90,52 +90,42 @@ transect using <a class="reference internal" href="../plot.html"><span class="do
 <span class="c1">#		GMT EXAMPLE 14</span>
 <span class="c1">#</span>
 <span class="c1"># Purpose:	Showing simple gridding, contouring, and resampling along tracks</span>
-<span class="c1"># GMT modules:	blockmean, grdcontour, grdtrack, grdtrend, gmtinfo, project</span>
-<span class="c1"># GMT modules:	gmtset, pstext, psbasemap, psxy, surface</span>
+<span class="c1"># GMT modules:	blockmean, grdcontour, grdtrack, grdtrend, project, text,</span>
+<span class="c1"># GMT modules:	set, plot, surface, subplot</span>
 <span class="c1"># Unix progs:	rm</span>
 <span class="c1">#</span>
-<span class="nv">ps</span><span class="o">=</span>example_14.ps
-
-<span class="c1"># First draw network and label the nodes</span>
-
-gmt <span class="nb">set</span> MAP_GRID_PEN_PRIMARY thinnest,-
-gmt psxy @Table_5_11.txt -R0/7/0/7 -JX3.06i/3.15i -B2f1 -BWSNe -Sc0.05i -Gblack -P -K -Y6.45i &gt; <span class="nv">$ps</span>
-gmt pstext @Table_5_11.txt -R -J -D0.1c/0 -F+f6p+jLM -O -K -N &gt;&gt; <span class="nv">$ps</span>
-gmt blockmean @Table_5_11.txt -R0/7/0/7 -I1 &gt; mean.xyz
-
-<span class="c1"># Then draw gmt blockmean cells</span>
-
-gmt psbasemap -R0.5/7.5/0.5/7.5 -J -O -K -Bg1 -X3.25i &gt;&gt; <span class="nv">$ps</span>
-gmt psxy -R0/7/0/7 -J -B2f1 -BeSNw mean.xyz -Ss0.05i -Gblack -O -K &gt;&gt; <span class="nv">$ps</span>
-<span class="c1"># Label data values using one decimal</span>
-gmt pstext -R -J -D0.15c/0 -F+f6p+jLM+z%.1f -O -K -Gwhite -W -C0.01i -N mean.xyz &gt;&gt; <span class="nv">$ps</span>
-
-<span class="c1"># Then gmt surface and contour the data</span>
-
-gmt surface mean.xyz -R -I1 -Gdata.nc
-gmt grdcontour data.nc -J -B2f1 -BWSne -C25 -A50 -Gd3i -S4 -O -K -X-3.25i -Y-3.55i &gt;&gt; <span class="nv">$ps</span>
-gmt psxy -R -J mean.xyz -Ss0.05i -Gblack -O -K &gt;&gt; <span class="nv">$ps</span>
-
-<span class="c1"># Fit bicubic trend to data and compare to gridded gmt surface</span>
-
-gmt grdtrend data.nc -N10 -Ttrend.nc
-gmt project -C0/0 -E7/7 -G0.1 -N &gt; track
-gmt grdcontour trend.nc -J -B2f1 -BwSne -C25 -A50 -Glct/cb -S4 -O -K -X3.25i &gt;&gt; <span class="nv">$ps</span>
-gmt psxy -R -J track -Wthick,. -O -K &gt;&gt; <span class="nv">$ps</span>
-
-<span class="c1"># Sample along diagonal</span>
-
-gmt grdtrack track -Gdata.nc -o2,3 &gt; data.d
-gmt grdtrack track -Gtrend.nc -o2,3 &gt; trend.d
-gmt psxy <span class="sb">`</span>gmt info data.d trend.d -I0.5/25<span class="sb">`</span> -JX6.3i/1.4i data.d -Wthick -O -K -X-3.25i -Y-1.9i <span class="se">\</span>
-	-Bx1 -By50 -BWSne &gt;&gt; <span class="nv">$ps</span>
-gmt psxy -R -J trend.d -Wthinner,- -O &gt;&gt; <span class="nv">$ps</span>
-
-rm -f mean.xyz track *.nc *.d gmt.conf
+gmt begin ex14
+  gmt <span class="nb">set</span> MAP_GRID_PEN_PRIMARY thinnest,-
+  <span class="c1"># calculate mean data and grids</span>
+  gmt blockmean @Table_5_11.txt -R0/7/0/7 -I1 &gt; mean.xyz
+  gmt surface mean.xyz -Gdata.nc
+  gmt grdtrend data.nc -N10 -Ttrend.nc
+  gmt project -C0/0 -E7/7 -G0.1 -N &gt; track
+  <span class="c1"># Sample along diagonal</span>
+  gmt grdtrack track -Gdata.nc -o2,3 &gt; data.d
+  gmt grdtrack track -Gtrend.nc -o2,3 &gt; trend.d
+  gmt plot -Ra -JX6i/1.4i data.d -Wthick -Bx1 -By50 -BWSne
+  gmt plot trend.d -Wthinner,-
+  gmt subplot begin 2x2 -M0.05i -Ff6i/6i -BWSne -Yh+0.4i
+    <span class="c1"># First draw network and label the nodes</span>
+    gmt plot @Table_5_11.txt -R0/7/0/7 -Sc0.05i -Gblack -c0,0
+    gmt text @Table_5_11.txt -D0.1c/0 -F+f6p+jLM -N
+    <span class="c1"># Then draw gmt blockmean cells and label data values using one decimal</span>
+    gmt plot mean.xyz -Ss0.05i -Gblack -c0,1
+    gmt text -D0.15c/0 -F+f6p+jLM+z%.1f -Gwhite -W -C0.01i -N mean.xyz
+    <span class="c1"># Then gmt surface and contour the data</span>
+    gmt grdcontour data.nc -C25 -A50 -Gd3i -S4 -c1,0
+    gmt plot mean.xyz -Ss0.05i -Gblack
+    <span class="c1"># Fit bicubic trend to data and compare to gridded gmt surface</span>
+    gmt grdcontour trend.nc -C25 -A50 -Glct/cb -S4 -c1,1
+    gmt plot track -Wthick,.
+  gmt subplot end
+gmt end
+rm -f mean.xyz track trend.nc data.nc data.d trend.d
 </pre></div>
 </div>
 <div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/example_14.png"><img alt="../_images/example_14.png" src="../_images/example_14.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/ex14.png"><img alt="../_images/ex14.png" src="../_images/ex14.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Gridding of data and trend surfaces.</span></p>
 </div>
 </div>
@@ -177,7 +167,7 @@ rm -f mean.xyz track *.nc *.d gmt.conf
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" >The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -196,7 +186,7 @@ rm -f mean.xyz track *.nc *.d gmt.conf
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Jul 28, 2019.
+  Last updated on Sep 10, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

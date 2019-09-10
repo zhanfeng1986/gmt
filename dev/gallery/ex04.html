@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>(4) A 3-D perspective mesh plot &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
+    <title>(4) A 3-D perspective mesh plot &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +41,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" accesskey="U">The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -79,38 +79,36 @@ how to do it:</p>
 <span class="c1">#		GMT EXAMPLE 04</span>
 <span class="c1">#</span>
 <span class="c1"># Purpose:	3-D mesh and color plot of Hawaiian topography and geoid</span>
-<span class="c1"># GMT modules:	grdcontour, grdimage, grdview, psbasemap, pscoast, pstext</span>
+<span class="c1"># GMT modules:	grdcontour, grdimage, grdview, basemap, coast, text, makecpt</span>
 <span class="c1"># Unix progs:	echo, rm</span>
 <span class="c1">#</span>
-<span class="nv">ps</span><span class="o">=</span>example_04.ps
-gmt makecpt -C255,100 -T-10/10/10 -N &gt; zero.cpt
-gmt grdcontour @HI_geoid_04.nc -R195/210/18/25 -Jm0.45i -p60/30 -C1 -A5+o -Gd4i -K -P <span class="se">\</span>
-	-X1.25i -Y1.25i &gt; <span class="nv">$ps</span>
-gmt pscoast -R -J -p -B2 -BNEsw -Gblack -O -K -TdjBR+o0.1i+w1i+l &gt;&gt; <span class="nv">$ps</span>
-gmt grdview @HI_topo_04.nc -R195/210/18/25/-6/4 -J -Jz0.34i -p -Czero.cpt -O -K <span class="se">\</span>
-	-N-6+glightgray -Qsm -B2 -Bz2+l<span class="s2">&quot;Topo (km)&quot;</span> -BneswZ -Y2.2i &gt;&gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="s1">&#39;3.25 5.75 H@#awaiian@# R@#idge@#&#39;</span> <span class="p">|</span> gmt pstext -R0/10/0/10 -Jx1i <span class="se">\</span>
-	-F+f60p,ZapfChancery-MediumItalic+jCB -O &gt;&gt; <span class="nv">$ps</span>
-rm -f zero.cpt
-<span class="c1">#</span>
-<span class="nv">ps</span><span class="o">=</span>example_04c.ps
-gmt grdimage @HI_geoid_04.nc -I+a0+nt0.75 -R195/210/18/25 -JM6.75i -p60/30 -C@geoid_04.cpt -E100 <span class="se">\</span>
-	-K -P -X1.25i -Y1.25i &gt; <span class="nv">$ps</span>
-gmt pscoast -R -J -p -B2 -BNEsw -Gblack -O -K &gt;&gt; <span class="nv">$ps</span>
-gmt psbasemap -R -J -p -O -K -TdjBR+o0.1i+w1i+l --COLOR_BACKGROUND<span class="o">=</span>red --FONT<span class="o">=</span>red <span class="se">\</span>
-	--MAP_TICK_PEN_PRIMARY<span class="o">=</span>thinner,red &gt;&gt; <span class="nv">$ps</span>
-gmt psscale -R -J -p240/30 -DJBC+o0/0.5i+w5i/0.3i+h -C@geoid_04.cpt -I -O -K -Bx2+l<span class="s2">&quot;Geoid (m)&quot;</span> &gt;&gt; <span class="nv">$ps</span>
-gmt grdview @HI_topo_04.nc -I+a0+nt0.75 -R195/210/18/25/-6/4 -J -JZ3.4i -p60/30 -C@topo_04.cpt <span class="se">\</span>
-	-O -K -N-6+glightgray -Qc100 -B2 -Bz2+l<span class="s2">&quot;Topo (km)&quot;</span> -BneswZ -Y2.2i &gt;&gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="s1">&#39;3.25 5.75 H@#awaiian@# R@#idge@#&#39;</span> <span class="p">|</span> gmt pstext -R0/10/0/10 -Jx1i <span class="se">\</span>
-	-F+f60p,ZapfChancery-MediumItalic+jCB -O &gt;&gt; <span class="nv">$ps</span>
+gmt begin
+	gmt figure ex04
+	gmt makecpt -C255,100 -T-10/10/10 -N
+	gmt grdcontour @HI_geoid_04.nc -R195/210/18/25 -Jm0.45i -p60/30 -C1 -A5+o -Gd4i -X1.25i -Y1.25i
+	gmt coast -p -B2 -BNEsw -Gblack -TdjBR+o0.1i+w1i+l
+	gmt grdview @HI_topo_04.nc -R195/210/18/25/-6/4 -Jz0.34i -p -C <span class="se">\</span>
+		-N-6+glightgray -Qsm -B2 -Bz2+l<span class="s2">&quot;Topo (km)&quot;</span> -BneswZ -Y2.2i
+	<span class="nb">echo</span> <span class="s1">&#39;3.25 5.75 H@#awaiian@# R@#idge@#&#39;</span> <span class="p">|</span> gmt text -R0/10/0/10 -Jx1i <span class="se">\</span>
+	-F+f60p,ZapfChancery-MediumItalic+jCB
+
+	gmt figure ex04c
+	gmt grdimage @HI_geoid_04.nc -I+a0+nt0.75 -R195/210/18/25 -JM6.75i -p60/30 -C@geoid_04.cpt -X1.25i -Y1.25i
+	gmt coast -p -B2 -BNEsw -Gblack
+	gmt basemap -p -TdjBR+o0.1i+w1i+l --COLOR_BACKGROUND<span class="o">=</span>red --FONT<span class="o">=</span>red --MAP_TICK_PEN_PRIMARY<span class="o">=</span>thinner,red
+	gmt colorbar -p240/30 -DJBC+o0/0.5i+w5i/0.3i+h -C@geoid_04.cpt -I -Bx2+l<span class="s2">&quot;Geoid (m)&quot;</span>
+	gmt grdview @HI_topo_04.nc -I+a0+nt0.75 -R195/210/18/25/-6/4 -JZ3.4i -p60/30 -C@topo_04.cpt <span class="se">\</span>
+		-N-6+glightgray -Qc100 -B2 -Bz2+l<span class="s2">&quot;Topo (km)&quot;</span> -BneswZ -Y2.2i
+	<span class="nb">echo</span> <span class="s1">&#39;3.25 5.75 H@#awaiian@# R@#idge@#&#39;</span> <span class="p">|</span> gmt text -R0/10/0/10 -Jx1i <span class="se">\</span>
+	-F+f60p,ZapfChancery-MediumItalic+jCB
+gmt end
 </pre></div>
 </div>
 <p>The purpose of the CPT <code class="docutils literal notranslate"><span class="pre">zero.cpt</span></code> is to have the positive topography
 mesh painted light gray (the remainder is white). The left side of
 Figure shows the complete illustration.</p>
 <div class="figure align-center" id="id3">
-<a class="reference internal image-reference" href="../_images/example_04.png"><img alt="../_images/example_04.png" src="../_images/example_04.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/ex04.png"><img alt="../_images/ex04.png" src="../_images/ex04.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">3-D perspective mesh plot (left) and colored version (right).</span></p>
 </div>
 <p>The second part of the script shows how to make the color version of
@@ -174,7 +172,7 @@ from Example <a class="reference internal" href="ex02.html#example-02"><span cla
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" >The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -193,7 +191,7 @@ from Example <a class="reference internal" href="ex02.html#example-02"><span cla
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Jul 28, 2019.
+  Last updated on Sep 10, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

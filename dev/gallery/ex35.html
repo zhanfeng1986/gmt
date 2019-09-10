@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>(35) Spherical triangulation and distance calculations &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
+    <title>(35) Spherical triangulation and distance calculations &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +41,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" accesskey="U">The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -77,29 +77,29 @@ placed on top.</p>
 <span class="c1">#               GMT EXAMPLE 35</span>
 <span class="c1">#</span>
 <span class="c1"># Purpose:      Illustrate sphtriangulate and sphdistance with GSHHG crude data</span>
-<span class="c1"># GMT modules:  pscoast, psxy, makecpt, grdimage, grdcontour, sphtriangulate, sphdistance</span>
+<span class="c1"># GMT modules:  coast, plot, makecpt, grdimage, grdcontour, sphtriangulate, sphdistance</span>
 <span class="c1"># Unix progs:   rm</span>
 <span class="c1">#</span>
-<span class="nv">ps</span><span class="o">=</span>example_35.ps
-
-<span class="c1"># Get the crude GSHHS data, select GMT format, and decimate to ~20%:</span>
-<span class="c1"># gshhs $GMTHOME/src/coast/gshhs/gshhs_c.b | $AWK &#39;{if ($1 == &quot;&gt;&quot; || NR%5 == 0) print $0}&#39; &gt; gshhs_c.txt</span>
-<span class="c1"># Get Voronoi polygons</span>
-gmt sphtriangulate @gshhs_c.txt -Qv -D &gt; tt.pol
-<span class="c1"># Compute distances in km</span>
-gmt sphdistance -Rg -I1 -Qtt.pol -Gtt.nc -Lk
-gmt makecpt -Chot -T0/3500 &gt; t.cpt
-<span class="c1"># Make a basic image plot and overlay contours, Voronoi polygons and coastlines</span>
-gmt grdimage tt.nc -JG-140/30/7i -P -K -Ct.cpt -X0.75i -Y2i &gt; <span class="nv">$ps</span>
-gmt grdcontour tt.nc -J -O -K -C500 -A1000+f10p,Helvetica,white -L500 -GL0/90/203/-10,175/60/170/-30,-50/30/220/-5 -Wa0.75p,white -Wc0.25p,white &gt;&gt; <span class="nv">$ps</span>
-gmt psxy -R -J -O -K tt.pol -W0.25p,green,. &gt;&gt; <span class="nv">$ps</span>
-gmt pscoast -R -J -O -W1p -Gsteelblue -A0/1/1 -B30g30 -B+t<span class="s2">&quot;Distances from GSHHG crude coastlines&quot;</span> &gt;&gt; <span class="nv">$ps</span>
-<span class="c1"># cleanup</span>
-rm -f gmt.conf tt.pol tt.nc t.cpt
+gmt begin ex35
+	<span class="c1"># Get the crude GSHHS data, select GMT format, and decimate to ~20%:</span>
+	<span class="c1"># gshhs $GMTHOME/src/coast/gshhs/gshhs_c.b | $AWK &#39;{if ($1 == &quot;&gt;&quot; || NR%5 == 0) print $0}&#39; &gt; gshhs_c.txt</span>
+	<span class="c1"># Get Voronoi polygons</span>
+	gmt sphtriangulate @gshhs_c.txt -Qv -D &gt; tt.pol
+	<span class="c1"># Compute distances in km</span>
+	gmt sphdistance -Rg -I1 -Qtt.pol -Gtt.nc -Lk
+	gmt makecpt -Chot -T0/3500
+	<span class="c1"># Make a basic image plot and overlay contours, Voronoi polygons and coastlines</span>
+	gmt grdimage tt.nc -JG-140/30/7i -X0.75i -Y2i
+	gmt grdcontour tt.nc -C500 -A1000+f10p,Helvetica,white -L500 -GL0/90/203/-10,175/60/170/-30,-50/30/220/-5 -Wa0.75p,white -Wc0.25p,white
+	gmt plot tt.pol -W0.25p,green,.
+	gmt coast -W1p -Gsteelblue -A0/1/1 -B30g30 -B+t<span class="s2">&quot;Distances from GSHHG crude coastlines&quot;</span>
+	<span class="c1"># cleanup</span>
+	rm -f tt.pol tt.nc
+gmt end
 </pre></div>
 </div>
 <div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/example_35.png"><img alt="../_images/example_35.png" src="../_images/example_35.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/ex35.png"><img alt="../_images/ex35.png" src="../_images/ex35.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Spherical triangulation and distance calculations</span></p>
 </div>
 </div>
@@ -141,7 +141,7 @@ rm -f gmt.conf tt.pol tt.nc t.cpt
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" >The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -160,7 +160,7 @@ rm -f gmt.conf tt.pol tt.nc t.cpt
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Jul 28, 2019.
+  Last updated on Sep 10, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

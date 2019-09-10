@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>plot &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
+    <title>plot &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +41,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="PS.html" accesskey="U">Modern Mode Mapping</a> &#187;</li>
 <li class="right">
@@ -87,7 +87,7 @@
 [ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong>[<em>pen</em>][<em>attr</em>] ]
 [ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] ]
 [ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] ]
-[ <a class="reference internal" href="#z"><span> <strong>-Z</strong></span></a></strong>[<strong>l</strong>|<strong>f</strong>] <em>value</em> ]
+[ <a class="reference internal" href="#z"><span> <strong>-Z</strong></span></a></strong>[<strong>l</strong>|<strong>f</strong>]<em>value</em> ]
 [ <strong>-a</strong><a class="reference internal" href="gmt.html#aspatial-full"><span class="std std-ref">flags</span></a> ]
 [ <strong>-bi</strong><a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">binary</span></a> ]
 [ <strong>-di</strong><a class="reference internal" href="gmt.html#di-full"><span class="std std-ref">nodata</span></a> ]
@@ -243,7 +243,7 @@ the symbol parameters (if given).</dd>
        gmt plot -B t.txt -Gred -W2p -L+xr -X3.25i</br>
        gmt plot -B t.txt -Gred -W2p -L+y4 -X-3.25i -Y3.25i</br>
        gmt plot -B t.txt -Gred -W2p -L+x4.5 -X3.25i</br>
-     gmt end</br>
+     gmt end show</br>
      </p>
  </div>
 </div></dt>
@@ -547,7 +547,8 @@ the quoted text attributes on a segment-by-segment basis.</p>
 </dd>
 <dt><strong>-Sr</strong></dt>
 <dd><strong>r</strong>ectangle. No size needs to be specified, but the x- and
-y-dimensions must be found in columns 3 and 4.</dd>
+y-dimensions must be found in columns 3 and 4.  Alternatively, append <strong>+s</strong>
+and then the diagonal corner coordinates are expected in columns 3 and 4.</dd>
 <dt><strong>-SR</strong></dt>
 <dd><strong>R</strong>ounded rectangle. No size needs to be specified, but the x-
 and y-dimensions and corner radius must be found in columns 3, 4, and 5.</dd>
@@ -722,7 +723,7 @@ See the <a class="reference internal" href="psxy.html#vec-attributes"><span clas
 <dd>Shift plot origin.</dd>
 </dl>
 <dl class="docutils" id="z">
-<dt><strong>-Z</strong>[<strong>l</strong>|<strong>f</strong>] <em>value</em></dt>
+<dt><strong>-Z</strong>[<strong>l</strong>|<strong>f</strong>]<em>value</em></dt>
 <dd>Instead of specifying a symbol or polygon fill and outline color via <strong>-G</strong> and <strong>-W</strong>,
 give both a <em>level</em> value via <strong>-Z</strong> and a color lookup table via <strong>-C</strong>.  To just set the
 fill or outline, use <strong>-Zf</strong> or <strong>-Zl</strong>, respectively.</dd>
@@ -769,7 +770,7 @@ fill or outline, use <strong>-Zf</strong> or <strong>-Zl</strong>, respectively.
 </dl>
 <dl class="docutils">
 <dt><strong>-t</strong>[<em>transp</em>] <a class="reference internal" href="gmt.html#t-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set PDF transparency level in percent.</dd>
+<dd>Set transparency level in percent.</dd>
 </dl>
 <p>If no transparency is appended then we will read it from the last column per data record instead.</p>
 <dl class="docutils">
@@ -1054,7 +1055,7 @@ doctored polygons may be misrepresented in GMT.</p>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="PS.html" >Modern Mode Mapping</a> &#187;</li>
 <li class="right">
@@ -1073,7 +1074,7 @@ doctored polygons may be misrepresented in GMT.</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Jul 28, 2019.
+  Last updated on Sep 10, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

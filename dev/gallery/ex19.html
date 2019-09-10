@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>(19) Color patterns on maps &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
+    <title>(19) Color patterns on maps &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +41,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" accesskey="U">The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -86,51 +86,44 @@ have changed places.</p>
 <span class="c1">#		GMT EXAMPLE 19</span>
 <span class="c1">#</span>
 <span class="c1"># Purpose:	Illustrates various color pattern effects for maps</span>
-<span class="c1"># GMT modules:	grdimage, grdmath, makecpt, pscoast, pstext, psimage</span>
-<span class="c1"># Unix progs:	rm</span>
-<span class="c1">#</span>
-<span class="nv">ps</span><span class="o">=</span>example_19.ps
-
-<span class="c1"># First make a worldmap with graded blue oceans and rainbow continents</span>
-
-gmt grdmath -Rd -I1 -r Y COSD <span class="m">2</span> <span class="nv">POW</span> <span class="o">=</span> lat.nc
-gmt grdmath -Rd -I1 -r <span class="nv">X</span> <span class="o">=</span> lon.nc
-gmt makecpt -Cwhite,blue -T0,1 -Z -N &gt; lat.cpt
-gmt makecpt -Crainbow -T-180/180 &gt; lon.cpt
-gmt grdimage lat.nc -JI0/6.5i -Clat.cpt -P -K -Y7.5i -B0 -nl &gt; <span class="nv">$ps</span>
-gmt pscoast -R -J -O -K -Dc -A5000 -Gc &gt;&gt; <span class="nv">$ps</span>
-gmt grdimage lon.nc -J -Clon.cpt -O -K -nl &gt;&gt; <span class="nv">$ps</span>
-gmt pscoast -R -J -O -K -Q &gt;&gt; <span class="nv">$ps</span>
-gmt pscoast -R -J -O -K -Dc -A5000 -Wthinnest &gt;&gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="s2">&quot;0 20 16@+TH@+ INTERNATIONAL&quot;</span> <span class="p">|</span> gmt pstext -R -J -O -K -F+f32p,Helvetica-Bold,red<span class="o">=</span>thinner &gt;&gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="s2">&quot;0 -10 GMT CONFERENCE&quot;</span> <span class="p">|</span> gmt pstext -R -J -O -K -F+f32p,Helvetica-Bold,red<span class="o">=</span>thinner &gt;&gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="s2">&quot;0 -30 Honolulu, Hawaii, April 1, 2019&quot;</span> <span class="p">|</span> gmt pstext -R -J -O -K <span class="se">\</span>
-	-F+f18p,Helvetica-Bold,green<span class="o">=</span>thinnest &gt;&gt; <span class="nv">$ps</span>
-
-<span class="c1"># Then show example of color patterns and placing a PostScript image</span>
-
-gmt pscoast -R -J -O -K -Dc -A5000 -Gp86+fred+byellow+r100 -Sp@circuit.png+r100 -B0 -Y-3.25i &gt;&gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="s2">&quot;0 30 SILLY USES OF&quot;</span> <span class="p">|</span> gmt pstext -R -J -O -K -F+f32p,Helvetica-Bold,lightgreen<span class="o">=</span>thinner &gt;&gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="s2">&quot;0 -30 COLOR PATTERNS&quot;</span> <span class="p">|</span> gmt pstext -R -J -O -K -F+f32p,Helvetica-Bold,magenta<span class="o">=</span>thinner &gt;&gt; <span class="nv">$ps</span>
-gmt psimage -DjCM+w3i -R -J @GMT_covertext.eps -O -K &gt;&gt; <span class="nv">$ps</span>
-
-<span class="c1"># Finally repeat 1st plot but exchange the patterns</span>
-
-gmt grdimage lon.nc -J -Clon.cpt -O -K -Y-3.25i -B0 -nl &gt;&gt; <span class="nv">$ps</span>
-gmt pscoast -R -J -O -K -Dc -A5000 -Gc &gt;&gt; <span class="nv">$ps</span>
-gmt grdimage lat.nc -J -Clat.cpt -O -K -nl &gt;&gt; <span class="nv">$ps</span>
-gmt pscoast -R -J -O -K -Q &gt;&gt; <span class="nv">$ps</span>
-gmt pscoast -R -J -O -K -Dc -A5000 -Wthinnest &gt;&gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="s2">&quot;0 20 16@+TH@+ INTERNATIONAL&quot;</span> <span class="p">|</span> gmt pstext -R -J -O -K -F+f32p,Helvetica-Bold,red<span class="o">=</span>thinner &gt;&gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="s2">&quot;0 -10 GMT CONFERENCE&quot;</span> <span class="p">|</span> gmt pstext -R -J -O -K -F+f32p,Helvetica-Bold,red<span class="o">=</span>thinner &gt;&gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="s2">&quot;0 -30 Honolulu, Hawaii, April 1, 2019&quot;</span> <span class="p">|</span> gmt pstext -R -J -O <span class="se">\</span>
-	-F+f18p,Helvetica-Bold,green<span class="o">=</span>thinnest &gt;&gt; <span class="nv">$ps</span>
-
-rm -f l*.nc l*.cpt gmt.conf
+<span class="c1"># GMT modules:	grdimage, grdmath, makecpt, coast, text, image, makecpt</span>
+<span class="c1"># Unix progs:	echo, rm</span>
+gmt begin ex19
+  gmt grdmath -Rd -I1 -r Y COSD <span class="m">2</span> <span class="nv">POW</span> <span class="o">=</span> lat.nc
+  gmt grdmath <span class="nv">X</span> <span class="o">=</span> lon.nc
+  gmt makecpt -Cwhite,blue -T0,1 -Z -N -H &gt; lat.cpt
+  gmt makecpt -Crainbow -T-180/180 -H &gt; lon.cpt
+  gmt subplot begin 3x1 -Fs6.5i/0 -M0 -Bbltr -Rd -JI0/6.5i
+<span class="c1">#   First make a worldmap with graded blue oceans and rainbow continents</span>
+    gmt grdimage lat.nc -Clat.cpt -nl -c0,0
+    gmt coast -Dc -A5000 -Gc
+    gmt grdimage lon.nc -Clon.cpt -nl
+    gmt coast -Q
+    gmt coast -Dc -A5000 -Wthinnest
+    <span class="nb">echo</span> <span class="s2">&quot;0 20 15TH INTERNATIONAL&quot;</span> <span class="p">|</span> gmt text -F+f32p,Helvetica-Bold,red<span class="o">=</span>thinner
+    <span class="nb">echo</span> <span class="s2">&quot;0 -10 GMT CONFERENCE&quot;</span> <span class="p">|</span> gmt text -F+f32p,Helvetica-Bold,red<span class="o">=</span>thinner
+    <span class="nb">echo</span> <span class="s2">&quot;0 -30 Honolulu, Hawaii, April 1, 2018&quot;</span> <span class="p">|</span> gmt text -F+f18p,Helvetica-Bold,green<span class="o">=</span>thinnest
+<span class="c1">#   Then show example of color patterns and placing a PostScript image</span>
+    gmt coast -Dc -A5000 -Gp86+fred+byellow+r100 -Sp@circuit.png+r100 -c1,0
+    <span class="nb">echo</span> <span class="s2">&quot;0 30 SILLY USES OF&quot;</span> <span class="p">|</span> gmt text -F+f32p,Helvetica-Bold,lightgreen<span class="o">=</span>thinner
+    <span class="nb">echo</span> <span class="s2">&quot;0 -30 COLOR PATTERNS&quot;</span> <span class="p">|</span> gmt text -F+f32p,Helvetica-Bold,magenta<span class="o">=</span>thinner
+    gmt image -DjCM+w3i @GMT_covertext.eps
+<span class="c1">#   Finally repeat 1st plot but exchange the colors</span>
+    gmt grdimage lon.nc -Clon.cpt -nl -c2,0
+    gmt coast -Dc -A5000 -Gc
+    gmt grdimage lat.nc -Clat.cpt -nl
+    gmt coast -Q
+    gmt coast -Dc -A5000 -Wthinnest
+    <span class="nb">echo</span> <span class="s2">&quot;0 20 15TH INTERNATIONAL&quot;</span> <span class="p">|</span> gmt text -F+f32p,Helvetica-Bold,red<span class="o">=</span>thinner
+    <span class="nb">echo</span> <span class="s2">&quot;0 -10 GMT CONFERENCE&quot;</span> <span class="p">|</span> gmt text -F+f32p,Helvetica-Bold,red<span class="o">=</span>thinner
+    <span class="nb">echo</span> <span class="s2">&quot;0 -30 Honolulu, Hawaii, April 1, 2018&quot;</span> <span class="p">|</span> gmt text -F+f18p,Helvetica-Bold,green<span class="o">=</span>thinnest
+  gmt subplot end
+gmt end
+rm -f lat.nc lon.nc lat.cpt lon.cpt
 </pre></div>
 </div>
 <div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/example_19.png"><img alt="../_images/example_19.png" src="../_images/example_19.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/ex19.png"><img alt="../_images/ex19.png" src="../_images/ex19.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Using color patterns and additional PostScript material in illustrations.</span></p>
 </div>
 </div>
@@ -172,7 +165,7 @@ rm -f l*.nc l*.cpt gmt.conf
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" >The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -191,7 +184,7 @@ rm -f l*.nc l*.cpt gmt.conf
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Jul 28, 2019.
+  Last updated on Sep 10, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

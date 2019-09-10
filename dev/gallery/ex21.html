@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>(21) Time-series of RedHat stock price &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
+    <title>(21) Time-series of RedHat stock price &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +41,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" accesskey="U">The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -92,94 +92,81 @@ Here is how it all comes out:</p>
 <span class="c1">#		GMT EXAMPLE 21</span>
 <span class="c1">#</span>
 <span class="c1"># Purpose:	Plot a time-series</span>
-<span class="c1"># GMT modules:	gmtset, gmtconvert, gmtinfo, psbasemap, psxy </span>
-<span class="c1"># Unix progs:	echo</span>
+<span class="c1"># GMT modules:	set, convert, info, basemap, plot</span>
+<span class="c1"># Unix progs:	echo, rm</span>
 <span class="c1">#</span>
-<span class="nv">ps</span><span class="o">=</span>example_21.ps
+gmt begin ex21
+	<span class="c1"># File has time stored as dd-Mon-yy so set input format to match it</span>
+	gmt <span class="nb">set</span> FORMAT_DATE_IN dd-o-yy FORMAT_DATE_MAP o FONT_ANNOT_PRIMARY +10p
+	gmt <span class="nb">set</span> FORMAT_TIME_PRIMARY_MAP abbreviated PS_CHAR_ENCODING ISOLatin1+
 
-<span class="c1"># File has time stored as dd-Mon-yy so set input format to match it</span>
+	<span class="c1"># Pull out a suitable region string in yyy-mm-dd format</span>
+	<span class="nv">wesn</span><span class="o">=(</span><span class="sb">`</span>gmt info -fT -I50 -C @RHAT_price.csv --FORMAT_DATE_IN<span class="o">=</span>dd-o-yy<span class="sb">`</span><span class="o">)</span>
+	<span class="nv">R</span><span class="o">=</span><span class="s2">&quot;-R</span><span class="si">${</span><span class="nv">wesn</span><span class="p">[0]</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">wesn</span><span class="p">[1]</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">wesn</span><span class="p">[2]</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">wesn</span><span class="p">[3]</span><span class="si">}</span><span class="s2">&quot;</span>
 
-gmt <span class="nb">set</span> FORMAT_DATE_IN dd-o-yy FORMAT_DATE_MAP o FONT_ANNOT_PRIMARY +10p
-gmt <span class="nb">set</span> FORMAT_TIME_PRIMARY_MAP abbreviated PS_CHAR_ENCODING ISOLatin1+
+	<span class="c1"># Lay down the basemap:</span>
+	gmt basemap <span class="nv">$R</span> -JX9i/6i -Bsx1Y -Bpxa3Of1o -Bpy50+p<span class="s2">&quot;</span>$<span class="s2"> &quot;</span> <span class="se">\</span>
+		-BWSen+t<span class="s2">&quot;RedHat (RHT) Stock Price Trend since IPO&quot;</span>+glightgreen
 
-<span class="c1"># Pull out a suitable region string in yyy-mm-dd format</span>
+	<span class="c1"># Plot main window with open price as red line over yellow envelope of low/highs</span>
+	gmt <span class="nb">set</span> FORMAT_DATE_OUT dd-o-yy
+	gmt convert -o0,2 -f0T @RHAT_price.csv &gt; RHAT.env
+	gmt convert -o0,3 -f0T -I -T @RHAT_price.csv &gt;&gt; RHAT.env
+	gmt plot -Gyellow RHAT.env
+	gmt plot @RHAT_price.csv -Wthin,red
 
-<span class="nv">wesn</span><span class="o">=(</span><span class="sb">`</span>gmt info -fT -I50 -C @RHAT_price.csv --FORMAT_DATE_IN<span class="o">=</span>dd-o-yy<span class="sb">`</span><span class="o">)</span>
-<span class="nv">R</span><span class="o">=</span><span class="s2">&quot;-R</span><span class="si">${</span><span class="nv">wesn</span><span class="p">[0]</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">wesn</span><span class="p">[1]</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">wesn</span><span class="p">[2]</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">wesn</span><span class="p">[3]</span><span class="si">}</span><span class="s2">&quot;</span>
+	<span class="c1"># Draw P Wessel&#39;s purchase price as line and label it.  Note we temporary switch</span>
+	<span class="c1"># back to default yyyy-mm-dd format since that is what gmt info gave us.</span>
+	<span class="nb">echo</span> <span class="s2">&quot;05-May-00	0&quot;</span> &gt; RHAT.pw
+	<span class="nb">echo</span> <span class="s2">&quot;05-May-00	300&quot;</span> &gt;&gt; RHAT.pw
+	gmt plot RHAT.pw -Wthinner,-
+	<span class="nb">echo</span> <span class="s2">&quot;01-Jan-99	25&quot;</span> &gt; RHAT.pw
+	<span class="nb">echo</span> <span class="s2">&quot;01-Jan-02	25&quot;</span> &gt;&gt; RHAT.pw
+	gmt plot RHAT.pw -Wthick,-
+	gmt <span class="nb">set</span> FORMAT_DATE_IN yyyy-mm-dd
+	<span class="nb">echo</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">wesn</span><span class="p">[0]</span><span class="si">}</span><span class="s2"> 25 PW buy&quot;</span> <span class="p">|</span> gmt text -D1.5i/0.05i -N -F+f12p,Bookman-Demi+jLB
+	gmt <span class="nb">set</span> FORMAT_DATE_IN dd-o-yy
 
-<span class="c1"># Lay down the basemap:</span>
+	<span class="c1"># Draw P Wessel&#39;s sales price as line and label it.</span>
+	<span class="nb">echo</span> <span class="s2">&quot;25-Jun-07	0&quot;</span> &gt; RHAT.pw
+	<span class="nb">echo</span> <span class="s2">&quot;25-Jun-07	300&quot;</span> &gt;&gt; RHAT.pw
+	gmt plot RHAT.pw -Wthinner,-
+	<span class="nb">echo</span> <span class="s2">&quot;01-Aug-06	23.8852&quot;</span> &gt; RHAT.pw
+	<span class="nb">echo</span> <span class="s2">&quot;01-Jan-08	23.8852&quot;</span> &gt;&gt; RHAT.pw
+	gmt plot RHAT.pw -Wthick,-
+	gmt <span class="nb">set</span> FORMAT_DATE_IN yyyy-mm-dd
+	<span class="nb">echo</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">wesn</span><span class="p">[1]</span><span class="si">}</span><span class="s2"> 23.8852 PW sell&quot;</span> <span class="p">|</span> gmt text -Dj0.8i/0.05i -N <span class="se">\</span>
+		-F+f12p,Bookman-Demi+jRB
+	gmt <span class="nb">set</span> FORMAT_DATE_IN dd-o-yy
 
-gmt psbasemap <span class="nv">$R</span> -JX9i/6i -K -Bsx1Y -Bpxa3Of1o -Bpy50+p<span class="s2">&quot;</span>$<span class="s2"> &quot;</span> <span class="se">\</span>
-	-BWSen+t<span class="s2">&quot;RedHat (RHT) Stock Price Trend since IPO&quot;</span>+glightgreen &gt; <span class="nv">$ps</span>
+	<span class="c1"># Get smaller region for inset for trend since 2004</span>
+	<span class="nv">R</span><span class="o">=</span><span class="s2">&quot;-R2004T/</span><span class="si">${</span><span class="nv">wesn</span><span class="p">[1]</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">wesn</span><span class="p">[2]</span><span class="si">}</span><span class="s2">/40&quot;</span>
 
-<span class="c1"># Plot main window with open price as red line over yellow envelope of low/highs</span>
+	<span class="c1"># Lay down the basemap, using Finnish annotations and place the inset in the upper right</span>
+	gmt basemap --GMT_LANGUAGE<span class="o">=</span><span class="k">fi</span> <span class="nv">$R</span> -JX6i/3i -Bpxa3Of3o -Bpy10+p<span class="s2">&quot;</span>$<span class="s2"> &quot;</span> -BESw+glightblue -Bsx1Y -X3i -Y3i
 
-gmt <span class="nb">set</span> FORMAT_DATE_OUT dd-o-yy
-gmt convert -o0,2 -f0T @RHAT_price.csv &gt; RHAT.env
-gmt convert -o0,3 -f0T -I -T @RHAT_price.csv &gt;&gt; RHAT.env
-gmt psxy -R -J -Gyellow -O -K RHAT.env &gt;&gt; <span class="nv">$ps</span>
-gmt psxy -R -J @RHAT_price.csv -Wthin,red -O -K &gt;&gt; <span class="nv">$ps</span>
+	<span class="c1"># Again, plot close price as red line over yellow envelope of low/highs</span>
+	gmt plot -Gyellow RHAT.env
+	gmt plot @RHAT_price.csv -Wthin,red
 
-<span class="c1"># Draw P Wessel&#39;s purchase price as line and label it.  Note we temporary switch</span>
-<span class="c1"># back to default yyyy-mm-dd format since that is what gmt info gave us.</span>
+	<span class="c1"># Draw P Wessel&#39;s sales price as dashed line</span>
+	gmt plot RHAT.pw -Wthick,-
 
-<span class="nb">echo</span> <span class="s2">&quot;05-May-00	0&quot;</span> &gt; RHAT.pw
-<span class="nb">echo</span> <span class="s2">&quot;05-May-00	300&quot;</span> &gt;&gt; RHAT.pw
-gmt psxy -R -J RHAT.pw -Wthinner,- -O -K &gt;&gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="s2">&quot;01-Jan-99	25&quot;</span> &gt; RHAT.pw
-<span class="nb">echo</span> <span class="s2">&quot;01-Jan-02	25&quot;</span> &gt;&gt; RHAT.pw
-gmt psxy -R -J RHAT.pw -Wthick,- -O -K &gt;&gt; <span class="nv">$ps</span>
-gmt <span class="nb">set</span> FORMAT_DATE_IN yyyy-mm-dd
-<span class="nb">echo</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">wesn</span><span class="p">[0]</span><span class="si">}</span><span class="s2"> 25 PW buy&quot;</span> <span class="p">|</span> gmt pstext -R -J -O -K -D1.5i/0.05i -N -F+f12p,Bookman-Demi+jLB &gt;&gt; <span class="nv">$ps</span>
-gmt <span class="nb">set</span> FORMAT_DATE_IN dd-o-yy
+	<span class="c1"># Mark sales date</span>
+	<span class="nb">echo</span> <span class="s2">&quot;25-Jun-07	0&quot;</span> &gt; RHAT.pw
+	<span class="nb">echo</span> <span class="s2">&quot;25-Jun-07	300&quot;</span> &gt;&gt; RHAT.pw
+	gmt plot RHAT.pw -Wthinner,-
 
-<span class="c1"># Draw P Wessel&#39;s sales price as line and label it.</span>
-
-<span class="nb">echo</span> <span class="s2">&quot;25-Jun-07	0&quot;</span> &gt; RHAT.pw
-<span class="nb">echo</span> <span class="s2">&quot;25-Jun-07	300&quot;</span> &gt;&gt; RHAT.pw
-gmt psxy -R -J RHAT.pw -Wthinner,- -O -K &gt;&gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="s2">&quot;01-Aug-06	23.8852&quot;</span> &gt; RHAT.pw
-<span class="nb">echo</span> <span class="s2">&quot;01-Jan-08	23.8852&quot;</span> &gt;&gt; RHAT.pw
-gmt psxy -R -J RHAT.pw -Wthick,- -O -K &gt;&gt; <span class="nv">$ps</span>
-gmt <span class="nb">set</span> FORMAT_DATE_IN yyyy-mm-dd
-<span class="nb">echo</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">wesn</span><span class="p">[1]</span><span class="si">}</span><span class="s2"> 23.8852 PW sell&quot;</span> <span class="p">|</span> gmt pstext -R -J -O -K -Dj0.8i/0.05i -N <span class="se">\</span>
-	-F+f12p,Bookman-Demi+jRB &gt;&gt; <span class="nv">$ps</span>
-gmt <span class="nb">set</span> FORMAT_DATE_IN dd-o-yy
-
-<span class="c1"># Get smaller region for inset for trend since 2004</span>
-
-<span class="nv">R</span><span class="o">=</span><span class="s2">&quot;-R2004T/</span><span class="si">${</span><span class="nv">wesn</span><span class="p">[1]</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">wesn</span><span class="p">[2]</span><span class="si">}</span><span class="s2">/40&quot;</span>
-
-<span class="c1"># Lay down the basemap, using Finnish annotations and place the inset in the upper right</span>
-
-gmt psbasemap --GMT_LANGUAGE<span class="o">=</span><span class="k">fi</span> <span class="nv">$R</span> -JX6i/3i -Bpxa3Of3o -Bpy10+p<span class="s2">&quot;</span>$<span class="s2"> &quot;</span> -BESw+glightblue -Bsx1Y <span class="se">\</span>
-	-O -K -X3i -Y3i &gt;&gt; <span class="nv">$ps</span>
-
-<span class="c1"># Again, plot close price as red line over yellow envelope of low/highs</span>
-
-gmt psxy -R -J -Gyellow -O -K RHAT.env &gt;&gt; <span class="nv">$ps</span>
-gmt psxy -R -J @RHAT_price.csv -Wthin,red -O -K &gt;&gt; <span class="nv">$ps</span>
-
-<span class="c1"># Draw P Wessel&#39;s sales price as dashed line</span>
-
-gmt psxy -R -J RHAT.pw -Wthick,- -O -K &gt;&gt; <span class="nv">$ps</span>
-
-<span class="c1"># Mark sales date</span>
-
-<span class="nb">echo</span> <span class="s2">&quot;25-Jun-07	0&quot;</span> &gt; RHAT.pw
-<span class="nb">echo</span> <span class="s2">&quot;25-Jun-07	300&quot;</span> &gt;&gt; RHAT.pw
-gmt psxy -R -J RHAT.pw -Wthinner,- -O &gt;&gt; <span class="nv">$ps</span>
-
-<span class="c1"># Clean up after ourselves:</span>
-
-rm -f RHAT.* gmt.conf
+	<span class="c1"># Clean up after ourselves:</span>
+	rm -f RHAT.*
+gmt end
 </pre></div>
 </div>
 <p>which produces the plot in Figure, suggesting
 Wessel has missed a few trains if he had hoped to cash in on the
 Internet bubble…</p>
 <div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/example_21.png"><img alt="../_images/example_21.png" src="../_images/example_21.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/ex21.png"><img alt="../_images/ex21.png" src="../_images/ex21.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Time-series of RedHat stock price since IPO.</span></p>
 </div>
 </div>
@@ -221,7 +208,7 @@ Internet bubble…</p>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" >The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -240,7 +227,7 @@ Internet bubble…</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Jul 28, 2019.
+  Last updated on Sep 10, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

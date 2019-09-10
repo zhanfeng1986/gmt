@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>gmt &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
+    <title>gmt &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +41,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="G.html" accesskey="U">G</a> &#187;</li>
 <li class="right">
@@ -86,11 +86,12 @@ completely general and will handle any (x,y) or (x,y,z) data as input.</p>
 that pertain to that particular module.  A few special commands
 are also available:</p>
 <p><strong>gmt clear</strong> <em>items</em></p>
-<p>Deletes the user’s history.  Choose between <strong>history</strong> (deletes the
-gmt.history file in the current directory), <strong>conf</strong> (deletes the gmt.conf
-file in the current directory), <strong>cache</strong> (deletes the user’s cache directory
+<p>Deletes current defaults, or the cache, data or sessions directories.
+Choose between <strong>defaults</strong> (deletes the current gmt.conf file used for the
+current modern session), <strong>cache</strong> (deletes the user’s cache directory
+and all of its content), <strong>data</strong> (deletes the user’s data download directory
 and all of its content), or <strong>all</strong> (does all of the above).</p>
-<p><strong>gmt begin</strong> [<em>session-prefix</em>] [<em>format</em>]</p>
+<p><strong>gmt begin</strong> [<em>session-prefix</em>] [<em>format</em>] [<em>options</em>]</p>
 <p>Initializes a new GMT session under <em>modern</em> mode [Default is <em>classic</em> mode].
 All work is performed in a temporary work directory.
 The optional <em>session-prefix</em> assigns a name to the session, and this may be used
@@ -115,21 +116,31 @@ directory.  The figures are placed in the current directory.</p>
 <p>If no module is given then
 several other options are available:</p>
 <dl class="docutils">
-<dt><strong>-</strong><strong>-help</strong></dt>
+<dt><strong>--help</strong></dt>
 <dd>List and description of GMT modules.</dd>
-<dt><strong>-</strong><strong>-show-cores</strong></dt>
-<dd>Show number of available cores.</dd>
-<dt><strong>-</strong><strong>-show-bindir</strong></dt>
+<dt><strong>--new-script</strong></dt>
+<dd>Write a GMT modern mode script template to stdout.</dd>
+<dt><strong>--show-bindir</strong></dt>
 <dd>Show directory of executables and exit.</dd>
-<dt><strong>-</strong><strong>-show-datadir</strong></dt>
+<dt><strong>--show-citation</strong></dt>
+<dd>Show the citation for the latest GMT publication.</dd>
+<dt><strong>--show-cores</strong></dt>
+<dd>Show number of available cores.</dd>
+<dt><strong>--show-datadir</strong></dt>
 <dd>Show data directory/ies and exit.</dd>
-<dt><strong>-</strong><strong>-show-modules</strong></dt>
+<dt><strong>--show-dataserver</strong></dt>
+<dd>Show URL of the remote GMT data server.</dd>
+<dt><strong>--show-doi</strong></dt>
+<dd>Show the DOI of the current release.</dd>
+<dt><strong>--show-modules</strong></dt>
 <dd>List module names on stdout and exit.</dd>
-<dt><strong>-</strong><strong>-show-plugindir</strong></dt>
+<dt><strong>--show-library</strong></dt>
+<dd>Show the path of the shared GMT library.</dd>
+<dt><strong>--show-plugindir</strong></dt>
 <dd>Show plugin directory and exit.</dd>
-<dt><strong>-</strong><strong>-show-sharedir</strong></dt>
+<dt><strong>--show-sharedir</strong></dt>
 <dd>Show share directory and exit.</dd>
-<dt><strong>-</strong><strong>-version</strong></dt>
+<dt><strong>--version</strong></dt>
 <dd>Print version and exit.</dd>
 <dt><strong>=</strong></dt>
 <dd>Check if that module exist and if so the
@@ -768,9 +779,9 @@ the scale argument(s) is the map scale (see its definition for each
 projection). UNIT is cm, inch, or point, depending on the
 <a class="reference internal" href="gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a> setting in <strong>gmt.conf</strong>, but this can be
 overridden on the command line by appending <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> to
-the <em>scale</em> or <em>width</em> values. Append <strong>h</strong>, <strong>+</strong>, or <strong>-</strong> to the
-given <em>width</em> if you instead want to set map height, the maximum
-dimension, or the minimum dimension, respectively [Default is <strong>w</strong> for width].
+the <em>scale</em> or <em>width</em> values. Append <strong>+dh</strong>, <strong>+du</strong>, or <strong>+dl</strong> to the
+given <em>width</em> if you instead want to set map height, the maximum (upper)
+dimension, or the minimum (lower) dimension, respectively [Default is <strong>+dw</strong> for width].
 In case the central meridian is an optional parameter and it is being
 omitted, then the center of the longitude range given by the <strong>-R</strong>
 option is used. The default standard parallel is the equator.
@@ -1297,12 +1308,14 @@ implied by the default output of the program. Note: NetCDF file output is
 not supported.</dd>
 </dl>
 <dl class="docutils" id="c-full">
-<dt><strong>-c</strong>[<em>row</em>,<em>col</em>]</dt>
+<dt><strong>-c</strong>[<em>row</em>,<em>col</em> |<em>index</em>]</dt>
 <dd>Used to advance to the selected subplot panel.  Only allowed when in
 subplot mode.  Available to all plot modules.  If no arguments are
 given then we advance to the next panel in the selected order. If
 no <strong>-c</strong> is given and we just entered subplot mode then the first
-panel (top, left) is selected.</dd>
+panel (top, left) is selected.  Instead of <em>row, col</em> you may give
+the one-dimensional <em>index</em> which depends on the order you set via <strong>-A</strong>
+when the subplot was defined. Note: <em>row</em>, <em>col</em>, and <em>index</em> all start at 0.</dd>
 </dl>
 <dl class="docutils" id="d-full">
 <dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em></dt>
@@ -1493,8 +1506,8 @@ not specified).</dd>
 </dl>
 <dl class="docutils" id="t-full">
 <dt><strong>-t</strong>[<em>transp</em>]</dt>
-<dd>Set PDF transparency level for an overlay, in (0-100] percent range. [Default
-is 0, i.e., opaque].</dd>
+<dd>Set transparency level for an overlay, in (0-100] percent range. [Default
+is 0, i.e., opaque].  Only visible when PDF or raster format output is selected.</dd>
 </dl>
 <dl class="docutils" id="core-full">
 <dt><strong>-x</strong>[[-]<em>n</em>]</dt>
@@ -1534,9 +1547,10 @@ any module-specific option (but not the GMT common options), then exits.</dd>
 color name, by a gray shade (in the range 0-255), by a decimal color
 code (r/g/b, each in range 0-255; h-s-v, ranges 0-360, 0-1, 0-1; or
 c/m/y/k, each in range 0-1), or by a hexadecimal color code
-(#rrggbb, as used in HTML). For PDF transparency, append
-&#64;<em>transparency</em> in the 0-100 percent range [0 or opaque]. See
-<a class="reference internal" href="gmtcolors.html"><span class="doc">gmtcolors</span></a> for more information and a full list of color
+(#rrggbb, as used in HTML). For transparency, append
+&#64;<em>transparency</em> in the 0-100 percent range [0 or opaque]
+(Only visible when PDF or raster format output is selected.).
+See <a class="reference internal" href="gmtcolors.html"><span class="doc">gmtcolors</span></a> for more information and a full list of color
 names.</dd>
 </dl>
 </div>
@@ -1775,7 +1789,7 @@ GMT documentation site <a class="reference external" href="https://docs.generic-
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="G.html" >G</a> &#187;</li>
 <li class="right">
@@ -1794,7 +1808,7 @@ GMT documentation site <a class="reference external" href="https://docs.generic-
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Jul 28, 2019.
+  Last updated on Sep 10, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

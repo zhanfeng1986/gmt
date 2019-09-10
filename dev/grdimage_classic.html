@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>grdimage &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
+    <title>grdimage &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +41,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="PS_classic.html" accesskey="U">Classic Mode Mapping</a> &#187;</li>
 <li class="right">
@@ -66,10 +66,10 @@
             
   <div class="section" id="grdimage">
 <span id="index-0"></span><h1>grdimage<a class="headerlink" href="#grdimage" title="Permalink to this headline">¶</a></h1>
-<p>grdimage - Project grids or images and plot them on maps</p>
+<p>Project grids or images and plot them on maps</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<p><strong>grdimage</strong> <em>grd_z</em> | <em>img</em> | <em>grd_r grd_g grd_b</em>
+<p><strong>gmt grdimage</strong> <em>grd_z</em> | <em>img</em> | <em>grd_r grd_g grd_b</em>
 [ <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong><em>out_img</em>[<strong>=</strong><em>driver</em>] ]
 [ <a class="reference internal" href="#b"><span> <strong>-B</strong></span></a></strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> ]
 [ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>cpt</em> ]
@@ -156,7 +156,7 @@ otherwise a plain tiff file is produced. (2) Any vector elements will be lost.</
 <dl class="docutils" id="c">
 <dt><strong>-C</strong>[<em>cpt</em> |<em>master</em>[<strong>+i</strong><em>zinc</em>] |<em>color1,color2</em>[,<em>color3</em>,…]]</dt>
 <dd>Name of the CPT (for <em>grd_z</em> only). Alternatively,
-supply the name of a GMT color master dynamic CPT [rainbow, but geo
+supply the name of a GMT color master dynamic CPT [turbo, but geo
 for &#64;earth_relief and srtm for &#64;srtm_relief data] to
 automatically determine a continuous CPT from
 the grid’s z-range; you may round up/down the z-range by adding <strong>+i</strong><em>zinc</em>.
@@ -255,7 +255,7 @@ subset of the grid [Default is the region given by the grid file].</p>
 </dl>
 <dl class="docutils">
 <dt><strong>-t</strong>[<em>transp</em>] <a class="reference internal" href="gmt.html#t-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set PDF transparency level in percent.</dd>
+<dd>Set transparency level in percent.</dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-^</strong> or just <strong>-</strong></dt>
@@ -279,10 +279,11 @@ data as 1- or 2-byte integers. <a class="reference internal" href="gmt.html#grd-
 </div>
 <div class="section" id="global-relief-datasets">
 <h2>Global Relief Datasets<a class="headerlink" href="#global-relief-datasets" title="Permalink to this headline">¶</a></h2>
-<p>By using grids named &#64;earth_relief_<em>res</em> we download global relief grids from the URL server. These
-grids are saved in your ~/.gmt/ directory while any individual SRTM tile is stored in your ~/.gmt/cache
-directory.  Files are only downloaded once and are later accessed from ~/.gmt.  You can clear your cache
-via gmt <a class="reference internal" href="clear.html"><span class="doc">clear</span></a> cache.</p>
+<p>By using grids named &#64;earth_relief_<em>res</em> we download global relief grids from the GMT server. These
+grids are saved in your ~/.gmt/server directory while any individual SRTM tile is stored in your
+~/.gmt/server/srtm3 or ~/.gmt/server/srtm1 directory.
+Files are only downloaded once and are later accessed from ~/.gmt.  You can clear your data
+via gmt <a class="reference internal" href="clear.html"><span class="doc">clear</span></a> data.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="18%" />
@@ -535,7 +536,7 @@ remotely located Jessica Rabbit</p>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="PS_classic.html" >Classic Mode Mapping</a> &#187;</li>
 <li class="right">
@@ -554,7 +555,7 @@ remotely located Jessica Rabbit</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Jul 28, 2019.
+  Last updated on Sep 10, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

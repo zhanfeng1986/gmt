@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>(24) Data selection based on geospatial criteria &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
+    <title>(24) Data selection based on geospatial criteria &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +41,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" accesskey="U">The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -92,32 +92,32 @@ distortion) and not the actual distance which remains constant at 1000 km.</p>
 <span class="c1">#		GMT EXAMPLE 24</span>
 <span class="c1">#</span>
 <span class="c1"># Purpose:	Extract subsets of data based on geospatial criteria</span>
-<span class="c1"># GMT modules:	gmtselect, pscoast, psxy, gmtinfo</span>
-<span class="c1"># Unix progs:	echo, cat</span>
+<span class="c1"># GMT modules:	select, coast, plot, info</span>
+<span class="c1"># Unix progs:	echo, cat, rm</span>
 <span class="c1">#</span>
 <span class="c1"># Highlight oceanic earthquakes within 3000 km of Hobart and &gt; 1000 km from dateline</span>
-<span class="nv">ps</span><span class="o">=</span>example_24.ps
-<span class="nb">echo</span> <span class="s2">&quot;147:13 -42:48 6000&quot;</span> &gt; point.txt
-cat <span class="s">&lt;&lt; END &gt; dateline.txt</span>
-<span class="s">&gt; Our proxy for the dateline</span>
-<span class="s">180	0</span>
-<span class="s">180	-90</span>
-<span class="s">END</span>
-<span class="nv">R</span><span class="o">=</span><span class="sb">`</span>gmt info -I10 @oz_quakes_24.txt<span class="sb">`</span>
-gmt pscoast <span class="nv">$R</span> -JM9i -K -Gtan -Sdarkblue -Wthin,white -Dl -A500 -Ba20f10g10 -BWeSn &gt; <span class="nv">$ps</span>
-gmt psxy -R -J -O -K @oz_quakes_24.txt -Sc0.05i -Gred &gt;&gt; <span class="nv">$ps</span>
-gmt <span class="k">select</span> @oz_quakes_24.txt -Ldateline.txt+d1000k -Nk/s -Cpoint.txt+d3000k -fg -R -Il <span class="se">\</span>
-	<span class="p">|</span> gmt psxy -R -JM -O -K -Sc0.05i -Ggreen &gt;&gt; <span class="nv">$ps</span>
-gmt psxy point.txt -R -J -O -K -SE- -Wfat,white &gt;&gt; <span class="nv">$ps</span>
-gmt pstext point.txt -R -J -F+f14p,Helvetica-Bold,white+jLT+tHobart <span class="se">\</span>
-	-O -K -D0.1i/-0.1i &gt;&gt; <span class="nv">$ps</span>
-gmt psxy -R -J -O -K point.txt -Wfat,white -S+0.2i &gt;&gt; <span class="nv">$ps</span>
-gmt psxy -R -J -O dateline.txt -Wfat,white -A &gt;&gt; <span class="nv">$ps</span>
-rm -f point.txt dateline.txt
+gmt begin ex24
+	<span class="nb">echo</span> <span class="s2">&quot;147:13 -42:48 6000&quot;</span> &gt; point.txt
+	cat <span class="s">&lt;&lt;- END &gt; dateline.txt</span>
+<span class="s">	&gt; Our proxy for the dateline</span>
+<span class="s">	180	0</span>
+<span class="s">	180	-90</span>
+<span class="s">	END</span>
+	<span class="nv">R</span><span class="o">=</span><span class="sb">`</span>gmt info -I10 @oz_quakes_24.txt<span class="sb">`</span>
+	gmt coast <span class="nv">$R</span> -JM9i -Gtan -Sdarkblue -Wthin,white -Dl -A500 -Ba20f10g10 -BWeSn
+	gmt plot @oz_quakes_24.txt -Sc0.05i -Gred
+	gmt <span class="k">select</span> @oz_quakes_24.txt -Ldateline.txt+d1000k -Nk/s -Cpoint.txt+d3000k -fg -Il <span class="se">\</span>
+		<span class="p">|</span> gmt plot -Sc0.05i -Ggreen
+	gmt plot point.txt -SE- -Wfat,white
+	gmt text point.txt -F+f14p,Helvetica-Bold,white+jLT+tHobart -D0.1i/-0.1i
+	gmt plot point.txt -Wfat,white -S+0.2i
+	gmt plot dateline.txt -Wfat,white -A
+	rm -f point.txt dateline.txt
+gmt end
 </pre></div>
 </div>
 <div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/example_24.png"><img alt="../_images/example_24.png" src="../_images/example_24.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/ex24.png"><img alt="../_images/ex24.png" src="../_images/ex24.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Data selection based on geospatial criteria.</span></p>
 </div>
 </div>
@@ -159,7 +159,7 @@ rm -f point.txt dateline.txt
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" >The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -178,7 +178,7 @@ rm -f point.txt dateline.txt
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Jul 28, 2019.
+  Last updated on Sep 10, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

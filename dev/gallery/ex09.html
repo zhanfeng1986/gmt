@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>(9) Time-series along tracks &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
+    <title>(9) Time-series along tracks &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +41,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" accesskey="U">The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -91,23 +91,22 @@ gap between the profile and the label:</p>
 <span class="c1">#		GMT EXAMPLE 09</span>
 <span class="c1">#</span>
 <span class="c1"># Purpose:	Make wiggle plot along track from geoid deflections</span>
-<span class="c1"># GMT modules:	gmtconvert, pswiggle, pstext, psxy</span>
-<span class="c1"># Unix progs:	</span>
+<span class="c1"># GMT modules:	convert, wiggle, text, plot</span>
 <span class="c1">#</span>
-<span class="nv">ps</span><span class="o">=</span>example_09.ps
-gmt pswiggle @tracks_09.txt -R185/250/-68/-42 -K -Jm0.13i -Ba10f5 -BWSne+g240/255/240 -G+red <span class="se">\</span>
-	-G-blue -Z2000 -Wthinnest -DjBR+w500+l@~m@~rad+o0.2i --FORMAT_GEO_MAP<span class="o">=</span>dddF &gt; <span class="nv">$ps</span>
-gmt psxy -R -J -O -K @ridge_09.txt -Wthicker &gt;&gt; <span class="nv">$ps</span>
-gmt psxy -R -J -O -K @fz_09.txt -Wthinner,- &gt;&gt; <span class="nv">$ps</span>
-<span class="c1"># Take label from segment header and plot near coordinates of last record of each track</span>
-gmt convert -El @tracks_09.txt <span class="p">|</span> gmt pstext -R -J -F+f10p,Helvetica-Bold+a50+jRM+h <span class="se">\</span>
-	-D-0.05i/-0.05i -O &gt;&gt; <span class="nv">$ps</span>
+gmt begin ex09
+	gmt wiggle @tracks_09.txt -R185/250/-68/-42 -Jm0.13i -B -BWSne+g240/255/240 -Gred+p <span class="se">\</span>
+	-Gblue+n -Z2000 -Wthinnest -DjBR+w500+l@~m@~rad+o0.2i --FORMAT_GEO_MAP<span class="o">=</span>dddF
+	gmt plot @ridge_09.txt -Wthicker
+	gmt plot @fz_09.txt -Wthinner,-
+	<span class="c1"># Take label from segment header and plot near coordinates of last record of each track</span>
+	gmt convert -El @tracks_09.txt <span class="p">|</span> gmt text -F+f10p,Helvetica-Bold+a50+jRM+h -D-0.05i/-0.05i
+gmt end
 </pre></div>
 </div>
 <p>The output shows the sea-surface slopes along 42 descending Geosat
 tracks in the Eltanin and Udintsev fracture zone region in a Mercator projection.</p>
 <div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/example_09.png"><img alt="../_images/example_09.png" src="../_images/example_09.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/ex09.png"><img alt="../_images/ex09.png" src="../_images/ex09.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Time-series as wiggles along a track.</span></p>
 </div>
 </div>
@@ -149,7 +148,7 @@ tracks in the Eltanin and Udintsev fracture zone region in a Mercator projection
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" >The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -168,7 +167,7 @@ tracks in the Eltanin and Udintsev fracture zone region in a Mercator projection
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Jul 28, 2019.
+  Last updated on Sep 10, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>(34) Using country polygons for plotting and shading &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
+    <title>(34) Using country polygons for plotting and shading &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +41,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" accesskey="U">The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -76,25 +76,24 @@ will continue to debate for some time.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 <span class="c1">#               GMT EXAMPLE 34</span>
 <span class="c1">#</span>
-<span class="c1"># Purpose:      Illustrate pscoast with DCW country polygons</span>
-<span class="c1"># GMT modules:  gmtset, pscoast, makecpt, grdimage</span>
-<span class="c1"># Unix progs:   rm</span>
+<span class="c1"># Purpose:      Illustrate coast with DCW country polygons</span>
+<span class="c1"># GMT modules:  set, coast, makecpt, grdimage</span>
 <span class="c1">#</span>
-<span class="nv">ps</span><span class="o">=</span>example_34.ps
-gmt <span class="nb">set</span> FORMAT_GEO_MAP dddF
-gmt pscoast -JM4.5i -R-6/20/35/52 -EFR,IT+gP300/8 -Glightgray -Baf -BWSne -P -K -X2i &gt; <span class="nv">$ps</span>
-<span class="c1"># Extract a subset of ETOPO2m for this part of Europe</span>
-<span class="c1"># gmt grdcut etopo2m_grd.nc -R -GFR+IT.nc=ns</span>
-gmt makecpt -Cglobe -T-5000/5000 &gt; z.cpt
-gmt grdimage @FR+IT.nc -I+a15+ne0.75 -Cz.cpt -J -O -K -Y4.5i <span class="se">\</span>
-	-Baf -BWsne+t<span class="s2">&quot;Franco-Italian Union, 2042-45&quot;</span> &gt;&gt; <span class="nv">$ps</span>
-gmt pscoast -J -R -EFR,IT+gred@60 -O &gt;&gt; <span class="nv">$ps</span>
-<span class="c1"># cleanup</span>
-rm -f gmt.conf z.cpt
+gmt begin ex34
+  gmt <span class="nb">set</span> FORMAT_GEO_MAP dddF FONT_HEADING 24p
+  gmt makecpt -Cglobe -T-5000/5000
+  gmt subplot begin 2x1 -Fs4.5i/0 -M0.05i -JM4.5i -R-6/20/35/52 -SRl -SCb -Bwesn -T<span class="s2">&quot;Franco-Italian Union, 2042-45&quot;</span>
+    gmt coast -EFR,IT+gP300/8 -Glightgray -c1,0
+    <span class="c1"># Extract a subset of ETOPO2m for this part of Europe</span>
+    <span class="c1"># gmt grdcut etopo2m_grd.nc -R -GFR+IT.nc=ns</span>
+    gmt grdimage @FR+IT.nc -I+a15+ne0.75 -c0,0
+    gmt coast -EFR,IT+gred@60
+  gmt subplot end
+gmt end
 </pre></div>
 </div>
 <div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/example_34.png"><img alt="../_images/example_34.png" src="../_images/example_34.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/ex34.png"><img alt="../_images/ex34.png" src="../_images/ex34.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Using country polygons for plotting and shading.</span></p>
 </div>
 </div>
@@ -136,7 +135,7 @@ rm -f gmt.conf z.cpt
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" >The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -155,7 +154,7 @@ rm -f gmt.conf z.cpt
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Jul 28, 2019.
+  Last updated on Sep 10, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

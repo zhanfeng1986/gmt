@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>(16) Gridding of data, continued &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
+    <title>(16) Gridding of data, continued &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +41,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" accesskey="U">The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -118,39 +118,31 @@ request for interval (700,725).</p>
 <span class="c1">#		GMT EXAMPLE 16</span>
 <span class="c1">#</span>
 <span class="c1"># Purpose:	Illustrates interpolation methods using same data as Example 12.</span>
-<span class="c1"># GMT modules:	gmtset, grdview, grdfilter, pscontour, psscale, pstext, surface, triangulate</span>
-<span class="c1"># Unix progs:	echo, rm</span>
+<span class="c1"># GMT modules:	gmtset, grdview, grdfilter, contour, colorbar, surface, triangulate</span>
+<span class="c1"># Unix progs:	rm</span>
 <span class="c1">#</span>
-<span class="c1"># Illustrate various means of contouring, using triangulate and surface.</span>
-<span class="c1">#</span>
-<span class="nv">ps</span><span class="o">=</span>example_16.ps
-gmt <span class="nb">set</span> FONT_ANNOT_PRIMARY 9p
-<span class="c1">#</span>
-gmt pscontour -R0/6.5/-0.2/6.5 -Jx0.45i -P -K -Y5.5i -Ba2f1 -BWSne @Table_5_11.txt -C@ex_16.cpt -I &gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="s2">&quot;3.25 7 pscontour (triangulate)&quot;</span> <span class="p">|</span> gmt pstext -R -J -O -K -N -F+f18p,Times-Roman+jCB &gt;&gt; <span class="nv">$ps</span>
-<span class="c1">#</span>
-gmt surface @Table_5_11.txt -R -I0.2 -Graws0.nc
-gmt grdview raws0.nc -R -J -B -C@ex_16.cpt -Qs -O -K -X3.5i &gt;&gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="s2">&quot;3.25 7 surface (tension = 0)&quot;</span> <span class="p">|</span> gmt pstext -R -J -O -K -N -F+f18p,Times-Roman+jCB &gt;&gt; <span class="nv">$ps</span>
-<span class="c1">#</span>
-gmt surface @Table_5_11.txt -R -I0.2 -Graws5.nc -T0.5
-gmt grdview raws5.nc -R -J -B -C@ex_16.cpt -Qs -O -K -Y-3.75i -X-3.5i &gt;&gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="s2">&quot;3.25 7 surface (tension = 0.5)&quot;</span> <span class="p">|</span> gmt pstext -R -J -O -K -N -F+f18p,Times-Roman+jCB &gt;&gt; <span class="nv">$ps</span>
-<span class="c1">#</span>
-gmt triangulate @Table_5_11.txt -Grawt.nc -R -I0.2
-gmt grdfilter rawt.nc -Gfiltered.nc -D0 -Fc1
-gmt grdview filtered.nc -R -J -B -C@ex_16.cpt -Qs -O -K -X3.5i &gt;&gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="s2">&quot;3.25 7 triangulate @~\256@~ grdfilter&quot;</span> <span class="p">|</span> gmt pstext -R -J -O -K -N <span class="se">\</span>
-	-F+f18p,Times-Roman+jCB &gt;&gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="s2">&quot;3.2125 7.5 Gridding of Data&quot;</span> <span class="p">|</span> gmt pstext -R0/10/0/10 -Jx1i -O -K -N <span class="se">\</span>
-	-F+f32p,Times-Roman+jCB -X-3.5i &gt;&gt; <span class="nv">$ps</span>
-gmt psscale -Dx3.25i/-0.4i+jTC+w5i/0.25i+h -C@ex_16.cpt -O &gt;&gt; <span class="nv">$ps</span>
-<span class="c1">#</span>
-rm -f *.nc gmt.conf
+gmt begin ex16
+  gmt <span class="nb">set</span> FONT_ANNOT_PRIMARY 9p FONT_TITLE 18p,Times-Roman
+  gmt subplot begin 2x2 -M0.05i -Fs3.25i/0 -R0/6.5/-0.2/6.5 -Jx1i -SCb -SRl+t -Bwesn -Y2i -T<span class="s2">&quot;Gridding of Data&quot;</span>
+    gmt contour @Table_5_11.txt -C@ex_16.cpt -I -B+t<span class="s2">&quot;contour (triangulate)&quot;</span> -c0,0
+    <span class="c1">#</span>
+    gmt surface @Table_5_11.txt -R0/6.5/-0.2/6.5 -I0.2 -Graws0.nc
+    gmt grdview raws0.nc -C@ex_16.cpt -Qs -B+t<span class="s2">&quot;surface (tension = 0)&quot;</span> -c0,1
+    <span class="c1">#</span>
+    gmt surface @Table_5_11.txt -Graws5.nc -T0.5
+    gmt grdview raws5.nc -C@ex_16.cpt -Qs -B+t<span class="s2">&quot;surface (tension = 0.5)&quot;</span> -c1,0
+    <span class="c1">#</span>
+    gmt triangulate @Table_5_11.txt -Grawt.nc
+    gmt grdfilter rawt.nc -Gfiltered.nc -D0 -Fc1
+    gmt grdview filtered.nc -C@ex_16.cpt -Qs -B+t<span class="s2">&quot;triangulate @~\256@~ grdfilter&quot;</span> -c1,1
+  gmt subplot end
+  gmt colorbar -DJBC+w5i/0.25i+h -C@ex_16.cpt
+gmt end
+rm -f raws0.nc raws5.nc rawt.nc filtered.nc
 </pre></div>
 </div>
 <div class="figure align-center" id="id1">
-<span id="fig-ex16"></span><a class="reference internal image-reference" href="../_images/example_16.png"><img alt="../_images/example_16.png" src="../_images/example_16.png" style="width: 500px;" /></a>
+<span id="fig-ex16"></span><a class="reference internal image-reference" href="../_images/ex16.png"><img alt="../_images/ex16.png" src="../_images/ex16.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">More ways to grid data</span></p>
 </div>
 </div>
@@ -192,7 +184,7 @@ rm -f *.nc gmt.conf
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" >The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -211,7 +203,7 @@ rm -f *.nc gmt.conf
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Jul 28, 2019.
+  Last updated on Sep 10, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

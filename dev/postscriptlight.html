@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>postscriptlight &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
+    <title>postscriptlight &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +41,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="P.html" accesskey="U">P</a> &#187;</li>
 <li class="right">
@@ -455,6 +455,13 @@ while PSL_BEVEL_JOIN (2) produces bevel joins.</div></blockquote>
 PSL_MITER_DEFAULT (35) gives the default PS miter; other values
 are interpreted as the cutoff acute angle (in degrees) when mitering
 becomes active.</div></blockquote>
+<p><strong>long PSL_settextmode</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>long</strong> <em>mode</em>)</p>
+<blockquote>
+<div>Changes between the two modes PSL_TXTMODE_MINUS and PSL_TXTMODE_HYPHEN.
+When the minus mode is active we assume we are plotting annotation
+strings with numbers and all hyphens are translated to minus codes
+which differs based on char sets.  Likewise, in hyphen mode any
+minus character is typeset as a hyphen in the current char set.</div></blockquote>
 <p><strong>long PSL_settransparency</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>double</strong>
 <em>*transparency</em>)</p>
 <blockquote>
@@ -983,7 +990,7 @@ edition, Addison-Wesley, (ISBN 0-201-18127-4).</p>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="P.html" >P</a> &#187;</li>
 <li class="right">
@@ -1002,7 +1009,7 @@ edition, Addison-Wesley, (ISBN 0-201-18127-4).</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Jul 28, 2019.
+  Last updated on Sep 10, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

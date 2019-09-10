@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>(32) Draping an image over topography &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
+    <title>(32) Draping an image over topography &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +41,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" accesskey="U">The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -105,67 +105,61 @@ did not want to store the 58 MB DEM file, whose location is mentioned in the scr
 <span class="c1">#</span>
 <span class="c1"># Purpose:	Illustrate draping of an image over topography</span>
 <span class="c1"># GMT modules:	grdcut, grdedit, grdgradient, grdconvert, grdtrack, grdview</span>
-<span class="c1"># GMT modules:	pscoast, pstext, psxyz</span>
+<span class="c1"># GMT modules:	coast, text, plot3d, makecpt</span>
 <span class="c1"># Unix progs:	cat, rm</span>
 <span class="c1"># Credits:	Original by Stephan Eickschen</span>
 <span class="c1">#</span>
-<span class="nv">ps</span><span class="o">=</span>example_32.ps
+gmt begin ex32
+	<span class="c1"># Here we get and convert the flag of Europe directly from the web through grdconvert using</span>
+	<span class="c1"># GDAL support. We take into account the dimension of the flag (1000x667 pixels)</span>
+	<span class="c1"># for a ratio of 3x2.</span>
+	<span class="c1"># Because GDAL support will not be standard for most users, we have stored</span>
+	<span class="c1"># the result, @euflag.nc in this directory.</span>
 
-<span class="c1"># Here we get and convert the flag of Europe directly from the web through grdconvert using</span>
-<span class="c1"># GDAL support. We take into account the dimension of the flag (1000x667 pixels)</span>
-<span class="c1"># for a ratio of 3x2.</span>
-<span class="c1"># Because GDAL support will not be standard for most users, we have stored</span>
-<span class="c1"># the result, @euflag.nc in this directory.</span>
+	<span class="nv">Rflag</span><span class="o">=</span>-R3/9/50/54
+	<span class="c1"># gmt grdconvert \</span>
+	<span class="c1">#   http://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/1000px-Flag_of_Europe.svg.png=gd \</span>
+	<span class="c1">#   euflag.nc=ns</span>
+	<span class="c1"># gmt grdedit euflag.nc -fg $Rflag</span>
 
-<span class="nv">Rflag</span><span class="o">=</span>-R3/9/50/54
-<span class="c1"># gmt grdconvert \</span>
-<span class="c1">#   http://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/1000px-Flag_of_Europe.svg.png=gd \</span>
-<span class="c1">#   euflag.nc=ns</span>
-<span class="c1"># gmt grdedit euflag.nc -fg $Rflag</span>
+	<span class="c1"># Now get the topography for the same area from GTOPO30 and store it as@topo_32.nc.</span>
+	<span class="c1"># The DEM file comes from http://eros.usgs.gov/#/Find_Data/Products_and_Data_Available/gtopo30/w020n90</span>
+	<span class="c1"># We make a gradient grid as well, which we will use to &quot;illuminate&quot; the flag.</span>
 
-<span class="c1"># Now get the topography for the same area from GTOPO30 and store it as@topo_32.nc.</span>
-<span class="c1"># The DEM file comes from http://eros.usgs.gov/#/Find_Data/Products_and_Data_Available/gtopo30/w020n90</span>
-<span class="c1"># We make a gradient grid as well, which we will use to &quot;illuminate&quot; the flag.</span>
+	<span class="c1"># gmt grdcut W020N90.DEM $Rflag -Gtopo_32.nc=ns</span>
 
-<span class="c1"># gmt grdcut W020N90.DEM $Rflag -Gtopo_32.nc=ns</span>
+	<span class="c1"># The color map assigns &quot;Reflex Blue&quot; to the lower half of the 0-255 range and</span>
+	<span class="c1"># &quot;Yellow&quot; to the upper half.</span>
+	gmt makecpt -C0/51/153,255/204/0 -T0,127,255 -N
 
-<span class="c1"># The color map assigns &quot;Reflex Blue&quot; to the lower half of the 0-255 range and</span>
-<span class="c1"># &quot;Yellow&quot; to the upper half.</span>
-gmt makecpt -C0/51/153,255/204/0 -T0,127,255 -N &gt; euflag.cpt
+	<span class="c1"># The next step is the plotting of the image.</span>
+	<span class="c1"># We use gmt grdview to plot the topography, euflag.nc to give the color, and illum.nc to give</span>
+	<span class="c1"># the shading.</span>
+	<span class="nv">Rplot</span><span class="o">=</span><span class="nv">$Rflag</span>/-10/790
+	gmt grdview @topo_32.nc -JM13c <span class="nv">$Rplot</span> -C -G@euflag.nc -I+a0/270+ne0.6 -Qc -JZ1c -p157.5/30
 
-<span class="c1"># The next step is the plotting of the image.</span>
-<span class="c1"># We use gmt grdview to plot the topography, euflag.nc to give the color, and illum.nc to give</span>
-<span class="c1"># the shading.</span>
+	<span class="c1"># We now add borders. Because we have a 3-D plot, we want them to be plotted &quot;at elevation&quot;.</span>
+	<span class="c1"># So we write out the borders, pipe them through grdtrack and then plot them with plot3d.</span>
+	gmt coast <span class="nv">$Rflag</span> -Df -M -N1 <span class="p">|</span> gmt grdtrack -G@topo_32.nc -s+a <span class="p">|</span> gmt plot3d <span class="nv">$Rplot</span> -JZ -p -W1p,white
 
-<span class="nv">Rplot</span><span class="o">=</span><span class="nv">$Rflag</span>/-10/790
-gmt grdview @topo_32.nc -JM13c <span class="nv">$Rplot</span> -Ceuflag.cpt -G@euflag.nc -I+a0/270+ne0.6 -Qc -JZ1c -p157.5/30 -P -K &gt; <span class="nv">$ps</span>
+	<span class="c1"># Finally, we add dots and names for three cities.</span>
+	<span class="c1"># Again, gmt grdtrack is used to put the dots &quot;at elevation&quot;.</span>
+	cat <span class="s">&lt;&lt;- EOF &gt; cities.txt</span>
+<span class="s">	05:41:27 50:51:05 Maastricht</span>
+<span class="s">	04:21:00 50:51:00 Bruxelles</span>
+<span class="s">	07:07:03 50:43:09 Bonn</span>
+<span class="s">	EOF</span>
 
-<span class="c1"># We now add borders. Because we have a 3-D plot, we want them to be plotted &quot;at elevation&quot;.</span>
-<span class="c1"># So we write out the borders, pipe them through grdtrack and then plot them with psxyz.</span>
+	gmt grdtrack -G@topo_32.nc cities.txt <span class="p">|</span> gmt plot3d <span class="nv">$Rplot</span> -JZ -p -Sc7p -W1p,white -Gred
+	gmt text -JZ -p -F+f12p,Helvetica-Bold,red+jRM -Dj0.1i/0 cities.txt
 
-gmt pscoast <span class="nv">$Rflag</span> -Df -M -N1 <span class="p">|</span> gmt grdtrack -G@topo_32.nc -s+a <span class="p">|</span> gmt psxyz <span class="nv">$Rplot</span> -J -JZ -p -W1p,white <span class="se">\</span>
-	-O -K &gt;&gt; <span class="nv">$ps</span>
-
-<span class="c1"># Finally, we add dots and names for three cities.</span>
-<span class="c1"># Again, gmt grdtrack is used to put the dots &quot;at elevation&quot;.</span>
-
-cat <span class="s">&lt;&lt; EOF &gt; cities.txt</span>
-<span class="s">05:41:27 50:51:05 Maastricht</span>
-<span class="s">04:21:00 50:51:00 Bruxelles</span>
-<span class="s">07:07:03 50:43:09 Bonn</span>
-<span class="s">EOF</span>
-
-gmt grdtrack -G@topo_32.nc cities.txt <span class="p">|</span> gmt psxyz <span class="nv">$Rplot</span> -J -JZ -p -Sc7p -W1p,white -Gred <span class="se">\</span>
-	-K -O &gt;&gt; <span class="nv">$ps</span>
-gmt pstext <span class="nv">$Rplot</span> -J -JZ -p -F+f12p,Helvetica-Bold,red+jRM -Dj0.1i/0 -O cities.txt &gt;&gt; <span class="nv">$ps</span>
-
-<span class="c1"># cleanup</span>
-
-rm -f gmt.conf euflag.cpt cities.txt
+	<span class="c1"># cleanup</span>
+	rm -f cities.txt
+gmt end
 </pre></div>
 </div>
 <div class="figure align-center" id="id1">
-<span id="fig-ex32"></span><a class="reference internal image-reference" href="../_images/example_32.png"><img alt="../_images/example_32.png" src="../_images/example_32.png" style="width: 500px;" /></a>
+<span id="fig-ex32"></span><a class="reference internal image-reference" href="../_images/ex32.png"><img alt="../_images/ex32.png" src="../_images/ex32.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Draping an image over topography</span></p>
 </div>
 </div>
@@ -207,7 +201,7 @@ rm -f gmt.conf euflag.cpt cities.txt
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" >The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -226,7 +220,7 @@ rm -f gmt.conf euflag.cpt cities.txt
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Jul 28, 2019.
+  Last updated on Sep 10, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

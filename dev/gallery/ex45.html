@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>(45) Trend modeling &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
+    <title>(45) Trend modeling &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +41,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" accesskey="U">The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -73,34 +73,47 @@ Mauna Loa.  This yields the famous Keeling curve.</p>
 <span class="c1">#               GMT EXAMPLE 45</span>
 <span class="c1">#</span>
 <span class="c1"># Purpose:      Illustrate use of trend1d mixed models</span>
-<span class="c1"># GMT modules:  pstext, psxy, trend1d</span>
+<span class="c1"># GMT modules:  text, plot, trend1d</span>
 <span class="c1"># Unix progs:   rm</span>
 <span class="c1">#</span>
 
-<span class="nv">ps</span><span class="o">=</span>example_45.ps
-<span class="c1"># Basic LS line y = a + bx</span>
-gmt trend1d -Fxm @MaunaLoa_CO2.txt -Np1 &gt; model.txt
-gmt psxy -R1958/2016/310/410 -JX6i/1.9i -P -Bxaf -Byaf+u<span class="s2">&quot; ppm&quot;</span> -BWSne+gazure1 -Sc0.05c -Gred -K @MaunaLoa_CO2.txt -X1.5i &gt; <span class="nv">$ps</span>
-gmt psxy -R -J -O -K -W0.5p,blue model.txt &gt;&gt; <span class="nv">$ps</span>
-gmt pstext -R -J -O -K -F+f12p+cTL+t<span class="s2">&quot;m@-2@-(t) = a + b\264t&quot;</span> -Dj0.1i -Glightyellow &gt;&gt; <span class="nv">$ps</span>
-<span class="c1"># Basic LS line y = a + bx + cx^2</span>
-gmt trend1d -Fxm @MaunaLoa_CO2.txt -Np2 &gt; model.txt
-gmt psxy -R -J -O -Bxaf -Byaf+u<span class="s2">&quot; ppm&quot;</span> -BWSne+gazure1 -Sc0.05c -Gred -K @MaunaLoa_CO2.txt -Y2.3i &gt;&gt; <span class="nv">$ps</span>
-gmt psxy -R -J -O -K -W0.5p,blue model.txt &gt;&gt; <span class="nv">$ps</span>
-gmt pstext -R -J -O -K -F+f12p+cTL+t<span class="s2">&quot;m@-3@-(t) = a + b\264t + c\264t@+2@+&quot;</span> -Dj0.1i -Glightyellow &gt;&gt; <span class="nv">$ps</span>
-<span class="c1"># Basic LS line y = a + bx + cx^2 + seasonal change</span>
-gmt trend1d -Fxmr @MaunaLoa_CO2.txt -Np2,f1+o1958+l1 &gt; model.txt
-gmt psxy -R -J -O -Bxaf -Byaf+u<span class="s2">&quot; ppm&quot;</span> -BWSne+gazure1 -Sc0.05c -Gred -K @MaunaLoa_CO2.txt -Y2.3i &gt;&gt; <span class="nv">$ps</span>
-gmt psxy -R -J -O -K -W0.25p,blue model.txt &gt;&gt; <span class="nv">$ps</span>
-gmt pstext -R -J -O -K -F+f12p+cTL+t<span class="s2">&quot;m@-5@-(t) = a + b\264t + c\264t@+2@+ + d\264cos(2@~p@~t) + e\264sin(2@~p@~t)&quot;</span> -Dj0.1i -Glightyellow &gt;&gt; <span class="nv">$ps</span>
-<span class="c1"># Plot residuals of last model</span>
-gmt psxy -R1958/2016/-4/4 -J -O -Bxaf -Byafg10+u<span class="s2">&quot; ppm&quot;</span> -BWSne+t<span class="s2">&quot;The Keeling Curve [CO@-2@- at Mauna Loa]&quot;</span>+gazure1 -Sc0.05c -Gred -K model.txt -i0,2 -Y2.3i &gt;&gt; <span class="nv">$ps</span>
-gmt pstext -R -J -O -F+f12p+cTL+t<span class="s2">&quot;@~e@~(t) = y(t) - m@-5@-(t)&quot;</span> -Dj0.1i -Glightyellow &gt;&gt; <span class="nv">$ps</span>
-rm -f model.txt
+gmt begin ex45
+  gmt <span class="nb">set</span> FONT_HEADING 24p
+  gmt subplot begin 4x1 -Fs6i/1.9i -R1958/2016/310/410 -Bxaf -Byaf+u<span class="s2">&quot; ppm&quot;</span> -BWSne+gazure1 -T<span class="s2">&quot;The Keeling Curve [CO@-2@- at Mauna Loa]&quot;</span>
+
+    <span class="c1"># Basic LS line y = a + bx</span>
+    gmt subplot <span class="nb">set</span> <span class="m">3</span>
+    gmt trend1d -Fxm @MaunaLoa_CO2.txt -Np1 &gt; model.txt
+    gmt plot -Sc0.05c -Gred @MaunaLoa_CO2.txt
+    gmt plot -W0.5p,blue model.txt
+    gmt text -F+f12p+cTL+t<span class="s2">&quot;m@-2@-(t) = a + b\264t&quot;</span> -Dj0.1i -Glightyellow
+
+    <span class="c1"># Basic LS line y = a + bx + cx^2</span>
+    gmt subplot <span class="nb">set</span> <span class="m">2</span>
+    gmt trend1d -Fxm @MaunaLoa_CO2.txt -Np2 &gt; model.txt
+    gmt plot -Sc0.05c -Gred @MaunaLoa_CO2.txt
+    gmt plot -W0.5p,blue model.txt
+    gmt text -F+f12p+cTL+t<span class="s2">&quot;m@-3@-(t) = a + b\264t + c\264t@+2@+&quot;</span> -Dj0.1i -Glightyellow
+
+    <span class="c1"># Basic LS line y = a + bx + cx^2 + seasonal change</span>
+    gmt subplot <span class="nb">set</span> <span class="m">1</span>
+    gmt trend1d -Fxmr @MaunaLoa_CO2.txt -Np2,f1+o1958+l1 &gt; model.txt
+    gmt plot -Sc0.05c -Gred @MaunaLoa_CO2.txt
+    gmt plot -W0.25p,blue model.txt
+    gmt text -F+f12p+cTL+t<span class="s2">&quot;m@-5@-(t) = a + b\264t + c\264t@+2@+ + d\264cos(2@~p@~t) + e\264sin(2@~p@~t)&quot;</span> -Dj0.1i -Glightyellow
+
+    <span class="c1"># Plot residuals of last model</span>
+    gmt subplot <span class="nb">set</span> <span class="m">0</span>
+    gmt plot -R1958/2016/-4/4 -Byafg10+u<span class="s2">&quot; ppm&quot;</span> -Sc0.05c -Gred model.txt -i0,2
+    gmt text -F+f12p+cTL+t<span class="s2">&quot;@~e@~(t) = y(t) - m@-5@-(t)&quot;</span> -Dj0.1i -Glightyellow
+
+  gmt subplot end
+  rm -f model.txt
+gmt end
 </pre></div>
 </div>
 <div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/example_45.png"><img alt="../_images/example_45.png" src="../_images/example_45.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/ex45.png"><img alt="../_images/ex45.png" src="../_images/ex45.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Trend Modeling.</span></p>
 </div>
 </div>
@@ -142,7 +155,7 @@ rm -f model.txt
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" >The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -161,7 +174,7 @@ rm -f model.txt
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Jul 28, 2019.
+  Last updated on Sep 10, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

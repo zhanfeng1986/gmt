@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>(13) Plotting of vector fields &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
+    <title>(13) Plotting of vector fields &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +41,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" accesskey="U">The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -82,25 +82,27 @@ the components of the gradient in separate windows. A
 <span class="c1">#		GMT EXAMPLE 13</span>
 <span class="c1">#</span>
 <span class="c1"># Purpose:	Illustrate vectors and contouring</span>
-<span class="c1"># GMT modules:	grdmath, grdcontour, grdvector, pstext</span>
-<span class="c1"># Unix progs:	echo, rm</span>
+<span class="c1"># GMT modules:	set, grdmath, grdcontour, grdvector, subplot</span>
+<span class="c1"># Unix progs:	rm</span>
 <span class="c1">#</span>
-<span class="nv">ps</span><span class="o">=</span>example_13.ps
-gmt grdmath -R-2/2/-2/2 -I0.1 X Y R2 NEG EXP X <span class="nv">MUL</span> <span class="o">=</span> z.nc
-gmt grdmath z.nc <span class="nv">DDX</span> <span class="o">=</span> dzdx.nc
-gmt grdmath z.nc <span class="nv">DDY</span> <span class="o">=</span> dzdy.nc
-gmt grdcontour dzdx.nc -JX3i -B1 -BWSne -C0.1 -A0.5 -K -P -Gd2i -S4 -T+d0.1i/0.03i &gt; <span class="nv">$ps</span>
-gmt grdcontour dzdy.nc -J -B -C0.05 -A0.2 -O -K -Gd2i -S4 -T+d0.1i/0.03i -Xa3.45i &gt;&gt; <span class="nv">$ps</span>
-gmt grdcontour z.nc -J -B -C0.05 -A0.1 -O -K -Gd2i -S4 -T+d0.1i/0.03i -Y3.45i &gt;&gt; <span class="nv">$ps</span>
-gmt grdcontour z.nc -J -B -C0.05 -O -K -Gd2i -S4 -X3.45i &gt;&gt; <span class="nv">$ps</span>
-gmt grdvector dzdx.nc dzdy.nc -I0.2 -J -O -K -Q0.1i+e+n0.25i+h0.5 -Gblack -W1p -S5i &gt;&gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="s2">&quot;3.2 3.6 z(x,y) = x@~\327@~exp(-x@+2@+-y@+2@+)&quot;</span> <span class="se">\</span>
-	<span class="p">|</span> gmt pstext -R0/6/0/4.5 -Jx1i -F+f40p,Times-Italic+jCB -O -X-3.45i &gt;&gt; <span class="nv">$ps</span>
+gmt begin ex13
+  gmt <span class="nb">set</span> FONT_HEADING 40p,Times-Italic
+  gmt grdmath -R-2/2/-2/2 -I0.1 X Y R2 NEG EXP X <span class="nv">MUL</span> <span class="o">=</span> z.nc
+  gmt grdmath z.nc <span class="nv">DDX</span> <span class="o">=</span> dzdx.nc
+  gmt grdmath z.nc <span class="nv">DDY</span> <span class="o">=</span> dzdy.nc
+  gmt subplot begin 2x2 -M0.05i -Ff6i/6i -BWSne -T<span class="s2">&quot;z(x,y) = x@~\327@~exp(-x@+2@+-y@+2@+)&quot;</span>
+    gmt grdcontour z.nc -C0.05 -A0.1 -Gd2i -S4 -T+d0.1i/0.03i -c0,0
+    gmt grdcontour z.nc -C0.05 -Gd2i -S4 -c0,1
+    gmt grdvector dzdx.nc dzdy.nc -I0.2 -Q0.1i+e+n0.25i+h0.5 -Gblack -W1p -S5i
+    gmt grdcontour dzdx.nc -C0.1  -A0.5 -Gd2i -S4 -T+d0.1i/0.03i -c1,0
+    gmt grdcontour dzdy.nc -C0.05 -A0.2 -Gd2i -S4 -T+d0.1i/0.03i -c1,1
+  gmt subplot end
+gmt end
 rm -f z.nc dzdx.nc dzdy.nc
 </pre></div>
 </div>
 <div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/example_13.png"><img alt="../_images/example_13.png" src="../_images/example_13.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/ex13.png"><img alt="../_images/ex13.png" src="../_images/ex13.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Display of vector fields in GMT.</span></p>
 </div>
 </div>
@@ -142,7 +144,7 @@ rm -f z.nc dzdx.nc dzdy.nc
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" >The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -161,7 +163,7 @@ rm -f z.nc dzdx.nc dzdy.nc
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Jul 28, 2019.
+  Last updated on Sep 10, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

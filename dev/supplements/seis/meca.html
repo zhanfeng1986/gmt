@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>meca &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
+    <title>meca &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +41,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../SUP_SEIS.html" accesskey="U">SEIS</a> &#187;</li>
 <li class="right">
@@ -70,14 +70,14 @@
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <p><strong>gmt meca</strong> [ <em>table</em> ] <a class="reference internal" href="#j"><span> <strong>-J</strong></span></a></strong><em>parameters</em> <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em>
+<a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>&lt;format&gt;&lt;scale&gt;</em>[<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]
 [ <a class="reference internal" href="#b"><span> <strong>-B</strong></span></a></strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> ]
 [ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong>[<em>pen</em>][<strong>+s</strong><em>pointsize</em>] ] [ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>depmin</em>/<em>depmax</em> ]
 [ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong><em>fill</em>]
 [ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong><em>mode</em>[<em>args</em>] ] [ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>fill</em>] [ <a class="reference internal" href="#l"><span> <strong>-L</strong></span></a></strong>[<em>pen</em>] ]
 [ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong> ]
 [ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong> ]
-[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>&lt;format&gt;&lt;scale&gt;</em>[/<em>fontsize</em>[/<em>offset</em>]][<strong>+u</strong>]
-[ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>num_of_plane</em>[/<em>pen</em>] ]
+[ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>nplane</em>[/<em>pen</em>] ]
 [ <a class="reference internal" href="#u"><span> <strong>-U</strong></span></a></strong>[<em>stamp</em>] ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
 [ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong><em>pen</em> ]
@@ -150,18 +150,17 @@ done only when using the <strong>-Jz</strong> option, not when using only the
 <strong>-p</strong> option. In the latter case a perspective view of the plane is
 plotted, with no third dimension.  </dd>
 </dl>
-<p id="s"><strong>-S</strong><em>&lt;format&gt;&lt;scale&gt;</em>[/<em>fontsize</em>[/<em>offset</em>]][<strong>+u</strong>]</p>
+<p id="s"><strong>-S</strong><em>&lt;format&gt;&lt;scale&gt;</em>[<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</p>
 <blockquote>
 <div>Selects the meaning of the columns in the data file. In order to use
 the same file to plot cross-sections, depth is in third column.
 Nevertheless, it is possible to use “old style” <strong>psvelomeca</strong> input
 files without depth in third column using the <strong>-Fo</strong> option.</div></blockquote>
-<p><strong>-Sa</strong><em>scale[/fontsize[/offset</em>]][<strong>+u</strong>]</p>
+<p><strong>-Sa</strong><em>scale</em>[<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</p>
 <blockquote>
 <div><p>Focal mechanisms in Aki and Richards convention. <em>scale</em> adjusts the
 scaling of the radius of the “beach ball”, which will be proportional to
-the magnitude. Scale is the size for magnitude = 5 in inch (unless
-<strong>c</strong>, <strong>i</strong>, or <strong>p</strong> is appended). Use the <strong>-T</strong> option to
+the magnitude. <em>scale</em> is the size for magnitude = 5. Use the <strong>-T</strong> option to
 render the beach ball transparent by drawing only the nodal planes and
 the circumference. The color or shade of the compressive quadrants can
 be specified with the <strong>-G</strong> option. The color or shade of the extensive
@@ -185,12 +184,11 @@ columns (1,2) and (8,9).</p>
 <p><strong>10</strong>:
 Text string to appear above or below the beach ball (optional).</p>
 </div></blockquote>
-<p><strong>-Sc</strong><em>scale[/fontsize[/offset</em>]][<strong>+u</strong>]</p>
+<p><strong>-Sc</strong><em>scale</em>[<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</p>
 <blockquote>
-<div><p>Focal mechanisms in Harvard CMT convention. <em>scale</em> adjusts the scaling
+<div><p>Focal mechanisms in Global CMT convention. <em>scale</em> adjusts the scaling
 of the radius of the “beach ball”, which will be proportional to the
-magnitude. Scale is the size for magnitude = 5 (that is M0 = 4.0E23
-dynes-cm) in inch (unless <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> is appended).
+magnitude. <em>scale</em> is the size for magnitude = 5 (that is M0 = 4.0E23 dynes-cm).
 Use the <strong>-T</strong> option to render the beach ball transparent by drawing
 only the nodal planes and the circumference. The color or shade of the
 compressive quadrants can be specified with the <strong>-G</strong> option. The color
@@ -217,14 +215,14 @@ columns (1,2) and (12,13).</p>
 <p><strong>14</strong>:
 Text string to appear above or below the beach ball (optional).</p>
 </div></blockquote>
-<p><strong>-Sm|d|z</strong><em>scale[/fontsize[/offset</em>]][<strong>+u</strong>]</p>
+<p><strong>-Sm|d|z</strong><em>scale</em>[<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</p>
 <blockquote>
-<div><p>Seismic moment tensor (Harvard CMT, with zero trace). <em>scale</em> adjusts
+<div><p>Seismic moment tensor (Global CMT, with zero trace). <em>scale</em> adjusts
 the scaling of the radius of the “beach ball”, which will be
-proportional to the magnitude. Scale is the size for magnitude = 5 (that
-is scalar seismic moment = 4.0E23 dynes-cm) in inch (unless <strong>c</strong>,
-<strong>i</strong>, <strong>m</strong>, or <strong>p</strong> is appended). (<strong>-T</strong><em>0</em> option overlays best
-double couple transparently.) Use <strong>-Sm</strong> to plot the Harvard CMT
+proportional to the magnitude. <em>scale</em> is the size for magnitude = 5
+(that is scalar seismic moment = 4.0E23 dynes-cm).
+<strong>-T</strong><em>0</em> option overlays best double couple transparently.
+Use <strong>-Sm</strong> to plot the Global CMT
 seismic moment tensor with zero trace. Use <strong>-Sd</strong> to plot only the
 double couple part of moment tensor. Use <strong>-Sz</strong> to plot the anisotropic
 part of moment tensor (zero trace). The color or shade of the
@@ -250,13 +248,12 @@ columns (1,2) and (11,12).</p>
 <p><strong>13</strong>:
 Text string to appear above or below the beach ball (optional).</p>
 </div></blockquote>
-<p><strong>-Sp</strong><em>scale[/fontsize[/offset</em>]][<strong>+u</strong>]</p>
+<p><strong>-Sp</strong><em>scale</em>[<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</p>
 <blockquote>
 <div><p>Focal mechanisms given with partial data on both planes. <em>scale</em> adjusts
 the scaling of the radius of the “beach ball”, which will be
-proportional to the magnitude. Scale is the size for magnitude = 5 in
-inch (unless <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> is appended). The color or
-shade of the compressive quadrants can be specified with the <strong>-G</strong>
+proportional to the magnitude. <em>scale</em> is the size for magnitude = 5
+The color or shade of the compressive quadrants can be specified with the <strong>-G</strong>
 option. The color or shade of the extensive quadrants can be specified
 with the <strong>-E</strong> option. Append <strong>+u</strong> to have the text appear below the
 beach ball (default is above). Parameters are expected to be in the
@@ -282,14 +279,14 @@ columns (1,2) and (9,10).</p>
 <p><strong>11</strong>:
 Text string to appear above or below the beach ball (optional).</p>
 </div></blockquote>
-<p><strong>-Sx|y|t</strong><em>scale[/fontsize[/offset</em>]][<strong>+u</strong>]</p>
+<p><strong>-Sx|y|t</strong><em>scale</em>[<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</p>
 <blockquote>
 <div><p>Principal axis. <em>scale</em> adjusts the scaling of the radius of the “beach
 ball”, which will be proportional to the magnitude. Scale is the size
 for magnitude = 5 (that is seismic scalar moment = 4*10e+23 dynes-cm)
 in inch (unless <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> is appended). (<strong>-T</strong><em>0</em>
 option overlays best double couple transparently.) Use <strong>-Sx</strong> to plot
-standard Harvard CMT. Use <strong>-Sy</strong> to plot only the double couple part of
+standard Global CMT. Use <strong>-Sy</strong> to plot only the double couple part of
 moment tensor. Use <strong>-St</strong> to plot zero trace moment tensor. The color
 or shade of the compressive quadrants can be specified with the <strong>-G</strong>
 option. The color or shade of the extensive quadrants can be specified
@@ -341,7 +338,7 @@ connects the beachball to the circle. Specify <em>pen</em> and optionally append
 <dl class="docutils" id="f">
 <dt><strong>-F</strong><em>mode</em>[<em>args</em>]</dt>
 <dd>Sets one or more attributes; repeatable. The various combinations are</dd>
-<dt><strong>-Fa</strong>[<em>size</em>][/<em>P_axis_symbol</em>[<em>T_axis_symbol</em>]]</dt>
+<dt><strong>-Fa</strong>[<em>size</em>[/<em>Psymbol</em>[<em>Tsymbol</em>]]]</dt>
 <dd>Computes and plots P and T axes with symbols. Optionally specify
 <em>size</em> and (separate) P and T axis symbols from the following:
 (<strong>c</strong>) circle, (<strong>d</strong>) diamond, (<strong>h</strong>) hexagon, (<strong>i</strong>) inverse
@@ -387,14 +384,14 @@ the default pen set by <strong>-W</strong>.</dd>
 by <strong>-R</strong> [Default plots symbols inside frame only].</dd>
 </dl>
 <dl class="docutils" id="t">
-<dt><strong>-T</strong>[<em>num_of_planes</em>][<strong>/</strong><em>pen</em>]</dt>
+<dt><strong>-T</strong>[<em>nplane</em>][<strong>/</strong><em>pen</em>]</dt>
 <dd><p class="first">Plots the nodal planes and outlines the bubble which is transparent.
-If <em>num_of_planes</em> is</p>
+If <em>nplane</em> is</p>
 <p><em>0</em>: both nodal planes are plotted;</p>
 <p><em>1</em>: only the first nodal plane is plotted;</p>
 <p><em>2</em>: only the second nodal plane is plotted.</p>
 <p class="last">Append <strong>/</strong><em>pen</em> to set the pen attributes for this feature.
-Default pen is as set by <strong>-W</strong>.</p>
+Default pen is as set by <strong>-W</strong>. [Default: 0].</p>
 </dd>
 </dl>
 <dl class="docutils" id="u">
@@ -444,7 +441,7 @@ determined by the z-value in the third column.</dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-t</strong>[<em>transp</em>] <a class="reference internal" href="../../gmt.html#t-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set PDF transparency level in percent.</dd>
+<dd>Set transparency level in percent.</dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="../../gmt.html#colon-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -466,7 +463,7 @@ any module-specific option (but not the GMT common options), then exits.</dd>
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>The following file should give a normal-faulting CMT mechanism:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">meca</span> <span class="o">-</span><span class="n">R239</span><span class="o">/</span><span class="mi">240</span><span class="o">/</span><span class="mi">34</span><span class="o">/</span><span class="mf">35.2</span> <span class="o">-</span><span class="n">Jm4c</span> <span class="o">-</span><span class="n">Sc0</span><span class="o">.</span><span class="mi">4</span> <span class="o">-</span><span class="n">h1</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">test</span> <span class="o">&lt;&lt;</span> <span class="n">END</span>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">meca</span> <span class="o">-</span><span class="n">R239</span><span class="o">/</span><span class="mi">240</span><span class="o">/</span><span class="mi">34</span><span class="o">/</span><span class="mf">35.2</span> <span class="o">-</span><span class="n">Jm4c</span> <span class="o">-</span><span class="n">Sc2c</span> <span class="o">-</span><span class="n">h1</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">test</span> <span class="o">&lt;&lt;</span> <span class="n">END</span>
 <span class="c1">#lon lat depth str dip slip st dip slip mant exp plon plat</span>
 <span class="mf">239.384</span> <span class="mf">34.556</span> <span class="mf">12.</span> <span class="mi">180</span> <span class="mi">18</span> <span class="o">-</span><span class="mi">88</span> <span class="mi">0</span> <span class="mi">72</span> <span class="o">-</span><span class="mi">90</span> <span class="mf">5.5</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
 <span class="n">END</span>
@@ -550,7 +547,7 @@ Institut de Physique du Globe de Paris, Departement de Sismologie, Paris, France
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../SUP_SEIS.html" >SEIS</a> &#187;</li>
 <li class="right">
@@ -569,7 +566,7 @@ Institut de Physique du Globe de Paris, Departement de Sismologie, Paris, France
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Jul 28, 2019.
+  Last updated on Sep 10, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

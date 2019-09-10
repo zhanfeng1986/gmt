@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>1. Introduction &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
+    <title>1. Introduction &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +41,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="tutorial.html" accesskey="U">Tutorial (Modern Mode)</a> &#187;</li>
 <li class="right">
@@ -74,8 +74,12 @@
 <p><strong>EUMETSAT, Darmstadt, Germany</strong></p>
 <p><strong>Joaquim F. Luis</strong></p>
 <p><strong>Universidade do Algarve, Faro, Portugal</strong></p>
+<p><strong>Leonardo Uieda</strong></p>
+<p><strong>University of Liverpool, UK</strong></p>
 <p><strong>Florian Wobbe</strong></p>
-<p><strong>Alfred Wegener Institute, Germany</strong></p>
+<p><strong>Sea and Sun Technology, Germany</strong></p>
+<p><strong>Dongdong Tian</strong></p>
+<p><strong>Michigan State University</strong></p>
 <div class="section" id="introduction">
 <h1>1. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 <p>The purpose of this tutorial is to introduce new users to GMT,
@@ -450,7 +454,7 @@ to the common switches we may need to use some of several coast-specific options
 <td>Exclude small features or those of high hierarchical levels (see Appendix K)</td>
 </tr>
 <tr class="row-odd"><td><strong>-D</strong></td>
-<td>Select data resolution (<strong>b</strong>ull, <strong>h</strong>igh, <strong>i</strong>ntermediate, <strong>l</strong>ow, or <strong>c</strong>rude)</td>
+<td>Select data resolution (<strong>f</strong>ull, <strong>h</strong>igh, <strong>i</strong>ntermediate, <strong>l</strong>ow, or <strong>c</strong>rude)</td>
 </tr>
 <tr class="row-even"><td><strong>-G</strong></td>
 <td>Set color of dry areas (default does not paint)</td>
@@ -924,7 +928,7 @@ symbols with a line we must use the overlay approach:</p>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_8 pdf
   gmt plot @tut_data.txt -R0/6/0/6 -Jx1i -B -Wthinner
   gmt plot tut_data.txt -Wthin -Si0.2
-gmt end
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -993,7 +997,7 @@ This color table was generated as part of the script (below).</p>
   gmt makecpt -Cred,green,blue -T0,70,300,10000 &gt; quakes.cpt
   gmt coast -R130/150/35/50 -JM6i -B -Ggray
   gmt plot @tut_quakes.ngdc -Wfaint -i4,3,5,6s0.1 -h3 -Scc -Cquakes.cpt
-gmt end
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -1541,7 +1545,7 @@ call to <a class="reference internal" href="mask.html"><span class="doc">mask</s
   gmt mask -R245/255/20/30 -I5m ship_5m.xyz -JM6i -B -V
   gmt grdcontour ship.nc -C250 -A1000
   gmt mask -C
-gmt end
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -1665,7 +1669,7 @@ and grid-line intervals for the color bars.)</p>
   gmt colorbar -Dx1i/3i+w4i/0.5i+h -Ccont.cpt -B+tcontinuous
   gmt colorbar -Dx1i/5i+w4i/0.5i+h -Cdisc.cpt -B+tdiscrete -I0.5
   gmt colorbar -Dx1i/7i+w4i/0.5i+h -Ccont.cpt -B+tcontinuous -I0.5
-gmt end
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -1774,7 +1778,7 @@ the plot.  We try</p>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_15 pdf
   gmt grdimage @tut_relief.nc -JM6i -B -Ctopo.cpt -V
   gmt colorbar -DjTC+w5i/0.25i+h+o0/-1i -Ctopo.cpt -I0.4 -By+lm
-gmt end
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -1847,7 +1851,7 @@ create the shaded relief image:</p>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_16 pdf
   gmt grdimage @tut_relief.nc -Ius_i.nc -JM6i -B -Ctopo.cpt
   gmt colorbar -DjTC+w5i/0.25i+h+o0/-1i -Ctopo.cpt -I0.4 -By+lm
-gmt end
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -2126,7 +2130,7 @@ appropriate <em>dpi</em> for the final output device and let it rip.</p>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="tutorial.html" >Tutorial (Modern Mode)</a> &#187;</li>
 <li class="right">
@@ -2145,7 +2149,7 @@ appropriate <em>dpi</em> for the final output device and let it rip.</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Jul 28, 2019.
+  Last updated on Sep 10, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

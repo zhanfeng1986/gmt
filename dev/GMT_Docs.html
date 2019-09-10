@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>1. The Generic Mapping Tools &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
+    <title>1. The Generic Mapping Tools &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +41,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="cookbook.html" accesskey="U">The GMT Cookbook (Modern Mode)</a> &#187;</li>
 <li class="right">
@@ -75,13 +75,17 @@
 <p><strong>EUMETSAT, Darmstadt, Germany</strong></p>
 <p><strong>Joaquim F. Luis</strong></p>
 <p><strong>Universidade do Algarve, Faro, Portugal</strong></p>
+<p><strong>Leonardo Uieda</strong></p>
+<p><strong>University of Liverpool, UK</strong></p>
 <p><strong>Florian Wobbe</strong></p>
-<p><strong>Alfred Wegener Institute, Germany</strong></p>
+<p><strong>Sea and Sun Technology, Germany</strong></p>
+<p><strong>Dongdong Tian</strong></p>
+<p><strong>Michigan State University</strong></p>
 <div class="figure align-center" id="id88">
-<a class="reference internal image-reference" href="_images/GMT5_Summit_2016.jpg"><img alt="_images/GMT5_Summit_2016.jpg" src="_images/GMT5_Summit_2016.jpg" style="width: 1200px;" /></a>
-<p class="caption"><span class="caption-text">The five horsemen of the GMT apocalypse:
-Joaquim Luis, Walter H.F. Smith, Remko Scharroo, Florian Wobbe, and Paul Wessel
-at the GMT Developer Summit in La Jolla, California, during August 15–19, 2016.</span></p>
+<a class="reference internal image-reference" href="_images/GMT6_Summit_2019.jpg"><img alt="_images/GMT6_Summit_2019.jpg" src="_images/GMT6_Summit_2019.jpg" style="width: 1200px;" /></a>
+<p class="caption"><span class="caption-text">Dongdong Tian, David Sandwell (Steering Committee Chair), Walter H.F. Smith, Paul Wessel,
+Joaquim Luis, Leo Uieda, and Dave Caress (Steering Committee Member)
+at the GMT Developer Summit in La Jolla, California, during July 29–August 2, 2019.</span></p>
 </div>
 <div class="section" id="acknowledgments">
 <h2>1.1. Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permalink to this headline">¶</a></h2>
@@ -119,16 +123,19 @@ Yip helped translate GMT to POSIX ANSI C and incorporate netCDF 3. The
 SOEST RCF staff (Ross Ishida, Pat Townsend, and Sharon Stahl) provided
 valuable help on Linux and web server support.</p>
 <p>Honolulu, HI; College Park, MD; Faro, Portugal; Darmstadt and
-Bremerhaven, Germany; September 2016</p>
+Trappenkamp, Germany; Liverpool, UK; Lansing, MI; September 2019</p>
 </div>
 </div>
 <div class="section" id="a-reminder">
 <h1>2. A Reminder<a class="headerlink" href="#a-reminder" title="Permalink to this headline">¶</a></h1>
 <p>If you feel it is appropriate, you may consider paying us back by citing
-our EOS articles on GMT and technical papers on algorithms when you
+our articles on GMT and technical papers on algorithms when you
 publish papers containing results or illustrations obtained using GMT.
-The EOS articles on GMT are</p>
+The articles on GMT are</p>
 <ul class="simple">
+<li>Wessel, P., Luis, J., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., &amp; Tian, D. (2019).
+The Generic Mapping Tools Version 6. Geochemistry, Geophysics, Geosystems, 20.
+<a class="reference external" href="https://doi.org/10.1029/2019GC008515">https://doi.org/10.1029/2019GC008515</a></li>
 <li>Wessel, P., W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe,
 Generic Mapping Tools: Improved Version Released, <em>EOS Trans. AGU</em>, 94(45),
 p. 409–410, 2013. <a class="reference external" href="http://dx.doi.org/10.1002/2013EO450001">doi:10.1002/2013EO450001</a>.</li>
@@ -1363,7 +1370,7 @@ these all accept a map <em>scale</em>.</p>
 <tr class="row-odd"><td><strong>-bo</strong>[<em>ncols</em>][<em>type</em>][<strong>w</strong>][<strong>+l</strong>|<strong>b</strong>]</td>
 <td>Select binary output <a class="reference internal" href="gmt.html#bo-full"><span class="std std-ref">(…)</span></a></td>
 </tr>
-<tr class="row-even"><td><strong>-c</strong>[<em>row</em>,<em>col</em>]</td>
+<tr class="row-even"><td><strong>-c</strong>[<em>row</em>,<em>col</em>|<em>index</em>]</td>
 <td>Advance plot focus to selected (or next) subplot panel
 <a class="reference internal" href="gmt.html#c-full"><span class="std std-ref">(…)</span></a></td>
 </tr>
@@ -1405,7 +1412,7 @@ these all accept a map <em>scale</em>.</p>
 <td>Control treatment of NaN records <a class="reference internal" href="gmt.html#s-full"><span class="std std-ref">(…)</span></a></td>
 </tr>
 <tr class="row-odd"><td><strong>-t</strong><em>transparency</em></td>
-<td>Set layer PDF transparency <a class="reference internal" href="gmt.html#t-full"><span class="std std-ref">(…)</span></a></td>
+<td>Set layer transparency <a class="reference internal" href="gmt.html#t-full"><span class="std std-ref">(…)</span></a></td>
 </tr>
 <tr class="row-even"><td><strong>-x</strong>[[-]<em>n</em>]</td>
 <td>Set number of cores in multi-threaded modules <a class="reference internal" href="gmt.html#core-full"><span class="std std-ref">(…)</span></a></td>
@@ -1775,7 +1782,7 @@ importance (some are used a lot more than others).</p>
 <td>Control output of records containing one or more NaNs</td>
 </tr>
 <tr class="row-odd"><td><strong>-t</strong></td>
-<td>Change layer PDF transparency</td>
+<td>Change layer transparency</td>
 </tr>
 <tr class="row-even"><td><strong>-x</strong></td>
 <td>Set number of cores to be used in multi-threaded applications</td>
@@ -2316,7 +2323,7 @@ removes leading zeros from calendar items (e.g., 02 becomes 2).</p>
  gmt begin B_time2
    gmt basemap -R1969-7-21T/1969-7-23T/0/1 -JX5i/0.2i -Bpa6Hf1h -Bsa1K -BS
    gmt basemap -Bpa6Hf1h -Bsa1D -BS -Y0.65i
-gmt end
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -2372,7 +2379,7 @@ The upper uses Gregorian weeks (which start at the day chosen by
   gmt basemap -R1969-7-21T/1969-8-9T/0/1 -JX5i/0.2i -Bpa1K -Bsa1U -BS
   gmt <span class="nb">set</span> FORMAT_DATE_MAP o TIME_WEEK_START Sunday FORMAT_TIME_SECONDARY_MAP Character
   gmt basemap -Bpa3Kf1k -Bsa1r -BS -Y0.65i
-gmt end
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -2453,7 +2460,7 @@ gmt begin GMT_-B_custom
 gmt basemap -R416/542/0/6.2831852 -JX-5i/2.5i -Bpx25f5g25+u<span class="s2">&quot; Ma&quot;</span> -Bpycyannots.txt -BWS+glightblue
 gmt basemap -R416/542/0/6.2831852 -JX-5i/2.5i -Bsxcxannots.txt -Bsy0 -BWS <span class="se">\</span>
     --MAP_ANNOT_OFFSET_SECONDARY<span class="o">=</span>10p --MAP_GRID_PEN_SECONDARY<span class="o">=</span>2p
-gmt end
+gmt end show
 rm -f <span class="o">[</span>xy<span class="o">]</span>annots.txt
 </pre></div>
 </div>
@@ -2853,8 +2860,8 @@ or more fields (and not necessarily <em>z</em>) equal NaN. Finally, you can
 supply a comma-separated list of all columns or column ranges to
 consider (before the optional modifiers) for this NaN test.</p>
 </div>
-<div class="section" id="layer-pdf-transparency-the-t-option">
-<h3>7.4.20. Layer PDF transparency: The <strong>-t</strong> option<a class="headerlink" href="#layer-pdf-transparency-the-t-option" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="layer-transparency-the-t-option">
+<h3>7.4.20. Layer transparency: The <strong>-t</strong> option<a class="headerlink" href="#layer-transparency-the-t-option" title="Permalink to this headline">¶</a></h3>
 <p>While the PostScript language does not support transparency, PDF does,
 and via PostScript extensions one can manipulate the transparency
 levels of objects. The <strong>-t</strong> option allows you to change the
@@ -3003,11 +3010,11 @@ Since this address may change over time we use the leading
 &#64; to simplify access to these files.  Such files will also be downloaded
 to <strong>DIR_CACHE</strong> and subsequently read from there (until removed by the user).</li>
 <li>By default, remote files are downloaded from the SOEST data server.  However, you
-can override that selection by setting the environmental parameter <strong>$GMT_DATA_URL</strong> or
-the default setting for <strong>GMT_DATA_URL</strong>.  Alternatively, configure the CMake
-parameter GMT_DATA_URL at compile time.</li>
+can override that selection by setting the environmental parameter <strong>$GMT_DATA_SERVER</strong> or
+the default setting for <strong>GMT_DATA_SERVER</strong>.  Alternatively, configure the CMake
+parameter GMT_DATA_SERVER at compile time.</li>
 <li>If your Internet connection is slow or nonexistent (e.g., on a plane) you can also
-set the size of the largest datafile to download via <strong>GMT_DATA_URL_LIMIT</strong> to be 0.</li>
+set the size of the largest datafile to download via <strong>GMT_DATA_SERVER_LIMIT</strong> to be 0.</li>
 </ol>
 <p>The user cache (<strong>DIR_CACHE</strong>) and all its contents can be cleared any time
 via the command <strong>gmt clear cache</strong>, while the server directory with downloaded data
@@ -3492,7 +3499,7 @@ However, PostScript extensions make it possible to request
 transparency, and tools that can render such extensions will produce
 transparency effects. We specify transparency in percent: 0 is opaque
 [Default] while 100 is fully transparent (i.e., the feature will be invisible). As
-noted in section <a class="reference internal" href="#layer-pdf-transparency-the-t-option">Layer PDF transparency: The -t option</a>, we can control transparency on a
+noted in section <a class="reference internal" href="#layer-transparency-the-t-option">Layer transparency: The -t option</a>, we can control transparency on a
 layer-by-layer basis using the <strong>-t</strong> option. However, we may also set
 transparency as an attribute of stroke or fill (including for fonts)
 settings. Here, transparency is requested by appending &#64;<em>transparency</em>
@@ -3874,7 +3881,7 @@ subset of the master before scaling while the other (right) used the entire rang
 <h3>7.20.6. Automatic CPTs<a class="headerlink" href="#automatic-cpts" title="Permalink to this headline">¶</a></h3>
 <p>A few modules (<a class="reference internal" href="grdimage.html"><span class="doc">grdimage</span></a>, <a class="reference internal" href="grdview.html"><span class="doc">grdview</span></a>) that expects a CPT option will
 provide a default CPT if none is provided.  By default, the default CPT is the
-“rainbow” color table, but this is overridden if the user uses the &#64;eart_relief
+“turbo” color table, but this is overridden if the user uses the &#64;eart_relief
 (we select “geo”) or &#64;srtm_relief (we select “srtm”) data sets.  After selection,
 these CPTs are read and scaled to match the range of the grid values.</p>
 </div>
@@ -5241,7 +5248,7 @@ Figure <a class="reference internal" href="GMT_Docs_classic.html#gmt-linear"><sp
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_linear
   gmt plot -R0/100/0/10 -JX3i/1.5i -Bag -BWSne+gsnow -Wthick,blue,- sqrt.txt
   gmt plot -St0.1i -N -Gred -Wfaint sqrt10.txt
-gmt end
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -5336,7 +5343,7 @@ transformation</span></a>)</p>
   gmt plot -R1/100/0/10 -Jx1.5il/0.15i -Bx2g3 -Bya2f1g2 -BWSne+gbisque
       -Wthick,blue,- -h sqrt.txt
   gmt plot -Ss0.1i -N -Gred -W -h sqrt10.txt
-gmt end
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -5364,7 +5371,7 @@ transformation</span></a>)</p>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_pow
   gmt plot -R0/100/0/10 -Jx0.3ip0.5/0.15i -Bxa1p -Bya2f1 -BWSne+givory -Wthick sqrt.txt
   gmt plot -Sc0.075i -Ggreen -W sqrt10.txt
-gmt end
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -6524,7 +6531,7 @@ widths (140<span class="math notranslate nohighlight">\(\cdot\)</span>0.014 and 
   gmt coast -R200/340/-90/90 -Ji0.014i -Bxg30 -Byg15 -A10000 -Dc -Gdarkred -Sazure
   gmt coast -R-20/60/-90/90 -Ji0.014i -Bxg30 -Byg15 -Dc -A10000 -Gdarkgreen -Sazure -X1.96i
   gmt coast -R60/200/-90/90 -Ji0.014i -Bxg30 -Byg15 -Dc -A10000 -Gdarkblue -Sazure -X1.12i
-gmt end
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -8199,8 +8206,8 @@ total file size of the coastlines, rivers, and borders database is only
   gmt <span class="nb">set</span> MAP_GRID_CROSS_SIZE_PRIMARY <span class="m">0</span> MAP_ANNOT_OBLIQUE <span class="m">22</span> MAP_ANNOT_MIN_SPACING <span class="m">0</span>.3i
   gmt coast -Rk-9000/9000/-9000/9000 -JE130.35/-0.2/3.5i -Dc <span class="se">\</span>
     -A500 -Gburlywood -Sazure -Wthinnest -N1/thinnest,- -B20g20 -BWSne
-  <span class="nb">echo</span> <span class="m">130</span>.35 -0.2 <span class="p">|</span> gmt psxy -SJ-4000 -Wthicker
-gmt end
+  <span class="nb">echo</span> <span class="m">130</span>.35 -0.2 <span class="p">|</span> gmt plot -SJ-4000 -Wthicker
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -8227,8 +8234,8 @@ resolution in GMT. The plot is generated by the script:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_K_2
   gmt coast -Rk-2000/2000/-2000/2000 -JE130.35/-0.2/3.5i -Dl -A100 -Gburlywood -Sazure -Wthinnest -N1/thinnest,- -B10g5 -BWSne
-  <span class="nb">echo</span> <span class="m">130</span>.35 -0.2 <span class="p">|</span> gmt psxy -SJ-1000 -Wthicker
-gmt end
+  <span class="nb">echo</span> <span class="m">130</span>.35 -0.2 <span class="p">|</span> gmt plot -SJ-1000 -Wthicker
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -8256,8 +8263,8 @@ borders now exceeds 3.35 Mbytes. The plot is generated by the script:</p>
   <span class="nb">echo</span> <span class="m">133</span> <span class="m">2</span> <span class="p">|</span> gmt plot -Sc1.4i -Gwhite
   gmt basemap -Tm133/2+w1i+t45/10/5+jCM --FONT_TITLE<span class="o">=</span>12p --MAP_TICK_LENGTH_PRIMARY<span class="o">=</span><span class="m">0</span>.05i <span class="se">\</span>
     --FONT_ANNOT_SECONDARY<span class="o">=</span>8p
-  <span class="nb">echo</span> <span class="m">130</span>.35 -0.2 <span class="p">|</span> gmt psxy -SJ-200 -Wthicker
-gmt end
+  <span class="nb">echo</span> <span class="m">130</span>.35 -0.2 <span class="p">|</span> gmt plot -SJ-200 -Wthicker
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -8282,8 +8289,8 @@ generated by these commands:</p>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_K_4
   gmt coast -Rk-100/100/-100/100 -JE130.35/-0.2/3.5i -Dh -A1 <span class="se">\</span>
     -Gburlywood -Sazure -Wthinnest -N1/thinnest,- -B30mg10m -BWSne
-  <span class="nb">echo</span> <span class="m">130</span>.35 -0.2 <span class="p">|</span> gmt psxy -SJ-40 -Wthicker
-gmt end
+  <span class="nb">echo</span> <span class="m">130</span>.35 -0.2 <span class="p">|</span> gmt plot -SJ-40 -Wthicker
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -8394,7 +8401,7 @@ GMT on Windows.</p>
 <div class="section" id="built-in-color-palette-tables-cpt">
 <h2>22.1. Built-in color palette tables (CPT)<a class="headerlink" href="#built-in-color-palette-tables-cpt" title="Permalink to this headline">¶</a></h2>
 <p>Figures <a class="reference internal" href="GMT_Docs_classic.html#cpt-files-a"><span class="std std-ref">CPTs a</span></a>, <a class="reference internal" href="GMT_Docs_classic.html#cpt-files-b"><span class="std std-ref">b</span></a> and
-<a class="reference internal" href="GMT_Docs_classic.html#cpt-files-c"><span class="std std-ref">b</span></a> show the 68 built-in
+<a class="reference internal" href="GMT_Docs_classic.html#cpt-files-c"><span class="std std-ref">b</span></a> show the built-in
 color palettes, stored in so-called CPTs <a class="footnote-reference" href="#id85" id="id46">[35]</a>. The programs
 <a class="reference internal" href="makecpt.html"><span class="doc">makecpt</span></a> and
 <a class="reference internal" href="grd2cpt.html"><span class="doc">grd2cpt</span></a> are used to access these
@@ -8406,7 +8413,7 @@ bar are built by using <a class="reference internal" href="makecpt.html"><span c
 <strong>-T</strong>-1/1/0.25, thus splitting the color scale into 8 discrete colors.</p>
 <div class="figure align-center" id="id194">
 <span id="cpt-files-a"></span><a class="reference internal image-reference" href="_images/GMT_App_M_1a.png"><img alt="_images/GMT_App_M_1a.png" src="_images/GMT_App_M_1a.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-text">The first 22 of the standard CPTs supported by GMT.</span></p>
+<p class="caption"><span class="caption-text">The first 24 of the standard CPTs supported by GMT.</span></p>
 </div>
 <div class="figure align-center" id="id195">
 <span id="cpt-files-b"></span><a class="reference internal image-reference" href="_images/GMT_App_M_1b.png"><img alt="_images/GMT_App_M_1b.png" src="_images/GMT_App_M_1b.png" style="width: 500px;" /></a>
@@ -9164,7 +9171,7 @@ lines:</p>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_O_1
   gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500
   gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+f8p -Gd1.5i -S10 -T+lLH
-gmt end
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -9186,7 +9193,7 @@ contour line should have:</p>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_O_2
   gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500
   gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+f8p -Gn1/1i -S10 -T+lLH
-gmt end
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -9215,7 +9222,7 @@ distance will host the label.</p>
 gmt begin GMT_App_O_3
   gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500
   gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+f8p -Gffix.txt/0.1i -S10 -T+lLH
-gmt end
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -9238,7 +9245,7 @@ between the contour lines and a well-placed straight line segment. The
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_O_4
   gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500
   gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+f8p -GLZ-/Z+ -S10 -T+lLH
-gmt end
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -9264,7 +9271,7 @@ sense:</p>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_O_5
   gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500
   gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+f8p -GX@App_O_cross.txt -S10 -T+lLH
-gmt end
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -9297,7 +9304,7 @@ are placed normal to the line:</p>
   gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500
   gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+f8p -Gl50/10S/160/10S -S10 -T+l
   gmt plot -SqD1000k:+g+LD+an+p -Wthick @App_O_transect.txt
-gmt end
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -9322,7 +9329,7 @@ inverse-video the label:</p>
   gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500
   gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+u<span class="s2">&quot; m&quot;</span>+f8p -Gl50/10S/160/10S -S10 -T+l
   gmt plot -SqD15d:+gblack+fwhite+Ld+o+u@. -Wthick @App_O_transect.txt
-gmt end
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -9346,7 +9353,7 @@ labels. This is done with <strong>awk</strong>.</p>
   gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500
   gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+u<span class="s2">&quot; m&quot;</span>+f8p -Gl50/10S/160/10S -S10 -T+l
 gmt plot -Sqffix2.txt:+g+an+p+Lf+u<span class="s2">&quot; m&quot;</span>+f8p -Wthick @App_O_transect.txt
-gmt end
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -9391,7 +9398,7 @@ well as a few quoted lines. The final script is</p>
 <span class="s">  2.33E    48.87N  CT      Paris</span>
 <span class="s">  17W      28N     CT      Canaries</span>
 <span class="s">  EOF</span>
-gmt end
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -10219,7 +10226,7 @@ colors suitable for categorical plots.</td></tr>
 </ul>
 </li>
 <li><a class="reference internal" href="#nan-record-treatment-the-s-option">7.4.19. NaN-record treatment: The <strong>-s</strong> option</a></li>
-<li><a class="reference internal" href="#layer-pdf-transparency-the-t-option">7.4.20. Layer PDF transparency: The <strong>-t</strong> option</a></li>
+<li><a class="reference internal" href="#layer-transparency-the-t-option">7.4.20. Layer transparency: The <strong>-t</strong> option</a></li>
 <li><a class="reference internal" href="#latitude-longitude-or-longitude-latitude-the-option">7.4.21. Latitude/Longitude or Longitude/Latitude?: The <strong>-:</strong> option</a></li>
 </ul>
 </li>
@@ -10534,7 +10541,7 @@ colors suitable for categorical plots.</td></tr>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="cookbook.html" >The GMT Cookbook (Modern Mode)</a> &#187;</li>
 <li class="right">
@@ -10553,7 +10560,7 @@ colors suitable for categorical plots.</td></tr>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Jul 28, 2019.
+  Last updated on Sep 10, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

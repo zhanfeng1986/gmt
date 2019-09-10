@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>pscoupe &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
+    <title>pscoupe &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +41,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../SUP_SEIS_classic.html" accesskey="U">SEIS</a> &#187;</li>
 <li class="right">
@@ -66,11 +66,12 @@
             
   <div class="section" id="pscoupe">
 <span id="index-0"></span><h1>pscoupe<a class="headerlink" href="#pscoupe" title="Permalink to this headline">¶</a></h1>
-<p>pscoupe - Plot cross-sections of focal mechanisms</p>
+<p>Plot cross-sections of focal mechanisms</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<p><strong>pscoupe</strong> [ <em>files</em> ] <a class="reference internal" href="#j"><span> <strong>-J</strong></span></a></strong><em>parameters</em>
+<p><strong>gmt pscoupe</strong> [ <em>files</em> ] <a class="reference internal" href="#j"><span> <strong>-J</strong></span></a></strong><em>parameters</em>
 <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em> <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong><em>parameters</em>
+<a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>&lt;format&gt;&lt;scale&gt;</em>[<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]
 [ <a class="reference internal" href="#b"><span> <strong>-B</strong></span></a></strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> ]
 [ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong><em>color</em> ]
 [ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong><em>mode</em>[<em>args</em>] ]
@@ -80,8 +81,7 @@
 [ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong> ] [ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong> ]
 [ <a class="reference internal" href="#o"><span> <strong>-O</strong></span></a></strong> ]
 [ <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong> ]
-[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>&lt;format&gt;&lt;scale&gt;</em>[/<em>fontsize</em>[/<em>offset</em>]][<strong>+u</strong>]]
-[ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>n</em> ]
+[ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>nplane</em>[/<em>pen</em>] ]
 [ <a class="reference internal" href="#u"><span> <strong>-U</strong></span></a></strong>[<em>stamp</em>] ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
 [ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong><em>pen</em> ]
@@ -191,82 +191,118 @@ is made. The other parameters are the same as for <strong>-Aa</strong> option.</
 </dl>
 </dd>
 </dl>
-<dl class="docutils" id="s">
-<dt><strong>-S</strong></dt>
-<dd><p class="first">selects the meaning of the columns in the data file and the figure to be plotted.</p>
-<dl class="last docutils">
-<dt><strong>-Sa</strong><em>scale[/fontsize[/offset</em>[<strong>+u</strong>]]]</dt>
-<dd><p class="first">Focal mechanisms in Aki and Richards convention. The <em>scale</em> adjusts the
+<p id="s"><strong>-S</strong><em>&lt;format&gt;&lt;scale&gt;</em>[<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</p>
+<blockquote>
+<div>Selects the meaning of the columns in the data file. In order to use
+the same file to plot cross-sections, depth is in third column.
+Nevertheless, it is possible to use “old style” <strong>psvelomeca</strong> input
+files without depth in third column using the <strong>-Fo</strong> option.</div></blockquote>
+<p><strong>-Sa</strong><em>scale</em>[<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</p>
+<blockquote>
+<div><p>Focal mechanisms in Aki and Richards convention. <em>scale</em> adjusts the
 scaling of the radius of the “beach ball”, which will be proportional to
-the magnitude. The <em>scale</em> is the size for magnitude = 5 in
-<strong>PROJ_LENGTH_UNIT</strong> (unless <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> is appended
-to indicate that the size information is in units of cm, inches, meters,
-or points, respectively). Use the <strong>-T</strong> option to render the beach ball
-transparent by drawing only the nodal planes and the circumference. The
-color or shade of the compressive quadrants can be specified with the
-<strong>-G</strong> option. The color or shade of the extensive quadrants can be
-specified with the <strong>-E</strong> option. Parameters are expected to be in the
-following columns:</p>
-<blockquote class="last">
-<div><p><strong>1</strong>,<strong>2</strong>:
-longitude, latitude of event (<strong>-:</strong> option interchanges order)</p>
-<p><strong>3</strong>:
-depth of event in kilometers</p>
-<p><strong>4</strong>,<strong>5</strong>,<strong>6</strong>:
-strike, dip and rake</p>
-<p><strong>7</strong>:
-magnitude</p>
-<p><strong>8</strong>,<strong>9</strong>:
-not used; can be 0 0; allows use of the <a class="reference internal" href="meca.html"><span class="doc">meca</span></a> file format</p>
-<p><strong>10</strong>:
-text string to appear above the beach ball [Default] or under (add <strong>+u</strong>).</p>
-</div></blockquote>
-</dd>
-<dt><strong>-Sc</strong><em>scale[/fontsize[/offset</em>[<strong>+u</strong>]]]</dt>
-<dd><p class="first">Focal mechanisms in Harvard CMT convention. <em>scale</em> adjusts the scaling
-of the radius of the “beach ball”, which will be proportional to the
-magnitude. The <em>scale</em> is the size for magnitude = 5 (that is M0 = 4E+23
-dynes-cm.) in <strong>PROJ_LENGTH_UNIT</strong> (unless <strong>c</strong>, <strong>i</strong>, or
-<strong>p</strong> is appended to indicate that the size information is in units of
-cm, inches, meters, or points, respectively). Use the <strong>-T</strong> option to
+the magnitude. <em>scale</em> is the size for magnitude = 5. Use the <strong>-T</strong> option to
 render the beach ball transparent by drawing only the nodal planes and
 the circumference. The color or shade of the compressive quadrants can
 be specified with the <strong>-G</strong> option. The color or shade of the extensive
-quadrants can be specified with the <strong>-E</strong> option. Parameters are
+quadrants can be specified with the <strong>-E</strong> option. Append <strong>+u</strong> to have
+the text appear below the beach ball (default is above). Parameters are
 expected to be in the following columns:</p>
-<blockquote class="last">
-<div><p><strong>1</strong>,<strong>2</strong>:
+<p><strong>1</strong>,<strong>2</strong>:
 longitude, latitude of event (<strong>-:</strong> option interchanges order)</p>
 <p><strong>3</strong>:
 depth of event in kilometers</p>
 <p><strong>4</strong>,<strong>5</strong>,<strong>6</strong>:
-strike, dip, and slip of plane 1</p>
-<p><strong>7</strong>,<strong>8</strong>,<strong>9</strong>:
-strike, dip, and slip of plane 2</p>
-<p><strong>10</strong>,<strong>11</strong>:
-mantissa and exponent of moment in dyne-cm (if magnitude is uses
-instead of scalar moment, magnitude is in column 10 and 0 must be in column 11)</p>
-<p><strong>12</strong>,<strong>13</strong>:
-not used; can be 0 0; allows use of the <a class="reference internal" href="meca.html"><span class="doc">meca</span></a> file format</p>
-<p><strong>14</strong>:
-text string to appear above the beach ball (default) or under (add <strong>u</strong>).</p>
+strike, dip and rake in degrees</p>
+<p><strong>7</strong>:
+magnitude</p>
+<p><strong>8</strong>,<strong>9</strong>:
+longitude, latitude at which to place beach ball. Entries in these
+columns are necessary with the <strong>-C</strong> option. Using 0,0 in columns 8
+and 9 will plot the beach ball at the longitude, latitude given in
+columns 1 and 2. The <strong>-:</strong> option will interchange the order of
+columns (1,2) and (8,9).</p>
+<p><strong>10</strong>:
+Text string to appear above or below the beach ball (optional).</p>
 </div></blockquote>
-</dd>
-<dt><strong>-Sp</strong><em>scale[/fontsize[/offset</em>[<strong>+u</strong>]]]</dt>
-<dd><p class="first">Focal mechanisms given with partial data on both planes. <em>scale</em> adjusts
-the scaling of the radius of the “beach ball”, which will be
-proportional to the magnitude. The <em>scale</em> is the size for magnitude = 5
-in <strong>PROJ_LENGTH_UNIT</strong> (unless <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> is
-appended to indicate that the size information is in units of cm,
-inches, meters, or points, respectively). The color or shade of the
+<p><strong>-Sc</strong><em>scale</em>[<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</p>
+<blockquote>
+<div><p>Focal mechanisms in Global CMT convention. <em>scale</em> adjusts the scaling
+of the radius of the “beach ball”, which will be proportional to the
+magnitude. <em>scale</em> is the size for magnitude = 5 (that is M0 = 4.0E23 dynes-cm).
+Use the <strong>-T</strong> option to render the beach ball transparent by drawing
+only the nodal planes and the circumference. The color or shade of the
 compressive quadrants can be specified with the <strong>-G</strong> option. The color
 or shade of the extensive quadrants can be specified with the <strong>-E</strong>
-option. Parameters are expected to be in the following columns:</p>
-<blockquote class="last">
-<div><p><strong>1</strong>,<strong>2</strong>:
+option. Append <strong>+u</strong> to have the text appear below the beach ball
+(default is above). Parameters are expected to be in the following
+columns:</p>
+<p><strong>1</strong>,<strong>2</strong>:
 longitude, latitude of event (<strong>-:</strong> option interchanges order)</p>
 <p><strong>3</strong>:
-depth</p>
+depth of event in kilometers</p>
+<p><strong>4</strong>,<strong>5</strong>,<strong>6</strong>:
+strike, dip, and rake of plane 1</p>
+<p><strong>7</strong>,<strong>8</strong>,<strong>9</strong>:
+strike, dip, and rake of plane 2</p>
+<p><strong>10</strong>,<strong>11</strong>:
+mantissa and exponent of moment in dyne-cm</p>
+<p><strong>12</strong>,<strong>13</strong>:
+longitude, latitude at which to place beach ball. Entries in these
+columns are necessary with the <strong>-C</strong> option. Using (0,0) in columns
+12 and 13 will plot the beach ball at the longitude, latitude given
+in columns 1 and 2. The <strong>-:</strong> option will interchange the order of
+columns (1,2) and (12,13).</p>
+<p><strong>14</strong>:
+Text string to appear above or below the beach ball (optional).</p>
+</div></blockquote>
+<p><strong>-Sm|d|z</strong><em>scale</em>[<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</p>
+<blockquote>
+<div><p>Seismic moment tensor (Global CMT, with zero trace). <em>scale</em> adjusts
+the scaling of the radius of the “beach ball”, which will be
+proportional to the magnitude. <em>scale</em> is the size for magnitude = 5
+(that is scalar seismic moment = 4.0E23 dynes-cm).
+<strong>-T</strong><em>0</em> option overlays best double couple transparently.
+Use <strong>-Sm</strong> to plot the Global CMT
+seismic moment tensor with zero trace. Use <strong>-Sd</strong> to plot only the
+double couple part of moment tensor. Use <strong>-Sz</strong> to plot the anisotropic
+part of moment tensor (zero trace). The color or shade of the
+compressive quadrants can be specified with the <strong>-G</strong> option. The color
+or shade of the extensive quadrants can be specified with the <strong>-E</strong>
+option. Append <strong>+u</strong> to have the text appear below the beach ball
+(default is above). Parameters are expected to be in the following
+columns:</p>
+<p><strong>1</strong>,<strong>2</strong>:
+longitude, latitude of event (<strong>-:</strong> option interchanges order)</p>
+<p><strong>3</strong>:
+depth of event in kilometers</p>
+<p><strong>4</strong>,<strong>5</strong>,<strong>6</strong>,<strong>7</strong>,<strong>8</strong>,<strong>9</strong>:
+mrr, mtt, mff, mrt, mrf, mtf in 10*exponent dynes-cm</p>
+<p><strong>10</strong>:
+exponent</p>
+<p><strong>11</strong>,<strong>12</strong>:
+longitude, latitude at which to place beach ball. Entries in these
+columns are necessary with the <strong>-C</strong> option. Using (0,0) in columns
+11 and 12 will plot the beach ball at the longitude, latitude given
+in columns 1 and 2. The <strong>-:</strong> option will interchange the order of
+columns (1,2) and (11,12).</p>
+<p><strong>13</strong>:
+Text string to appear above or below the beach ball (optional).</p>
+</div></blockquote>
+<p><strong>-Sp</strong><em>scale</em>[<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</p>
+<blockquote>
+<div><p>Focal mechanisms given with partial data on both planes. <em>scale</em> adjusts
+the scaling of the radius of the “beach ball”, which will be
+proportional to the magnitude. <em>scale</em> is the size for magnitude = 5
+The color or shade of the compressive quadrants can be specified with the <strong>-G</strong>
+option. The color or shade of the extensive quadrants can be specified
+with the <strong>-E</strong> option. Append <strong>+u</strong> to have the text appear below the
+beach ball (default is above). Parameters are expected to be in the
+following columns:</p>
+<p><strong>1</strong>,<strong>2</strong>:
+longitude, latitude of event (<strong>-:</strong> option interchanges order)</p>
+<p><strong>3</strong>:
+depth of event in kilometers</p>
 <p><strong>4</strong>,<strong>5</strong>:
 strike, dip of plane 1</p>
 <p><strong>6</strong>:
@@ -276,81 +312,45 @@ must be -1/+1 for a normal/inverse fault</p>
 <p><strong>8</strong>:
 magnitude</p>
 <p><strong>9</strong>,<strong>10</strong>:
-not used; can be 0 0; allows use of the <a class="reference internal" href="meca.html"><span class="doc">meca</span></a> file format</p>
+longitude, latitude at which to place beach ball. Entries in these
+columns are necessary with the <strong>-C</strong> option. Using (0,0) in columns
+9 and 10 will plot the beach ball at the longitude, latitude given
+in columns 1 and 2. The <strong>-:</strong> option will interchange the order of
+columns (1,2) and (9,10).</p>
 <p><strong>11</strong>:
-text string to appear above the beach ball (default) or under (add <strong>+u</strong>).</p>
+Text string to appear above or below the beach ball (optional).</p>
 </div></blockquote>
-</dd>
-<dt><strong>-Sm|d|z</strong><em>scale[/fontsize[/offset</em>[<strong>+u</strong>]]]</dt>
-<dd>Seismic moment tensor (Harvard CMT, with zero trace). <em>scale</em> adjusts
-the scaling of the radius of the “beach ball”, which will be
-proportional to the magnitude. The <em>scale</em> is the size for magnitude = 5
-(that is seismic scalar moment = 4E+23 dynes-cm) in
-<strong>PROJ_LENGTH_UNIT</strong> (unless <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> is appended
-to indicate that the size information is in units of cm, inches, meters,
-or points, respectively). (<strong>-T</strong><em>0</em> option overlays best double
-couple transparently.)</dd>
-<dt><strong>-Sd</strong><em>scale[/fontsize[/offset</em>[<strong>+u</strong>]]]</dt>
-<dd>to plot the only double couple part of moment tensor.</dd>
-<dt><strong>-Sz</strong><em>scale[/fontsize[/offset</em>[<strong>+u</strong>]]]</dt>
-<dd><p class="first">to plot anisotropic part
-of moment tensor (zero trace). The color or shade of the compressive
-quadrants can be specified with the <strong>-G</strong> option. The color or shade of
-the extensive quadrants can be specified with the <strong>-E</strong> option.
-Parameters are expected to be in the following columns:</p>
-<blockquote class="last">
-<div><p><strong>1</strong>,<strong>2</strong>:
-longitude, latitude of event (<strong>-:</strong> option interchanges order)</p>
-<p><strong>3</strong>:
-depth of event in kilometers</p>
-<p><strong>4</strong>,<strong>5</strong>,<strong>6</strong>,<strong>7</strong>,<strong>8</strong>,<strong>9</strong>:
-mrr, mtt, mff, mrt, mrf, mtf in 10*exponent dynes-cm</p>
-<p><strong>10</strong>:
-exponent</p>
-<p><strong>11</strong>,<strong>12</strong>:
-Not used; can be 0 0; allows use of the <a class="reference internal" href="meca.html"><span class="doc">meca</span></a> file format</p>
-<p><strong>13</strong>:
-Text string to appear above the beach ball (default) or under (add <strong>+u</strong>).</p>
-</div></blockquote>
-</dd>
-<dt><strong>-Sx</strong><em>scale[/fontsize[/offset</em>[<strong>+u</strong>]]]</dt>
-<dd>Principal axis. <em>scale</em> adjusts the scaling of the radius of the “beach
-ball”, which will be proportional to the magnitude. The <em>scale</em> is the
-size for magnitude = 5 (that is seismic scalar moment = 4*10e+23
-dynes-cm) in <strong>PROJ_LENGTH_UNIT</strong> (unless <strong>c</strong>, <strong>i</strong>, or
-<strong>p</strong> is appended to indicate that the size information is in units of
-cm, inches, meters, or points, respectively). (<strong>-T</strong>0 option overlays
-best double couple transparently.)</dd>
-<dt><strong>-Sy</strong><em>scale[/fontsize[/offset</em>[<strong>+u</strong>]]]</dt>
-<dd>to plot the only double couple part of moment tensor.</dd>
-<dt><strong>-St</strong><em>scale[/fontsize[/offset</em>[<strong>+u</strong>]]]</dt>
-<dd><p class="first">to plot anisotropic part
-of moment tensor (zero trace). The color or shade of the compressive
-quadrants can be specified with the <strong>-G</strong> option. The color or shade of
-the extensive quadrants can be specified with the <strong>-E</strong> option.
-Parameters are expected to be in the following columns:</p>
-<blockquote class="last">
-<div><p><strong>1</strong>,<strong>2</strong>:
+<p><strong>-Sx|y|t</strong><em>scale</em>[<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</p>
+<blockquote>
+<div><p>Principal axis. <em>scale</em> adjusts the scaling of the radius of the “beach
+ball”, which will be proportional to the magnitude. Scale is the size
+for magnitude = 5 (that is seismic scalar moment = 4*10e+23 dynes-cm)
+in inch (unless <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> is appended). (<strong>-T</strong><em>0</em>
+option overlays best double couple transparently.) Use <strong>-Sx</strong> to plot
+standard Global CMT. Use <strong>-Sy</strong> to plot only the double couple part of
+moment tensor. Use <strong>-St</strong> to plot zero trace moment tensor. The color
+or shade of the compressive quadrants can be specified with the <strong>-G</strong>
+option. The color or shade of the extensive quadrants can be specified
+with the <strong>-E</strong> option. Append <strong>+u</strong> to have the text appear below the
+beach ball (default is above). Parameters are expected to be in the
+following columns:</p>
+<p><strong>1</strong>,<strong>2</strong>:
 longitude, latitude of event (<strong>-:</strong> option interchanges order)</p>
 <p><strong>3</strong>:
 depth of event in kilometers</p>
 <p><strong>4</strong>,<strong>5</strong>,<strong>6</strong>,<strong>7</strong>,<strong>8</strong>,<strong>9</strong>,<strong>10</strong>,<strong>11</strong>,<strong>12</strong>:
-value (in 10*exponent dynes-cm), azimuth, plunge of the T, N, and P axes.</p>
+value (in 10*exponent dynes-cm), azimuth, plunge of T, N, P axis.</p>
 <p><strong>13</strong>:
 exponent</p>
 <p><strong>14</strong>,<strong>15</strong>:
 longitude, latitude at which to place beach ball. Entries in these
-columns are necessary with the <strong>-C</strong> option. Using 0,0 in columns 9
-and 10 will plot the beach ball at the longitude, latitude given in
-columns 1 and 2. The <strong>-:</strong> option will interchange the order of
-columns (1,2) and (9,10).</p>
+columns are necessary with the <strong>-C</strong> option. Using (0,0) in columns
+14 and 15 will plot the beach ball at the longitude, latitude given
+in columns 1 and 2. The <strong>-:</strong> option will interchange the order of
+columns (1,2) and (14,15).</p>
 <p><strong>16</strong>:
-Text string to appear above the beach ball (optional).</p>
+Text string to appear above or below the beach ball (optional).</p>
 </div></blockquote>
-</dd>
-</dl>
-</dd>
-</dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
@@ -365,7 +365,7 @@ Text string to appear above the beach ball (optional).</p>
 <dl class="docutils" id="f">
 <dt><strong>-F</strong><em>mode</em>[<em>args</em>]</dt>
 <dd>Sets one or more attributes; repeatable. The various combinations are</dd>
-<dt><strong>-Fs</strong><em>symbol[size[/fontsize[/offset</em>[<strong>+u</strong>]]]</dt>
+<dt><strong>-Fs</strong><em>symbol[size][**+f*</em><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</dt>
 <dd><p class="first">selects a symbol instead of mechanism. Choose from the following:
 (<strong>c</strong>) circle, (<strong>d</strong>) diamond, (<strong>i</strong>) itriangle, (<strong>s</strong>) square,
 (<strong>t</strong>) triangle, (<strong>x</strong>) cross. <em>size</em> is the symbol size in
@@ -385,25 +385,25 @@ be in the following columns:</p>
 </dl>
 </div></blockquote>
 </dd>
-<dt><strong>-Fa</strong>[<em>size</em>][/<em>P_symbol</em>[/<em>T_symbol</em>]]</dt>
+<dt><strong>-Fa</strong>[<em>size</em>[/<em>Psymbol</em>[<em>Tsymbol</em>]]]</dt>
 <dd>Computes and plots P and T axes with symbols. Optionally specify
 <em>size</em> and (separate) P and T axis symbols from the following:
 (<strong>c</strong>) circle, (<strong>d</strong>) diamond, (<strong>h</strong>) hexagon, (<strong>i</strong>) inverse
 triangle, (<strong>p</strong>) point, (<strong>s</strong>) square, (<strong>t</strong>) triangle, (<strong>x</strong>)
 cross. [Default: 6<strong>p</strong>/<strong>cc</strong>]</dd>
-<dt><strong>-Fe</strong><em>color</em></dt>
+<dt><strong>-Fe</strong><em>fill</em></dt>
 <dd>Sets the color or fill pattern for the T axis symbol. [Default as set by <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong>]</dd>
-<dt><strong>-Fg</strong><em>color</em></dt>
+<dt><strong>-Fg</strong><em>fill</em></dt>
 <dd>Sets the color or fill pattern for the P axis symbol. [Default as set by <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong>]</dd>
 <dt><strong>-Fp</strong>[<em>pen</em>]</dt>
 <dd>Draws the P axis outline using current pen (see <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong>), or sets pen attributes.</dd>
-<dt><strong>-Fr</strong>[<em>color</em>]</dt>
+<dt><strong>-Fr</strong>[<em>fill</em>]</dt>
 <dd>Draw a box behind the label (if any). [Default fill is white]</dd>
 <dt><strong>-Ft</strong>[<em>pen</em>]</dt>
 <dd>Draws the T axis outline using current pen (see <strong>-W</strong>), or sets pen attributes.</dd>
 </dl>
 <dl class="docutils" id="g">
-<dt><strong>-G</strong><em>color</em></dt>
+<dt><strong>-G</strong><em>fill</em></dt>
 <dd>Sets color or fill pattern for compressional quadrants [Default is black].</dd>
 </dl>
 <dl class="docutils" id="l">
@@ -424,13 +424,15 @@ sets pen attributes.</dd>
 <dd>Suppress the production of files with cross-section and mechanism information.</dd>
 </dl>
 <dl class="docutils" id="t">
-<dt><strong>-T</strong>[<em>num_of_planes</em>]</dt>
-<dd>Plots the nodal planes and outlines the bubble which is transparent.
-If <em>num_of_planes</em> is
-<em>0</em>: both nodal planes are plotted;
-<em>1</em>: only the first nodal plane is plotted;
-<em>2</em>: only the second nodal plane is plotted
-[Default: 0].</dd>
+<dt><strong>-T</strong>[<em>nplane</em>][<strong>/</strong><em>pen</em>]</dt>
+<dd><p class="first">Plots the nodal planes and outlines the bubble which is transparent.
+If <em>nplane</em> is</p>
+<p><em>0</em>: both nodal planes are plotted;</p>
+<p><em>1</em>: only the first nodal plane is plotted;</p>
+<p><em>2</em>: only the second nodal plane is plotted.</p>
+<p class="last">Append <strong>/</strong><em>pen</em> to set the pen attributes for this feature.
+Default pen is as set by <strong>-W</strong>. [Default: 0].</p>
+</dd>
 </dl>
 <dl class="docutils" id="u">
 <dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>] <a class="reference internal" href="../../gmt.html#u-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -477,7 +479,7 @@ determined by the z-value in the third column.</dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-t</strong>[<em>transp</em>] <a class="reference internal" href="../../gmt.html#t-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set PDF transparency level in percent.</dd>
+<dd>Set transparency level in percent.</dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="../../gmt.html#colon-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -589,7 +591,7 @@ Institut de Physique du Globe de Paris, Departement de Sismologie, Paris, France
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../SUP_SEIS_classic.html" >SEIS</a> &#187;</li>
 <li class="right">
@@ -608,7 +610,7 @@ Institut de Physique du Globe de Paris, Departement de Sismologie, Paris, France
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Jul 28, 2019.
+  Last updated on Sep 10, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

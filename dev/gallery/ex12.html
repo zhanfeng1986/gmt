@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>(12) Optimal triangulation of data &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
+    <title>(12) Optimal triangulation of data &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +41,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" accesskey="U">The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -81,42 +81,35 @@ image the data. We use the CPT <code class="docutils literal notranslate"><span 
 <span class="c1">#		GMT EXAMPLE 12</span>
 <span class="c1">#</span>
 <span class="c1"># Purpose:	Illustrates Delaunay triangulation of points, and contouring</span>
-<span class="c1"># GMT modules:	makecpt, gmtinfo, pscontour, pstext, psxy, triangulate</span>
-<span class="c1"># Unix progs:	echo, rm</span>
+<span class="c1"># GMT modules:	makecpt, gmtinfo, contour, text, plot, triangulate, subplot</span>
+<span class="c1"># Unix progs:	rm</span>
 <span class="c1">#</span>
-<span class="c1"># First draw network and label the nodes</span>
+gmt begin ex12
+  <span class="c1"># Contour the data and draw triangles using dashed pen; use &quot;gmt gmtinfo&quot; and &quot;gmt makecpt&quot; to make a</span>
+  <span class="c1"># color palette (.cpt) file</span>
+  <span class="nv">T</span><span class="o">=</span><span class="sb">`</span>gmt info -T25+c2 @Table_5_11.txt<span class="sb">`</span>
+  gmt makecpt -Cjet <span class="nv">$T</span>
+  gmt subplot begin 2x2 -M0.05i -Fs3i/0 -SCb -SRl -R0/6.5/-0.2/6.5 -Jx3i -BWSne -T<span class="s2">&quot;Delaunay Triangulation&quot;</span>
+  <span class="c1"># First draw network and label the nodes</span>
+  gmt triangulate @Table_5_11.txt -M &gt; net.xy
+  gmt plot net.xy -Wthinner -c0,0
+  gmt plot @Table_5_11.txt -Sc0.12i -Gwhite -Wthinnest
+  gmt text @Table_5_11.txt -F+f6p+r
+  <span class="c1"># Then draw network and print the node values</span>
+  gmt plot net.xy -Wthinner -c0,1
+  gmt plot @Table_5_11.txt -Sc0.03i -Gblack
+  gmt text @Table_5_11.txt -F+f6p+jLM -Gwhite -W -C0.01i -D0.08i/0i -N
+  gmt contour @Table_5_11.txt -Wthin -C -Lthinnest,- -Gd1i -c1,0
+  <span class="c1"># Finally color the topography</span>
+  gmt contour @Table_5_11.txt -C -I -c1,1
+  gmt subplot end
+gmt end
 <span class="c1">#</span>
-<span class="nv">ps</span><span class="o">=</span>example_12.ps
-gmt triangulate @Table_5_11.txt -M &gt; net.xy
-gmt psxy -R0/6.5/-0.2/6.5 -JX3.06i/3.15i -B2f1 -BWSNe net.xy -Wthinner -P -K -X0.9i -Y4.65i &gt; <span class="nv">$ps</span>
-gmt psxy @Table_5_11.txt -R -J -O -K -Sc0.12i -Gwhite -Wthinnest &gt;&gt; <span class="nv">$ps</span>
-gmt pstext @Table_5_11.txt -R -J -F+f6p+r -O -K &gt;&gt; <span class="nv">$ps</span>
-<span class="c1">#</span>
-<span class="c1"># Then draw network and print the node values</span>
-<span class="c1">#</span>
-gmt psxy -R -J -B2f1 -BeSNw net.xy -Wthinner -O -K -X3.25i &gt;&gt; <span class="nv">$ps</span>
-gmt psxy -R -J -O -K @Table_5_11.txt -Sc0.03i -Gblack &gt;&gt; <span class="nv">$ps</span>
-gmt pstext @Table_5_11.txt -R -J -F+f6p+jLM -O -K -Gwhite -W -C0.01i -D0.08i/0i -N &gt;&gt; <span class="nv">$ps</span>
-<span class="c1">#</span>
-<span class="c1"># Then contour the data and draw triangles using dashed pen; use &quot;gmt gmtinfo&quot; and &quot;gmt makecpt&quot; to make a</span>
-<span class="c1"># color palette (.cpt) file</span>
-<span class="c1">#</span>
-<span class="nv">T</span><span class="o">=</span><span class="sb">`</span>gmt info -T25+c2 @Table_5_11.txt<span class="sb">`</span>
-gmt makecpt -Cjet <span class="nv">$T</span> &gt; topo.cpt
-gmt pscontour -R -J @Table_5_11.txt -B2f1 -BWSne -Wthin -Ctopo.cpt -Lthinnest,- -Gd1i -X-3.25i -Y-3.65i <span class="se">\</span>
-	-O -K &gt;&gt; <span class="nv">$ps</span>
-<span class="c1">#</span>
-<span class="c1"># Finally color the topography</span>
-<span class="c1">#</span>
-gmt pscontour -R -J @Table_5_11.txt -B2f1 -BeSnw -Ctopo.cpt -I -X3.25i -O -K &gt;&gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="s2">&quot;3.16 8 Delaunay Triangulation&quot;</span> <span class="p">|</span> <span class="se">\</span>
-	gmt pstext -R0/8/0/11 -Jx1i -F+f30p,Helvetica-Bold+jCB -O -X-3.25i &gt;&gt; <span class="nv">$ps</span>
-<span class="c1">#</span>
-rm -f net.xy topo.cpt
+rm -f net.xy
 </pre></div>
 </div>
 <div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/example_12.png"><img alt="../_images/example_12.png" src="../_images/example_12.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/ex12.png"><img alt="../_images/ex12.png" src="../_images/ex12.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Optimal triangulation of data.</span></p>
 </div>
 </div>
@@ -158,7 +151,7 @@ rm -f net.xy topo.cpt
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" >The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -177,7 +170,7 @@ rm -f net.xy topo.cpt
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Jul 28, 2019.
+  Last updated on Sep 10, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

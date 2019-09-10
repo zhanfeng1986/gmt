@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>(28) Mixing UTM and geographic data sets &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
+    <title>(28) Mixing UTM and geographic data sets &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +41,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" accesskey="U">The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -90,31 +90,26 @@ label Kilauea crater to complete the figure.</p>
 <span class="c1">#		GMT EXAMPLE 28</span>
 <span class="c1">#</span>
 <span class="c1"># Purpose:	Illustrates how to mix UTM data and UTM gmt projection</span>
-<span class="c1"># GMT modules:	makecpt, grdimage, grdmath, pscoast, pstext,</span>
-<span class="c1"># Unix progs:	rm, echo</span>
+<span class="c1"># GMT modules:	makecpt, grdimage, coast, text, basemap</span>
 <span class="c1">#</span>
-<span class="nv">ps</span><span class="o">=</span>example_28.ps
-
-<span class="c1"># Set up a color table</span>
-gmt makecpt -Ccopper -T0/1500 &gt; Kilauea.cpt
-<span class="c1"># Lay down the UTM topo grid using a 1:160,000 scale</span>
-gmt grdimage @Kilauea.utm.nc -I+d -CKilauea.cpt -Jx1:160000 -P -K <span class="se">\</span>
-	--FONT_ANNOT_PRIMARY<span class="o">=</span>9p &gt; <span class="nv">$ps</span>
-<span class="c1"># Overlay geographic data and coregister by using correct region and gmt projection with the same scale</span>
-gmt pscoast -R@Kilauea.utm.nc -Ju5Q/1:160000 -O -K -Df+ -Slightblue -W0.5p -B5mg5m -BNE <span class="se">\</span>
-	--FONT_ANNOT_PRIMARY<span class="o">=</span>12p --FORMAT_GEO_MAP<span class="o">=</span>ddd:mmF &gt;&gt; <span class="nv">$ps</span>
-<span class="nb">echo</span> <span class="m">155</span>:16:20W <span class="m">19</span>:26:20N KILAUEA <span class="p">|</span> gmt pstext -R -J -O -K -F+f12p,Helvetica-Bold+jCB &gt;&gt; <span class="nv">$ps</span>
-gmt psbasemap -R -J -O -K --FONT_ANNOT_PRIMARY<span class="o">=</span>9p -LjRB+c19:23N+f+w5k+l1:160,000+u+o0.2i <span class="se">\</span>
-	--FONT_LABEL<span class="o">=</span>10p &gt;&gt; <span class="nv">$ps</span>
-<span class="c1"># Annotate in km but append ,000m to annotations to get customized meter labels</span>
-gmt psbasemap -R@Kilauea.utm.nc+Uk -Jx1:160 -B5g5+u<span class="s2">&quot;@:8:000m@::&quot;</span> -BWSne -O --FONT_ANNOT_PRIMARY<span class="o">=</span>10p <span class="se">\</span>
-	--MAP_GRID_CROSS_SIZE_PRIMARY<span class="o">=</span><span class="m">0</span>.1i --FONT_LABEL<span class="o">=</span>10p &gt;&gt; <span class="nv">$ps</span>
-<span class="c1"># Clean up</span>
-rm -f Kilauea.cpt tmp.txt
+gmt begin ex28
+	<span class="c1"># Set up a color table</span>
+	gmt makecpt -Ccopper -T0/1500
+	<span class="c1"># Lay down the UTM topo grid using a 1:160,000 scale</span>
+	gmt grdimage @Kilauea.utm.nc -I+d -Jx1:160000 --FONT_ANNOT_PRIMARY<span class="o">=</span>9p
+	<span class="c1"># Overlay geographic data and coregister by using correct region and gmt projection with the same scale</span>
+	gmt coast -R@Kilauea.utm.nc -Ju5Q/1:160000 -Df+ -Slightblue -W0.5p -B5mg5m -BNE <span class="se">\</span>
+		--FONT_ANNOT_PRIMARY<span class="o">=</span>12p --FORMAT_GEO_MAP<span class="o">=</span>ddd:mmF
+	<span class="nb">echo</span> <span class="m">155</span>:16:20W <span class="m">19</span>:26:20N KILAUEA <span class="p">|</span> gmt text -F+f12p,Helvetica-Bold+jCB
+	gmt basemap --FONT_ANNOT_PRIMARY<span class="o">=</span>9p -LjRB+c19:23N+f+w5k+l1:160,000+u+o0.2i --FONT_LABEL<span class="o">=</span>10p
+	<span class="c1"># Annotate in km but append ,000m to annotations to get customized meter labels</span>
+	gmt basemap -R@Kilauea.utm.nc+Uk -Jx1:160 -B5g5+u<span class="s2">&quot;@:8:000m@::&quot;</span> -BWSne --FONT_ANNOT_PRIMARY<span class="o">=</span>10p <span class="se">\</span>
+		--MAP_GRID_CROSS_SIZE_PRIMARY<span class="o">=</span><span class="m">0</span>.1i --FONT_LABEL<span class="o">=</span>10p
+gmt end
 </pre></div>
 </div>
 <div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/example_28.png"><img alt="../_images/example_28.png" src="../_images/example_28.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/ex28.png"><img alt="../_images/ex28.png" src="../_images/ex28.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Mixing UTM and geographic data sets requires knowledge of the map region domain in
 both UTM and lon/lat coordinates and consistent use of the same map scale.</span></p>
 </div>
@@ -157,7 +152,7 @@ both UTM and lon/lat coordinates and consistent use of the same map scale.</span
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" >The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -176,7 +171,7 @@ both UTM and lon/lat coordinates and consistent use of the same map scale.</span
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Jul 28, 2019.
+  Last updated on Sep 10, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

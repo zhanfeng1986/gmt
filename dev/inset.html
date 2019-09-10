@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>inset &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
+    <title>inset &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +41,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
 <li class="right">
 <form class="search" accept-charset="UTF-8" action="search.html" method="get">
@@ -85,17 +85,20 @@ canvas and restores the plot region and map projection that was in effect prior 
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>begin</strong> directive of <strong>inset</strong> defines the dimension and placement of the inset canvas.  It
 records the current region and projection so that we may return to the initial
-plot environment when  the inset is completed.</p>
+plot environment when  the inset is completed.  The user may select any plot region
+and projection once plotting in the inset, but if the first command uses
+? as scale or width then we adjust the scale or width to fill the inset as best
+as possible, given the inset size and margins (if selected).</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils" id="d">
-<dt><strong>-D</strong>[<em>unit</em>]<em>xmin/xmax/ymin/ymax</em>[<strong>r</strong>] | <strong>-D</strong>[<strong>g</strong>|<strong>j</strong>|<strong>J</strong>|<strong>n</strong>|<strong>x</strong>]<em>refpoint</em><strong>+w</strong><em>width</em>[/<em>height</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</dt>
-<dd>Define the map inset box on the map.  Specify the box in one of three ways:
+<dt><strong>-D</strong><em>xmin/xmax/ymin/ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>]] | <strong>-D</strong>[<strong>g</strong>|<strong>j</strong>|<strong>J</strong>|<strong>n</strong>|<strong>x</strong>]<em>refpoint</em><strong>+w</strong><em>width</em>[/<em>height</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</dt>
+<dd>Define the map inset rectangle on the map.  Specify the rectangle in one of three ways:
 (a) Give <em>west/east/south/north</em> of geographic rectangle bounded by parallels
-and meridians; append <strong>r</strong> if the coordinates instead are the lower left and
-upper right corners of the desired rectangle. (b) Give <strong>u</strong><em>xmin/xmax/ymin/ymax</em>
-of bounding rectangle in projected coordinates (here, <strong>u</strong> is the coordinate unit).
+and meridians; append <strong>+r</strong> if the coordinates instead are the lower left and
+upper right corners of the desired rectangle. (b) Give <em>xmin/xmax/ymin/ymax</em>
+of bounding rectangle in projected coordinates and optionally append <strong>+u</strong><em>unit</em> [Default coordinate unit is meter (e)].
 (c) Give the reference point on the map for the inset using one of four coordinate systems:
 (1) Use <strong>-Dg</strong> for map (user) coordinates, (2) use <strong>-Dj</strong> or <strong>-DJ</strong> for setting <em>refpoint</em> via
 a 2-char justification code that refers to the (invisible) map domain rectangle,
@@ -133,10 +136,9 @@ indicates the shift relative to the foreground frame
 <dl class="docutils" id="inset-begin-m">
 <dt><strong>-M</strong><em>margins</em></dt>
 <dd>This is clearance that is added around the inside of the inset.  Plotting will take place
-within the inner region only.
-The margins can be a single value, a pair of values separated by slashes
+within the inner region only. The margins can be a single value, a pair of values separated by slashes
 (for setting separate horizontal and vertical margins), or the full set of four margins (for setting
-separate left, right, bottom, and top margins) [0.5c].</dd>
+separate left, right, bottom, and top margins) [no margins].</dd>
 </dl>
 <dl class="docutils" id="inset-begin-v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -150,8 +152,6 @@ separate left, right, bottom, and top margins) [0.5c].</dd>
 any module-specific option (but not the GMT common options), then exits.</dd>
 <dt><strong>-?</strong> or no arguments</dt>
 <dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
 </dl>
 </div>
 <div class="section" id="synopsis-end-mode">
@@ -175,8 +175,6 @@ in effect going forward.</p>
 any module-specific option (but not the GMT common options), then exits.</dd>
 <dt><strong>-?</strong> or no arguments</dt>
 <dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
 </dl>
 </div>
 <div class="section" id="examples">
@@ -185,11 +183,11 @@ any module-specific option (but not the GMT common options), then exits.</dd>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">begin</span> <span class="n">inset</span> <span class="n">pdf</span>
   <span class="n">gmt</span> <span class="n">basemap</span> <span class="o">-</span><span class="n">R0</span><span class="o">/</span><span class="mi">40</span><span class="o">/</span><span class="mi">20</span><span class="o">/</span><span class="mi">60</span> <span class="o">-</span><span class="n">JM6</span><span class="o">.</span><span class="mi">5</span><span class="n">i</span> <span class="o">-</span><span class="n">Bafg</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">glightgreen</span>
-    <span class="n">gmt</span> <span class="n">inset</span> <span class="n">begin</span> <span class="o">-</span><span class="n">DjTR</span><span class="o">+</span><span class="n">w2</span><span class="o">.</span><span class="mi">5</span><span class="n">i</span><span class="o">+</span><span class="n">o0</span><span class="o">.</span><span class="mi">2</span><span class="n">i</span> <span class="o">-</span><span class="n">F</span><span class="o">+</span><span class="n">gpink</span><span class="o">+</span><span class="n">p0</span><span class="o">.</span><span class="mi">5</span><span class="n">p</span> <span class="o">-</span><span class="n">M0</span><span class="o">.</span><span class="mi">25</span><span class="n">i</span>
-      <span class="n">gmt</span> <span class="n">basemap</span> <span class="o">-</span><span class="n">Rg</span> <span class="o">-</span><span class="n">JA20</span><span class="o">/</span><span class="mi">20</span><span class="o">/</span><span class="mi">2</span><span class="n">i</span> <span class="o">-</span><span class="n">Bafg</span>
-      <span class="n">echo</span> <span class="n">INSET</span> <span class="o">|</span> <span class="n">gmt</span> <span class="n">text</span> <span class="o">-</span><span class="n">F</span><span class="o">+</span><span class="n">f18p</span><span class="o">+</span><span class="n">cTR</span> <span class="o">-</span><span class="n">Dj</span><span class="o">-</span><span class="mf">0.15</span><span class="n">i</span>
-    <span class="n">gmt</span> <span class="n">inset</span> <span class="n">end</span>
-  <span class="n">echo</span> <span class="n">MAP</span> <span class="o">|</span> <span class="n">gmt</span> <span class="n">text</span> <span class="o">-</span><span class="n">F</span><span class="o">+</span><span class="n">f18p</span><span class="o">+</span><span class="n">cBL</span> <span class="o">-</span><span class="n">Dj0</span><span class="o">.</span><span class="mi">2</span><span class="n">i</span>
+  <span class="n">gmt</span> <span class="n">inset</span> <span class="n">begin</span> <span class="o">-</span><span class="n">DjTR</span><span class="o">+</span><span class="n">w2</span><span class="o">.</span><span class="mi">5</span><span class="n">i</span><span class="o">+</span><span class="n">o0</span><span class="o">.</span><span class="mi">2</span><span class="n">i</span> <span class="o">-</span><span class="n">F</span><span class="o">+</span><span class="n">gpink</span><span class="o">+</span><span class="n">p0</span><span class="o">.</span><span class="mi">5</span><span class="n">p</span> <span class="o">-</span><span class="n">M0</span><span class="o">.</span><span class="mi">25</span><span class="n">i</span>
+    <span class="n">gmt</span> <span class="n">basemap</span> <span class="o">-</span><span class="n">Rg</span> <span class="o">-</span><span class="n">JA20</span><span class="o">/</span><span class="mi">20</span><span class="o">/</span><span class="mi">2</span><span class="n">i</span> <span class="o">-</span><span class="n">Bafg</span>
+    <span class="n">gmt</span> <span class="n">text</span> <span class="o">-</span><span class="n">F</span><span class="o">+</span><span class="n">f18p</span><span class="o">+</span><span class="n">cTR</span><span class="o">+</span><span class="n">tINSET</span> <span class="o">-</span><span class="n">Dj</span><span class="o">-</span><span class="mf">0.15</span><span class="n">i</span> <span class="o">-</span><span class="n">N</span>
+  <span class="n">gmt</span> <span class="n">inset</span> <span class="n">end</span>
+  <span class="n">gmt</span> <span class="n">text</span> <span class="o">-</span><span class="n">F</span><span class="o">+</span><span class="n">f18p</span><span class="o">+</span><span class="n">cBL</span><span class="o">+</span><span class="n">tMAP</span> <span class="o">-</span><span class="n">Dj0</span><span class="o">.</span><span class="mi">2</span><span class="n">i</span>
 <span class="n">gmt</span> <span class="n">end</span>
 </pre></div>
 </div>
@@ -259,7 +257,7 @@ any module-specific option (but not the GMT common options), then exits.</dd>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
 <li class="right">
 <form class="search" accept-charset="UTF-8" action="search.html" method="get">
@@ -277,7 +275,7 @@ any module-specific option (but not the GMT common options), then exits.</dd>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Jul 28, 2019.
+  Last updated on Sep 10, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

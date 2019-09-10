@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>(49) Analysis of the Atlantic seafloor depth/age relationship &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
+    <title>(49) Analysis of the Atlantic seafloor depth/age relationship &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +41,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" accesskey="U">The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -85,62 +85,61 @@ effect in the legend.</p>
 <span class="c1">#</span>
 <span class="c1"># Purpose:      Illustrate data analysis using the seafloor depth/age relationship</span>
 <span class="c1"># GMT modules:  blockmode, gmtmath, grdcontour, grdimage, grdsample, makecpt,</span>
-<span class="c1">#		psbasemap, pslegend, psscale, psxy, xyz2grd</span>
+<span class="c1">#		basemap, legend, colorbar, plot, xyz2grd</span>
 <span class="c1">#</span>
 
-<span class="nv">ps</span><span class="o">=</span>example_49.ps
-
-<span class="c1"># Convert coarser age grid to pixel registration to match bathymetry grid</span>
-gmt grdsample @age_gridline.nc -T -Gage_pixel.nc
-<span class="c1"># Image depths with color-coded age contours</span>
-gmt makecpt -Cabyss -T-7000/0 &gt; depth.cpt
-gmt grdimage @depth_pixel.nc -Cdepth.cpt -JM6i -P -Baf -BWSne -X1.5i -K --FORMAT_GEO_MAP<span class="o">=</span>dddF &gt; <span class="nv">$ps</span>
-gmt psxy -R@depth_pixel.nc -J -O -K -W1p @ridge_49.txt &gt;&gt; <span class="nv">$ps</span>
-gmt makecpt -Chot -T0/100/10 &gt; age.cpt
-gmt grdcontour age_pixel.nc -J -O -K -A+f14p -Cage.cpt -Wa0.1p+c -GL30W/22S/5E/13S &gt;&gt; <span class="nv">$ps</span>
-gmt psscale -R@depth_pixel.nc -J -DjTR+w2i/0.15i+h+o0.3i/0.15i -Cdepth.cpt -Baf+u<span class="s2">&quot; km&quot;</span> -W0.001 -F+p1p+gbeige -O -K &gt;&gt; <span class="nv">$ps</span>
-<span class="c1"># Obtain depth, age pairs by dumping grids and pasting results</span>
-gmt grd2xyz age_pixel.nc   -bof &gt; age.bin
-gmt grd2xyz @depth_pixel.nc -bof &gt; depth.bin
-gmt convert -A age.bin depth.bin -bi3f -o2,5,5 -bo3f &gt; depth-age.bin
-<span class="c1"># Create and map density grid of (age,depth) distribution</span>
-gmt xyz2grd -R0/100/-6500/0 -I0.25/25 -r depth-age.bin -bi3f -An -Gdensity.nc
-gmt makecpt -Chot -T0/100 &gt; density.cpt
-gmt grdimage density.nc -JX6i/4i -Q -O -K -Cdensity.cpt -Y4.8i &gt;&gt; <span class="nv">$ps</span>
-<span class="c1"># Obtain modal depths every ~5 Myr</span>
-gmt blockmode -R0/100/-10000/0 -I5/10000 -r -E depth-age.bin -bi3f -o0,2,3 &gt; modal.txt
-<span class="c1"># Compute Parsons &amp; Sclater [1977] depth-age curve</span>
-<span class="c1"># depth(t) =   350 * sqrt(t) + 2500, t &lt; 70 Myr</span>
-<span class="c1">#	   =  6400 - 3200 exp (-t/62.8), t &gt; 70 Myr</span>
-gmt math -T0/100/0.1 T SQRT <span class="m">350</span> MUL <span class="m">2500</span> ADD T <span class="m">70</span> LE MUL <span class="m">6400</span> T <span class="m">62</span>.8 DIV NEG EXP <span class="m">3200</span> MUL SUB T <span class="m">70</span> GT MUL ADD <span class="nv">NEG</span> <span class="o">=</span> ps.txt
-gmt psxy -Rdensity.nc -J -O -K ps.txt -W4p,green &gt;&gt; <span class="nv">$ps</span>
-gmt psxy -R -J -O -K ps.txt -W1p &gt;&gt; <span class="nv">$ps</span>
-<span class="c1"># Compute Stein &amp; Stein [1992] depth-age curve</span>
-<span class="c1"># depth(t) =  365 * sqrt(t) + 2600,  t &lt; 20 Myr</span>
-<span class="c1">#	   = 5651 - 2473 * exp (-0.0278*t), t &gt; 20 Myr</span>
-gmt math -T0/100/0.1 T SQRT <span class="m">365</span> MUL <span class="m">2600</span> ADD T <span class="m">20</span> LE MUL <span class="m">5651</span> T -0.0278 MUL EXP <span class="m">2473</span> MUL SUB T <span class="m">20</span> GT MUL ADD <span class="nv">NEG</span> <span class="o">=</span> ss.txt
-<span class="c1"># Plot curves and place the legend</span>
-gmt psxy -R -J -O -K ss.txt -W4p,white  &gt;&gt; <span class="nv">$ps</span>
-gmt psxy -R -J -O -K ss.txt -W1p &gt;&gt; <span class="nv">$ps</span>
-gmt psxy -R -J -Ss0.4c -O -K -Gblue modal.txt -Ey+p1p,blue &gt;&gt; <span class="nv">$ps</span>
-gmt psxy -R -J -Ss0.1c -O -K -Gwhite modal.txt &gt;&gt; <span class="nv">$ps</span>
-gmt psbasemap -R0/100/0/6.5 -JX6i/-4i -Bxaf+u<span class="s2">&quot; Myr&quot;</span> -Byaf+u<span class="s2">&quot; km&quot;</span> -BWsNe -O -K &gt;&gt; <span class="nv">$ps</span>
-gmt pslegend -R -J -O -K -DjRT+w2.5i+o0.1i -F+p1p+gbeige+s <span class="s">&lt;&lt; EOF &gt;&gt; $ps</span>
-<span class="s">S 0.2i - 0.35i - 4p,green 0.5i Parsons &amp; Sclater (1977)</span>
-<span class="s">S 0.2i - 0.35i - 4p,white 0.5i Stein &amp; Stein (1992)</span>
-<span class="s">S 0.2i s 0.15i blue - 0.5i Modal depth estimates</span>
-<span class="s">EOF</span>
-gmt pslegend -R -J -O -K -DjRT+w2.5i+o0.1i <span class="s">&lt;&lt; EOF &gt;&gt; $ps</span>
-<span class="s">S 0.2i - 0.35i - 1p 0.3i</span>
-<span class="s">S 0.2i - 0.35i - 1p 0.3i</span>
-<span class="s">S 0.2i s 0.1c white - 0.3i</span>
-<span class="s">EOF</span>
-gmt psxy -R -J -O -T &gt;&gt; <span class="nv">$ps</span>
-rm -f age_pixel.nc age.bin depth.bin depth-age.bin density.nc modal.txt ps.txt ss.txt *.cpt
+gmt begin ex49
+	<span class="c1"># Convert coarser age grid to pixel registration to match bathymetry grid</span>
+	gmt grdsample @age_gridline.nc -T -Gage_pixel.nc
+	<span class="c1"># Image depths with color-coded age contours</span>
+	gmt makecpt -Cabyss -T-7000/0 -H &gt; z.cpt
+	gmt makecpt -Chot -T0/100/10 -H &gt; t.cpt
+	gmt grdimage @depth_pixel.nc -JM6i -Cz.cpt -B -BWSne -X1.5i --FORMAT_GEO_MAP<span class="o">=</span>dddF
+	gmt plot -W1p @ridge_49.txt
+	gmt grdcontour age_pixel.nc -A+f14p -Ct.cpt -Wa0.1p+c -GL30W/22S/5E/13S
+	gmt colorbar -Cz.cpt -DjTR+w2i/0.15i+h+o0.3i/0.15i -Baf+u<span class="s2">&quot; km&quot;</span> -W0.001 -F+p1p+gbeige
+	<span class="c1"># Obtain depth, age pairs by dumping grids and pasting results</span>
+	gmt grd2xyz age_pixel.nc   -bof &gt; age.bin
+	gmt grd2xyz @depth_pixel.nc -bof &gt; depth.bin
+	gmt convert -A age.bin depth.bin -bi3f -o2,5,5 -bo3f &gt; depth-age.bin
+	<span class="c1"># Create and map density grid of (age,depth) distribution</span>
+	gmt xyz2grd -R0/100/-6500/0 -I0.25/25 -r depth-age.bin -bi3f -An -Gdensity.nc
+	<span class="c1"># WHy do we need the -R below? otherwise it fails to work</span>
+	gmt grdimage density.nc -R0/100/-6500/0 -JX6i/4i -Q -Y4.8i -Ct.cpt
+	<span class="c1"># Obtain modal depths every ~5 Myr</span>
+	gmt blockmode -R0/100/-10000/0 -I5/10000 -r -E depth-age.bin -bi3f -o0,2,3 &gt; modal.txt
+	<span class="c1"># Compute Parsons &amp; Sclater [1977] depth-age curve</span>
+	<span class="c1"># depth(t) =   350 * sqrt(t) + 2500, t &lt; 70 Myr</span>
+	<span class="c1">#	   =  6400 - 3200 exp (-t/62.8), t &gt; 70 Myr</span>
+	gmt math -T0/100/0.1 T SQRT <span class="m">350</span> MUL <span class="m">2500</span> ADD T <span class="m">70</span> LE MUL <span class="m">6400</span> T <span class="m">62</span>.8 DIV NEG EXP <span class="m">3200</span> MUL SUB T <span class="m">70</span> GT MUL ADD <span class="nv">NEG</span> <span class="o">=</span> ps.txt
+	gmt plot ps.txt -W4p,green
+	gmt plot ps.txt -W1p
+	<span class="c1"># Compute Stein &amp; Stein [1992] depth-age curve</span>
+	<span class="c1"># depth(t) =  365 * sqrt(t) + 2600,  t &lt; 20 Myr</span>
+	<span class="c1">#	   = 5651 - 2473 * exp (-0.0278*t), t &gt; 20 Myr</span>
+	gmt math -T0/100/0.1 T SQRT <span class="m">365</span> MUL <span class="m">2600</span> ADD T <span class="m">20</span> LE MUL <span class="m">5651</span> T -0.0278 MUL EXP <span class="m">2473</span> MUL SUB T <span class="m">20</span> GT MUL ADD <span class="nv">NEG</span> <span class="o">=</span> ss.txt
+	<span class="c1"># Plot curves and place the legend</span>
+	gmt plot ss.txt -W4p,white
+	gmt plot ss.txt -W1p
+	gmt plot -Ss0.4c -Gblue modal.txt -Ey+p1p,blue
+	gmt plot -Ss0.1c -Gwhite modal.txt
+	gmt basemap -R0/100/0/6.5 -JX6i/-4i -Bxaf+u<span class="s2">&quot; Myr&quot;</span> -Byaf+u<span class="s2">&quot; km&quot;</span> -BWsNe
+	gmt legend -DjRT+w2.5i+o0.1i -F+p1p+gbeige+s <span class="s">&lt;&lt;- EOF</span>
+<span class="s">	S 0.2i - 0.35i - 4p,green 0.5i Parsons &amp; Sclater (1977)</span>
+<span class="s">	S 0.2i - 0.35i - 4p,white 0.5i Stein &amp; Stein (1992)</span>
+<span class="s">	S 0.2i s 0.15i blue - 0.5i Modal depth estimates</span>
+<span class="s">	EOF</span>
+	gmt legend -DjRT+w2.5i+o0.1i <span class="s">&lt;&lt;- EOF</span>
+<span class="s">	S 0.2i - 0.35i - 1p 0.3i</span>
+<span class="s">	S 0.2i - 0.35i - 1p 0.3i</span>
+<span class="s">	S 0.2i s 0.1c white - 0.3i</span>
+<span class="s">	EOF</span>
+	rm -f age_pixel.nc age.bin depth.bin depth-age.bin density.nc modal.txt ps.txt ss.txt
+gmt end
 </pre></div>
 </div>
 <div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/example_49.png"><img alt="../_images/example_49.png" src="../_images/example_49.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/ex49.png"><img alt="../_images/ex49.png" src="../_images/ex49.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Seafloor depth vs. age in the south Atlantic.</span></p>
 </div>
 </div>
@@ -182,7 +181,7 @@ rm -f age_pixel.nc age.bin depth.bin depth-age.bin density.nc modal.txt ps.txt s
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" >The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -201,7 +200,7 @@ rm -f age_pixel.nc age.bin depth.bin depth-age.bin density.nc modal.txt ps.txt s
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Jul 28, 2019.
+  Last updated on Sep 10, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

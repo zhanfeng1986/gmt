@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>gmt.conf &#8212; GMT 6.1.0_93ac779_2019.07.26 documentation</title>
+    <title>gmt.conf &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +41,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="Defaults.html" accesskey="U">Defaults</a> &#187;</li>
 <li class="right">
@@ -392,15 +392,15 @@ information) [%Y %b %d %H:%M:%S].</dd>
 <span id="gmt-miscellaneous-parameters"></span><dl class="docutils" id="gmt-auto-download">
 <dt><strong>GMT_AUTO_DOWNLOAD</strong></dt>
 <dd>Determines if GMT is allowed to automatically download datasets and
-files from the remote server selected via <strong>GMT_DATA_URL</strong>.  Default
+files from the remote server selected via <strong>GMT_DATA_SERVER</strong>.  Default
 is <em>on</em> but you can turn this off by setting it to <em>off</em>.</dd>
 </dl>
-<dl class="docutils" id="gmt-data-url">
-<dt><strong>GMT_DATA_URL</strong></dt>
+<dl class="docutils" id="gmt-data-server">
+<dt><strong>GMT_DATA_SERVER</strong></dt>
 <dd>Address of the data directory on the remote server [The SOEST server].</dd>
 </dl>
-<dl class="docutils" id="gmt-data-url-limit">
-<dt><strong>GMT_DATA_URL_LIMIT</strong></dt>
+<dl class="docutils" id="gmt-data-server-limit">
+<dt><strong>GMT_DATA_SERVER_LIMIT</strong></dt>
 <dd>Upper limit on the size of remote file to download [unlimited].  Give
 the maximum file size in bytes, or append k, m, or g for kilo-, mega-,
 or giga-bytes.</dd>
@@ -460,6 +460,10 @@ sub-optimal) plan quickly. Note: if you need a single transform of a
 given size only, the one-time cost of the smart planner becomes
 significant. In that case, stick to the default planner, <em>estimate</em>,
 based on heuristics.</dd>
+</dl>
+<dl class="docutils" id="gmt-graphics-format">
+<dt><strong>GMT_GRAPHICS_FORMAT</strong></dt>
+<dd>Default graphics format in modern mode [pdf].</dd>
 </dl>
 <dl class="docutils" id="gmt-history">
 <dt><strong>GMT_HISTORY</strong></dt>
@@ -809,12 +813,12 @@ of the plot [+jBL+o-54p/-54p].</dd>
 <dl class="docutils" id="map-origin-x">
 <dt><strong>MAP_ORIGIN_X</strong></dt>
 <dd>(<strong>-X</strong>) Sets the x-coordinate of the origin on the paper for a
-new plot [1i]. For an overlay, the default offset is 0.</dd>
+new plot [72p]. For an overlay, the default offset is 0.</dd>
 </dl>
 <dl class="docutils" id="map-origin-y">
 <dt><strong>MAP_ORIGIN_Y</strong></dt>
 <dd>(<strong>-Y</strong>) Sets the y-coordinate of the origin on the paper for a
-new plot [1i]. For an overlay, the default offset is 0.</dd>
+new plot [72p]. For an overlay, the default offset is 0.</dd>
 </dl>
 <dl class="docutils" id="map-polar-cap">
 <dt><strong>MAP_POLAR_CAP</strong></dt>
@@ -1302,7 +1306,7 @@ correspond to 1800 through 1828. [1950].</dd>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_93ac779_2019.07.26 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="Defaults.html" >Defaults</a> &#187;</li>
 <li class="right">
@@ -1321,7 +1325,7 @@ correspond to 1800 through 1828. [1950].</dd>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Jul 28, 2019.
+  Last updated on Sep 10, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
