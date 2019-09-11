@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>(47) Linear regression using different norms and types &#8212; GMT 6.0.0_5bd7cb8_2019.09.11 documentation</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+
+
+    <link rel="stylesheet" href="../_static/rtd.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/searchtools.js"></script>
+    <script type="text/javascript" src="../../_static/rtd-sidebar.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="(48) Line networks, map embellishments, and curved titles" href="ex48.html" />
+    <link rel="prev" title="(46) Day-light terminators and other sunlight parameters" href="ex46.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ex48.html" title="(48) Line networks, map embellishments, and curved titles"
+             accesskey="N">next</a> </li>
+        <li class="right" >
+          <a href="ex46.html" title="(46) Day-light terminators and other sunlight parameters"
+             accesskey="P">previous</a> </li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
+  
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.0.0_5bd7cb8_2019.09.11 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../Gallery.html" accesskey="U">The GMT historical collection</a> &#187;</li>
+<li class="right">
+<form class="search" accept-charset="UTF-8" action="search.html" method="get">
+  <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+  <label for="q">
+    <a class="search" href="search.html" accesskey="s" original-title="">Search:</a>
+  </label>
+  <input accesskey="f" class="small" id="q" name="q" size="20" type="text">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form></li>
+   
+
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="linear-regression-using-different-norms-and-types">
+<span id="example-47"></span><h1>(47) Linear regression using different norms and types<a class="headerlink" href="#linear-regression-using-different-norms-and-types" title="Permalink to this headline">¶</a></h1>
+<p>In this example we show how the module <a class="reference internal" href="../gmtregress.html"><span class="doc">gmtregress</span></a>
+is used to fit a multitude of different linear regression models to
+a data set with extreme outliers that can also act as leverage points.
+This data set forms the basis for the main sequence
+in a Hertzsprung-Russell diagram of the star cluster CYG OB1, which includes
+four red giants that are outlying with respect to the main trend.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+<span class="c1">#               GMT EXAMPLE 47</span>
+<span class="c1">#</span>
+<span class="c1"># Purpose:      Illustrate use of gmtregress with different norms and types</span>
+<span class="c1"># GMT modules:  gmtregress, plot, text, subplot</span>
+<span class="c1"># Unix progs:	rm</span>
+<span class="c1">#</span>
+
+<span class="c1"># Because all panels are almost identical we make a bash function that plots</span>
+<span class="c1"># one panel.  It takes a few options that differ between panels.</span>
+
+<span class="k">function</span> plot_one <span class="o">{</span> <span class="c1"># First 3-4 args are: -E -N -c [-Barg]</span>
+  gmt plot -B+ghoneydew<span class="si">${</span><span class="nv">4</span><span class="si">}</span> data.txt -Sc0.05i -Gblue <span class="nv">$3</span>
+  gmt plot giants.txt -Sc0.05i -Gred   -N
+  gmt plot giants.txt -Sc0.1i  -W0.25p -N
+  gmt regress data.txt -Fxm <span class="nv">$1</span> <span class="nv">$2</span> -T2.85/5.25/0.1 <span class="p">|</span> gmt plot -W2p	
+<span class="o">}</span>
+
+gmt begin ex47
+  <span class="nv">file</span><span class="o">=</span><span class="sb">`</span>gmt which -G @hertzsprung-russell.txt<span class="sb">`</span>
+  <span class="c1"># Allow outliers (commented out by #) to be included in the analysis:</span>
+  sed -e s/#//g <span class="nv">$file</span> &gt; data.txt
+  <span class="c1"># Identify the red giants (outliers)</span>
+  grep <span class="s1">&#39;#&#39;</span> <span class="nv">$file</span> <span class="p">|</span> sed -e s/#//g &gt; giants.txt
+  gmt subplot begin 4x3 -M0p -Fs2i/2i -R2.85/5.25/3.9/6.3 -JX-2i/2i -SRl+l<span class="s2">&quot;Log light intensity&quot;</span> -SCb+l<span class="s2">&quot;Log temperature&quot;</span>+tc -Bwesn -Bafg
+  <span class="c1"># L1 regressions</span>
+  plot_one -Ey -N1 -c0,0 +tL@-1@-
+  plot_one -Er -N1 -c1,0
+  plot_one -Eo -N1 -c2,0
+  plot_one -Ex -N1 -c3,0
+  <span class="c1">#L2 regressions</span>
+  plot_one -Er -N2 -c0,1 +tL@-2@- 
+  plot_one -Eo -N2 -c1,1
+  plot_one -Ex -N2 -c2,1
+  plot_one -Ey -N2 -c3,1
+  <span class="c1">#LMS regressions - also add labels on right side</span>
+  plot_one -Er -Nr -c0,2 +tLMS
+  gmt text -F+cRM+jTC+a90+t<span class="s2">&quot;Y ON X&quot;</span> -N -Dj0.2i
+  plot_one -Eo -Nr -c1,2
+  gmt text -F+cRM+jTC+a90+t<span class="s2">&quot;X ON Y&quot;</span> -N -Dj0.2i
+  plot_one -Ex -Nr -c2,2
+  gmt text -F+cRM+jTC+a90+tORTHOGONAL -N -Dj0.2i
+  plot_one -Ey -Nr -c3,2
+  gmt text -F+cRM+jTC+a90+t<span class="s2">&quot;REDUCED MAJOR AXIS&quot;</span> -N -Dj0.2i
+  gmt subplot end
+gmt end
+rm -f data.txt giants.txt
+</pre></div>
+</div>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/ex47.png"><img alt="../_images/ex47.png" src="../_images/ex47.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">Robust and not-so-robust regressions.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ex46.html"
+                        title="previous chapter">(46) Day-light terminators and other sunlight parameters</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ex48.html"
+                        title="next chapter">(48) Line networks, map embellishments, and curved titles</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/gallery/ex47.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ex48.html" title="(48) Line networks, map embellishments, and curved titles"
+             >next</a> </li>
+        <li class="right" >
+          <a href="ex46.html" title="(46) Day-light terminators and other sunlight parameters"
+             >previous</a> </li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
+  
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.0.0_5bd7cb8_2019.09.11 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../Gallery.html" >The GMT historical collection</a> &#187;</li>
+<li class="right">
+<form class="search" accept-charset="UTF-8" action="search.html" method="get">
+  <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+  <label for="q">
+    <a class="search" href="search.html" accesskey="s" original-title="">Search:</a>
+  </label>
+  <input accesskey="f" class="small" id="q" name="q" size="20" type="text">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form></li>
+   
+
+      </ul>
+    </div>
+<div class="footer">
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Sep 11, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
+  <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
+
+</div>
+
+
+  </body>
+</html>

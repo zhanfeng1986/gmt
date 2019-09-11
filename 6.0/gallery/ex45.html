@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>(45) Trend modeling &#8212; GMT 6.0.0_5bd7cb8_2019.09.11 documentation</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+
+
+    <link rel="stylesheet" href="../_static/rtd.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/searchtools.js"></script>
+    <script type="text/javascript" src="../../_static/rtd-sidebar.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="(46) Day-light terminators and other sunlight parameters" href="ex46.html" />
+    <link rel="prev" title="(44) Map insets" href="ex44.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ex46.html" title="(46) Day-light terminators and other sunlight parameters"
+             accesskey="N">next</a> </li>
+        <li class="right" >
+          <a href="ex44.html" title="(44) Map insets"
+             accesskey="P">previous</a> </li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
+  
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.0.0_5bd7cb8_2019.09.11 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../Gallery.html" accesskey="U">The GMT historical collection</a> &#187;</li>
+<li class="right">
+<form class="search" accept-charset="UTF-8" action="search.html" method="get">
+  <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+  <label for="q">
+    <a class="search" href="search.html" accesskey="s" original-title="">Search:</a>
+  </label>
+  <input accesskey="f" class="small" id="q" name="q" size="20" type="text">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form></li>
+   
+
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="trend-modeling">
+<span id="example-45"></span><h1>(45) Trend modeling<a class="headerlink" href="#trend-modeling" title="Permalink to this headline">¶</a></h1>
+<p>In this example show how the module <a class="reference internal" href="../trend1d.html"><span class="doc">trend1d</span></a>
+is used to fit the CO2 data set collected from the top of
+Mauna Loa.  This yields the famous Keeling curve.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
+<span class="c1">#               GMT EXAMPLE 45</span>
+<span class="c1">#</span>
+<span class="c1"># Purpose:      Illustrate use of trend1d mixed models</span>
+<span class="c1"># GMT modules:  text, plot, trend1d</span>
+<span class="c1"># Unix progs:   rm</span>
+<span class="c1">#</span>
+
+gmt begin ex45
+  gmt <span class="nb">set</span> FONT_HEADING 24p
+  gmt subplot begin 4x1 -Fs6i/1.9i -R1958/2016/310/410 -Bxaf -Byaf+u<span class="s2">&quot; ppm&quot;</span> -BWSne+gazure1 -T<span class="s2">&quot;The Keeling Curve [CO@-2@- at Mauna Loa]&quot;</span>
+
+    <span class="c1"># Basic LS line y = a + bx</span>
+    gmt subplot <span class="nb">set</span> <span class="m">3</span>
+    gmt trend1d -Fxm @MaunaLoa_CO2.txt -Np1 &gt; model.txt
+    gmt plot -Sc0.05c -Gred @MaunaLoa_CO2.txt
+    gmt plot -W0.5p,blue model.txt
+    gmt text -F+f12p+cTL+t<span class="s2">&quot;m@-2@-(t) = a + b\264t&quot;</span> -Dj0.1i -Glightyellow
+
+    <span class="c1"># Basic LS line y = a + bx + cx^2</span>
+    gmt subplot <span class="nb">set</span> <span class="m">2</span>
+    gmt trend1d -Fxm @MaunaLoa_CO2.txt -Np2 &gt; model.txt
+    gmt plot -Sc0.05c -Gred @MaunaLoa_CO2.txt
+    gmt plot -W0.5p,blue model.txt
+    gmt text -F+f12p+cTL+t<span class="s2">&quot;m@-3@-(t) = a + b\264t + c\264t@+2@+&quot;</span> -Dj0.1i -Glightyellow
+
+    <span class="c1"># Basic LS line y = a + bx + cx^2 + seasonal change</span>
+    gmt subplot <span class="nb">set</span> <span class="m">1</span>
+    gmt trend1d -Fxmr @MaunaLoa_CO2.txt -Np2,f1+o1958+l1 &gt; model.txt
+    gmt plot -Sc0.05c -Gred @MaunaLoa_CO2.txt
+    gmt plot -W0.25p,blue model.txt
+    gmt text -F+f12p+cTL+t<span class="s2">&quot;m@-5@-(t) = a + b\264t + c\264t@+2@+ + d\264cos(2@~p@~t) + e\264sin(2@~p@~t)&quot;</span> -Dj0.1i -Glightyellow
+
+    <span class="c1"># Plot residuals of last model</span>
+    gmt subplot <span class="nb">set</span> <span class="m">0</span>
+    gmt plot -R1958/2016/-4/4 -Byafg10+u<span class="s2">&quot; ppm&quot;</span> -Sc0.05c -Gred model.txt -i0,2
+    gmt text -F+f12p+cTL+t<span class="s2">&quot;@~e@~(t) = y(t) - m@-5@-(t)&quot;</span> -Dj0.1i -Glightyellow
+
+  gmt subplot end
+  rm -f model.txt
+gmt end
+</pre></div>
+</div>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/ex45.png"><img alt="../_images/ex45.png" src="../_images/ex45.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">Trend Modeling.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ex44.html"
+                        title="previous chapter">(44) Map insets</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ex46.html"
+                        title="next chapter">(46) Day-light terminators and other sunlight parameters</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/gallery/ex45.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ex46.html" title="(46) Day-light terminators and other sunlight parameters"
+             >next</a> </li>
+        <li class="right" >
+          <a href="ex44.html" title="(44) Map insets"
+             >previous</a> </li>
+  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
+  
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.0.0_5bd7cb8_2019.09.11 documentation</a> &#187;</li>
+
+          <li class="nav-item nav-item-1"><a href="../Gallery.html" >The GMT historical collection</a> &#187;</li>
+<li class="right">
+<form class="search" accept-charset="UTF-8" action="search.html" method="get">
+  <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+  <label for="q">
+    <a class="search" href="search.html" accesskey="s" original-title="">Search:</a>
+  </label>
+  <input accesskey="f" class="small" id="q" name="q" size="20" type="text">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form></li>
+   
+
+      </ul>
+    </div>
+<div class="footer">
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Sep 11, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
+  <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
+
+</div>
+
+
+  </body>
+</html>
