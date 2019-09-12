@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>movie &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>movie &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="M.html" accesskey="U">M</a> &#187;</li>
 <li class="right">
@@ -105,18 +103,17 @@ color via <strong>-G</strong>.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><em>mainscript</em></dt>
-<dd>Name of a stand-alone GMT modern script that makes the frame-dependent plot.  The
+<dl class="simple">
+<dt><em>mainscript</em></dt><dd><p>Name of a stand-alone GMT modern script that makes the frame-dependent plot.  The
 script may access frame variables, such as frame number and others, and may be
 written using the Bourne shell (.sh), the Bourne again shell (.bash), the csh (.csh)
 or DOS batch language (.bat).  The script language is inferred from the file extension
 and we build hidden movie scripts using the same language.  Parameters that can be accessed
-are discussed below.</dd>
+are discussed below.</p>
+</dd>
 </dl>
-<dl class="docutils" id="c">
-<dt><strong>-C</strong><em>papersize</em></dt>
-<dd>Specify the canvas size used when composing the movie frames. You can choose from a
+<dl class="simple" id="c">
+<dt><strong>-C</strong><em>papersize</em></dt><dd><p>Specify the canvas size used when composing the movie frames. You can choose from a
 set of known preset formats or you can set a custom layout.  The named 16:9 ratio
 formats have a canvas dimension of 24 x 13.5 cm <em>or</em> 9.6 x 5.4 inch and are
 (with pixel dimensions given in parenthesis):
@@ -130,17 +127,17 @@ and are (with pixel dimensions given in parenthesis):
 Note: Your <a class="reference internal" href="gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a> setting determines if <strong>movie</strong> sets
 you up to work with the SI or US canvas dimensions.  Instead of a named format you can
 request a custom format directly by giving <em>width</em>[<em>unit</em>]x<em>height</em>[<em>unit</em>]x<em>dpu</em>,
-where <em>dpu</em> is the dots-per-unit pixel density.</dd>
+where <em>dpu</em> is the dots-per-unit pixel density.</p>
+</dd>
 </dl>
-<dl class="docutils" id="n">
-<dt><strong>-N</strong><em>prefix</em></dt>
-<dd>Determines the name of a sub-directory with frame images as well as the final movie file.
+<dl class="simple" id="n">
+<dt><strong>-N</strong><em>prefix</em></dt><dd><p>Determines the name of a sub-directory with frame images as well as the final movie file.
 Note: If the subdirectory exist then we exit immediately.  You are therefore required to remove any
-old directory by that name first.  This is done to prevent the accidental loss of valuable data.</dd>
+old directory by that name first.  This is done to prevent the accidental loss of valuable data.</p>
+</dd>
 </dl>
-<dl class="docutils" id="t">
-<dt><strong>-T</strong><em>nframes</em>|<em>timefile</em>[<strong>+p</strong><em>width</em>][<strong>+s</strong><em>first</em>][<strong>+w</strong>]</dt>
-<dd>Either specify how many image frames to make or supply a file with a set of parameters,
+<dl class="simple" id="t">
+<dt><strong>-T</strong><em>nframes</em>|<em>timefile</em>[<strong>+p</strong><em>width</em>][<strong>+s</strong><em>first</em>][<strong>+w</strong>]</dt><dd><p>Either specify how many image frames to make or supply a file with a set of parameters,
 one record per frame (i.e., row).  The values in the columns will be available to the
 <em>mainscript</em> as named variables <strong>MOVIE_COL0</strong>, <strong>MOVIE_COL1</strong>, etc., while any trailing text
 can be accessed via the variable <strong>MOVIE_TEXT</strong>.  Append <strong>+w</strong> to also split the trailing
@@ -152,37 +149,37 @@ number via <strong>+s</strong><em>first</em>.  Note: All frames are still includ
 the numbering of the given frames.  Finally, <strong>+p</strong> can be used to set the tag <em>width</em> of the format
 used in naming frames.  For instance, name_000010.png has a tag width of 6.  By default, this
 is automatically set but if you are splitting large jobs across several computers then you
-will want to have the same tag width for all names [automatic].</dd>
+will want to have the same tag width for all names [automatic].</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="a">
-<dt><strong>-A</strong>[<strong>+l</strong>[<em>n</em>]][<strong>+s</strong><em>stride</em>]</dt>
-<dd>Build an animated GIF file.  You may specify if the movie should play more than once (i.e., loop)
+<dl class="simple" id="a">
+<dt><strong>-A</strong>[<strong>+l</strong>[<em>n</em>]][<strong>+s</strong><em>stride</em>]</dt><dd><p>Build an animated GIF file.  You may specify if the movie should play more than once (i.e., loop)
 via <strong>+l</strong> and if so append how many times to repeat [infinite].  If a video product is also
 selected (<strong>-F</strong>) then you can limit the frames being used to make the GIF file.  Append <strong>+s</strong><em>stride</em>
 to only use every <em>stride</em> frame, with <em>stride</em> being one of a fixed set of strides: 2, 5, 10,
-20, 50, 100, 200, and 500.</dd>
+20, 50, 100, 200, and 500.</p>
+</dd>
 </dl>
-<dl class="docutils" id="d">
-<dt><strong>-D</strong><em>displayrate</em></dt>
-<dd>Set the display frame rate in frames per seconds for the final animation [24].</dd>
+<dl class="simple" id="d">
+<dt><strong>-D</strong><em>displayrate</em></dt><dd><p>Set the display frame rate in frames per seconds for the final animation [24].</p>
+</dd>
 </dl>
-<dl class="docutils" id="f">
-<dt><strong>-F</strong><em>format</em> [<strong>+o</strong><em>options</em>]</dt>
-<dd>Set the format of the final video product.  Repeatable.  Choose either <strong>mp4</strong> (MPEG-4 movie) or
+<dl class="simple" id="f">
+<dt><strong>-F</strong><em>format</em> [<strong>+o</strong><em>options</em>]</dt><dd><p>Set the format of the final video product.  Repeatable.  Choose either <strong>mp4</strong> (MPEG-4 movie) or
 <strong>webm</strong> (WebM movie).  You may optionally add additional ffmpeg encoding settings for this format
 via the <strong>+o</strong> modifier (in quotes if more than one word). If <strong>none</strong> is chosen then no PNGs will
-be created at all; this requires <strong>-M</strong>.</dd>
+be created at all; this requires <strong>-M</strong>.</p>
+</dd>
 </dl>
-<dl class="docutils" id="g">
-<dt><strong>-G</strong><em>fill</em></dt>
-<dd>Set the canvas color or fill before plotting commences [none].</dd>
+<dl class="simple" id="g">
+<dt><strong>-G</strong><em>fill</em></dt><dd><p>Set the canvas color or fill before plotting commences [none].</p>
+</dd>
 </dl>
-<dl class="docutils" id="h">
-<dt><strong>-H</strong><em>factor</em></dt>
-<dd>Given the finite dots-per-unit used to rasterize PostScript frames to PNGs, the quantizing of features
+<dl class="simple" id="h">
+<dt><strong>-H</strong><em>factor</em></dt><dd><p>Given the finite dots-per-unit used to rasterize PostScript frames to PNGs, the quantizing of features
 to discrete pixel will lead to rounding.  Some of this is mitigated by the anti-aliasing settings.  However,
 changes from frame to frame is outside the control of the individual frame rasterization and we
 find that, in particular, moving text may appear jittery when seen in the final animation.  You can mitigate
@@ -191,17 +188,18 @@ by <em>factor</em>, rasterizes the frame, then downsamples the image by the same
 the <em>factor</em>, the smoother the transitions.  Because processing time increases with <em>factor</em> we suggest you
 try values in the 2-5 range.  Note that images can also suffer from quantizing when the original data have
 much higher resolution than your final frame pixel dimensions.  The <strong>-H</strong> option may then be used to smooth the
-result to avoid aliasing [no downsampling].</dd>
+result to avoid aliasing [no downsampling].</p>
+</dd>
 </dl>
-<dl class="docutils" id="i">
-<dt><strong>-I</strong><em>includefile</em></dt>
-<dd>Insert the contents of <em>includefile</em> into the movie_init.sh script that is accessed by all movie scripts.
+<dl class="simple" id="i">
+<dt><strong>-I</strong><em>includefile</em></dt><dd><p>Insert the contents of <em>includefile</em> into the movie_init.sh script that is accessed by all movie scripts.
 This mechanism is used to add information (typically constant variable assignments) that the <em>mainscript</em>
-and any optional <strong>-S</strong> scripts rely on.</dd>
+and any optional <strong>-S</strong> scripts rely on.</p>
+</dd>
 </dl>
 <p id="l"><strong>-L</strong><em>labelinfo</em></p>
 <blockquote>
-<div>Automatic labeling of individual frames.  Repeatable up to 32 labels.  Places the chosen label at the frame perimeter:
+<div><p>Automatic labeling of individual frames.  Repeatable up to 32 labels.  Places the chosen label at the frame perimeter:
 <strong>e</strong> selects the elapsed time in seconds as the label; append <strong>+s</strong><em>scale</em> to set the length
 in seconds of each frame [Default is 1/<em>framerate</em>],
 <strong>f</strong> selects the running frame number as the label, <strong>c</strong><em>col</em> uses the value in column
@@ -221,65 +219,66 @@ Append <strong>+o</strong><em>dx</em>[/<em>dy</em>] to offset label in direction
 Append <strong>+p</strong> to draw the outline of the bounding box using selected <em>pen</em> [no outline].
 Append <strong>+t</strong> to provide a <em>format</em> statement to be used with the label item selected [no special formatting].
 If <strong>-Lt</strong> is used then the format statement must contain a %s-like format, else it may have an integer (%d)
-or floating point  (%e, %f, %g) format specification.</div></blockquote>
-<dl class="docutils" id="m">
-<dt><strong>-M</strong>[<em>frame</em>],[<em>format</em>]</dt>
-<dd>In addition to making the animation sequence, select a single frame for a cover page.  This frame will
+or floating point  (%e, %f, %g) format specification.</p>
+</div></blockquote>
+<dl class="simple" id="m">
+<dt><strong>-M</strong>[<em>frame</em>],[<em>format</em>]</dt><dd><p>In addition to making the animation sequence, select a single frame for a cover page.  This frame will
 be written to the current directory with name <em>prefix.format</em>, where <em>format</em> can one of the
-graphics extensions from the allowable graphics <a class="reference internal" href="begin.html#tbl-formats"><span class="std std-ref">formats</span></a> [pdf].</dd>
+graphics extensions from the allowable graphics <a class="reference internal" href="begin.html#tbl-formats"><span class="std std-ref">formats</span></a> [pdf].</p>
+</dd>
 </dl>
-<dl class="docutils" id="q">
-<dt><strong>-Q</strong>[<strong>s</strong>]</dt>
-<dd>Debugging: Leave all files and directories we create behind for inspection.  Alternatively, append <strong>s</strong> to
+<dl class="simple" id="q">
+<dt><strong>-Q</strong>[<strong>s</strong>]</dt><dd><p>Debugging: Leave all files and directories we create behind for inspection.  Alternatively, append <strong>s</strong> to
 only build the movie scripts but not perform any execution.  One exception involves the optional
 background script derived from <strong>-Sb</strong> which is always executed since it may produce data needed when
-building the movie scripts.</dd>
+building the movie scripts.</p>
+</dd>
 </dl>
-<dl class="docutils" id="sb">
-<dt><strong>-Sb</strong><em>backgroundscript</em></dt>
-<dd>The optional GMT modern mode <em>backgroundscript</em> (written in the same scripting language as <em>mainscript</em>) can be
+<dl class="simple" id="sb">
+<dt><strong>-Sb</strong><em>backgroundscript</em></dt><dd><p>The optional GMT modern mode <em>backgroundscript</em> (written in the same scripting language as <em>mainscript</em>) can be
 used for one or two purposes: (1) It may create files (such as <em>timefile</em>) that will be needed by <em>mainscript</em>
 to make the movie, and (2) It may make a static background plot that should form the background for all frames.
 If a plot is generated the script must make sure it uses the same positioning (i.e., <strong>-X -Y</strong>) as the main script
-so that the layered plot will stack correctly (unless you actually want a different offset).</dd>
+so that the layered plot will stack correctly (unless you actually want a different offset).</p>
+</dd>
 </dl>
-<dl class="docutils" id="sf">
-<dt><strong>-Sf</strong><em>foregroundscript</em></dt>
-<dd>The optional GMT modern mode <em>foregroundscript</em> (written in the same scripting language as <em>mainscript</em>) can be
+<dl class="simple" id="sf">
+<dt><strong>-Sf</strong><em>foregroundscript</em></dt><dd><p>The optional GMT modern mode <em>foregroundscript</em> (written in the same scripting language as <em>mainscript</em>) can be
 used to make a static foreground plot that should be overlain on all frames.  Make sure the script uses the same
-positioning (i.e., <strong>-X -Y</strong>) as the main script so that the layers will stack correctly.</dd>
+positioning (i.e., <strong>-X -Y</strong>) as the main script so that the layers will stack correctly.</p>
+</dd>
 </dl>
-<dl class="docutils" id="movie-v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dl class="simple" id="movie-v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
 </dl>
-<dl class="docutils" id="w">
-<dt><strong>-W</strong><em>workdir</em></dt>
-<dd>In addition to the current directory, the <em>prefix</em> directory, and any directories specified via the
-GMT defaults setting <a class="reference internal" href="gmt.conf.html#dir-data"><span class="std std-ref">DIR_DATA</span></a>, add <em>workdir</em> as a place to scan for data files needed by the scripts.</dd>
+<dl class="simple" id="w">
+<dt><strong>-W</strong><em>workdir</em></dt><dd><p>In addition to the current directory, the <em>prefix</em> directory, and any directories specified via the
+GMT defaults setting <a class="reference internal" href="gmt.conf.html#dir-data"><span class="std std-ref">DIR_DATA</span></a>, add <em>workdir</em> as a place to scan for data files needed by the scripts.</p>
+</dd>
 </dl>
-<dl class="docutils" id="z">
-<dt><strong>-Z</strong></dt>
-<dd>Erase the entire <em>prefix</em> directory after assembling the final movie [Default leaves directory with all images;
-the script files, parameter files, and layer PostScript files are all removed (but see <strong>-Q</strong>)].</dd>
+<dl class="simple" id="z">
+<dt><strong>-Z</strong></dt><dd><p>Erase the entire <em>prefix</em> directory after assembling the final movie [Default leaves directory with all images;
+the script files, parameter files, and layer PostScript files are all removed (but see <strong>-Q</strong>)].</p>
+</dd>
 </dl>
-<dl class="docutils" id="cores">
-<dt><strong>-x</strong>[[-]<em>n</em>]</dt>
-<dd>Limit the number of cores used when making the individual frames.
+<dl class="simple" id="cores">
+<dt><strong>-x</strong>[[-]<em>n</em>]</dt><dd><p>Limit the number of cores used when making the individual frames.
 By default we try to use all available cores.  Append <em>n</em> to only use <em>n</em> cores
 (if too large it will be truncated to the maximum cores available).  Finally,
-give a negative <em>n</em> to select (all - <em>n</em>) cores (or at least 1 if <em>n</em> equals or exceeds all).</dd>
+give a negative <em>n</em> to select (all - <em>n</em>) cores (or at least 1 if <em>n</em> equals or exceeds all).</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
+<dl class="simple">
+<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
+</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</p>
+</dd>
+<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="parameters">
@@ -486,7 +485,7 @@ as QuickTime Pro, iMovie, MovieMaker, and similar commercial programs to make a 
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="M.html" >M</a> &#187;</li>
 <li class="right">
@@ -505,8 +504,8 @@ as QuickTime Pro, iMovie, MovieMaker, and similar commercial programs to make a 
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

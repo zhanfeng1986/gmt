@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>trend1d &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>trend1d &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="T.html" accesskey="U">T</a> &#187;</li>
 <li class="right">
@@ -95,19 +93,18 @@ terms in f(x) which significantly reduce the variance in y.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="f">
-<dt><strong>-F</strong><strong>xymrw</strong>|<strong>p</strong>|<strong>P</strong>|<strong>c</strong></dt>
-<dd>Specify up to five letters from the set {<strong>x y m r w</strong>} in any
+<dl class="simple" id="f">
+<dt><strong>-F</strong><strong>xymrw</strong>|<strong>p</strong>|<strong>P</strong>|<strong>c</strong></dt><dd><p>Specify up to five letters from the set {<strong>x y m r w</strong>} in any
 order to create columns of ASCII [or binary] output. <strong>x</strong> = x,
 <strong>y</strong> = y, <strong>m</strong> = model f(x), <strong>r</strong> = residual y - <strong>m</strong>, <strong>w</strong> =
 weight used in fitting. Alternatively, choose just the single
 selection <strong>p</strong> to output a record with the polynomial model coefficients,
 <strong>P</strong> for the normalized polynomial model coefficients, or <strong>c</strong>
-for the normalized Chebyshev model coefficients.</dd>
+for the normalized Chebyshev model coefficients.</p>
+</dd>
 </dl>
-<dl class="docutils" id="n">
-<dt><strong>-N</strong>[<strong>p</strong>|<strong>P</strong>|<strong>f</strong>|<strong>F</strong>|<strong>c</strong>|<strong>C</strong>|<strong>s</strong>|<strong>S</strong>|<strong>x</strong>]<em>n</em>[,…][<strong>+l</strong><em>length</em>][<strong>+o</strong><em>origin</em>][<strong>+r</strong>]</dt>
-<dd>Specify the components of the (possibly mixed) model.  Append
+<dl class="simple" id="n">
+<dt><strong>-N</strong>[<strong>p</strong>|<strong>P</strong>|<strong>f</strong>|<strong>F</strong>|<strong>c</strong>|<strong>C</strong>|<strong>s</strong>|<strong>S</strong>|<strong>x</strong>]<em>n</em>[,…][<strong>+l</strong><em>length</em>][<strong>+o</strong><em>origin</em>][<strong>+r</strong>]</dt><dd><p>Specify the components of the (possibly mixed) model.  Append
 one or more comma-separated model components.  Each component is
 of the form <strong>T</strong><em>n</em>, where <strong>T</strong> indicates the basis function and
 <em>n</em> indicates the polynomial degree or how many terms in the Fourier series we want to include.  Choose
@@ -124,89 +121,90 @@ the basis functions.  Basically, the trigonometric bases all
 use the normalized x’ = (2*pi*(x-<em>origin</em>)/<em>length</em>) while
 the polynomials use x’ = 2*(x-x_mid)/(xmax - xmin) for stability. Finally, append <strong>+r</strong> for a robust
 solution [Default gives a least squares fit].  Use <strong>-V</strong> to see
-a plain-text representation of the y(x) model specified in <strong>-N</strong>.</dd>
+a plain-text representation of the y(x) model specified in <strong>-N</strong>.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><em>table</em></dt>
-<dd>One or more ASCII [or binary, see <strong>-bi</strong>]
+<dl class="simple">
+<dt><em>table</em></dt><dd><p>One or more ASCII [or binary, see <strong>-bi</strong>]
 files containing x,y [w] values in the first 2 [3] columns. If no
-files are specified, <strong>trend1d</strong> will read from standard input.</dd>
+files are specified, <strong>trend1d</strong> will read from standard input.</p>
+</dd>
 </dl>
-<dl class="docutils" id="c">
-<dt><strong>-C</strong><em>condition_number</em></dt>
-<dd>Set the maximum allowed condition number for the matrix solution.
+<dl class="simple" id="c">
+<dt><strong>-C</strong><em>condition_number</em></dt><dd><p>Set the maximum allowed condition number for the matrix solution.
 <strong>trend1d</strong> fits a damped least squares model, retaining only that
 part of the eigenvalue spectrum such that the ratio of the largest
 eigenvalue to the smallest eigenvalue is <em>condition_#</em>. [Default:
-<em>condition_#</em> = 1.0e06. ].</dd>
+<em>condition_#</em> = 1.0e06. ].</p>
+</dd>
 </dl>
-<dl class="docutils" id="i">
-<dt><strong>-I</strong>[<em>confidence_level</em>]</dt>
-<dd>Iteratively increase the number of model parameters, starting at
+<dl class="simple" id="i">
+<dt><strong>-I</strong>[<em>confidence_level</em>]</dt><dd><p>Iteratively increase the number of model parameters, starting at
 one, until <em>n_model</em> is reached or the reduction in variance of the
 model is not significant at the <em>confidence_level</em> level. You may
 set <strong>-I</strong> only, without an attached number; in this case the fit
 will be iterative with a default confidence level of 0.51. Or choose
 your own level between 0 and 1. See remarks section.  Note that the
 model terms are added in the order they were given in <strong>-N</strong> so you
-should place the most important terms first.</dd>
+should place the most important terms first.</p>
+</dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
 </dl>
-<dl class="docutils" id="w">
-<dt><strong>-W</strong>[<strong>+s</strong>]</dt>
-<dd>Weights are supplied in input column 3. Do a weighted least squares
+<dl class="simple" id="w">
+<dt><strong>-W</strong>[<strong>+s</strong>]</dt><dd><p>Weights are supplied in input column 3. Do a weighted least squares
 fit [or start with these weights when doing the iterative robust
 fit]. Append <strong>+s</strong> to instead read data uncertainties (one sigma)
-and create weights as 1/sigma^2 [Default reads only the first 2 columns].</dd>
+and create weights as 1/sigma^2 [Default reads only the first 2 columns].</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select native binary format for primary input. [Default is 2 (or 3 if <strong>-W</strong> is set) columns].</dd>
+<dl class="simple">
+<dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select native binary format for primary input. [Default is 2 (or 3 if <strong>-W</strong> is set) columns].</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>] <a class="reference internal" href="gmt.html#bo-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select native binary output. [Default is 1-5 columns as given by <strong>-F</strong>].</dd>
+<dl class="simple">
+<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>] <a class="reference internal" href="gmt.html#bo-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select native binary output. [Default is 1-5 columns as given by <strong>-F</strong>].</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em> <a class="reference internal" href="gmt.html#d-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Replace input columns that equal <em>nodata</em> with NaN and do the reverse on output.  </dd>
+<dl class="simple">
+<dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em> <a class="reference internal" href="gmt.html#d-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Replace input columns that equal <em>nodata</em> with NaN and do the reverse on output.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-e</strong>[<strong>~</strong>]<em>”pattern”</em> <strong>|</strong> <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] <a class="reference internal" href="gmt.html#e-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Only accept data records that match the given pattern.  </dd>
+<dl class="simple">
+<dt><strong>-e</strong>[<strong>~</strong>]<em>”pattern”</em> <strong>|</strong> <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] <a class="reference internal" href="gmt.html#e-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Only accept data records that match the given pattern.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Specify data types of input and/or output columns.  </dd>
+<dl class="simple">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify data types of input and/or output columns.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Skip or produce header record(s).  </dd>
+<dl class="simple">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Skip or produce header record(s).  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select input columns and transformations (0 is first column, <em>t</em> is trailing text, append <em>word</em> to read one word only).</dd>
+<dl class="simple">
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select input columns and transformations (0 is first column, <em>t</em> is trailing text, append <em>word</em> to read one word only).</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="gmt.html#colon-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Swap 1st and 2nd column on input and/or output.</dd>
+<dl class="simple">
+<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="gmt.html#colon-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Swap 1st and 2nd column on input and/or output.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
+<dl class="simple">
+<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
+</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</p>
+</dd>
+<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="ascii-format-precision">
@@ -355,7 +353,7 @@ Revised Edition, Academic Press, San Diego.</p>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="T.html" >T</a> &#187;</li>
 <li class="right">
@@ -374,8 +372,8 @@ Revised Edition, Academic Press, San Diego.</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

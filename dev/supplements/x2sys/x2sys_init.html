@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>x2sys_init &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>x2sys_init &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../SUP_X2SYS.html" accesskey="U">X2SYS</a> &#187;</li>
 <li class="right">
@@ -108,57 +106,56 @@ where x2sys can keep track of your settings.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><em>TAG</em></dt>
-<dd>The unique name of this data type x2sys TAG.</dd>
+<dl class="simple">
+<dt><em>TAG</em></dt><dd><p>The unique name of this data type x2sys TAG.</p>
+</dd>
 </dl>
-<dl class="docutils" id="d">
-<dt><strong>-D</strong><em>fmtfile</em></dt>
-<dd>Format definition file prefix for this data set [See Format Definition Files below
+<dl class="simple" id="d">
+<dt><strong>-D</strong><em>fmtfile</em></dt><dd><p>Format definition file prefix for this data set [See Format Definition Files below
 for more information]. Specify full path if the file is not in the
-current directory.</dd>
+current directory.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="e">
-<dt><strong>-E</strong><em>suffix</em></dt>
-<dd>Specifies the file extension (suffix) for these data files. If not
-given we use the format definition file prefix as the suffix (see <strong>-D</strong>).</dd>
+<dl class="simple" id="e">
+<dt><strong>-E</strong><em>suffix</em></dt><dd><p>Specifies the file extension (suffix) for these data files. If not
+given we use the format definition file prefix as the suffix (see <strong>-D</strong>).</p>
+</dd>
 </dl>
-<dl class="docutils" id="f">
-<dt><strong>-F</strong></dt>
-<dd>Force creating new files if old ones are present [Default will abort
-if old TAG files are found].</dd>
+<dl class="simple" id="f">
+<dt><strong>-F</strong></dt><dd><p>Force creating new files if old ones are present [Default will abort
+if old TAG files are found].</p>
+</dd>
 </dl>
-<dl class="docutils" id="g">
-<dt><strong>-Gd</strong>|<strong>g</strong></dt>
-<dd>Selects geographical coordinates. Append <strong>d</strong> for discontinuity at
+<dl class="simple" id="g">
+<dt><strong>-Gd</strong>|<strong>g</strong></dt><dd><p>Selects geographical coordinates. Append <strong>d</strong> for discontinuity at
 the Dateline (makes longitude go from -180 to + 180) or <strong>g</strong> for
 discontinuity at Greenwich (makes longitude go from 0 to 360
-[Default]). If not given we assume the data are Cartesian.</dd>
+[Default]). If not given we assume the data are Cartesian.</p>
+</dd>
 </dl>
-<dl class="docutils" id="i">
-<dt><strong>-I</strong><em>dx</em>[/<em>dy</em>]</dt>
-<dd><em>x_inc</em> [and optionally <em>y_inc</em>] is the grid spacing. Append <strong>m</strong>
+<dl class="simple" id="i">
+<dt><strong>-I</strong><em>dx</em>[/<em>dy</em>]</dt><dd><p><em>x_inc</em> [and optionally <em>y_inc</em>] is the grid spacing. Append <strong>m</strong>
 to indicate minutes or <strong>s</strong> to indicate seconds for geographic
 data. These spacings refer to the binning used in the track
-bin-index data base.</dd>
+bin-index data base.</p>
+</dd>
 </dl>
-<dl class="docutils" id="n">
-<dt><strong>-Nd</strong>|<strong>s</strong><em>unit</em></dt>
-<dd>Sets the units used for distance and speed when requested by other
+<dl class="simple" id="n">
+<dt><strong>-Nd</strong>|<strong>s</strong><em>unit</em></dt><dd><p>Sets the units used for distance and speed when requested by other
 programs. Append <strong>d</strong> for distance or <strong>s</strong> for speed, then give
 the desired <em>unit</em> as <strong>c</strong> (Cartesian userdist or
 userdist/usertime), <strong>e</strong> (meters or m/s), <strong>f</strong> (feet or feet/s),
 <strong>k</strong> (km or kms/hr), <strong>m</strong> (miles or miles/hr), <strong>n</strong> (nautical
 miles or knots) or <strong>u</strong> (survey feet or survey feet/s). [Default is
 <strong>-Ndk</strong> <strong>-Nse</strong> (km and m/s) if <strong>-G</strong> is set and <strong>-Ndc</strong> and
-<strong>-Nsc</strong> otherwise (Cartesian units)].</dd>
+<strong>-Nsc</strong> otherwise (Cartesian units)].</p>
+</dd>
 </dl>
-<dl class="docutils" id="r">
-<dt><strong>-R</strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt>
-<dd><em>west</em>, <em>east</em>, <em>south</em>, and <em>north</em> specify the region of interest,
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt><dd><p><em>west</em>, <em>east</em>, <em>south</em>, and <em>north</em> specify the region of interest,
 and you may specify them in decimal degrees or in
 [±]dd:mm[:ss.xxx][<strong>W</strong>|<strong>E</strong>|<strong>S</strong>|<strong>N</strong>] format
 Append <strong>+r</strong> if lower left
@@ -194,32 +191,33 @@ done only when using the <strong>-Jz</strong> option, not when using only the
 <strong>-p</strong> option. In the latter case a perspective view of the plane is
 plotted, with no third dimension. For Cartesian
 data just give <em>xmin/xmax/ymin/ymax</em>. This option bases the
-statistics on those COE that fall inside the specified domain.</dd>
+statistics on those COE that fall inside the specified domain.</p>
+</dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
-<dt><strong>-Wt</strong>|<strong>d</strong><em>gap</em></dt>
-<dd>Give <strong>t</strong> or <strong>d</strong> and append the corresponding maximum time gap
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
+<dt><strong>-Wt</strong>|<strong>d</strong><em>gap</em></dt><dd><p>Give <strong>t</strong> or <strong>d</strong> and append the corresponding maximum time gap
 (in user units; this is typically seconds [Infinity]), or distance
 (for units, see <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong>) gap [Infinity]) allowed between the two data
 points immediately on either side of a crossover. If these limits
-are exceeded then a data gap is assumed and no COE will be determined.</dd>
+are exceeded then a data gap is assumed and no COE will be determined.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-je</strong>|<strong>f</strong>|<strong>g</strong> <a class="reference internal" href="../../gmt.html#distcalc-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Determine how spherical distances are calculated.</dd>
+<dl class="simple">
+<dt><strong>-je</strong>|<strong>f</strong>|<strong>g</strong> <a class="reference internal" href="../../gmt.html#distcalc-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Determine how spherical distances are calculated.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="../../gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
+<dl class="simple">
+<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
+</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</p>
+</dd>
+<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="../../gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="format-definition-files">
@@ -282,82 +280,82 @@ followed by any number of identically formatted data records with 6
 columns (lat, lon, time, obs1, obs2, obs3) and that files are called
 *.trk. We will call this the “line” format. First, we create the
 line.fmt file:</p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="15%" />
-<col width="10%" />
-<col width="7%" />
-<col width="22%" />
-<col width="12%" />
-<col width="15%" />
-<col width="20%" />
+<col style="width: 15%" />
+<col style="width: 10%" />
+<col style="width: 7%" />
+<col style="width: 22%" />
+<col style="width: 12%" />
+<col style="width: 15%" />
+<col style="width: 20%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head" colspan="7"># Format define file for the line format</th>
+<thead>
+<tr class="row-odd"><th class="head" colspan="7"><p># Format define file for the line format</p></th>
 </tr>
-<tr class="row-even"><th class="head" colspan="3"># SKIP 2</th>
-<th class="head" colspan="4"># Skip 2 header records</th>
+<tr class="row-even"><th class="head" colspan="3"><p># SKIP 2</p></th>
+<th class="head" colspan="4"><p># Skip 2 header records</p></th>
 </tr>
-<tr class="row-odd"><th class="head" colspan="3"># GEO</th>
-<th class="head" colspan="4"># Data are geographic</th>
+<tr class="row-odd"><th class="head" colspan="3"><p># GEO</p></th>
+<th class="head" colspan="4"><p># Data are geographic</p></th>
 </tr>
-<tr class="row-even"><th class="head">#name</th>
-<th class="head">type</th>
-<th class="head">NaN</th>
-<th class="head">NaN-proxy</th>
-<th class="head">scale</th>
-<th class="head">offset</th>
-<th class="head">oformat</th>
+<tr class="row-even"><th class="head"><p>#name</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>NaN</p></th>
+<th class="head"><p>NaN-proxy</p></th>
+<th class="head"><p>scale</p></th>
+<th class="head"><p>offset</p></th>
+<th class="head"><p>oformat</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-odd"><td>lat</td>
-<td>a</td>
-<td>N</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>%9.5f</td>
+<tbody>
+<tr class="row-odd"><td><p>lat</p></td>
+<td><p>a</p></td>
+<td><p>N</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>%9.5f</p></td>
 </tr>
-<tr class="row-even"><td>lon</td>
-<td>a</td>
-<td>N</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>%10.5f</td>
+<tr class="row-even"><td><p>lon</p></td>
+<td><p>a</p></td>
+<td><p>N</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>%10.5f</p></td>
 </tr>
-<tr class="row-odd"><td>time</td>
-<td>a</td>
-<td>N</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>%7.1f</td>
+<tr class="row-odd"><td><p>time</p></td>
+<td><p>a</p></td>
+<td><p>N</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>%7.1f</p></td>
 </tr>
-<tr class="row-even"><td>obs1</td>
-<td>a</td>
-<td>N</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>%7.2f</td>
+<tr class="row-even"><td><p>obs1</p></td>
+<td><p>a</p></td>
+<td><p>N</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>%7.2f</p></td>
 </tr>
-<tr class="row-odd"><td>obs2</td>
-<td>a</td>
-<td>N</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>%7.2f</td>
+<tr class="row-odd"><td><p>obs2</p></td>
+<td><p>a</p></td>
+<td><p>N</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>%7.2f</p></td>
 </tr>
-<tr class="row-even"><td>obs3</td>
-<td>a</td>
-<td>N</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>%7.2f</td>
+<tr class="row-even"><td><p>obs3</p></td>
+<td><p>a</p></td>
+<td><p>N</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>%7.2f</p></td>
 </tr>
 </tbody>
 </table>
@@ -383,9 +381,8 @@ the argument to <strong>-D</strong> must contain the full path if the *.fmt file
 not in the current directory. <strong>x2sys_init</strong> will copy this file to the
 <strong>$X2SYS_HOME</strong>/<em>TAG</em> directory where all other x2sys tools will expect
 to find it.</p>
-<dl class="docutils">
-<dt><strong>Create tbf file(s):</strong></dt>
-<dd><p class="first">Once the (empty) TAG databases have been initialized we go through a
+<dl>
+<dt><strong>Create tbf file(s):</strong></dt><dd><p>Once the (empty) TAG databases have been initialized we go through a
 two-step process to populate them. First we run <a class="reference internal" href="x2sys_binlist.html"><span class="doc">x2sys_binlist</span></a>
 on all our track files to create one (or more) multisegment track
 bin-index files (tbf). These contain information on which 1 x 1
@@ -394,34 +391,31 @@ visited and which observations (in your case obs1, obs2, obs3) were
 actually observed (not all tracks may have all three kinds of
 observations everywhere). For instance, if your tracks are listed in
 the file tracks.lis we may run this command:</p>
-<blockquote class="last">
+<blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">x2sys_binlist</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">TLINE</span> <span class="o">=</span><span class="n">tracks</span><span class="o">.</span><span class="n">lis</span> <span class="o">&gt;</span> <span class="n">tracks</span><span class="o">.</span><span class="n">tbf</span>
 </pre></div>
 </div>
 </div></blockquote>
 </dd>
-<dt><strong>Update index data base:</strong></dt>
-<dd><p class="first">Next, the track bin-index files are fed to <a class="reference internal" href="x2sys_put.html"><span class="doc">x2sys_put</span></a> which will
+<dt><strong>Update index data base:</strong></dt><dd><p>Next, the track bin-index files are fed to <a class="reference internal" href="x2sys_put.html"><span class="doc">x2sys_put</span></a> which will
 insert the information into the TAG databases:</p>
-<blockquote class="last">
+<blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">x2sys_put</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">TLINE</span> <span class="n">tracks</span><span class="o">.</span><span class="n">tbf</span>
 </pre></div>
 </div>
 </div></blockquote>
 </dd>
-<dt><strong>Search for data:</strong></dt>
-<dd><p class="first">You may now use <a class="reference internal" href="x2sys_get.html"><span class="doc">x2sys_get</span></a> to find all the tracks within a
+<dt><strong>Search for data:</strong></dt><dd><p>You may now use <a class="reference internal" href="x2sys_get.html"><span class="doc">x2sys_get</span></a> to find all the tracks within a
 certain sub-region, and optionally limit the search to those tracks
 that have a particular combination of observables. E.g., to find all
 the tracks which has both obs1 and obs3 inside the specified region, run</p>
-<blockquote class="last">
+<blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">x2sys_get</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">TLINE</span> <span class="o">-</span><span class="n">R20</span><span class="o">/</span><span class="mi">40</span><span class="o">/-</span><span class="mi">40</span><span class="o">/-</span><span class="mi">20</span> <span class="o">-</span><span class="n">Fobs1</span><span class="p">,</span><span class="n">obs3</span> <span class="o">&gt;</span> <span class="n">tracks</span><span class="o">.</span><span class="n">tbf</span>
 </pre></div>
 </div>
 </div></blockquote>
 </dd>
-<dt><strong>MGD77[+] or GMT:</strong></dt>
-<dd><p class="first">Format definition files already exist for MGD77 files (both standard ASCII
+<dt><strong>MGD77[+] or GMT:</strong></dt><dd><p>Format definition files already exist for MGD77 files (both standard ASCII
 and enhanced netCDF-based MGD77+ files) and the old *.gmt files
 manipulated by the mgg supplements; for these data sets the <strong>-j</strong>
 and <strong>-N</strong> will default to great circle distance calculation in km
@@ -433,187 +427,185 @@ with MGD77 data from NGDC, try</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p class="last">where we have chosen a 15 minute (900 sec) or 5 km threshold to
+<p>where we have chosen a 15 minute (900 sec) or 5 km threshold to
 indicate a data gap and selected knots as the speed; the other steps
 are similar.</p>
 </dd>
-<dt><strong>Binary files:</strong></dt>
-<dd><p class="first">Let us pretend that your line files actually are binary files with a
+<dt><strong>Binary files:</strong></dt><dd><p>Let us pretend that your line files actually are binary files with a
 128-byte header structure (to be skipped) followed by the data
 records and where <em>lon</em>, <em>lat</em>, <em>time</em> are double precision numbers
 while the three observations are 2-byte integers which must be
 multiplied by 0.1. Finally, the first two observations may be -32768
 which means there is no data available. All that is needed is a
 different line.fmt file:</p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="15%" />
-<col width="10%" />
-<col width="7%" />
-<col width="22%" />
-<col width="12%" />
-<col width="15%" />
-<col width="20%" />
+<col style="width: 15%" />
+<col style="width: 10%" />
+<col style="width: 7%" />
+<col style="width: 22%" />
+<col style="width: 12%" />
+<col style="width: 15%" />
+<col style="width: 20%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head" colspan="7"># Format define file for the binary line format</th>
+<thead>
+<tr class="row-odd"><th class="head" colspan="7"><p># Format define file for the binary line format</p></th>
 </tr>
-<tr class="row-even"><th class="head" colspan="3"># BINARY</th>
-<th class="head" colspan="4"># File is now binary</th>
+<tr class="row-even"><th class="head" colspan="3"><p># BINARY</p></th>
+<th class="head" colspan="4"><p># File is now binary</p></th>
 </tr>
-<tr class="row-odd"><th class="head" colspan="3"># SKIP 128</th>
-<th class="head" colspan="4"># Skip 128 bytes</th>
+<tr class="row-odd"><th class="head" colspan="3"><p># SKIP 128</p></th>
+<th class="head" colspan="4"><p># Skip 128 bytes</p></th>
 </tr>
-<tr class="row-even"><th class="head" colspan="3"># GEO</th>
-<th class="head" colspan="4"># Data are geographic</th>
+<tr class="row-even"><th class="head" colspan="3"><p># GEO</p></th>
+<th class="head" colspan="4"><p># Data are geographic</p></th>
 </tr>
-<tr class="row-odd"><th class="head">#name</th>
-<th class="head">type</th>
-<th class="head">NaN</th>
-<th class="head">NaN-proxy</th>
-<th class="head">scale</th>
-<th class="head">offset</th>
-<th class="head">oformat</th>
+<tr class="row-odd"><th class="head"><p>#name</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>NaN</p></th>
+<th class="head"><p>NaN-proxy</p></th>
+<th class="head"><p>scale</p></th>
+<th class="head"><p>offset</p></th>
+<th class="head"><p>oformat</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>lon</td>
-<td>d</td>
-<td>N</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>%10.5f</td>
+<tbody>
+<tr class="row-even"><td><p>lon</p></td>
+<td><p>d</p></td>
+<td><p>N</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>%10.5f</p></td>
 </tr>
-<tr class="row-odd"><td>lat</td>
-<td>d</td>
-<td>N</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>%9.5f</td>
+<tr class="row-odd"><td><p>lat</p></td>
+<td><p>d</p></td>
+<td><p>N</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>%9.5f</p></td>
 </tr>
-<tr class="row-even"><td>time</td>
-<td>d</td>
-<td>N</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>%7.1f</td>
+<tr class="row-even"><td><p>time</p></td>
+<td><p>d</p></td>
+<td><p>N</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>%7.1f</p></td>
 </tr>
-<tr class="row-odd"><td>obs1</td>
-<td>h</td>
-<td>Y</td>
-<td>-32768</td>
-<td>0.1</td>
-<td>0</td>
-<td>%6.1f</td>
+<tr class="row-odd"><td><p>obs1</p></td>
+<td><p>h</p></td>
+<td><p>Y</p></td>
+<td><p>-32768</p></td>
+<td><p>0.1</p></td>
+<td><p>0</p></td>
+<td><p>%6.1f</p></td>
 </tr>
-<tr class="row-even"><td>obs2</td>
-<td>h</td>
-<td>Y</td>
-<td>-32768</td>
-<td>0.1</td>
-<td>0</td>
-<td>%6.1f</td>
+<tr class="row-even"><td><p>obs2</p></td>
+<td><p>h</p></td>
+<td><p>Y</p></td>
+<td><p>-32768</p></td>
+<td><p>0.1</p></td>
+<td><p>0</p></td>
+<td><p>%6.1f</p></td>
 </tr>
-<tr class="row-odd"><td>obs3</td>
-<td>h</td>
-<td>N</td>
-<td>0</td>
-<td>0.1</td>
-<td>0</td>
-<td>%6.1f</td>
+<tr class="row-odd"><td><p>obs3</p></td>
+<td><p>h</p></td>
+<td><p>N</p></td>
+<td><p>0</p></td>
+<td><p>0.1</p></td>
+<td><p>0</p></td>
+<td><p>%6.1f</p></td>
 </tr>
 </tbody>
 </table>
-<p class="last">The rest of the steps are identical.</p>
+<p>The rest of the steps are identical.</p>
 </dd>
-<dt><strong>COARDS 1-D netCDF files:</strong></dt>
-<dd><p class="first">Finally, suppose that your line files actually are netCDF files that
+<dt><strong>COARDS 1-D netCDF files:</strong></dt><dd><p>Finally, suppose that your line files actually are netCDF files that
 conform to the COARDS convention, with data columns named <em>lon</em>,
 <em>lat</em>, <em>time</em>, <em>obs1</em>, <em>obs2</em>, and <em>obs3</em>. All that is needed is a
 different line.fmt file:</p>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="14%" />
-<col width="10%" />
-<col width="7%" />
-<col width="21%" />
-<col width="12%" />
-<col width="14%" />
-<col width="21%" />
+<col style="width: 14%" />
+<col style="width: 10%" />
+<col style="width: 7%" />
+<col style="width: 21%" />
+<col style="width: 12%" />
+<col style="width: 14%" />
+<col style="width: 21%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head" colspan="7"># Format define file for the netCDF COARDS line format</th>
+<thead>
+<tr class="row-odd"><th class="head" colspan="7"><p># Format define file for the netCDF COARDS line format</p></th>
 </tr>
-<tr class="row-even"><th class="head" colspan="3"># NETCDF</th>
-<th class="head" colspan="4"># File is now netCDF</th>
+<tr class="row-even"><th class="head" colspan="3"><p># NETCDF</p></th>
+<th class="head" colspan="4"><p># File is now netCDF</p></th>
 </tr>
-<tr class="row-odd"><th class="head" colspan="3"># GEO</th>
-<th class="head" colspan="4"># Data are geographic</th>
+<tr class="row-odd"><th class="head" colspan="3"><p># GEO</p></th>
+<th class="head" colspan="4"><p># Data are geographic</p></th>
 </tr>
-<tr class="row-even"><th class="head">#name</th>
-<th class="head">type</th>
-<th class="head">NaN</th>
-<th class="head">NaN-proxy</th>
-<th class="head">scale</th>
-<th class="head">offset</th>
-<th class="head">oformat</th>
+<tr class="row-even"><th class="head"><p>#name</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>NaN</p></th>
+<th class="head"><p>NaN-proxy</p></th>
+<th class="head"><p>scale</p></th>
+<th class="head"><p>offset</p></th>
+<th class="head"><p>oformat</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-odd"><td>lon</td>
-<td>d</td>
-<td>N</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>%10.5f</td>
+<tbody>
+<tr class="row-odd"><td><p>lon</p></td>
+<td><p>d</p></td>
+<td><p>N</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>%10.5f</p></td>
 </tr>
-<tr class="row-even"><td>lat</td>
-<td>d</td>
-<td>N</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>%9.5f</td>
+<tr class="row-even"><td><p>lat</p></td>
+<td><p>d</p></td>
+<td><p>N</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>%9.5f</p></td>
 </tr>
-<tr class="row-odd"><td>time</td>
-<td>d</td>
-<td>N</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>%7.1f</td>
+<tr class="row-odd"><td><p>time</p></td>
+<td><p>d</p></td>
+<td><p>N</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>%7.1f</p></td>
 </tr>
-<tr class="row-even"><td>obs1</td>
-<td>d</td>
-<td>N</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>%6.1f</td>
+<tr class="row-even"><td><p>obs1</p></td>
+<td><p>d</p></td>
+<td><p>N</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>%6.1f</p></td>
 </tr>
-<tr class="row-odd"><td>obs2</td>
-<td>d</td>
-<td>N</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>%6.1f</td>
+<tr class="row-odd"><td><p>obs2</p></td>
+<td><p>d</p></td>
+<td><p>N</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>%6.1f</p></td>
 </tr>
-<tr class="row-even"><td>obs3</td>
-<td>d</td>
-<td>N</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>%6.1f</td>
+<tr class="row-even"><td><p>obs3</p></td>
+<td><p>d</p></td>
+<td><p>N</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>%6.1f</p></td>
 </tr>
 </tbody>
 </table>
-<p class="last">Note we use no scaling or NAN proxies since those issues are usually
+<p>Note we use no scaling or NAN proxies since those issues are usually
 handled internally in the netCDF format description.</p>
 </dd>
 </dl>
@@ -689,7 +681,7 @@ However, old .def files are still being read.</p>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../SUP_X2SYS.html" >X2SYS</a> &#187;</li>
 <li class="right">
@@ -708,8 +700,8 @@ However, old .def files are still being read.</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

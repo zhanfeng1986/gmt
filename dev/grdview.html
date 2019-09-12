@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>grdview &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>grdview &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="PS.html" accesskey="U">Modern Mode Mapping</a> &#187;</li>
 <li class="right">
@@ -102,29 +100,28 @@ on intensities provided in a separate grid file.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><em>reliefgrid</em></dt>
-<dd>2-D gridded data set to be imaged (the relief of the surface). (See
-GRID FILE FORMAT below.)</dd>
+<dl class="simple">
+<dt><em>reliefgrid</em></dt><dd><p>2-D gridded data set to be imaged (the relief of the surface). (See
+GRID FILE FORMAT below.)</p>
+</dd>
 </dl>
-<dl class="docutils" id="j">
-<dt><strong>-J</strong><em>parameters</em> <a class="reference internal" href="gmt.html#j-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select map projection.  </dd>
+<dl class="simple" id="j">
+<dt><strong>-J</strong><em>parameters</em> <a class="reference internal" href="gmt.html#j-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select map projection.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-Jz</strong>|<strong>Z</strong><em>parameters</em> <a class="reference internal" href="gmt.html#jz-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set z-axis scaling; same syntax as <strong>-Jx</strong>.</dd>
+<dl class="simple">
+<dt><strong>-Jz</strong>|<strong>Z</strong><em>parameters</em> <a class="reference internal" href="gmt.html#jz-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set z-axis scaling; same syntax as <strong>-Jx</strong>.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="b">
-<dt><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> <a class="reference internal" href="gmt.html#b-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set map boundary frame and axes attributes.</dd>
+<dl class="simple" id="b">
+<dt><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> <a class="reference internal" href="gmt.html#b-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set map boundary frame and axes attributes.</p>
+</dd>
 </dl>
-<dl class="docutils" id="c">
-<dt><strong>-C</strong>[<em>cpt</em> |<em>master</em>[<strong>+i</strong><em>zinc</em>] |<em>color1,color2</em>[,<em>color3</em>,…]]</dt>
-<dd>The name of the CPT. Must be present if you want
+<dl class="simple" id="c">
+<dt><strong>-C</strong>[<em>cpt</em> |<em>master</em>[<strong>+i</strong><em>zinc</em>] |<em>color1,color2</em>[,<em>color3</em>,…]]</dt><dd><p>The name of the CPT. Must be present if you want
 (1) mesh plot with contours (<strong>-Qm</strong>), or
 (2) shaded/colored perspective image (<strong>-Qs</strong> or
 <strong>-Qi</strong>). For <strong>-Qs</strong>: You can specify that you want to skip a
@@ -134,11 +131,11 @@ Alternatively, supply the name of a GMT color master dynamic CPT [turbo, but
 geo for &#64;earth_relief and srtm for &#64;srtm_relief data] to
 automatically determine a continuous CPT from
 the grid’s z-range; you may round up/down the z-range by adding <strong>+i</strong><em>zinc</em>.
-If no argument is given to <strong>-C</strong> then under modern mode we select the current CPT.</dd>
+If no argument is given to <strong>-C</strong> then under modern mode we select the current CPT.</p>
+</dd>
 </dl>
-<dl class="docutils" id="g">
-<dt><a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>drapegrid</em> | <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>grd_r</em> <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>grd_g</em> <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>grd_b</em></dt>
-<dd>Drape the image in <em>drapegrid</em> on top of the relief provided by
+<dl class="simple" id="g">
+<dt><a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>drapegrid</em> | <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>grd_r</em> <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>grd_g</em> <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>grd_b</em></dt><dd><p>Drape the image in <em>drapegrid</em> on top of the relief provided by
 <em>reliefgrid</em>. [Default determines colors from <em>reliefgrid</em>]. Note that <strong>-Jz</strong> and
 <strong>-N</strong> always refers to the <em>reliefgrid</em>. The <em>drapegrid</em> only
 provides the information pertaining to colors, which (if <em>drapegrid</em> is a grid) will be looked-up
@@ -147,116 +144,116 @@ via separate <strong>-G</strong> options in the specified order. These files mus
 blue colors directly (in 0-255 range) and no CPT is needed. The
 <em>drapegrid</em> may be of a different resolution than the <em>reliefgrid</em>.
 Finally, <em>drapegrid</em> may be an image to be draped over the surface, in which
-case the <strong>-C</strong> option is not required.</dd>
+case the <strong>-C</strong> option is not required.</p>
+</dd>
 </dl>
-<dl class="docutils" id="i">
-<dt><strong>-I</strong>[<em>intensgrid</em>|<em>intensity</em>|<em>modifiers</em>]</dt>
-<dd>Gives the name of a grid file with intensities in the (-1,+1) range,
+<dl class="simple" id="i">
+<dt><strong>-I</strong>[<em>intensgrid</em>|<em>intensity</em>|<em>modifiers</em>]</dt><dd><p>Gives the name of a grid file with intensities in the (-1,+1) range,
 or a constant intensity to apply everywhere; this simply affects the
 ambient light.  If just <strong>+</strong> is given then we derive an intensity
 grid from the input data grid <em>reliefgrid</em> via a call to <a class="reference internal" href="grdgradient.html"><span class="doc">grdgradient</span></a>
 using the arguments <strong>-A</strong>-45 and <strong>-Nt</strong>1 for that module. You can
 append <strong>+a</strong><em>azimuth</em> and <strong>+n</strong><em>args</em> to override those values.  If you want
 more specific intensities then run <a class="reference internal" href="grdgradient.html"><span class="doc">grdgradient</span></a> separately first.
-[Default is no illumination].</dd>
+[Default is no illumination].</p>
+</dd>
 </dl>
-<dl class="docutils" id="n">
-<dt><strong>-N</strong><em>level</em>[<strong>+g</strong><em>fill</em>]</dt>
-<dd>Draws a plane at this z-level. If the optional <em>color</em> is provided
+<dl class="simple" id="n">
+<dt><strong>-N</strong><em>level</em>[<strong>+g</strong><em>fill</em>]</dt><dd><p>Draws a plane at this z-level. If the optional <em>color</em> is provided
 via the <strong>+g</strong> modifier, and the projection is not oblique,
 the frontal facade between the plane and the data perimeter is
-colored. See <strong>-Wf</strong> for setting the pen used for the outline.</dd>
+colored. See <strong>-Wf</strong> for setting the pen used for the outline.</p>
+</dd>
 </dl>
-<dl class="docutils" id="q">
-<dt><strong>-Q</strong><em>args</em>[<strong>+m</strong>]</dt>
-<dd><p class="first">Select one of following settings. For any of these choices, you may force
+<dl class="simple" id="q">
+<dt><strong>-Q</strong><em>args</em>[<strong>+m</strong>]</dt><dd><p>Select one of following settings. For any of these choices, you may force
 a monochrome image by appending the modifier <strong>+m</strong>. Colors are then
 converted to shades of gray using the (monochrome television) YIQ transformation</p>
-<ol class="last arabic simple">
-<li>Specify <strong>m</strong> for mesh plot [Default], and optionally append <em>color</em> for a different mesh paint [white].</li>
-<li>Specify <strong>mx</strong> or <strong>my</strong> for waterfall plots (row or column profiles). Specify color as for plain <strong>m</strong></li>
-<li>Specify <strong>s</strong> for surface plot, and optionally append <strong>m</strong> to have mesh lines drawn on top of surface.</li>
-<li>Specify <strong>i</strong> for image plot, and optionally append the effective dpi resolution for the rasterization [100].</li>
-<li>Specify <strong>c</strong>. Same as <strong>-Qi</strong> but will make nodes with z = NaN transparent, using the colormasking
-feature in PostScript Level 3 (the PS device must support PS Level 3). .</li>
+<ol class="arabic simple">
+<li><p>Specify <strong>m</strong> for mesh plot [Default], and optionally append <em>color</em> for a different mesh paint [white].</p></li>
+<li><p>Specify <strong>mx</strong> or <strong>my</strong> for waterfall plots (row or column profiles). Specify color as for plain <strong>m</strong></p></li>
+<li><p>Specify <strong>s</strong> for surface plot, and optionally append <strong>m</strong> to have mesh lines drawn on top of surface.</p></li>
+<li><p>Specify <strong>i</strong> for image plot, and optionally append the effective dpi resolution for the rasterization [100].</p></li>
+<li><p>Specify <strong>c</strong>. Same as <strong>-Qi</strong> but will make nodes with z = NaN transparent, using the colormasking
+feature in PostScript Level 3 (the PS device must support PS Level 3). .</p></li>
 </ol>
 </dd>
 </dl>
-<dl class="docutils" id="r">
-<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Specify the region of interest.  </dd>
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify the region of interest.  </p>
+</dd>
 </dl>
 <p>For perspective view <strong>p</strong>, optionally append /<em>zmin</em>/<em>zmax</em>. <a class="reference internal" href="gmt.html#rz-full"><span class="std std-ref">(more …)</span></a> This option may be used to
 indicate the range used for the 3-D axes [Default is region given by
 the <em>reliefgrid</em>]. You may ask for a larger <em>w/e/s/n</em> region to
 have more room between the image and the axes. A smaller region than
 specified in the <em>reliefgrid</em> will result in a subset of the grid.</p>
-<dl class="docutils" id="s">
-<dt><strong>-S</strong><em>smooth</em></dt>
-<dd>Smooth the contours before plotting (see <a class="reference internal" href="grdcontour.html"><span class="doc">grdcontour</span></a>) [Default is no smoothing].</dd>
+<dl class="simple" id="s">
+<dt><strong>-S</strong><em>smooth</em></dt><dd><p>Smooth the contours before plotting (see <a class="reference internal" href="grdcontour.html"><span class="doc">grdcontour</span></a>) [Default is no smoothing].</p>
+</dd>
 </dl>
-<dl class="docutils" id="t">
-<dt><strong>-T</strong>[<strong>+o</strong>[<em>pen</em>]][<strong>+s</strong>]</dt>
-<dd>Plot image without any interpolation. This involves converting each
+<dl class="simple" id="t">
+<dt><strong>-T</strong>[<strong>+o</strong>[<em>pen</em>]][<strong>+s</strong>]</dt><dd><p>Plot image without any interpolation. This involves converting each
 node-centered bin into a polygon which is then painted separately.
 Append <strong>+s</strong> to skip nodes with z = NaN. This option is useful for
 categorical data where interpolating between values is meaningless.
 Optionally, append <strong>+o</strong> to draw the tile outlines, and specify a
 custom pen if the default pen is not to your liking. As this option
-produces a flat surface it cannot be combined with <strong>-JZ</strong> or <strong>-Jz</strong>.</dd>
+produces a flat surface it cannot be combined with <strong>-JZ</strong> or <strong>-Jz</strong>.</p>
+</dd>
 </dl>
-<dl class="docutils" id="u">
-<dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>] <a class="reference internal" href="gmt.html#u-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Draw GMT time stamp logo on plot.</dd>
+<dl class="simple" id="u">
+<dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>] <a class="reference internal" href="gmt.html#u-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Draw GMT time stamp logo on plot.</p>
+</dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
 </dl>
 <p id="w"><strong>-W</strong><strong>c</strong>|<strong>m</strong>|<strong>f</strong><em>pen</em></p>
 <blockquote>
-<div><dl class="docutils">
-<dt><strong>-Wc</strong></dt>
-<dd>Draw contour lines on top of surface or mesh (not image). Append pen
+<div><dl class="simple">
+<dt><strong>-Wc</strong></dt><dd><p>Draw contour lines on top of surface or mesh (not image). Append pen
 attributes used for the contours. [Default: width = 0.75p, color =
-black, style = solid].</dd>
-<dt><strong>-Wm</strong></dt>
-<dd>Sets the pen attributes used for the mesh. [Default: width = 0.25p,
+black, style = solid].</p>
+</dd>
+<dt><strong>-Wm</strong></dt><dd><p>Sets the pen attributes used for the mesh. [Default: width = 0.25p,
 color = black, style = solid]. You must also select <strong>-Qm</strong> or
-<strong>-Qsm</strong> for meshlines to be drawn.</dd>
-<dt><strong>-Wf</strong></dt>
-<dd>Sets the pen attributes used for the facade. [Default: width =
+<strong>-Qsm</strong> for meshlines to be drawn.</p>
+</dd>
+<dt><strong>-Wf</strong></dt><dd><p>Sets the pen attributes used for the facade. [Default: width =
 0.25p, color = black, style = solid]. You must also select <strong>-N</strong>
-for the facade outline to be drawn.</dd>
+for the facade outline to be drawn.</p>
+</dd>
 </dl>
 </div></blockquote>
 <p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</p>
-<dl class="docutils">
-<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Shift plot origin.</dd>
+<dl class="simple">
+<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Shift plot origin.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-n</strong>[<strong>b</strong>|<strong>c</strong>|<strong>l</strong>|<strong>n</strong>][<strong>+a</strong>][<strong>+b</strong><em>BC</em>][<strong>+c</strong>][<strong>+t</strong><em>threshold</em>] <a class="reference internal" href="gmt.html#n-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select interpolation mode for grids.</dd>
+<dl class="simple">
+<dt><strong>-n</strong>[<strong>b</strong>|<strong>c</strong>|<strong>l</strong>|<strong>n</strong>][<strong>+a</strong>][<strong>+b</strong><em>BC</em>][<strong>+c</strong>][<strong>+t</strong><em>threshold</em>] <a class="reference internal" href="gmt.html#n-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select interpolation mode for grids.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-p</strong>[<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>azim</em>[/<em>elev</em>[/<em>zlevel</em>]][<strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>z0</em>]][<strong>+v</strong><em>x0</em>/<em>y0</em>] <a class="reference internal" href="gmt.html#perspective-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select perspective view.  </dd>
+<dl class="simple">
+<dt><strong>-p</strong>[<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>azim</em>[/<em>elev</em>[/<em>zlevel</em>]][<strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>z0</em>]][<strong>+v</strong><em>x0</em>/<em>y0</em>] <a class="reference internal" href="gmt.html#perspective-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select perspective view.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-t</strong>[<em>transp</em>] <a class="reference internal" href="gmt.html#t-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set transparency level in percent.</dd>
+<dl class="simple">
+<dt><strong>-t</strong>[<em>transp</em>] <a class="reference internal" href="gmt.html#t-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set transparency level in percent.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
+<dl class="simple">
+<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
+</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</p>
+</dd>
+<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="grid-file-formats">
@@ -400,7 +397,7 @@ variations within polygons by using scanline conversion to image the polygons.</
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="PS.html" >Modern Mode Mapping</a> &#187;</li>
 <li class="right">
@@ -419,8 +416,8 @@ variations within polygons by using scanline conversion to image the polygons.</
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

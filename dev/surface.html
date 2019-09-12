@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>surface &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>surface &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="S.html" accesskey="U">S</a> &#187;</li>
 <li class="right">
@@ -100,7 +98,8 @@
 [or <em>table</em>] and produces a binary grid file of gridded values z(x,y) by
 solving:</p>
 <blockquote>
-<div>(1 - T) * L (L (z)) + T * L (z) = 0</div></blockquote>
+<div><p>(1 - T) * L (L (z)) + T * L (z) = 0</p>
+</div></blockquote>
 <p>where T is a tension factor between 0 and 1, and L indicates the
 Laplacian operator. T = 0 gives the “minimum curvature” solution which
 is equivalent to SuperMISP and the ISM packages. Minimum curvature can
@@ -120,14 +119,13 @@ boundary conditions in the longitude direction.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="g">
-<dt><strong>-G</strong><em>outputfile.nc</em></dt>
-<dd>Output file name. Output is a binary 2-D <em>.nc</em> file. Note that the
-smallest grid dimension must be at least 4.</dd>
+<dl class="simple" id="g">
+<dt><strong>-G</strong><em>outputfile.nc</em></dt><dd><p>Output file name. Output is a binary 2-D <em>.nc</em> file. Note that the
+smallest grid dimension must be at least 4.</p>
+</dd>
 </dl>
-<dl class="docutils" id="i">
-<dt><strong>-I</strong><em>xinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>]]</dt>
-<dd><em>x_inc</em> [and optionally <em>y_inc</em>] is the grid spacing. Optionally,
+<dl class="simple" id="i">
+<dt><strong>-I</strong><em>xinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>]]</dt><dd><p><em>x_inc</em> [and optionally <em>y_inc</em>] is the grid spacing. Optionally,
 append a suffix modifier. <strong>Geographical (degrees) coordinates</strong>: Append
 <strong>m</strong> to indicate arc minutes or <strong>s</strong> to indicate arc seconds. If one
 of the units <strong>e</strong>, <strong>f</strong>, <strong>k</strong>, <strong>M</strong>, <strong>n</strong> or <strong>u</strong> is appended
@@ -146,32 +144,32 @@ recalculated from the number of nodes and the domain. The resulting
 increment value depends on whether you have selected a
 gridline-registered or pixel-registered grid; see <a class="reference internal" href="GMT_Docs_classic.html#app-file-formats"><span class="std std-ref">GMT File Formats</span></a> for
 details. Note: if <strong>-R</strong><em>grdfile</em> is used then the grid spacing has
-already been initialized; use <strong>-I</strong> to override the values.</dd>
+already been initialized; use <strong>-I</strong> to override the values.</p>
+</dd>
 </dl>
-<dl class="docutils" id="r">
-<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Specify the region of interest.  </dd>
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify the region of interest.  </p>
+</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><em>table</em></dt>
-<dd>One or more ASCII (or binary, see <strong>-bi</strong>[<em>ncols</em>][<em>type</em>]) data
+<dl class="simple">
+<dt><em>table</em></dt><dd><p>One or more ASCII (or binary, see <strong>-bi</strong>[<em>ncols</em>][<em>type</em>]) data
 table file(s) holding a number of data columns. If no tables are given
-then we read from standard input.  </dd>
+then we read from standard input.  </p>
+</dd>
 </dl>
-<dl class="docutils" id="a">
-<dt><strong>-A</strong><em>aspect_ratio</em>|<strong>m</strong></dt>
-<dd>Aspect ratio. If desired, grid anisotropy can be added to the
+<dl class="simple" id="a">
+<dt><strong>-A</strong><em>aspect_ratio</em>|<strong>m</strong></dt><dd><p>Aspect ratio. If desired, grid anisotropy can be added to the
 equations. Enter <em>aspect_ratio</em>, where dy = dx / <em>aspect_ratio</em>
 relates the grid dimensions. For geographic data, you may use
 <strong>-Am</strong> to set the aspect ratio to the cosine of the mean latitude
-[Default = 1 assumes isotropic grid.]</dd>
+[Default = 1 assumes isotropic grid.]</p>
+</dd>
 </dl>
-<dl class="docutils" id="c">
-<dt><strong>-C</strong><em>convergence_limit</em>[%]</dt>
-<dd>Convergence limit. Iteration is assumed to have converged when the
+<dl class="simple" id="c">
+<dt><strong>-C</strong><em>convergence_limit</em>[%]</dt><dd><p>Convergence limit. Iteration is assumed to have converged when the
 maximum absolute change in any grid value is less than
 <em>convergence_limit</em>. (Units same as data z units). Alternatively,
 give limit in percentage of rms deviation by appending %.  [Default is
@@ -179,11 +177,11 @@ scaled to 1e-4 of the root-mean-square deviation of the data
 from a best-fit (least-squares) plane.].
 This is the final convergence limit at the desired grid spacing; for
 intermediate (coarser) grids the effective convergence limit is divided
-by the grid spacing multiplier.</dd>
+by the grid spacing multiplier.</p>
+</dd>
 </dl>
-<dl class="docutils" id="l">
-<dt><strong>-Ll</strong><em>lower</em> and <strong>-Lu</strong><em>upper</em></dt>
-<dd>Impose limits on the output solution. <strong>l</strong><em>lower</em> sets the lower
+<dl class="simple" id="l">
+<dt><strong>-Ll</strong><em>lower</em> and <strong>-Lu</strong><em>upper</em></dt><dd><p>Impose limits on the output solution. <strong>l</strong><em>lower</em> sets the lower
 bound. <em>lower</em> can be the name of a grid file with lower bound
 values, a fixed value, <strong>d</strong> to set to minimum input value, or <strong>u</strong>
 for unconstrained [Default]. <strong>u</strong><em>upper</em> sets the upper bound and
@@ -191,46 +189,46 @@ can be the name of a grid file with upper bound values, a fixed
 value, <strong>d</strong> to set to maximum input value, or <strong>u</strong> for
 unconstrained [Default]. Grid files used to set the limits may
 contain NaNs. In the presence of NaNs, the limit of a node masked
-with NaN is unconstrained.</dd>
+with NaN is unconstrained.</p>
+</dd>
 </dl>
-<dl class="docutils" id="m">
-<dt><strong>-M</strong><em>max_radius</em>[<strong>u</strong>]</dt>
-<dd>After solving for the surface, apply a mask so that nodes farther
+<dl class="simple" id="m">
+<dt><strong>-M</strong><em>max_radius</em>[<strong>u</strong>]</dt><dd><p>After solving for the surface, apply a mask so that nodes farther
 than <em>max_radius</em> away from a data constraint is set to NaN [no masking].
 Append a distance unit (see UNITS) if needed.
 One can also select the nodes to mask by using the <strong>-M</strong><em>n_cells</em><strong>c</strong> form.
 Here <em>n_cells</em> means the number of cells around the node controlled by a data point. As an example
 <strong>-M0c</strong> means that only the cell where point lies is filled, <strong>-M1c</strong> keeps one cell
-beyond that (i.e. makes a 3x3 neighborhood), and so on.</dd>
+beyond that (i.e. makes a 3x3 neighborhood), and so on.</p>
+</dd>
 </dl>
-<dl class="docutils" id="n">
-<dt><strong>-N</strong><em>max_iterations</em></dt>
-<dd>Number of iterations. Iteration will cease when <em>convergence_limit</em>
+<dl class="simple" id="n">
+<dt><strong>-N</strong><em>max_iterations</em></dt><dd><p>Number of iterations. Iteration will cease when <em>convergence_limit</em>
 is reached or when number of iterations reaches <em>max_iterations</em>.
 This is the final iteration limit at the desired grid spacing; for
 intermediate (coarser) grids the effective iteration limit is scaled
-by the grid spacing multiplier [Default is 500].</dd>
+by the grid spacing multiplier [Default is 500].</p>
+</dd>
 </dl>
-<dl class="docutils" id="q">
-<dt><strong>-Q</strong></dt>
-<dd>Suggest grid dimensions which have a highly composite greatest
+<dl class="simple" id="q">
+<dt><strong>-Q</strong></dt><dd><p>Suggest grid dimensions which have a highly composite greatest
 common factor. This allows surface to use several intermediate steps
 in the solution, yielding faster run times and better results. The
 sizes suggested by <strong>-Q</strong> can be achieved by altering <strong>-R</strong> and/or
 <strong>-I</strong>. You can recover the <strong>-R</strong> and <strong>-I</strong> you want later by
-using <a class="reference internal" href="grdsample.html"><span class="doc">grdsample</span></a> or <a class="reference internal" href="grdcut.html"><span class="doc">grdcut</span></a> on the output of <strong>surface</strong>.</dd>
+using <a class="reference internal" href="grdsample.html"><span class="doc">grdsample</span></a> or <a class="reference internal" href="grdcut.html"><span class="doc">grdcut</span></a> on the output of <strong>surface</strong>.</p>
+</dd>
 </dl>
-<dl class="docutils" id="s">
-<dt><strong>-S</strong><em>search_radius</em>[<strong>m</strong>|<strong>s</strong>]</dt>
-<dd>Search radius. Enter <em>search_radius</em> in same units as x,y data;
+<dl class="simple" id="s">
+<dt><strong>-S</strong><em>search_radius</em>[<strong>m</strong>|<strong>s</strong>]</dt><dd><p>Search radius. Enter <em>search_radius</em> in same units as x,y data;
 append <strong>m</strong> to indicate arc minutes or <strong>s</strong> for arc seconds. This
 is used to initialize the grid before the first iteration; it is not
 worth the time unless the grid lattice is prime and cannot have
-regional stages. [Default = 0.0 and no search is made.]</dd>
+regional stages. [Default = 0.0 and no search is made.]</p>
+</dd>
 </dl>
-<dl class="docutils" id="t">
-<dt><strong>-T</strong>[<strong>i</strong>|<strong>b</strong>]<em>tension_factor</em></dt>
-<dd>Tension factor[s]. These must be between 0 and 1. Tension may be
+<dl class="simple" id="t">
+<dt><strong>-T</strong>[<strong>i</strong>|<strong>b</strong>]<em>tension_factor</em></dt><dd><p>Tension factor[s]. These must be between 0 and 1. Tension may be
 used in the interior solution (above equation, where it suppresses
 spurious oscillations) and in the boundary conditions (where it
 tends to flatten the solution approaching the edges). Using zero for
@@ -239,70 +237,71 @@ i.e., a natural bicubic spline. Use <strong>-Ti</strong><em>tension_factor</em>
 to set interior tension, and <strong>-Tb</strong><em>tension_factor</em> to set
 boundary tension. If you do not prepend <strong>i</strong> or <strong>b</strong>, both will be
 set to the same value. [Default = 0 for both gives minimum curvature
-solution.]</dd>
+solution.]</p>
+</dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c]. <strong>-V3</strong> will report the convergence after each iteration;
-<strong>-V</strong> will report only after each regional grid is converged.</dd>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c]. <strong>-V3</strong> will report the convergence after each iteration;
+<strong>-V</strong> will report only after each regional grid is converged.</p>
+</dd>
 </dl>
-<dl class="docutils" id="z">
-<dt><strong>-Z</strong><em>over-relaxation_factor</em></dt>
-<dd>Over-relaxation factor. This parameter is used to accelerate the
+<dl class="simple" id="z">
+<dt><strong>-Z</strong><em>over-relaxation_factor</em></dt><dd><p>Over-relaxation factor. This parameter is used to accelerate the
 convergence; it is a number between 1 and 2. A value of 1 iterates
 the equations exactly, and will always assure stable convergence.
 Larger values overestimate the incremental changes during
 convergence, and will reach a solution more rapidly but may become
 unstable. If you use a large value for this factor, it is a good
 idea to monitor each iteration with the <strong>-Vl</strong> option. [Default =
-1.4 converges quickly and is almost always stable.]</dd>
+1.4 converges quickly and is almost always stable.]</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-a</strong><em>col</em>=<em>name</em>[<em>…</em>] <a class="reference internal" href="gmt.html#aspatial-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set aspatial column associations <em>col</em>=<em>name</em>.</dd>
+<dl class="simple">
+<dt><strong>-a</strong><em>col</em>=<em>name</em>[<em>…</em>] <a class="reference internal" href="gmt.html#aspatial-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set aspatial column associations <em>col</em>=<em>name</em>.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select native binary format for primary input. [Default is 3 input columns].</dd>
+<dl class="simple">
+<dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select native binary format for primary input. [Default is 3 input columns].</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-di</strong><em>nodata</em> <a class="reference internal" href="gmt.html#di-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Replace input columns that equal <em>nodata</em> with NaN.  </dd>
+<dl class="simple">
+<dt><strong>-di</strong><em>nodata</em> <a class="reference internal" href="gmt.html#di-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Replace input columns that equal <em>nodata</em> with NaN.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-e</strong>[<strong>~</strong>]<em>”pattern”</em> <strong>|</strong> <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] <a class="reference internal" href="gmt.html#e-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Only accept data records that match the given pattern.  </dd>
+<dl class="simple">
+<dt><strong>-e</strong>[<strong>~</strong>]<em>”pattern”</em> <strong>|</strong> <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] <a class="reference internal" href="gmt.html#e-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Only accept data records that match the given pattern.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Specify data types of input and/or output columns.  </dd>
+<dl class="simple">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify data types of input and/or output columns.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Skip or produce header record(s). Not used with binary data.</dd>
+<dl class="simple">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Skip or produce header record(s). Not used with binary data.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select input columns and transformations (0 is first column, <em>t</em> is trailing text, append <em>word</em> to read one word only).</dd>
+<dl class="simple">
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select input columns and transformations (0 is first column, <em>t</em> is trailing text, append <em>word</em> to read one word only).</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-r</strong> <a class="reference internal" href="gmt.html#nodereg-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set node registration [gridline].  </dd>
+<dl class="simple">
+<dt><strong>-r</strong> <a class="reference internal" href="gmt.html#nodereg-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set node registration [gridline].  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="gmt.html#colon-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Swap 1st and 2nd column on input and/or output.</dd>
+<dl class="simple">
+<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="gmt.html#colon-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Swap 1st and 2nd column on input and/or output.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
+<dl class="simple">
+<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
+</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</p>
+</dd>
+<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="grid-values-precision">
@@ -455,7 +454,7 @@ splines in tension, <em>Geophysics</em>, 55, 293-305.</p>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="S.html" >S</a> &#187;</li>
 <li class="right">
@@ -474,8 +473,8 @@ splines in tension, <em>Geophysics</em>, 55, 293-305.</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

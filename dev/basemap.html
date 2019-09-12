@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>basemap &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>basemap &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="PS.html" accesskey="U">Modern Mode Mapping</a> &#187;</li>
 <li class="right">
@@ -98,33 +96,32 @@ At least one of the options <strong>-B</strong>, <strong>-L</strong>, or <strong
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="j">
-<dt><strong>-J</strong><em>parameters</em> <a class="reference internal" href="gmt.html#j-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select map projection.  </dd>
+<dl class="simple" id="j">
+<dt><strong>-J</strong><em>parameters</em> <a class="reference internal" href="gmt.html#j-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select map projection.  </p>
+</dd>
 </dl>
-<dl class="docutils" id="r">
-<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Specify the region of interest.  </dd>
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify the region of interest.  </p>
+</dd>
 </dl>
 <p>For perspective view <strong>p</strong>, optionally append /<em>zmin</em>/<em>zmax</em>. <a class="reference internal" href="gmt.html#rz-full"><span class="std std-ref">(more …)</span></a>  </p>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="a">
-<dt><strong>-A</strong>[<em>file</em>]</dt>
-<dd>No plotting is performed.  Instead, we determine the geographical coordinates of the polygon outline
+<dl class="simple" id="a">
+<dt><strong>-A</strong>[<em>file</em>]</dt><dd><p>No plotting is performed.  Instead, we determine the geographical coordinates of the polygon outline
 for the (possibly oblique) rectangular map domain.  The plot domain must be given via
 <strong>-R</strong> and <strong>-J</strong>, with no other options allowed. The sampling interval is controlled via
 <a class="reference internal" href="gmt.conf.html#map-line-step"><span class="std std-ref">MAP_LINE_STEP</span></a> parameter. The coordinates are written to <em>file</em> or to standard output if no file
-is specified.</dd>
+is specified.</p>
+</dd>
 </dl>
-<dl class="docutils" id="b">
-<dt><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> <a class="reference internal" href="gmt.html#b-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set map boundary frame and axes attributes.</dd>
+<dl class="simple" id="b">
+<dt><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> <a class="reference internal" href="gmt.html#b-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set map boundary frame and axes attributes.</p>
+</dd>
 </dl>
-<dl class="docutils" id="f">
-<dt><strong>-F</strong>[<strong>d</strong>|<strong>l</strong>|<strong>t</strong>][<strong>+c</strong><em>clearances</em>][<strong>+g</strong><em>fill</em>][<strong>+i</strong>[[<em>gap</em>/]<em>pen</em>]][<strong>+p</strong>[<em>pen</em>]][<strong>+r</strong>[<em>radius</em>]][<strong>+s</strong>[[<em>dx</em>/<em>dy</em>/][<em>shade</em>]]]</dt>
-<dd>Without further options, draws a rectangular border around any map inset (<strong>-D</strong>; classic mode only),
+<dl class="simple" id="f">
+<dt><strong>-F</strong>[<strong>d</strong>|<strong>l</strong>|<strong>t</strong>][<strong>+c</strong><em>clearances</em>][<strong>+g</strong><em>fill</em>][<strong>+i</strong>[[<em>gap</em>/]<em>pen</em>]][<strong>+p</strong>[<em>pen</em>]][<strong>+r</strong>[<em>radius</em>]][<strong>+s</strong>[[<em>dx</em>/<em>dy</em>/][<em>shade</em>]]]</dt><dd><p>Without further options, draws a rectangular border around any map inset (<strong>-D</strong>; classic mode only),
 map scale (<strong>-L</strong>) or map rose (<strong>-T</strong>) using
 <a class="reference internal" href="gmt.conf.html#map-frame-pen"><span class="std std-ref">MAP_FRAME_PEN</span></a>; specify a different pen with <strong>+p</strong><em>pen</em>.
 Add <strong>+g</strong><em>fill</em> to fill the logo box [no fill].
@@ -142,11 +139,11 @@ indicates the shift relative to the foreground frame
 Used in combination with <strong>-D</strong>, <strong>-L</strong> or <strong>-T</strong>. To specify separate parameters
 for the various map features, append  <strong>d</strong>|<strong>l</strong>|<strong>t</strong> to <strong>-F</strong>
 to specify panel parameters for just that panel [Default uses the same panel
-parameters for all selected map features].</dd>
+parameters for all selected map features].</p>
+</dd>
 </dl>
-<dl class="docutils" id="l">
-<dt><strong>-L</strong>[<strong>g</strong>|<strong>j</strong>|<strong>J</strong>|<strong>n</strong>|<strong>x</strong>]<em>refpoint</em><strong>+c</strong>[<em>slon</em>/]<em>slat</em><strong>+w</strong><em>length</em>[<strong>e</strong>|<strong>f</strong>|<strong>k</strong>|<strong>M</strong>|<strong>n</strong>|<strong>u</strong>][<strong>+a</strong><em>align</em>][<strong>+f</strong>][<strong>+j</strong><em>justify</em>][<strong>+l</strong>[<em>label</em>]][<strong>+o</strong><em>dx</em>[/<em>dy</em>]][<strong>+u</strong>][<strong>+v</strong>]</dt>
-<dd>Draws a simple map scale centered on the reference point specified
+<dl class="simple" id="l">
+<dt><strong>-L</strong>[<strong>g</strong>|<strong>j</strong>|<strong>J</strong>|<strong>n</strong>|<strong>x</strong>]<em>refpoint</em><strong>+c</strong>[<em>slon</em>/]<em>slat</em><strong>+w</strong><em>length</em>[<strong>e</strong>|<strong>f</strong>|<strong>k</strong>|<strong>M</strong>|<strong>n</strong>|<strong>u</strong>][<strong>+a</strong><em>align</em>][<strong>+f</strong>][<strong>+j</strong><em>justify</em>][<strong>+l</strong>[<em>label</em>]][<strong>+o</strong><em>dx</em>[/<em>dy</em>]][<strong>+u</strong>][<strong>+v</strong>]</dt><dd><p>Draws a simple map scale centered on the reference point specified
 using one of four coordinate systems:
 (1) Use <strong>-Lg</strong> for map (user) coordinates, (2) use <strong>-Lj</strong> or <strong>-LJ</strong> for setting <em>refpoint</em> via
 a 2-char justification code that refers to the (invisible) map domain rectangle,
@@ -178,11 +175,11 @@ Note: Use <a class="reference internal" href="gmt.conf.html#font-label"><span cl
 to change the annotation font.  The height of the map scale is controlled
 by <a class="reference internal" href="gmt.conf.html#map-scale-height"><span class="std std-ref">MAP_SCALE_HEIGHT</span></a>, and the pen thickness is
 set by <a class="reference internal" href="gmt.conf.html#map-tick-pen-primary"><span class="std std-ref">MAP_TICK_PEN_PRIMARY</span></a>.
-See <strong>-F</strong> on how to place a panel behind the scale.</dd>
+See <strong>-F</strong> on how to place a panel behind the scale.</p>
+</dd>
 </dl>
-<dl class="docutils" id="t">
-<dt><strong>-Td</strong>[<strong>g</strong>|<strong>j</strong>|<strong>J</strong>|<strong>n</strong>|<strong>x</strong>]<em>refpoint</em><strong>+w</strong><em>width</em>[<strong>+f</strong>[<em>level</em>]][<strong>+j</strong><em>justify</em>][<strong>+l</strong><em>w,e,s,n</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</dt>
-<dd><strong>-Td</strong> draws a map directional rose on the map at the location defined by
+<dl class="simple" id="t">
+<dt><strong>-Td</strong>[<strong>g</strong>|<strong>j</strong>|<strong>J</strong>|<strong>n</strong>|<strong>x</strong>]<em>refpoint</em><strong>+w</strong><em>width</em>[<strong>+f</strong>[<em>level</em>]][<strong>+j</strong><em>justify</em>][<strong>+l</strong><em>w,e,s,n</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</dt><dd><p><strong>-Td</strong> draws a map directional rose on the map at the location defined by
 the reference and anchor points:
 Give the reference point on the map for the rose using one of four coordinate systems:
 (1) Use <strong>g</strong> for map (user) coordinates, (2) use <strong>j</strong> for setting <em>refpoint</em> via
@@ -205,11 +202,12 @@ orientations, while 3 adds the eight minor orientations WNW-ESE,
 NNW-SSE, NNE-SSW, and ENE-WSW.
 Label the cardinal points W,E,S,N by adding <strong>+l</strong> and append your own four
 comma-separated strings to override the default.  Skip a specific label by leaving it blank.
-See <a class="reference internal" href="GMT_Docs_classic.html#placing-dir-map-roses"><span class="std std-ref">Placing directional map roses</span></a> and <strong>-F</strong> on how to place a panel behind the scale.</dd>
+See <a class="reference internal" href="GMT_Docs_classic.html#placing-dir-map-roses"><span class="std std-ref">Placing directional map roses</span></a> and <strong>-F</strong> on how to place a panel behind the scale.</p>
+</dd>
 </dl>
 <p><strong>-Tm</strong>[<strong>g</strong>|<strong>j</strong>|<strong>J</strong>|<strong>n</strong>|<strong>x</strong>]<em>refpoint</em><strong>+w</strong><em>width</em>[<strong>+d</strong><em>dec</em>[/<em>dlabel</em>]]][<strong>+i</strong><em>pen</em>][<strong>+j</strong><em>justify</em>][<strong>+l</strong><em>w,e,s,n</em>][<strong>+p</strong><em>pen</em>][<strong>+t</strong><em>ints</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</p>
 <blockquote>
-<div><strong>-Tm</strong> draws a map magnetic rose on the map at the location defined by
+<div><p><strong>-Tm</strong> draws a map magnetic rose on the map at the location defined by
 the reference and anchor points:
 Give the reference point on the map for the rose using one of four coordinate systems:
 (1) Use <strong>g</strong> for map (user) coordinates, (2) use <strong>j</strong> for setting <em>refpoint</em> via
@@ -237,42 +235,43 @@ geographic (first three) and magnetic (last three) intervals.
 Label the cardinal points W,E,S,N by adding <strong>+l</strong> and append your own four comma-separated
 strings to override the default.  Skip a specific label by leaving it blank.
 Number GMT default parameters control pens, fonts, and color.
-See <a class="reference internal" href="GMT_Docs_classic.html#placing-dir-map-roses"><span class="std std-ref">Placing directional map roses</span></a> and <strong>-F</strong> on how to place a panel behind the scale.</div></blockquote>
-<dl class="docutils" id="u">
-<dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>] <a class="reference internal" href="gmt.html#u-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Draw GMT time stamp logo on plot.</dd>
+See <a class="reference internal" href="GMT_Docs_classic.html#placing-dir-map-roses"><span class="std std-ref">Placing directional map roses</span></a> and <strong>-F</strong> on how to place a panel behind the scale.</p>
+</div></blockquote>
+<dl class="simple" id="u">
+<dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>] <a class="reference internal" href="gmt.html#u-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Draw GMT time stamp logo on plot.</p>
+</dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
 </dl>
 <p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</p>
-<dl class="docutils">
-<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Shift plot origin.</dd>
+<dl class="simple">
+<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Shift plot origin.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Specify data types of input and/or output columns. This applies only to the coordinates specified in the <strong>-R</strong> option.</dd>
+<dl class="simple">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify data types of input and/or output columns. This applies only to the coordinates specified in the <strong>-R</strong> option.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-p</strong>[<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>azim</em>[/<em>elev</em>[/<em>zlevel</em>]][<strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>z0</em>]][<strong>+v</strong><em>x0</em>/<em>y0</em>] <a class="reference internal" href="gmt.html#perspective-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select perspective view.  </dd>
+<dl class="simple">
+<dt><strong>-p</strong>[<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>azim</em>[/<em>elev</em>[/<em>zlevel</em>]][<strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>z0</em>]][<strong>+v</strong><em>x0</em>/<em>y0</em>] <a class="reference internal" href="gmt.html#perspective-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select perspective view.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-t</strong>[<em>transp</em>] <a class="reference internal" href="gmt.html#t-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set transparency level in percent.</dd>
+<dl class="simple">
+<dt><strong>-t</strong>[<em>transp</em>] <a class="reference internal" href="gmt.html#t-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set transparency level in percent.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
+<dl class="simple">
+<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
+</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</p>
+</dd>
+<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="examples">
@@ -772,7 +771,7 @@ However, it is fairly simple for most applications (see examples).</p>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="PS.html" >Modern Mode Mapping</a> &#187;</li>
 <li class="right">
@@ -791,8 +790,8 @@ However, it is fairly simple for most applications (see examples).</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

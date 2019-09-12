@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>mgd77convert &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>mgd77convert &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../SUP_MGD77.html" accesskey="U">MGD77</a> &#187;</li>
 <li class="right">
@@ -86,17 +84,16 @@ Both pre- and post-Y2K MGD77 formats can be processed.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><em>NGDC-ids</em></dt>
-<dd><p class="first">Can be one or more of five kinds of specifiers:</p>
+<dl>
+<dt><em>NGDC-ids</em></dt><dd><p>Can be one or more of five kinds of specifiers:</p>
 <ol class="arabic simple">
-<li>8-character NGDC IDs, e.g., 01010083, JA010010etc., etc.</li>
-<li>2-character <em>agency</em> codes which will return all cruises from each agency.</li>
-<li>4-character &lt;agency&gt;&lt;vessel&gt; codes, which will return all cruises from those vessels.</li>
-<li>=<em>list</em>, where <em>list</em> is a table with NGDC IDs, one per line.</li>
-<li>If nothing is specified we return all cruises in the data base.</li>
+<li><p>8-character NGDC IDs, e.g., 01010083, JA010010etc., etc.</p></li>
+<li><p>2-character <em>agency</em> codes which will return all cruises from each agency.</p></li>
+<li><p>4-character &lt;agency&gt;&lt;vessel&gt; codes, which will return all cruises from those vessels.</p></li>
+<li><p>=<em>list</em>, where <em>list</em> is a table with NGDC IDs, one per line.</p></li>
+<li><p>If nothing is specified we return all cruises in the data base.</p></li>
 </ol>
-<p class="last">(See mgd77info <strong>-L</strong> for agency and vessel codes). If no file
+<p>(See mgd77info <strong>-L</strong> for agency and vessel codes). If no file
 extension is given then we search for files with one of the four
 known extensions.  The search order (and the extensions) tried
 is MGD77+ (“.nc”), MGD77T (“.m77t”), MGD77 (“.mgd77” ) and plain
@@ -107,66 +104,66 @@ listed in <strong>$MGD77_HOME</strong>/mgd77_paths.txt [If <strong>$MGD77_HOME</
 not set it will default to <strong>$GMT_SHAREDIR</strong>/mgd77].</p>
 </dd>
 </dl>
-<dl class="docutils" id="f">
-<dt><strong>-Fa</strong>|<strong>c</strong>|<strong>m</strong>|<strong>t</strong></dt>
-<dd>Specifies the format of the input (From) files. Choose from <strong>a</strong>
+<dl class="simple" id="f">
+<dt><strong>-Fa</strong>|<strong>c</strong>|<strong>m</strong>|<strong>t</strong></dt><dd><p>Specifies the format of the input (From) files. Choose from <strong>a</strong>
 for standard MGD77 ASCII table (with extension .mgd77), <strong>c</strong> for
 the new MGD77+ netCDF format (with extension .nc), <strong>m</strong> for the
 new MGD77T format (extension .m77t) and <strong>t</strong> for a
 plain ASCII tab-separated table dump (with extension .dat). Use
 <strong>-FC</strong> to recover the original MGD77 setting from the MGD77+ file
-[Default will apply any E77 corrections encoded in the file].</dd>
+[Default will apply any E77 corrections encoded in the file].</p>
+</dd>
 </dl>
-<dl class="docutils" id="t">
-<dt><strong>-T</strong><strong>a</strong>|<strong>c</strong>|<strong>m</strong>|<strong>t</strong>[<strong>+f</strong>]</dt>
-<dd>Specifies the format of the output (To) files. Choose from <strong>a</strong> for
+<dl class="simple" id="t">
+<dt><strong>-T</strong><strong>a</strong>|<strong>c</strong>|<strong>m</strong>|<strong>t</strong>[<strong>+f</strong>]</dt><dd><p>Specifies the format of the output (To) files. Choose from <strong>a</strong> for
 standard MGD77 ASCII table (with extension .mgd77), <strong>c</strong> for the
 new MGD77+ netCDF format (with extension .nc), <strong>m</strong> for the
 new MGD77T format (extension .m77t) and <strong>t</strong> for a plain
 ASCII tab-separated table dump (with extension .dat). We will refuse
 to create the file(s) if they already exist in the current
-directory. Append <strong>+f</strong> to force an override of this policy.</dd>
+directory. Append <strong>+f</strong> to force an override of this policy.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="c">
-<dt><strong>-C</strong></dt>
-<dd>Convert from NGDC two-file data sets *.h77, *.a77 to single file
+<dl class="simple" id="c">
+<dt><strong>-C</strong></dt><dd><p>Convert from NGDC two-file data sets *.h77, *.a77 to single file
 *.mgd77. No other options (except <strong>-V</strong>) are allowed. Give one or
-more names of *.h77 files, *.a77 files, or just the file prefixes.</dd>
+more names of *.h77 files, *.a77 files, or just the file prefixes.</p>
+</dd>
 </dl>
-<dl class="docutils" id="d">
-<dt><strong>-D</strong></dt>
-<dd>By default, the storage types used in a MGD77+ netCDF file greatly
+<dl class="simple" id="d">
+<dt><strong>-D</strong></dt><dd><p>By default, the storage types used in a MGD77+ netCDF file greatly
 exceed the precision imposed by the ASCII MGD77 format. However, for
 the five items <strong>faa</strong>, <strong>eot</strong>, <strong>mag</strong>, <strong>diur</strong> and <strong>msd</strong> we
 use 2-byte integers with implied precisions of 0.1 mGal, 0.1 nTesla,
 and 1 m as in the MGD77 format. It is possible that at some point
 these items will need to be stored as 4-byte ints which would allow
 precisions of 10 fTesla, 1 nGal, and 0.01 mm, respectively. This
-option activates such storage [Default uses 2-byte integers].</dd>
+option activates such storage [Default uses 2-byte integers].</p>
+</dd>
 </dl>
-<dl class="docutils" id="l">
-<dt><strong>-L</strong>[<strong>w</strong>][<strong>e</strong>][<strong>+l</strong>]</dt>
-<dd>Set the level of verification reporting [none] and where to send
+<dl class="simple" id="l">
+<dt><strong>-L</strong>[<strong>w</strong>][<strong>e</strong>][<strong>+l</strong>]</dt><dd><p>Set the level of verification reporting [none] and where to send
 such reports [stderr]. Append a combination of <strong>w</strong> for warnings and
-<strong>e</strong> for errors, and append <strong>+l</strong> to send such log information to stdout.</dd>
+<strong>e</strong> for errors, and append <strong>+l</strong> to send such log information to stdout.</p>
+</dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="../../gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
+<dl class="simple">
+<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
+</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</p>
+</dd>
+<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="../../gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="examples">
@@ -303,7 +300,7 @@ The Marine Geophysical Data Exchange Format - “MGD77”, see
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../SUP_MGD77.html" >MGD77</a> &#187;</li>
 <li class="right">
@@ -322,8 +319,8 @@ The Marine Geophysical Data Exchange Format - “MGD77”, see
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

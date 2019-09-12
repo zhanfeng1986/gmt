@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>1. Introduction &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>1. Introduction &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="api.html" accesskey="U">GMT_API</a> &#187;</li>
 <li class="right">
@@ -82,7 +80,7 @@
 <span id="index-0"></span><h2>1.1. Preamble<a class="headerlink" href="#preamble" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-center" id="id12">
 <a class="reference internal image-reference" href="_images/GMT4_mode.png"><img alt="_images/GMT4_mode.png" src="_images/GMT4_mode.png" style="width: 561.0px; height: 277.0px;" /></a>
-<p class="caption"><span class="caption-text">GMT 4 programs contain all the high-level functionality.</span></p>
+<p class="caption"><span class="caption-text">GMT 4 programs contain all the high-level functionality.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 <p>Prior to version 5, the bulk of GMT functionality was coded directly
 in the standard GMT C program modules (e.g., <code class="docutils literal notranslate"><span class="pre">surface.c</span></code>, <code class="docutils literal notranslate"><span class="pre">grdimage.c</span></code>, etc.). The
@@ -92,7 +90,7 @@ have been very successful, with tens of thousands of users world-wide.
 However, the design of the main programs prevented developers from
 leveraging GMT functionality from within other programming
 environments since access to GMT tools could only be achieved via
-system calls <a class="footnote-reference" href="#id7" id="id1">[1]</a>. Consequently, all data i/o had to be done via
+system calls <a class="footnote-reference brackets" href="#id7" id="id1">1</a>. Consequently, all data i/o had to be done via
 temporary files. The design also prevented the GMT developers
 themselves from taking advantage of these modules directly. For
 instance, the tool <a class="reference internal" href="legend.html"><span class="doc">legend</span></a> needed to
@@ -102,7 +100,7 @@ symbols and text that make up a map legend, making it a very awkward
 program to maintain.</p>
 <div class="figure align-center" id="id13">
 <a class="reference internal image-reference" href="_images/GMT5_mode.png"><img alt="_images/GMT5_mode.png" src="_images/GMT5_mode.png" style="width: 558.0px; height: 199.5px;" /></a>
-<p class="caption"><span class="caption-text">GMT 5 programs contain all the high-level functionality.</span></p>
+<p class="caption"><span class="caption-text">GMT 5 programs contain all the high-level functionality.</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 <p>Starting with GMT version 5, all standard GMT programs have been
 rewritten into separate function “modules” invoked by a single
@@ -111,7 +109,7 @@ The <a class="reference internal" href="gmt.html"><span class="doc">gmt</span></
 GMT modules; it is these modules that do all the work. These new
 functions have been placed in a new GMT high-level API library and can
 be called from a variety of environments (C/C++, Fortran, Julia, Python,
-MATLAB, Visual Basic, R, etc.) <a class="footnote-reference" href="#id8" id="id2">[2]</a>. For example, the main
+MATLAB, Visual Basic, R, etc.) <a class="footnote-reference brackets" href="#id8" id="id2">2</a>. For example, the main
 program <code class="docutils literal notranslate"><span class="pre">blockmean.c</span></code> has been reconfigured as a high-level function
 <code class="docutils literal notranslate"><span class="pre">GMT_blockmean()</span></code>, which does the actual spatial averaging and can
 pass the result back to the calling program (or write it to file). The
@@ -126,7 +124,7 @@ Consequently, <code class="docutils literal notranslate"><span class="pre">block
 fact no longer exist.</p>
 <div class="figure align-center" id="id14">
 <a class="reference internal image-reference" href="_images/GMT5_external.png"><img alt="_images/GMT5_external.png" src="_images/GMT5_external.png" style="width: 596.5px; height: 308.0px;" /></a>
-<p class="caption"><span class="caption-text">GMT 5 API showing current and future external environments.</span></p>
+<p class="caption"><span class="caption-text">GMT 5 API showing current and future external environments.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="the-i-o-abstraction-layer">
@@ -178,11 +176,11 @@ want to access the entire low-level GMT library as well. It is
 unlikely that the low-level library will ever be fully documented.</p>
 <p>There are two classes of development that users can pursue:</p>
 <ol class="arabic simple">
-<li>Building stand-alone custom executables that link with the shared GMT
+<li><p>Building stand-alone custom executables that link with the shared GMT
 API.  Our examples in this documentation are of this kind.  There programs
 are likely to address a user’s special data formats or processing needs
-by leveraging high-level GMT modules to do some of the heavy lifting.</li>
-<li>Building shared library plugins to extend the breath of GMT.  Users who
+by leveraging high-level GMT modules to do some of the heavy lifting.</p></li>
+<li><p>Building shared library plugins to extend the breath of GMT.  Users who
 wish to build one or more new modules and distributed then via a plugin
 that is dynamically loaded at run-time can now do so.   At the present,
 all the modules in the official GMT supplement are compiled into a single
@@ -191,43 +189,43 @@ additional plugin libraries with any number of GMT-like modules and these
 will then be available from the gmt command (as well as from derived
 interfaces such as the GMT/MATLAB toolbox and the Python module).  An
 example of plugin development is given by the
-<a class="reference external" href="http://www.soest.hawaii.edu/PT/GSFML/">GSFML extension to GMT</a>.</li>
+<a class="reference external" href="http://www.soest.hawaii.edu/PT/GSFML/">GSFML extension to GMT</a>.</p></li>
 </ol>
 </div>
 <div class="section" id="definitions">
 <h2>1.4. Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h2>
 <p>For the purpose of this documentation a few definitions are needed:</p>
 <ol class="arabic simple">
-<li>“Standard GMT program” refers to one of the traditional stand-alone
+<li><p>“Standard GMT program” refers to one of the traditional stand-alone
 command-line executables known to all GMT users, e.g.,
 <a class="reference internal" href="blockmean.html"><span class="doc">blockmean</span></a>, <a class="reference internal" href="plot.html"><span class="doc">plot</span></a>,
 <a class="reference internal" href="grdimage.html"><span class="doc">grdimage</span></a>, etc. Prior to version 5,
 these were the only GMT executables available.  In GMT 5 and up, these are
-accessed via the <a class="reference internal" href="gmt.html"><span class="doc">gmt</span></a> executable.</li>
-<li>“GMT module” refers to the function in the GMT API library that
+accessed via the <a class="reference internal" href="gmt.html"><span class="doc">gmt</span></a> executable.</p></li>
+<li><p>“GMT module” refers to the function in the GMT API library that
 is responsible for all the action taken by the corresponding
 standard GMT program. All such modules are given the same names as the
 corresponding programs e.g., “blockmean”, but are invoked via the
-<code class="docutils literal notranslate"><span class="pre">GMT_Call_Module</span></code> function.</li>
-<li>“GMT application” refers to a new application written by any
+<code class="docutils literal notranslate"><span class="pre">GMT_Call_Module</span></code> function.</p></li>
+<li><p>“GMT application” refers to a new application written by any
 developer.  It uses the API, perhaps for custom i/o, and may call one
-or more GMT functions to create a new GMT-compatible executable.</li>
-<li>“GMT plugin library” refers to a collection of one or more new custom
+or more GMT functions to create a new GMT-compatible executable.</p></li>
+<li><p>“GMT plugin library” refers to a collection of one or more new custom
 GMT-like modules that are presented as a plugin library.  It such libraries
 are placed in the official GMT plugin directory or their path is added to
-the GMT defaults parameter GMT_CUSTOM_LIBS then the <a class="reference internal" href="gmt.html"><span class="doc">gmt</span></a> executable can find them.</li>
-<li>“Family” refers to one of the many high-level GMT data types (e.g., grids, CPTs)
-and is typically a required argument to some API functions.</li>
-<li>“Method” refers to one of several ways in which data can be read or written
-in the API, including from existing memory variables.</li>
-<li>“Direction” is typically either GMT_IN (for reading) or GMT_OUT (for writing).</li>
-<li>In the API description that follows we will use the type <code class="docutils literal notranslate"><span class="pre">int</span></code> to
+the GMT defaults parameter GMT_CUSTOM_LIBS then the <a class="reference internal" href="gmt.html"><span class="doc">gmt</span></a> executable can find them.</p></li>
+<li><p>“Family” refers to one of the many high-level GMT data types (e.g., grids, CPTs)
+and is typically a required argument to some API functions.</p></li>
+<li><p>“Method” refers to one of several ways in which data can be read or written
+in the API, including from existing memory variables.</p></li>
+<li><p>“Direction” is typically either GMT_IN (for reading) or GMT_OUT (for writing).</p></li>
+<li><p>In the API description that follows we will use the type <code class="docutils literal notranslate"><span class="pre">int</span></code> to
 mean a 4-byte integer. All integers used in the API are 4-byte
 integers with the exception of one function where an 8-byte integer is
 used. Since different operating systems have their own way of
 defining 8-byte integers we use C99’s <code class="docutils literal notranslate"><span class="pre">int64_t</span></code> for this purpose;
 it is guaranteed to yield the correct type that the GMT function
-expects.</li>
+expects.</p></li>
 </ol>
 <p>In version 5, the standard GMT programs are themselves simple invocations
 of the <a class="reference internal" href="gmt.html"><span class="doc">gmt</span></a> application with the function name as argument.
@@ -244,33 +242,33 @@ revisions.  We developed API to enable GMT access from other environments hence 
 the library to address the needs of such developers.  Here are the changes in the GMT 6
 API that are not backwards compatible with GMT 5:</p>
 <ol class="arabic simple">
-<li>There is no longer a GMT_TEXTSET resource.  Data records are now generalized to
+<li><p>There is no longer a GMT_TEXTSET resource.  Data records are now generalized to
 contain an optional leading numerical array followed by an optional trailing text.
 A “TEXTSET” in this context is simply a DATASET that has no leading numerical array.
 This change was necessary so that all modules reading tables expect the same fundamental
 GMT_DATASET resource.  The alternative (which we lived to regret) was that developers
 calling modules from their environment would have to format their data in different ways
 depending on the module, and in some case depending on module options.  Now, all table
-modules expect GMT_DATASET.</li>
-<li>The function GMT_Alloc_Segment no longer takes the family of the segment (since there are
+modules expect GMT_DATASET.</p></li>
+<li><p>The function GMT_Alloc_Segment no longer takes the family of the segment (since there are
 now only DATASET segments) but the family variable has been reused as a mode which is
 passed as either GMT_WITH_STRINGS or GMT_NO_STRINGS so that data segments can be allocated
-with or without the optional string array.</li>
-<li>We introduce a new structure GMT_RECORD which is used by GMT_Get_Record and GMT_Put_Record.
+with or without the optional string array.</p></li>
+<li><p>We introduce a new structure GMT_RECORD which is used by GMT_Get_Record and GMT_Put_Record.
 Because such records may have both leading numerical columns and a trailing string these
-functions needed to work with such a structure rather than either an array or string.</li>
-<li>The unused function GMT_Set_Columns needed to accept <em>direction</em> so it could be used for
+functions needed to work with such a structure rather than either an array or string.</p></li>
+<li><p>The unused function GMT_Set_Columns needed to accept <em>direction</em> so it could be used for
 either input or output.  It is rarely needed but some tools that must only read <em>N</em> numerical
 columns and treat anything beyond that as trailing text (even if numbers) must set the
 fixed input columns before reading.  We also added one more mode (GMT_COL_FIX_NO_TEXT) to
-enforce reading of a fixed number of numerical columns and skip any trailing text.</li>
-<li>The GMT_DATASET structure has gained a new (hidden) enum GMT_enum_read <code class="docutils literal notranslate"><span class="pre">type</span></code> which indicates what
+enforce reading of a fixed number of numerical columns and skip any trailing text.</p></li>
+<li><p>The GMT_DATASET structure has gained a new (hidden) enum GMT_enum_read <code class="docutils literal notranslate"><span class="pre">type</span></code> which indicates what
 record types were read to produce this dataset (GMT_READ_DATA, GMT_READ_TEXT, GMT_READ_MIXED).
-We also changed the geometry from unsigned int to enum GMT_enum_geometry.</li>
-<li>The long obsolete enums GMT_READ_DOUBLE and GMT_WRITE_DOUBLE have now fully been removed;
-use GMT_READ_DATA and GMT_WRITE_DATA instead.</li>
-<li>The GMT_Convert_Data function’s flag array is now of length 2 instead of 3 (because there are no
-longer any TEXTSET settings), with what used to be flag3 now being given as flag2.</li>
+We also changed the geometry from unsigned int to enum GMT_enum_geometry.</p></li>
+<li><p>The long obsolete enums GMT_READ_DOUBLE and GMT_WRITE_DOUBLE have now fully been removed;
+use GMT_READ_DATA and GMT_WRITE_DATA instead.</p></li>
+<li><p>The GMT_Convert_Data function’s flag array is now of length 2 instead of 3 (because there are no
+longer any TEXTSET settings), with what used to be flag3 now being given as flag2.</p></li>
 </ol>
 </div>
 <div class="section" id="gmt-resources">
@@ -282,7 +280,7 @@ usually a mix of data and free-form text).  In addition, we
 provide two data objects to facilitate the passing of simple user arrays
 (one or more equal-length data columns of any data type, e.g., double,
 char) and 2-D or 3-D user matrices (of any data type and column/row
-organization <a class="footnote-reference" href="#id9" id="id3">[3]</a>). We refer to these data types as GMT <em>resources</em>.
+organization <a class="footnote-reference brackets" href="#id9" id="id3">3</a>). We refer to these data types as GMT <em>resources</em>.
 There are many attributes for each of these resources and therefore we
 use a top-level structure for each object to keep them all within one
 container. These containers are given or returned by GMT API
@@ -405,7 +403,7 @@ Both image and header information are passed via a <code class="docutils literal
 which is a container that holds both items. Thus, the arguments to
 GMT API functions that handle GMT images expect this type of
 variable. Unlike the other objects, writing images has only partial
-support via <a class="reference internal" href="grdimage.html"><span class="doc">grdimage</span></a> <a class="footnote-reference" href="#id10" id="id4">[4]</a>.
+support via <a class="reference internal" href="grdimage.html"><span class="doc">grdimage</span></a> <a class="footnote-reference brackets" href="#id10" id="id4">4</a>.
 For the full definition, see <a class="reference internal" href="#struct-image"><span class="std std-ref">GMT_IMAGE</span></a>.</p>
 <div class="highlight-c notranslate" id="struct-image2"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">GMT_IMAGE</span> <span class="p">{</span>     <span class="cm">/* A GMT char image, header, and colormap in one container */</span>
     <span class="k">enum</span> <span class="n">GMT_enum_type</span>      <span class="n">type</span><span class="p">;</span>             <span class="cm">/* Data type, e.g. GMT_FLOAT */</span>
@@ -549,24 +547,24 @@ short we completely ignore
 the return codes of the modules for now.  We will call our program
 <a class="reference internal" href="#example-code1"><span class="std std-ref">example1.c</span></a>.  Here are the steps:</p>
 <ol class="arabic simple">
-<li>Initialize a new GMT session with <a class="reference internal" href="#gmt-create-session">GMT_Create_Session</a>, which
+<li><p>Initialize a new GMT session with <a class="reference internal" href="#gmt-create-session">GMT_Create_Session</a>, which
 allocates a hidden GMT API control structure and returns an opaque
 pointer to it. This pointer is a <em>required</em> argument to all subsequent
-GMT API function calls within the session.</li>
-<li>Read a data set (or grid, etc.) into memory with <a class="reference internal" href="#gmt-read-data">GMT_Read_Data</a>,
+GMT API function calls within the session.</p></li>
+<li><p>Read a data set (or grid, etc.) into memory with <a class="reference internal" href="#gmt-read-data">GMT_Read_Data</a>,
 which, depending on data type, returns one of the data structures
-discussed earlier.</li>
-<li>Associate your data with a virtual file using <a class="reference internal" href="#gmt-open-virtualfile">GMT_Open_VirtualFile</a>.
+discussed earlier.</p></li>
+<li><p>Associate your data with a virtual file using <a class="reference internal" href="#gmt-open-virtualfile">GMT_Open_VirtualFile</a>.
 This steps returns a special filename that you can use to tell a module where
-to read its input.  No actual file is created.</li>
-<li>Open a new virtual file to hold the output using <a class="reference internal" href="#gmt-open-virtualfile">GMT_Open_VirtualFile</a>.
-This step also returns a special filename for the module to send its output.</li>
-<li>Prepare required arguments (including the two virtual file names) and
-call the GMT module you wish to use via GMT_Call_Module.</li>
-<li>Obtain the desired output object via <a class="reference internal" href="#gmt-read-virtualfile">GMT_Read_VirtualFile</a>, which
-returns a data structure of requested type.</li>
-<li>Close the virtual files you have been using with <a class="reference internal" href="#gmt-close-virtualfile">GMT_Close_VirtualFile</a>.</li>
-<li>We terminate the GMT session by calling <a class="reference internal" href="#gmt-destroy-session">GMT_Destroy_Session</a>.</li>
+to read its input.  No actual file is created.</p></li>
+<li><p>Open a new virtual file to hold the output using <a class="reference internal" href="#gmt-open-virtualfile">GMT_Open_VirtualFile</a>.
+This step also returns a special filename for the module to send its output.</p></li>
+<li><p>Prepare required arguments (including the two virtual file names) and
+call the GMT module you wish to use via GMT_Call_Module.</p></li>
+<li><p>Obtain the desired output object via <a class="reference internal" href="#gmt-read-virtualfile">GMT_Read_VirtualFile</a>, which
+returns a data structure of requested type.</p></li>
+<li><p>Close the virtual files you have been using with <a class="reference internal" href="#gmt-close-virtualfile">GMT_Close_VirtualFile</a>.</p></li>
+<li><p>We terminate the GMT session by calling <a class="reference internal" href="#gmt-destroy-session">GMT_Destroy_Session</a>.</p></li>
 </ol>
 <div class="section" id="example-code">
 <h2>2.1. Example code<a class="headerlink" href="#example-code" title="Permalink to this headline">¶</a></h2>
@@ -647,232 +645,232 @@ code, available from the repository gmt-custom, obtainable via</p>
 any of them to see the full syntax of each function.</p>
 <p>The C/C++ API is deliberately kept small to make it easy to use.</p>
 <blockquote id="tbl-api">
-<div><table border="1" class="docutils">
+<div><table class="docutils align-default">
 <colgroup>
-<col width="32%" />
-<col width="68%" />
+<col style="width: 32%" />
+<col style="width: 68%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">constant</th>
-<th class="head">description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>constant</p></th>
+<th class="head"><p>description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td><a class="reference internal" href="#gmt-alloc-segment">GMT_Alloc_Segment</a></td>
-<td>Allocate data segments</td>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-alloc-segment">GMT_Alloc_Segment</a></p></td>
+<td><p>Allocate data segments</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-append-option">GMT_Append_Option</a></td>
-<td>Append new option structure to linked list</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-append-option">GMT_Append_Option</a></p></td>
+<td><p>Append new option structure to linked list</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-begin-io">GMT_Begin_IO</a></td>
-<td>Enable record-by-record i/o</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-begin-io">GMT_Begin_IO</a></p></td>
+<td><p>Enable record-by-record i/o</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-call-module">GMT_Call_Module</a></td>
-<td>Call any of the GMT modules</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-call-module">GMT_Call_Module</a></p></td>
+<td><p>Call any of the GMT modules</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-convert-data">GMT_Convert_Data</a></td>
-<td>Convert between compatible data types</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-convert-data">GMT_Convert_Data</a></p></td>
+<td><p>Convert between compatible data types</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-close-virtualfile">GMT_Close_VirtualFile</a></td>
-<td>Close a virtual file</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-close-virtualfile">GMT_Close_VirtualFile</a></p></td>
+<td><p>Close a virtual file</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-create-args">GMT_Create_Args</a></td>
-<td>Convert linked list of options to text array</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-create-args">GMT_Create_Args</a></p></td>
+<td><p>Convert linked list of options to text array</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-create-cmd">GMT_Create_Cmd</a></td>
-<td>Convert linked list of options to command line</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-create-cmd">GMT_Create_Cmd</a></p></td>
+<td><p>Convert linked list of options to command line</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-create-data">GMT_Create_Data</a></td>
-<td>Create an empty data resource</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-create-data">GMT_Create_Data</a></p></td>
+<td><p>Create an empty data resource</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-create-options">GMT_Create_Options</a></td>
-<td>Convert command line options to linked list</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-create-options">GMT_Create_Options</a></p></td>
+<td><p>Convert command line options to linked list</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-create-session">GMT_Create_Session</a></td>
-<td>Initialize a new GMT session</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-create-session">GMT_Create_Session</a></p></td>
+<td><p>Initialize a new GMT session</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-delete-option">GMT_Delete_Option</a></td>
-<td>Delete an option structure from the linked list</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-delete-option">GMT_Delete_Option</a></p></td>
+<td><p>Delete an option structure from the linked list</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-destroy-args">GMT_Destroy_Args</a></td>
-<td>Delete text array of arguments</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-destroy-args">GMT_Destroy_Args</a></p></td>
+<td><p>Delete text array of arguments</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-destroy-cmd">GMT_Destroy_Cmd</a></td>
-<td>Delete text command of arguments</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-destroy-cmd">GMT_Destroy_Cmd</a></p></td>
+<td><p>Delete text command of arguments</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-destroy-data">GMT_Destroy_Data</a></td>
-<td>Delete a data resource</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-destroy-data">GMT_Destroy_Data</a></p></td>
+<td><p>Delete a data resource</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-destroy-group">GMT_Destroy_Group</a></td>
-<td>Delete a group of data resources</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-destroy-group">GMT_Destroy_Group</a></p></td>
+<td><p>Delete a group of data resources</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-destroy-options">GMT_Destroy_Options</a></td>
-<td>Delete the linked list of option structures</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-destroy-options">GMT_Destroy_Options</a></p></td>
+<td><p>Delete the linked list of option structures</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-destroy-session">GMT_Destroy_Session</a></td>
-<td>Terminate a GMT session</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-destroy-session">GMT_Destroy_Session</a></p></td>
+<td><p>Terminate a GMT session</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-duplicate-data">GMT_Duplicate_Data</a></td>
-<td>Make an identical copy of a data resources</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-duplicate-data">GMT_Duplicate_Data</a></p></td>
+<td><p>Make an identical copy of a data resources</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-encode-options">GMT_Encode_Options</a></td>
-<td>Encode option arguments for external interfaces</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-encode-options">GMT_Encode_Options</a></p></td>
+<td><p>Encode option arguments for external interfaces</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-error-message">GMT_Error_Message</a></td>
-<td>Return character pointer to last API error message</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-error-message">GMT_Error_Message</a></p></td>
+<td><p>Return character pointer to last API error message</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-expand-option">GMT_Expand_Option</a></td>
-<td>Expand option with explicit memory references</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-expand-option">GMT_Expand_Option</a></p></td>
+<td><p>Expand option with explicit memory references</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-end-io">GMT_End_IO</a></td>
-<td>Disable further record-by-record i/o</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-end-io">GMT_End_IO</a></p></td>
+<td><p>Disable further record-by-record i/o</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-fft">GMT_FFT</a></td>
-<td>Take the Fast Fourier Transform of data object</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-fft">GMT_FFT</a></p></td>
+<td><p>Take the Fast Fourier Transform of data object</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-fft-1d">GMT_FFT_1D</a></td>
-<td>Take the Fast Fourier Transform of 1-D float data</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-fft-1d">GMT_FFT_1D</a></p></td>
+<td><p>Take the Fast Fourier Transform of 1-D float data</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-fft-2d">GMT_FFT_2D</a></td>
-<td>Take the Fast Fourier Transform of 2-D float data</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-fft-2d">GMT_FFT_2D</a></p></td>
+<td><p>Take the Fast Fourier Transform of 2-D float data</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-fft-create">GMT_FFT_Create</a></td>
-<td>Initialize the FFT machinery</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-fft-create">GMT_FFT_Create</a></p></td>
+<td><p>Initialize the FFT machinery</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-fft-destroy">GMT_FFT_Destroy</a></td>
-<td>Terminate the FFT machinery</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-fft-destroy">GMT_FFT_Destroy</a></p></td>
+<td><p>Terminate the FFT machinery</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-fft-option">GMT_FFT_Option</a></td>
-<td>Explain the FFT options and modifiers</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-fft-option">GMT_FFT_Option</a></p></td>
+<td><p>Explain the FFT options and modifiers</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-fft-parse">GMT_FFT_Parse</a></td>
-<td>Parse argument with FFT options and modifiers</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-fft-parse">GMT_FFT_Parse</a></p></td>
+<td><p>Parse argument with FFT options and modifiers</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-fft-wavenumber">GMT_FFT_Wavenumber</a></td>
-<td>Return wavenumber given data index</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-fft-wavenumber">GMT_FFT_Wavenumber</a></p></td>
+<td><p>Return wavenumber given data index</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-find-option">GMT_Find_Option</a></td>
-<td>Find an option in the linked list</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-find-option">GMT_Find_Option</a></p></td>
+<td><p>Find an option in the linked list</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-get-common">GMT_Get_Common</a></td>
-<td>Determine if a GMT common option was set</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-get-common">GMT_Get_Common</a></p></td>
+<td><p>Determine if a GMT common option was set</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-get-coord">GMT_Get_Coord</a></td>
-<td>Create a coordinate array</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-get-coord">GMT_Get_Coord</a></p></td>
+<td><p>Create a coordinate array</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-get-default">GMT_Get_Default</a></td>
-<td>Obtain one of the API or GMT default settings</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-get-default">GMT_Get_Default</a></p></td>
+<td><p>Obtain one of the API or GMT default settings</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-get-enum">GMT_Get_Enum</a></td>
-<td>Obtain one of the API enum constants</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-get-enum">GMT_Get_Enum</a></p></td>
+<td><p>Obtain one of the API enum constants</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-get-index">GMT_Get_Index</a></td>
-<td>Convert row, col into a grid or image index</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-get-index">GMT_Get_Index</a></p></td>
+<td><p>Convert row, col into a grid or image index</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-get-info">GMT_Get_Info</a></td>
-<td>Obtain meta data (range, dimension), … from object</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-get-info">GMT_Get_Info</a></p></td>
+<td><p>Obtain meta data (range, dimension), … from object</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-get-matrix">GMT_Get_Matrix</a></td>
-<td>Obtain pointer to user matrix from container</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-get-matrix">GMT_Get_Matrix</a></p></td>
+<td><p>Obtain pointer to user matrix from container</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-get-pixel">GMT_Get_Pixel</a></td>
-<td>Get grid or image node</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-get-pixel">GMT_Get_Pixel</a></p></td>
+<td><p>Get grid or image node</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-get-record">GMT_Get_Record</a></td>
-<td>Import a single data record</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-get-record">GMT_Get_Record</a></p></td>
+<td><p>Import a single data record</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-get-row">GMT_Get_Row</a></td>
-<td>Import a single grid row</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-get-row">GMT_Get_Row</a></p></td>
+<td><p>Import a single grid row</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-get-status">GMT_Get_Status</a></td>
-<td>Check status of record-by-record i/o</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-get-status">GMT_Get_Status</a></p></td>
+<td><p>Check status of record-by-record i/o</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-get-strings">GMT_Get_Strings</a></td>
-<td>Obtain pointer to user strings from matrix or vector</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-get-strings">GMT_Get_Strings</a></p></td>
+<td><p>Obtain pointer to user strings from matrix or vector</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-get-values">GMT_Get_Values</a></td>
-<td>Convert string into coordinates or dimensions</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-get-values">GMT_Get_Values</a></p></td>
+<td><p>Convert string into coordinates or dimensions</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-get-vector">GMT_Get_Vector</a></td>
-<td>Obtain pointer to user vector from container</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-get-vector">GMT_Get_Vector</a></p></td>
+<td><p>Obtain pointer to user vector from container</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-get-version">GMT_Get_Version</a></td>
-<td>Return the current lib version as a float</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-get-version">GMT_Get_Version</a></p></td>
+<td><p>Return the current lib version as a float</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-init-io">GMT_Init_IO</a></td>
-<td>Initialize i/o given registered resources</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-init-io">GMT_Init_IO</a></p></td>
+<td><p>Initialize i/o given registered resources</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-init-virtualfile">GMT_Init_VirtualFile</a></td>
-<td>Reset a virtual file for reuse</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-init-virtualfile">GMT_Init_VirtualFile</a></p></td>
+<td><p>Reset a virtual file for reuse</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-inquire-virtualfile">GMT_Inquire_VirtualFile</a></td>
-<td>Get family of a virtual file</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-inquire-virtualfile">GMT_Inquire_VirtualFile</a></p></td>
+<td><p>Get family of a virtual file</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-make-option">GMT_Make_Option</a></td>
-<td>Create an option structure</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-make-option">GMT_Make_Option</a></p></td>
+<td><p>Create an option structure</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-message">GMT_Message</a></td>
-<td>Issue a message, optionally with time stamp</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-message">GMT_Message</a></p></td>
+<td><p>Issue a message, optionally with time stamp</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-open-virtualfile">GMT_Open_VirtualFile</a></td>
-<td>Select memory location as input or output for module</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-open-virtualfile">GMT_Open_VirtualFile</a></p></td>
+<td><p>Select memory location as input or output for module</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-option">GMT_Option</a></td>
-<td>Explain one or more GMT common options</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-option">GMT_Option</a></p></td>
+<td><p>Explain one or more GMT common options</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-parse-common">GMT_Parse_Common</a></td>
-<td>Parse the GMT common options</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-parse-common">GMT_Parse_Common</a></p></td>
+<td><p>Parse the GMT common options</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-put-matrix">GMT_Put_Matrix</a></td>
-<td>Put user matrix into container</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-put-matrix">GMT_Put_Matrix</a></p></td>
+<td><p>Put user matrix into container</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-put-record">GMT_Put_Record</a></td>
-<td>Export a data record</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-put-record">GMT_Put_Record</a></p></td>
+<td><p>Export a data record</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-put-row">GMT_Put_Row</a></td>
-<td>Export a grid row</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-put-row">GMT_Put_Row</a></p></td>
+<td><p>Export a grid row</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-put-strings">GMT_Put_Strings</a></td>
-<td>Put user strings into vector or matrix container</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-put-strings">GMT_Put_Strings</a></p></td>
+<td><p>Put user strings into vector or matrix container</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-put-vector">GMT_Put_Vector</a></td>
-<td>Put user vector into container</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-put-vector">GMT_Put_Vector</a></p></td>
+<td><p>Put user vector into container</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-read-data">GMT_Read_Data</a></td>
-<td>Import a data resource or file</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-read-data">GMT_Read_Data</a></p></td>
+<td><p>Import a data resource or file</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-read-group">GMT_Read_Group</a></td>
-<td>Import a group of data resources or files</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-read-group">GMT_Read_Group</a></p></td>
+<td><p>Import a group of data resources or files</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-read-virtualfile">GMT_Read_VirtualFile</a></td>
-<td>Access the output from a module via memory</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-read-virtualfile">GMT_Read_VirtualFile</a></p></td>
+<td><p>Access the output from a module via memory</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-register-io">GMT_Register_IO</a></td>
-<td>Register a resources for i/o</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-register-io">GMT_Register_IO</a></p></td>
+<td><p>Register a resources for i/o</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-report">GMT_Report</a></td>
-<td>Issue a message contingent upon verbosity level</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-report">GMT_Report</a></p></td>
+<td><p>Issue a message contingent upon verbosity level</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-set-default">GMT_Set_Default</a></td>
-<td>Set one of the API or GMT default settings</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-set-default">GMT_Set_Default</a></p></td>
+<td><p>Set one of the API or GMT default settings</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-set-comment">GMT_Set_Comment</a></td>
-<td>Assign a comment to a data resource</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-set-comment">GMT_Set_Comment</a></p></td>
+<td><p>Assign a comment to a data resource</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-set-columns">GMT_Set_Columns</a></td>
-<td>Specify how many columns to use for rec-by-rec i/o</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-set-columns">GMT_Set_Columns</a></p></td>
+<td><p>Specify how many columns to use for rec-by-rec i/o</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-set-geometry">GMT_Set_Geometry</a></td>
-<td>Specify data geometry for rec-by-rec i/o</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-set-geometry">GMT_Set_Geometry</a></p></td>
+<td><p>Specify data geometry for rec-by-rec i/o</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-set-index">GMT_Set_Index</a></td>
-<td>Convert row, col into a grid or image index</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-set-index">GMT_Set_Index</a></p></td>
+<td><p>Convert row, col into a grid or image index</p></td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#gmt-update-option">GMT_Update_Option</a></td>
-<td>Modify an option structure</td>
+<tr class="row-even"><td><p><a class="reference internal" href="#gmt-update-option">GMT_Update_Option</a></p></td>
+<td><p>Modify an option structure</p></td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#gmt-write-data">GMT_Write_Data</a></td>
-<td>Export a data resource</td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gmt-write-data">GMT_Write_Data</a></p></td>
+<td><p>Export a data resource</p></td>
 </tr>
 </tbody>
 </table>
@@ -897,7 +895,7 @@ likely to only initialize one session even though they may call many
 GMT modules. However, the GMT API supports any number of
 simultaneous sessions should the programmer wish to take advantage of
 it. This might be useful when you have access to several CPUs and want
-to spread the computing load <a class="footnote-reference" href="#id11" id="id5">[5]</a>. In the following discussion we will
+to spread the computing load <a class="footnote-reference brackets" href="#id11" id="id5">5</a>. In the following discussion we will
 simplify our treatment to the use of a single session only.</p>
 <p>To initiate the new GMT session we use</p>
 <blockquote id="gmt-create-session">
@@ -930,24 +928,24 @@ The <code class="docutils literal notranslate"><span class="pre">mode</span></co
 to communicate their special needs during the session creation.  This integer argument
 is a sum of bit flags and the various bits control the following settings:</p>
 <ol class="arabic simple">
-<li>Bit 1 (1): If set, then GMT will not call the system exit function when a
+<li><p>Bit 1 (1): If set, then GMT will not call the system exit function when a
 serious problem has been detected but instead will simply return control
 to the calling environment.  For instance, this is required by the GMT/MATLAB toolbox
 since calling exit would also exit MATLAB itself.  Unless your environment
-has this feature you should leave this bit alone.</li>
-<li>Bit 2 (2): If set, then it means we are calling the GMT API from an external
+has this feature you should leave this bit alone.</p></li>
+<li><p>Bit 2 (2): If set, then it means we are calling the GMT API from an external
 API, such as MATLAB, Octave, or Python.  Normal C/C++ programs should
 leave this bit alone.  Its effect is to enable two additional modules
 for reading and writing GMT resources from these environments (those modules
-would not make any sense in a Unix command-line environment).</li>
-<li>Bit 3 (4): If set, then it means the external API uses a column-major format for
+would not make any sense in a Unix command-line environment).</p></li>
+<li><p>Bit 3 (4): If set, then it means the external API uses a column-major format for
 matrices (e.g., MATLAB, Fortran).  If not set we default to row-major
-format (C/C++, Python, etc.).</li>
-<li>Big 4 (8): If set, we redirect all error messages to a log file based on the
-session name (we append “.log”).</li>
-<li>Bit 5 (16): If set, the we enable GMT’s modern run-mode (where -O -K are
+format (C/C++, Python, etc.).</p></li>
+<li><p>Big 4 (8): If set, we redirect all error messages to a log file based on the
+session name (we append “.log”).</p></li>
+<li><p>Bit 5 (16): If set, the we enable GMT’s modern run-mode (where -O -K are
 not allowed and PostScript is written to hidden temp file).  Default
-is the GMT classic run-mode.</li>
+is the GMT classic run-mode.</p></li>
 </ol>
 <p>The <code class="docutils literal notranslate"><span class="pre">print_func</span></code> argument is a pointer to a function that is used to print
 messages from GMT via <a class="reference internal" href="#gmt-message">GMT_Message</a> or <a class="reference internal" href="#gmt-report">GMT_Report</a> from external environments that cannot use the
@@ -1078,142 +1076,142 @@ entire grid (or image). The <code class="docutils literal notranslate"><span cla
 is either <code class="docutils literal notranslate"><span class="pre">GMT_IN</span></code> or <code class="docutils literal notranslate"><span class="pre">GMT_OUT</span></code>. Finally, the function returns a
 unique resource ID, or <code class="docutils literal notranslate"><span class="pre">GMT_NOTSET</span></code> if there was an error.</p>
 <blockquote id="tbl-family">
-<div><table border="1" class="docutils">
+<div><table class="docutils align-default">
 <colgroup>
-<col width="37%" />
-<col width="63%" />
+<col style="width: 37%" />
+<col style="width: 63%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">family</th>
-<th class="head">source points to</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>family</p></th>
+<th class="head"><p>source points to</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>GMT_IS_DATASET</td>
-<td>A [multi-segment] data file</td>
+<tbody>
+<tr class="row-even"><td><p>GMT_IS_DATASET</p></td>
+<td><p>A [multi-segment] data file</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_IS_GRID</td>
-<td>A grid file</td>
+<tr class="row-odd"><td><p>GMT_IS_GRID</p></td>
+<td><p>A grid file</p></td>
 </tr>
-<tr class="row-even"><td>GMT_IS_IMAGE</td>
-<td>An image</td>
+<tr class="row-even"><td><p>GMT_IS_IMAGE</p></td>
+<td><p>An image</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_IS_PALETTE</td>
-<td>A color palette table [CPT]</td>
+<tr class="row-odd"><td><p>GMT_IS_PALETTE</p></td>
+<td><p>A color palette table [CPT]</p></td>
 </tr>
-<tr class="row-even"><td>GMT_IS_POSTSCRIPT</td>
-<td>A GMT PostScript object</td>
+<tr class="row-even"><td><p>GMT_IS_POSTSCRIPT</p></td>
+<td><p>A GMT PostScript object</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_IS_MATRIX</td>
-<td>A custom user data matrix</td>
+<tr class="row-odd"><td><p>GMT_IS_MATRIX</p></td>
+<td><p>A custom user data matrix</p></td>
 </tr>
-<tr class="row-even"><td>GMT_IS_VECTOR</td>
-<td>A custom user data vector</td>
+<tr class="row-even"><td><p>GMT_IS_VECTOR</p></td>
+<td><p>A custom user data vector</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_VIA_MATRIX</td>
-<td>Modifier for grids and datasets</td>
+<tr class="row-odd"><td><p>GMT_VIA_MATRIX</p></td>
+<td><p>Modifier for grids and datasets</p></td>
 </tr>
-<tr class="row-even"><td>GMT_VIA_VECTOR</td>
-<td>Modifier for grids and datasets</td>
+<tr class="row-even"><td><p>GMT_VIA_VECTOR</p></td>
+<td><p>Modifier for grids and datasets</p></td>
 </tr>
 </tbody>
 </table>
 <p>GMT constants used to specify a data family.</p>
 </div></blockquote>
 <blockquote id="tbl-methods">
-<div><table border="1" class="docutils">
+<div><table class="docutils align-default">
 <colgroup>
-<col width="27%" />
-<col width="73%" />
+<col style="width: 27%" />
+<col style="width: 73%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">method</th>
-<th class="head">how to read/write data</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>method</p></th>
+<th class="head"><p>how to read/write data</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>GMT_IS_FILE</td>
-<td>Pointer to name of a file</td>
+<tbody>
+<tr class="row-even"><td><p>GMT_IS_FILE</p></td>
+<td><p>Pointer to name of a file</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_IS_STREAM</td>
-<td>Pointer to open stream (or process)</td>
+<tr class="row-odd"><td><p>GMT_IS_STREAM</p></td>
+<td><p>Pointer to open stream (or process)</p></td>
 </tr>
-<tr class="row-even"><td>GMT_IS_FDESC</td>
-<td>Pointer to integer file descriptor</td>
+<tr class="row-even"><td><p>GMT_IS_FDESC</p></td>
+<td><p>Pointer to integer file descriptor</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_IS_DUPLICATE</td>
-<td>Pointer to memory we may <em>duplicate</em> data from</td>
+<tr class="row-odd"><td><p>GMT_IS_DUPLICATE</p></td>
+<td><p>Pointer to memory we may <em>duplicate</em> data from</p></td>
 </tr>
-<tr class="row-even"><td>GMT_IS_REFERENCE</td>
-<td>Pointer to memory we may <em>reference</em> data from</td>
+<tr class="row-even"><td><p>GMT_IS_REFERENCE</p></td>
+<td><p>Pointer to memory we may <em>reference</em> data from</p></td>
 </tr>
 </tbody>
 </table>
 <p>GMT constants used to specify how data will be read or written.</p>
 </div></blockquote>
 <blockquote id="tbl-geometry">
-<div><table border="1" class="docutils">
+<div><table class="docutils align-default">
 <colgroup>
-<col width="28%" />
-<col width="72%" />
+<col style="width: 28%" />
+<col style="width: 72%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">geometry</th>
-<th class="head">description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>geometry</p></th>
+<th class="head"><p>description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>GMT_IS_NONE</td>
-<td>Not a geographic feature</td>
+<tbody>
+<tr class="row-even"><td><p>GMT_IS_NONE</p></td>
+<td><p>Not a geographic feature</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_IS_POINT</td>
-<td>Multi-dimensional point data</td>
+<tr class="row-odd"><td><p>GMT_IS_POINT</p></td>
+<td><p>Multi-dimensional point data</p></td>
 </tr>
-<tr class="row-even"><td>GMT_IS_LINE</td>
-<td>Geographic or Cartesian line segments</td>
+<tr class="row-even"><td><p>GMT_IS_LINE</p></td>
+<td><p>Geographic or Cartesian line segments</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_IS_POLYGON</td>
-<td>Geographic or Cartesian closed polygons</td>
+<tr class="row-odd"><td><p>GMT_IS_POLYGON</p></td>
+<td><p>Geographic or Cartesian closed polygons</p></td>
 </tr>
-<tr class="row-even"><td>GMT_IS_PLP</td>
-<td>Either points, lines, or polygons</td>
+<tr class="row-even"><td><p>GMT_IS_PLP</p></td>
+<td><p>Either points, lines, or polygons</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_IS_SURFACE</td>
-<td>2-D gridded surface</td>
+<tr class="row-odd"><td><p>GMT_IS_SURFACE</p></td>
+<td><p>2-D gridded surface</p></td>
 </tr>
 </tbody>
 </table>
 <p>GMT constants used to specify the geometry of the data object.</p>
 </div></blockquote>
 <blockquote id="tbl-wesn">
-<div><table border="1" class="docutils">
+<div><table class="docutils align-default">
 <colgroup>
-<col width="16%" />
-<col width="84%" />
+<col style="width: 16%" />
+<col style="width: 84%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">index</th>
-<th class="head">description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>index</p></th>
+<th class="head"><p>description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>GMT_XLO</td>
-<td>x_min (west) boundary of grid subset</td>
+<tbody>
+<tr class="row-even"><td><p>GMT_XLO</p></td>
+<td><p>x_min (west) boundary of grid subset</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_XHI</td>
-<td>x_max (east) boundary of grid subset</td>
+<tr class="row-odd"><td><p>GMT_XHI</p></td>
+<td><p>x_max (east) boundary of grid subset</p></td>
 </tr>
-<tr class="row-even"><td>GMT_YLO</td>
-<td>y_min (south) boundary of grid subset</td>
+<tr class="row-even"><td><p>GMT_YLO</p></td>
+<td><p>y_min (south) boundary of grid subset</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_YHI</td>
-<td>y_max (north) boundary of grid subset</td>
+<tr class="row-odd"><td><p>GMT_YHI</p></td>
+<td><p>y_max (north) boundary of grid subset</p></td>
 </tr>
-<tr class="row-even"><td>GMT_ZLO</td>
-<td>z_min (bottom) boundary of 3-D matrix subset</td>
+<tr class="row-even"><td><p>GMT_ZLO</p></td>
+<td><p>z_min (bottom) boundary of 3-D matrix subset</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_ZHI</td>
-<td>z_max (top) boundary of 3-D matrix subset</td>
+<tr class="row-odd"><td><p>GMT_ZHI</p></td>
+<td><p>z_max (top) boundary of 3-D matrix subset</p></td>
 </tr>
 </tbody>
 </table>
@@ -1239,15 +1237,14 @@ Also pass a compatible <a class="reference internal" href="#tbl-geometry"><span 
 representing dimensions you may pass the additional parameters in one of
 two ways:</p>
 <ol class="arabic simple">
-<li>Actual integer dimensions of items needed (which depends on the <code class="docutils literal notranslate"><span class="pre">family</span></code>).</li>
-<li>Physical distances and increments of each dimension.</li>
+<li><p>Actual integer dimensions of items needed (which depends on the <code class="docutils literal notranslate"><span class="pre">family</span></code>).</p></li>
+<li><p>Physical distances and increments of each dimension.</p></li>
 </ol>
 <p>For the first case you should pass both <code class="docutils literal notranslate"><span class="pre">wesn</span></code> and <code class="docutils literal notranslate"><span class="pre">inc</span></code> as NULL (or as arrays with elements all set to 0),
 and pass the <code class="docutils literal notranslate"><span class="pre">par</span></code> array with contents as indicated below:</p>
 <blockquote>
-<div><dl class="docutils">
-<dt><strong>GMT_IS_GRID</strong>.</dt>
-<dd>An empty <a class="reference internal" href="#struct-grid"><span class="std std-ref">GMT_GRID</span></a> structure with a header is allocated; the data
+<div><dl class="simple">
+<dt><strong>GMT_IS_GRID</strong>.</dt><dd><p>An empty <a class="reference internal" href="#struct-grid"><span class="std std-ref">GMT_GRID</span></a> structure with a header is allocated; the data
 array is NULL.  Use <code class="docutils literal notranslate"><span class="pre">registration</span></code> to choose either gridline (<code class="docutils literal notranslate"><span class="pre">GMT_GRID_PIXEL_REG</span></code>) or pixel
 (<code class="docutils literal notranslate"><span class="pre">GMT_GRID_NODE_REG</span></code>) registration.  The domain can be prescribed on one of two ways:
 (1) The <code class="docutils literal notranslate"><span class="pre">par</span></code> argument is NULL. Then <code class="docutils literal notranslate"><span class="pre">wesn</span></code> and <code class="docutils literal notranslate"><span class="pre">inc</span></code> can also be NULL but only if the common GMT options
@@ -1257,23 +1254,23 @@ are set (directly or indirectly) then <code class="docutils literal notranslate"
 (2) The <code class="docutils literal notranslate"><span class="pre">par</span></code> argument is not NULL but both <code class="docutils literal notranslate"><span class="pre">wesn</span></code> and <code class="docutils literal notranslate"><span class="pre">inc</span></code> are NULL.
 Now, <code class="docutils literal notranslate"><span class="pre">par[0]</span></code> must have the number of columns and <code class="docutils literal notranslate"><span class="pre">par[1]</span></code> must have the number of rows in the grid.  Internally,
 <code class="docutils literal notranslate"><span class="pre">inc</span></code> will be set to 1/1 and <code class="docutils literal notranslate"><span class="pre">wesn</span></code> will be set to 0/n_columns/0/n_rows. As an option, add <code class="docutils literal notranslate"><span class="pre">GMT_GRID_XY</span></code> to <code class="docutils literal notranslate"><span class="pre">mode</span></code>
-and we also allocate the grids’s <em>x</em> and <em>y</em> coordinate vectors.</dd>
-<dt><strong>GMT_IS_IMAGE</strong>.</dt>
-<dd>Same procedure as for <strong>GMT_IS_GRID</strong> but we return an empty <a class="reference internal" href="#struct-image"><span class="std std-ref">GMT_IMAGE</span></a> object.  In either
-way of specification you may use <code class="docutils literal notranslate"><span class="pre">par[2]</span></code> to pass the number of image bands [1].</dd>
-<dt><strong>GMT_IS_DATASET</strong>.</dt>
-<dd>We allocate an empty <a class="reference internal" href="#struct-dataset"><span class="std std-ref">GMT_DATASET</span></a> structure consisting of <code class="docutils literal notranslate"><span class="pre">par[0]</span></code> tables,
+and we also allocate the grids’s <em>x</em> and <em>y</em> coordinate vectors.</p>
+</dd>
+<dt><strong>GMT_IS_IMAGE</strong>.</dt><dd><p>Same procedure as for <strong>GMT_IS_GRID</strong> but we return an empty <a class="reference internal" href="#struct-image"><span class="std std-ref">GMT_IMAGE</span></a> object.  In either
+way of specification you may use <code class="docutils literal notranslate"><span class="pre">par[2]</span></code> to pass the number of image bands [1].</p>
+</dd>
+<dt><strong>GMT_IS_DATASET</strong>.</dt><dd><p>We allocate an empty <a class="reference internal" href="#struct-dataset"><span class="std std-ref">GMT_DATASET</span></a> structure consisting of <code class="docutils literal notranslate"><span class="pre">par[0]</span></code> tables,
 each with <code class="docutils literal notranslate"><span class="pre">par[1]</span></code> segments, each with <code class="docutils literal notranslate"><span class="pre">par[2]</span></code> rows, all with <code class="docutils literal notranslate"><span class="pre">par[3]</span></code> columns.
-The <code class="docutils literal notranslate"><span class="pre">wesn</span></code>, <code class="docutils literal notranslate"><span class="pre">inc</span></code>, and <code class="docutils literal notranslate"><span class="pre">registration</span></code> argument are ignored.  The <code class="docutils literal notranslate"><span class="pre">data</span></code> argument should be NULL.</dd>
-<dt><strong>GMT_IS_PALETTE</strong>.</dt>
-<dd>We allocate an empty <a class="reference internal" href="#struct-palette"><span class="std std-ref">GMT_PALETTE</span></a> structure with <code class="docutils literal notranslate"><span class="pre">par[0]</span></code> palette entries.
-The <code class="docutils literal notranslate"><span class="pre">wesn</span></code>, <code class="docutils literal notranslate"><span class="pre">inc</span></code>, and <code class="docutils literal notranslate"><span class="pre">registration</span></code> arguments are ignored and should be NULL/0.  The <code class="docutils literal notranslate"><span class="pre">data</span></code> argument should be NULL.</dd>
-<dt><strong>GMT_IS_POSTSCRIPT</strong>.</dt>
-<dd>We allocate an empty <a class="reference internal" href="#struct-postscript"><span class="std std-ref">GMT_POSTSCRIPT</span></a> structure with a text buffer of length <code class="docutils literal notranslate"><span class="pre">par[0]</span></code>.
+The <code class="docutils literal notranslate"><span class="pre">wesn</span></code>, <code class="docutils literal notranslate"><span class="pre">inc</span></code>, and <code class="docutils literal notranslate"><span class="pre">registration</span></code> argument are ignored.  The <code class="docutils literal notranslate"><span class="pre">data</span></code> argument should be NULL.</p>
+</dd>
+<dt><strong>GMT_IS_PALETTE</strong>.</dt><dd><p>We allocate an empty <a class="reference internal" href="#struct-palette"><span class="std std-ref">GMT_PALETTE</span></a> structure with <code class="docutils literal notranslate"><span class="pre">par[0]</span></code> palette entries.
+The <code class="docutils literal notranslate"><span class="pre">wesn</span></code>, <code class="docutils literal notranslate"><span class="pre">inc</span></code>, and <code class="docutils literal notranslate"><span class="pre">registration</span></code> arguments are ignored and should be NULL/0.  The <code class="docutils literal notranslate"><span class="pre">data</span></code> argument should be NULL.</p>
+</dd>
+<dt><strong>GMT_IS_POSTSCRIPT</strong>.</dt><dd><p>We allocate an empty <a class="reference internal" href="#struct-postscript"><span class="std std-ref">GMT_POSTSCRIPT</span></a> structure with a text buffer of length <code class="docutils literal notranslate"><span class="pre">par[0]</span></code>.
 Give <code class="docutils literal notranslate"><span class="pre">par[0]</span></code> = 0 if the PostScript string is allocated or obtained by other means.
-The <code class="docutils literal notranslate"><span class="pre">wesn</span></code>, <code class="docutils literal notranslate"><span class="pre">inc</span></code>, and <code class="docutils literal notranslate"><span class="pre">registration</span></code> arguments are ignored and should be NULL/0.  The <code class="docutils literal notranslate"><span class="pre">data</span></code> argument should be NULL.</dd>
-<dt><strong>GMT_IS_VECTOR</strong>.</dt>
-<dd>We allocate an empty <a class="reference internal" href="#struct-vector"><span class="std std-ref">GMT_VECTOR</span></a> structure with <code class="docutils literal notranslate"><span class="pre">par[0]</span></code> column entries.
+The <code class="docutils literal notranslate"><span class="pre">wesn</span></code>, <code class="docutils literal notranslate"><span class="pre">inc</span></code>, and <code class="docutils literal notranslate"><span class="pre">registration</span></code> arguments are ignored and should be NULL/0.  The <code class="docutils literal notranslate"><span class="pre">data</span></code> argument should be NULL.</p>
+</dd>
+<dt><strong>GMT_IS_VECTOR</strong>.</dt><dd><p>We allocate an empty <a class="reference internal" href="#struct-vector"><span class="std std-ref">GMT_VECTOR</span></a> structure with <code class="docutils literal notranslate"><span class="pre">par[0]</span></code> column entries.
 The number of rows can be specified in one of two ways: (1) Set the number of rows via <code class="docutils literal notranslate"><span class="pre">par[1]</span></code>. Then,
 <code class="docutils literal notranslate"><span class="pre">wesn</span></code>, <code class="docutils literal notranslate"><span class="pre">inc</span></code>, and <code class="docutils literal notranslate"><span class="pre">registration</span></code> arguments are ignored.
 (2) Specify <code class="docutils literal notranslate"><span class="pre">wesn</span></code>, <code class="docutils literal notranslate"><span class="pre">inc</span></code>, and <code class="docutils literal notranslate"><span class="pre">registration</span></code> and the number of rows will be computed from these
@@ -1281,9 +1278,9 @@ parameters instead.  Finally, <code class="docutils literal notranslate"><span c
 The <code class="docutils literal notranslate"><span class="pre">data</span></code> argument should be NULL.  If you have custom vectors you wish to use then
 pass <code class="docutils literal notranslate"><span class="pre">par</span></code> but make sure to select mode GMT_CONTAINER_ONLY so that no memory is allocated.  Furthermore,
 if you are manually setting up output containers then pass mode as GMT_IS_OUTPUT instead.
-Use <a class="reference internal" href="#gmt-put-vector">GMT_Put_Vector</a> to hook up your vectors.</dd>
-<dt><strong>GMT_IS_MATRIX</strong>.</dt>
-<dd>We allocate an empty <a class="reference internal" href="#struct-matrix"><span class="std std-ref">GMT_MATRIX</span></a> structure. The domain can be prescribed on one of two ways:
+Use <a class="reference internal" href="#gmt-put-vector">GMT_Put_Vector</a> to hook up your vectors.</p>
+</dd>
+<dt><strong>GMT_IS_MATRIX</strong>.</dt><dd><p>We allocate an empty <a class="reference internal" href="#struct-matrix"><span class="std std-ref">GMT_MATRIX</span></a> structure. The domain can be prescribed on one of two ways:
 (1) Here, <code class="docutils literal notranslate"><span class="pre">par[0]</span></code> is the number of columns while <code class="docutils literal notranslate"><span class="pre">par[1]</span></code> has the number of rows.  Also,
 <code class="docutils literal notranslate"><span class="pre">par[2]</span></code> indicates the number of layers for a 3-D matrix, or pass 0, 1, or NULL for a 2-D matrix.
 Finally, <code class="docutils literal notranslate"><span class="pre">par[3]</span></code> holds the data type of the matrix, if you are allocating one.
@@ -1292,7 +1289,8 @@ The <code class="docutils literal notranslate"><span class="pre">data</span></co
 mode as GMT_CONTAINER_ONLY and hook your custom matrix in via a call to <a class="reference internal" href="#gmt-put-matrix">GMT_Put_Matrix</a>.  The matrix may either
 be row- or column-oriented and this is normally determined when you created the session with <a class="reference internal" href="#gmt-create-session">GMT_Create_Session</a> (see the bit 3 setting).
 However, you can pass <code class="docutils literal notranslate"><span class="pre">pad</span></code> = 1 (GMT_IS_ROW_FORMAT; set row major) or <code class="docutils literal notranslate"><span class="pre">pad</span></code> = 2 (GMT_IS_COL_FORMAT; set col major) to override the default.
-As for vectors, if this container is for output then pass mode as GMT_IS_OUTPUT instead.</dd>
+As for vectors, if this container is for output then pass mode as GMT_IS_OUTPUT instead.</p>
+</dd>
 </dl>
 </div></blockquote>
 <p>Users wishing to pass their own data matrices and vectors to GMT modules will need to do so via
@@ -1522,49 +1520,48 @@ contents.</p>
 </div>
 </div></blockquote>
 <ul class="simple">
-<li><a class="reference internal" href="#gmt-create-session"><span class="std std-ref">API</span></a></li>
-<li><a class="reference internal" href="#tbl-family"><span class="std std-ref">family</span></a></li>
-<li><a class="reference internal" href="#tbl-methods"><span class="std std-ref">method</span></a></li>
-<li><a class="reference internal" href="#tbl-geometry"><span class="std std-ref">geometry</span></a></li>
-<li>mode -- <em>see below</em></li>
-<li><a class="reference internal" href="#tbl-wesn"><span class="std std-ref">wesn</span></a></li>
-<li>input -- a pointer to char holding the file name to read, or NULL if <code class="docutils literal notranslate"><span class="pre">stdin</span></code></li>
-<li>ptr -- NULL or the pointer returned by this function after a first call (when reading grids in two steps)</li>
-<li>Return: Pointer to data container, or NULL if there were errors (passed back via API-&gt;error)</li>
+<li><p><a class="reference internal" href="#gmt-create-session"><span class="std std-ref">API</span></a></p></li>
+<li><p><a class="reference internal" href="#tbl-family"><span class="std std-ref">family</span></a></p></li>
+<li><p><a class="reference internal" href="#tbl-methods"><span class="std std-ref">method</span></a></p></li>
+<li><p><a class="reference internal" href="#tbl-geometry"><span class="std std-ref">geometry</span></a></p></li>
+<li><p>mode -- <em>see below</em></p></li>
+<li><p><a class="reference internal" href="#tbl-wesn"><span class="std std-ref">wesn</span></a></p></li>
+<li><p>input -- a pointer to char holding the file name to read, or NULL if <code class="docutils literal notranslate"><span class="pre">stdin</span></code></p></li>
+<li><p>ptr -- NULL or the pointer returned by this function after a first call (when reading grids in two steps)</p></li>
+<li><p>Return: Pointer to data container, or NULL if there were errors (passed back via API-&gt;error)</p></li>
 </ul>
 <p>where <code class="docutils literal notranslate"><span class="pre">ptr</span></code> is NULL except when reading grids in two steps (i.e.,
 first get a grid structure with a header, then read the data). Most of
 these arguments have been discussed earlier. This function can be called
 in three different situations:</p>
 <ol class="arabic simple">
-<li>If you have a single source (filename, stream pointer, etc.) you can
+<li><p>If you have a single source (filename, stream pointer, etc.) you can
 call <a class="reference internal" href="#gmt-read-data">GMT_Read_Data</a> directly; there is no need to first register
 the source with <a class="reference internal" href="#gmt-register-io">GMT_Register_IO</a> or gather the sources with
 <a class="reference internal" href="#gmt-init-io">GMT_Init_IO</a>. Furthermore, for <a class="reference internal" href="#struct-dataset"><span class="std std-ref">GMT_DATASET</span></a> you can also
 specify a filename that contains UNIX wildcards (e.g., “all_*_[ab]?.txt”)
 and these will all be read to produce a single multi-table <a class="reference internal" href="#struct-dataset"><span class="std std-ref">GMT_DATASET</span></a>
-(for other datatypes, see <a class="reference internal" href="#gmt-read-group">GMT_Read_Group</a> instead).</li>
-<li>If you want to specify <code class="docutils literal notranslate"><span class="pre">stdin</span></code> as source then pass <code class="docutils literal notranslate"><span class="pre">input</span></code> as NULL.</li>
-<li>If you already registered all desired sources with <a class="reference internal" href="#gmt-init-io">GMT_Init_IO</a>
-then you indicate this choice by passing the invalid <code class="docutils literal notranslate"><span class="pre">geometry</span></code> = 0.</li>
+(for other datatypes, see <a class="reference internal" href="#gmt-read-group">GMT_Read_Group</a> instead).</p></li>
+<li><p>If you want to specify <code class="docutils literal notranslate"><span class="pre">stdin</span></code> as source then pass <code class="docutils literal notranslate"><span class="pre">input</span></code> as NULL.</p></li>
+<li><p>If you already registered all desired sources with <a class="reference internal" href="#gmt-init-io">GMT_Init_IO</a>
+then you indicate this choice by passing the invalid <code class="docutils literal notranslate"><span class="pre">geometry</span></code> = 0.</p></li>
 </ol>
 <p>Space will be allocated to hold the results, as needed, and a pointer to
 the object is returned. If there are errors we simply return NULL and
 report the error. The <code class="docutils literal notranslate"><span class="pre">mode</span></code> parameter has different meanings for
 different data types.</p>
-<dl class="docutils">
-<dt><strong>Color palette table</strong>.</dt>
-<dd><code class="docutils literal notranslate"><span class="pre">mode</span></code> contains bit-flags that control how the CPT’s back-,
+<dl class="simple">
+<dt><strong>Color palette table</strong>.</dt><dd><p><code class="docutils literal notranslate"><span class="pre">mode</span></code> contains bit-flags that control how the CPT’s back-,
 fore-, and NaN-colors should be initialized. Select 0 to use the
 CPT resource’s back-, fore-, and NaN-colors, 2 to replace these with the current
 GMT default values, or 4 to replace them with the color table’s
-entries for highest and lowest value.</dd>
-<dt><strong>Data table</strong>.</dt>
-<dd><code class="docutils literal notranslate"><span class="pre">mode</span></code> is currently not used.</dd>
-<dt><strong>Text table</strong>.</dt>
-<dd><code class="docutils literal notranslate"><span class="pre">mode</span></code> is currently not used.</dd>
-<dt><strong>GMT grid</strong> or <strong>image</strong>.</dt>
-<dd>Here, <code class="docutils literal notranslate"><span class="pre">mode</span></code> determines how we read the grid: To read the entire
+entries for highest and lowest value.</p>
+</dd>
+<dt><strong>Data table</strong>.</dt><dd><p><code class="docutils literal notranslate"><span class="pre">mode</span></code> is currently not used.</p>
+</dd>
+<dt><strong>Text table</strong>.</dt><dd><p><code class="docutils literal notranslate"><span class="pre">mode</span></code> is currently not used.</p>
+</dd>
+<dt><strong>GMT grid</strong> or <strong>image</strong>.</dt><dd><p>Here, <code class="docutils literal notranslate"><span class="pre">mode</span></code> determines how we read the grid: To read the entire
 grid and its header, pass <code class="docutils literal notranslate"><span class="pre">GMT_CONTAINER_AND_DATA</span></code>. However, if you may need to
 extract a sub-region you must first read the header by passing
 <code class="docutils literal notranslate"><span class="pre">GMT_CONTAINER_ONLY</span></code>, then examine the header structure range
@@ -1583,9 +1580,10 @@ using <a class="reference internal" href="#gmt-get-row">GMT_Get_Row</a>. By defa
 processed in sequential order. To completely specify which row to be read, pass
 <code class="docutils literal notranslate"><span class="pre">GMT_GRID_ROW_BY_ROW_MANUAL</span></code> instead.
 Finally, as an option you may add <code class="docutils literal notranslate"><span class="pre">GMT_GRID_XY</span></code> to the mode and we also
-allocate the <em>x</em> and <em>y</em> coordinate vectors for the grid or image.</dd>
-<dt><em>PostScript</em>.</dt>
-<dd><code class="docutils literal notranslate"><span class="pre">mode</span></code> is currently not used.</dd>
+allocate the <em>x</em> and <em>y</em> coordinate vectors for the grid or image.</p>
+</dd>
+<dt><em>PostScript</em>.</dt><dd><p><code class="docutils literal notranslate"><span class="pre">mode</span></code> is currently not used.</p>
+</dd>
 </dl>
 <p>If you need to read the same resource more than once you should add the
 bit flag <code class="docutils literal notranslate"><span class="pre">GMT_IO_RESET</span></code> to the given <code class="docutils literal notranslate"><span class="pre">mode</span></code>.</p>
@@ -1601,19 +1599,19 @@ bit flag <code class="docutils literal notranslate"><span class="pre">GMT_IO_RES
 </div>
 </div></blockquote>
 <ul class="simple">
-<li><a class="reference internal" href="#gmt-create-session"><span class="std std-ref">API</span></a></li>
-<li><a class="reference internal" href="#tbl-family"><span class="std std-ref">family</span></a></li>
-<li><a class="reference internal" href="#tbl-methods"><span class="std std-ref">method</span></a></li>
-<li><a class="reference internal" href="#tbl-geometry"><span class="std std-ref">geometry</span></a></li>
-<li>mode -- <em>see below</em></li>
-<li><a class="reference internal" href="#tbl-wesn"><span class="std std-ref">wesn</span></a></li>
-<li>input -- Contents depends on the value of <em>n_items</em>.  If it is zero then we expect
+<li><p><a class="reference internal" href="#gmt-create-session"><span class="std std-ref">API</span></a></p></li>
+<li><p><a class="reference internal" href="#tbl-family"><span class="std std-ref">family</span></a></p></li>
+<li><p><a class="reference internal" href="#tbl-methods"><span class="std std-ref">method</span></a></p></li>
+<li><p><a class="reference internal" href="#tbl-geometry"><span class="std std-ref">geometry</span></a></p></li>
+<li><p>mode -- <em>see below</em></p></li>
+<li><p><a class="reference internal" href="#tbl-wesn"><span class="std std-ref">wesn</span></a></p></li>
+<li><p>input -- Contents depends on the value of <em>n_items</em>.  If it is zero then we expect
 a pointer to char holding UNIX wildcard file name(s) to read, otherwise we expect
 a pointer to an array of character strings (<em>n_items</em> in total) with names of all
 the files to read.  If <em>n_items</em> is NULL then we assume 0 but cannot return the number
-found.</li>
-<li>ptr -- NULL or the pointer returned by this function after a first call (applies when reading grids or images in two steps)</li>
-<li>Return: Pointer to array of data container, or NULL if there were errors (passed back via API-&gt;error)</li>
+found.</p></li>
+<li><p>ptr -- NULL or the pointer returned by this function after a first call (applies when reading grids or images in two steps)</p></li>
+<li><p>Return: Pointer to array of data container, or NULL if there were errors (passed back via API-&gt;error)</p></li>
 </ul>
 <p>where <code class="docutils literal notranslate"><span class="pre">ptr</span></code> is NULL except when reading grids in two steps (i.e.,
 first get a grid structures with a header, then read the data arrays). Most of
@@ -1840,49 +1838,49 @@ these may be used, see the test program <code class="docutils literal notranslat
 data on a record-by-record basis may also consult the source code of,
 say, <a class="reference internal" href="blockmean.html"><span class="doc">blockmean</span></a> or <a class="reference internal" href="text.html"><span class="doc">text</span></a>, to see examples of working code.</p>
 <blockquote id="tbl-iostatus">
-<div><table border="1" class="docutils">
+<div><table class="docutils align-default">
 <colgroup>
-<col width="29%" />
-<col width="71%" />
+<col style="width: 29%" />
+<col style="width: 71%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">mode</th>
-<th class="head">description and return value</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>mode</p></th>
+<th class="head"><p>description and return value</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>GMT_IO_DATA_RECORD</td>
-<td>1 if we read a data record</td>
+<tbody>
+<tr class="row-even"><td><p>GMT_IO_DATA_RECORD</p></td>
+<td><p>1 if we read a data record</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_IO_TABLE_HEADER</td>
-<td>1 if we read a table header</td>
+<tr class="row-odd"><td><p>GMT_IO_TABLE_HEADER</p></td>
+<td><p>1 if we read a table header</p></td>
 </tr>
-<tr class="row-even"><td>GMT_IO_SEGMENT_HEADER</td>
-<td>1 if we read a segment header</td>
+<tr class="row-even"><td><p>GMT_IO_SEGMENT_HEADER</p></td>
+<td><p>1 if we read a segment header</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_IO_ANY_HEADER</td>
-<td>1 if we read either header record</td>
+<tr class="row-odd"><td><p>GMT_IO_ANY_HEADER</p></td>
+<td><p>1 if we read either header record</p></td>
 </tr>
-<tr class="row-even"><td>GMT_IO_MISMATCH</td>
-<td>1 if we read incorrect number of columns</td>
+<tr class="row-even"><td><p>GMT_IO_MISMATCH</p></td>
+<td><p>1 if we read incorrect number of columns</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_IO_EOF</td>
-<td>1 if we reached the end of the file (EOF)</td>
+<tr class="row-odd"><td><p>GMT_IO_EOF</p></td>
+<td><p>1 if we reached the end of the file (EOF)</p></td>
 </tr>
-<tr class="row-even"><td>GMT_IO_NAN</td>
-<td>1 if we only read NaNs</td>
+<tr class="row-even"><td><p>GMT_IO_NAN</p></td>
+<td><p>1 if we only read NaNs</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_IO_GAP</td>
-<td>1 if this record implies a data gap</td>
+<tr class="row-odd"><td><p>GMT_IO_GAP</p></td>
+<td><p>1 if this record implies a data gap</p></td>
 </tr>
-<tr class="row-even"><td>GMT_IO_NEW_SEGMENT</td>
-<td>1 if we enter a new segment</td>
+<tr class="row-even"><td><p>GMT_IO_NEW_SEGMENT</p></td>
+<td><p>1 if we enter a new segment</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_IO_LINE_BREAK</td>
-<td>1 if we encountered a segment header, EOF, NaNs or gap</td>
+<tr class="row-odd"><td><p>GMT_IO_LINE_BREAK</p></td>
+<td><p>1 if we encountered a segment header, EOF, NaNs or gap</p></td>
 </tr>
-<tr class="row-even"><td>GMT_IO_NEXT_FILE</td>
-<td>1 if we finished one file but not the last</td>
+<tr class="row-even"><td><p>GMT_IO_NEXT_FILE</p></td>
+<td><p>1 if we finished one file but not the last</p></td>
 </tr>
 </tbody>
 </table>
@@ -2054,34 +2052,34 @@ or may not be reported. Only messages whose stated verbosity level is
 lower or equal to the <strong>-V</strong><em>level</em> will be printed.  These messages are typically
 progress reports, etc., and are sent to standard error.</p>
 <blockquote id="tbl-verbosity">
-<div><table border="1" class="docutils">
+<div><table class="docutils align-default">
 <colgroup>
-<col width="31%" />
-<col width="69%" />
+<col style="width: 31%" />
+<col style="width: 69%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">constant</th>
-<th class="head">description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>constant</p></th>
+<th class="head"><p>description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>GMT_MSG_QUIET</td>
-<td>No messages whatsoever</td>
+<tbody>
+<tr class="row-even"><td><p>GMT_MSG_QUIET</p></td>
+<td><p>No messages whatsoever</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_MSG_NORMAL</td>
-<td>Default output, e.g., warnings and errors only</td>
+<tr class="row-odd"><td><p>GMT_MSG_NORMAL</p></td>
+<td><p>Default output, e.g., warnings and errors only</p></td>
 </tr>
-<tr class="row-even"><td>GMT_MSG_COMPAT</td>
-<td>Compatibility warnings</td>
+<tr class="row-even"><td><p>GMT_MSG_COMPAT</p></td>
+<td><p>Compatibility warnings</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_MSG_VERBOSE</td>
-<td>Verbose level</td>
+<tr class="row-odd"><td><p>GMT_MSG_VERBOSE</p></td>
+<td><p>Verbose level</p></td>
 </tr>
-<tr class="row-even"><td>GMT_MSG_LONG_VERBOSE</td>
-<td>Longer verbose</td>
+<tr class="row-even"><td><p>GMT_MSG_LONG_VERBOSE</p></td>
+<td><p>Longer verbose</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_MSG_DEBUG</td>
-<td>Debug messages for developers mostly</td>
+<tr class="row-odd"><td><p>GMT_MSG_DEBUG</p></td>
+<td><p>Debug messages for developers mostly</p></td>
 </tr>
 </tbody>
 </table>
@@ -2111,28 +2109,28 @@ buffer holding the last error message generated.</p>
 and if selected how the time information should be formatted. See
 Table <a class="reference internal" href="#tbl-timemodes"><span class="std std-ref">timemodes</span></a> for the various modes.</p>
 <blockquote id="tbl-timemodes">
-<div><table border="1" class="docutils">
+<div><table class="docutils align-default">
 <colgroup>
-<col width="32%" />
-<col width="68%" />
+<col style="width: 32%" />
+<col style="width: 68%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">constant</th>
-<th class="head">description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>constant</p></th>
+<th class="head"><p>description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>GMT_TIME_NONE</td>
-<td>Display no time information</td>
+<tbody>
+<tr class="row-even"><td><p>GMT_TIME_NONE</p></td>
+<td><p>Display no time information</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_TIME_CLOCK</td>
-<td>Display current local time</td>
+<tr class="row-odd"><td><p>GMT_TIME_CLOCK</p></td>
+<td><p>Display current local time</p></td>
 </tr>
-<tr class="row-even"><td>GMT_TIME_ELAPSED</td>
-<td>Display elapsed time since last reset</td>
+<tr class="row-even"><td><p>GMT_TIME_ELAPSED</p></td>
+<td><p>Display elapsed time since last reset</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_TIME_RESET</td>
-<td>Reset the elapsed time to 0</td>
+<tr class="row-odd"><td><p>GMT_TIME_RESET</p></td>
+<td><p>Reset the elapsed time to 0</p></td>
 </tr>
 </tbody>
 </table>
@@ -2188,46 +2186,46 @@ header output on or off via the common GMT option <code class="docutils literal 
 record-by-record writing you must enable the header block output when
 you call <a class="reference internal" href="#gmt-begin-io">GMT_Begin_IO</a>.</p>
 <blockquote id="tbl-comments">
-<div><table border="1" class="docutils">
+<div><table class="docutils align-default">
 <colgroup>
-<col width="33%" />
-<col width="67%" />
+<col style="width: 33%" />
+<col style="width: 67%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">constant</th>
-<th class="head">description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>constant</p></th>
+<th class="head"><p>description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>GMT_COMMENT_IS_TEXT</td>
-<td>Comment is a text string</td>
+<tbody>
+<tr class="row-even"><td><p>GMT_COMMENT_IS_TEXT</p></td>
+<td><p>Comment is a text string</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_COMMENT_IS_OPTION</td>
-<td>Comment is a linked list of GMT_OPTION structures</td>
+<tr class="row-odd"><td><p>GMT_COMMENT_IS_OPTION</p></td>
+<td><p>Comment is a linked list of GMT_OPTION structures</p></td>
 </tr>
-<tr class="row-even"><td>GMT_COMMENT_IS_COMMAND</td>
-<td>Comment is the command</td>
+<tr class="row-even"><td><p>GMT_COMMENT_IS_COMMAND</p></td>
+<td><p>Comment is the command</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_COMMENT_IS_REMARK</td>
-<td>Comment is the remark</td>
+<tr class="row-odd"><td><p>GMT_COMMENT_IS_REMARK</p></td>
+<td><p>Comment is the remark</p></td>
 </tr>
-<tr class="row-even"><td>GMT_COMMENT_IS_TITLE</td>
-<td>Comment is the title</td>
+<tr class="row-even"><td><p>GMT_COMMENT_IS_TITLE</p></td>
+<td><p>Comment is the title</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_COMMENT_IS_NAME_X</td>
-<td>Comment is the x variable name (grids only)</td>
+<tr class="row-odd"><td><p>GMT_COMMENT_IS_NAME_X</p></td>
+<td><p>Comment is the x variable name (grids only)</p></td>
 </tr>
-<tr class="row-even"><td>GMT_COMMENT_IS_NAME_Y</td>
-<td>Comment is the y variable name (grids only)</td>
+<tr class="row-even"><td><p>GMT_COMMENT_IS_NAME_Y</p></td>
+<td><p>Comment is the y variable name (grids only)</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_COMMENT_IS_NAME_Z</td>
-<td>Comment is the z variable name (grids only)</td>
+<tr class="row-odd"><td><p>GMT_COMMENT_IS_NAME_Z</p></td>
+<td><p>Comment is the z variable name (grids only)</p></td>
 </tr>
-<tr class="row-even"><td>GMT_COMMENT_IS_COLNAMES</td>
-<td>Comment is the column names header</td>
+<tr class="row-even"><td><p>GMT_COMMENT_IS_COLNAMES</p></td>
+<td><p>Comment is the column names header</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_COMMENT_IS_RESET</td>
-<td>Comment replaces existing information</td>
+<tr class="row-odd"><td><p>GMT_COMMENT_IS_RESET</p></td>
+<td><p>Comment replaces existing information</p></td>
 </tr>
 </tbody>
 </table>
@@ -2270,58 +2268,56 @@ separately requires you to use the <a class="reference internal" href="#gmt-writ
 </div>
 </div></blockquote>
 <ul class="simple">
-<li><a class="reference internal" href="#gmt-create-session"><span class="std std-ref">API</span></a></li>
-<li><a class="reference internal" href="#tbl-family"><span class="std std-ref">family</span></a></li>
-<li><a class="reference internal" href="#tbl-methods"><span class="std std-ref">method</span></a></li>
-<li><a class="reference internal" href="#tbl-geometry"><span class="std std-ref">geometry</span></a></li>
-<li>mode -- specific to each data type (<em>see below</em>)</li>
-<li><a class="reference internal" href="#tbl-wesn"><span class="std std-ref">wesn</span></a></li>
-<li>output --</li>
-<li>data -- A pointer to any of the five families.</li>
-<li>Return: 0 on success, otherwise return -1 and set API-&gt;error to reflect to cause.</li>
+<li><p><a class="reference internal" href="#gmt-create-session"><span class="std std-ref">API</span></a></p></li>
+<li><p><a class="reference internal" href="#tbl-family"><span class="std std-ref">family</span></a></p></li>
+<li><p><a class="reference internal" href="#tbl-methods"><span class="std std-ref">method</span></a></p></li>
+<li><p><a class="reference internal" href="#tbl-geometry"><span class="std std-ref">geometry</span></a></p></li>
+<li><p>mode -- specific to each data type (<em>see below</em>)</p></li>
+<li><p><a class="reference internal" href="#tbl-wesn"><span class="std std-ref">wesn</span></a></p></li>
+<li><p>output --</p></li>
+<li><p>data -- A pointer to any of the five families.</p></li>
+<li><p>Return: 0 on success, otherwise return -1 and set API-&gt;error to reflect to cause.</p></li>
 </ul>
 <p>where <code class="docutils literal notranslate"><span class="pre">data</span></code> is a pointer to any of the four structures discussed previously.</p>
-<dl class="docutils">
-<dt><strong>Color palette table</strong></dt>
-<dd><code class="docutils literal notranslate"><span class="pre">mode</span></code> controls if the CPT’s back-, fore-, and NaN-colors
-should be written (1) or not (0).</dd>
-<dt><strong>Data table</strong></dt>
-<dd><p class="first">If <code class="docutils literal notranslate"><span class="pre">method</span></code> is <code class="docutils literal notranslate"><span class="pre">GMT_IS_FILE</span></code>, then the value of <code class="docutils literal notranslate"><span class="pre">mode</span></code> affects
+<dl>
+<dt><strong>Color palette table</strong></dt><dd><p><code class="docutils literal notranslate"><span class="pre">mode</span></code> controls if the CPT’s back-, fore-, and NaN-colors
+should be written (1) or not (0).</p>
+</dd>
+<dt><strong>Data table</strong></dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">method</span></code> is <code class="docutils literal notranslate"><span class="pre">GMT_IS_FILE</span></code>, then the value of <code class="docutils literal notranslate"><span class="pre">mode</span></code> affects
 how the data set is written:</p>
-<dl class="last docutils">
-<dt><strong>GMT_WRITE_SET</strong></dt>
-<dd>The entire data set will be written to the single file [0].</dd>
-<dt><strong>GMT_WRITE_TABLE</strong></dt>
-<dd>Each table in the data set is written to individual files [1].
+<dl class="simple">
+<dt><strong>GMT_WRITE_SET</strong></dt><dd><p>The entire data set will be written to the single file [0].</p>
+</dd>
+<dt><strong>GMT_WRITE_TABLE</strong></dt><dd><p>Each table in the data set is written to individual files [1].
 You can either specify an output file name that <em>must</em> contain
 one C-style format specifier for a int variable (e.g.,
 “New_Table_%06d.txt”), which will be replaced with the table
 number (a running number from 0) <em>or</em> you must assign to each
 table <em>i</em> a unique output file name via the
 <code class="docutils literal notranslate"><span class="pre">D-&gt;table[i]-&gt;file[GMT_OUT]</span></code> variables prior to calling the
-function.</dd>
-<dt><strong>GMT_WRITE_SEGMENT</strong></dt>
-<dd>Each segment in the data set is written to an individual file
+function.</p>
+</dd>
+<dt><strong>GMT_WRITE_SEGMENT</strong></dt><dd><p>Each segment in the data set is written to an individual file
 [2]. Same setup as for <code class="docutils literal notranslate"><span class="pre">GMT_WRITE_TABLE</span></code> except we use
-sequential segment numbers to build the file names.</dd>
-<dt><strong>GMT_WRITE_TABLE_SEGMENT</strong></dt>
-<dd>Each segment in the data set is written to an individual file
+sequential segment numbers to build the file names.</p>
+</dd>
+<dt><strong>GMT_WRITE_TABLE_SEGMENT</strong></dt><dd><p>Each segment in the data set is written to an individual file
 [3]. You can either specify an output file name that <em>must</em>
 contain two C-style format specifiers for two int variables
 (e.g., “New_Table_%06d_Segment_%03d.txt”), which will be
 replaced with the table and segment numbers, <em>or</em> you must
 assign to each segment <em>j</em> in each table <em>i</em> a unique output
 file name via the <code class="docutils literal notranslate"><span class="pre">D-&gt;table[i]-&gt;segment[j]-&gt;file[GMT_OUT]</span></code>
-variables prior to calling the function.</dd>
-<dt><strong>GMT_WRITE_OGR</strong></dt>
-<dd>Writes the dataset in OGR/GMT format in conjunction with the
-<code class="docutils literal notranslate"><span class="pre">-a</span></code> setting [4].</dd>
+variables prior to calling the function.</p>
+</dd>
+<dt><strong>GMT_WRITE_OGR</strong></dt><dd><p>Writes the dataset in OGR/GMT format in conjunction with the
+<code class="docutils literal notranslate"><span class="pre">-a</span></code> setting [4].</p>
+</dd>
 </dl>
 </dd>
-<dt><strong>Text table</strong></dt>
-<dd>The <code class="docutils literal notranslate"><span class="pre">mode</span></code> is used the same way as for data tables.</dd>
-<dt><strong>GMT grid</strong></dt>
-<dd>Here, <code class="docutils literal notranslate"><span class="pre">mode</span></code> may be <code class="docutils literal notranslate"><span class="pre">GMT_CONTAINER_ONLY</span></code> to only update a
+<dt><strong>Text table</strong></dt><dd><p>The <code class="docutils literal notranslate"><span class="pre">mode</span></code> is used the same way as for data tables.</p>
+</dd>
+<dt><strong>GMT grid</strong></dt><dd><p>Here, <code class="docutils literal notranslate"><span class="pre">mode</span></code> may be <code class="docutils literal notranslate"><span class="pre">GMT_CONTAINER_ONLY</span></code> to only update a
 file’s header structure, but normally it is simply <code class="docutils literal notranslate"><span class="pre">GMT_CONTAINER_AND_DATA</span></code>
 so the entire grid and its header will be exported (a subset is
 not allowed during export). However, in the event your data array
@@ -2340,7 +2336,8 @@ use <code class="docutils literal notranslate"><span class="pre">GMT_GRID_ROW_BY
 that supports direct writes, such as netCDF.  Finally, if you are
 preparing a geographic grid outside of GMT you need to add the mode
 <code class="docutils literal notranslate"><span class="pre">GMT_GRID_IS_GEO</span></code> to ensure that the proper metadata will be written
-to the netCDF header, thus letting the grid be recognized as such.</dd>
+to the netCDF header, thus letting the grid be recognized as such.</p>
+</dd>
 </dl>
 <p>Note: If <code class="docutils literal notranslate"><span class="pre">method</span></code> is GMT_IS_FILE, <a class="reference internal" href="#tbl-family"><span class="std std-ref">family</span></a> is <code class="docutils literal notranslate"><span class="pre">GMT_IS_GRID</span></code>,
 and the filename implies a change from NaN to another value then the grid is
@@ -2408,18 +2405,18 @@ initialize the destination with <a class="reference internal" href="#gmt-init-io
 <code class="docutils literal notranslate"><span class="pre">GMT_IS_REFERENCE</span></code> are not supported since you can simply populate the
 <a class="reference internal" href="#struct-dataset"><span class="std std-ref">GMT_DATASET</span></a> structure directly. As mentioned, <code class="docutils literal notranslate"><span class="pre">mode</span></code> affects what is
 actually written:</p>
-<dl class="docutils">
-<dt><strong>GMT_WRITE_DATA</strong>.</dt>
-<dd>Normal operation that builds the current output record from the numerical values in <code class="docutils literal notranslate"><span class="pre">rec</span></code>.</dd>
-<dt><strong>GMT_WRITE_TABLE_HEADER</strong>.</dt>
-<dd>For ASCII output mode we write the text string <code class="docutils literal notranslate"><span class="pre">rec</span></code>. If <code class="docutils literal notranslate"><span class="pre">rec</span></code>
+<dl class="simple">
+<dt><strong>GMT_WRITE_DATA</strong>.</dt><dd><p>Normal operation that builds the current output record from the numerical values in <code class="docutils literal notranslate"><span class="pre">rec</span></code>.</p>
+</dd>
+<dt><strong>GMT_WRITE_TABLE_HEADER</strong>.</dt><dd><p>For ASCII output mode we write the text string <code class="docutils literal notranslate"><span class="pre">rec</span></code>. If <code class="docutils literal notranslate"><span class="pre">rec</span></code>
 is NULL then we write the last read header record. If binary
-output mode we quietly skip writing this record.</dd>
-<dt><strong>GMT_WRITE_SEGMENT_HEADER</strong>.</dt>
-<dd>For ASCII output mode we use the text string <code class="docutils literal notranslate"><span class="pre">rec</span></code> as the
+output mode we quietly skip writing this record.</p>
+</dd>
+<dt><strong>GMT_WRITE_SEGMENT_HEADER</strong>.</dt><dd><p>For ASCII output mode we use the text string <code class="docutils literal notranslate"><span class="pre">rec</span></code> as the
 segment header. If <code class="docutils literal notranslate"><span class="pre">rec</span></code> is NULL then we use the current (last
 read) segment header record. If binary output mode instead we write
-a record composed of NaNs.</dd>
+a record composed of NaNs.</p>
+</dd>
 </dl>
 <p>The function returns 1 if there was an error associated with the
 writing (which is passed back with <code class="docutils literal notranslate"><span class="pre">API-&gt;error</span></code>), otherwise it returns
@@ -2684,22 +2681,22 @@ interfaces are identical and are called via</p>
 three sets of <code class="docutils literal notranslate"><span class="pre">args</span></code> depending on <code class="docutils literal notranslate"><span class="pre">mode</span></code>. The three modes differ in
 how the options are passed to the module:</p>
 <blockquote>
-<div><dl class="docutils">
-<dt><em>mode</em> = <code class="docutils literal notranslate"><span class="pre">GMT_MODULE_EXIST</span></code>.</dt>
-<dd>Return GMT_NOERROR (0) if the module exists, nonzero otherwise.</dd>
-<dt><em>mode</em> = <code class="docutils literal notranslate"><span class="pre">GMT_MODULE_PURPOSE</span></code>.</dt>
-<dd>Just print the one-line purpose of the module; args must be NULL.</dd>
-<dt><em>mode</em> = <code class="docutils literal notranslate"><span class="pre">GMT_MODULE_LIST</span></code>.</dt>
-<dd>Just prints a list of all modules (including those given as plugins); args must be NULL.</dd>
-<dt><em>mode</em> = <code class="docutils literal notranslate"><span class="pre">GMT_MODULE_OPT</span></code>.</dt>
-<dd>Expects <code class="docutils literal notranslate"><span class="pre">args</span></code> to be a pointer to a doubly-linked list of objects with individual
+<div><dl class="simple">
+<dt><em>mode</em> = <code class="docutils literal notranslate"><span class="pre">GMT_MODULE_EXIST</span></code>.</dt><dd><p>Return GMT_NOERROR (0) if the module exists, nonzero otherwise.</p>
+</dd>
+<dt><em>mode</em> = <code class="docutils literal notranslate"><span class="pre">GMT_MODULE_PURPOSE</span></code>.</dt><dd><p>Just print the one-line purpose of the module; args must be NULL.</p>
+</dd>
+<dt><em>mode</em> = <code class="docutils literal notranslate"><span class="pre">GMT_MODULE_LIST</span></code>.</dt><dd><p>Just prints a list of all modules (including those given as plugins); args must be NULL.</p>
+</dd>
+<dt><em>mode</em> = <code class="docutils literal notranslate"><span class="pre">GMT_MODULE_OPT</span></code>.</dt><dd><p>Expects <code class="docutils literal notranslate"><span class="pre">args</span></code> to be a pointer to a doubly-linked list of objects with individual
 options for the current program. We will see
-how API functions can help prepare and maintain such lists.</dd>
-<dt><em>mode</em> = <code class="docutils literal notranslate"><span class="pre">GMT_MODULE_CMD</span></code>.</dt>
-<dd>Expects <code class="docutils literal notranslate"><span class="pre">args</span></code> to be a single text string with all needed options.</dd>
-<dt><em>mode &gt; 0</em>.</dt>
-<dd>Expects <code class="docutils literal notranslate"><span class="pre">args</span></code> to be an array of text strings and <code class="docutils literal notranslate"><span class="pre">mode</span></code> to be a count of how many
-options are passed (i.e., the <code class="docutils literal notranslate"><span class="pre">argc,</span> <span class="pre">argv[]</span></code> model used by the GMT programs themselves).</dd>
+how API functions can help prepare and maintain such lists.</p>
+</dd>
+<dt><em>mode</em> = <code class="docutils literal notranslate"><span class="pre">GMT_MODULE_CMD</span></code>.</dt><dd><p>Expects <code class="docutils literal notranslate"><span class="pre">args</span></code> to be a single text string with all needed options.</p>
+</dd>
+<dt><em>mode &gt; 0</em>.</dt><dd><p>Expects <code class="docutils literal notranslate"><span class="pre">args</span></code> to be an array of text strings and <code class="docutils literal notranslate"><span class="pre">mode</span></code> to be a count of how many
+options are passed (i.e., the <code class="docutils literal notranslate"><span class="pre">argc,</span> <span class="pre">argv[]</span></code> model used by the GMT programs themselves).</p>
+</dd>
 </dl>
 </div></blockquote>
 <div class="section" id="set-program-options-via-text-array-arguments">
@@ -3256,7 +3253,7 @@ trickier challenge.  We will see the solution to this involves the concept of <e
 <a class="reference internal image-reference" href="_images/GMT_API_use.png"><img alt="_images/GMT_API_use.png" src="_images/GMT_API_use.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">GMT Modules can read and write information in may ways.  The GMT command line modules
 can only access the methods in white, while all methods are available via the C API.
-External interfaces will preferentially want the methods in orange.</span></p>
+External interfaces will preferentially want the methods in orange.</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="plain-interface">
 <h2>6.1. Plain interface<a class="headerlink" href="#plain-interface" title="Permalink to this headline">¶</a></h2>
@@ -3277,7 +3274,7 @@ How this is accomplished may vary from environment to environment.</p>
 <p class="caption"><span class="caption-text">Data pass in and out of the <strong>gmt</strong> interface which may be written in the scripting language used
 by the external interface.  The native data will need to be encapsulated by GMT containers and this
 step may be done by a C <strong>parser</strong> but could also be done by the <strong>gmt</strong> interface directly.  Either
-of these communicate directly with the C functions in the GMT API.</span></p>
+of these communicate directly with the C functions in the GMT API.</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="data-containers">
@@ -3297,11 +3294,11 @@ representation of your data than, for instance, the native GMT_DATASET.</p>
 data.  The process is relatively simple and may need to be done in a snippet of C
 code that can be called by a function written in your environments scripting language. The steps go like this:</p>
 <ol class="arabic simple">
-<li>Create a GMT C container marked for input and copy or reference your data provided by
-your external environment into this container.</li>
-<li>Open a virtual file using this container to represent the input source.</li>
-<li>Insert this virtual file name in the appropriate location in the GMT option string.  If the
-module imports data from <em>stdin</em> then we can use the hidden option -&lt;filename.</li>
+<li><p>Create a GMT C container marked for input and copy or reference your data provided by
+your external environment into this container.</p></li>
+<li><p>Open a virtual file using this container to represent the input source.</p></li>
+<li><p>Insert this virtual file name in the appropriate location in the GMT option string.  If the
+module imports data from <em>stdin</em> then we can use the hidden option -&lt;filename.</p></li>
 </ol>
 <p>When the GMT module is run it will know how to make the connections between the virtual file names and
 the actual data via information stored inside the C API.  When the module completes you should close any
@@ -3312,10 +3309,10 @@ open virtual files that were used by the module.</p>
 <p>As the case for selecting input, GMT modules only know about writing results to a file (or stdout).  Hence, we must follow the same paradigm as we did for input
 and identify virtual files to represent the output destinations.  The steps are:</p>
 <ol class="arabic simple">
-<li>Create an empty GMT C container of the right type marked for output.</li>
-<li>Create a virtual file name to represent this output destination.</li>
-<li>Place this file name in the appropriate location in the GMT option string.  If the
-module exports data to <em>stdout</em> then we can use the hidden option -&gt;filename.</li>
+<li><p>Create an empty GMT C container of the right type marked for output.</p></li>
+<li><p>Create a virtual file name to represent this output destination.</p></li>
+<li><p>Place this file name in the appropriate location in the GMT option string.  If the
+module exports data to <em>stdout</em> then we can use the hidden option -&gt;filename.</p></li>
 </ol>
 <p>When the GMT module is run it will know how to make the connections between the memory allocated by the
 module and the virtual file names stored inside the C API.  Once the module call has completed you can access the
@@ -3652,46 +3649,46 @@ by the <a class="reference internal" href="#struct-univector"><span class="std s
 enum.  These are listed in the tables below and used as flags to various API
 functions.</p>
 <blockquote id="tbl-types">
-<div><table border="1" class="docutils">
+<div><table class="docutils align-default">
 <colgroup>
-<col width="25%" />
-<col width="75%" />
+<col style="width: 25%" />
+<col style="width: 75%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">constant</th>
-<th class="head">description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>constant</p></th>
+<th class="head"><p>description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>GMT_CHAR</td>
-<td>int8_t, 1-byte signed integer type</td>
+<tbody>
+<tr class="row-even"><td><p>GMT_CHAR</p></td>
+<td><p>int8_t, 1-byte signed integer type</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_UCHAR</td>
-<td>int8_t, 1-byte unsigned integer type</td>
+<tr class="row-odd"><td><p>GMT_UCHAR</p></td>
+<td><p>int8_t, 1-byte unsigned integer type</p></td>
 </tr>
-<tr class="row-even"><td>GMT_SHORT</td>
-<td>int16_t, 2-byte signed integer type</td>
+<tr class="row-even"><td><p>GMT_SHORT</p></td>
+<td><p>int16_t, 2-byte signed integer type</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_USHORT</td>
-<td>uint16_t, 2-byte unsigned integer type</td>
+<tr class="row-odd"><td><p>GMT_USHORT</p></td>
+<td><p>uint16_t, 2-byte unsigned integer type</p></td>
 </tr>
-<tr class="row-even"><td>GMT_INT</td>
-<td>int32_t, 4-byte signed integer type</td>
+<tr class="row-even"><td><p>GMT_INT</p></td>
+<td><p>int32_t, 4-byte signed integer type</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_UINT</td>
-<td>uint32_t, 4-byte unsigned integer type</td>
+<tr class="row-odd"><td><p>GMT_UINT</p></td>
+<td><p>uint32_t, 4-byte unsigned integer type</p></td>
 </tr>
-<tr class="row-even"><td>GMT_LONG</td>
-<td>int64_t, 8-byte signed integer type</td>
+<tr class="row-even"><td><p>GMT_LONG</p></td>
+<td><p>int64_t, 8-byte signed integer type</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_ULONG</td>
-<td>uint64_t, 8-byte unsigned integer type</td>
+<tr class="row-odd"><td><p>GMT_ULONG</p></td>
+<td><p>uint64_t, 8-byte unsigned integer type</p></td>
 </tr>
-<tr class="row-even"><td>GMT_FLOAT</td>
-<td>4-byte data float type</td>
+<tr class="row-even"><td><p>GMT_FLOAT</p></td>
+<td><p>4-byte data float type</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_DOUBLE</td>
-<td>8-byte data float type</td>
+<tr class="row-odd"><td><p>GMT_DOUBLE</p></td>
+<td><p>8-byte data float type</p></td>
 </tr>
 </tbody>
 </table>
@@ -3705,83 +3702,70 @@ the data type used for the underlying arrays.  The constants below
 can be added to the <code class="docutils literal notranslate"><span class="pre">direction</span></code> argument in order to change the
 default data types [float for matrix and double for vector].</p>
 <blockquote id="tbl-viatypes">
-<div><table border="1" class="docutils">
+<div><table class="docutils align-default">
 <colgroup>
-<col width="30%" />
-<col width="70%" />
+<col style="width: 30%" />
+<col style="width: 70%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">constant</th>
-<th class="head">description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>constant</p></th>
+<th class="head"><p>description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>GMT_VIA_CHAR</td>
-<td>Select GMT_CHAR as array type</td>
+<tbody>
+<tr class="row-even"><td><p>GMT_VIA_CHAR</p></td>
+<td><p>Select GMT_CHAR as array type</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_VIA_UCHAR</td>
-<td>Select GMT_UCHAR as array type</td>
+<tr class="row-odd"><td><p>GMT_VIA_UCHAR</p></td>
+<td><p>Select GMT_UCHAR as array type</p></td>
 </tr>
-<tr class="row-even"><td>GMT_VIA_SHORT</td>
-<td>Select GMT_SHORT as array type</td>
+<tr class="row-even"><td><p>GMT_VIA_SHORT</p></td>
+<td><p>Select GMT_SHORT as array type</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_VIA_USHORT</td>
-<td>Select GMT_USHORT as array type</td>
+<tr class="row-odd"><td><p>GMT_VIA_USHORT</p></td>
+<td><p>Select GMT_USHORT as array type</p></td>
 </tr>
-<tr class="row-even"><td>GMT_VIA_INT</td>
-<td>Select GMT_INT as array type</td>
+<tr class="row-even"><td><p>GMT_VIA_INT</p></td>
+<td><p>Select GMT_INT as array type</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_VIA_UINT</td>
-<td>Select GMT_UINT as array type</td>
+<tr class="row-odd"><td><p>GMT_VIA_UINT</p></td>
+<td><p>Select GMT_UINT as array type</p></td>
 </tr>
-<tr class="row-even"><td>GMT_VIA_LONG</td>
-<td>Select GMT_LONG as array type</td>
+<tr class="row-even"><td><p>GMT_VIA_LONG</p></td>
+<td><p>Select GMT_LONG as array type</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_VIA_ULONG</td>
-<td>Select GMT_ULONG as array type</td>
+<tr class="row-odd"><td><p>GMT_VIA_ULONG</p></td>
+<td><p>Select GMT_ULONG as array type</p></td>
 </tr>
-<tr class="row-even"><td>GMT_VIA_FLOAT</td>
-<td>Select GMT_FLOAT as array type</td>
+<tr class="row-even"><td><p>GMT_VIA_FLOAT</p></td>
+<td><p>Select GMT_FLOAT as array type</p></td>
 </tr>
-<tr class="row-odd"><td>GMT_VIA_DOUBLE</td>
-<td>Select GMT_DOUBLE as array type</td>
+<tr class="row-odd"><td><p>GMT_VIA_DOUBLE</p></td>
+<td><p>Select GMT_DOUBLE as array type</p></td>
 </tr>
 </tbody>
 </table>
 <p>Flags to select the type of arrays used in output GMT_MATRIX or GMT_VECTOR.</p>
 </div></blockquote>
-<table class="docutils footnote" frame="void" id="id7" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>or via a very confusing and ever-changing myriad of low-level library
-functions for bold programmers.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id8" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>Currently, C/C++, FORTRAN, MATLAB and Julia are being tested.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id9" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td>At the moment, GMT does not have native support for 3-D grids.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id10" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td><td>This may change in later releases.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id11" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[5]</a></td><td>However, there is no thread-support yet, so you will need to manage your
-own threads.</td></tr>
-</tbody>
-</table>
+<dl class="footnote brackets">
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>or via a very confusing and ever-changing myriad of low-level library
+functions for bold programmers.</p>
+</dd>
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Currently, C/C++, FORTRAN, MATLAB and Julia are being tested.</p>
+</dd>
+<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>At the moment, GMT does not have native support for 3-D grids.</p>
+</dd>
+<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
+<dd><p>This may change in later releases.</p>
+</dd>
+<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id5">5</a></span></dt>
+<dd><p>However, there is no thread-support yet, so you will need to manage your
+own threads.</p>
+</dd>
+</dl>
 </div>
 </div>
 
@@ -3995,7 +3979,7 @@ own threads.</td></tr>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="api.html" >GMT_API</a> &#187;</li>
 <li class="right">
@@ -4014,8 +3998,8 @@ own threads.</td></tr>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

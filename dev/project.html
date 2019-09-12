@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>project &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>project &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="P.html" accesskey="U">P</a> &#187;</li>
 <li class="right">
@@ -147,33 +145,32 @@ xyzpqrs letters in <strong>F</strong><em>flags</em>.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="c">
-<dt><strong>-C</strong><em>cx</em>/<em>cy</em></dt>
-<dd><em>cx/cy</em> sets the origin of the projection, in Definition 1 or 2. If
+<dl class="simple" id="c">
+<dt><strong>-C</strong><em>cx</em>/<em>cy</em></dt><dd><p><em>cx/cy</em> sets the origin of the projection, in Definition 1 or 2. If
 Definition 3 is used (<strong>-T</strong>), then <em>cx/cy</em> are the coordinates of a
 point through which the oblique zero meridian (<em>p</em> = 0) should pass.
-The <em>cx/cy</em> is not required to be 90 degrees from the pole.</dd>
+The <em>cx/cy</em> is not required to be 90 degrees from the pole.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><em>table</em></dt>
-<dd>One or more ASCII (or binary, see <strong>-bi</strong>[<em>ncols</em>][<em>type</em>]) data
+<dl class="simple">
+<dt><em>table</em></dt><dd><p>One or more ASCII (or binary, see <strong>-bi</strong>[<em>ncols</em>][<em>type</em>]) data
 table file(s) holding a number of data columns. If no tables are given
-then we read from standard input.  </dd>
+then we read from standard input.  </p>
+</dd>
 </dl>
-<dl class="docutils" id="a">
-<dt><strong>-A</strong><em>azimuth</em></dt>
-<dd><em>azimuth</em> defines the azimuth of the projection (Definition 1).</dd>
+<dl class="simple" id="a">
+<dt><strong>-A</strong><em>azimuth</em></dt><dd><p><em>azimuth</em> defines the azimuth of the projection (Definition 1).</p>
+</dd>
 </dl>
-<dl class="docutils" id="e">
-<dt><strong>-E</strong><em>bx</em>/<em>by</em></dt>
-<dd><em>bx/by</em> defines the end point of the projection path (Definition 2).</dd>
+<dl class="simple" id="e">
+<dt><strong>-E</strong><em>bx</em>/<em>by</em></dt><dd><p><em>bx/by</em> defines the end point of the projection path (Definition 2).</p>
+</dd>
 </dl>
-<dl class="docutils" id="f">
-<dt><strong>-F</strong><em>flags</em></dt>
-<dd>Specify your desired output using any combination of <strong>xyzpqrs</strong>, in
+<dl class="simple" id="f">
+<dt><strong>-F</strong><em>flags</em></dt><dd><p>Specify your desired output using any combination of <strong>xyzpqrs</strong>, in
 any order [Default is <strong>xyzpqrs</strong>]. Do not space between the letters.
 Use lower case. The output will be ASCII (or binary, see <strong>-bo</strong>)
 columns of values corresponding to your <em>flags</em>. The <strong>z</strong> flag is
@@ -181,113 +178,114 @@ special and refers to all numerical columns beyond the leading <strong>x</strong
 your input record.  If output format is ASCII then <strong>z</strong> also includes any
 trailing text (which is placed at the end of the record regardless
 of the order of <strong>z</strong> in <em>flags</em>). Note: If <strong>-G</strong> is selected, then the
-output order is hardwired to be <strong>rsp</strong> and <strong>-F</strong> is not allowed.</dd>
+output order is hardwired to be <strong>rsp</strong> and <strong>-F</strong> is not allowed.</p>
+</dd>
 </dl>
-<dl class="docutils" id="g">
-<dt><strong>-G</strong><em>dist</em>[/<em>colat</em>][<strong>+h</strong>]</dt>
-<dd>Generate mode. No input is read. Create (<em>r</em>, <em>s</em>, <em>p</em>) output
+<dl class="simple" id="g">
+<dt><strong>-G</strong><em>dist</em>[/<em>colat</em>][<strong>+h</strong>]</dt><dd><p>Generate mode. No input is read. Create (<em>r</em>, <em>s</em>, <em>p</em>) output
 points every <em>dist</em> units of <em>p</em>. See <strong>-Q</strong> option. Alternatively,
 append <strong>/</strong><em>colat</em> for a small circle instead [Default is a
 colatitude of 90, i.e., a great circle]. Use <strong>-C</strong> and <strong>-E</strong> to
 generate a circle that goes through the center and end point. Note,
 in this case the center and end point cannot be farther apart than
 2*|<em>colat</em>|. Finally, if you append <strong>+h</strong> the we will report
-the position of the pole as part of the segment header [no header].</dd>
+the position of the pole as part of the segment header [no header].</p>
+</dd>
 </dl>
-<dl class="docutils" id="l">
-<dt><strong>-L</strong>[<strong>w</strong>|<em>l_min</em>/<em>l_max</em>]</dt>
-<dd>Length controls. Project only those points whose <em>p</em> coordinate is
+<dl class="simple" id="l">
+<dt><strong>-L</strong>[<strong>w</strong>|<em>l_min</em>/<em>l_max</em>]</dt><dd><p>Length controls. Project only those points whose <em>p</em> coordinate is
 within <em>l_min</em> &lt; <em>p</em> &lt; <em>l_max</em>. If <strong>-E</strong> has been set, then you
-may alternatively use <strong>-Lw</strong> to stay within the distance from <strong>C</strong> to <strong>E</strong>.</dd>
+may alternatively use <strong>-Lw</strong> to stay within the distance from <strong>C</strong> to <strong>E</strong>.</p>
+</dd>
 </dl>
-<dl class="docutils" id="n">
-<dt><strong>-N</strong></dt>
-<dd>Flat Earth. Make a Cartesian coordinate transformation in the plane.
-[Default uses spherical trigonometry.]</dd>
+<dl class="simple" id="n">
+<dt><strong>-N</strong></dt><dd><p>Flat Earth. Make a Cartesian coordinate transformation in the plane.
+[Default uses spherical trigonometry.]</p>
+</dd>
 </dl>
-<dl class="docutils" id="q">
-<dt><strong>-Q</strong></dt>
-<dd>Map type units, i.e., project assumes <em>x</em>, <em>y</em>, <em>r</em>, <em>s</em> are in
+<dl class="simple" id="q">
+<dt><strong>-Q</strong></dt><dd><p>Map type units, i.e., project assumes <em>x</em>, <em>y</em>, <em>r</em>, <em>s</em> are in
 degrees while <em>p</em>, <em>q</em>, <em>dist</em>, <em>l_min</em>, <em>l_max</em>, <em>w_min</em>,
 <em>w_max</em> are in km. If <strong>-Q</strong> is not set, then all these are assumed
-to be in the same units.</dd>
+to be in the same units.</p>
+</dd>
 </dl>
-<dl class="docutils" id="s">
-<dt><strong>-S</strong></dt>
-<dd>Sort the output into increasing <em>p</em> order. Useful when projecting
-random data into a sequential profile.</dd>
+<dl class="simple" id="s">
+<dt><strong>-S</strong></dt><dd><p>Sort the output into increasing <em>p</em> order. Useful when projecting
+random data into a sequential profile.</p>
+</dd>
 </dl>
-<dl class="docutils" id="t">
-<dt><strong>-T</strong><em>px</em>/<em>py</em></dt>
-<dd><em>px/py</em> sets the position of the rotation pole of the projection.
-(Definition 3).</dd>
+<dl class="simple" id="t">
+<dt><strong>-T</strong><em>px</em>/<em>py</em></dt><dd><p><em>px/py</em> sets the position of the rotation pole of the projection.
+(Definition 3).</p>
+</dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
 </dl>
-<dl class="docutils" id="w">
-<dt><strong>-W</strong><em>w_min</em>/<em>w_max</em></dt>
-<dd>Width controls. Project only those points whose <em>q</em> coordinate is
-within <em>w_min</em> &lt; <em>q</em> &lt; <em>w_max</em>.</dd>
-<dt><strong>-Z</strong><em>major</em>/<em>minor</em>/<em>azimuth</em>[<strong>+e</strong>] ]</dt>
-<dd>Used in conjunction with <strong>-C</strong> (sets its center) and <strong>-G</strong> (sets the
+<dl class="simple" id="w">
+<dt><strong>-W</strong><em>w_min</em>/<em>w_max</em></dt><dd><p>Width controls. Project only those points whose <em>q</em> coordinate is
+within <em>w_min</em> &lt; <em>q</em> &lt; <em>w_max</em>.</p>
+</dd>
+<dt><strong>-Z</strong><em>major</em>/<em>minor</em>/<em>azimuth</em>[<strong>+e</strong>] ]</dt><dd><p>Used in conjunction with <strong>-C</strong> (sets its center) and <strong>-G</strong> (sets the
 distance increment) to create the coordinates of an ellipse
 with <em>major</em> and <em>minor</em> axes given in km (unless <strong>-N</strong> is given) and the <em>azimuth</em> of the
 major axis in degrees.  Append <strong>+e</strong> to adjust the increment set via
 <strong>-G</strong> so that the the ellipse has equal distance increments [Default
-uses the given increment and closes the ellipse].</dd>
+uses the given increment and closes the ellipse].</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select native binary format for primary input. [Default is 2 input columns].</dd>
+<dl class="simple">
+<dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select native binary format for primary input. [Default is 2 input columns].</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>] <a class="reference internal" href="gmt.html#bo-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select native binary output. [Default is given by <strong>-F</strong> or <strong>-G</strong>].</dd>
+<dl class="simple">
+<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>] <a class="reference internal" href="gmt.html#bo-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select native binary output. [Default is given by <strong>-F</strong> or <strong>-G</strong>].</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em> <a class="reference internal" href="gmt.html#d-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Replace input columns that equal <em>nodata</em> with NaN and do the reverse on output.  </dd>
+<dl class="simple">
+<dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em> <a class="reference internal" href="gmt.html#d-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Replace input columns that equal <em>nodata</em> with NaN and do the reverse on output.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-e</strong>[<strong>~</strong>]<em>”pattern”</em> <strong>|</strong> <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] <a class="reference internal" href="gmt.html#e-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Only accept data records that match the given pattern.  </dd>
+<dl class="simple">
+<dt><strong>-e</strong>[<strong>~</strong>]<em>”pattern”</em> <strong>|</strong> <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] <a class="reference internal" href="gmt.html#e-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Only accept data records that match the given pattern.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Specify data types of input and/or output columns.  </dd>
+<dl class="simple">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify data types of input and/or output columns.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>] <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Determine data gaps and line breaks.  </dd>
+<dl class="simple">
+<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>] <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Determine data gaps and line breaks.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Skip or produce header record(s).  </dd>
+<dl class="simple">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Skip or produce header record(s).  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select input columns and transformations (0 is first column, <em>t</em> is trailing text, append <em>word</em> to read one word only).</dd>
+<dl class="simple">
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select input columns and transformations (0 is first column, <em>t</em> is trailing text, append <em>word</em> to read one word only).</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-s</strong>[<em>cols</em>][<strong>+a</strong>|<strong>+r</strong>] <a class="reference internal" href="gmt.html#s-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set handling of NaN records.</dd>
+<dl class="simple">
+<dt><strong>-s</strong>[<em>cols</em>][<strong>+a</strong>|<strong>+r</strong>] <a class="reference internal" href="gmt.html#s-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set handling of NaN records.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="gmt.html#colon-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Swap 1st and 2nd column on input and/or output.</dd>
+<dl class="simple">
+<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="gmt.html#colon-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Swap 1st and 2nd column on input and/or output.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
+<dl class="simple">
+<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
+</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</p>
+</dd>
+<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="ascii-format-precision">
@@ -452,7 +450,7 @@ This gives coordinates for an oblique small circle.</p>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="P.html" >P</a> &#187;</li>
 <li class="right">
@@ -471,8 +469,8 @@ This gives coordinates for an oblique small circle.</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

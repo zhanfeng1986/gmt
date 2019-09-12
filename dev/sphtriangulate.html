@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>sphtriangulate &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>sphtriangulate &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="S.html" accesskey="U">S</a> &#187;</li>
 <li class="right">
@@ -100,107 +98,107 @@ is STRIPACK.</p>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><em>table</em></dt>
-<dd>One or more ASCII (or binary, see <strong>-bi</strong>[<em>ncols</em>][<em>type</em>]) data
+<dl class="simple">
+<dt><em>table</em></dt><dd><p>One or more ASCII (or binary, see <strong>-bi</strong>[<em>ncols</em>][<em>type</em>]) data
 table file(s) holding a number of data columns. If no tables are given
-then we read from standard input.  </dd>
+then we read from standard input.  </p>
+</dd>
 </dl>
-<dl class="docutils" id="a">
-<dt><strong>-A</strong></dt>
-<dd>Compute the area of the spherical triangles (<strong>-Qd</strong>) or polygons
+<dl class="simple" id="a">
+<dt><strong>-A</strong></dt><dd><p>Compute the area of the spherical triangles (<strong>-Qd</strong>) or polygons
 (<strong>-Qv</strong>) and write the areas (in chosen units; see <strong>-L</strong>) in the
-output segment headers [no areas calculated].</dd>
+output segment headers [no areas calculated].</p>
+</dd>
 </dl>
-<dl class="docutils" id="c">
-<dt><strong>-C</strong></dt>
-<dd>For large data set you can save some memory (at the expense of more
+<dl class="simple" id="c">
+<dt><strong>-C</strong></dt><dd><p>For large data set you can save some memory (at the expense of more
 processing) by only storing one form of location coordinates
 (geographic or Cartesian 3-D vectors) at any given time, translating
-from one form to the other when necessary [Default keeps both arrays in memory].</dd>
+from one form to the other when necessary [Default keeps both arrays in memory].</p>
+</dd>
 </dl>
-<dl class="docutils" id="d">
-<dt><strong>-D</strong></dt>
-<dd>Used to skip the last (repeated) input vertex at the end
+<dl class="simple" id="d">
+<dt><strong>-D</strong></dt><dd><p>Used to skip the last (repeated) input vertex at the end
 of a closed segment if it equals the first point in the segment.
-[Default uses all points].</dd>
+[Default uses all points].</p>
+</dd>
 </dl>
-<dl class="docutils" id="l">
-<dt><strong>-L</strong><em>unit</em></dt>
-<dd>Specify the unit used for distance and area calculations. Choose
+<dl class="simple" id="l">
+<dt><strong>-L</strong><em>unit</em></dt><dd><p>Specify the unit used for distance and area calculations. Choose
 among <strong>e</strong> (m), <strong>f</strong> (foot), <strong>k</strong> (km), <strong>m</strong> (mile), <strong>n</strong>
 (nautical mile), <strong>u</strong> (survey foot), or <strong>d</strong> (spherical degree). A
 spherical approximation is used unless <strong>-je</strong> is set,
 in which case we convert latitudes to authalic
 latitudes before calculating areas. When degree is selected the
-areas are given in steradians.</dd>
+areas are given in steradians.</p>
+</dd>
 </dl>
-<dl class="docutils" id="n">
-<dt><strong>-N</strong><em>file</em></dt>
-<dd>Write the information pertaining to each polygon. For Delaunay: the
+<dl class="simple" id="n">
+<dt><strong>-N</strong><em>file</em></dt><dd><p>Write the information pertaining to each polygon. For Delaunay: the
 three node number and the triangle area (if <strong>-A</strong> was set); for
 Voronoi the unique node lon, lat and polygon area (if <strong>-A</strong> was
 set)) to a separate file. This information is also encoded in the
-segment headers of ASCII output files. Required if binary output is needed.</dd>
+segment headers of ASCII output files. Required if binary output is needed.</p>
+</dd>
 </dl>
-<dl class="docutils" id="q">
-<dt><strong>-Q</strong><strong>d</strong>|<strong>v</strong></dt>
-<dd>Append <strong>d</strong> for Delaunay triangles or <strong>v</strong> for Voronoi polygons [Delaunay].
+<dl class="simple" id="q">
+<dt><strong>-Q</strong><strong>d</strong>|<strong>v</strong></dt><dd><p>Append <strong>d</strong> for Delaunay triangles or <strong>v</strong> for Voronoi polygons [Delaunay].
 If <strong>-bo</strong> is used then <strong>-N</strong> may be used to specify a separate file where the
-polygon information normally is written.</dd>
+polygon information normally is written.</p>
+</dd>
 </dl>
-<dl class="docutils" id="t">
-<dt><strong>-T</strong></dt>
-<dd>Write the unique arcs of the construction [Default writes fillable
+<dl class="simple" id="t">
+<dt><strong>-T</strong></dt><dd><p>Write the unique arcs of the construction [Default writes fillable
 triangles or polygons]. When used with <strong>-A</strong> we store arc length in
-the segment header in chosen unit (see <strong>-L</strong>).</dd>
+the segment header in chosen unit (see <strong>-L</strong>).</p>
+</dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select native binary format for primary input. [Default is 2 input columns].</dd>
+<dl class="simple">
+<dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select native binary format for primary input. [Default is 2 input columns].</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>] <a class="reference internal" href="gmt.html#bo-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select native binary output. [Default is same as input].</dd>
+<dl class="simple">
+<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>] <a class="reference internal" href="gmt.html#bo-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select native binary output. [Default is same as input].</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em> <a class="reference internal" href="gmt.html#d-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Replace input columns that equal <em>nodata</em> with NaN and do the reverse on output.  </dd>
+<dl class="simple">
+<dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em> <a class="reference internal" href="gmt.html#d-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Replace input columns that equal <em>nodata</em> with NaN and do the reverse on output.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-e</strong>[<strong>~</strong>]<em>”pattern”</em> <strong>|</strong> <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] <a class="reference internal" href="gmt.html#e-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Only accept data records that match the given pattern.  </dd>
+<dl class="simple">
+<dt><strong>-e</strong>[<strong>~</strong>]<em>”pattern”</em> <strong>|</strong> <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] <a class="reference internal" href="gmt.html#e-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Only accept data records that match the given pattern.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Skip or produce header record(s).  </dd>
+<dl class="simple">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Skip or produce header record(s).  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-je</strong>|<strong>f</strong>|<strong>g</strong> <a class="reference internal" href="gmt.html#distcalc-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Determine how spherical distances are calculated.</dd>
+<dl class="simple">
+<dt><strong>-je</strong>|<strong>f</strong>|<strong>g</strong> <a class="reference internal" href="gmt.html#distcalc-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Determine how spherical distances are calculated.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="gmt.html#colon-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Swap 1st and 2nd column on input and/or output.</dd>
+<dl class="simple">
+<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="gmt.html#colon-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Swap 1st and 2nd column on input and/or output.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-r</strong> <a class="reference internal" href="gmt.html#nodereg-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set node registration [gridline].  </dd>
+<dl class="simple">
+<dt><strong>-r</strong> <a class="reference internal" href="gmt.html#nodereg-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set node registration [gridline].  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
+<dl class="simple">
+<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
+</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</p>
+</dd>
+<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="ascii-format-precision">
@@ -300,7 +298,7 @@ Voronoi Diagram on the Surface of a Sphere, <em>AMC Trans. Math. Software</em>,
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="S.html" >S</a> &#187;</li>
 <li class="right">
@@ -319,8 +317,8 @@ Voronoi Diagram on the Surface of a Sphere, <em>AMC Trans. Math. Software</em>,
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

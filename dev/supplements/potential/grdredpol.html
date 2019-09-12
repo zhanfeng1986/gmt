@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>grdredpol &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>grdredpol &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../SUP_POTENTIAL.html" accesskey="U">POTENTIAL</a> &#187;</li>
 <li class="right">
@@ -104,67 +102,67 @@ order Taylor series expansion.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><em>anom_grd</em></dt>
-<dd>The anomaly grid to be converted.</dd>
+<dl class="simple">
+<dt><em>anom_grd</em></dt><dd><p>The anomaly grid to be converted.</p>
+</dd>
 </dl>
-<dl class="docutils" id="g">
-<dt><strong>-G</strong><em>rtp_grd</em></dt>
-<dd>is the filename for output grdfile with the RTP solution</dd>
+<dl class="simple" id="g">
+<dt><strong>-G</strong><em>rtp_grd</em></dt><dd><p>is the filename for output grdfile with the RTP solution</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="c">
-<dt><strong>-C</strong><em>dec/dip</em></dt>
-<dd>Use this (constant) declination and inclination angles for both
+<dl class="simple" id="c">
+<dt><strong>-C</strong><em>dec/dip</em></dt><dd><p>Use this (constant) declination and inclination angles for both
 field and magnetization. This option consists in the classical RTP
-procedure.</dd>
+procedure.</p>
+</dd>
 </dl>
-<dl class="docutils" id="e">
-<dt><strong>-Ei</strong><em>inc_grd</em> <strong>-Ed</strong><em>dec_grd</em></dt>
-<dd>Get magnetization <em>INCLINATION</em> and <em>DECLINATION</em> from these grids
+<dl class="simple" id="e">
+<dt><strong>-Ei</strong><em>inc_grd</em> <strong>-Ed</strong><em>dec_grd</em></dt><dd><p>Get magnetization <em>INCLINATION</em> and <em>DECLINATION</em> from these grids
 [default: use IGRF for each of the above parameters not provided via grid].
 Note that these two grids do not need to have the same resolution as
-the anomaly grid. They can be coarser.</dd>
+the anomaly grid. They can be coarser.</p>
+</dd>
 </dl>
-<dl class="docutils" id="f">
-<dt><strong>-F</strong><em>m/n</em></dt>
-<dd>The filter window size in terms of row/columns. The default value is 25x25.</dd>
+<dl class="simple" id="f">
+<dt><strong>-F</strong><em>m/n</em></dt><dd><p>The filter window size in terms of row/columns. The default value is 25x25.</p>
+</dd>
 </dl>
-<dl class="docutils" id="m">
-<dt><strong>-M</strong><em>m|r</em></dt>
-<dd>Set boundary conditions. m|r stands for mirror or replicate edges
-(Default is zero padding).</dd>
+<dl class="simple" id="m">
+<dt><strong>-M</strong><em>m|r</em></dt><dd><p>Set boundary conditions. m|r stands for mirror or replicate edges
+(Default is zero padding).</p>
+</dd>
 </dl>
-<dl class="docutils" id="n">
-<dt><strong>-N</strong></dt>
-<dd>Do NOT use Taylor expansion.</dd>
+<dl class="simple" id="n">
+<dt><strong>-N</strong></dt><dd><p>Do NOT use Taylor expansion.</p>
+</dd>
 </dl>
-<dl class="docutils" id="r">
-<dt><strong>-R</strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em></dt>
-<dd>defines the Region of the output points. [Default: Same as input.]</dd>
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em></dt><dd><p>defines the Region of the output points. [Default: Same as input.]</p>
+</dd>
 </dl>
-<dl class="docutils" id="t">
-<dt><strong>-T</strong><em>year</em></dt>
-<dd>Decimal year used by the IGRF routine to compute the declination and
-inclination at each point [default: 2000]</dd>
+<dl class="simple" id="t">
+<dt><strong>-T</strong><em>year</em></dt><dd><p>Decimal year used by the IGRF routine to compute the declination and
+inclination at each point [default: 2000]</p>
+</dd>
 </dl>
-<dl class="docutils" id="w">
-<dt><strong>-W</strong><em>width</em></dt>
-<dd>The size of the moving window in degrees [5].</dd>
+<dl class="simple" id="w">
+<dt><strong>-W</strong><em>width</em></dt><dd><p>The size of the moving window in degrees [5].</p>
+</dd>
 </dl>
-<dl class="docutils" id="z">
-<dt><strong>-Z</strong><em>filter_grd</em></dt>
-<dd>Write the filter file to disk.</dd>
+<dl class="simple" id="z">
+<dt><strong>-Z</strong><em>filter_grd</em></dt><dd><p>Write the filter file to disk.</p>
+</dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-n</strong>[<strong>b</strong>|<strong>c</strong>|<strong>l</strong>|<strong>n</strong>][<strong>+a</strong>][<strong>+b</strong><em>BC</em>][<strong>+c</strong>][<strong>+t</strong><em>threshold</em>] <a class="reference internal" href="../../gmt.html#n-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select interpolation mode for grids.</dd>
+<dl class="simple">
+<dt><strong>-n</strong>[<strong>b</strong>|<strong>c</strong>|<strong>l</strong>|<strong>n</strong>][<strong>+a</strong>][<strong>+b</strong><em>BC</em>][<strong>+c</strong>][<strong>+t</strong><em>threshold</em>] <a class="reference internal" href="../../gmt.html#n-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select interpolation mode for grids.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="consequences-of-grid-resampling">
@@ -257,7 +255,7 @@ of the Azores Triple Junction and associated plateau. <em>JGR</em>, VOL.
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../SUP_POTENTIAL.html" >POTENTIAL</a> &#187;</li>
 <li class="right">
@@ -276,8 +274,8 @@ of the Azores Triple Junction and associated plateau. <em>JGR</em>, VOL.
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

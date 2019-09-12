@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>grdlandmask &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>grdlandmask &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="GR.html" accesskey="U">GR</a> &#187;</li>
 <li class="right">
@@ -93,13 +91,12 @@ operations involving <a class="reference internal" href="grdmath.html"><span cla
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="g">
-<dt><strong>-G</strong><em>mask_grd_file</em>]</dt>
-<dd>Name of resulting output mask grid file. (See GRID FILE FORMATS below).</dd>
+<dl class="simple" id="g">
+<dt><strong>-G</strong><em>mask_grd_file</em>]</dt><dd><p>Name of resulting output mask grid file. (See GRID FILE FORMATS below).</p>
+</dd>
 </dl>
-<dl class="docutils" id="i">
-<dt><strong>-I</strong><em>xinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>]]</dt>
-<dd><em>x_inc</em> [and optionally <em>y_inc</em>] is the grid spacing. Optionally,
+<dl class="simple" id="i">
+<dt><strong>-I</strong><em>xinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>]]</dt><dd><p><em>x_inc</em> [and optionally <em>y_inc</em>] is the grid spacing. Optionally,
 append a suffix modifier. <strong>Geographical (degrees) coordinates</strong>: Append
 <strong>m</strong> to indicate arc minutes or <strong>s</strong> to indicate arc seconds. If one
 of the units <strong>e</strong>, <strong>f</strong>, <strong>k</strong>, <strong>M</strong>, <strong>n</strong> or <strong>u</strong> is appended
@@ -118,11 +115,11 @@ recalculated from the number of nodes and the domain. The resulting
 increment value depends on whether you have selected a
 gridline-registered or pixel-registered grid; see <a class="reference internal" href="GMT_Docs_classic.html#app-file-formats"><span class="std std-ref">GMT File Formats</span></a> for
 details. Note: if <strong>-R</strong><em>grdfile</em> is used then the grid spacing has
-already been initialized; use <strong>-I</strong> to override the values.</dd>
+already been initialized; use <strong>-I</strong> to override the values.</p>
+</dd>
 </dl>
-<dl class="docutils" id="r">
-<dt><strong>-R</strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt>
-<dd><em>west</em>, <em>east</em>, <em>south</em>, and <em>north</em> specify the region of interest,
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt><dd><p><em>west</em>, <em>east</em>, <em>south</em>, and <em>north</em> specify the region of interest,
 and you may specify them in decimal degrees or in
 [±]dd:mm[:ss.xxx][<strong>W</strong>|<strong>E</strong>|<strong>S</strong>|<strong>N</strong>] format
 Append <strong>+r</strong> if lower left
@@ -156,14 +153,14 @@ In case of perspective view (<strong>-p</strong>), a z-range (<em>zmin</em>, <em
 can be appended to indicate the third dimension. This needs to be
 done only when using the <strong>-Jz</strong> option, not when using only the
 <strong>-p</strong> option. In the latter case a perspective view of the plane is
-plotted, with no third dimension.  </dd>
+plotted, with no third dimension.  </p>
+</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="a">
-<dt><strong>-A</strong><em>min_area</em>[/<em>min_level</em>/<em>max_level</em>][<strong>+a</strong>[<strong>g</strong>|<strong>i</strong>][<strong>s</strong>|<strong>S</strong>]][<strong>+r</strong>|<strong>l</strong>][<strong>+p</strong><em>percent</em>]</dt>
-<dd>Features with an area smaller than <em>min_area</em> in km^2 or of
+<dl class="simple" id="a">
+<dt><strong>-A</strong><em>min_area</em>[/<em>min_level</em>/<em>max_level</em>][<strong>+a</strong>[<strong>g</strong>|<strong>i</strong>][<strong>s</strong>|<strong>S</strong>]][<strong>+r</strong>|<strong>l</strong>][<strong>+p</strong><em>percent</em>]</dt><dd><p>Features with an area smaller than <em>min_area</em> in km^2 or of
 hierarchical level that is lower than <em>min_level</em> or higher than
 <em>max_level</em> will not be plotted [Default is 0/0/4 (all features)].
 Level 2 (lakes) contains regular lakes and wide river bodies which
@@ -177,11 +174,11 @@ add <strong>g</strong> to select the ice grounding line instead.  For expert
 users who wish to utilize their own Antarctica (with islands) coastline
 you can add <strong>s</strong> to skip all GSHHG features below 60S. In contrast, you
 can add <strong>S</strong> to instead skip all features <em>north</em> of 60S.  See
-GSHHG INFORMATION below for more details.  </dd>
+GSHHG INFORMATION below for more details.  </p>
+</dd>
 </dl>
-<dl class="docutils" id="d">
-<dt><strong>-D</strong><em>resolution</em>[<strong>+f</strong>]</dt>
-<dd>Selects the resolution of the data set to use ((<strong>f</strong>)ull,
+<dl class="simple" id="d">
+<dt><strong>-D</strong><em>resolution</em>[<strong>+f</strong>]</dt><dd><p>Selects the resolution of the data set to use ((<strong>f</strong>)ull,
 (<strong>h</strong>)igh, (<strong>i</strong>)ntermediate, (<strong>l</strong>)ow, or (<strong>c</strong>)rude). The
 resolution drops off by ~80% between data sets. [Default is <strong>l</strong>].
 Append <strong>+f</strong> to automatically select a lower resolution should the
@@ -190,11 +187,11 @@ Alternatively, choose (<strong>a</strong>)uto to automatically select the best
 resolution given the chosen region.  Note that
 because the coastlines differ in details a node in a mask file using
 one resolution is not guaranteed to remain inside [or outside] when
-a different resolution is selected.</dd>
+a different resolution is selected.</p>
+</dd>
 </dl>
-<dl class="docutils" id="e">
-<dt><strong>-E</strong>[<em>bordervalues</em>]</dt>
-<dd>Nodes that fall exactly on a polygon boundary should be
+<dl class="simple" id="e">
+<dt><strong>-E</strong>[<em>bordervalues</em>]</dt><dd><p>Nodes that fall exactly on a polygon boundary should be
 considered to be outside the polygon [Default considers them to be inside].
 Alternatively, append either the four values <em>cborder/lborder/iborder/pborder</em>
 or just the single value <em>bordervalue</em> (for the case when they should all be the same value).
@@ -203,41 +200,41 @@ specified via <strong>-N</strong> we trace the lines and change the node values 
 cells traversed by a line to the corresponding border value.  Here, <em>cborder</em>
 is used for cells traversed by the coastline, <em>lborder</em> for cells traversed
 by a lake outline, <em>iborder</em> for islands-in-lakes outlines, and <em>pborder</em> for
-ponds-in-islands-in-lakes outlines [Default is no line tracing].</dd>
+ponds-in-islands-in-lakes outlines [Default is no line tracing].</p>
+</dd>
 </dl>
-<dl class="docutils" id="n">
-<dt><strong>-N</strong><em>maskvalues</em></dt>
-<dd><p class="first">Sets the values that will be assigned to nodes. Values can be any
+<dl id="n">
+<dt><strong>-N</strong><em>maskvalues</em></dt><dd><p>Sets the values that will be assigned to nodes. Values can be any
 number, including the textstring NaN. Also select <strong>-E</strong> to let nodes
 exactly on feature boundaries be considered outside [Default is
 inside]. Specify this information using 1 of 2 formats:</p>
 <p><strong>-N</strong><em>wet/dry</em>.</p>
 <p><strong>-N</strong><em>ocean/land/lake/island/pond</em>.</p>
-<p class="last">[Default is 0/1/0/1/0 (i.e., 0/1)].</p>
+<p>[Default is 0/1/0/1/0 (i.e., 0/1)].</p>
 </dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-r</strong> <a class="reference internal" href="gmt.html#nodereg-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set node registration [gridline].  </dd>
+<dl class="simple">
+<dt><strong>-r</strong> <a class="reference internal" href="gmt.html#nodereg-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set node registration [gridline].  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-x</strong>[[-]<em>n</em>] <a class="reference internal" href="gmt.html#core-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Limit number of cores used in multi-threaded algorithms (OpenMP required).</dd>
+<dl class="simple">
+<dt><strong>-x</strong>[[-]<em>n</em>] <a class="reference internal" href="gmt.html#core-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Limit number of cores used in multi-threaded algorithms (OpenMP required).</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
+<dl class="simple">
+<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
+</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</p>
+</dd>
+<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="grid-file-formats">
@@ -374,7 +371,7 @@ further details.</p>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="GR.html" >GR</a> &#187;</li>
 <li class="right">
@@ -393,8 +390,8 @@ further details.</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

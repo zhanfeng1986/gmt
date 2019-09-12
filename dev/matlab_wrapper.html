@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>1. Introduction &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>1. Introduction &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="ml_wrapper.html" accesskey="U">MATLAB Wrapper</a> &#187;</li>
 <li class="right">
@@ -93,17 +91,17 @@ If you want to (re)build the MEX file yourself, see the <em>compile_mex.bat</em>
 it is a delicate process, with several caveats.  This may change over time as we work with MathWorks to straighten out the
 kinks.  The following works:</p>
 <ol class="arabic simple">
-<li>Install the GMT OS X Bundle</li>
-<li>Run the gmt_prepmex.sh script in the bundle’s share/tools directory.  This will duplicate
-the GMT 5.3 installation into /opt/gmt and re-baptize all the shared libraries.</li>
-<li>Use gmtswitch to make /opt/gmt the current active GMT version</li>
-<li>Checkout the gmt-mex project via subversion into some directory, i.e.,
-git clone <a class="reference external" href="https://github.com/GenericMappingTools/gmtmex.git">https://github.com/GenericMappingTools/gmtmex.git</a></li>
-<li>In gmt-mex/trunk, run autoconf then configure --enable-matlab (and maybe --enable-debug) is you
-can help debug things.</li>
-<li>Run make which builds the gmtmex.mexmaci64.  This executable is accessed by the gmt.m script.</li>
-<li>Set your MATLAB path so these two can be found (or copy them to a suitable directory).</li>
-<li>Make sure your gmt.conf file has the entry GMT_CUSTOM_LIBS=/opt/gmt/lib/gmt/plugins/supplements.so.</li>
+<li><p>Install the GMT OS X Bundle</p></li>
+<li><p>Run the gmt_prepmex.sh script in the bundle’s share/tools directory.  This will duplicate
+the GMT 5.3 installation into /opt/gmt and re-baptize all the shared libraries.</p></li>
+<li><p>Use gmtswitch to make /opt/gmt the current active GMT version</p></li>
+<li><p>Checkout the gmt-mex project via subversion into some directory, i.e.,
+git clone <a class="reference external" href="https://github.com/GenericMappingTools/gmtmex.git">https://github.com/GenericMappingTools/gmtmex.git</a></p></li>
+<li><p>In gmt-mex/trunk, run autoconf then configure --enable-matlab (and maybe --enable-debug) is you
+can help debug things.</p></li>
+<li><p>Run make which builds the gmtmex.mexmaci64.  This executable is accessed by the gmt.m script.</p></li>
+<li><p>Set your MATLAB path so these two can be found (or copy them to a suitable directory).</p></li>
+<li><p>Make sure your gmt.conf file has the entry GMT_CUSTOM_LIBS=/opt/gmt/lib/gmt/plugins/supplements.so.</p></li>
 </ol>
 <p>You can also build your own bundle (see CMakeLists.txt in main GMT directory).  The above works
 with UNIX installations from fink or HomeBrew but fails for us if under MacPorts (then, MATLAB
@@ -310,7 +308,7 @@ comment         % Remark (Optional)
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="ml_wrapper.html" >MATLAB Wrapper</a> &#187;</li>
 <li class="right">
@@ -329,8 +327,8 @@ comment         % Remark (Optional)
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

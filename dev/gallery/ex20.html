@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>(20) Custom plot symbols &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>(20) Custom plot symbols &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" accesskey="U">The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -74,19 +72,19 @@ programs <a class="reference internal" href="../plot.html"><span class="doc">plo
 that allows for a fair bit of flexibility in designing ones own symbols.
 The following recipe is used when designing a new symbol.</p>
 <ol class="arabic simple">
-<li>Use <a class="reference internal" href="../basemap.html"><span class="doc">basemap</span></a> (or engineering
+<li><p>Use <a class="reference internal" href="../basemap.html"><span class="doc">basemap</span></a> (or engineering
 paper!) to set up an empty grid that goes from -0.5 to +0.5 in both
 <em>x</em> and <em>y</em>. Use ruler and compass to draw your new symbol using
 straight lines, arcs of circles, and stand-alone geometrical objects
 (see <a class="reference internal" href="../plot.html"><span class="doc">plot</span></a> man page for a full
 description of symbol design). In this Section we will create two new
-symbols: a volcano and a bulls eye.</li>
+symbols: a volcano and a bulls eye.</p></li>
 </ol>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/GMT_volcano.png"><img alt="../_images/GMT_volcano.png" src="../_images/GMT_volcano.png" style="width: 500px;" /></a>
 </div>
 <ol class="arabic">
-<li><p class="first">After designing the symbol we will encode it using a simple set of
+<li><p>After designing the symbol we will encode it using a simple set of
 rules. In our case we describe our volcano and bulls eye using these
 three freeform polygon generators:</p>
 <p><span class="math notranslate nohighlight">\(x_0\)</span> <span class="math notranslate nohighlight">\(y_0\)</span> <em>r</em> <strong>C</strong> [ <strong>-G</strong><em>fill</em> ] [
@@ -118,9 +116,8 @@ always be at (0,0). This is the point to which the coordinates in
 <p>The values refer to positions and dimensions illustrated in the
 Figure above.</p>
 </li>
-<li><p class="first">Given proper definition files we may now use them with
-<a class="reference internal" href="../plot.html"><span class="doc">plot</span></a> or <a class="reference internal" href="../plot3d.html"><span class="doc">plot3d</span></a>.</p>
-</li>
+<li><p>Given proper definition files we may now use them with
+<a class="reference internal" href="../plot.html"><span class="doc">plot</span></a> or <a class="reference internal" href="../plot3d.html"><span class="doc">plot3d</span></a>.</p></li>
 </ol>
 <p>We are now ready to give it a try. Based on the hotspot locations in the
 file <code class="docutils literal notranslate"><span class="pre">hotspots.txt</span></code> (with a 3rd column giving the desired symbol sizes in inches) we
@@ -157,7 +154,7 @@ gmt end
 </div>
 <div class="figure align-center" id="id1">
 <a class="reference internal image-reference" href="../_images/ex20.png"><img alt="../_images/ex20.png" src="../_images/ex20.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-text">Using custom symbols in GMT.</span></p>
+<p class="caption"><span class="caption-text">Using custom symbols in GMT.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>Given these guidelines you can easily make your own symbols. Symbols
 with more than one color can be obtained by making several symbol
@@ -207,7 +204,7 @@ patterns (Appendix [app:E]). Other approaches are also possible, of course.</p>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" >The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -226,8 +223,8 @@ patterns (Appendix [app:E]). Other approaches are also possible, of course.</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

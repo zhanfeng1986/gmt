@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>mgd77track &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>mgd77track &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../SUP_MGD77_classic.html" accesskey="U">MGD77</a> &#187;</li>
 <li class="right">
@@ -104,17 +102,16 @@ projection. The PostScript code is written to standard output.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><em>NGDC-ids</em></dt>
-<dd><p class="first">Can be one or more of five kinds of specifiers:</p>
+<dl>
+<dt><em>NGDC-ids</em></dt><dd><p>Can be one or more of five kinds of specifiers:</p>
 <ol class="arabic simple">
-<li>8-character NGDC IDs, e.g., 01010083, JA010010etc., etc.</li>
-<li>2-character <em>agency</em> codes which will return all cruises from each agency.</li>
-<li>4-character &lt;agency&gt;&lt;vessel&gt; codes, which will return all cruises from those vessels.</li>
-<li>=<em>list</em>, where <em>list</em> is a table with NGDC IDs, one per line.</li>
-<li>If nothing is specified we return all cruises in the data base.</li>
+<li><p>8-character NGDC IDs, e.g., 01010083, JA010010etc., etc.</p></li>
+<li><p>2-character <em>agency</em> codes which will return all cruises from each agency.</p></li>
+<li><p>4-character &lt;agency&gt;&lt;vessel&gt; codes, which will return all cruises from those vessels.</p></li>
+<li><p>=<em>list</em>, where <em>list</em> is a table with NGDC IDs, one per line.</p></li>
+<li><p>If nothing is specified we return all cruises in the data base.</p></li>
 </ol>
-<p class="last">(See mgd77info <strong>-L</strong> for agency and vessel codes). If no file
+<p>(See mgd77info <strong>-L</strong> for agency and vessel codes). If no file
 extension is given then we search for files with one of the four
 known extensions.  The search order (and the extensions) tried
 is MGD77+ (“.nc”), MGD77T (“.m77t”), MGD77 (“.mgd77” ) and plain
@@ -125,13 +122,12 @@ listed in <strong>$MGD77_HOME</strong>/mgd77_paths.txt [If <strong>$MGD77_HOME</
 not set it will default to <strong>$GMT_SHAREDIR</strong>/mgd77].</p>
 </dd>
 </dl>
-<dl class="docutils" id="j">
-<dt><strong>-J</strong><em>parameters</em> <a class="reference internal" href="../../gmt.html#j-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select map projection.  </dd>
+<dl class="simple" id="j">
+<dt><strong>-J</strong><em>parameters</em> <a class="reference internal" href="../../gmt.html#j-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select map projection.  </p>
+</dd>
 </dl>
-<dl class="docutils" id="r">
-<dt><strong>-R</strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt>
-<dd><em>west</em>, <em>east</em>, <em>south</em>, and <em>north</em> specify the region of interest,
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt><dd><p><em>west</em>, <em>east</em>, <em>south</em>, and <em>north</em> specify the region of interest,
 and you may specify them in decimal degrees or in
 [±]dd:mm[:ss.xxx][<strong>W</strong>|<strong>E</strong>|<strong>S</strong>|<strong>N</strong>] format
 Append <strong>+r</strong> if lower left
@@ -165,134 +161,135 @@ In case of perspective view (<strong>-p</strong>), a z-range (<em>zmin</em>, <em
 can be appended to indicate the third dimension. This needs to be
 done only when using the <strong>-Jz</strong> option, not when using only the
 <strong>-p</strong> option. In the latter case a perspective view of the plane is
-plotted, with no third dimension.  </dd>
+plotted, with no third dimension.  </p>
+</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="a">
-<dt><strong>-A</strong>[<strong>c</strong>][<em>size</em>][<strong>+i</strong><em>spacing</em>]</dt>
-<dd>Append <strong>c</strong> to annotate using the MGD77 cruise ID [Default uses the
+<dl class="simple" id="a">
+<dt><strong>-A</strong>[<strong>c</strong>][<em>size</em>][<strong>+i</strong><em>spacing</em>]</dt><dd><p>Append <strong>c</strong> to annotate using the MGD77 cruise ID [Default uses the
 filename prefix]. Optional <em>size</em> is the font size in points. The
 leg annotation font is controlled by <a class="reference internal" href="../../gmt.conf.html#font-label"><span class="std std-ref">FONT_LABEL</span></a>. By default,
 each leg is annotated every time it enters the map region.
 Alternatively, append <strong>+i</strong><em>spacing</em> to place this label every
 <em>spacing</em> units apart along the track. Append one of the units <strong>k</strong>
-(km), <strong>n</strong> (nautical mile), <strong>d</strong> (day), or <strong>h</strong> (hour).</dd>
+(km), <strong>n</strong> (nautical mile), <strong>d</strong> (day), or <strong>h</strong> (hour).</p>
+</dd>
 </dl>
-<dl class="docutils" id="b">
-<dt><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> <a class="reference internal" href="../../gmt.html#b-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set map boundary frame and axes attributes.</dd>
+<dl class="simple" id="b">
+<dt><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> <a class="reference internal" href="../../gmt.html#b-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set map boundary frame and axes attributes.</p>
+</dd>
 </dl>
-<dl class="docutils" id="d">
-<dt><strong>-Da</strong><em>startdate</em></dt>
-<dd>Do not plot data collected before <em>startdate</em>
-(yyyy-mm-dd<strong>T</strong>[hh:mm:ss]) [Default is first day].</dd>
-<dt><strong>-Db</strong><em>stopdate</em></dt>
-<dd>Do not plot data collected after <em>stopdate</em>
-(yyyy-mm-dd<strong>T</strong>[hh:mm:ss]). [Default is last day].</dd>
+<dl class="simple" id="d">
+<dt><strong>-Da</strong><em>startdate</em></dt><dd><p>Do not plot data collected before <em>startdate</em>
+(yyyy-mm-dd<strong>T</strong>[hh:mm:ss]) [Default is first day].</p>
+</dd>
+<dt><strong>-Db</strong><em>stopdate</em></dt><dd><p>Do not plot data collected after <em>stopdate</em>
+(yyyy-mm-dd<strong>T</strong>[hh:mm:ss]). [Default is last day].</p>
+</dd>
 </dl>
-<dl class="docutils" id="f">
-<dt><strong>-F</strong></dt>
-<dd>Do not apply the error bit flags if present in a MGD77+ file
-[Default will apply these flags upon reading the data].</dd>
+<dl class="simple" id="f">
+<dt><strong>-F</strong></dt><dd><p>Do not apply the error bit flags if present in a MGD77+ file
+[Default will apply these flags upon reading the data].</p>
+</dd>
 </dl>
-<dl class="docutils" id="g">
-<dt><strong>-G</strong><strong>d</strong>|<strong>t</strong>|<strong>n</strong><em>gap</em></dt>
-<dd>Let successive point separations exceeding <strong>d</strong><em>gap</em> (km) or
+<dl class="simple" id="g">
+<dt><strong>-G</strong><strong>d</strong>|<strong>t</strong>|<strong>n</strong><em>gap</em></dt><dd><p>Let successive point separations exceeding <strong>d</strong><em>gap</em> (km) or
 <strong>t</strong><em>gap</em> (minutes) indicate a break in the track where we should
 not draw a line [no gaps recognized]. Repeat to use both types of
 gap checking. The <strong>n</strong><em>N</em> form is used to plot only one every other <em>N</em> points.
 This is useful to reduce plot file size bat cannot be used (will be ignored)
-with the other two gap types.</dd>
+with the other two gap types.</p>
+</dd>
 </dl>
-<dl class="docutils" id="i">
-<dt><strong>-I</strong><em>ignore</em></dt>
-<dd>Ignore certain data file formats from consideration. Append
+<dl class="simple" id="i">
+<dt><strong>-I</strong><em>ignore</em></dt><dd><p>Ignore certain data file formats from consideration. Append
 <strong>a|c|m|t</strong> to ignore MGD77 ASCII, MGD77+ netCDF, MGD77T ASCII, or plain table
 files, respectively. The option may be repeated to ignore more than
-one format. [Default ignores none].</dd>
+one format. [Default ignores none].</p>
+</dd>
 </dl>
-<dl class="docutils" id="l">
-<dt><strong>-L</strong><em>trackticks</em></dt>
-<dd>To put time/distance log-marks on the track. E.g.
+<dl class="simple" id="l">
+<dt><strong>-L</strong><em>trackticks</em></dt><dd><p>To put time/distance log-marks on the track. E.g.
 <strong>a</strong>500<strong>ka</strong>24<strong>ht</strong>6<strong>h</strong> means (<strong>a</strong>)nnotate every
 500 km (<strong>k</strong>) and 24 <strong>h</strong>(ours), with
 (<strong>t</strong>)ickmarks every 500 km and 6 hours. Alternatively you may use
-the modifiers <strong>d</strong> (days) and <strong>n</strong> (nautical miles).</dd>
+the modifiers <strong>d</strong> (days) and <strong>n</strong> (nautical miles).</p>
+</dd>
 </dl>
-<dl class="docutils" id="s">
-<dt><strong>-Sa</strong><em>startdist</em>[<strong>u</strong>]</dt>
-<dd>Do not plot data that are less than <em>startdist</em> meter along track
+<dl class="simple" id="s">
+<dt><strong>-Sa</strong><em>startdist</em>[<strong>u</strong>]</dt><dd><p>Do not plot data that are less than <em>startdist</em> meter along track
 from port of departure. Append <strong>k</strong> for km, <strong>m</strong> for miles, or
-<strong>n</strong> for nautical miles [Default is 0 meters].</dd>
-<dt><strong>-Sb</strong><em>stopdist</em>[<strong>u</strong>]</dt>
-<dd>Do not plot data that are more than <em>stopdist</em> meter along track
+<strong>n</strong> for nautical miles [Default is 0 meters].</p>
+</dd>
+<dt><strong>-Sb</strong><em>stopdist</em>[<strong>u</strong>]</dt><dd><p>Do not plot data that are more than <em>stopdist</em> meter along track
 from port of departure. Append <strong>k</strong> for km, <strong>m</strong> for miles, or
-<strong>n</strong> for nautical miles [Default is end of track].</dd>
+<strong>n</strong> for nautical miles [Default is end of track].</p>
+</dd>
 </dl>
-<dl class="docutils" id="t">
-<dt><strong>-TT</strong>|<strong>t</strong>|<strong>d</strong><em>ms</em>,<em>mc</em>,<em>mfs</em>,<em>mf</em>,<em>mfc</em></dt>
-<dd>Controls the attributes of the three kinds of markers (<strong>T</strong> for the
+<dl class="simple" id="t">
+<dt><strong>-TT</strong>|<strong>t</strong>|<strong>d</strong><em>ms</em>,<em>mc</em>,<em>mfs</em>,<em>mf</em>,<em>mfc</em></dt><dd><p>Controls the attributes of the three kinds of markers (<strong>T</strong> for the
 first time marker in a new day, <strong>t</strong> for additional time markers in
 the same day, and <strong>d</strong> for distance markers). For each of these you
 can specify the 5 comma-separated attributes <em>markersize</em>,
 <em>markercolor</em>, <em>markerfontsize</em>, <em>markerfont</em>, and
-<em>markerfontcolor</em>. Repeat the <strong>-T</strong> option for each marker type.</dd>
+<em>markerfontcolor</em>. Repeat the <strong>-T</strong> option for each marker type.</p>
+</dd>
 </dl>
-<dl class="docutils" id="u">
-<dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>] <a class="reference internal" href="../../gmt.html#u-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Draw GMT time stamp logo on plot.</dd>
+<dl class="simple" id="u">
+<dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>] <a class="reference internal" href="../../gmt.html#u-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Draw GMT time stamp logo on plot.</p>
+</dd>
 </dl>
-<dl class="docutils" id="w">
-<dt><strong>-W</strong>[<em>pen</em>]</dt>
-<dd>Append <em>pen</em> used for the trackline. [Defaults:
-width = default, color = black, style = solid].</dd>
+<dl class="simple" id="w">
+<dt><strong>-W</strong>[<em>pen</em>]</dt><dd><p>Append <em>pen</em> used for the trackline. [Defaults:
+width = default, color = black, style = solid].</p>
+</dd>
 </dl>
 <p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</p>
-<dl class="docutils">
-<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="../../gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Shift plot origin.</dd>
+<dl class="simple">
+<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="../../gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Shift plot origin.</p>
+</dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-p</strong>[<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>azim</em>[/<em>elev</em>[/<em>zlevel</em>]][<strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>z0</em>]][<strong>+v</strong><em>x0</em>/<em>y0</em>] <a class="reference internal" href="../../gmt.html#perspective-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select perspective view.  </dd>
+<dl class="simple">
+<dt><strong>-p</strong>[<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>azim</em>[/<em>elev</em>[/<em>zlevel</em>]][<strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>z0</em>]][<strong>+v</strong><em>x0</em>/<em>y0</em>] <a class="reference internal" href="../../gmt.html#perspective-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select perspective view.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-t</strong>[<em>transp</em>] <a class="reference internal" href="../../gmt.html#t-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set transparency level in percent.</dd>
+<dl class="simple">
+<dt><strong>-t</strong>[<em>transp</em>] <a class="reference internal" href="../../gmt.html#t-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set transparency level in percent.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="../../gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
+<dl class="simple">
+<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
+</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</p>
+</dd>
+<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="../../gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="classic-mode-arguments">
 <h2>Classic Mode Arguments<a class="headerlink" href="#classic-mode-arguments" title="Permalink to this headline">¶</a></h2>
 <p>These options are used to manipulate the building of layered GMT PostScript plots in classic mode.
 They are not available when using GMT modern mode.</p>
-<dl class="docutils" id="k">
-<dt><strong>-K</strong> <a class="reference internal" href="../../gmt.html#k-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Do not finalize the PostScript plot.</dd>
+<dl class="simple" id="k">
+<dt><strong>-K</strong> <a class="reference internal" href="../../gmt.html#k-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Do not finalize the PostScript plot.</p>
+</dd>
 </dl>
-<dl class="docutils" id="o">
-<dt><strong>-O</strong> <a class="reference internal" href="../../gmt.html#o-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Append to existing PostScript plot.</dd>
+<dl class="simple" id="o">
+<dt><strong>-O</strong> <a class="reference internal" href="../../gmt.html#o-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Append to existing PostScript plot.</p>
+</dd>
 </dl>
-<dl class="docutils" id="p">
-<dt><strong>-P</strong> <a class="reference internal" href="../../gmt.html#p-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select “Portrait” plot orientation.</dd>
+<dl class="simple" id="p">
+<dt><strong>-P</strong> <a class="reference internal" href="../../gmt.html#p-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select “Portrait” plot orientation.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="examples">
@@ -375,7 +372,7 @@ plot to the default printer, enter the following command:</p>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../SUP_MGD77_classic.html" >MGD77</a> &#187;</li>
 <li class="right">
@@ -394,8 +391,8 @@ plot to the default printer, enter the following command:</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

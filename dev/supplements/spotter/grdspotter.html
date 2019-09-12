@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>grdspotter &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>grdspotter &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../SUP_SPOTTER.html" accesskey="U">SPOTTER</a> &#187;</li>
 <li class="right">
@@ -97,17 +95,16 @@ give a Cumulative Volcano Amplitude grid (CVA).</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><em>grdfile</em></dt>
-<dd>Data grid to be processed, typically residual bathymetry or free-air anomalies.</dd>
+<dl class="simple">
+<dt><em>grdfile</em></dt><dd><p>Data grid to be processed, typically residual bathymetry or free-air anomalies.</p>
+</dd>
 </dl>
-<dl class="docutils" id="e">
-<dt><strong>-E</strong><em>rotfile</em></dt>
-<dd><p class="first">Give file with rotation parameters. This file must contain one
+<dl id="e">
+<dt><strong>-E</strong><em>rotfile</em></dt><dd><p>Give file with rotation parameters. This file must contain one
 record for each rotation; each record must be of the following
 format:</p>
 <p><em>lon lat tstart [tstop] angle</em> [ <em>khat a b c d e f g df</em> ]</p>
-<p class="last">where <em>tstart</em> and <em>tstop</em> are in Myr and <em>lon lat angle</em> are in
+<p>where <em>tstart</em> and <em>tstop</em> are in Myr and <em>lon lat angle</em> are in
 degrees. <em>tstart</em> and <em>tstop</em> are the ages of the old and young ends
 of a stage. If <em>tstop</em> is not present in the record then a total
 reconstruction rotation is expected and <em>tstop</em> is implicitly set to
@@ -126,13 +123,12 @@ that rotation from the GPlates rotation database. We return an error
 if the rotation cannot be found.</p>
 </dd>
 </dl>
-<dl class="docutils" id="g">
-<dt><strong>-G</strong></dt>
-<dd>Specify name for output CVA grid file.</dd>
+<dl class="simple" id="g">
+<dt><strong>-G</strong></dt><dd><p>Specify name for output CVA grid file.</p>
+</dd>
 </dl>
-<dl class="docutils" id="i">
-<dt><strong>-I</strong><em>xinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>]]</dt>
-<dd><em>x_inc</em> [and optionally <em>y_inc</em>] is the grid spacing. Optionally,
+<dl class="simple" id="i">
+<dt><strong>-I</strong><em>xinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>]]</dt><dd><p><em>x_inc</em> [and optionally <em>y_inc</em>] is the grid spacing. Optionally,
 append a suffix modifier. <strong>Geographical (degrees) coordinates</strong>: Append
 <strong>m</strong> to indicate arc minutes or <strong>s</strong> to indicate arc seconds. If one
 of the units <strong>e</strong>, <strong>f</strong>, <strong>k</strong>, <strong>M</strong>, <strong>n</strong> or <strong>u</strong> is appended
@@ -151,11 +147,11 @@ recalculated from the number of nodes and the domain. The resulting
 increment value depends on whether you have selected a
 gridline-registered or pixel-registered grid; see <a class="reference internal" href="../../GMT_Docs_classic.html#app-file-formats"><span class="std std-ref">GMT File Formats</span></a> for
 details. Note: if <strong>-R</strong><em>grdfile</em> is used then the grid spacing has
-already been initialized; use <strong>-I</strong> to override the values.</dd>
+already been initialized; use <strong>-I</strong> to override the values.</p>
+</dd>
 </dl>
-<dl class="docutils" id="r">
-<dt><strong>-R</strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt>
-<dd><em>west</em>, <em>east</em>, <em>south</em>, and <em>north</em> specify the region of interest,
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt><dd><p><em>west</em>, <em>east</em>, <em>south</em>, and <em>north</em> specify the region of interest,
 and you may specify them in decimal degrees or in
 [±]dd:mm[:ss.xxx][<strong>W</strong>|<strong>E</strong>|<strong>S</strong>|<strong>N</strong>] format
 Append <strong>+r</strong> if lower left
@@ -189,102 +185,103 @@ In case of perspective view (<strong>-p</strong>), a z-range (<em>zmin</em>, <em
 can be appended to indicate the third dimension. This needs to be
 done only when using the <strong>-Jz</strong> option, not when using only the
 <strong>-p</strong> option. In the latter case a perspective view of the plane is
-plotted, with no third dimension.  </dd>
+plotted, with no third dimension.  </p>
+</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="a">
-<dt><strong>-A</strong><em>agegrid</em></dt>
-<dd>Supply a crustal age grid that is co-registered with the input data
+<dl class="simple" id="a">
+<dt><strong>-A</strong><em>agegrid</em></dt><dd><p>Supply a crustal age grid that is co-registered with the input data
 grid. These ages become the upper ages to use when constructing
 flowlines [Default extend flowlines back to oldest age found in the
-rotation file; but see <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong>].</dd>
+rotation file; but see <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong>].</p>
+</dd>
 </dl>
-<dl class="docutils" id="d">
-<dt><strong>-D</strong><em>DIgrid</em></dt>
-<dd>Use flowlines to determine the maximum CVA encountered along each
+<dl class="simple" id="d">
+<dt><strong>-D</strong><em>DIgrid</em></dt><dd><p>Use flowlines to determine the maximum CVA encountered along each
 flowline and create a Data Importance (DI) grid with these values at
-the originating nodes.</dd>
+the originating nodes.</p>
+</dd>
 </dl>
-<dl class="docutils" id="l">
-<dt><strong>-L</strong><em>IDgrid</em></dt>
-<dd>Supply a co-registered grid with seamount chain IDs for each node.
-This option requires that you also use <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong>.</dd>
+<dl class="simple" id="l">
+<dt><strong>-L</strong><em>IDgrid</em></dt><dd><p>Supply a co-registered grid with seamount chain IDs for each node.
+This option requires that you also use <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong>.</p>
+</dd>
 </dl>
-<dl class="docutils" id="m">
-<dt><strong>-M</strong></dt>
-<dd>Do not attempt to keep all flowlines in memory when using <strong>-D</strong>
+<dl class="simple" id="m">
+<dt><strong>-M</strong></dt><dd><p>Do not attempt to keep all flowlines in memory when using <strong>-D</strong>
 and/or <strong>-P</strong>. Should you run out of memory you can use this option
 to compute flowlines on-the-fly. It will be slower as we no longer
 can reuse the flowlines calculated for the CVA step. Cannot be used
-with <strong>-W</strong> or the multi-slice mode in <strong>-Z</strong>.</dd>
+with <strong>-W</strong> or the multi-slice mode in <strong>-Z</strong>.</p>
+</dd>
 </dl>
-<dl class="docutils" id="n">
-<dt><strong>-N</strong><em>upper_age</em></dt>
-<dd>Set the upper age to assign to nodes whose crustal age is unknown
-(i.e., NaN) [no upper age]. Also see <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong>.</dd>
+<dl class="simple" id="n">
+<dt><strong>-N</strong><em>upper_age</em></dt><dd><p>Set the upper age to assign to nodes whose crustal age is unknown
+(i.e., NaN) [no upper age]. Also see <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong>.</p>
+</dd>
 </dl>
-<dl class="docutils" id="p">
-<dt><strong>-P</strong><em>PAgrid</em></dt>
-<dd>Use flowlines to determine the flowline age at the CVA maximum for
+<dl class="simple" id="p">
+<dt><strong>-P</strong><em>PAgrid</em></dt><dd><p>Use flowlines to determine the flowline age at the CVA maximum for
 each node and create a Predicted Age (PA) grid with these values at
-the originating nodes.</dd>
+the originating nodes.</p>
+</dd>
 </dl>
-<dl class="docutils" id="q">
-<dt><strong>-Q</strong><em>IDinfo</em></dt>
-<dd>Either give (1) a single ID to use or (2)
+<dl class="simple" id="q">
+<dt><strong>-Q</strong><em>IDinfo</em></dt><dd><p>Either give (1) a single ID to use or (2)
 the name of a file with a list of IDs to use
 [Default uses all IDs]. Each line would be TAG ID [w e s n]. The
 <em>w/e/s/n</em> zoom box is optional; if specified it means we only trace
 the flowline if inside this region [Default uses region set by
-<strong>-R</strong>]. Requires <strong>-L</strong>.</dd>
+<strong>-R</strong>]. Requires <strong>-L</strong>.</p>
+</dd>
 </dl>
-<dl class="docutils" id="s">
-<dt><strong>-S</strong></dt>
-<dd>Normalize the resulting CVA grid to percentages of the CVA maximum.
-This also normalizes the DI grid (if requested).</dd>
+<dl class="simple" id="s">
+<dt><strong>-S</strong></dt><dd><p>Normalize the resulting CVA grid to percentages of the CVA maximum.
+This also normalizes the DI grid (if requested).</p>
+</dd>
 </dl>
-<dl class="docutils" id="t">
-<dt><strong>-T</strong><strong>t</strong>|<strong>u</strong><em>fixed_val</em></dt>
-<dd>Selects ways to adjust ages; repeatable. Choose from <strong>-Tt</strong> to
+<dl class="simple" id="t">
+<dt><strong>-T</strong><strong>t</strong>|<strong>u</strong><em>fixed_val</em></dt><dd><p>Selects ways to adjust ages; repeatable. Choose from <strong>-Tt</strong> to
 truncate crustal ages given via the <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong> option that exceed the
 upper age set with <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong> [no truncation], or <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><strong>u</strong><em>fixed_val</em>
 which means that after a node passes the test implied by <a class="reference internal" href="#z"><span> <strong>-Z</strong></span></a></strong>, we
 use this <em>fixed_val</em> instead in the calculations. [Default uses
-individual node values].</dd>
+individual node values].</p>
+</dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
 </dl>
-<dl class="docutils" id="w">
-<dt><strong>-W</strong><em>n_try</em></dt>
-<dd>Get <em>n_try</em> bootstrap estimates of the maximum CVA location; the
+<dl class="simple" id="w">
+<dt><strong>-W</strong><em>n_try</em></dt><dd><p>Get <em>n_try</em> bootstrap estimates of the maximum CVA location; the
 longitude and latitude results are written to stdout [Default is no
-bootstrapping]. Cannot be used with <strong>-M</strong>.</dd>
+bootstrapping]. Cannot be used with <strong>-M</strong>.</p>
+</dd>
 </dl>
-<dl class="docutils" id="z">
-<dt><strong>-Z</strong><em>z_min</em>[/<em>z_max</em>[/<em>z_inc</em>]]</dt>
-<dd>Ignore nodes with z-values lower than <em>z_min</em> [0] and optionally
+<dl class="simple" id="z">
+<dt><strong>-Z</strong><em>z_min</em>[/<em>z_max</em>[/<em>z_inc</em>]]</dt><dd><p>Ignore nodes with z-values lower than <em>z_min</em> [0] and optionally
 larger than <em>z_max</em> [Inf]. Give <em>z_min/z_max/z_inc</em> to make
 separate CVA grids for each <em>z</em>-slice [Default makes one CVA grid].
-Multi-slicing cannot be used with <strong>-M</strong>.</dd>
+Multi-slicing cannot be used with <strong>-M</strong>.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-r</strong> <a class="reference internal" href="../../gmt.html#nodereg-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set node registration [gridline].  </dd>
+<dl class="simple">
+<dt><strong>-r</strong> <a class="reference internal" href="../../gmt.html#nodereg-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set node registration [gridline].  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="../../gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
+<dl class="simple">
+<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
+</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</p>
+</dd>
+<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="../../gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="geodetic-versus-geocentric-coordinates">
@@ -391,7 +388,7 @@ doi:10.1029/2008GC002058.</p>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../SUP_SPOTTER.html" >SPOTTER</a> &#187;</li>
 <li class="right">
@@ -410,8 +407,8 @@ doi:10.1029/2008GC002058.</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

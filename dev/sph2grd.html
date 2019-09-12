@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>sph2grd &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>sph2grd &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="S.html" accesskey="U">S</a> &#187;</li>
 <li class="right">
@@ -93,13 +91,12 @@ L, M, C[L,M], S[L,M] and evaluates the spherical harmonic model on the specified
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="g">
-<dt><strong>-G</strong><em>grdfile</em></dt>
-<dd><em>grdfile</em> is the name of the binary output grid file. (See GRID FILE FORMAT below.)</dd>
+<dl class="simple" id="g">
+<dt><strong>-G</strong><em>grdfile</em></dt><dd><p><em>grdfile</em> is the name of the binary output grid file. (See GRID FILE FORMAT below.)</p>
+</dd>
 </dl>
-<dl class="docutils" id="i">
-<dt><strong>-I</strong><em>xinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>]]</dt>
-<dd><em>x_inc</em> [and optionally <em>y_inc</em>] is the grid spacing. Optionally,
+<dl class="simple" id="i">
+<dt><strong>-I</strong><em>xinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>]]</dt><dd><p><em>x_inc</em> [and optionally <em>y_inc</em>] is the grid spacing. Optionally,
 append a suffix modifier. <strong>Geographical (degrees) coordinates</strong>: Append
 <strong>m</strong> to indicate arc minutes or <strong>s</strong> to indicate arc seconds. If one
 of the units <strong>e</strong>, <strong>f</strong>, <strong>k</strong>, <strong>M</strong>, <strong>n</strong> or <strong>u</strong> is appended
@@ -118,35 +115,35 @@ recalculated from the number of nodes and the domain. The resulting
 increment value depends on whether you have selected a
 gridline-registered or pixel-registered grid; see <a class="reference internal" href="GMT_Docs_classic.html#app-file-formats"><span class="std std-ref">GMT File Formats</span></a> for
 details. Note: if <strong>-R</strong><em>grdfile</em> is used then the grid spacing has
-already been initialized; use <strong>-I</strong> to override the values.</dd>
+already been initialized; use <strong>-I</strong> to override the values.</p>
+</dd>
 </dl>
-<dl class="docutils" id="r">
-<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Specify the region of interest.  </dd>
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify the region of interest.  </p>
+</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><em>table</em></dt>
-<dd>One or more ASCII [or binary, see <strong>-bi</strong>]
+<dl class="simple">
+<dt><em>table</em></dt><dd><p>One or more ASCII [or binary, see <strong>-bi</strong>]
 files holding the spherical harmonic coefficients. We expect the
 first four columns to hold the degree L, the order M, followed by
-the cosine and sine coefficients.</dd>
+the cosine and sine coefficients.</p>
+</dd>
 </dl>
-<dl class="docutils" id="d">
-<dt><strong>-D</strong>[<strong>g</strong>|<strong>n</strong>]</dt>
-<dd>Will evaluate a derived field from a geopotential model.  Choose
+<dl class="simple" id="d">
+<dt><strong>-D</strong>[<strong>g</strong>|<strong>n</strong>]</dt><dd><p>Will evaluate a derived field from a geopotential model.  Choose
 between <strong>Dg</strong> which will compute the gravitational field or <strong>Dn</strong>
-to compute the geoid [Add <strong>-E</strong> for anomalies on the ellipsoid].</dd>
+to compute the geoid [Add <strong>-E</strong> for anomalies on the ellipsoid].</p>
+</dd>
 </dl>
-<dl class="docutils" id="e">
-<dt><strong>-E</strong></dt>
-<dd>Evaluate expansion on the current ellipsoid [Default is sphere].</dd>
+<dl class="simple" id="e">
+<dt><strong>-E</strong></dt><dd><p>Evaluate expansion on the current ellipsoid [Default is sphere].</p>
+</dd>
 </dl>
-<dl class="docutils" id="f">
-<dt><strong>-F</strong>[<strong>k</strong>]<em>filter</em></dt>
-<dd>Filter coefficients according to one of two kinds of filter
+<dl class="simple" id="f">
+<dt><strong>-F</strong>[<strong>k</strong>]<em>filter</em></dt><dd><p>Filter coefficients according to one of two kinds of filter
 specifications:.  Select <strong>-Fk</strong> if values are given in km
 [Default is coefficient harmonic degree L]. a) Cosine band-pass: Append
 four wavelengths <em>lc/lp/hp/hc</em>.  Coefficients outside <em>lc/hc</em> are
@@ -154,49 +151,50 @@ cut; those inside <em>lp/hp</em> are passed, while the rest are tapered.
 Replace wavelength by - to skip, e.g., <strong>-F</strong>-/-/50/75 is a
 low-pass filter.  b) Gaussian band-pass: Append two wavelengths
 <em>lo/hi</em> where filter amplitudes = 0.5.  Replace wavelength by -
-to skip, e.g., <strong>-F</strong>70/- is a high-pass Gaussian filter.</dd>
+to skip, e.g., <strong>-F</strong>70/- is a high-pass Gaussian filter.</p>
+</dd>
 </dl>
-<dl class="docutils" id="n">
-<dt><strong>-N</strong>[<em>norm</em>]</dt>
-<dd>Normalization used for coefficients.  Choose among <strong>m</strong>: Mathematical
+<dl class="simple" id="n">
+<dt><strong>-N</strong>[<em>norm</em>]</dt><dd><p>Normalization used for coefficients.  Choose among <strong>m</strong>: Mathematical
 normalization - inner products summed over surface equal 1 [Default].
 <strong>g</strong> Geodesy normalization - inner products summed over surface
-equal 4pi. <strong>s</strong>: Schmidt normalization - as used in geomagnetism.</dd>
+equal 4pi. <strong>s</strong>: Schmidt normalization - as used in geomagnetism.</p>
+</dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select native binary format for primary input. [Default is 4 input columns].</dd>
+<dl class="simple">
+<dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select native binary format for primary input. [Default is 4 input columns].</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Skip or produce header record(s). Not used with binary data.</dd>
+<dl class="simple">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Skip or produce header record(s). Not used with binary data.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select input columns and transformations (0 is first column, <em>t</em> is trailing text, append <em>word</em> to read one word only).</dd>
+<dl class="simple">
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select input columns and transformations (0 is first column, <em>t</em> is trailing text, append <em>word</em> to read one word only).</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-r</strong> <a class="reference internal" href="gmt.html#nodereg-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set node registration [gridline].  </dd>
+<dl class="simple">
+<dt><strong>-r</strong> <a class="reference internal" href="gmt.html#nodereg-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set node registration [gridline].  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-x</strong>[[-]<em>n</em>] <a class="reference internal" href="gmt.html#core-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Limit number of cores used in multi-threaded algorithms (OpenMP required).</dd>
+<dl class="simple">
+<dt><strong>-x</strong>[[-]<em>n</em>] <a class="reference internal" href="gmt.html#core-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Limit number of cores used in multi-threaded algorithms (OpenMP required).</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
+<dl class="simple">
+<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
+</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</p>
+</dd>
+<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="grid-values-precision">
@@ -324,7 +322,7 @@ degree and order normalized associated Legendre functions:
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="S.html" >S</a> &#187;</li>
 <li class="right">
@@ -343,8 +341,8 @@ degree and order normalized associated Legendre functions:
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

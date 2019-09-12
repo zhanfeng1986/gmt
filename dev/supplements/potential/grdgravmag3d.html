@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>grdgravmag3d &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>grdgravmag3d &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../SUP_POTENTIAL.html" accesskey="U">POTENTIAL</a> &#187;</li>
 <li class="right">
@@ -95,43 +93,43 @@ allows computing the anomaly of arbitrarily complex shapes.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><em>grdfile_top</em> [<em>grdfile_bot</em>]</dt>
-<dd>Grid file whose gravity effect is going to be computed. If two grids are
-provided then the gravity/magnetic effect of the volume between them is computed.</dd>
+<dl class="simple">
+<dt><em>grdfile_top</em> [<em>grdfile_bot</em>]</dt><dd><p>Grid file whose gravity effect is going to be computed. If two grids are
+provided then the gravity/magnetic effect of the volume between them is computed.</p>
+</dd>
 </dl>
-<dl class="docutils" id="c">
-<dt><strong>-C</strong><em>density</em></dt>
-<dd>Sets body density in SI. This option is mutually exclusive with <strong>-H</strong></dd>
+<dl class="simple" id="c">
+<dt><strong>-C</strong><em>density</em></dt><dd><p>Sets body density in SI. This option is mutually exclusive with <strong>-H</strong></p>
+</dd>
 </dl>
-<dl class="docutils" id="f">
-<dt><strong>-F</strong><em>xy_file</em></dt>
-<dd>Provide locations where the anomaly will be computed. Note this
-option is mutually exclusive with <strong>-G</strong>.</dd>
+<dl class="simple" id="f">
+<dt><strong>-F</strong><em>xy_file</em></dt><dd><p>Provide locations where the anomaly will be computed. Note this
+option is mutually exclusive with <strong>-G</strong>.</p>
+</dd>
 </dl>
-<dl class="docutils" id="g">
-<dt><strong>-G</strong><em>outgrid</em></dt>
-<dd>Output the gravity anomaly at nodes of this grid file.</dd>
+<dl class="simple" id="g">
+<dt><strong>-G</strong><em>outgrid</em></dt><dd><p>Output the gravity anomaly at nodes of this grid file.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="e">
-<dt><strong>-E</strong><em>thickness</em></dt>
-<dd>To provide the layer thickness in m [Default = 500 m].</dd>
+<dl class="simple" id="e">
+<dt><strong>-E</strong><em>thickness</em></dt><dd><p>To provide the layer thickness in m [Default = 500 m].</p>
+</dd>
 </dl>
-<dl class="docutils" id="h">
-<dt><strong>-H</strong><em>f_dec/f_dip/m_int/m_dec/m_dip</em> <strong>-H+m</strong><em>magfile</em>  <strong>-Hx</strong>|<strong>y</strong>|<strong>z</strong>|<strong>h</strong>|<strong>t</strong> <strong>-H+i</strong>|<strong>g</strong>|<strong>r</strong>|<strong>f</strong>|<strong>n</strong></dt>
-<dd><p class="first">Sets parameters for computation of magnetic anomaly (Can be used multiple times).</p>
+<dl id="h">
+<dt><strong>-H</strong><em>f_dec/f_dip/m_int/m_dec/m_dip</em> <strong>-H+m</strong><em>magfile</em>  <strong>-Hx</strong>|<strong>y</strong>|<strong>z</strong>|<strong>h</strong>|<strong>t</strong> <strong>-H+i</strong>|<strong>g</strong>|<strong>r</strong>|<strong>f</strong>|<strong>n</strong></dt><dd><p>Sets parameters for computation of magnetic anomaly (Can be used multiple times).</p>
 <blockquote>
 <div><p><em>f_dec/f_dip</em> -&gt; geomagnetic declination/inclination</p>
 <p><em>m_int/m_dec/m_dip</em> -&gt; body magnetic intensity/declination/inclination</p>
 </div></blockquote>
 <p>OR for a grid mode</p>
 <blockquote>
-<div><strong>+m</strong><em>magfile</em>, where <em>magfile</em> is the name of the magnetic intensity file.</div></blockquote>
+<div><p><strong>+m</strong><em>magfile</em>, where <em>magfile</em> is the name of the magnetic intensity file.</p>
+</div></blockquote>
 <p>To compute a component, specify any of:</p>
-<blockquote class="last">
+<blockquote>
 <div><p><strong>x</strong>|<strong>X</strong>|<strong>e</strong>|<strong>E</strong>  to compute the E-W component.</p>
 <p><strong>y</strong>|<strong>Y</strong>|<strong>n</strong>|<strong>N</strong>  to compute the N-S component.</p>
 <p><strong>z</strong>|<strong>Z</strong>      to compute the Vertical component.</p>
@@ -141,9 +139,8 @@ option is mutually exclusive with <strong>-G</strong>.</dd>
 </div></blockquote>
 </dd>
 </dl>
-<dl class="docutils" id="i">
-<dt><strong>-I</strong><em>xinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>]]</dt>
-<dd><em>x_inc</em> [and optionally <em>y_inc</em>] is the grid spacing. Optionally,
+<dl class="simple" id="i">
+<dt><strong>-I</strong><em>xinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>]]</dt><dd><p><em>x_inc</em> [and optionally <em>y_inc</em>] is the grid spacing. Optionally,
 append a suffix modifier. <strong>Geographical (degrees) coordinates</strong>: Append
 <strong>m</strong> to indicate arc minutes or <strong>s</strong> to indicate arc seconds. If one
 of the units <strong>e</strong>, <strong>f</strong>, <strong>k</strong>, <strong>M</strong>, <strong>n</strong> or <strong>u</strong> is appended
@@ -162,69 +159,67 @@ recalculated from the number of nodes and the domain. The resulting
 increment value depends on whether you have selected a
 gridline-registered or pixel-registered grid; see <a class="reference internal" href="../../GMT_Docs_classic.html#app-file-formats"><span class="std std-ref">GMT File Formats</span></a> for
 details. Note: if <strong>-R</strong><em>grdfile</em> is used then the grid spacing has
-already been initialized; use <strong>-I</strong> to override the values.</dd>
+already been initialized; use <strong>-I</strong> to override the values.</p>
+</dd>
 </dl>
-<dl class="docutils" id="l">
-<dt><strong>-L</strong><em>z_obs</em></dt>
-<dd>Sets level of observation [Default = 0]. That is the height (z) at
-which anomalies are computed.</dd>
+<dl class="simple" id="l">
+<dt><strong>-L</strong><em>z_obs</em></dt><dd><p>Sets level of observation [Default = 0]. That is the height (z) at
+which anomalies are computed.</p>
+</dd>
 </dl>
-<dl class="docutils" id="q">
-<dt><strong>-Q</strong>[<strong>n</strong><em>n_pad</em>]|[<em>pad_dist</em>]|[<em>region</em>]</dt>
-<dd><dl class="first last docutils">
-<dt>Extend the domain of computation with respect to output <strong>-R</strong> region.</dt>
-<dd><p class="first"><strong>-Qn</strong><em>n_pad</em> artificially extends the width of the outer rim of
+<dl id="q">
+<dt><strong>-Q</strong>[<strong>n</strong><em>n_pad</em>]|[<em>pad_dist</em>]|[<em>region</em>]</dt><dd><dl>
+<dt>Extend the domain of computation with respect to output <strong>-R</strong> region.</dt><dd><p><strong>-Qn</strong><em>n_pad</em> artificially extends the width of the outer rim of
 cells to have a fake width of <em>n_pad</em> * dx[/dy].</p>
 <p><strong>-Q</strong><em>pad_dist</em> extend the region by west-pad, east+pad, etc.</p>
-<p class="last"><strong>-Q</strong><em>region</em> Same syntax as <strong>-R</strong>.</p>
+<p><strong>-Q</strong><em>region</em> Same syntax as <strong>-R</strong>.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-<dl class="docutils" id="r">
-<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="../../gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Specify the region of interest. Note: this overrides the source grid region (Default: use same region as input)</dd>
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="../../gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify the region of interest. Note: this overrides the source grid region (Default: use same region as input)</p>
+</dd>
 </dl>
-<dl class="docutils" id="s">
-<dt><strong>-S</strong><em>radius</em></dt>
-<dd>Set search radius in km (valid only in the two grids mode OR when <strong>-E</strong>) [Default = 30 km].
+<dl class="simple" id="s">
+<dt><strong>-S</strong><em>radius</em></dt><dd><p>Set search radius in km (valid only in the two grids mode OR when <strong>-E</strong>) [Default = 30 km].
 This option serves to speed up the computation by not computing the effect of prisms that
-are further away than <em>radius</em> from the current node.</dd>
+are further away than <em>radius</em> from the current node.</p>
+</dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
 </dl>
-<dl class="docutils" id="z">
-<dt><strong>-Z</strong><em>level</em>[<strong>b</strong>|<strong>t</strong>]</dt>
-<dd>level of reference plane [Default = 0]. Use this option when the
+<dl id="z">
+<dt><strong>-Z</strong><em>level</em>[<strong>b</strong>|<strong>t</strong>]</dt><dd><p>level of reference plane [Default = 0]. Use this option when the
 triangles describe a non-closed surface and the volume is defined
 from each triangle and this reference level. An example will be the
 water depth to compute a Bouguer anomaly. Use <strong>-Zb</strong> or <strong>Zt</strong> to close
 the body at its bottom (for example, to compute the effect of a dome) or
-at its top (to compute the effect of a <em>spoon</em>).</dd>
-<dt><strong>-f</strong><a class="reference internal" href="../../gmt.html#f-full"><span class="std std-ref">flags</span></a></dt>
-<dd>Geographic grids (dimensions of longitude, latitude) will be converted to
-meters via a “Flat Earth” approximation using the current ellipsoid parameters.</dd>
-<dt><strong>-x</strong><em>+a|n|-n</em></dt>
-<dd><p class="first">Choose the number of processors used in multi-threading (Only available with multi-threading builds).</p>
-<blockquote class="last">
+at its top (to compute the effect of a <em>spoon</em>).</p>
+</dd>
+<dt><strong>-f</strong><a class="reference internal" href="../../gmt.html#f-full"><span class="std std-ref">flags</span></a></dt><dd><p>Geographic grids (dimensions of longitude, latitude) will be converted to
+meters via a “Flat Earth” approximation using the current ellipsoid parameters.</p>
+</dd>
+<dt><strong>-x</strong><em>+a|n|-n</em></dt><dd><p>Choose the number of processors used in multi-threading (Only available with multi-threading builds).</p>
+<blockquote>
 <div><p><em>+a</em> Use all available processors.</p>
 <p><em>n</em>  Use n processors (not more than max available off course).</p>
 <p><em>-n</em> Use (all - n) processors.</p>
 </div></blockquote>
 </dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="../../gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
+<dl class="simple">
+<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
+</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</p>
+</dd>
+<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="../../gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="grid-distance-units">
@@ -316,7 +311,7 @@ polyhedral bodies and translation into magnetic anomalies, <em>Geophysics</em>,
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../SUP_POTENTIAL.html" >POTENTIAL</a> &#187;</li>
 <li class="right">
@@ -335,8 +330,8 @@ polyhedral bodies and translation into magnetic anomalies, <em>Geophysics</em>,
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

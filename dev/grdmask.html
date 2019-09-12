@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>grdmask &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>grdmask &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="GR.html" accesskey="U">GR</a> &#187;</li>
 <li class="right">
@@ -106,18 +104,17 @@ are considered “inside”.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><em>pathfiles</em></dt>
-<dd>The name of 1 or more ASCII [or binary, see
-<strong>-bi</strong>] files holding the polygon(s) or data points.</dd>
+<dl class="simple">
+<dt><em>pathfiles</em></dt><dd><p>The name of 1 or more ASCII [or binary, see
+<strong>-bi</strong>] files holding the polygon(s) or data points.</p>
+</dd>
 </dl>
-<dl class="docutils" id="g">
-<dt><strong>-G</strong><em>mask_grd_file</em>]</dt>
-<dd>Name of resulting output mask grid file. (See GRID FILE FORMATS below).</dd>
+<dl class="simple" id="g">
+<dt><strong>-G</strong><em>mask_grd_file</em>]</dt><dd><p>Name of resulting output mask grid file. (See GRID FILE FORMATS below).</p>
+</dd>
 </dl>
-<dl class="docutils" id="i">
-<dt><strong>-I</strong><em>xinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>]]</dt>
-<dd><em>x_inc</em> [and optionally <em>y_inc</em>] is the grid spacing. Optionally,
+<dl class="simple" id="i">
+<dt><strong>-I</strong><em>xinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>]]</dt><dd><p><em>x_inc</em> [and optionally <em>y_inc</em>] is the grid spacing. Optionally,
 append a suffix modifier. <strong>Geographical (degrees) coordinates</strong>: Append
 <strong>m</strong> to indicate arc minutes or <strong>s</strong> to indicate arc seconds. If one
 of the units <strong>e</strong>, <strong>f</strong>, <strong>k</strong>, <strong>M</strong>, <strong>n</strong> or <strong>u</strong> is appended
@@ -136,29 +133,29 @@ recalculated from the number of nodes and the domain. The resulting
 increment value depends on whether you have selected a
 gridline-registered or pixel-registered grid; see <a class="reference internal" href="GMT_Docs_classic.html#app-file-formats"><span class="std std-ref">GMT File Formats</span></a> for
 details. Note: if <strong>-R</strong><em>grdfile</em> is used then the grid spacing has
-already been initialized; use <strong>-I</strong> to override the values.</dd>
+already been initialized; use <strong>-I</strong> to override the values.</p>
+</dd>
 </dl>
-<dl class="docutils" id="r">
-<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Specify the region of interest.  </dd>
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify the region of interest.  </p>
+</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="a">
-<dt><strong>-A</strong>[<strong>m</strong>|<strong>p</strong>|<strong>x</strong>|<strong>y</strong>]</dt>
-<dd>If the input data are geographic (as indicated by <strong>-f</strong>) then the
+<dl class="simple" id="a">
+<dt><strong>-A</strong>[<strong>m</strong>|<strong>p</strong>|<strong>x</strong>|<strong>y</strong>]</dt><dd><p>If the input data are geographic (as indicated by <strong>-f</strong>) then the
 sides in the polygons will be approximated by great circle arcs.
 When using the <strong>-A</strong> sides will be regarded as straight lines.
 Alternatively, append <strong>m</strong> to have sides first follow meridians,
 then parallels. Or append <strong>p</strong> to first follow parallels, then meridians.
 For Cartesian data, points are simply connected, unless you append
 <strong>x</strong> or <strong>y</strong> to construct stair-case paths whose first move is along
-<em>x</em> or <em>y</em>, respectively.</dd>
+<em>x</em> or <em>y</em>, respectively.</p>
+</dd>
 </dl>
-<dl class="docutils" id="n">
-<dt><strong>-N</strong>[<strong>z</strong>|<strong>Z</strong>|<strong>p</strong>|<strong>P</strong>]<em>values</em></dt>
-<dd>Sets the <em>out/edge/in</em> that will be assigned to nodes that are
+<dl class="simple" id="n">
+<dt><strong>-N</strong>[<strong>z</strong>|<strong>Z</strong>|<strong>p</strong>|<strong>P</strong>]<em>values</em></dt><dd><p>Sets the <em>out/edge/in</em> that will be assigned to nodes that are
 <em>out</em>side the polygons, on the <em>edge</em>, or <em>in</em>side. Values can
 be any number, including the textstring NaN [Default is 0/0/1].
 Optionally, use <strong>Nz</strong> to set polygon insides to the z-value
@@ -169,11 +166,11 @@ the polygon boundary as part of the inside. Alternatively, use
 start of the sequence [0]. Here, <strong>-NP</strong> includes the polygon
 perimeter as inside. Note:
 <strong>-N</strong><strong>z</strong>|<strong>Z</strong>|<strong>p</strong>|<strong>P</strong> cannot be used in
-conjunction with <strong>-S</strong>; they also all optionally accept /<em>out</em> [0].</dd>
+conjunction with <strong>-S</strong>; they also all optionally accept /<em>out</em> [0].</p>
+</dd>
 </dl>
-<dl class="docutils" id="s">
-<dt><strong>-S</strong><em>search_radius</em>[<em>unit</em>] |<em>xlim</em>/<em>ylim</em></dt>
-<dd>Set nodes to inside, on edge, or outside depending on their distance
+<dl class="simple" id="s">
+<dt><strong>-S</strong><em>search_radius</em>[<em>unit</em>] |<em>xlim</em>/<em>ylim</em></dt><dd><p>Set nodes to inside, on edge, or outside depending on their distance
 to the nearest data point. Nodes within <em>radius</em> [0] from the
 nearest data point are considered inside; append a distance unit
 (see <a class="reference internal" href="ternary.html#unit-attributes"><span class="std std-ref">Units</span></a>). If <em>radius</em> is given as <strong>z</strong> then we instead read
@@ -187,68 +184,69 @@ perform a rectangular search where all nodes within ±<em>xlim</em> and
 One can also achieve the rectangular selection effect by using the <strong>-S</strong><em>n_cells</em><strong>c</strong> form.
 Here <em>n_cells</em> means the number of cells around each data point. As an example, <strong>-S</strong>0<strong>c</strong> means
 that only the cell where point lies is masked, <strong>-S</strong>1<strong>c</strong> masks one cell beyond that
-(i.e. makes a 3x3 neighborhood), and so on.</dd>
+(i.e. makes a 3x3 neighborhood), and so on.</p>
+</dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select native binary format for primary input. [Default is 2 input columns (3 with <strong>-Sz</strong>)].</dd>
+<dl class="simple">
+<dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select native binary format for primary input. [Default is 2 input columns (3 with <strong>-Sz</strong>)].</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-di</strong><em>nodata</em> <a class="reference internal" href="gmt.html#di-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Replace input columns that equal <em>nodata</em> with NaN.  </dd>
+<dl class="simple">
+<dt><strong>-di</strong><em>nodata</em> <a class="reference internal" href="gmt.html#di-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Replace input columns that equal <em>nodata</em> with NaN.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-e</strong>[<strong>~</strong>]<em>”pattern”</em> <strong>|</strong> <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] <a class="reference internal" href="gmt.html#e-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Only accept data records that match the given pattern.  </dd>
+<dl class="simple">
+<dt><strong>-e</strong>[<strong>~</strong>]<em>”pattern”</em> <strong>|</strong> <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] <a class="reference internal" href="gmt.html#e-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Only accept data records that match the given pattern.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Specify data types of input and/or output columns.  </dd>
+<dl class="simple">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify data types of input and/or output columns.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>] <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Determine data gaps and line breaks.  </dd>
+<dl class="simple">
+<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>] <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Determine data gaps and line breaks.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Skip or produce header record(s).  </dd>
+<dl class="simple">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Skip or produce header record(s).  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select input columns and transformations (0 is first column, <em>t</em> is trailing text, append <em>word</em> to read one word only).</dd>
+<dl class="simple">
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select input columns and transformations (0 is first column, <em>t</em> is trailing text, append <em>word</em> to read one word only).</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-je</strong>|<strong>f</strong>|<strong>g</strong> <a class="reference internal" href="gmt.html#distcalc-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Determine how spherical distances are calculated.</dd>
-<dt><strong>-n</strong>[<strong>b</strong>|<strong>c</strong>|<strong>l</strong>|<strong>n</strong>][<strong>+a</strong>][<strong>+b</strong><em>BC</em>][<strong>+t</strong><em>threshold</em>]</dt>
-<dd>Append <strong>+b</strong><em>BC</em> to set any boundary conditions to be used,
+<dl class="simple">
+<dt><strong>-je</strong>|<strong>f</strong>|<strong>g</strong> <a class="reference internal" href="gmt.html#distcalc-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Determine how spherical distances are calculated.</p>
+</dd>
+<dt><strong>-n</strong>[<strong>b</strong>|<strong>c</strong>|<strong>l</strong>|<strong>n</strong>][<strong>+a</strong>][<strong>+b</strong><em>BC</em>][<strong>+t</strong><em>threshold</em>]</dt><dd><p>Append <strong>+b</strong><em>BC</em> to set any boundary conditions to be used,
 adding <strong>g</strong> for geographic, <strong>p</strong> for periodic, or <strong>n</strong> for
 natural boundary conditions. For the latter two you may append <strong>x</strong>
 or <strong>y</strong> to specify just one direction, otherwise both are assumed.
-[Default is geographic if grid is geographic].</dd>
+[Default is geographic if grid is geographic].</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-r</strong> <a class="reference internal" href="gmt.html#nodereg-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set node registration [gridline].  </dd>
+<dl class="simple">
+<dt><strong>-r</strong> <a class="reference internal" href="gmt.html#nodereg-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set node registration [gridline].  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-x</strong>[[-]<em>n</em>] <a class="reference internal" href="gmt.html#core-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Limit number of cores used in multi-threaded algorithms (OpenMP required).</dd>
+<dl class="simple">
+<dt><strong>-x</strong>[[-]<em>n</em>] <a class="reference internal" href="gmt.html#core-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Limit number of cores used in multi-threaded algorithms (OpenMP required).</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
+<dl class="simple">
+<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
+</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</p>
+</dd>
+<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="units">
@@ -420,7 +418,7 @@ in plates.gmt, based on the attribute POL_ID, do</p>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="GR.html" >GR</a> &#187;</li>
 <li class="right">
@@ -439,8 +437,8 @@ in plates.gmt, based on the attribute POL_ID, do</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

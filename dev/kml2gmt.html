@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>kml2gmt &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>kml2gmt &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="K.html" accesskey="U">K</a> &#187;</li>
 <li class="right">
@@ -97,53 +95,53 @@ somefile.kml.</p>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><em>kmlfiles</em></dt>
-<dd>Name of one or more KML files to work on. If not are given, then
-standard input is read.</dd>
+<dl class="simple">
+<dt><em>kmlfiles</em></dt><dd><p>Name of one or more KML files to work on. If not are given, then
+standard input is read.</p>
+</dd>
 </dl>
-<dl class="docutils" id="e">
-<dt><strong>-E</strong></dt>
-<dd>Get the altitude from the <em>ExtendData</em> property; <em>z</em> coordinates are then ignored. KML provides
+<dl class="simple" id="e">
+<dt><strong>-E</strong></dt><dd><p>Get the altitude from the <em>ExtendData</em> property; <em>z</em> coordinates are then ignored. KML provides
 more than one mechanism to store information via <em>ExtendData</em> but here we only implemented the
-<em>&lt;SimpleData name=”string”&gt;</em> variation. Implicitly sets <strong>-Z</strong></dd>
+<em>&lt;SimpleData name=”string”&gt;</em> variation. Implicitly sets <strong>-Z</strong></p>
+</dd>
 </dl>
-<dl class="docutils" id="f">
-<dt><strong>-F</strong><strong>s</strong>|<strong>l</strong>|<strong>p</strong></dt>
-<dd>Specify a particular feature type to output. Choose from points (<strong>s</strong>),
-<strong>l</strong>ine, or <strong>p</strong>olygon.  By default we output all geometries.</dd>
+<dl class="simple" id="f">
+<dt><strong>-F</strong><strong>s</strong>|<strong>l</strong>|<strong>p</strong></dt><dd><p>Specify a particular feature type to output. Choose from points (<strong>s</strong>),
+<strong>l</strong>ine, or <strong>p</strong>olygon.  By default we output all geometries.</p>
+</dd>
 </dl>
-<dl class="docutils" id="z">
-<dt><strong>-Z</strong></dt>
-<dd>Output the altitude coordinates as GMT z coordinates [Default will
-output just longitude and latitude].</dd>
+<dl class="simple" id="z">
+<dt><strong>-Z</strong></dt><dd><p>Output the altitude coordinates as GMT z coordinates [Default will
+output just longitude and latitude].</p>
+</dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>] <a class="reference internal" href="gmt.html#bo-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select native binary output.  </dd>
+<dl class="simple">
+<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>] <a class="reference internal" href="gmt.html#bo-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select native binary output.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-do</strong><em>nodata</em> <a class="reference internal" href="gmt.html#do-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Replace output columns that equal NaN with <em>nodata</em>.  </dd>
+<dl class="simple">
+<dt><strong>-do</strong><em>nodata</em> <a class="reference internal" href="gmt.html#do-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Replace output columns that equal NaN with <em>nodata</em>.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="gmt.html#colon-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Swap 1st and 2nd column on input and/or output.</dd>
+<dl class="simple">
+<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="gmt.html#colon-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Swap 1st and 2nd column on input and/or output.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
+<dl class="simple">
+<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
+</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</p>
+</dd>
+<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="notes">
@@ -231,7 +229,7 @@ plotted by <a class="reference internal" href="plot.html"><span class="doc">plot
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="K.html" >K</a> &#187;</li>
 <li class="right">
@@ -250,8 +248,8 @@ plotted by <a class="reference internal" href="plot.html"><span class="doc">plot
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

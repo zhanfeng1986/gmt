@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>connect &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>connect &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="C.html" accesskey="U">C</a> &#187;</li>
 <li class="right">
@@ -104,22 +102,21 @@ determine a suitable cutoff.</p>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><em>table</em></dt>
-<dd>One or more ASCII (or binary, see <strong>-bi</strong>[<em>ncols</em>][<em>type</em>]) data
+<dl class="simple">
+<dt><em>table</em></dt><dd><p>One or more ASCII (or binary, see <strong>-bi</strong>[<em>ncols</em>][<em>type</em>]) data
 table file(s) holding a number of data columns. If no tables are given
-then we read from standard input.  </dd>
+then we read from standard input.  </p>
+</dd>
 </dl>
-<dl class="docutils" id="c">
-<dt><strong>-C</strong>[<em>closed</em>]</dt>
-<dd>Write all the closed polygons to <em>closed</em> [gmt connect_closed.txt]
+<dl class="simple" id="c">
+<dt><strong>-C</strong>[<em>closed</em>]</dt><dd><p>Write all the closed polygons to <em>closed</em> [gmt connect_closed.txt]
 and all other segments as they are to stdout. No connection takes
 place. Use <strong>-T</strong><em>cutoff</em> to set a minimum separation [0], and if
-<em>cutoff</em> is &gt; 0 then we also explicitly close the polygons on output.</dd>
+<em>cutoff</em> is &gt; 0 then we also explicitly close the polygons on output.</p>
+</dd>
 </dl>
-<dl class="docutils" id="d">
-<dt><strong>-D</strong>[<em>template</em>]</dt>
-<dd>For multiple segment data, dump each segment to a separate output
+<dl class="simple" id="d">
+<dt><strong>-D</strong>[<em>template</em>]</dt><dd><p>For multiple segment data, dump each segment to a separate output
 file [Default writes a single multiple segment file]. Append a
 format template for the individual file names; this template
 <strong>must</strong> contain a C format specifier that can format an integer
@@ -131,90 +128,91 @@ gmt connect_segment_%d.txt]. Note that segment headers will be
 written in either case. For composite segments, a generic segment
 header will be written and the segment headers of individual pieces
 will be written out as comments to make it possible to identify
-where the connected pieces came from.</dd>
+where the connected pieces came from.</p>
+</dd>
 </dl>
-<dl class="docutils" id="l">
-<dt><strong>-L</strong>[<em>linkfile</em>]</dt>
-<dd>Writes the link information to the specified file
+<dl class="simple" id="l">
+<dt><strong>-L</strong>[<em>linkfile</em>]</dt><dd><p>Writes the link information to the specified file
 [gmt connect_link.txt]. For each segment we write the original
 segment id, and for the beginning and end point of the segment we
 report the id of the closest segment, whether it is the beginning
 (B) or end (E) point that is closest, and the distance between those
-points in units determined by <strong>-T</strong>.</dd>
+points in units determined by <strong>-T</strong>.</p>
+</dd>
 </dl>
-<dl class="docutils" id="q">
-<dt><strong>-Q</strong>[<em>template</em>]</dt>
-<dd>Used with <strong>-D</strong> to a list file with the names of the individual
+<dl class="simple" id="q">
+<dt><strong>-Q</strong>[<em>template</em>]</dt><dd><p>Used with <strong>-D</strong> to a list file with the names of the individual
 output files. Optionally, append a filename template for the
 individual file names; this template <strong>may</strong> contain a C format
 specifier that can format an character (C or O for closed or open,
-respectively). [Default is gmt connect_list.txt].</dd>
+respectively). [Default is gmt connect_list.txt].</p>
+</dd>
 </dl>
-<dl class="docutils" id="t">
-<dt><strong>-T</strong>[<em>cutoff</em>[<em>unit</em>][<strong>+s</strong><em>sdist</em>]]</dt>
-<dd>Specifies the separation tolerance in the data coordinate units [0]; for geographic data
+<dl class="simple" id="t">
+<dt><strong>-T</strong>[<em>cutoff</em>[<em>unit</em>][<strong>+s</strong><em>sdist</em>]]</dt><dd><p>Specifies the separation tolerance in the data coordinate units [0]; for geographic data
 append distance unit (see <a class="reference internal" href="ternary.html#unit-attributes"><span class="std std-ref">Units</span></a>). If two lines have end-points that
 are closer than the <em>cutoff</em> they will be joined. Optionally, append
 /<em>sdist</em> which adds the extra requirement that a link will only be made
 if the <em>second</em> closest connection exceeds the <em>sdist</em> distance. The latter
 distance must be given in the same units as <em>cutoff</em>.  However, if
 no arguments are given then we close every polygon regardless of
-the gap distance between the first and last point.</dd>
+the gap distance between the first and last point.</p>
+</dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select native binary format for primary input. [Default is 2 input columns].</dd>
+<dl class="simple">
+<dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select native binary format for primary input. [Default is 2 input columns].</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>] <a class="reference internal" href="gmt.html#bo-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select native binary output. [Default is same as input].</dd>
+<dl class="simple">
+<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>] <a class="reference internal" href="gmt.html#bo-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select native binary output. [Default is same as input].</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em> <a class="reference internal" href="gmt.html#d-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Replace input columns that equal <em>nodata</em> with NaN and do the reverse on output.  </dd>
+<dl class="simple">
+<dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em> <a class="reference internal" href="gmt.html#d-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Replace input columns that equal <em>nodata</em> with NaN and do the reverse on output.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-e</strong>[<strong>~</strong>]<em>”pattern”</em> <strong>|</strong> <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] <a class="reference internal" href="gmt.html#e-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Only accept data records that match the given pattern.  </dd>
+<dl class="simple">
+<dt><strong>-e</strong>[<strong>~</strong>]<em>”pattern”</em> <strong>|</strong> <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] <a class="reference internal" href="gmt.html#e-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Only accept data records that match the given pattern.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Specify data types of input and/or output columns.  </dd>
+<dl class="simple">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify data types of input and/or output columns.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>] <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Determine data gaps and line breaks.  </dd>
+<dl class="simple">
+<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>] <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Determine data gaps and line breaks.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Skip or produce header record(s).  </dd>
+<dl class="simple">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Skip or produce header record(s).  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select input columns and transformations (0 is first column, <em>t</em> is trailing text, append <em>word</em> to read one word only).</dd>
+<dl class="simple">
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select input columns and transformations (0 is first column, <em>t</em> is trailing text, append <em>word</em> to read one word only).</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-o</strong><em>cols</em>[,…][<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#ocols-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select output columns (0 is first column; <em>t</em> is trailing text, append <em>word</em> to write one word only).</dd>
+<dl class="simple">
+<dt><strong>-o</strong><em>cols</em>[,…][<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#ocols-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select output columns (0 is first column; <em>t</em> is trailing text, append <em>word</em> to write one word only).</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="gmt.html#colon-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Swap 1st and 2nd column on input and/or output.</dd>
+<dl class="simple">
+<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="gmt.html#colon-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Swap 1st and 2nd column on input and/or output.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
+<dl class="simple">
+<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
+</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</p>
+</dd>
+<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="units">
@@ -332,7 +330,7 @@ all close lines.</p>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="C.html" >C</a> &#187;</li>
 <li class="right">
@@ -351,8 +349,8 @@ all close lines.</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

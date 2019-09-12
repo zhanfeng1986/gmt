@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>grdrotater &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>grdrotater &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../SUP_SPOTTER.html" accesskey="U">SPOTTER</a> &#187;</li>
 <li class="right">
@@ -98,17 +96,16 @@ rotated region is not the entire globe.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><em>ingrdfile</em></dt>
-<dd>Name of a grid file in geographical (lon, lat) coordinates.</dd>
+<dl class="simple">
+<dt><em>ingrdfile</em></dt><dd><p>Name of a grid file in geographical (lon, lat) coordinates.</p>
+</dd>
 </dl>
-<dl class="docutils" id="e">
-<dt><strong>-E</strong><em>rotfile</em></dt>
-<dd><p class="first">Give file with rotation parameters. This file must contain one
+<dl id="e">
+<dt><strong>-E</strong><em>rotfile</em></dt><dd><p>Give file with rotation parameters. This file must contain one
 record for each rotation; each record must be of the following
 format:</p>
 <p><em>lon lat tstart [tstop] angle</em> [ <em>khat a b c d e f g df</em> ]</p>
-<p class="last">where <em>tstart</em> and <em>tstop</em> are in Myr and <em>lon lat angle</em> are in
+<p>where <em>tstart</em> and <em>tstop</em> are in Myr and <em>lon lat angle</em> are in
 degrees. <em>tstart</em> and <em>tstop</em> are the ages of the old and young ends
 of a stage. If <em>tstop</em> is not present in the record then a total
 reconstruction rotation is expected and <em>tstop</em> is implicitly set to
@@ -130,45 +127,44 @@ latitude, and opening angle (all in degrees and separated by /) for
 a single total reconstruction rotation.</p>
 </dd>
 </dl>
-<dl class="docutils" id="g">
-<dt><strong>-G</strong><em>outgrdfile</em></dt>
-<dd>Name of output grid. This is the grid with the data reconstructed
+<dl class="simple" id="g">
+<dt><strong>-G</strong><em>outgrdfile</em></dt><dd><p>Name of output grid. This is the grid with the data reconstructed
 according to the specified rotation. If more than one reconstruction
 time is implied then <em>outgrdfile</em> must contain a C-format specifier
-to format a floating point number (reconstruction time) to text.</dd>
+to format a floating point number (reconstruction time) to text.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="a">
-<dt><strong>-A</strong><em>region</em></dt>
-<dd>Specify directly the region of the rotated grid.  By default, the
+<dl class="simple" id="a">
+<dt><strong>-A</strong><em>region</em></dt><dd><p>Specify directly the region of the rotated grid.  By default, the
 output grid has a region that exactly matches the extent of the rotated
 domain, but <strong>-A</strong> can be used to crop or extend this region to that
-provided via <em>region</em>.</dd>
+provided via <em>region</em>.</p>
+</dd>
 </dl>
-<dl class="docutils" id="d">
-<dt><strong>-D</strong><em>rotoutline</em></dt>
-<dd>Name of the grid polygon outline file. This represents the outline
+<dl class="simple" id="d">
+<dt><strong>-D</strong><em>rotoutline</em></dt><dd><p>Name of the grid polygon outline file. This represents the outline
 of the grid reconstructed to the specified time. If more than one reconstruction
 time is implied then <em>rotoutline</em> must contain a C-format specifier
 to format a floating point number (reconstruction time) to text.
 If only one time is implied and <strong>-D</strong> is not set then we write the
-polygon to stdout (but see <strong>-N</strong>).</dd>
+polygon to stdout (but see <strong>-N</strong>).</p>
+</dd>
 </dl>
-<dl class="docutils" id="f">
-<dt><strong>-F</strong><em>polygonfile</em></dt>
-<dd>Specify a multisegment closed polygon file that describes the inside
-area of the grid that should be projected [Default projects entire grid].</dd>
+<dl class="simple" id="f">
+<dt><strong>-F</strong><em>polygonfile</em></dt><dd><p>Specify a multisegment closed polygon file that describes the inside
+area of the grid that should be projected [Default projects entire grid].</p>
+</dd>
 </dl>
-<dl class="docutils" id="n">
-<dt><strong>-N</strong></dt>
-<dd>Do Not output the rotated polygon outline [Default will write it to
-stdout, or to a file via <strong>-D</strong>].</dd>
+<dl class="simple" id="n">
+<dt><strong>-N</strong></dt><dd><p>Do Not output the rotated polygon outline [Default will write it to
+stdout, or to a file via <strong>-D</strong>].</p>
+</dd>
 </dl>
-<dl class="docutils" id="r">
-<dt><strong>-R</strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt>
-<dd><em>west</em>, <em>east</em>, <em>south</em>, and <em>north</em> specify the region of interest,
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt><dd><p><em>west</em>, <em>east</em>, <em>south</em>, and <em>north</em> specify the region of interest,
 and you may specify them in decimal degrees or in
 [±]dd:mm[:ss.xxx][<strong>W</strong>|<strong>E</strong>|<strong>S</strong>|<strong>N</strong>] format
 Append <strong>+r</strong> if lower left
@@ -202,62 +198,63 @@ In case of perspective view (<strong>-p</strong>), a z-range (<em>zmin</em>, <em
 can be appended to indicate the third dimension. This needs to be
 done only when using the <strong>-Jz</strong> option, not when using only the
 <strong>-p</strong> option. In the latter case a perspective view of the plane is
-plotted, with no third dimension.  </dd>
+plotted, with no third dimension.  </p>
+</dd>
 </dl>
-<dl class="docutils" id="s">
-<dt><strong>-S</strong></dt>
-<dd>Skip the rotation of the grid, just rotate the polygon outline
-(requires <strong>-F</strong> if no grid is provided).</dd>
+<dl class="simple" id="s">
+<dt><strong>-S</strong></dt><dd><p>Skip the rotation of the grid, just rotate the polygon outline
+(requires <strong>-F</strong> if no grid is provided).</p>
+</dd>
 </dl>
-<dl class="docutils" id="t">
-<dt><strong>-T</strong><em>ages</em></dt>
-<dd>Sets the desired reconstruction times.  For a single time append
+<dl class="simple" id="t">
+<dt><strong>-T</strong><em>ages</em></dt><dd><p>Sets the desired reconstruction times.  For a single time append
 the desired time.  For an equidistant range of reconstruction times
 give <strong>-T</strong><em>start</em>/<em>stop</em>/<em>inc</em>. Append <strong>+n</strong> if <em>inc</em> should
 be interpreted to mean <em>npoints</em> instead.
 For an non-equidistant set of reconstruction times please pass them
 via the first column in a file, e.g., <strong>-T</strong><em>agefile</em>.  If no <strong>-T</strong>
 option is given and <strong>-E</strong> specified a rotation file then we equate
-the rotation file times with the reconstruction times.</dd>
+the rotation file times with the reconstruction times.</p>
+</dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="../../gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select native binary format for primary input. [Default is 2 input columns].</dd>
+<dl class="simple">
+<dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="../../gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select native binary format for primary input. [Default is 2 input columns].</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>] <a class="reference internal" href="../../gmt.html#bo-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select native binary output. [Default is same as input].</dd>
+<dl class="simple">
+<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>] <a class="reference internal" href="../../gmt.html#bo-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select native binary output. [Default is same as input].</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em> <a class="reference internal" href="../../gmt.html#d-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Replace input columns that equal <em>nodata</em> with NaN and do the reverse on output.  </dd>
+<dl class="simple">
+<dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em> <a class="reference internal" href="../../gmt.html#d-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Replace input columns that equal <em>nodata</em> with NaN and do the reverse on output.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="../../gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Skip or produce header record(s).  </dd>
+<dl class="simple">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="../../gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Skip or produce header record(s).  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="../../gmt.html#colon-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Swap 1st and 2nd column on input and/or output.</dd>
+<dl class="simple">
+<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="../../gmt.html#colon-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Swap 1st and 2nd column on input and/or output.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-n</strong>[<strong>b</strong>|<strong>c</strong>|<strong>l</strong>|<strong>n</strong>][<strong>+a</strong>][<strong>+b</strong><em>BC</em>][<strong>+c</strong>][<strong>+t</strong><em>threshold</em>] <a class="reference internal" href="../../gmt.html#n-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select interpolation mode for grids.</dd>
+<dl class="simple">
+<dt><strong>-n</strong>[<strong>b</strong>|<strong>c</strong>|<strong>l</strong>|<strong>n</strong>][<strong>+a</strong>][<strong>+b</strong><em>BC</em>][<strong>+c</strong>][<strong>+t</strong><em>threshold</em>] <a class="reference internal" href="../../gmt.html#n-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select interpolation mode for grids.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="../../gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
+<dl class="simple">
+<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
+</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</p>
+</dd>
+<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="../../gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="consequences-of-grid-resampling">
@@ -400,7 +397,7 @@ To use an alternate rotation file, create an environmental parameters named
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../SUP_SPOTTER.html" >SPOTTER</a> &#187;</li>
 <li class="right">
@@ -419,8 +416,8 @@ To use an alternate rotation file, create an environmental parameters named
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

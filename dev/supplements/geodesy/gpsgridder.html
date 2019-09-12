@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>gpsgridder &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>gpsgridder &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../SUP_GEODESY.html" accesskey="U">GEODESY</a> &#187;</li>
 <li class="right">
@@ -104,16 +102,15 @@ is offered via the optional elimination of small eigenvalues.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><em>table</em></dt>
-<dd>table with GPS strain rates at discrete locations.  We expect the input
+<dl class="simple">
+<dt><em>table</em></dt><dd><p>table with GPS strain rates at discrete locations.  We expect the input
 format to be <em>x y u v</em> [ <em>du dv</em> ] (see <strong>-W</strong> to specify data uncertainties
 or weights).  If <em>lon lat</em> is given you must supply <strong>-fg</strong> and we will
-use a flat Earth approximation in the calculation of distances.</dd>
+use a flat Earth approximation in the calculation of distances.</p>
+</dd>
 </dl>
-<dl class="docutils" id="g">
-<dt><strong>-G</strong><em>outfile</em></dt>
-<dd>Name of resulting output file. (1) If options <strong>-R</strong>, <strong>-I</strong>, and
+<dl class="simple" id="g">
+<dt><strong>-G</strong><em>outfile</em></dt><dd><p>Name of resulting output file. (1) If options <strong>-R</strong>, <strong>-I</strong>, and
 possibly <strong>-r</strong> are set we produce two equidistant output grids. In
 this case, <em>outfile</em> must be a name template containing the C format
 specifier %s, which will be replaced with u and v, respectively.
@@ -123,14 +120,14 @@ as the <em>maskgrid</em> determines the region and increments. Again, the
 (3) If <strong>-N</strong> is selected then the output is a single ASCII (or binary; see
 <strong>-bo</strong>) table written to <em>outfile</em>; if <strong>-G</strong> is not given then
 this table is written to standard output. The <strong>-G</strong> option is ignored
-if <strong>-C</strong> or <strong>-C</strong>0 is given.</dd>
+if <strong>-C</strong> or <strong>-C</strong>0 is given.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="c">
-<dt><strong>-C</strong>[<strong>n</strong>]<em>value</em>[<strong>+f</strong><em>file</em>]</dt>
-<dd>Find an approximate surface fit: Solve the linear system for the
+<dl class="simple" id="c">
+<dt><strong>-C</strong>[<strong>n</strong>]<em>value</em>[<strong>+f</strong><em>file</em>]</dt><dd><p>Find an approximate surface fit: Solve the linear system for the
 spline coefficients by SVD and eliminate the contribution from all
 eigenvalues whose ratio to the largest eigenvalue is less than <em>value</em>
 [Default uses Gauss-Jordan elimination to solve the linear system
@@ -141,28 +138,29 @@ If a negative <em>value</em> is given then <strong>+f</strong><em>file</em> is r
 execution will stop after saving the eigenvalues, i.e., no surface
 output is produced.  Specify <strong>-Cn</strong><em>value</em> to retain only the <em>value</em> largest eigenvalues.
 Note: 1/4 of the total number of data constraints is a good starting point
-for further experiments.</dd>
+for further experiments.</p>
+</dd>
 </dl>
 <p id="e"><strong>E</strong>[<em>misfitfile</em>]</p>
 <blockquote>
-<div>Evaluate the spline exactly at the input data locations and report
+<div><p>Evaluate the spline exactly at the input data locations and report
 statistics of the misfit (mean, standard deviation, and rms) for <em>u</em> and
 <em>v</em> separately and combined.  Optionally, append a filename and we will
 write the data table, augmented by two extra columns after each of the
 <em>u</em> and <em>v</em> columns holding the spline estimates and misfits.  If <strong>-W</strong>
-is given we also add two more columns with the chi^2 values.</div></blockquote>
-<dl class="docutils" id="f">
-<dt><a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong>[<strong>d</strong>|<strong>f</strong>]<em>fudge</em></dt>
-<dd>The Green’s functions are proportional to terms like 1/r^2 and log(r)
+is given we also add two more columns with the chi^2 values.</p>
+</div></blockquote>
+<dl class="simple" id="f">
+<dt><a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong>[<strong>d</strong>|<strong>f</strong>]<em>fudge</em></dt><dd><p>The Green’s functions are proportional to terms like 1/r^2 and log(r)
 and thus blow up for r == 0.  To prevent that we offer two fudging schemes:
 <strong>-Fd</strong><em>del_radius</em> lets you add a constant offset to all radii
 and must be specified in the user units.  Alternatively, use
 <strong>-Ff</strong><em>factor</em> which will compute <em>del_radius</em> from the product
-of the shortest inter-point distance and <em>factor</em> [0.01].</dd>
+of the shortest inter-point distance and <em>factor</em> [0.01].</p>
+</dd>
 </dl>
-<dl class="docutils" id="i">
-<dt><strong>-I</strong><em>xinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>]]</dt>
-<dd><em>x_inc</em> [and optionally <em>y_inc</em>] is the grid spacing. Optionally,
+<dl class="simple" id="i">
+<dt><strong>-I</strong><em>xinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>]]</dt><dd><p><em>x_inc</em> [and optionally <em>y_inc</em>] is the grid spacing. Optionally,
 append a suffix modifier. <strong>Geographical (degrees) coordinates</strong>: Append
 <strong>m</strong> to indicate arc minutes or <strong>s</strong> to indicate arc seconds. If one
 of the units <strong>e</strong>, <strong>f</strong>, <strong>k</strong>, <strong>M</strong>, <strong>n</strong> or <strong>u</strong> is appended
@@ -181,89 +179,90 @@ recalculated from the number of nodes and the domain. The resulting
 increment value depends on whether you have selected a
 gridline-registered or pixel-registered grid; see <a class="reference internal" href="../../GMT_Docs_classic.html#app-file-formats"><span class="std std-ref">GMT File Formats</span></a> for
 details. Note: if <strong>-R</strong><em>grdfile</em> is used then the grid spacing has
-already been initialized; use <strong>-I</strong> to override the values.</dd>
+already been initialized; use <strong>-I</strong> to override the values.</p>
+</dd>
 </dl>
-<dl class="docutils" id="l">
-<dt><strong>-L</strong></dt>
-<dd>Leave trend alone.  Do <em>not</em> remove a planer (2-D) trend from the
+<dl class="simple" id="l">
+<dt><strong>-L</strong></dt><dd><p>Leave trend alone.  Do <em>not</em> remove a planer (2-D) trend from the
 data before fitting the spline.  [Default removes least squares plane,
-fits normalized residuals, and restores plane].</dd>
+fits normalized residuals, and restores plane].</p>
+</dd>
 </dl>
-<dl class="docutils" id="n">
-<dt><strong>-N</strong><em>nodefile</em></dt>
-<dd>ASCII file with coordinates of desired output locations <strong>x</strong> in the
+<dl class="simple" id="n">
+<dt><strong>-N</strong><em>nodefile</em></dt><dd><p>ASCII file with coordinates of desired output locations <strong>x</strong> in the
 first column(s). The resulting <em>w</em> values are appended to each
 record and written to the file given in <strong>-G</strong> [or stdout if not
 specified]; see <strong>-bo</strong> for binary output
 instead. This option eliminates the need to specify options <strong>-R</strong>,
-<strong>-I</strong>, and <strong>-r</strong>.</dd>
+<strong>-I</strong>, and <strong>-r</strong>.</p>
+</dd>
 </dl>
-<dl class="docutils" id="r">
-<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="../../gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Specify the region of interest.  </dd>
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="../../gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify the region of interest.  </p>
+</dd>
 </dl>
-<dl class="docutils" id="s">
-<dt><strong>-S</strong><em>nu</em></dt>
-<dd>Specify Poisson’s ratio to use for this 2-D elastic sheet [0.5].
+<dl class="simple" id="s">
+<dt><strong>-S</strong><em>nu</em></dt><dd><p>Specify Poisson’s ratio to use for this 2-D elastic sheet [0.5].
 Note: 1.0 is incompressible in a 2-D formulation while -1
-removes all coupling between the two directions.</dd>
+removes all coupling between the two directions.</p>
+</dd>
 </dl>
-<dl class="docutils" id="t">
-<dt><strong>-T</strong><em>maskgrid</em></dt>
-<dd>Only evaluate the solutions at the nodes
+<dl class="simple" id="t">
+<dt><strong>-T</strong><em>maskgrid</em></dt><dd><p>Only evaluate the solutions at the nodes
 in the <em>maskgrid</em> that are not set to NaN. This option eliminates
-the need to specify options <strong>-R</strong>, <strong>-I</strong> (and <strong>-r</strong>).</dd>
+the need to specify options <strong>-R</strong>, <strong>-I</strong> (and <strong>-r</strong>).</p>
+</dd>
 </dl>
-<dl class="docutils" id="w">
-<dt><strong>-W</strong>[<strong>w</strong>]</dt>
-<dd>One-sigma data uncertainties for <em>u</em> and <em>v</em> are provided in the last two columns.
+<dl class="simple" id="w">
+<dt><strong>-W</strong>[<strong>w</strong>]</dt><dd><p>One-sigma data uncertainties for <em>u</em> and <em>v</em> are provided in the last two columns.
 We then compute least squares weights that are inversely proportional to the square
 of the uncertainties.  Append <strong>w</strong> if weights are given instead of uncertainties,
 in which case we just use the weights as provided (no squaring).  This results in
 a weighted least squares fit.  Note that <strong>-W</strong> only has an effect if <strong>-C</strong> is used.
-[Default uses no weights or uncertainties].</dd>
+[Default uses no weights or uncertainties].</p>
+</dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em> <a class="reference internal" href="../../gmt.html#d-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Replace input columns that equal <em>nodata</em> with NaN and do the reverse on output.  </dd>
+<dl class="simple">
+<dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em> <a class="reference internal" href="../../gmt.html#d-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Replace input columns that equal <em>nodata</em> with NaN and do the reverse on output.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-e</strong>[<strong>~</strong>]<em>”pattern”</em> <strong>|</strong> <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] <a class="reference internal" href="../../gmt.html#e-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Only accept data records that match the given pattern.  </dd>
-<dt><strong>-fg</strong></dt>
-<dd>Geographic grids (dimensions of longitude, latitude) will be converted to
-meters via a “Flat Earth” approximation using the current ellipsoid parameters.</dd>
+<dl class="simple">
+<dt><strong>-e</strong>[<strong>~</strong>]<em>”pattern”</em> <strong>|</strong> <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] <a class="reference internal" href="../../gmt.html#e-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Only accept data records that match the given pattern.  </p>
+</dd>
+<dt><strong>-fg</strong></dt><dd><p>Geographic grids (dimensions of longitude, latitude) will be converted to
+meters via a “Flat Earth” approximation using the current ellipsoid parameters.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="../../gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Skip or produce header record(s). Not used with binary data.</dd>
+<dl class="simple">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="../../gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Skip or produce header record(s). Not used with binary data.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]] <a class="reference internal" href="../../gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select input columns and transformations (0 is first column, <em>t</em> is trailing text, append <em>word</em> to read one word only).</dd>
+<dl class="simple">
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]] <a class="reference internal" href="../../gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select input columns and transformations (0 is first column, <em>t</em> is trailing text, append <em>word</em> to read one word only).</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-r</strong> <a class="reference internal" href="../../gmt.html#nodereg-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set node registration [gridline].  </dd>
+<dl class="simple">
+<dt><strong>-r</strong> <a class="reference internal" href="../../gmt.html#nodereg-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set node registration [gridline].  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="../../gmt.html#colon-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Swap 1st and 2nd column on input and/or output.</dd>
+<dl class="simple">
+<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="../../gmt.html#colon-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Swap 1st and 2nd column on input and/or output.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="../../gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
+<dl class="simple">
+<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
+</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</p>
+</dd>
+<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="../../gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="units">
@@ -356,7 +355,7 @@ doi:10.1007/978-3-319-21578-5_2.</p>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../SUP_GEODESY.html" >GEODESY</a> &#187;</li>
 <li class="right">
@@ -375,8 +374,8 @@ doi:10.1007/978-3-319-21578-5_2.</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

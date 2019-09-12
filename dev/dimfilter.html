@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>dimfilter &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>dimfilter &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="D.html" accesskey="U">D</a> &#187;</li>
 <li class="right">
@@ -105,13 +103,12 @@ DiM-filtered data is generally recommended.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><em>input_file.nc</em></dt>
-<dd>The data grid to be filtered.</dd>
+<dl class="simple">
+<dt><em>input_file.nc</em></dt><dd><p>The data grid to be filtered.</p>
+</dd>
 </dl>
-<dl class="docutils" id="d">
-<dt><strong>-D</strong><em>distance_flag</em></dt>
-<dd><p class="first">Distance <em>flag</em> tells how grid (x,y) relates to filter <em>width</em>, as follows:</p>
+<dl id="d">
+<dt><strong>-D</strong><em>distance_flag</em></dt><dd><p>Distance <em>flag</em> tells how grid (x,y) relates to filter <em>width</em>, as follows:</p>
 <p><em>flag</em> = 0: grid (x,y) same units as <em>width</em>, Cartesian distances.
 <em>flag</em> = 1: grid (x,y) in degrees, <em>width</em> in kilometers, Cartesian distances.
 <em>flag</em> = 2: grid (x,y) in degrees, <em>width</em> in km, dx scaled by
@@ -121,13 +118,12 @@ computed only once. The next three options are slower because they
 recompute weights for each latitude.</p>
 <p><em>flag</em> = 3: grid (x,y) in degrees, <em>width</em> in km, dx scaled by
 cosine(y), Cartesian distance calculation.</p>
-<p class="last"><em>flag</em> = 4: grid (x,y) in degrees, <em>width</em> in km, Spherical distance
+<p><em>flag</em> = 4: grid (x,y) in degrees, <em>width</em> in km, Spherical distance
 calculation.</p>
 </dd>
 </dl>
-<dl class="docutils" id="f">
-<dt><strong>-F</strong><strong>x</strong><em>width</em>[<em>modifier</em>]</dt>
-<dd><p class="first">Sets the primary filter type. Choose among convolution and
+<dl id="f">
+<dt><strong>-F</strong><strong>x</strong><em>width</em>[<em>modifier</em>]</dt><dd><p>Sets the primary filter type. Choose among convolution and
 non-convolution filters. Append the filter code <strong>x</strong> followed by the full
 diameter <em>width</em>. Available convolution filters are:</p>
 <p>(<strong>b</strong>) Boxcar: All weights are equal.</p>
@@ -135,15 +131,14 @@ diameter <em>width</em>. Available convolution filters are:</p>
 <p>(<strong>g</strong>) Gaussian: Weights are given by the Gaussian function.</p>
 <p>Non-convolution filters are:</p>
 <p>(<strong>m</strong>) Median: Returns median value.</p>
-<p class="last">(<strong>p</strong>) Maximum likelihood probability (a mode estimator): Return
+<p>(<strong>p</strong>) Maximum likelihood probability (a mode estimator): Return
 modal value. If more than one mode is found we return their average
 value. Append <strong>+l</strong> or <strong>+h</strong> to the filter width if you rather want to
 return the smallest or largest of each sector’s modal values.</p>
 </dd>
 </dl>
-<dl class="docutils" id="n">
-<dt><strong>-N</strong><strong>x</strong><em>sectors</em>[<em>modifier</em>]</dt>
-<dd><p class="first">Sets the secondary filter type <strong>x</strong> and the number of bow-tie sectors.
+<dl id="n">
+<dt><strong>-N</strong><strong>x</strong><em>sectors</em>[<em>modifier</em>]</dt><dd><p>Sets the secondary filter type <strong>x</strong> and the number of bow-tie sectors.
 <em>sectors</em> must be integer and larger than 0. When <em>sectors</em> is
 set to 1, the secondary filter is not effective. Available secondary
 filters <strong>x</strong> are:</p>
@@ -151,70 +146,70 @@ filters <strong>x</strong> are:</p>
 <p>(<strong>u</strong>) Upper: Return the maximum of all filtered values.</p>
 <p>(<strong>a</strong>) Average: Return the mean of all filtered values.</p>
 <p>(<strong>m</strong>) Median: Return the median of all filtered values.</p>
-<p class="last">(<strong>p</strong>) Mode: Return the mode of all filtered values:
+<p>(<strong>p</strong>) Mode: Return the mode of all filtered values:
 If more than one mode is found we return their average
 value. Append <strong>+l</strong> or <strong>+h</strong> to the sectors if you rather want to
 return the smallest or largest of the modal values.</p>
 </dd>
 </dl>
-<dl class="docutils" id="g">
-<dt><strong>-G</strong><em>output_file.nc</em></dt>
-<dd><em>output_file.nc</em> is the output of the filter.</dd>
+<dl class="simple" id="g">
+<dt><strong>-G</strong><em>output_file.nc</em></dt><dd><p><em>output_file.nc</em> is the output of the filter.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="i">
-<dt><strong>-I</strong></dt>
-<dd><em>x_inc</em> [and optionally <em>y_inc</em>] is the output Increment. Append
+<dl class="simple" id="i">
+<dt><strong>-I</strong></dt><dd><p><em>x_inc</em> [and optionally <em>y_inc</em>] is the output Increment. Append
 <strong>m</strong> to indicate minutes, or <strong>c</strong> to indicate seconds. If the new
 <em>x_inc</em>, <em>y_inc</em> are NOT integer multiples of the old ones (in the
 input data), filtering will be considerably slower. [Default: Same
-as input.]</dd>
+as input.]</p>
+</dd>
 </dl>
-<dl class="docutils" id="l">
-<dt><strong>-L</strong></dt>
-<dd>This option is used by itself to write the dim.template.sh bash script
-to standard output.  No other options can be used in combination.</dd>
+<dl class="simple" id="l">
+<dt><strong>-L</strong></dt><dd><p>This option is used by itself to write the dim.template.sh bash script
+to standard output.  No other options can be used in combination.</p>
+</dd>
 </dl>
-<dl class="docutils" id="r">
-<dt><strong>-R</strong></dt>
-<dd><em>west</em>, <em>east</em>, <em>south</em>, and <em>north</em> defines the Region of the
-output points. [Default: Same as input.]</dd>
+<dl class="simple" id="r">
+<dt><strong>-R</strong></dt><dd><p><em>west</em>, <em>east</em>, <em>south</em>, and <em>north</em> defines the Region of the
+output points. [Default: Same as input.]</p>
+</dd>
 </dl>
-<dl class="docutils" id="t">
-<dt><strong>-T</strong></dt>
-<dd>Toggle the node registration for the output grid so as to become the
+<dl class="simple" id="t">
+<dt><strong>-T</strong></dt><dd><p>Toggle the node registration for the output grid so as to become the
 opposite of the input grid [Default gives the same registration as
-the input grid].</dd>
+the input grid].</p>
+</dd>
 </dl>
-<dl class="docutils" id="q">
-<dt><strong>-Q</strong></dt>
-<dd>For this mode, it expects to read depths consisted of several
+<dl class="simple" id="q">
+<dt><strong>-Q</strong></dt><dd><p>For this mode, it expects to read depths consisted of several
 columns. Each column represents a filtered grid with a filter width,
 which can be obtained by <strong>grd2xyz -Z</strong>. The outcome will be median,
 MAD, and mean. So, the column with the medians is used to generate
 the regional component and the column with the MADs is used to
-conduct the error analysis.</dd>
+conduct the error analysis.</p>
+</dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Specify data types of input and/or output columns.  </dd>
+<dl class="simple">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify data types of input and/or output columns.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
+<dl class="simple">
+<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
+</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</p>
+</dd>
+<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="grid-file-formats">
@@ -368,7 +363,7 @@ Geosyst.</em>, <strong>9</strong>, Q03005, doi:10.1029/2007GC001850.</p>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="D.html" >D</a> &#187;</li>
 <li class="right">
@@ -387,8 +382,8 @@ Geosyst.</em>, <strong>9</strong>, Q03005, doi:10.1029/2007GC001850.</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>grdinterpolate &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>grdinterpolate &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="GR.html" accesskey="U">GR</a> &#187;</li>
 <li class="right">
@@ -90,65 +88,65 @@ or as a set of 2-D layers.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><em>3Dgrid</em></dt>
-<dd>Name of a 3-D netCDF data cube to be interpolated. Alternatively, with <strong>-Zi</strong>,
-you can specify a set of 2-D grid layers instead.</dd>
+<dl class="simple">
+<dt><em>3Dgrid</em></dt><dd><p>Name of a 3-D netCDF data cube to be interpolated. Alternatively, with <strong>-Zi</strong>,
+you can specify a set of 2-D grid layers instead.</p>
+</dd>
 </dl>
-<dl class="docutils" id="g">
-<dt><strong>-G</strong><em>outgrid</em></dt>
-<dd>This is the output 3D data cube file.  If <strong>-T</strong> only selects a
+<dl class="simple" id="g">
+<dt><strong>-G</strong><em>outgrid</em></dt><dd><p>This is the output 3D data cube file.  If <strong>-T</strong> only selects a
 single layer then the data cube collapses to a regular 2-D grid file.
 If <strong>-Zo</strong> is used then <em>outgrid</em> must contain a C format statement
-for a floating point number.</dd>
+for a floating point number.</p>
+</dd>
 </dl>
-<dl class="docutils" id="t">
-<dt><strong>-T</strong>[<em>min/max</em>/]<em>inc</em>[<strong>+a</strong>|<strong>n</strong>] |<a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>file</em>|<em>list</em></dt>
-<dd>Make evenly spaced time-steps from <em>min</em> to <em>max</em> by <em>inc</em> [Default uses input times].
-For details on array creation, see <cite>Generate 1D Array</cite>.</dd>
+<dl class="simple" id="t">
+<dt><strong>-T</strong>[<em>min/max</em>/]<em>inc</em>[<strong>+a</strong>|<strong>n</strong>] |<a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>file</em>|<em>list</em></dt><dd><p>Make evenly spaced time-steps from <em>min</em> to <em>max</em> by <em>inc</em> [Default uses input times].
+For details on array creation, see <cite>Generate 1D Array</cite>.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="f">
-<dt><strong>-Fl</strong>|<strong>a</strong>|<strong>c</strong>|<strong>n</strong>[<strong>+1</strong>|<strong>2</strong>]</dt>
-<dd>Choose from <strong>l</strong> (Linear), <strong>a</strong> (Akima spline), <strong>c</strong> (natural
+<dl class="simple" id="f">
+<dt><strong>-Fl</strong>|<strong>a</strong>|<strong>c</strong>|<strong>n</strong>[<strong>+1</strong>|<strong>2</strong>]</dt><dd><p>Choose from <strong>l</strong> (Linear), <strong>a</strong> (Akima spline), <strong>c</strong> (natural
 cubic spline), and <strong>n</strong> (no interpolation: nearest point) [Default
 is <strong>-Fa</strong>]. You may change the default interpolant; see
 <a class="reference internal" href="gmt.conf.html#gmt-interpolant"><span class="std std-ref">GMT_INTERPOLANT</span></a> in your <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> file.
 You may optionally evaluate the first or second derivative of the spline
-by appending <strong>+1</strong> or <strong>+2</strong>, respectively.</dd>
+by appending <strong>+1</strong> or <strong>+2</strong>, respectively.</p>
+</dd>
 </dl>
-<dl class="docutils" id="r">
-<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Specify the region of interest. Using the <strong>-R</strong> option
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify the region of interest. Using the <strong>-R</strong> option
 will select a subsection of the grid. If this subsection exceeds the
-boundaries of the grid, only the common region will be output.</dd>
+boundaries of the grid, only the common region will be output.</p>
+</dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
 </dl>
-<dl class="docutils" id="z">
-<dt><strong>-Zi</strong><em>levels</em>|<strong>o</strong></dt>
-<dd>Use <strong>-Zi</strong> to obtain the <em>levels</em> and then we read the corresponding number of
+<dl class="simple" id="z">
+<dt><strong>-Zi</strong><em>levels</em>|<strong>o</strong></dt><dd><p>Use <strong>-Zi</strong> to obtain the <em>levels</em> and then we read the corresponding number of
 2-D input grids given on the command line [Default is a single 3-D data cube].
 The <em>levels</em> are specified the same way as in <strong>-T</strong>.
 Use <strong>-Zo</strong> to write the 3-D data cube as a series of 2-D grids instead.  If used,
 then the <em>outgrid</em> name given by <strong>-G</strong> must contain a C-language format statement
 for a floating point number (for instance, one can try layer_%6.6f.grd) which will contain the level
-for each grid [Default is a 3-D data cube, unless only one layer is implied by <strong>-T</strong>].</dd>
+for each grid [Default is a 3-D data cube, unless only one layer is implied by <strong>-T</strong>].</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
+<dl class="simple">
+<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
+</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</p>
+</dd>
+<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="time-coordinates">
@@ -252,7 +250,7 @@ using a cubic spline, try</p>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="GR.html" >GR</a> &#187;</li>
 <li class="right">
@@ -271,8 +269,8 @@ using a cubic spline, try</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>pssolar &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>pssolar &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="PS_classic.html" accesskey="U">Classic Mode Mapping</a> &#187;</li>
 <li class="right">
@@ -104,108 +102,108 @@
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="b">
-<dt><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> <a class="reference internal" href="gmt.html#b-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set map boundary frame and axes attributes.</dd>
+<dl class="simple" id="b">
+<dt><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> <a class="reference internal" href="gmt.html#b-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set map boundary frame and axes attributes.</p>
+</dd>
 </dl>
-<dl class="docutils" id="c">
-<dt><strong>-C</strong></dt>
-<dd>Formats the report selected by <strong>-I</strong> using tab-separated fields on a single line. The
+<dl class="simple" id="c">
+<dt><strong>-C</strong></dt><dd><p>Formats the report selected by <strong>-I</strong> using tab-separated fields on a single line. The
 output is Sun <em>Lon Lat Azimuth Elevation</em> in degrees, <em>Sunrise Sunset Noon</em> in decimal days,
 <em>day length</em> in minutes, <em>SolarElevationCorrected</em> corrected for the effect of refraction index
 and <em>Equation of time</em> in minutes. Note that if no position is provided in <strong>-I</strong><em>lon/lat</em> the
-data after <em>Elevation</em> refers to the point (0,0).</dd>
+data after <em>Elevation</em> refers to the point (0,0).</p>
+</dd>
 </dl>
-<dl class="docutils" id="g">
-<dt><strong>-G</strong><em>fill</em>|<strong>c</strong> <a class="reference internal" href="GMT_Docs_classic.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select color or pattern for filling of terminators; or use <strong>-Gc</strong> for clipping [Default is no fill].
-Deactivate clipping by appending the output of gmt <a class="reference internal" href="clip.html"><span class="doc">clip</span></a> <strong>-C</strong>.</dd>
+<dl class="simple" id="g">
+<dt><strong>-G</strong><em>fill</em>|<strong>c</strong> <a class="reference internal" href="GMT_Docs_classic.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select color or pattern for filling of terminators; or use <strong>-Gc</strong> for clipping [Default is no fill].
+Deactivate clipping by appending the output of gmt <a class="reference internal" href="clip.html"><span class="doc">clip</span></a> <strong>-C</strong>.</p>
+</dd>
 </dl>
-<dl class="docutils" id="i">
-<dt><strong>-I</strong>[<em>lon/lat</em>][<strong>+d</strong><em>date</em>][<strong>+z</strong><em>TZ</em>]</dt>
-<dd>Print current sun position as well as Azimuth and Elevation. Append lon/lat to print also the times of
+<dl class="simple" id="i">
+<dt><strong>-I</strong>[<em>lon/lat</em>][<strong>+d</strong><em>date</em>][<strong>+z</strong><em>TZ</em>]</dt><dd><p>Print current sun position as well as Azimuth and Elevation. Append lon/lat to print also the times of
 Sunrise, Sunset, Noon and length of the day.
 Add <strong>+d</strong><em>date</em> in ISO format, e.g, <strong>+d</strong><em>2000-04-25</em>, to compute sun parameters
-for this date. If necessary, append time zone via <strong>+z</strong><em>TZ</em>.</dd>
+for this date. If necessary, append time zone via <strong>+z</strong><em>TZ</em>.</p>
+</dd>
 </dl>
-<dl class="docutils" id="j">
-<dt><strong>-J</strong><em>parameters</em> <a class="reference internal" href="gmt.html#j-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select map projection.  </dd>
+<dl class="simple" id="j">
+<dt><strong>-J</strong><em>parameters</em> <a class="reference internal" href="gmt.html#j-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select map projection.  </p>
+</dd>
 </dl>
-<dl class="docutils" id="m">
-<dt><strong>-M</strong></dt>
-<dd>Write terminator(s) as a multisegment ASCII (or binary, see <strong>-b</strong><em>o</em>) file to standard output. No plotting occurs.</dd>
+<dl class="simple" id="m">
+<dt><strong>-M</strong></dt><dd><p>Write terminator(s) as a multisegment ASCII (or binary, see <strong>-b</strong><em>o</em>) file to standard output. No plotting occurs.</p>
+</dd>
 </dl>
-<dl class="docutils" id="n">
-<dt><strong>-N</strong></dt>
-<dd>Invert the sense of what is inside and outside the terminator.  Only
-used with clipping (<strong>-Gc</strong>) and cannot be used together with <strong>-B</strong>.</dd>
+<dl class="simple" id="n">
+<dt><strong>-N</strong></dt><dd><p>Invert the sense of what is inside and outside the terminator.  Only
+used with clipping (<strong>-Gc</strong>) and cannot be used together with <strong>-B</strong>.</p>
+</dd>
 </dl>
-<dl class="docutils" id="r">
-<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Specify the region of interest.  </dd>
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify the region of interest.  </p>
+</dd>
 </dl>
-<dl class="docutils" id="t">
-<dt><strong>-Tdcna</strong>[<strong>+d</strong><em>date</em>][<strong>+z</strong><em>TZ</em>]</dt>
-<dd>Plot (or dump; see <strong>-M</strong>) one or more terminators defined via the <strong>dcna</strong> flags. Where:
+<dl class="simple" id="t">
+<dt><strong>-Tdcna</strong>[<strong>+d</strong><em>date</em>][<strong>+z</strong><em>TZ</em>]</dt><dd><p>Plot (or dump; see <strong>-M</strong>) one or more terminators defined via the <strong>dcna</strong> flags. Where:
 <strong>d</strong> means day/night terminator; <strong>c</strong> means civil twilight; <strong>n</strong> means nautical twilight;
 <strong>a</strong> means astronomical twilight.  Add <strong>+d</strong><em>date</em> in ISO format, e.g, <strong>+d</strong><em>2000-04-25T12:15:00</em>
-to know where the day-night was at that date. If necessary, append time zone via <strong>+z</strong><em>TZ</em>.</dd>
+to know where the day-night was at that date. If necessary, append time zone via <strong>+z</strong><em>TZ</em>.</p>
+</dd>
 </dl>
-<dl class="docutils" id="u">
-<dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>] <a class="reference internal" href="gmt.html#u-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Draw GMT time stamp logo on plot.</dd>
+<dl class="simple" id="u">
+<dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>] <a class="reference internal" href="gmt.html#u-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Draw GMT time stamp logo on plot.</p>
+</dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
 </dl>
-<dl class="docutils" id="w">
-<dt><strong>-W</strong>[<strong>-</strong>|<strong>+</strong>][<em>pen</em>] <a class="reference internal" href="GMT_Docs_classic.html#wpen-attrib"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set pen attributes for lines or the outline of symbols [Defaults:
-width = default, color = black, style = solid].</dd>
+<dl class="simple" id="w">
+<dt><strong>-W</strong>[<strong>-</strong>|<strong>+</strong>][<em>pen</em>] <a class="reference internal" href="GMT_Docs_classic.html#wpen-attrib"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set pen attributes for lines or the outline of symbols [Defaults:
+width = default, color = black, style = solid].</p>
+</dd>
 </dl>
 <p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</p>
-<dl class="docutils">
-<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Shift plot origin.</dd>
+<dl class="simple">
+<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Shift plot origin.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>] <a class="reference internal" href="gmt.html#bo-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select native binary output.  </dd>
+<dl class="simple">
+<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>] <a class="reference internal" href="gmt.html#bo-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select native binary output.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Skip or produce header record(s).  </dd>
+<dl class="simple">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Skip or produce header record(s).  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-o</strong><em>cols</em>[,…][<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#ocols-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select output columns (0 is first column; <em>t</em> is trailing text, append <em>word</em> to write one word only).</dd>
+<dl class="simple">
+<dt><strong>-o</strong><em>cols</em>[,…][<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#ocols-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select output columns (0 is first column; <em>t</em> is trailing text, append <em>word</em> to write one word only).</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-p</strong>[<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>azim</em>[/<em>elev</em>[/<em>zlevel</em>]][<strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>z0</em>]][<strong>+v</strong><em>x0</em>/<em>y0</em>] <a class="reference internal" href="gmt.html#perspective-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select perspective view.  </dd>
+<dl class="simple">
+<dt><strong>-p</strong>[<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>azim</em>[/<em>elev</em>[/<em>zlevel</em>]][<strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>z0</em>]][<strong>+v</strong><em>x0</em>/<em>y0</em>] <a class="reference internal" href="gmt.html#perspective-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select perspective view.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-t</strong>[<em>transp</em>] <a class="reference internal" href="gmt.html#t-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set transparency level in percent.</dd>
+<dl class="simple">
+<dt><strong>-t</strong>[<em>transp</em>] <a class="reference internal" href="gmt.html#t-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set transparency level in percent.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="classic-mode-arguments">
 <h2>Classic Mode Arguments<a class="headerlink" href="#classic-mode-arguments" title="Permalink to this headline">¶</a></h2>
 <p>These options are used to manipulate the building of layered GMT PostScript plots in classic mode.
 They are not available when using GMT modern mode.</p>
-<dl class="docutils" id="k">
-<dt><strong>-K</strong> <a class="reference internal" href="gmt.html#k-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Do not finalize the PostScript plot.</dd>
+<dl class="simple" id="k">
+<dt><strong>-K</strong> <a class="reference internal" href="gmt.html#k-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Do not finalize the PostScript plot.</p>
+</dd>
 </dl>
-<dl class="docutils" id="o">
-<dt><strong>-O</strong> <a class="reference internal" href="gmt.html#o-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Append to existing PostScript plot.</dd>
+<dl class="simple" id="o">
+<dt><strong>-O</strong> <a class="reference internal" href="gmt.html#o-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Append to existing PostScript plot.</p>
+</dd>
 </dl>
-<dl class="docutils" id="p">
-<dt><strong>-P</strong> <a class="reference internal" href="gmt.html#p-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select “Portrait” plot orientation.</dd>
+<dl class="simple" id="p">
+<dt><strong>-P</strong> <a class="reference internal" href="gmt.html#p-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select “Portrait” plot orientation.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="examples">
@@ -300,7 +298,7 @@ They are not available when using GMT modern mode.</p>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="PS_classic.html" >Classic Mode Mapping</a> &#187;</li>
 <li class="right">
@@ -319,8 +317,8 @@ They are not available when using GMT modern mode.</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

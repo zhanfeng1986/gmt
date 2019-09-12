@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>postscriptlight &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>postscriptlight &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="P.html" accesskey="U">P</a> &#187;</li>
 <li class="right">
@@ -151,11 +149,17 @@ corner to which the <em>x</em> and <em>y</em> coordinates of the subroutine call
 apply. Nine different values are possible, as shown schematically in
 this diagram:</p>
 <blockquote>
-<div><p>9------------10----------- 11</p>
-<p>|                         |</p>
-<p>5             6             7</p>
-<p>|                          |</p>
-<p>1------------ 2------------ 3</p>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">9</span> <span class="o">------------</span> <span class="mi">10</span> <span class="o">-----------</span> <span class="mi">11</span>
+
+<span class="o">|</span>                             <span class="o">|</span>
+
+<span class="mi">5</span>              <span class="mi">6</span>              <span class="mi">7</span>
+
+<span class="o">|</span>                             <span class="o">|</span>
+
+<span class="mi">1</span> <span class="o">------------</span> <span class="mi">2</span> <span class="o">------------</span> <span class="mi">3</span>
+</pre></div>
+</div>
 </div></blockquote>
 <p>The box represents the text or image. E.g., to plot a text string with
 its center at (<em>x</em>, <em>y</em>), you must use <em>justify</em> == 6. <em>justify</em> == 0
@@ -173,59 +177,67 @@ one or more plots may be created. Here are the functions involved in
 initialization:</p>
 <p><strong>struct PSL_CTRL *New_PSL_Ctrl</strong> (<strong>char</strong> <em>*session</em>)</p>
 <blockquote>
-<div>This is the first function that must be called as it creates a new
+<div><p>This is the first function that must be called as it creates a new
 PSL session. Specifically, it will allocate a new PSL
 control structure and initialize the session default parameters. The
 pointer that is returned must be passed to all subsequent PSL
-functions.</div></blockquote>
+functions.</p>
+</div></blockquote>
 <p><strong>long *PSL_beginsession</strong> (<strong>struct PSL_CTRL</strong> <em>*PSL</em>, <strong>long</strong>
 <em>search</em>, <strong>char</strong> <em>*sharedir</em>, <strong>char</strong> <em>*userdir</em>)</p>
 <blockquote>
-<div>This is the second function that must be called as it initializes
+<div><p>This is the second function that must be called as it initializes
 the new PSL session. Here, <em>search</em> is an integer that is passed
 as 0 in GMT but should be 1 for other users. If so we will search
 for the environmental parameters PSL_SHAREDIR and PSL_USERDIR
-should the corresponding arguments <em>sharedir</em> and <em>userdir</em> be NULL.</div></blockquote>
+should the corresponding arguments <em>sharedir</em> and <em>userdir</em> be NULL.</p>
+</div></blockquote>
 <p><strong>long PSL_endsession</strong> (<strong>struct PSL_CTRL</strong> <em>*PSL</em>)</p>
 <blockquote>
-<div>This function terminates the active PSL session; it is the last
+<div><p>This function terminates the active PSL session; it is the last
 function you must call in your program. Specifically, this function
-will deallocate memory used and free up resources.</div></blockquote>
+will deallocate memory used and free up resources.</p>
+</div></blockquote>
 <p><strong>struct PSL_CTRL *PSL_beginlayer</strong> (<strong>struct PSL_CTRL</strong> <em>*PSL</em>,
 <strong>long</strong> <em>layer</em>)</p>
 <blockquote>
-<div>Adds a DSC comment by naming this layer; give a unique integer
-value. Terminate layer with PSL_endlayer</div></blockquote>
+<div><p>Adds a DSC comment by naming this layer; give a unique integer
+value. Terminate layer with PSL_endlayer</p>
+</div></blockquote>
 <p><strong>struct PSL_CTRL *PSL_endlayer</strong> (<strong>struct PSL_CTRL</strong> <em>*PSL</em>)</p>
 <blockquote>
-<div>Terminate current layer with a DSC comment.</div></blockquote>
+<div><p>Terminate current layer with a DSC comment.</p>
+</div></blockquote>
 <p><strong>long PSL_fopen</strong> (<strong>char</strong> <em>*file</em>, <strong>char</strong> <em>*mode</em>)</p>
 <blockquote>
-<div>This function simply opens a file, just like fopen. The reason it is
+<div><p>This function simply opens a file, just like fopen. The reason it is
 replicated here is that under Windows, file pointers must be
 assigned within the same DLL as they are being used. Yes, this is
 retarded but if we do not do so then PSL will not work well under
 Windows. Under non-Windows this functions is just a macro that
-becomes fopen.</div></blockquote>
+becomes fopen.</p>
+</div></blockquote>
 <p><strong>void PSL_copy</strong> (<strong>struct PSL_CTRL</strong> <em>*PSL</em>, <strong>char</strong> <em>*text</em>);</p>
 <blockquote>
-<div>This functions simply adds the given <em>test</em> as is to the output
+<div><p>This functions simply adds the given <em>test</em> as is to the output
 PostScript stream (or internal buffer).  It is used when the
 text may exceed the internal 4096 buffer used in PSL_command
 (which is implemented as a printf function and hence a buffer
-of fixed size is used.)</div></blockquote>
+of fixed size is used.)</p>
+</div></blockquote>
 <p><strong>void PSL_free</strong> (<strong>void</strong> <em>*ptr</em>)</p>
 <blockquote>
-<div>This function frees up the memory allocated inside PSL.
+<div><p>This function frees up the memory allocated inside PSL.
 Programmers using C/C++ should now this is a macro and there is no
 need to cast the pointer to <em>void *</em> as this will be done by the
 macro. Fortran programmers should instead call
-<strong>PSL_freefunction</strong>.</div></blockquote>
+<strong>PSL_freefunction</strong>.</p>
+</div></blockquote>
 <p><strong>void PSL_beginaxes</strong> (<strong>struct PSL_CTRL</strong> <em>*PSL</em>, <strong>double</strong> <em>llx</em>,
 <strong>double</strong> <em>lly</em>, <strong>double</strong> <em>width</em>, <strong>double</strong> <em>height</em>, <strong>double</strong>
 <em>x0</em>, <strong>double</strong> <em>y0</em>, <strong>double</strong> <em>x1</em>, <strong>double</strong> <em>y1</em>)</p>
 <blockquote>
-<div>This function sets up the mapping that takes the users data
+<div><p>This function sets up the mapping that takes the users data
 coordinates and converts them to the positions on the plot in
 PostScript units. This should be used when plotting data
 coordinates and is terminated with <strong>PSL_endaxes</strong>, which returns
@@ -236,17 +248,19 @@ units. Finally, <em>x0</em>, <em>x1</em> and <em>y0</em>, <em>y1</em> indicate t
 users x- and y-coordinates, respectively. Specify a reverse axis
 direction (e.g., to let the y-axis be positive down) by setting <em>y0</em>
 larger than <em>y1</em>, and similarly for an x-axis that increases to the
-left.</div></blockquote>
+left.</p>
+</div></blockquote>
 <p><strong>void PSL_endaxes</strong> (<strong>struct PSL_CTRL</strong> <em>*PSL</em>)</p>
 <blockquote>
-<div>Terminates the map scalings initialized by <strong>PSL_beginaxes</strong> and
-returns PSL to standard scaling in measurement units.</div></blockquote>
+<div><p>Terminates the map scalings initialized by <strong>PSL_beginaxes</strong> and
+returns PSL to standard scaling in measurement units.</p>
+</div></blockquote>
 <p><strong>long PSL_beginplot</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>FILE</strong> <em>*fp</em>,
 <strong>long</strong> <em>orientation</em>, <strong>long</strong> <em>overlay</em>, <strong>long</strong> <em>color_mode</em>,
 <strong>char</strong> <em>origin</em>[], <strong>double</strong> <em>offset</em>[], <strong>double</strong>
 <em>page_size</em>[], <strong>char</strong> <em>*title</em>, <strong>long</strong> <em>font_no</em>[])</p>
 <blockquote>
-<div>Controls the initiation (or continuation) of a particular plot
+<div><p>Controls the initiation (or continuation) of a particular plot
 within the current session. Pass file pointer <em>fp</em> where the
 PostScript code will be written; if NULL then the output is
 written to <em>stdout</em>. The Fortran interface always sends to <em>stdout</em>.
@@ -274,21 +288,24 @@ A4 format). The character string <em>title</em> can be used to specify the
 <strong>%%Title:</strong> header in the PostScript file (or use NULL for the
 default). The array <em>font_no</em> specifies all fonts used in the plot
 (by number), or use NULL to leave out the
-<strong>%%DocumentNeededResources:</strong> comment in the PostScript file.</div></blockquote>
+<strong>%%DocumentNeededResources:</strong> comment in the PostScript file.</p>
+</div></blockquote>
 <p><strong>long PSL_endplot</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>long</strong> <em>last_page</em>)</p>
 <blockquote>
-<div>Terminates the plotting sequence and closes plot file (if other than
+<div><p>Terminates the plotting sequence and closes plot file (if other than
 <em>stdout</em>). If <em>last_page</em> == PSL_FINALIZE
 (1), then a PostScript <em>showpage</em> command
 is issued, which initiates the printing process on hardcopy devices.
-Otherwise, pass PSL_OVERLAY (0).</div></blockquote>
+Otherwise, pass PSL_OVERLAY (0).</p>
+</div></blockquote>
 <p><strong>long PSL_setorigin</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>double</strong>
 <em>xorigin</em>, <strong>double</strong> <em>yorigin</em>, <strong>double</strong> <em>angle</em>, <strong>long</strong> <em>mode</em>)</p>
 <blockquote>
-<div>Changes the coordinate system by translating by
+<div><p>Changes the coordinate system by translating by
 (<em>xorigin</em>,<em>yorigin</em>) followed by a <em>angle</em>-degree rotation
 (<em>mode</em>=PSL_FWD or 0) or alternatively the rotation followed by
-translation (<em>mode</em>=PSL_INV or 1).</div></blockquote>
+translation (<em>mode</em>=PSL_INV or 1).</p>
+</div></blockquote>
 </div>
 <div class="section" id="memory-output">
 <h2>Memory Output<a class="headerlink" href="#memory-output" title="Permalink to this headline">¶</a></h2>
@@ -301,12 +318,13 @@ end of the plot with <strong>PSL_endplot</strong> the buffer will be available (
 One function provide the functionality for memory output.</p>
 <p><strong>char * PSL_getplot</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>)</p>
 <blockquote>
-<div>Retrieves the pointer to the PostScript plot that is kept in memory
+<div><p>Retrieves the pointer to the PostScript plot that is kept in memory
 when <strong>PSL_beginplot</strong> was instructed to use memory rather than
 stream output.  Note: It is the responsibility of the programmer to
 ensure that the object retrieved is duplicated or written or otherwise
 processed before the next call to <strong>PSL_beginplot</strong> or <strong>PSL_endsession</strong>
-either of which will destroy the memory pointed to.</div></blockquote>
+either of which will destroy the memory pointed to.</p>
+</div></blockquote>
 </div>
 <div class="section" id="id1">
 <h2><a class="reference external" href="#toc6">Changing Settings</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
@@ -316,42 +334,46 @@ affect the current state of parameters such as line and fill attributes.</p>
 <em>*name</em>, <strong>long</strong> <em>width</em>, <strong>char</strong> <em>*style</em>, <strong>double</strong> <em>offset</em>,
 <strong>double</strong> <em>rgb</em>[])</p>
 <blockquote>
-<div>Stores the specified pen characteristics in a PostScript variable
+<div><p>Stores the specified pen characteristics in a PostScript variable
 called <em>name</em>. This can be used to place certain pen attributes in
 the PostScript file and then retrieve them later with
-<strong>PSL_load_pen</strong>. This makes the stored pen the current pen.</div></blockquote>
+<strong>PSL_load_pen</strong>. This makes the stored pen the current pen.</p>
+</div></blockquote>
 <p><strong>long PSL_define_rgb</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>char</strong>
 <em>*name</em>, <strong>double</strong> <em>rgb</em>[])</p>
 <blockquote>
-<div>Stores the specified color in a PostScript variable called <em>name</em>.
+<div><p>Stores the specified color in a PostScript variable called <em>name</em>.
 This can be used to place certain color values in the PostScript
 file and then retrieve them later with <strong>PSL_load_rgb</strong>. This
-makes the stored color the current color.</div></blockquote>
+makes the stored color the current color.</p>
+</div></blockquote>
 <p><strong>long PSL_setexec</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>long</strong> <em>mode</em>)</p>
 <blockquote>
-<div>If <em>mode</em> = 1 then we tell PSL to execute a custom PostScript
+<div><p>If <em>mode</em> = 1 then we tell PSL to execute a custom PostScript
 procedure named PSL_completion at the start of the next overlay.
 Once executed, the function is reset to a dummy null procedure.
 Experts may define their own procedure called PSL_completion
 and insert it into the PostScript stream.  Changing the mode
 can then be used to have some tasks complete prior to the
-new overlay being generated.</div></blockquote>
+new overlay being generated.</p>
+</div></blockquote>
 <p><strong>long PSL_setcolor</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>double</strong>
 <em>rgb</em>[], <strong>long</strong> <em>mode</em>)</p>
 <blockquote>
-<div>Sets the current color for all stroked (mode = PSL_IS_STROKE (0))
+<div><p>Sets the current color for all stroked (mode = PSL_IS_STROKE (0))
 or filled (mode = PSL_IS_FILL (1)) material
 to follow (lines, symbol outlines, text). <em>rgb</em> is a triplet of red,
 green and blue values in the range 0.0 through 1.0. Set the red
 color to -3.0 and the green color to the pattern number returned by
 <strong>PSL_setimage</strong> to select an image pattern as current paint color. For
 PDF transparency, set <em>rgb</em>[3] to a value between 0 (opaque) and 1
-(fully transparent).</div></blockquote>
+(fully transparent).</p>
+</div></blockquote>
 <p><strong>long PSL_setimage</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>long</strong>
 <em>image_no</em>, <strong>char</strong> <em>*imagefile</em>, <strong>unsigned char</strong> <em>*image</em>,
 <strong>long</strong> <em>dpi</em>, <strong>long dim[3], **double</strong> <em>f_rgb</em>[], <strong>double</strong> <em>b_rgb</em>[])</p>
 <blockquote>
-<div>Sets up the specified image pattern as the fill to use for polygons
+<div><p>Sets up the specified image pattern as the fill to use for polygons
 and symbols. Here, <em>image_no</em> is the number of the standard PSL
 fill patterns (1-90; use a negative number when you specify an image
 <em>filename</em> instead and pass the <em>image</em> data vector and the dimensions
@@ -367,7 +389,8 @@ and we will instead issue an image mask that is see-through for the
 specified fore- or background component. To subsequently use the
 pattern as a pen or fill color, use <strong>PSL_setcolor</strong> or
 DB(PSL_setfill) with the a color <em>rgb</em> code made up of <em>r</em> = -3,
-and <em>b</em> = the pattern number returned by <strong>PSL_setimage</strong>.</div></blockquote>
+and <em>b</em> = the pattern number returned by <strong>PSL_setimage</strong>.</p>
+</div></blockquote>
 <p><strong>long PSL_setdash</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>char</strong> <em>*pattern</em>,
 <strong>double</strong> <em>offset</em>)</p>
 <blockquote>
@@ -376,7 +399,8 @@ and <em>b</em> = the pattern number returned by <strong>PSL_setimage</strong>.</
 points specifying the alternating lengths of dashes and gaps in
 points. E.g., “4 2” and <em>offset</em> = 1 will plot like</p>
 <blockquote>
-<div>x ---- ---- ----</div></blockquote>
+<div><p>x ---- ---- ----</p>
+</div></blockquote>
 <p>where x is starting point of a line (The x is not plotted). That is,
 the line is made up of a repeating pattern of a 4 points long solid
 line and a 2 points long gap, starting 1 point after the x. To reset
@@ -385,16 +409,17 @@ to solid line, specify <em>pattern</em> = NULL (“”) and <em>offset</em> = 0.
 <p><strong>long PSL_setfill</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>double</strong> <em>rgb</em>[],
 <strong>long</strong> <em>outline</em>)</p>
 <blockquote>
-<div>Sets the current fill color and whether or not outline is needed for
+<div><p>Sets the current fill color and whether or not outline is needed for
 symbols. Special cases are handled by passing the red color as -1.0
 (no fill), -2.0 (do not change the outline setting) or -3.0 (select
 the image pattern indicated by the second (green) element of <em>rgb</em>).
 For PDF transparency, set <em>rgb</em>[3] to a value between 0 (opaque)
 and 1 (fully transparent). Set outline to PSL_OUTLINE
-(1) to draw the outlines of polygons and symbols using the current pen.</div></blockquote>
+(1) to draw the outlines of polygons and symbols using the current pen.</p>
+</div></blockquote>
 <p><strong>long PSL_setfont</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>long</strong> <em>fontnr</em>)</p>
 <blockquote>
-<div>Changes the current font number to <em>fontnr</em>. The fonts available
+<div><p>Changes the current font number to <em>fontnr</em>. The fonts available
 are: 0 = Helvetica, 1 = H. Bold, 2 = H. Oblique, 3 = H.
 Bold-Oblique, 4 = Times, 5 = T. Bold, 6 = T. Italic, 7 = T. Bold
 Italic, 8 = Courier, 9 = C. Bold, 10 = C Oblique, 11 = C Bold
@@ -407,76 +432,86 @@ N.-Bold, 28 = N.-BoldItalic, 29 = Palatino-Roman, 30 = P.-Italic, 31
 = P.-Bold, 32 = P.-BoldItalic, 33 = ZapfChancery-MediumItalic, 34 =
 ZapfDingbats, 35 = Ryumin-Light-EUC-H, 36 = Ryumin-Light-EUC-V, 37 =
 GothicBBB-Medium-EUC-H, and 38 = GothicBBB-Medium-EUC-V. If <em>fontnr</em>
-is outside this range, it is reset to 0.</div></blockquote>
+is outside this range, it is reset to 0.</p>
+</div></blockquote>
 <p><strong>long PSL_setfontdims</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>double</strong> <em>supsub</em>,
 <strong>double</strong> <em>scaps</em>, <strong>double</strong> <em>sup</em>, <strong>double</strong> <em>sdown</em>)</p>
 <blockquote>
-<div>Changes the settings for a variety of relative font sizes and shifts
+<div><p>Changes the settings for a variety of relative font sizes and shifts
 pertaining to sub-scripts, super-scripts, and small caps.  Default
 settings are given in brackets.  Here, <em>supsub</em> sets the relative size
 of sub- and super-scripts [0.58], <em>scaps</em> sets the relative size of
 small caps [0.8], <em>sup</em> indicates the upward baseline shift for placement
 of super-scripts [0.33], while <em>sdown</em> sets the downward baseline shift
-for sub-scripts [0.33].</div></blockquote>
+for sub-scripts [0.33].</p>
+</div></blockquote>
 <p><strong>long PSL_setformat</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>long</strong> <em>n_decimals</em>)</p>
 <blockquote>
-<div>Sets the number of decimals to be used when writing color or gray
+<div><p>Sets the number of decimals to be used when writing color or gray
 values. The default setting of 3 gives 1000 choices per red, green,
 and blue value, which is more than the 255 choices offered by most
 24-bit platforms. Choosing a lower value will make the output file
 smaller at the expense of less color resolution. Still, a value of 2
 gives 100 x 100 x 100 = 1 million colors, more than most eyes can
 distinguish. For a setting of 1, you will have 10 nuances per
-primary color and a total of 1000 unique combinations.</div></blockquote>
+primary color and a total of 1000 unique combinations.</p>
+</div></blockquote>
 <p><strong>long PSL_setlinewidth</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>double</strong>
 <em>linewidth</em>)</p>
 <blockquote>
-<div>Changes the current line width in points. Specifying 0 gives the
+<div><p>Changes the current line width in points. Specifying 0 gives the
 thinnest line possible, but this is implementation-dependent (seems
-to work fine on most PostScript printers).</div></blockquote>
+to work fine on most PostScript printers).</p>
+</div></blockquote>
 <p><strong>long PSL_setlinecap</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>long</strong> <em>cap</em>)</p>
 <blockquote>
-<div>Changes the current line cap, i.e., what happens at the beginning
+<div><p>Changes the current line cap, i.e., what happens at the beginning
 and end of a line segment. PSL_BUTT_CAP (0) gives butt line caps
 [Default], PSL_ROUND_CAP (1) selects round
 caps, while PSL_SQUARE_CAP (2) results
 in square caps. Thus, the two last options will visually lengthen a
-straight line-segment by half the line width at either end.</div></blockquote>
+straight line-segment by half the line width at either end.</p>
+</div></blockquote>
 <p><strong>long PSL_setlinejoin</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>long</strong> <em>join</em>)</p>
 <blockquote>
-<div>Changes the current linejoin setting, which handles how lines of
+<div><p>Changes the current linejoin setting, which handles how lines of
 finite thickness are joined together when the meet at different
 angles. PSL_MITER_JOIN (0) gives a mitered joint [Default],
 PSL_ROUND_JOIN (1) makes them round,
-while PSL_BEVEL_JOIN (2) produces bevel joins.</div></blockquote>
+while PSL_BEVEL_JOIN (2) produces bevel joins.</p>
+</div></blockquote>
 <p><strong>long PSL_setmiterlimit</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>long</strong> <em>limit</em>)</p>
 <blockquote>
-<div>Changes the current miter limit used for mitered joins.
+<div><p>Changes the current miter limit used for mitered joins.
 PSL_MITER_DEFAULT (35) gives the default PS miter; other values
 are interpreted as the cutoff acute angle (in degrees) when mitering
-becomes active.</div></blockquote>
+becomes active.</p>
+</div></blockquote>
 <p><strong>long PSL_settextmode</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>long</strong> <em>mode</em>)</p>
 <blockquote>
-<div>Changes between the two modes PSL_TXTMODE_MINUS and PSL_TXTMODE_HYPHEN.
+<div><p>Changes between the two modes PSL_TXTMODE_MINUS and PSL_TXTMODE_HYPHEN.
 When the minus mode is active we assume we are plotting annotation
 strings with numbers and all hyphens are translated to minus codes
 which differs based on char sets.  Likewise, in hyphen mode any
-minus character is typeset as a hyphen in the current char set.</div></blockquote>
+minus character is typeset as a hyphen in the current char set.</p>
+</div></blockquote>
 <p><strong>long PSL_settransparency</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>double</strong>
 <em>*transparency</em>)</p>
 <blockquote>
-<div>Changes the current PDF transparency value.</div></blockquote>
+<div><p>Changes the current PDF transparency value.</p>
+</div></blockquote>
 <p><strong>long PSL_settransparencymode</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>char</strong>
 <em>*mode</em>)</p>
 <blockquote>
-<div>Changes the current PDF transparency rendering mode [Default is
+<div><p>Changes the current PDF transparency rendering mode [Default is
 Normal]. Choose among Color, ColorBurn, ColorDodge, Darken,
 Difference, Exclusion, HardLight, Hue, Lighten, Luminosity,
-Multiply, Normal, Overlay, Saturation, SoftLight, and Screen.</div></blockquote>
+Multiply, Normal, Overlay, Saturation, SoftLight, and Screen.</p>
+</div></blockquote>
 <p><strong>long PSL_setdefaults</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>double</strong>
 <em>xyscales</em>[], <strong>double</strong> <em>pagergb</em>[], <strong>char</strong> <em>*encoding</em>)</p>
 <blockquote>
-<div>Allows changes to the PSL session settings and should be called
+<div><p>Allows changes to the PSL session settings and should be called
 immediately after <strong>PSL_beginsession</strong>. The <em>xyscales</em> array affect
 an overall magnification of your plot [1,1]. This can be useful if
 you design a page-sized plot but would then like to magnify (or
@@ -484,18 +519,21 @@ shrink) it by a given factor. Change the default paper media color
 [white; 1/1/1] by specifying an alternate page color. Passing zero
 (or NULL for <em>pagergb</em>) will leave the setting unchanged. Finally,
 pass the name of the character set encoding (if NULL we select
-Standard).</div></blockquote>
+Standard).</p>
+</div></blockquote>
 <p><strong>long PSL_defunits</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>char</strong> <em>*name</em>,
 <strong>double</strong> <em>value</em>)</p>
 <blockquote>
-<div>Creates a PostScript variable called <em>name</em> and initializes it to
-the equivalent of <em>value</em> user units.</div></blockquote>
+<div><p>Creates a PostScript variable called <em>name</em> and initializes it to
+the equivalent of <em>value</em> user units.</p>
+</div></blockquote>
 <p><strong>long PSL_defpoints</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>char</strong> <em>*name</em>,
 <strong>double</strong> <em>fontsize</em>)</p>
 <blockquote>
-<div>Creates a PostScript variable called <em>name</em> and initializes it to
+<div><p>Creates a PostScript variable called <em>name</em> and initializes it to
 the value that corresponds to the font size (in points) given by
-<em>fontsize</em>.</div></blockquote>
+<em>fontsize</em>.</p>
+</div></blockquote>
 </div>
 <div class="section" id="id2">
 <h2><a class="reference external" href="#toc7">Plotting Lines And Polygons</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
@@ -506,7 +544,7 @@ set prior to calling these functions; see CHANGING SETTINGS above.</p>
 <strong>double</strong> <em>y</em>, <strong>double</strong> <em>radius</em>, <strong>double</strong> <em>angle1</em>, <strong>double</strong>
 <em>angle2</em>, <strong>long</strong> <em>type</em>)</p>
 <blockquote>
-<div>Draws a circular arc with its center at plot coordinates (<em>x</em>, <em>y</em>),
+<div><p>Draws a circular arc with its center at plot coordinates (<em>x</em>, <em>y</em>),
 starting from angle <em>angle1</em> and end at <em>angle2</em>. Angles must be
 given in decimal degrees. If <em>angle1</em> &gt; <em>angle2</em>, a negative arc is
 drawn. The <em>radius</em> is in user units. The <em>type</em> determines how the
@@ -514,11 +552,12 @@ arc is interpreted: PSL_MOVE (1) means set new
 anchor point, PSL_STROKE (2) means stroke
 the arc, PSL_MOVE + PSL_STROKE (3) means
 both, whereas PSL_DRAW (0) just adds to arc path to the current
-path.</div></blockquote>
+path.</p>
+</div></blockquote>
 <p><strong>long PSL_plotline</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>double</strong> <em>x</em>,
 <strong>double</strong> <em>y</em>, <strong>long</strong> <em>n</em>, <strong>long</strong> <em>type</em>)</p>
 <blockquote>
-<div>Assemble a continuous line through <em>n</em> points whose the plot
+<div><p>Assemble a continuous line through <em>n</em> points whose the plot
 coordinates are in the <em>x</em>, <em>y</em> arrays. To continue an existing
 line, use <em>type</em> = PSL_DRAW (0), or if this is the first segment in
 a multisegment path, set <em>type</em> = PSL_MOVE (1).
@@ -528,35 +567,40 @@ be PSL_MOVE + PSL_STROKE (3). The line is
 drawn using the current pen attributes. Add PSL_CLOSE
 (8) to <em>type</em> to close the first and last point
 by the PostScript operators; this is done automatically if the
-first and last point are equal.</div></blockquote>
+first and last point are equal.</p>
+</div></blockquote>
 <p><strong>long PSL_plotpoint</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>double</strong> <em>x</em>,
 <strong>double</strong> <em>y</em>, <strong>long</strong> <em>type</em>)</p>
 <blockquote>
-<div>Moves the pen from the current to the specified plot coordinates
+<div><p>Moves the pen from the current to the specified plot coordinates
 (<em>x</em>, <em>y</em>) and optionally draws and strokes the line, depending on
 <em>type</em>. Specify <em>type</em> as either a move (PSL_MOVE, 1), or draw
 (PSL_DRAW, 2), or draw and stroke (PSL_DRAW + PSL_STOKE, 3) using
 current pen attributes. It the coordinates are relative to the
-current point add PSL_REL (4) to <em>type</em>.</div></blockquote>
+current point add PSL_REL (4) to <em>type</em>.</p>
+</div></blockquote>
 <p><strong>long PSL_plotbox</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>double</strong> <em>x0</em>,
 <strong>double</strong> <em>y0</em>, <strong>double</strong> <em>x1</em>, <strong>double</strong> <em>y1</em>)</p>
 <blockquote>
-<div>Creates a closed box with opposite corners at plot coordinates
+<div><p>Creates a closed box with opposite corners at plot coordinates
 (<em>x0</em>,<em>y1</em>) and (<em>x1</em>,<em>y1</em>). The box may be filled and its
 outline stroked depending on the current settings for fill and pen
-attributes.</div></blockquote>
+attributes.</p>
+</div></blockquote>
 <p><strong>long PSL_plotpolygon</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>double</strong> <em>x</em>,
 <strong>double</strong> <em>y</em>, <strong>long</strong> <em>n</em>)</p>
 <blockquote>
-<div>Creates a closed polygon through <em>n</em> points whose plot coordinates
+<div><p>Creates a closed polygon through <em>n</em> points whose plot coordinates
 are in the <em>x</em>, <em>y</em> arrays. The polygon may be filled and its
 outline stroked depending on the current settings for fill and pen
-attributes.</div></blockquote>
+attributes.</p>
+</div></blockquote>
 <p><strong>long PSL_plotsegment</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>double</strong> <em>x0</em>,
 <strong>double</strong> <em>y0</em>, <strong>double</strong> <em>x1</em>, <strong>double</strong> <em>y1</em>)</p>
 <blockquote>
-<div>Draws a line segment between the two points (plot coordinates) using
-the current pen attributes.</div></blockquote>
+<div><p>Draws a line segment between the two points (plot coordinates) using
+the current pen attributes.</p>
+</div></blockquote>
 </div>
 <div class="section" id="id3">
 <h2><a class="reference external" href="#toc8">Plotting Symbols</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
@@ -564,16 +608,17 @@ the current pen attributes.</div></blockquote>
 <p><strong>long PSL_plotaxis</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>double</strong>
 <em>tickval</em>, <strong>char</strong> <em>*label</em>, <strong>double</strong> <em>fontsize</em>, <strong>long</strong> <em>side</em>)</p>
 <blockquote>
-<div>Plots a basic axis with tick marks, annotations, and label. Assumes
+<div><p>Plots a basic axis with tick marks, annotations, and label. Assumes
 that <strong>PSL_beginaxes</strong> has been called to set up positioning and
 user data ranges. Annotations will be set using the <em>fontsize</em> in
 points. <em>side</em> can be 0, 1, 2, or 3, which selects lower x-axis,
 right y-axis, upper x-axis, or left y-axis, respectively. The
-<em>label</em> font size is set to 1.5 times the <em>fontsize</em>.</div></blockquote>
+<em>label</em> font size is set to 1.5 times the <em>fontsize</em>.</p>
+</div></blockquote>
 <p><strong>long PSL_plotsymbol</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>double</strong> <em>x</em>,
 <strong>double</strong> <em>y</em>, <strong>double</strong> <em>size</em>[], <strong>long</strong> <em>symbol</em>)</p>
 <blockquote>
-<div>Plots a simple geometric symbol centered on plot coordinates (<em>x</em>,
+<div><p>Plots a simple geometric symbol centered on plot coordinates (<em>x</em>,
 <em>y</em>). The argument <em>symbol</em> selects the geometric symbol to use.
 Most symbols are scaled to fit inside a circle of diameter given as
 <em>size</em>[0], but some symbols take additional parameters. Choose
@@ -626,7 +671,8 @@ attributes.  The parameters <em>head1</em> and <em>head2</em> determines
 what kind of vector head will be plotted at the two ends (if selected).
 0 = normal vector head, 1 = circle, 2 = terminal crossbar.
 Finally, <em>trim1</em> and <em>trim2</em> adjust the start and end location of
-the vector.</div></blockquote>
+the vector.</p>
+</div></blockquote>
 </div>
 <div class="section" id="id4">
 <h2><a class="reference external" href="#toc9">Plotting Images</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
@@ -636,7 +682,7 @@ the vector.</div></blockquote>
 <em>justify</em>, <strong>unsigned char</strong> <em>buffer</em>, <strong>long</strong> <em>nx</em>, <strong>long</strong> <em>ny</em>,
 <strong>double</strong> <em>f_rgb</em>[], <strong>double</strong> <em>b_rgb</em>[])</p>
 <blockquote>
-<div>Plots a 1-bit image image at plot coordinates (<em>x</em>, <em>y</em>) justified
+<div><p>Plots a 1-bit image image at plot coordinates (<em>x</em>, <em>y</em>) justified
 as per the argument <em>justify</em> (see <strong>JUSTIFICATION</strong> for details).
 The target size of the image is given by <em>xsize</em> and <em>ysize</em> in user
 units. If one of these is specified as zero, the corresponding size
@@ -650,13 +696,14 @@ corner. You may replace the foreground color (the set bits) with the
 <em>b_rgb</em>. Alternatively, pass either color with the red component
 set to -1.0 and we will instead issue an image mask that is
 see-through for the specified fore- or background component. See the
-Adobe Systems PostScript Reference Manual for more details.</div></blockquote>
+Adobe Systems PostScript Reference Manual for more details.</p>
+</div></blockquote>
 <p><strong>long PSL_plotcolorimage</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>double</strong>
 <em>x</em>, <strong>double</strong> <em>y</em>, <strong>double</strong> <em>xsize</em>, <strong>double</strong> <em>ysize</em>, <strong>int</strong>
 <em>justify</em>, <strong>unsigned char</strong> <em>*buffer</em>, <strong>long</strong> <em>nx</em>, <strong>long</strong> <em>ny</em>,
 <strong>long</strong> <em>depth</em>)</p>
 <blockquote>
-<div>Plots a 1-, 2-, 4-, 8-, or 24-bit deep image at plot coordinates
+<div><p>Plots a 1-, 2-, 4-, 8-, or 24-bit deep image at plot coordinates
 (<em>x</em>, <em>y</em>) justified as per the argument <em>justify</em> (see
 <strong>JUSTIFICATION</strong> for details). The target size of the image is
 given by <em>xsize</em> and <em>ysize</em> in user units. If one of these is
@@ -676,13 +723,14 @@ implementation dependent). If <em>-nx</em> is passed with 8- (or 24-) bit
 images then the first one (or three) bytes of <em>buffer</em> holds the
 gray (or r/g/b) color for pixels that are to be masked out using the
 PS Level 3 Color Mask method. See the Adobe Systems PostScript
-Reference Manual for more details.</div></blockquote>
+Reference Manual for more details.</p>
+</div></blockquote>
 <p><strong>long PSL_plotepsimage</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>double</strong> <em>x</em>,
 <strong>double</strong> <em>y</em>, <strong>double</strong> <em>xsize</em>, <strong>double</strong> <em>ysize</em>, <strong>int</strong>
 <em>justify</em>, <strong>unsigned char</strong> <em>*buffer</em>, <strong>long</strong> <em>size</em>, <strong>long</strong> <em>nx</em>,
 <strong>long</strong> <em>ny</em>, <strong>long</strong> <em>ox</em>, <strong>long</strong> <em>oy</em>)</p>
 <blockquote>
-<div>Plots an Encapsulated PostScript (EPS) image at plot coordinates
+<div><p>Plots an Encapsulated PostScript (EPS) image at plot coordinates
 (<em>x</em>, <em>y</em>) justified as per the argument <em>justify</em> (see
 <strong>JUSTIFICATION</strong> for details). The target size of the image is
 given by <em>xsize</em> and <em>ysize</em> in user units. If one of these is
@@ -692,14 +740,16 @@ EPS file is stored in <em>buffer</em> and has <em>size</em> bytes. This function
 simply includes the image in the PostScript output stream within
 an appropriate wrapper. Specify position of lower left corner and
 size of image. <em>nx</em>, <em>ny</em>, <em>ox</em>, <em>oy</em> refers to the width, height
-and origin (lower left corner) of the BoundingBox in points.</div></blockquote>
+and origin (lower left corner) of the BoundingBox in points.</p>
+</div></blockquote>
 <p><strong>long PSL_loadeps</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>char</strong> <em>*file</em>,
 <strong>struct imageinfo</strong> <em>*header</em>, <strong>unsigned char</strong> <em>**image</em>)</p>
 <blockquote>
-<div>Reads the image contents of the EPS file given by the <em>file name</em>.
+<div><p>Reads the image contents of the EPS file given by the <em>file name</em>.
 The <em>header</em> is filled with dimensional information.  If <em>image</em>
 is NULL we return just with header, otherwise we read and return
-the entire EPS content via <em>image</em>.</div></blockquote>
+the entire EPS content via <em>image</em>.</p>
+</div></blockquote>
 </div>
 <div class="section" id="plotting-text">
 <h2>Plotting Text<a class="headerlink" href="#plotting-text" title="Permalink to this headline">¶</a></h2>
@@ -713,7 +763,7 @@ and others and issue calculations with <strong>PSL_setcommand</strong>.</p>
 <strong>double</strong> <em>y</em>, <strong>double</strong> <em>fontsize</em>, <strong>char</strong> <em>*text</em>, <strong>double</strong>
 <em>angle</em>, <strong>long</strong> <em>justify</em>, <strong>long</strong> <em>mode</em>)</p>
 <blockquote>
-<div>The <em>text</em> is plotted starting at plot coordinates (<em>x</em>, <em>y</em>) and
+<div><p>The <em>text</em> is plotted starting at plot coordinates (<em>x</em>, <em>y</em>) and
 will make an <em>angle</em> with the horizontal. The point (<em>x</em>, <em>y</em>) maps
 onto different points of the text-string by giving various values
 for <em>justify</em> (see <strong>JUSTIFICATION</strong> for details). If <em>justify</em> is
@@ -740,12 +790,13 @@ will hence be reduced to half the selected width. If the text is not
 filled, <em>mode</em> == 3 operates the same as <em>mode</em> == 1.
 If <em>fontsize</em> is negative it means that the current point
 has already been set before <strong>PSL_plottext</strong> was called and that
-(<em>x</em>, <em>y</em>) should be ignored.</div></blockquote>
+(<em>x</em>, <em>y</em>) should be ignored.</p>
+</div></blockquote>
 <p><strong>long PSL_plottextbox</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>double</strong> <em>x</em>,
 <strong>double</strong> <em>y</em>, <strong>double</strong> <em>fontsize</em>, <strong>char</strong> <em>*text</em>, <strong>double</strong>
 <em>angle</em>, <strong>long</strong> <em>justify</em>, <strong>double</strong> <em>offset</em>[], <strong>long</strong> <em>mode</em>)</p>
 <blockquote>
-<div>This function is used in conjugation with <strong>PSL_plottext</strong> when a
+<div><p>This function is used in conjugation with <strong>PSL_plottext</strong> when a
 box surrounding the text string is desired. Taking most of the
 arguments of <strong>PSL_plottext</strong>, the user must also specify <em>mode</em> to
 indicate whether the box needs rounded (PSL_YES = 1) or straight
@@ -756,11 +807,12 @@ routine. The outline will be drawn with the current pen color (and
 width). The <em>offset</em> array holds the horizontal and vertical
 distance gaps between text and the surrounding text box in distance
 units. The smaller of the two determined the radius of the rounded
-corners (if requested).</div></blockquote>
+corners (if requested).</p>
+</div></blockquote>
 <p><strong>long PSL_deftextdim</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>char</strong>
 <em>*prefix</em>, <strong>double</strong> <em>fontsize</em>, <strong>char</strong> <em>*text</em>)</p>
 <blockquote>
-<div>Computes the dimensions (width and height) required by the selected
+<div><p>Computes the dimensions (width and height) required by the selected
 <em>text</em> given the current font and its <em>fontsize</em> (in points). The
 values are stored as PostScript variables called <em>prefix</em>_w and
 <em>prefix</em>_h, respectively. This function can be used to compute
@@ -770,21 +822,23 @@ compute a position this way and wish to plot the text there, pass
 the coordinates to <strong>PSL_plottext</strong> as NaNs. If <em>prefix</em> is BF(-w),
 BF(-h), BF(-d) or BF(-b), no PostScript variables will be
 assigned, but the values of width, height, depth, or both width and
-height will be left on the PostScript stack.</div></blockquote>
+height will be left on the PostScript stack.</p>
+</div></blockquote>
 <p><strong>long PSL_setparagraph</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>double</strong>
 <em>line_space</em>, <strong>double</strong> <em>par_width</em>, <strong>long</strong> <em>par_just</em>)</p>
 <blockquote>
-<div>Initialize common settings to be used when typesetting paragraphs of
+<div><p>Initialize common settings to be used when typesetting paragraphs of
 text with <strong>PSL_plotparagraph</strong>. Specify the line spacing (1 equals
 the font size) and paragraph width (in distance units). Text can be
 aligned left (PSL_BL), centered (PSL_BC), right (PSL_BR), or
-justified (PSL_JUST) and is controlled by <em>par_just</em>.</div></blockquote>
+justified (PSL_JUST) and is controlled by <em>par_just</em>.</p>
+</div></blockquote>
 <p><strong>long PSL_plotparagraphbox</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>,
 <strong>double</strong> <em>x</em>, <strong>double</strong> <em>y</em>, <strong>double</strong> <em>fontsize</em>, <strong>char</strong>
 <em>*text</em>, <strong>double</strong> <em>angle</em>, <strong>long</strong> <em>justify</em>, <strong>double</strong>
 <em>offset</em>[], <strong>long</strong> <em>mode</em>)</p>
 <blockquote>
-<div>Computes and plots the text rectangle for a paragraph using the
+<div><p>Computes and plots the text rectangle for a paragraph using the
 specified <em>fontsize</em> (in points). Here, <em>text</em> is an array of
 the text to be typeset, using the settings initialized by
 <strong>PSL_setparagraph</strong>. The escape sequences described for
@@ -799,12 +853,13 @@ will be plotted using the current fill and outline settings. The
 between text and the surrounding text box in distance units. Use
 <em>mode</em> to indicate whether the box should be straight
 (PSL_RECT_STRAIGHT = 0), rounded (PSL_RECT_ROUNDED = 1),
-convex (PSL_RECT_CONVEX = 2) or concave (PSL_RECT_CONCAVE = 3).</div></blockquote>
+convex (PSL_RECT_CONVEX = 2) or concave (PSL_RECT_CONCAVE = 3).</p>
+</div></blockquote>
 <p><strong>long PSL_plotparagraph</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>double</strong>
 <em>x</em>, <strong>double</strong> <em>y</em>, <strong>double</strong> <em>fontsize</em>, <strong>char</strong> <em>*text</em>,
 <strong>double</strong> <em>angle</em>, <strong>long</strong> <em>justify</em>, <strong>long</strong> <em>mode</em>)</p>
 <blockquote>
-<div>Typesets paragraphs of text using the specified <em>fontsize</em> (in
+<div><p>Typesets paragraphs of text using the specified <em>fontsize</em> (in
 points). Here, <em>text</em> is an array of the text to be typeset,
 using the settings initialized by <strong>PSL_setparagraph</strong>. The
 escape sequences described for <strong>PSL_plottext</strong> can be used to
@@ -813,14 +868,15 @@ appending \r to the last item in a paragraph. The whole text
 block is positioned at plot coordinates <em>x</em>, <em>y</em>, which is
 mapped to a point on the block specified by <em>justify</em> (see
 <strong>JUSTIFICATION</strong> for details). See <strong>PSL_plotparagraphbox</strong>
-for laying down the surrounding text rectangle first.</div></blockquote>
+for laying down the surrounding text rectangle first.</p>
+</div></blockquote>
 <p><strong>long PSL_plottextline</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>double</strong>
 <em>*xpath</em>, <strong>double</strong> <em>*ypath</em>, <strong>long</strong> <em>*np</em>, <strong>long</strong> <em>nseg</em>,
 <strong>void</strong> <em>*arg1</em>, <strong>void</strong> <em>*arg2</em>, <strong>char</strong> <em>*text</em>[],
 <strong>double</strong> <em>angle</em>[], <strong>long</strong> <em>n_per_seg</em>[], <strong>double</strong> <em>fontsize,
 **long*</em> <em>justify</em>, <strong>double</strong> <em>offset</em>[], <strong>long</strong> <em>mode</em>)</p>
 <blockquote>
-<div>Please text along one or more path segments. The function does
+<div><p>Please text along one or more path segments. The function does
 different things depending on the bit flags in <em>mode</em>. A key
 distinction occurs if the bit flag contains the bit PSL_TXT_CURVED
 (64) which means we wish to typeset the text along a variable and curved
@@ -860,7 +916,8 @@ PSL_TXT_DRAWBOX (256) will draw the text box outlines (this requires
 you to first define the text box pen with <strong>PSL_define_pen</strong> by setting a local
 PostScript variable that must be called PSL_setboxpen). Before
 calling this function you must also initialize a PSL array for
-line pens and text fonts.</div></blockquote>
+line pens and text fonts.</p>
+</div></blockquote>
 </div>
 <div class="section" id="clipping">
 <h2>Clipping<a class="headerlink" href="#clipping" title="Permalink to this headline">¶</a></h2>
@@ -868,7 +925,7 @@ line pens and text fonts.</div></blockquote>
 <p><strong>long PSL_beginclipping</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>double</strong> <em>x</em>,
 <strong>double</strong> <em>y</em>, <strong>long</strong> <em>n</em>, <strong>double</strong> <em>rgb</em>[], <strong>long</strong> <em>flag</em>)</p>
 <blockquote>
-<div>Sets up a user-definable clip path as a series on <em>n</em> points with
+<div><p>Sets up a user-definable clip path as a series on <em>n</em> points with
 plot coordinates (<em>x</em>, <em>y</em>). Plotting outside this polygon will be
 clipped until <strong>PSL_endclipping</strong> is called. If <em>rgb</em>[0] = -1 the
 inside of the path is left empty, otherwise it is filled with the
@@ -878,14 +935,16 @@ consisting of several disconnected regions, and takes on values 0-3.
 this is the first path in a multisegment clip path. <em>flag</em> =
 PSL_PEN_DRAW_ABS (2) means this is
 the last segment. Thus, for a single path, <em>flag</em> =
-PSL_PEN_DRAW_AND_STROKE_ABS (3).</div></blockquote>
+PSL_PEN_DRAW_AND_STROKE_ABS (3).</p>
+</div></blockquote>
 <p><strong>long PSL_endclipping</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>long</strong> <em>mode</em>)</p>
 <blockquote>
-<div>Depending on the <em>mode</em> it restores the clip path. The <em>mode</em> values
+<div><p>Depending on the <em>mode</em> it restores the clip path. The <em>mode</em> values
 can be: -<em>n</em> will restore <em>n</em> levels of text-based clipping, <em>n</em>
 will restore <em>n</em> levels of polygon clipping, PSL_ALL_CLIP_TXT
 will undo all levels of text-based clipping, and PSL_ALL_CLIP_POL
-will undo all levels of polygon-based clipping.</div></blockquote>
+will undo all levels of polygon-based clipping.</p>
+</div></blockquote>
 </div>
 <div class="section" id="id5">
 <h2><a class="reference external" href="#toc12">Miscellaneous Functions</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
@@ -894,13 +953,13 @@ commands directly to the output PostScript file. In C these functions
 are declared as macros and they can accept a variable number of
 arguments. However, from FORTRAN only a single text argument may be
 passed.</p>
-<dl class="docutils">
-<dt><strong>long PSL_setcommand</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>char</strong> <em>*text</em>)</dt>
-<dd>Writes a raw PostScript command to the PostScript output file,
-e.g., “1 setlinejoin.</dd>
-<dt><strong>long PSL_comment</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>char</strong> <em>*text</em>)</dt>
-<dd>Writes a comment (<em>text</em>) to the PostScript output file, e.g.,
-“Start of graph 20. The comment are prefixed with with %% .</dd>
+<dl class="simple">
+<dt><strong>long PSL_setcommand</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>char</strong> <em>*text</em>)</dt><dd><p>Writes a raw PostScript command to the PostScript output file,
+e.g., “1 setlinejoin.</p>
+</dd>
+<dt><strong>long PSL_comment</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>char</strong> <em>*text</em>)</dt><dd><p>Writes a comment (<em>text</em>) to the PostScript output file, e.g.,
+“Start of graph 20. The comment are prefixed with with %% .</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="authors">
@@ -990,7 +1049,7 @@ edition, Addison-Wesley, (ISBN 0-201-18127-4).</p>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="P.html" >P</a> &#187;</li>
 <li class="right">
@@ -1009,8 +1068,8 @@ edition, Addison-Wesley, (ISBN 0-201-18127-4).</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

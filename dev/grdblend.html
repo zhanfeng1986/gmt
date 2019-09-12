@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>grdblend &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>grdblend &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="GR.html" accesskey="U">GR</a> &#187;</li>
 <li class="right">
@@ -97,16 +95,15 @@ netCDF and native binary grid formats for both input and output.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="g">
-<dt><strong>-G</strong><em>outgrid</em></dt>
-<dd><em>outgrid</em> is the name of the binary output grid file. (See GRID FILE
+<dl class="simple" id="g">
+<dt><strong>-G</strong><em>outgrid</em></dt><dd><p><em>outgrid</em> is the name of the binary output grid file. (See GRID FILE
 FORMATS below). Only netCDF and native binary grid formats are can
 be written directly. Other output format choices will be handled by
-reformatting the output once blending is complete.</dd>
+reformatting the output once blending is complete.</p>
+</dd>
 </dl>
-<dl class="docutils" id="i">
-<dt><strong>-I</strong><em>xinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>]]</dt>
-<dd><em>x_inc</em> [and optionally <em>y_inc</em>] is the grid spacing. Optionally,
+<dl class="simple" id="i">
+<dt><strong>-I</strong><em>xinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>]]</dt><dd><p><em>x_inc</em> [and optionally <em>y_inc</em>] is the grid spacing. Optionally,
 append a suffix modifier. <strong>Geographical (degrees) coordinates</strong>: Append
 <strong>m</strong> to indicate arc minutes or <strong>s</strong> to indicate arc seconds. If one
 of the units <strong>e</strong>, <strong>f</strong>, <strong>k</strong>, <strong>M</strong>, <strong>n</strong> or <strong>u</strong> is appended
@@ -125,18 +122,18 @@ recalculated from the number of nodes and the domain. The resulting
 increment value depends on whether you have selected a
 gridline-registered or pixel-registered grid; see <a class="reference internal" href="GMT_Docs_classic.html#app-file-formats"><span class="std std-ref">GMT File Formats</span></a> for
 details. Note: if <strong>-R</strong><em>grdfile</em> is used then the grid spacing has
-already been initialized; use <strong>-I</strong> to override the values.</dd>
+already been initialized; use <strong>-I</strong> to override the values.</p>
+</dd>
 </dl>
-<dl class="docutils" id="r">
-<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Specify the region of interest.  </dd>
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify the region of interest.  </p>
+</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><em>blendfile</em></dt>
-<dd>ASCII file with one record per grid file to include in the blend.
+<dl class="simple">
+<dt><em>blendfile</em></dt><dd><p>ASCII file with one record per grid file to include in the blend.
 Each record may contain up to three items, separated by spaces or tabs:
 the gridfile name (required), the <strong>-R</strong>-setting for the interior region
 (optional), and the relative weight <em>wr</em> (optional). In the combined weighting scheme, this
@@ -157,11 +154,11 @@ list all the grids on the command line instead of providing a
 mechanism to work. Any grid that is not co-registered with the
 desired output layout implied by <strong>-R</strong>, <strong>-I</strong> (and <strong>-r</strong><a class="reference internal" href="gmt.html#nodereg-full"><span class="std std-ref">reg</span></a>) will
 first be resampled via <a class="reference internal" href="grdsample.html"><span class="doc">grdsample</span></a>. Also, grids that are not in
-netCDF or native binary format will first be reformatted via <a class="reference internal" href="grdconvert.html"><span class="doc">grdconvert</span></a>.</dd>
+netCDF or native binary format will first be reformatted via <a class="reference internal" href="grdconvert.html"><span class="doc">grdconvert</span></a>.</p>
+</dd>
 </dl>
-<dl class="docutils" id="c">
-<dt><strong>-C</strong><strong>f</strong>|<strong>l</strong>|<strong>o</strong>|<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>]</dt>
-<dd>Clobber mode: Instead of blending, simply pick the value of one of
+<dl class="simple" id="c">
+<dt><strong>-C</strong><strong>f</strong>|<strong>l</strong>|<strong>o</strong>|<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>]</dt><dd><p>Clobber mode: Instead of blending, simply pick the value of one of
 the grids that covers a node. Select from the following modes: <strong>f</strong>
 for the first grid to visit a node; <strong>o</strong> for the last grid to visit
 a node; <strong>l</strong> for the grid with the lowest value, and <strong>u</strong> for the
@@ -171,52 +168,53 @@ contributes to the final result. Weights and cosine tapering are not
 considered when clobber mode is active. Optionally, append <strong>+p</strong> or <strong>+n</strong>.
 Then, we always initialize output to equal the first grid but then
 for subsequent grids we only consider them in the decision if the
-values are &gt;= 0 or &lt;= 0, respectively.</dd>
+values are &gt;= 0 or &lt;= 0, respectively.</p>
+</dd>
 </dl>
-<dl class="docutils" id="n">
-<dt><strong>-N</strong><em>nodata</em></dt>
-<dd>No data. Set nodes with no input grid to this value [Default is NaN].</dd>
+<dl class="simple" id="n">
+<dt><strong>-N</strong><em>nodata</em></dt><dd><p>No data. Set nodes with no input grid to this value [Default is NaN].</p>
+</dd>
 </dl>
-<dl class="docutils" id="q">
-<dt><strong>-Q</strong></dt>
-<dd>Create plain header-less grid file (for use with external tools).
-Requires that the output grid file is a native format (i.e., not netCDF).</dd>
+<dl class="simple" id="q">
+<dt><strong>-Q</strong></dt><dd><p>Create plain header-less grid file (for use with external tools).
+Requires that the output grid file is a native format (i.e., not netCDF).</p>
+</dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
 </dl>
-<dl class="docutils" id="w">
-<dt><strong>-W</strong>[<strong>z</strong>]</dt>
-<dd>Do not blend, just output the weights used for each node [Default makes the blend].
-Append <strong>z</strong> to write the weight*z sum instead.</dd>
+<dl class="simple" id="w">
+<dt><strong>-W</strong>[<strong>z</strong>]</dt><dd><p>Do not blend, just output the weights used for each node [Default makes the blend].
+Append <strong>z</strong> to write the weight*z sum instead.</p>
+</dd>
 </dl>
-<dl class="docutils" id="z">
-<dt><strong>-Z</strong><em>scale</em></dt>
-<dd>Scale output values by <em>scale</em> before writing to file. [1].</dd>
+<dl class="simple" id="z">
+<dt><strong>-Z</strong><em>scale</em></dt><dd><p>Scale output values by <em>scale</em> before writing to file. [1].</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Specify data types of input and/or output columns.  </dd>
+<dl class="simple">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify data types of input and/or output columns.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-n</strong>[<strong>b</strong>|<strong>c</strong>|<strong>l</strong>|<strong>n</strong>][<strong>+a</strong>][<strong>+b</strong><em>BC</em>][<strong>+c</strong>][<strong>+t</strong><em>threshold</em>] <a class="reference internal" href="gmt.html#n-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select interpolation mode for grids.</dd>
+<dl class="simple">
+<dt><strong>-n</strong>[<strong>b</strong>|<strong>c</strong>|<strong>l</strong>|<strong>n</strong>][<strong>+a</strong>][<strong>+b</strong><em>BC</em>][<strong>+c</strong>][<strong>+t</strong><em>threshold</em>] <a class="reference internal" href="gmt.html#n-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select interpolation mode for grids.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-r</strong> <a class="reference internal" href="gmt.html#nodereg-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set node registration [gridline].  </dd>
+<dl class="simple">
+<dt><strong>-r</strong> <a class="reference internal" href="gmt.html#nodereg-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set node registration [gridline].  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
+<dl class="simple">
+<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
+</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</p>
+</dd>
+<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="grid-file-formats">
@@ -360,7 +358,7 @@ documentation for how to change system limits.</p>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="GR.html" >GR</a> &#187;</li>
 <li class="right">
@@ -379,8 +377,8 @@ documentation for how to change system limits.</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

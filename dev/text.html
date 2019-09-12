@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>text &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>text &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="PS.html" accesskey="U">Modern Mode Mapping</a> &#187;</li>
 <li class="right">
@@ -119,21 +117,20 @@ characters, except in paragraph mode (<strong>-M</strong>)).</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="j">
-<dt><strong>-J</strong><em>parameters</em> <a class="reference internal" href="gmt.html#j-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select map projection.  </dd>
+<dl class="simple" id="j">
+<dt><strong>-J</strong><em>parameters</em> <a class="reference internal" href="gmt.html#j-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select map projection.  </p>
+</dd>
 </dl>
-<dl class="docutils" id="r">
-<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Specify the region of interest.  </dd>
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify the region of interest.  </p>
+</dd>
 </dl>
 <p>For perspective view <strong>p</strong>, optionally append /<em>zmin</em>/<em>zmax</em>. <a class="reference internal" href="gmt.html#rz-full"><span class="std std-ref">(more …)</span></a>  </p>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><em>textfiles</em></dt>
-<dd>This is one or more files containing 1 or more records with (<em>x</em>,
+<dl class="simple">
+<dt><em>textfiles</em></dt><dd><p>This is one or more files containing 1 or more records with (<em>x</em>,
 <em>y</em>[, <em>font</em>, <em>angle</em>, <em>justify</em>], <em>text</em>). The attributes in
 brackets can alternatively be set directly via <strong>-F</strong>. If no files
 are given, <strong>text</strong> will read standard input. <em>font</em> is a font
@@ -147,20 +144,20 @@ with the desired font name (see <strong>-L</strong> for available fonts). The
 alignment refers to the part of the text string that will be mapped
 onto the (<em>x</em>,<em>y</em>) point. Choose a 2 character combination of L,
 C, R (for left, center, or right) and T, M, B for top, middle, or
-bottom. e.g., BL for lower left.</dd>
+bottom. e.g., BL for lower left.</p>
+</dd>
 </dl>
-<dl class="docutils" id="a">
-<dt><strong>-A</strong></dt>
-<dd>Angles are given as azimuths; convert them to directions using the
-current projection.</dd>
+<dl class="simple" id="a">
+<dt><strong>-A</strong></dt><dd><p>Angles are given as azimuths; convert them to directions using the
+current projection.</p>
+</dd>
 </dl>
-<dl class="docutils" id="b">
-<dt><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> <a class="reference internal" href="gmt.html#b-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set map boundary frame and axes attributes.</dd>
+<dl class="simple" id="b">
+<dt><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> <a class="reference internal" href="gmt.html#b-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set map boundary frame and axes attributes.</p>
+</dd>
 </dl>
-<dl class="docutils" id="c">
-<dt><strong>-C</strong>[<em>dx/dy</em>][<strong>+to</strong>|<strong>O</strong>|<strong>c</strong>|<strong>C</strong>]</dt>
-<dd>Adjust the clearance between the text and the surrounding box [15%].
+<dl class="simple" id="c">
+<dt><strong>-C</strong>[<em>dx/dy</em>][<strong>+to</strong>|<strong>O</strong>|<strong>c</strong>|<strong>C</strong>]</dt><dd><p>Adjust the clearance between the text and the surrounding box [15%].
 Only used if <strong>-W</strong> or <strong>-G</strong> are specified. Append the unit you
 want (<strong>c</strong>m, <strong>i</strong>nch, or <strong>p</strong>oint; if not given we consult
 <a class="reference internal" href="gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a>) or % for a percentage of the font size.
@@ -168,22 +165,22 @@ Optionally, use modifier <strong>+t</strong> to set the shape of the textbox whe
 Append lower case <strong>o</strong> to get a straight rectangle [Default].
 Append upper case <strong>O</strong> to get a rounded rectangle. In paragraph
 mode (<strong>-M</strong>) you can also append lower case <strong>c</strong> to get a concave
-rectangle or append upper case <strong>C</strong> to get a convex rectangle.</dd>
+rectangle or append upper case <strong>C</strong> to get a convex rectangle.</p>
+</dd>
 </dl>
-<dl class="docutils" id="d">
-<dt><strong>-D</strong>[<strong>j</strong>|<strong>J</strong>]<em>dx</em>[/<em>dy</em>][<strong>+v</strong>[<em>pen</em>]]</dt>
-<dd>Offsets the text from the projected (<em>x</em>,<em>y</em>) point by <em>dx</em>,<em>dy</em>
+<dl class="simple" id="d">
+<dt><strong>-D</strong>[<strong>j</strong>|<strong>J</strong>]<em>dx</em>[/<em>dy</em>][<strong>+v</strong>[<em>pen</em>]]</dt><dd><p>Offsets the text from the projected (<em>x</em>,<em>y</em>) point by <em>dx</em>,<em>dy</em>
 [0/0]. If <em>dy</em> is not specified then it is set equal to <em>dx</em>. Use
 <strong>-Dj</strong> to offset the text away from the point instead (i.e., the
 text justification will determine the direction of the shift). Using
 <strong>-DJ</strong> will shorten diagonal offsets at corners by
 sqrt(2). Optionally, append <strong>+v</strong> which will draw
 a line from the original point to the shifted point; append a <em>pen</em>
-to change the attributes for this line.</dd>
+to change the attributes for this line.</p>
+</dd>
 </dl>
-<dl class="docutils" id="f">
-<dt><strong>-F</strong>[<strong>+a</strong>[<em>angle</em>]][<strong>+c</strong>[<em>justify</em>]][<strong>+f</strong>[<em>font</em>]][<strong>+j</strong>[<em>justify</em>]][<strong>+h</strong>|<strong>+l</strong>|<strong>+r</strong>[<em>first</em>] |<strong>+t</strong><em>text</em>|<strong>+w</strong><em>word</em>|<strong>+z</strong>[<em>format</em>]]</dt>
-<dd>By default, text will be placed horizontally, using the primary
+<dl class="simple" id="f">
+<dt><strong>-F</strong>[<strong>+a</strong>[<em>angle</em>]][<strong>+c</strong>[<em>justify</em>]][<strong>+f</strong>[<em>font</em>]][<strong>+j</strong>[<em>justify</em>]][<strong>+h</strong>|<strong>+l</strong>|<strong>+r</strong>[<em>first</em>] |<strong>+t</strong><em>text</em>|<strong>+w</strong><em>word</em>|<strong>+z</strong>[<em>format</em>]]</dt><dd><p>By default, text will be placed horizontally, using the primary
 annotation font attributes (<a class="reference internal" href="gmt.conf.html#font-annot-primary"><span class="std std-ref">FONT_ANNOT_PRIMARY</span></a>), and centered
 on the data point. Use this option to override these defaults by
 specifying up to three text attributes (font, angle, and
@@ -211,23 +208,23 @@ a multisegment input file, <strong>+r</strong> to use the record number (countin
 to a string using the supplied <em>format</em> [use FORMAT_FLOAT_MAP].  Note: If <strong>-Z</strong> is
 in effect then the <em>z</em> value used for formatting is in the 4th, not 3rd column.
 If you only want a specific word from the trailing text and not the whole line,
-use <strong>+w</strong><em>word</em> to indicate which word (0 is the first word) you want.</dd>
+use <strong>+w</strong><em>word</em> to indicate which word (0 is the first word) you want.</p>
+</dd>
 </dl>
-<dl class="docutils" id="g">
-<dt><strong>-G</strong><em>color</em></dt>
-<dd>Sets the shade or color used for filling the text box [Default is no
+<dl class="simple" id="g">
+<dt><strong>-G</strong><em>color</em></dt><dd><p>Sets the shade or color used for filling the text box [Default is no
 fill]. Alternatively, use <strong>-Gc</strong> to plot the text and then use the
 text dimensions (and <strong>-C</strong>) to build clip paths and turn clipping on.
 This clipping can then be turned off later with <a class="reference internal" href="clip.html"><span class="doc">clip</span></a> <strong>-C</strong>.
-To <strong>not</strong> plot the text but activate clipping, use <strong>-GC</strong> instead.</dd>
+To <strong>not</strong> plot the text but activate clipping, use <strong>-GC</strong> instead.</p>
+</dd>
 </dl>
-<dl class="docutils" id="l">
-<dt><strong>-L</strong></dt>
-<dd>Lists the font-numbers and font-names available, then exits.</dd>
+<dl class="simple" id="l">
+<dt><strong>-L</strong></dt><dd><p>Lists the font-numbers and font-names available, then exits.</p>
+</dd>
 </dl>
-<dl class="docutils" id="m">
-<dt><strong>-M</strong></dt>
-<dd>Paragraph mode. Files must be multiple segment files. Segments are
+<dl class="simple" id="m">
+<dt><strong>-M</strong></dt><dd><p>Paragraph mode. Files must be multiple segment files. Segments are
 separated by a special record whose first character must be <em>flag</em>
 [Default is <strong>&gt;</strong>]. Starting in the 3rd column, we expect to find
 information pertaining to the typesetting of a text paragraph (the
@@ -242,86 +239,87 @@ which may be <strong>l</strong>(eft), <strong>c</strong>(enter), <strong>r</stro
 lines with paragraph text. Text may contain the escape sequences
 discussed above. Separate paragraphs with a blank line.  Note that
 here, the justification set via <strong>-F+j</strong> applies to the box alignment
-since the text justification is set by <em>parjust</em>.</dd>
+since the text justification is set by <em>parjust</em>.</p>
+</dd>
 </dl>
-<dl class="docutils" id="n">
-<dt><strong>-N</strong></dt>
-<dd>Do NOT clip text at map boundaries [Default will clip].</dd>
+<dl class="simple" id="n">
+<dt><strong>-N</strong></dt><dd><p>Do NOT clip text at map boundaries [Default will clip].</p>
+</dd>
 </dl>
-<dl class="docutils" id="q">
-<dt><strong>-Q</strong><strong>l</strong>|<strong>u</strong></dt>
-<dd>Change all text to either <strong>l</strong>ower or <strong>u</strong>pper case [Default
-leaves all text as is].</dd>
+<dl class="simple" id="q">
+<dt><strong>-Q</strong><strong>l</strong>|<strong>u</strong></dt><dd><p>Change all text to either <strong>l</strong>ower or <strong>u</strong>pper case [Default
+leaves all text as is].</p>
+</dd>
 </dl>
-<dl class="docutils" id="u">
-<dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>] <a class="reference internal" href="gmt.html#u-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Draw GMT time stamp logo on plot.</dd>
+<dl class="simple" id="u">
+<dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>] <a class="reference internal" href="gmt.html#u-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Draw GMT time stamp logo on plot.</p>
+</dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
 </dl>
-<dl class="docutils" id="w">
-<dt><strong>-W</strong><em>pen</em></dt>
-<dd>Sets the pen used to draw a rectangle around the text string (see
-<strong>-C</strong>) [Default is width = default, color = black, style = solid].</dd>
+<dl class="simple" id="w">
+<dt><strong>-W</strong><em>pen</em></dt><dd><p>Sets the pen used to draw a rectangle around the text string (see
+<strong>-C</strong>) [Default is width = default, color = black, style = solid].</p>
+</dd>
 </dl>
 <p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</p>
-<dl class="docutils">
-<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Shift plot origin.</dd>
+<dl class="simple">
+<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Shift plot origin.</p>
+</dd>
 </dl>
-<dl class="docutils" id="z">
-<dt><strong>-Z</strong></dt>
-<dd>For 3-D projections: expect each item to have its own level given in
+<dl class="simple" id="z">
+<dt><strong>-Z</strong></dt><dd><p>For 3-D projections: expect each item to have its own level given in
 the 3rd column, and <strong>-N</strong> is implicitly set. (Not implemented for
-paragraph mode).</dd>
+paragraph mode).</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-a</strong><em>col</em>=<em>name</em>[<em>…</em>] <a class="reference internal" href="gmt.html#aspatial-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set aspatial column associations <em>col</em>=<em>name</em>.</dd>
+<dl class="simple">
+<dt><strong>-a</strong><em>col</em>=<em>name</em>[<em>…</em>] <a class="reference internal" href="gmt.html#aspatial-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set aspatial column associations <em>col</em>=<em>name</em>.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-e</strong>[<strong>~</strong>]<em>”pattern”</em> <strong>|</strong> <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] <a class="reference internal" href="gmt.html#e-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Only accept data records that match the given pattern.  </dd>
+<dl class="simple">
+<dt><strong>-e</strong>[<strong>~</strong>]<em>”pattern”</em> <strong>|</strong> <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] <a class="reference internal" href="gmt.html#e-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Only accept data records that match the given pattern.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Specify data types of input and/or output columns.  </dd>
+<dl class="simple">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify data types of input and/or output columns.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Skip or produce header record(s).  </dd>
+<dl class="simple">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Skip or produce header record(s).  </p>
+</dd>
 </dl>
-<dl class="docutils" id="i">
-<dt><strong>-it</strong><em>word</em></dt>
-<dd>In this module, <strong>-it</strong> can be used to select a specific word from the
+<dl class="simple" id="i">
+<dt><strong>-it</strong><em>word</em></dt><dd><p>In this module, <strong>-it</strong> can be used to select a specific word from the
 trailing text [Default is the entire trailing text].  The <em>word</em> indicates
-the word order, with the first word being 0.  No numerical columns can be specified.</dd>
+the word order, with the first word being 0.  No numerical columns can be specified.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="gmt.html#colon-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Swap 1st and 2nd column on input and/or output.</dd>
+<dl class="simple">
+<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="gmt.html#colon-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Swap 1st and 2nd column on input and/or output.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-p</strong>[<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>azim</em>[/<em>elev</em>[/<em>zlevel</em>]][<strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>z0</em>]][<strong>+v</strong><em>x0</em>/<em>y0</em>] <a class="reference internal" href="gmt.html#perspective-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select perspective view. (Not implemented for paragraph mode).</dd>
+<dl class="simple">
+<dt><strong>-p</strong>[<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>azim</em>[/<em>elev</em>[/<em>zlevel</em>]][<strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>z0</em>]][<strong>+v</strong><em>x0</em>/<em>y0</em>] <a class="reference internal" href="gmt.html#perspective-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select perspective view. (Not implemented for paragraph mode).</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-t</strong>[<em>transp</em>] <a class="reference internal" href="gmt.html#t-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set transparency level in percent.</dd>
+<dl class="simple">
+<dt><strong>-t</strong>[<em>transp</em>] <a class="reference internal" href="gmt.html#t-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set transparency level in percent.</p>
+</dd>
 </dl>
 <p>If no transparency is appended then we will read it from the last column per data record instead.</p>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
+<dl class="simple">
+<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
+</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</p>
+</dd>
+<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="examples">
@@ -448,7 +446,7 @@ trailing text.</p>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="PS.html" >Modern Mode Mapping</a> &#187;</li>
 <li class="right">
@@ -467,8 +465,8 @@ trailing text.</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

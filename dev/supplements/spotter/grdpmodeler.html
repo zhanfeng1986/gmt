@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>grdpmodeler &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>grdpmodeler &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../SUP_SPOTTER.html" accesskey="U">SPOTTER</a> &#187;</li>
 <li class="right">
@@ -95,13 +93,12 @@ prediction; the remainder of the grid is set to NaN.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="e">
-<dt><strong>-E</strong><em>rotfile</em></dt>
-<dd><p class="first">Give file with rotation parameters. This file must contain one
+<dl id="e">
+<dt><strong>-E</strong><em>rotfile</em></dt><dd><p>Give file with rotation parameters. This file must contain one
 record for each rotation; each record must be of the following
 format:</p>
 <p><em>lon lat tstart [tstop] angle</em> [ <em>khat a b c d e f g df</em> ]</p>
-<p class="last">where <em>tstart</em> and <em>tstop</em> are in Myr and <em>lon lat angle</em> are in
+<p>where <em>tstart</em> and <em>tstop</em> are in Myr and <em>lon lat angle</em> are in
 degrees. <em>tstart</em> and <em>tstop</em> are the ages of the old and young ends
 of a stage. If <em>tstop</em> is not present in the record then a total
 reconstruction rotation is expected and <em>tstop</em> is implicitly set to
@@ -120,9 +117,8 @@ that rotation from the GPlates rotation database. We return an error
 if the rotation cannot be found.</p>
 </dd>
 </dl>
-<dl class="docutils" id="s">
-<dt><strong>-S</strong><em>flags</em></dt>
-<dd>Type of model prediction(s). Append one or more items: choose from <strong>a</strong> for plate motion
+<dl class="simple" id="s">
+<dt><strong>-S</strong><em>flags</em></dt><dd><p>Type of model prediction(s). Append one or more items: choose from <strong>a</strong> for plate motion
 azimuth, <strong>d</strong> for great-circle distance between current location and its
 origin at the ridge (in km), <strong>s</strong> for plate motion model stage ID (1 is youngest),
 <strong>v</strong> for plate motion rate (in mm/yr),
@@ -130,64 +126,65 @@ origin at the ridge (in km), <strong>s</strong> for plate motion model stage ID 
 longitude relative to location of crust formation, <strong>y</strong> for change in
 latitude relative to location of crust formation, <strong>X</strong> for longitude of
 crust formation, and <strong>Y</strong> for latitude of crust formation.
-If no arguments are given we default to all [<strong>adsvwxyXY</strong>].</dd>
+If no arguments are given we default to all [<strong>adsvwxyXY</strong>].</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><em>ingrdfile</em></dt>
-<dd>Name of a grid file in geographical (lon, lat) coordinates with ages in Myr.
-If no grid is provided then you may define the domain via <strong>-R</strong>, <strong>-I</strong>, and optionally <strong>-r</strong>.</dd>
+<dl class="simple">
+<dt><em>ingrdfile</em></dt><dd><p>Name of a grid file in geographical (lon, lat) coordinates with ages in Myr.
+If no grid is provided then you may define the domain via <strong>-R</strong>, <strong>-I</strong>, and optionally <strong>-r</strong>.</p>
+</dd>
 </dl>
-<dl class="docutils" id="f">
-<dt><strong>-F</strong><em>polygonfile</em></dt>
-<dd>Specify a multisegment closed polygon file that describes the inside
+<dl class="simple" id="f">
+<dt><strong>-F</strong><em>polygonfile</em></dt><dd><p>Specify a multisegment closed polygon file that describes the inside
 area of the grid where the model should be evaluated; the outside
-will be set to NaN [Default evaluates model on the entire grid].</dd>
+will be set to NaN [Default evaluates model on the entire grid].</p>
+</dd>
 </dl>
-<dl class="docutils" id="g">
-<dt><strong>-G</strong><em>outgrdfile</em></dt>
-<dd>Name of output grid. This is the grid with the model predictions
+<dl class="simple" id="g">
+<dt><strong>-G</strong><em>outgrdfile</em></dt><dd><p>Name of output grid. This is the grid with the model predictions
 given the specified rotations. Note: If you specified more than one
 model prediction in <strong>-S</strong> then the filename <em>must</em> be a template
 that contains the format %s; this will be replaced with the corresponding
 tags az, dist, stage, vel, omega, dlon, dlat, lon, lat.
 If the <strong>-G</strong> option is not used then we create no grids and instead
-write <em>lon, lat, age, predictions</em> records to standard output.</dd>
+write <em>lon, lat, age, predictions</em> records to standard output.</p>
+</dd>
 </dl>
-<dl class="docutils" id="t">
-<dt><strong>-T</strong><em>age</em></dt>
-<dd>Use a fixed age for model evaluation (i.e., override the ages in the
+<dl class="simple" id="t">
+<dt><strong>-T</strong><em>age</em></dt><dd><p>Use a fixed age for model evaluation (i.e., override the ages in the
 age grid). This lets you evaluate the model at a snapshot in time.
-Required if no age grid was provided.</dd>
+Required if no age grid was provided.</p>
+</dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="../../gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select native binary format for primary input. [Default is 2 input columns].</dd>
+<dl class="simple">
+<dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="../../gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select native binary format for primary input. [Default is 2 input columns].</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em> <a class="reference internal" href="../../gmt.html#d-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Replace input columns that equal <em>nodata</em> with NaN and do the reverse on output.  </dd>
+<dl class="simple">
+<dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em> <a class="reference internal" href="../../gmt.html#d-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Replace input columns that equal <em>nodata</em> with NaN and do the reverse on output.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="../../gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Skip or produce header record(s).  </dd>
+<dl class="simple">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="../../gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Skip or produce header record(s).  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="../../gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
+<dl class="simple">
+<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
+</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</p>
+</dd>
+<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="../../gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="geodetic-versus-geocentric-coordinates">
@@ -332,7 +329,7 @@ To use an alternate rotation file, create an environmental parameters named
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../SUP_SPOTTER.html" >SPOTTER</a> &#187;</li>
 <li class="right">
@@ -351,8 +348,8 @@ To use an alternate rotation file, create an environmental parameters named
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

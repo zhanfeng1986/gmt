@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>gmt2kml &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>gmt2kml &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="G.html" accesskey="U">G</a> &#187;</li>
 <li class="right">
@@ -124,15 +122,14 @@ scaled to yield distances from the line in degrees.</p>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><em>table</em></dt>
-<dd>One or more ASCII (or binary, see <strong>-bi</strong>[<em>ncols</em>][<em>type</em>]) data
+<dl class="simple">
+<dt><em>table</em></dt><dd><p>One or more ASCII (or binary, see <strong>-bi</strong>[<em>ncols</em>][<em>type</em>]) data
 table file(s) holding a number of data columns. If no tables are given
-then we read from standard input.  </dd>
+then we read from standard input.  </p>
+</dd>
 </dl>
-<dl class="docutils" id="a">
-<dt><strong>-A</strong><strong>a</strong>|<strong>g</strong>|<strong>s</strong>[<em>alt</em>|<strong>x</strong><em>scale</em>]</dt>
-<dd>Select one of three altitude modes recognized by Google Earth that
+<dl class="simple" id="a">
+<dt><strong>-A</strong><strong>a</strong>|<strong>g</strong>|<strong>s</strong>[<em>alt</em>|<strong>x</strong><em>scale</em>]</dt><dd><p>Select one of three altitude modes recognized by Google Earth that
 determines the altitude (in m) of the feature: <strong>a</strong> absolute
 altitude, <strong>g</strong> altitude relative to sea surface or ground, <strong>s</strong>
 altitude relative to seafloor or ground. To plot the features at a
@@ -140,32 +137,32 @@ fixed altitude, append an altitude <em>alt</em> (in m). Use 0 to clamp the
 features to the chosen reference surface. Append <strong>x</strong><em>scale</em> to
 scale the altitude from the input file by that factor. If no value
 is appended, the altitude (in m) is read from the 3rd column of the
-input file. [By default the features are clamped to the sea surface or ground].</dd>
+input file. [By default the features are clamped to the sea surface or ground].</p>
+</dd>
 </dl>
-<dl class="docutils" id="c">
-<dt><strong>-C</strong><em>cpt</em></dt>
-<dd>Use the CPT for assigning colors to the symbol, event, or
+<dl class="simple" id="c">
+<dt><strong>-C</strong><em>cpt</em></dt><dd><p>Use the CPT for assigning colors to the symbol, event, or
 timespan icons, based on the value in the 3rd column of the input
 file. For lines or polygons we examine the segment header for
 -Z&lt;value&gt; statements and obtain the color via the cpt lookup. Note
-only discrete colors are possible.</dd>
+only discrete colors are possible.</p>
+</dd>
 </dl>
-<dl class="docutils" id="d">
-<dt><strong>-D</strong><em>descriptfile</em></dt>
-<dd>File with HTML snippets that will be included as part of the main
+<dl class="simple" id="d">
+<dt><strong>-D</strong><em>descriptfile</em></dt><dd><p>File with HTML snippets that will be included as part of the main
 description content for the KML file [no description]. See SEGMENT
-INFORMATION below for feature-specific descriptions.</dd>
+INFORMATION below for feature-specific descriptions.</p>
+</dd>
 </dl>
-<dl class="docutils" id="e">
-<dt><strong>-E</strong>[<strong>+e</strong>][<strong>+s</strong>]</dt>
-<dd>Control how lines and polygons are rendered in Google Earth.
+<dl class="simple" id="e">
+<dt><strong>-E</strong>[<strong>+e</strong>][<strong>+s</strong>]</dt><dd><p>Control how lines and polygons are rendered in Google Earth.
 Append <strong>+e</strong> to extrude the feature down to ground level [no extrusion].
 Append <strong>+s</strong> to connect points with straight lines (which may intersect
-the Earth’s surface and be invisible) [tessellate onto surface].</dd>
+the Earth’s surface and be invisible) [tessellate onto surface].</p>
+</dd>
 </dl>
-<dl class="docutils" id="f">
-<dt><strong>-F</strong><strong>e</strong>|<strong>s</strong>|<strong>t</strong>|<strong>l</strong>|<strong>p</strong>|<strong>w</strong></dt>
-<dd>Sets the feature type. Choose from points (<strong>e</strong>vent,
+<dl class="simple" id="f">
+<dt><strong>-F</strong><strong>e</strong>|<strong>s</strong>|<strong>t</strong>|<strong>l</strong>|<strong>p</strong>|<strong>w</strong></dt><dd><p>Sets the feature type. Choose from points (<strong>e</strong>vent,
 <strong>s</strong>ymbol, or <strong>t</strong>imespan), <strong>l</strong>ine, <strong>p</strong>olygon, or
 <strong>w</strong>iggle [symbol]. The first two columns of the input file should contain
 (<em>lon</em>, <em>lat</em>). When altitude or value is required (i.e., no
@@ -179,31 +176,31 @@ indicate unbounded time limits. If used, times should be in ISO
 format yyyy-mm-ddThh:mm:ss[.xxx] or in GMT relative time format
 (see <strong>-f</strong>).  For wiggles, the data anomaly is required to be
 in the 3rd input column.  If you also need to plot the track itself
-then do that separately with <strong>-Fl</strong>.</dd>
+then do that separately with <strong>-Fl</strong>.</p>
+</dd>
 </dl>
-<dl class="docutils" id="g">
-<dt><strong>-G</strong>[<em>color</em>][<strong>+f</strong>|<strong>+n</strong>]</dt>
-<dd>Sets <em>color</em> for fill (modifier <strong>+f</strong> [Default]) or label font (modifier <strong>+n</strong>).
+<dl class="simple" id="g">
+<dt><strong>-G</strong>[<em>color</em>][<strong>+f</strong>|<strong>+n</strong>]</dt><dd><p>Sets <em>color</em> for fill (modifier <strong>+f</strong> [Default]) or label font (modifier <strong>+n</strong>).
 Fill sets infill color for symbols, extrusions, polygons and positive anomaly
 wiggles [Default is light orange at 75% transparency].  Alternatively,
 use <strong>-G+f</strong> to turn off such infill.
 Text labels: Specify <em>color</em> for the font [Default is white]. Alternatively,
-use <strong>-G+n</strong> to instead disable the labels.</dd>
+use <strong>-G+n</strong> to instead disable the labels.</p>
+</dd>
 </dl>
-<dl class="docutils" id="i">
-<dt><strong>-I</strong><em>icon</em></dt>
-<dd>Specify the URL to an alternative icon that should be used for the
+<dl class="simple" id="i">
+<dt><strong>-I</strong><em>icon</em></dt><dd><p>Specify the URL to an alternative icon that should be used for the
 symbol [Default is a Google Earth circle]. If the URL starts with +
 then we will prepend
 <a class="reference external" href="http://maps.google.com/mapfiles/kml/">http://maps.google.com/mapfiles/kml/</a>
 to the name. To turn off icons entirely (e.g., when just wanting a
-text label), use <strong>-I</strong>-. [Default is a local icon with no directory path].</dd>
+text label), use <strong>-I</strong>-. [Default is a local icon with no directory path].</p>
+</dd>
 </dl>
-<dl class="docutils" id="k">
-<dt><strong>-K</strong></dt>
-<dd>Allow more KML code to be appended to the output later [finalize the KML file].</dd>
-<dt><strong>-L</strong><em>name1</em>,<em>name2</em>,…</dt>
-<dd>Extended data given. Append one or more column names separated by
+<dl class="simple" id="k">
+<dt><strong>-K</strong></dt><dd><p>Allow more KML code to be appended to the output later [finalize the KML file].</p>
+</dd>
+<dt><strong>-L</strong><em>name1</em>,<em>name2</em>,…</dt><dd><p>Extended data given. Append one or more column names separated by
 commas. We will expect the listed data columns to exist in the input
 immediately following the data coordinates required for the selected
 feature set by <strong>-F</strong>, and they will be encoded
@@ -214,11 +211,11 @@ accommodate the number of columns requested.  If the number of extended
 data is one larger than the number of available numerical columns then
 the entire trailing text is set as the last extended data column.
 Otherwise, the trailing text is split into individual words and
-set as separate extended columns.</dd>
+set as separate extended columns.</p>
+</dd>
 </dl>
-<dl class="docutils" id="n">
-<dt><strong>-N</strong>[<strong>t</strong>|<em>col</em> |<em>name_template</em>|<em>name</em>]</dt>
-<dd>By default, if segment headers contain a <strong>-L</strong>”label string” then
+<dl class="simple" id="n">
+<dt><strong>-N</strong>[<strong>t</strong>|<em>col</em> |<em>name_template</em>|<em>name</em>]</dt><dd><p>By default, if segment headers contain a <strong>-L</strong>”label string” then
 we use that for the name of the KML feature (polygon, line segment
 or set of symbols). Default names for these segments are “Line %d”
 and “Point Set %d”, depending on the feature, where %d is a sequence
@@ -233,114 +230,115 @@ include %d or a similar integer format to assign unique name IDs for
 each feature, with the segment number (for lines and polygons) or
 point number (symbols) appearing where %d is placed, (4) give no
 arguments to turn symbol labeling off; line segments will still be
-named. Also note that options (2) is not available unless input is an ASCII file.</dd>
+named. Also note that options (2) is not available unless input is an ASCII file.</p>
+</dd>
 </dl>
-<dl class="docutils" id="o">
-<dt><strong>-O</strong></dt>
-<dd>Append KML code to an existing KML file [initialize a new KML file].</dd>
+<dl class="simple" id="o">
+<dt><strong>-O</strong></dt><dd><p>Append KML code to an existing KML file [initialize a new KML file].</p>
+</dd>
 </dl>
-<dl class="docutils" id="q">
-<dt><strong>-Qa</strong>|<strong>i</strong><em>azimuth</em></dt>
-<dd>Option in support of wiggle plots (requires <strong>-Fw</strong>). You may
+<dl class="simple" id="q">
+<dt><strong>-Qa</strong>|<strong>i</strong><em>azimuth</em></dt><dd><p>Option in support of wiggle plots (requires <strong>-Fw</strong>). You may
 control which directions the positive wiggles will tend to point
 to with <strong>-Qa</strong>.  The provided azimuth defines a half-circle
 centered on the selected azimuth [0] where positive anomalies
 will plot.  If outside then switch by 180 degrees.  Alternatively,
-use <strong>-Qi</strong> to set a fixed direction with no further variation.</dd>
-<dt><strong>-Qs</strong><em>scale</em>[<em>unit</em>]</dt>
-<dd>Required setting for wiggle plots (i.e., it requires <strong>-Fw</strong>).
+use <strong>-Qi</strong> to set a fixed direction with no further variation.</p>
+</dd>
+<dt><strong>-Qs</strong><em>scale</em>[<em>unit</em>]</dt><dd><p>Required setting for wiggle plots (i.e., it requires <strong>-Fw</strong>).
 Sets a wiggle scale in <em>z</em>-data units per the user’s units (given
 via the trailing unit taken from d|m|s|e|f|k|M|n|u [e]). This scale
 is then inverted to yield degrees per user z-unit and used to
-convert wiggle anomalies to map distances and positions.</dd>
+convert wiggle anomalies to map distances and positions.</p>
+</dd>
 </dl>
-<dl class="docutils" id="r">
-<dt><strong>-Re</strong>|<em>w/e/s/n</em></dt>
-<dd>Issue a single Region tag. Append <em>w/e/s/n</em> to set a particular
+<dl class="simple" id="r">
+<dt><strong>-Re</strong>|<em>w/e/s/n</em></dt><dd><p>Issue a single Region tag. Append <em>w/e/s/n</em> to set a particular
 region (will ignore points outside the region), or append <strong>e</strong> to
 determine and use the exact domain of the data (single file only)
-[no region tags issued].</dd>
+[no region tags issued].</p>
+</dd>
 </dl>
-<dl class="docutils" id="s">
-<dt><strong>-S</strong><strong>c</strong>|<strong>n</strong><em>scale</em>]</dt>
-<dd>Scale icons or labels. Here, <strong>-Sc</strong> sets a scale for the symbol
-icon, whereas <strong>-Sn</strong> sets a scale for the name labels [1 for both].</dd>
+<dl class="simple" id="s">
+<dt><strong>-S</strong><strong>c</strong>|<strong>n</strong><em>scale</em>]</dt><dd><p>Scale icons or labels. Here, <strong>-Sc</strong> sets a scale for the symbol
+icon, whereas <strong>-Sn</strong> sets a scale for the name labels [1 for both].</p>
+</dd>
 </dl>
-<dl class="docutils" id="t">
-<dt><strong>-T</strong><em>title</em>[/<em>foldername</em>]</dt>
-<dd>Sets the document title [default is unset]. Optionally, append
+<dl class="simple" id="t">
+<dt><strong>-T</strong><em>title</em>[/<em>foldername</em>]</dt><dd><p>Sets the document title [default is unset]. Optionally, append
 /<em>FolderName</em>; this allows you, with <strong>-O</strong>, <strong>-K</strong>, to group
 features into folders within the KML document. [The default folder
 name is “<em>Name</em> Features”, where <em>Name</em> is Point, Event, Timespan,
-Line, Polygon or Wiggle].</dd>
+Line, Polygon or Wiggle].</p>
+</dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
 </dl>
-<dl class="docutils" id="w">
-<dt><strong>-W</strong>[<em>pen</em>][<em>attr</em>] <a class="reference internal" href="GMT_Docs_classic.html#wpen-attrib"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set pen attributes for lines, wiggles or polygon outlines. Append pen
+<dl class="simple" id="w">
+<dt><strong>-W</strong>[<em>pen</em>][<em>attr</em>] <a class="reference internal" href="GMT_Docs_classic.html#wpen-attrib"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set pen attributes for lines, wiggles or polygon outlines. Append pen
 attributes to use [Defaults: width = default, color = black, style =
 solid]. If the modifier <strong>+cl</strong> is appended then the color of the line
 are taken from the CPT (see <strong>-C</strong>). If instead modifier <strong>+cf</strong> is
 appended then the color from the cpt file is applied to symbol fill.
 Use just <strong>+c</strong> for both effects.  Note that for KML the pen width is
-given in (fractional) pixels and not in points (1/72 inch).</dd>
+given in (fractional) pixels and not in points (1/72 inch).</p>
+</dd>
 </dl>
-<dl class="docutils" id="z">
-<dt><strong>-Z</strong><em>args</em></dt>
-<dd>Set one or more attributes of the Document and Region tags. Append
+<dl class="simple" id="z">
+<dt><strong>-Z</strong><em>args</em></dt><dd><p>Set one or more attributes of the Document and Region tags. Append
 <strong>+a</strong><em>alt_min/alt_max</em> to specify limits on visibility based on
 altitude. Append <strong>+l</strong><em>lod_min/lod_max</em> to specify limits on
 visibility based on Level Of Detail, where <em>lod_max</em> == -1 means it
 is visible to infinite size. Append <strong>+f</strong><em>fade_min/fade_max</em> to
 fade in and out over a ramp [abrupt]. Append <strong>+v</strong> to make a
 feature <em>not</em> visible when loaded [visible]. Append <strong>+o</strong> to open a
-folder or document in the sidebar when loaded [closed].</dd>
+folder or document in the sidebar when loaded [closed].</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select native binary format for primary input. [Default is 2 or more input columns, depending on settings].</dd>
+<dl class="simple">
+<dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select native binary format for primary input. [Default is 2 or more input columns, depending on settings].</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-di</strong><em>nodata</em> <a class="reference internal" href="gmt.html#di-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Replace input columns that equal <em>nodata</em> with NaN.  </dd>
+<dl class="simple">
+<dt><strong>-di</strong><em>nodata</em> <a class="reference internal" href="gmt.html#di-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Replace input columns that equal <em>nodata</em> with NaN.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-e</strong>[<strong>~</strong>]<em>”pattern”</em> <strong>|</strong> <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] <a class="reference internal" href="gmt.html#e-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Only accept data records that match the given pattern.  </dd>
+<dl class="simple">
+<dt><strong>-e</strong>[<strong>~</strong>]<em>”pattern”</em> <strong>|</strong> <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] <a class="reference internal" href="gmt.html#e-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Only accept data records that match the given pattern.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Specify data types of input and/or output columns.  </dd>
+<dl class="simple">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify data types of input and/or output columns.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>] <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Determine data gaps and line breaks.  </dd>
+<dl class="simple">
+<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>] <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Determine data gaps and line breaks.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Skip or produce header record(s).  </dd>
+<dl class="simple">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Skip or produce header record(s).  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select input columns and transformations (0 is first column, <em>t</em> is trailing text, append <em>word</em> to read one word only).</dd>
+<dl class="simple">
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select input columns and transformations (0 is first column, <em>t</em> is trailing text, append <em>word</em> to read one word only).</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="gmt.html#colon-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Swap 1st and 2nd column on input and/or output.</dd>
+<dl class="simple">
+<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="gmt.html#colon-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Swap 1st and 2nd column on input and/or output.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
+<dl class="simple">
+<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
+</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</p>
+</dd>
+<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="examples">
@@ -546,7 +544,7 @@ use it.</p>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="G.html" >G</a> &#187;</li>
 <li class="right">
@@ -565,8 +563,8 @@ use it.</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

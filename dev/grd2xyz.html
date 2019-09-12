@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>grd2xyz &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>grd2xyz &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="GR.html" accesskey="U">GR</a> &#187;</li>
 <li class="right">
@@ -94,41 +92,40 @@ output z-values without the (x,y) coordinates; see <strong>-Z</strong> below.</p
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><em>grid</em></dt>
-<dd>Names of 2-D binary grid files to be converted. (See GRID FILE
-FORMATS below.)</dd>
+<dl class="simple">
+<dt><em>grid</em></dt><dd><p>Names of 2-D binary grid files to be converted. (See GRID FILE
+FORMATS below.)</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="c">
-<dt><strong>-C</strong>[<strong>f</strong>|<strong>i</strong>]</dt>
-<dd>Replace the x- and y-coordinates on output with the corresponding
+<dl class="simple" id="c">
+<dt><strong>-C</strong>[<strong>f</strong>|<strong>i</strong>]</dt><dd><p>Replace the x- and y-coordinates on output with the corresponding
 column and row numbers. These start at 0 (C-style counting); append
 <strong>f</strong> to start at 1 (Fortran-style counting). Alternatively, append
 <strong>i</strong> to write just the two columns <em>index</em> and <em>z</em>, where <em>index</em>
-is the 1-D indexing that GMT uses when referring to grid nodes.</dd>
+is the 1-D indexing that GMT uses when referring to grid nodes.</p>
+</dd>
 </dl>
-<dl class="docutils" id="r">
-<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Specify the region of interest. Using the <strong>-R</strong> option
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify the region of interest. Using the <strong>-R</strong> option
 will select a subsection of the grid. If this subsection exceeds the
-boundaries of the grid, only the common region will be output.</dd>
+boundaries of the grid, only the common region will be output.</p>
+</dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
 </dl>
-<dl class="docutils" id="w">
-<dt><strong>-W</strong>[<strong>a</strong>|<em>weight</em>]</dt>
-<dd>Write out <em>x,y,z,w</em>, where <em>w</em> is the supplied <em>weight</em> (or 1 if not
+<dl class="simple" id="w">
+<dt><strong>-W</strong>[<strong>a</strong>|<em>weight</em>]</dt><dd><p>Write out <em>x,y,z,w</em>, where <em>w</em> is the supplied <em>weight</em> (or 1 if not
 supplied) [Default writes <em>x,y,z</em> only].  Choose <strong>-Wa</strong> to compute
-weights equal to the area each node represents.</dd>
+weights equal to the area each node represents.</p>
+</dd>
 </dl>
-<dl class="docutils" id="z">
-<dt><strong>-Z</strong>[<em>flags</em>]</dt>
-<dd><p class="first">Write a 1-column ASCII [or binary] table. Output will be organized
+<dl id="z">
+<dt><strong>-Z</strong>[<em>flags</em>]</dt><dd><p>Write a 1-column ASCII [or binary] table. Output will be organized
 according to the specified ordering convention contained in <em>flags</em>.
 If data should be written by rows, make <em>flags</em> start with
 <strong>T</strong> (op) if first row is y = ymax or
@@ -143,56 +140,56 @@ periodic in y, skip writing the redundant row at y = ymax by
 appending <strong>y</strong>. If the byte-order needs to be swapped, append
 <strong>w</strong>. Select one of several data types (all binary except <strong>a</strong>):</p>
 <ul class="simple">
-<li><strong>a</strong> ASCII representation of a single item per record</li>
-<li><strong>c</strong> int8_t, signed 1-byte character</li>
-<li><strong>u</strong> uint8_t, unsigned 1-byte character</li>
-<li><strong>h</strong> int16_t, short 2-byte integer</li>
-<li><strong>H</strong> uint16_t, unsigned short 2-byte integer</li>
-<li><strong>i</strong> int32_t, 4-byte integer</li>
-<li><strong>I</strong> uint32_t, unsigned 4-byte integer</li>
-<li><strong>l</strong> int64_t, long (8-byte) integer</li>
-<li><strong>L</strong> uint64_t, unsigned long (8-byte) integer</li>
-<li><strong>f</strong> 4-byte floating point single precision</li>
-<li><strong>d</strong> 8-byte floating point double precision</li>
+<li><p><strong>a</strong> ASCII representation of a single item per record</p></li>
+<li><p><strong>c</strong> int8_t, signed 1-byte character</p></li>
+<li><p><strong>u</strong> uint8_t, unsigned 1-byte character</p></li>
+<li><p><strong>h</strong> int16_t, short 2-byte integer</p></li>
+<li><p><strong>H</strong> uint16_t, unsigned short 2-byte integer</p></li>
+<li><p><strong>i</strong> int32_t, 4-byte integer</p></li>
+<li><p><strong>I</strong> uint32_t, unsigned 4-byte integer</p></li>
+<li><p><strong>l</strong> int64_t, long (8-byte) integer</p></li>
+<li><p><strong>L</strong> uint64_t, unsigned long (8-byte) integer</p></li>
+<li><p><strong>f</strong> 4-byte floating point single precision</p></li>
+<li><p><strong>d</strong> 8-byte floating point double precision</p></li>
 </ul>
-<p class="last">Default format is scanline orientation of ASCII numbers: <strong>-ZTLa</strong>.
+<p>Default format is scanline orientation of ASCII numbers: <strong>-ZTLa</strong>.
 Note that <strong>-Z</strong> only applies to 1-column output.</p>
 </dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>] <a class="reference internal" href="gmt.html#bo-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select native binary output. [Default is 3]. This option
-only applies to xyz output; see <strong>-Z</strong> for z table output.</dd>
+<dl class="simple">
+<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>] <a class="reference internal" href="gmt.html#bo-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select native binary output. [Default is 3]. This option
+only applies to xyz output; see <strong>-Z</strong> for z table output.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em> <a class="reference internal" href="gmt.html#d-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Replace input columns that equal <em>nodata</em> with NaN and do the reverse on output.  </dd>
+<dl class="simple">
+<dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em> <a class="reference internal" href="gmt.html#d-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Replace input columns that equal <em>nodata</em> with NaN and do the reverse on output.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Specify data types of input and/or output columns. See also <strong>TIME
+<dl class="simple">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify data types of input and/or output columns. See also <strong>TIME
 COORDINATES</strong> below. <strong>-h</strong> Output 1 header record based on
 information in the first grid file header. Ignored if binary output
-is selected. [Default is no header].</dd>
+is selected. [Default is no header].</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-o</strong><em>cols</em>[,…][<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#ocols-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select output columns (0 is first column; <em>t</em> is trailing text, append <em>word</em> to write one word only).</dd>
+<dl class="simple">
+<dt><strong>-o</strong><em>cols</em>[,…][<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#ocols-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select output columns (0 is first column; <em>t</em> is trailing text, append <em>word</em> to write one word only).</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-s</strong>[<em>cols</em>][<strong>+a</strong>|<strong>+r</strong>] <a class="reference internal" href="gmt.html#s-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set handling of NaN records.</dd>
+<dl class="simple">
+<dt><strong>-s</strong>[<em>cols</em>][<strong>+a</strong>|<strong>+r</strong>] <a class="reference internal" href="gmt.html#s-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set handling of NaN records.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
+<dl class="simple">
+<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
+</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</p>
+</dd>
+<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="ascii-format-precision">
@@ -305,7 +302,7 @@ the file raw_data.nc file, using scanline orientation, run</p>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="GR.html" >GR</a> &#187;</li>
 <li class="right">
@@ -324,8 +321,8 @@ the file raw_data.nc file, using scanline orientation, run</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

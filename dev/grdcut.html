@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>grdcut &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>grdcut &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="GR.html" accesskey="U">GR</a> &#187;</li>
 <li class="right">
@@ -95,44 +93,43 @@ will join together two grid files along a common edge.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><em>ingrid</em></dt>
-<dd>This is the input grid file.</dd>
+<dl class="simple">
+<dt><em>ingrid</em></dt><dd><p>This is the input grid file.</p>
+</dd>
 </dl>
-<dl class="docutils" id="g">
-<dt><strong>-G</strong><em>outgrid</em></dt>
-<dd>This is the output grid file.</dd>
+<dl class="simple" id="g">
+<dt><strong>-G</strong><em>outgrid</em></dt><dd><p>This is the output grid file.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="j">
-<dt><strong>-J</strong><em>parameters</em> <a class="reference internal" href="gmt.html#j-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select map projection.  </dd>
+<dl class="simple" id="j">
+<dt><strong>-J</strong><em>parameters</em> <a class="reference internal" href="gmt.html#j-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select map projection.  </p>
+</dd>
 </dl>
-<dl class="docutils" id="n">
-<dt><strong>-N</strong>[<em>nodata</em>]</dt>
-<dd>Allow grid to be extended if new <strong>-R</strong> exceeds existing boundaries.
-Append <em>nodata</em> value to initialize nodes outside current region [Default is NaN].</dd>
+<dl class="simple" id="n">
+<dt><strong>-N</strong>[<em>nodata</em>]</dt><dd><p>Allow grid to be extended if new <strong>-R</strong> exceeds existing boundaries.
+Append <em>nodata</em> value to initialize nodes outside current region [Default is NaN].</p>
+</dd>
 </dl>
-<dl class="docutils" id="r">
-<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Specify the region of interest. This defines the subregion to be cut out.</dd>
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify the region of interest. This defines the subregion to be cut out.</p>
+</dd>
 </dl>
-<dl class="docutils" id="s">
-<dt><strong>-S</strong><em>lon/lat/radius</em>[<em>unit</em>][<strong>+n</strong>]</dt>
-<dd>Specify an origin and radius; append a distance unit (see <a class="reference internal" href="ternary.html#unit-attributes"><span class="std std-ref">Units</span></a>) and
+<dl class="simple" id="s">
+<dt><strong>-S</strong><em>lon/lat/radius</em>[<em>unit</em>][<strong>+n</strong>]</dt><dd><p>Specify an origin and radius; append a distance unit (see <a class="reference internal" href="ternary.html#unit-attributes"><span class="std std-ref">Units</span></a>) and
 we determine the corresponding rectangular region so that all grid
 nodes on or inside the circle are contained in the subset. If
-<strong>+n</strong> is appended we set all nodes outside the circle to NaN.</dd>
+<strong>+n</strong> is appended we set all nodes outside the circle to NaN.</p>
+</dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
 </dl>
-<dl class="docutils" id="z">
-<dt><strong>-Z</strong>[<em>min/max</em>][<strong>+n</strong>|<strong>N</strong>|<strong>r</strong>]</dt>
-<dd>Determine a new rectangular region so that all nodes <em>outside</em> this
+<dl class="simple" id="z">
+<dt><strong>-Z</strong>[<em>min/max</em>][<strong>+n</strong>|<strong>N</strong>|<strong>r</strong>]</dt><dd><p>Determine a new rectangular region so that all nodes <em>outside</em> this
 region are also outside the given <em>z</em>-range [-inf/+inf]. To indicate
 no limit on min or max only, specify a hyphen (-). Normally, any NaNs
 encountered are simply skipped and not considered in the range-decision.
@@ -143,22 +140,23 @@ shrinking the boundaries once a NaN is found [Default simply skips NaNs
 when making the range decision].  Finally, if your core subset grid is
 surrounded by rows and/or columns that are all NaNs, append <strong>+N</strong> to
 strip off such columns before (optionally) considering the range of the
-core subset for further reduction of the area.</dd>
+core subset for further reduction of the area.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Specify data types of input and/or output columns.  </dd>
+<dl class="simple">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify data types of input and/or output columns.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
+<dl class="simple">
+<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
+</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</p>
+</dd>
+<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="units">
@@ -300,7 +298,7 @@ lower left and upper right corners and the desired projection, use</p>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="GR.html" >GR</a> &#187;</li>
 <li class="right">
@@ -319,8 +317,8 @@ lower left and upper right corners and the desired projection, use</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

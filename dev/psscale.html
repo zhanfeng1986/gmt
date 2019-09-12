@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>psscale &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>psscale &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="PS_classic.html" accesskey="U">Classic Mode Mapping</a> &#187;</li>
 <li class="right">
@@ -115,9 +113,8 @@ If a label is requested, it is plotted with <a class="reference internal" href="
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="b">
-<dt><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em></dt>
-<dd>Set annotation, tick, and gridline interval for the colorbar. The
+<dl class="simple" id="b">
+<dt><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em></dt><dd><p>Set annotation, tick, and gridline interval for the colorbar. The
 x-axis label will plot beneath a horizontal bar (or vertically to
 the right of a vertical bar), except when using the <strong>+m</strong> modifier of the <strong>-D</strong> option. As an
 option, use the y-axis label to plot the data unit to the right of a
@@ -126,15 +123,15 @@ provided, the default is to annotate every color level based on the
 numerical entries in the CPT (which may be overridden by ULB
 flags in the CPT). To specify custom text annotations for
 intervals, you must append ;<em>annotation</em> to each z-slice in the CPT.
-For standard <strong>-B</strong> operations, see below.</dd>
+For standard <strong>-B</strong> operations, see below.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> <a class="reference internal" href="gmt.html#b-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set map boundary frame and axes attributes.</dd>
+<dl class="simple">
+<dt><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> <a class="reference internal" href="gmt.html#b-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set map boundary frame and axes attributes.</p>
+</dd>
 </dl>
-<dl class="docutils" id="c">
-<dt><strong>-C</strong>[<em>cpt</em>]</dt>
-<dd><em>cpt</em> is the CPT to be used. If no <em>cpt</em> is appended or no <strong>-C</strong> is given
+<dl class="simple" id="c">
+<dt><strong>-C</strong>[<em>cpt</em>]</dt><dd><p><em>cpt</em> is the CPT to be used. If no <em>cpt</em> is appended or no <strong>-C</strong> is given
 then we use the current CPT (modern mode only).  In classic mode, if no <strong>-C</strong>
 is given then we read stdin.  By default all
 color changes are annotated. To use a subset, add an extra column to
@@ -147,11 +144,11 @@ when plotting.  To do so, append <strong>+U</strong><em>unit</em> to the file na
 Likewise, if the CPT uses another unit than meter and you wish
 to plot the CPT versus meters, append <strong>+u</strong><em>unit</em>.
 If a GMT master dynamic CPT is given instead then its <em>z</em>-range will
-be set to its default range (if it has one) before plotting.</dd>
+be set to its default range (if it has one) before plotting.</p>
+</dd>
 </dl>
-<dl class="docutils" id="d">
-<dt><strong>-D</strong>[<strong>g</strong>|<strong>j</strong>|<strong>J</strong>|<strong>n</strong>|<strong>x</strong>]<em>refpoint</em>[<strong>+w</strong><em>length</em>[/<em>width</em>]][<strong>+e</strong>[<strong>b</strong>|<strong>f</strong>][<em>length</em>]][<strong>+h</strong>|<strong>v</strong>][<strong>+j</strong><em>justify</em>][<strong>+m</strong>[<strong>a</strong>|<strong>c</strong>|<strong>l</strong>|<strong>u</strong>]][<strong>+n</strong>[<em>txt</em>]][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</dt>
-<dd>Defines the reference point on the map for the color scale using one of four coordinate systems:
+<dl class="simple" id="d">
+<dt><strong>-D</strong>[<strong>g</strong>|<strong>j</strong>|<strong>J</strong>|<strong>n</strong>|<strong>x</strong>]<em>refpoint</em>[<strong>+w</strong><em>length</em>[/<em>width</em>]][<strong>+e</strong>[<strong>b</strong>|<strong>f</strong>][<em>length</em>]][<strong>+h</strong>|<strong>v</strong>][<strong>+j</strong><em>justify</em>][<strong>+m</strong>[<strong>a</strong>|<strong>c</strong>|<strong>l</strong>|<strong>u</strong>]][<strong>+n</strong>[<em>txt</em>]][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</dt><dd><p>Defines the reference point on the map for the color scale using one of four coordinate systems:
 (1) Use <strong>-Dg</strong> for map (user) coordinates, (2) use <strong>-Dj</strong> or <strong>-DJ</strong> for setting <em>refpoint</em> via
 a 2-char justification code that refers to the (invisible) map domain rectangle,
 (3) use <strong>-Dn</strong> for normalized (0-1) coordinates, or (4) use <strong>-Dx</strong> for plot coordinates
@@ -187,11 +184,11 @@ unit that will be moved to the opposite side. Append <strong>c</strong> if you w
 vertical label as a column of characters (does not work with special characters).
 Append <strong>+n</strong> to plot a rectangle with the NaN color at
 the start of the bar, append <em>text</em> to change label from NaN.
-If not given, the default argument is JBC (Place color bar centered beneath current plot).</dd>
+If not given, the default argument is JBC (Place color bar centered beneath current plot).</p>
+</dd>
 </dl>
-<dl class="docutils" id="f">
-<dt><strong>-F</strong>[<strong>+c</strong><em>clearances</em>][<strong>+g</strong><em>fill</em>][<strong>+i</strong>[[<em>gap</em>/]<em>pen</em>]][<strong>+p</strong>[<em>pen</em>]][<strong>+r</strong>[<em>radius</em>]][<strong>+s</strong>[[<em>dx</em>/<em>dy</em>/][<em>shade</em>]]]</dt>
-<dd>Without further options, draws a rectangular border around the scale using
+<dl class="simple" id="f">
+<dt><strong>-F</strong>[<strong>+c</strong><em>clearances</em>][<strong>+g</strong><em>fill</em>][<strong>+i</strong>[[<em>gap</em>/]<em>pen</em>]][<strong>+p</strong>[<em>pen</em>]][<strong>+r</strong>[<em>radius</em>]][<strong>+s</strong>[[<em>dx</em>/<em>dy</em>/][<em>shade</em>]]]</dt><dd><p>Without further options, draws a rectangular border around the scale using
 <strong>MAP_FRAME_PEN</strong>; specify a different pen with <strong>+p</strong><em>pen</em>.
 Add <strong>+g</strong><em>fill</em> to fill the scale panel [no fill].
 Append <strong>+c</strong><em>clearance</em> where <em>clearance</em> is either <em>gap</em>, <em>xgap</em>/<em>ygap</em>,
@@ -204,57 +201,57 @@ rectangular borders instead, with a 6<strong>p</strong> corner radius. You can
 override this radius by appending another value. Finally, append
 <strong>+s</strong> to draw an offset background shaded region. Here, <em>dx</em>/<em>dy</em>
 indicates the shift relative to the foreground frame
-[4<strong>p</strong>/-4<strong>p</strong>] and <em>shade</em> sets the fill style to use for shading [gray50].</dd>
+[4<strong>p</strong>/-4<strong>p</strong>] and <em>shade</em> sets the fill style to use for shading [gray50].</p>
+</dd>
 </dl>
-<dl class="docutils" id="g">
-<dt><strong>-G</strong><em>zlo</em>/<em>zhi</em></dt>
-<dd>Truncate the incoming CPT so that the lowest and highest z-levels
+<dl class="simple" id="g">
+<dt><strong>-G</strong><em>zlo</em>/<em>zhi</em></dt><dd><p>Truncate the incoming CPT so that the lowest and highest z-levels
 are to <em>zlo</em> and <em>zhi</em>.  If one of these equal NaN then
 we leave that end of the CPT alone.  The truncation takes place
-before the plotting.</dd>
+before the plotting.</p>
+</dd>
 </dl>
-<dl class="docutils" id="i">
-<dt><strong>-I</strong>[<em>max_intens</em>|<em>low_i</em>/<em>high_i</em>]</dt>
-<dd>Add illumination effects. Optionally, set the range of intensities
+<dl class="simple" id="i">
+<dt><strong>-I</strong>[<em>max_intens</em>|<em>low_i</em>/<em>high_i</em>]</dt><dd><p>Add illumination effects. Optionally, set the range of intensities
 from - to + <em>max_intens</em>. If not specified, 1 is used.
 Alternatively, append <em>low/high</em> intensities to specify an
-asymmetric range [Default is no illumination].</dd>
+asymmetric range [Default is no illumination].</p>
+</dd>
 </dl>
-<dl class="docutils" id="j">
-<dt><strong>-J</strong><em>parameters</em> <a class="reference internal" href="gmt.html#j-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select map projection.  </dd>
+<dl class="simple" id="j">
+<dt><strong>-J</strong><em>parameters</em> <a class="reference internal" href="gmt.html#j-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select map projection.  </p>
+</dd>
 </dl>
-<dl class="docutils" id="l">
-<dt><strong>-L</strong>[<strong>i</strong>][<em>gap</em>]</dt>
-<dd>Gives equal-sized color rectangles. Default scales rectangles
+<dl class="simple" id="l">
+<dt><strong>-L</strong>[<strong>i</strong>][<em>gap</em>]</dt><dd><p>Gives equal-sized color rectangles. Default scales rectangles
 according to the z-range in the CPT (Also see <strong>-Z</strong>). If set,
 any equal interval annotation set with <strong>-B</strong> will be ignored. If
 <em>gap</em> is appended and the CPT is discrete we will center each
 annotation on each rectangle, using the lower boundary z-value for
 the annotation. If <strong>i</strong> is prepended we annotate the interval range
 instead. If <strong>-I</strong> is used then each rectangle will have its
-constant color modified by the specified intensity.</dd>
+constant color modified by the specified intensity.</p>
+</dd>
 </dl>
-<dl class="docutils" id="m">
-<dt><strong>-M</strong></dt>
-<dd>Force a monochrome graybar using the (television) YIQ transformation.</dd>
+<dl class="simple" id="m">
+<dt><strong>-M</strong></dt><dd><p>Force a monochrome graybar using the (television) YIQ transformation.</p>
+</dd>
 </dl>
-<dl class="docutils" id="n">
-<dt><strong>-N</strong>[<strong>p</strong>|<em>dpi</em>]</dt>
-<dd>Controls how the color scale should be encoded graphically.
+<dl class="simple" id="n">
+<dt><strong>-N</strong>[<strong>p</strong>|<em>dpi</em>]</dt><dd><p>Controls how the color scale should be encoded graphically.
 To preferentially draw color rectangles (e.g., for discrete colors), append <strong>p</strong>.
 Otherwise we will preferentially draw images (e.g., for continuous colors).
-Optionally append effective dots-per-inch for rasterization of color scales [600].</dd>
+Optionally append effective dots-per-inch for rasterization of color scales [600].</p>
+</dd>
 </dl>
-<dl class="docutils" id="q">
-<dt><strong>-Q</strong></dt>
-<dd>Select logarithmic scale and power of ten annotations. All z-values
+<dl class="simple" id="q">
+<dt><strong>-Q</strong></dt><dd><p>Select logarithmic scale and power of ten annotations. All z-values
 in the CPT will be converted to p = log10(z) and only integer p
-values will be annotated using the 10^p format [Default is linear scale].</dd>
+values will be annotated using the 10^p format [Default is linear scale].</p>
+</dd>
 </dl>
-<dl class="docutils" id="r">
-<dt><strong>-R</strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt>
-<dd><em>west</em>, <em>east</em>, <em>south</em>, and <em>north</em> specify the region of interest,
+<dl class="simple" id="r">
+<dt><strong>-R</strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt><dd><p><em>west</em>, <em>east</em>, <em>south</em>, and <em>north</em> specify the region of interest,
 and you may specify them in decimal degrees or in
 [±]dd:mm[:ss.xxx][<strong>W</strong>|<strong>E</strong>|<strong>S</strong>|<strong>N</strong>] format
 Append <strong>+r</strong> if lower left
@@ -288,72 +285,73 @@ In case of perspective view (<strong>-p</strong>), a z-range (<em>zmin</em>, <em
 can be appended to indicate the third dimension. This needs to be
 done only when using the <strong>-Jz</strong> option, not when using only the
 <strong>-p</strong> option. In the latter case a perspective view of the plane is
-plotted, with no third dimension.  </dd>
+plotted, with no third dimension.  </p>
+</dd>
 </dl>
 <p>For perspective view <strong>p</strong>, optionally append /<em>zmin</em>/<em>zmax</em>. <a class="reference internal" href="gmt.html#rz-full"><span class="std std-ref">(more …)</span></a>  </p>
-<dl class="docutils" id="s">
-<dt><strong>-S</strong></dt>
-<dd>Do not separate different color intervals with black grid lines.</dd>
+<dl class="simple" id="s">
+<dt><strong>-S</strong></dt><dd><p>Do not separate different color intervals with black grid lines.</p>
+</dd>
 </dl>
-<dl class="docutils" id="u">
-<dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>] <a class="reference internal" href="gmt.html#u-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Draw GMT time stamp logo on plot.</dd>
+<dl class="simple" id="u">
+<dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>] <a class="reference internal" href="gmt.html#u-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Draw GMT time stamp logo on plot.</p>
+</dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
 </dl>
-<dl class="docutils" id="w">
-<dt><strong>-W</strong><em>scale</em></dt>
-<dd>Multiply all <em>z</em>-values in the CPT by the provided <em>scale</em>.
-By default the CPT is used as is.</dd>
+<dl class="simple" id="w">
+<dt><strong>-W</strong><em>scale</em></dt><dd><p>Multiply all <em>z</em>-values in the CPT by the provided <em>scale</em>.
+By default the CPT is used as is.</p>
+</dd>
 </dl>
 <p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</p>
-<dl class="docutils">
-<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Shift plot origin.</dd>
+<dl class="simple">
+<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Shift plot origin.</p>
+</dd>
 </dl>
-<dl class="docutils" id="z">
-<dt><strong>-Z</strong><em>zfile</em></dt>
-<dd>File with colorbar-width per color entry. By default, width of entry
+<dl class="simple" id="z">
+<dt><strong>-Z</strong><em>zfile</em></dt><dd><p>File with colorbar-width per color entry. By default, width of entry
 is scaled to color range, i.e., z = 0-100 gives twice the width as z
-= 100-150 (Also see <strong>-L</strong>).</dd>
+= 100-150 (Also see <strong>-L</strong>).</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-p</strong>[<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>azim</em>[/<em>elev</em>[/<em>zlevel</em>]][<strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>z0</em>]][<strong>+v</strong><em>x0</em>/<em>y0</em>] <a class="reference internal" href="gmt.html#perspective-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select perspective view. (Required <strong>-R</strong> and <strong>-J</strong> for proper functioning).</dd>
+<dl class="simple">
+<dt><strong>-p</strong>[<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>azim</em>[/<em>elev</em>[/<em>zlevel</em>]][<strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>z0</em>]][<strong>+v</strong><em>x0</em>/<em>y0</em>] <a class="reference internal" href="gmt.html#perspective-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select perspective view. (Required <strong>-R</strong> and <strong>-J</strong> for proper functioning).</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-t</strong>[<em>transp</em>] <a class="reference internal" href="gmt.html#t-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set transparency level in percent.</dd>
+<dl class="simple">
+<dt><strong>-t</strong>[<em>transp</em>] <a class="reference internal" href="gmt.html#t-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set transparency level in percent.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
+<dl class="simple">
+<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
+</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</p>
+</dd>
+<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="classic-mode-arguments">
 <h2>Classic Mode Arguments<a class="headerlink" href="#classic-mode-arguments" title="Permalink to this headline">¶</a></h2>
 <p>These options are used to manipulate the building of layered GMT PostScript plots in classic mode.
 They are not available when using GMT modern mode.</p>
-<dl class="docutils" id="k">
-<dt><strong>-K</strong> <a class="reference internal" href="gmt.html#k-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Do not finalize the PostScript plot.</dd>
+<dl class="simple" id="k">
+<dt><strong>-K</strong> <a class="reference internal" href="gmt.html#k-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Do not finalize the PostScript plot.</p>
+</dd>
 </dl>
-<dl class="docutils" id="o">
-<dt><strong>-O</strong> <a class="reference internal" href="gmt.html#o-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Append to existing PostScript plot.</dd>
+<dl class="simple" id="o">
+<dt><strong>-O</strong> <a class="reference internal" href="gmt.html#o-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Append to existing PostScript plot.</p>
+</dd>
 </dl>
-<dl class="docutils" id="p">
-<dt><strong>-P</strong> <a class="reference internal" href="gmt.html#p-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select “Portrait” plot orientation.</dd>
+<dl class="simple" id="p">
+<dt><strong>-P</strong> <a class="reference internal" href="gmt.html#p-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select “Portrait” plot orientation.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="examples">
@@ -386,16 +384,16 @@ Mercator map produced by a previous call, ensuring a 2 cm offset from the map fr
 <div class="section" id="notes">
 <h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>When the CPT is discrete and no illumination is specified, the
+<li><p>When the CPT is discrete and no illumination is specified, the
 color bar will be painted using polygons. For all other cases we must
 paint with an image. Some color printers may give slightly different
 colors for the two methods given identical RGB values.  See option <strong>-N</strong>
 for affecting these decisions.  Also note that for years now, Apple’s
 Preview insists on smoothing deliberately course CPT color images to a blur.
-Use another PDF viewer if this bothers you.</li>
-<li>For cyclic (wrapping) color tables the cyclic symbol is plotted to the right
+Use another PDF viewer if this bothers you.</p></li>
+<li><p>For cyclic (wrapping) color tables the cyclic symbol is plotted to the right
 of the color bar.  If annotations are specified there then we place the cyclic
-symbol at the left, unless <strong>+n</strong> was used in which case we center of the color bar instead.</li>
+symbol at the left, unless <strong>+n</strong> was used in which case we center of the color bar instead.</p></li>
 </ol>
 </div>
 <div class="section" id="see-also">
@@ -458,7 +456,7 @@ symbol at the left, unless <strong>+n</strong> was used in which case we center 
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="PS_classic.html" >Classic Mode Mapping</a> &#187;</li>
 <li class="right">
@@ -477,8 +475,8 @@ symbol at the left, unless <strong>+n</strong> was used in which case we center 
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

@@ -1,13 +1,11 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
 
-    <title>backtracker &#8212; GMT 6.1.0_58a5b88_2019.09.08 documentation</title>
+    <title>backtracker &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -41,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../SUP_SPOTTER.html" accesskey="U">SPOTTER</a> &#187;</li>
 <li class="right">
@@ -104,13 +102,12 @@ additional data fields after the first 3 columns which must have
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="e">
-<dt><strong>-E</strong><em>rotfile</em></dt>
-<dd><p class="first">Give file with rotation parameters. This file must contain one
+<dl id="e">
+<dt><strong>-E</strong><em>rotfile</em></dt><dd><p>Give file with rotation parameters. This file must contain one
 record for each rotation; each record must be of the following
 format:</p>
 <p><em>lon lat tstart [tstop] angle</em> [ <em>khat a b c d e f g df</em> ]</p>
-<p class="last">where <em>tstart</em> and <em>tstop</em> are in Myr and <em>lon lat angle</em> are in
+<p>where <em>tstart</em> and <em>tstop</em> are in Myr and <em>lon lat angle</em> are in
 degrees. <em>tstart</em> and <em>tstop</em> are the ages of the old and young ends
 of a stage. If <em>tstop</em> is not present in the record then a total
 reconstruction rotation is expected and <em>tstop</em> is implicitly set to
@@ -135,32 +132,31 @@ a single total reconstruction rotation.</p>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><em>table</em></dt>
-<dd>One or more ASCII (or binary, see <strong>-bi</strong>[<em>ncols</em>][<em>type</em>]) data
+<dl class="simple">
+<dt><em>table</em></dt><dd><p>One or more ASCII (or binary, see <strong>-bi</strong>[<em>ncols</em>][<em>type</em>]) data
 table file(s) holding a number of data columns. If no tables are given
-then we read from standard input.  </dd>
+then we read from standard input.  </p>
+</dd>
 </dl>
-<dl class="docutils" id="a">
-<dt><strong>-A</strong>[<em>young</em>/<em>old</em>]</dt>
-<dd>Used in conjunction with <strong>-Lb</strong>|<strong>f</strong> to limit the track
+<dl class="simple" id="a">
+<dt><strong>-A</strong>[<em>young</em>/<em>old</em>]</dt><dd><p>Used in conjunction with <strong>-Lb</strong>|<strong>f</strong> to limit the track
 output to those sections whose predicted ages lie between the
 specified <em>young</em> and <em>old</em> limits. If <strong>-LB</strong>|<strong>F</strong> is used
 instead then the limits apply to the stage ids (id 1 is the youngest
 stage). If no limits are specified then individual limits for each
-record are expected in columns 4 and 5 of the input file.</dd>
+record are expected in columns 4 and 5 of the input file.</p>
+</dd>
 </dl>
-<dl class="docutils" id="d">
-<dt><strong>-Df</strong>|<strong>b</strong></dt>
-<dd>Set the direction to go: <strong>-Df</strong> will go backward in time (from
+<dl class="simple" id="d">
+<dt><strong>-Df</strong>|<strong>b</strong></dt><dd><p>Set the direction to go: <strong>-Df</strong> will go backward in time (from
 younger to older positions), while <strong>-Db</strong> will go forward in time
 (from older to younger positions) [Default]. Note: For <strong>-Db</strong> you
 are specifying the age at the given location, whereas for <strong>-Df</strong>
-you are not; instead you specify the age at the reconstructed point.</dd>
+you are not; instead you specify the age at the reconstructed point.</p>
+</dd>
 </dl>
-<dl class="docutils" id="f">
-<dt><strong>-F</strong><em>drift.txt</em></dt>
-<dd>Supply a file with (lon, lat, age) records that describe the history
+<dl class="simple" id="f">
+<dt><strong>-F</strong><em>drift.txt</em></dt><dd><p>Supply a file with (lon, lat, age) records that describe the history
 of hotspot motion for the current hotspot. The reconstructions will
 use the 3rd data input column (i.e., the age) to obtain the
 location of the hotspot at that time, via an interpolation of the
@@ -168,102 +164,103 @@ hotspot motion history. Input data locations are then adjusted by the
 change in hotspot location when reconstructing the point or path [No drift].
 Note: (1) When <strong>-F</strong> is used the <strong>-L</strong> <em>step</em> values will be in time (Myr).
 (2) Drift is only considered when backtracking a point (<strong>-Db</strong>) or predicting
-seamount trails (<strong>-Df</strong> <strong>-Lb</strong>). (3) Cannot be used with <strong>-M</strong>.</dd>
+seamount trails (<strong>-Df</strong> <strong>-Lb</strong>). (3) Cannot be used with <strong>-M</strong>.</p>
+</dd>
 </dl>
-<dl class="docutils" id="l">
-<dt><strong>-Lf</strong>|<strong>b</strong>[<em>step</em>]</dt>
-<dd>Specify a sampled path between initial and final position: <strong>-Lf</strong>
+<dl class="simple" id="l">
+<dt><strong>-Lf</strong>|<strong>b</strong>[<em>step</em>]</dt><dd><p>Specify a sampled path between initial and final position: <strong>-Lf</strong>
 will draw particle flowlines, while <strong>-Lb</strong> will draw backtrack
 (hotspot track) paths. Append sampling interval in km. If <em>step</em> &lt; 0 or not provided
 then only the rotation times will be returned. When <strong>-LF</strong> or
 <strong>-LB</strong> is used, the third output column will contain the stage id
 (1 is youngest) [Default is along-track predicted ages]. You can
-control the direction of the paths by using <strong>-D</strong>.</dd>
+control the direction of the paths by using <strong>-D</strong>.</p>
+</dd>
 </dl>
-<dl class="docutils" id="m">
-<dt><strong>-M</strong>[<em>fact</em>]</dt>
-<dd>Scale opening angles by <em>fact</em> on output [0.5].
-Typically used to get half-rates needed for flowlines.</dd>
+<dl class="simple" id="m">
+<dt><strong>-M</strong>[<em>fact</em>]</dt><dd><p>Scale opening angles by <em>fact</em> on output [0.5].
+Typically used to get half-rates needed for flowlines.</p>
+</dd>
 </dl>
-<dl class="docutils" id="n">
-<dt><strong>-N</strong><em>upper_age</em></dt>
-<dd>Set the maximum age to extend the oldest stage rotation back in time
-[Default is no extension].</dd>
+<dl class="simple" id="n">
+<dt><strong>-N</strong><em>upper_age</em></dt><dd><p>Set the maximum age to extend the oldest stage rotation back in time
+[Default is no extension].</p>
+</dd>
 </dl>
-<dl class="docutils" id="q">
-<dt><strong>-Q</strong><em>fixed_age</em></dt>
-<dd>Assign a fixed age to all positions. Only lon, lat input is expected
+<dl class="simple" id="q">
+<dt><strong>-Q</strong><em>fixed_age</em></dt><dd><p>Assign a fixed age to all positions. Only lon, lat input is expected
 [Default expects longitude, latitude, age]. Useful when the input
-are points defining isochrons.</dd>
+are points defining isochrons.</p>
+</dd>
 </dl>
-<dl class="docutils" id="s">
-<dt><strong>-S</strong><em>filestem</em></dt>
-<dd>When <strong>-L</strong> is set, the tracks are normally written to <em>stdout</em> as a
+<dl class="simple" id="s">
+<dt><strong>-S</strong><em>filestem</em></dt><dd><p>When <strong>-L</strong> is set, the tracks are normally written to <em>stdout</em> as a
 multisegment file. Specify a <em>filestem</em> to have each track written
 to <em>filestem.#</em>, where <em>#</em> is the track number. The track number is
-also copied to the 4th output column.</dd>
+also copied to the 4th output column.</p>
+</dd>
 </dl>
-<dl class="docutils" id="t">
-<dt><strong>-T</strong><em>zero_age</em></dt>
-<dd>Set the current time [Default is 0 Ma].</dd>
+<dl class="simple" id="t">
+<dt><strong>-T</strong><em>zero_age</em></dt><dd><p>Set the current time [Default is 0 Ma].</p>
+</dd>
 </dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dl class="simple" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
+</dd>
 </dl>
-<dl class="docutils" id="w">
-<dt><strong>-W</strong>[<strong>a</strong>|<strong>t</strong>]</dt>
-<dd>Rotates the given input (lon,lat,t) and calculates the confidence
+<dl class="simple" id="w">
+<dt><strong>-W</strong>[<strong>a</strong>|<strong>t</strong>]</dt><dd><p>Rotates the given input (lon,lat,t) and calculates the confidence
 ellipse for the projected point. The input point <em>must</em> have a time
 coordinate that exactly matches a particular total reconstruction
 rotation time, otherwise the point will be skipped. Append <strong>t</strong> or
 <strong>a</strong> to output time or angle, respectively, after the projected
 lon, lat. After these 2-3 items, we write azimuth, major, minor (in
 km) for the 95% confidence ellipse. See <strong>-D</strong> for the direction of
-rotation.</dd>
+rotation.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="../../gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select native binary format for primary input. [Default is 3 input columns].</dd>
+<dl class="simple">
+<dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="../../gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select native binary format for primary input. [Default is 3 input columns].</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>] <a class="reference internal" href="../../gmt.html#bo-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select native binary output. [Default is same as input].</dd>
+<dl class="simple">
+<dt><strong>-bo</strong>[<em>ncols</em>][<em>type</em>] <a class="reference internal" href="../../gmt.html#bo-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select native binary output. [Default is same as input].</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em> <a class="reference internal" href="../../gmt.html#d-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Replace input columns that equal <em>nodata</em> with NaN and do the reverse on output.  </dd>
+<dl class="simple">
+<dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em> <a class="reference internal" href="../../gmt.html#d-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Replace input columns that equal <em>nodata</em> with NaN and do the reverse on output.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-e</strong>[<strong>~</strong>]<em>”pattern”</em> <strong>|</strong> <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] <a class="reference internal" href="../../gmt.html#e-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Only accept data records that match the given pattern.  </dd>
+<dl class="simple">
+<dt><strong>-e</strong>[<strong>~</strong>]<em>”pattern”</em> <strong>|</strong> <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] <a class="reference internal" href="../../gmt.html#e-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Only accept data records that match the given pattern.  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="../../gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Skip or produce header record(s).  </dd>
+<dl class="simple">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="../../gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Skip or produce header record(s).  </p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]] <a class="reference internal" href="../../gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select input columns and transformations (0 is first column, <em>t</em> is trailing text, append <em>word</em> to read one word only).</dd>
+<dl class="simple">
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]] <a class="reference internal" href="../../gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select input columns and transformations (0 is first column, <em>t</em> is trailing text, append <em>word</em> to read one word only).</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-o</strong><em>cols</em>[,…][<em>t</em>[<em>word</em>]] <a class="reference internal" href="../../gmt.html#ocols-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select output columns (0 is first column; <em>t</em> is trailing text, append <em>word</em> to write one word only).</dd>
+<dl class="simple">
+<dt><strong>-o</strong><em>cols</em>[,…][<em>t</em>[<em>word</em>]] <a class="reference internal" href="../../gmt.html#ocols-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select output columns (0 is first column; <em>t</em> is trailing text, append <em>word</em> to write one word only).</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="../../gmt.html#colon-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Swap 1st and 2nd column on input and/or output.</dd>
+<dl class="simple">
+<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="../../gmt.html#colon-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Swap 1st and 2nd column on input and/or output.</p>
+</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="../../gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
+<dl class="simple">
+<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
+</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</p>
+</dd>
+<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
+</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="../../gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="geodetic-versus-geocentric-coordinates">
@@ -397,7 +394,7 @@ p. 319.</p>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_58a5b88_2019.09.08 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../SUP_SPOTTER.html" >SPOTTER</a> &#187;</li>
 <li class="right">
@@ -416,8 +413,8 @@ p. 319.</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 11, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
+  Last updated on Sep 12, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>
