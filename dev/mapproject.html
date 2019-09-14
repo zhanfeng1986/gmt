@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
 
-    <title>mapproject &#8212; GMT 6.1.0_11f521b_2019.09.11 documentation</title>
+    <title>mapproject &#8212; GMT 6.1.0_87d8597_2019.09.13 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -39,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_87d8597_2019.09.13 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="M.html" accesskey="U">M</a> &#187;</li>
 <li class="right">
@@ -190,7 +190,7 @@ are in the units specified by <a class="reference internal" href="gmt.conf.html#
 <dl class="simple" id="g">
 <dt><strong>-G</strong>[<em>lon0</em>/<em>lat0</em>][<strong>+a</strong>][<strong>+i</strong>][<strong>+u</strong><em>unit</em>][<strong>+v</strong>]</dt><dd><p>Calculate distances along track <em>or</em> to the optional <em>fixed</em> point set
 with <strong>-G</strong><em>lon0</em>/<em>lat0</em>. Append the distance unit with <strong>+u</strong> (see <a class="reference internal" href="ternary.html#unit-attributes"><span class="std std-ref">Units</span></a> for available
-units and how distances are computed), including
+units and how distances are computed [great circle using authalic radius]), including
 <strong>c</strong> (Cartesian distance using input coordinates) or <strong>C</strong>
 (Cartesian distance using projected coordinates). The <strong>C</strong> unit
 requires <strong>-R</strong> and <strong>-J</strong> to be set. When no fixed point is given
@@ -211,7 +211,7 @@ See <a class="reference internal" href="#output-order">Output Order</a> for how 
 line(s) given in the ASCII multisegment file <em>line.xy</em>. The distance
 and the coordinates of the nearest point will be appended to the
 output as three new columns. Append the distance unit (see <a class="reference internal" href="ternary.html#unit-attributes"><span class="std std-ref">Units</span></a>
-for available units and how distances are computed),
+for available units and how distances are computed [great circle using authalic radius]),
 including <strong>c</strong> (Cartesian distance using input coordinates) or
 <strong>C</strong> (Cartesian distance using projected coordinates). The <strong>C</strong>
 unit requires <strong>-R</strong> and <strong>-J</strong> to be set. Finally, append <strong>+p</strong> to
@@ -357,7 +357,8 @@ any module-specific option (but not the GMT common options), then exits.</p>
 minute, and <strong>s</strong> for arc second, or <strong>e</strong> for meter [Default], <strong>f</strong>
 for foot, <strong>k</strong> for km, <strong>M</strong> for statute mile, <strong>n</strong> for nautical mile,
 and <strong>u</strong> for US survey foot. By default we compute such distances using
-a spherical approximation with great circles (<strong>-jg</strong>). You can use <strong>-jf</strong> to perform
+a spherical approximation with great circles (<strong>-jg</strong>) using the authalic radius
+(see <span class="xref std std-ref">PROJ_MEAN_RADIUS</span>). You can use <strong>-jf</strong> to perform
 “Flat Earth” calculations (quicker but less accurate) or <strong>-je</strong> to perform
 exact geodesic calculations (slower but more accurate; see
 <a class="reference internal" href="gmt.conf.html#proj-geodesic"><span class="std std-ref">PROJ_GEODESIC</span></a> for method used).</p>
@@ -570,7 +571,7 @@ North-Holland Publ., ISBN: 0 444 86149 1.</p>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_11f521b_2019.09.11 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_87d8597_2019.09.13 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="M.html" >M</a> &#187;</li>
 <li class="right">
@@ -589,7 +590,7 @@ North-Holland Publ., ISBN: 0 444 86149 1.</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 13, 2019.
+  Last updated on Sep 14, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
