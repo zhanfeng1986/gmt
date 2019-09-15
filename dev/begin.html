@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
 
-    <title>begin &#8212; GMT 6.1.0_87d8597_2019.09.13 documentation</title>
+    <title>begin &#8212; GMT 6.1.0_42031a1_2019.09.14 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -39,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_87d8597_2019.09.13 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_42031a1_2019.09.14 documentation</a> &#187;</li>
 
 <li class="right">
 <form class="search" accept-charset="UTF-8" action="search.html" method="get">
@@ -75,15 +75,14 @@
 <p>The <strong>begin</strong> module instructs GMT to begin a new modern session.  If your script only makes
 a single plot then this is the most opportune time to specify the name
 and format(s) of your plot.  However, if you want to create multiple illustrations within this session,
-you will instead use <a class="reference internal" href="figure.html"><span class="doc">figure</span></a> for the figure(s) you wish to make.  The session
+you will instead use <a class="reference internal" href="figure.html"><span class="doc">figure</span></a> to name the figure(s) you wish to make.  The session
 keeps track of all default and history settings and isolates them from any other session
-that may run concurrently.  Thus unlike in classic mode you can run multiple modern sessions
+that may run concurrently.  Thus, unlike classic mode, you can run multiple modern sessions
 simultaneously without having destructive interference in updating the history of common
 options.
 In addition to <em>prefix</em> and <em>formats</em>, you can supply a comma-separated series of
 <a class="reference internal" href="psconvert.html"><span class="doc">psconvert</span></a> <em>options</em> that will override the default settings provided via
-<a class="reference internal" href="gmt.conf.html#ps-convert"><span class="std std-ref">PS_CONVERT</span></a> [<strong>A</strong>]. The only other available options control verbosity
-and default parameter settings.</p>
+<a class="reference internal" href="gmt.conf.html#ps-convert"><span class="std std-ref">PS_CONVERT</span></a> [<strong>A</strong>]. The only other available options control the verbosity.</p>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
@@ -220,6 +219,7 @@ then you can add this command to the top of your script to make the issue go awa
 <blockquote>
 <div><p>setenv GMT_SESSION_NAME $$</p>
 </div></blockquote>
+<p>This setting is prescribed if you create a new script with <strong>gmt</strong> --new-script.</p>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
@@ -284,7 +284,7 @@ then you can add this command to the top of your script to make the issue go awa
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_87d8597_2019.09.13 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_42031a1_2019.09.14 documentation</a> &#187;</li>
 
 <li class="right">
 <form class="search" accept-charset="UTF-8" action="search.html" method="get">
@@ -302,7 +302,7 @@ then you can add this command to the top of your script to make the issue go awa
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 14, 2019.
+  Last updated on Sep 15, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 

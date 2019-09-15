@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
 
-    <title>psevents &#8212; GMT 6.1.0_87d8597_2019.09.13 documentation</title>
+    <title>psevents &#8212; GMT 6.1.0_42031a1_2019.09.14 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -39,7 +39,7 @@
              accesskey="P">previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_87d8597_2019.09.13 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_42031a1_2019.09.14 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="PS_classic.html" accesskey="U">Classic Mode Mapping</a> &#187;</li>
 <li class="right">
@@ -161,18 +161,18 @@ to change the attributes for this line.</p>
 </dd>
 </dl>
 <dl class="simple" id="e">
-<dt><strong>Es</strong>|<strong>t</strong>[<strong>+o</strong>|<strong>O</strong><em>dt</em>][<strong>+r</strong><em>dt</em>][<strong>+p</strong><em>dt</em>][<strong>+d</strong><em>dt</em>][<strong>+f</strong><em>dt</em>]</dt><dd><p>Sets the time knots for the <strong>s</strong>ymbol or <strong>t</strong>ext time-functions.  Append
+<dt><strong>-Es</strong>|<strong>t</strong>[<strong>+o</strong>|<strong>O</strong><em>dt</em>][<strong>+r</strong><em>dt</em>][<strong>+p</strong><em>dt</em>][<strong>+d</strong><em>dt</em>][<strong>+f</strong><em>dt</em>]</dt><dd><p>Sets the time knots for the <strong>s</strong>ymbol or <strong>t</strong>ext time-functions.  Append
 <strong>+o</strong> to shift the event start and end times by a constant offset (basically shifting
-the event in time by <em>dt</em>; or use <strong>O</strong> to only shift the start time, effectively shortening
+the event in time by <em>dt</em>; or use <strong>+O</strong> to only shift the start time, effectively shortening
 the duration of the event), <strong>+r</strong> to indicate the
 duration of the rise phase, <strong>+p</strong> to set the duration of the plateau phase, <strong>+d</strong>
-tp specify the duration of the decay phase, and <strong>+f</strong> to set the duration of the
-fade phase.  These are all optional, and can be set separately for symbols and texts.
-if neither <strong>s</strong> or <strong>t</strong> is given then we set the time knots for both features.</p>
+to specify the duration of the decay phase, and <strong>+f</strong> to set the duration of the
+fade phase.  These are all optional [and default to zero], and can be set separately for symbols and texts.
+If neither <strong>s</strong> or <strong>t</strong> is given then we set the time knots for both features.</p>
 </dd>
 </dl>
 <dl class="simple" id="f">
-<dt><strong>-F</strong>[<strong>+a</strong><em>angle</em>][<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+r</strong>[<em>first</em>] |<strong>+z</strong>[<em>format</em>]]</dt><dd><p>By default, event label text will be placed horizontally, using the primary
+<dt><strong>-F</strong>[<strong>+a</strong><em>angle</em>][<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+r</strong>[<em>first</em>] | <strong>+z</strong>[<em>format</em>]]</dt><dd><p>By default, event label text will be placed horizontally, using the primary
 annotation font attributes (<a class="reference internal" href="gmt.conf.html#font-annot-primary"><span class="std std-ref">FONT_ANNOT_PRIMARY</span></a>), and centered
 on the data point. Use this option to override these defaults by specifying up to three
 text attributes (font, angle, and justification) directly on the command line. Use <strong>+f</strong>
@@ -191,7 +191,7 @@ to a string using the supplied <em>format</em> [use FORMAT_FLOAT_MAP].</p>
 </dd>
 </dl>
 <dl class="simple" id="l">
-<dt><strong>-L</strong>[<em>length</em>|<strong>t</strong>]</dt><dd><p>Specify the length of the event.  Append a <em>length</em> if all events have the same length,
+<dt><strong>-L</strong>[<em>length</em>|<strong>t</strong>]</dt><dd><p>Specify the length (i.e., duration) of the event.  Append a <em>length</em> if all events have the same length,
 append <strong>t</strong> if end-times instead of lengths are given in the file after the <em>time</em> column,
 or leave blank if lengths can be read from the input file after the <em>time</em> column.</p>
 </dd>
@@ -402,7 +402,7 @@ color, we may try</p>
              >previous</a> </li>
   <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_87d8597_2019.09.13 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.1.0_42031a1_2019.09.14 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="PS_classic.html" >Classic Mode Mapping</a> &#187;</li>
 <li class="right">
@@ -421,7 +421,7 @@ color, we may try</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 14, 2019.
+  Last updated on Sep 15, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
