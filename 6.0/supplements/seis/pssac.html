@@ -1,66 +1,193 @@
 
+
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-  <head>
-    <meta charset="utf-8" />
-
-    <title>pssac &#8212; GMT 6.0.0_ebeea76_2019.09.13 documentation</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-
-
-    <link rel="stylesheet" href="../../_static/rtd.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/javascript" src="../../../../_static/searchtools.js"></script>
-    <script type="text/javascript" src="../../../../_static/rtd-sidebar.js"></script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="The GMT historical collection" href="../../Gallery.html" />
-    <link rel="prev" title="pspolar" href="pspolar.html" /> 
-  </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="../../Gallery.html" title="The GMT historical collection"
-             accesskey="N">next</a> </li>
-        <li class="right" >
-          <a href="pspolar.html" title="pspolar"
-             accesskey="P">previous</a> </li>
-  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.0.0_ebeea76_2019.09.13 documentation</a> &#187;</li>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pssac &mdash; GMT 6.0.0 documentation</title>
+  
 
-          <li class="nav-item nav-item-1"><a href="../../SUP_SEIS_classic.html" accesskey="U">SEIS</a> &#187;</li>
-<li class="right">
-<form class="search" accept-charset="UTF-8" action="search.html" method="get">
-  <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
-  <label for="q">
-    <a class="search" href="search.html" accesskey="s" original-title="">Search:</a>
-  </label>
-  <input accesskey="f" class="small" id="q" name="q" size="20" type="text">
-  <input type="hidden" name="check_keywords" value="yes">
-  <input type="hidden" name="area" value="default">
-</form></li>
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
    
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
 
-      </ul>
-    </div>  
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> GMT
+          
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Example gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">The GMT Tutorial</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">GMT Core Modules — thematic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules_alphabetic.html">GMT Core Modules — alphabetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../supplements.html">GMT Supplemental Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cookbook.html">The GMT Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../std_opts.html">Common Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj_codes.html">Projection Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gmt.conf.html">GMT Defaults</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../datasets.html">Datasets</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Users_contrib_script.html">Users Script Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Users_contrib_symbols.html">Users Symbol Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changes.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compatibility.html">Incompatibilities between GMT 5 and GMT 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../switching.html">Switching between different GMT versions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Classic Mode</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../std_opts_classic.html">Common Options (Classic Mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules_classic.html">GMT Core Modules (Classic Mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../supplements_classic.html">GMT Supplemental Modules (Classic Mode)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">GMT C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">postscriptlight</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">GMT</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>pssac</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/GenericMappingTools/gmt/blob/6.0/doc/rst/source/supplements/seis/pssac.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="pssac">
 <span id="index-0"></span><h1>pssac<a class="headerlink" href="#pssac" title="Permalink to this headline">¶</a></h1>
@@ -100,15 +227,15 @@ from <em>saclist</em> [or standard input] and will plot seismograms on a map.</p
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl>
-<dt><em>SACfiles</em></dt><dd><p>SAC files to plot on a map. Only evenly spaced SAC data is supported.</p>
-</dd>
-<dt><em>saclist</em></dt><dd><p>One ASCII data table file holding a number of data columns. If <em>saclist</em> is not given then we read from standard input.
+<dl class="docutils">
+<dt><em>SACfiles</em></dt>
+<dd>SAC files to plot on a map. Only evenly spaced SAC data is supported.</dd>
+<dt><em>saclist</em></dt>
+<dd><p class="first">One ASCII data table file holding a number of data columns. If <em>saclist</em> is not given then we read from standard input.
 Parameters are expected to be in the following columns:</p>
 <blockquote>
-<div><p><em>filename</em> [<em>X</em> <em>Y</em> [<em>pen</em>]]</p>
-</div></blockquote>
-<p><em>filename</em> is the name of SAC file to plot.
+<div><em>filename</em> [<em>X</em> <em>Y</em> [<em>pen</em>]]</div></blockquote>
+<p class="last"><em>filename</em> is the name of SAC file to plot.
 <em>X</em> and <em>Y</em> are the position of seismograms to plot on a map.
 On linear plots, the default <em>X</em> is the begin time of SAC file, which will be adjusted if <strong>-T</strong> option is used,
 the default <em>Y</em> is determined by <strong>-E</strong> option.
@@ -117,12 +244,13 @@ The <em>X</em> and <em>Y</em> given here will override the position determined b
 <em>pen</em>, if given, will override the pen from <strong>-W</strong> option for current SAC file only.</p>
 </dd>
 </dl>
-<dl class="simple" id="j">
-<dt><strong>-J</strong><em>parameters</em> <a class="reference internal" href="../../gmt.html#j-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select map projection.  </p>
-</dd>
+<dl class="docutils" id="j">
+<dt><strong>-J</strong><em>parameters</em> <a class="reference internal" href="../../gmt.html#j-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select map projection.  </dd>
 </dl>
-<dl class="simple" id="r">
-<dt><strong>-R</strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt><dd><p><em>west</em>, <em>east</em>, <em>south</em>, and <em>north</em> specify the region of interest,
+<dl class="docutils" id="r">
+<dt><strong>-R</strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt>
+<dd><em>west</em>, <em>east</em>, <em>south</em>, and <em>north</em> specify the region of interest,
 and you may specify them in decimal degrees or in
 [±]dd:mm[:ss.xxx][<strong>W</strong>|<strong>E</strong>|<strong>S</strong>|<strong>N</strong>] format
 Append <strong>+r</strong> if lower left
@@ -156,31 +284,31 @@ In case of perspective view (<strong>-p</strong>), a z-range (<em>zmin</em>, <em
 can be appended to indicate the third dimension. This needs to be
 done only when using the <strong>-Jz</strong> option, not when using only the
 <strong>-p</strong> option. In the latter case a perspective view of the plane is
-plotted, with no third dimension.  </p>
-</dd>
+plotted, with no third dimension.  </dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="simple" id="b">
-<dt><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> <a class="reference internal" href="../../gmt.html#b-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set map boundary frame and axes attributes.</p>
-</dd>
+<dl class="docutils" id="b">
+<dt><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> <a class="reference internal" href="../../gmt.html#b-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Set map boundary frame and axes attributes.</dd>
 </dl>
-<dl class="simple" id="c">
-<dt><strong>-C</strong>[<em>t0/t1</em>]</dt><dd><p>Read and plot seismograms in timewindow between <em>t0</em> and <em>t1</em> only.
+<dl class="docutils" id="c">
+<dt><strong>-C</strong>[<em>t0/t1</em>]</dt>
+<dd>Read and plot seismograms in timewindow between <em>t0</em> and <em>t1</em> only.
 <em>t0</em> and <em>t1</em> are relative to a reference time specified by <strong>-T</strong>.
 If <strong>-T</strong> option is not specified, use the reference time (kzdate and kztime) defined in SAC header instead.
-If only <strong>-C</strong> is used, <em>t0/t1</em> is determined as <em>xmin/xmax</em> from <strong>-R</strong> option.</p>
-</dd>
+If only <strong>-C</strong> is used, <em>t0/t1</em> is determined as <em>xmin/xmax</em> from <strong>-R</strong> option.</dd>
 </dl>
-<dl class="simple" id="d">
-<dt><strong>-D</strong><em>dx</em>[<strong>/</strong><em>dy</em>]</dt><dd><p>Offset seismogram positions by the given mount <em>dx/dy</em> [Default is no offset].
-If <em>dy</em> is not given it is set equal to <em>dx</em>.</p>
-</dd>
+<dl class="docutils" id="d">
+<dt><strong>-D</strong><em>dx</em>[<strong>/</strong><em>dy</em>]</dt>
+<dd>Offset seismogram positions by the given mount <em>dx/dy</em> [Default is no offset].
+If <em>dy</em> is not given it is set equal to <em>dx</em>.</dd>
 </dl>
-<dl id="e">
-<dt><strong>-Ea</strong>|<strong>b</strong>|<strong>k</strong>|<strong>d</strong>|<strong>n</strong>[<em>n</em>]|<strong>u</strong>[<em>n</em>]</dt><dd><p>Choose profile type (the type of Y axis).</p>
-<blockquote>
+<dl class="docutils" id="e">
+<dt><strong>-Ea</strong>|<strong>b</strong>|<strong>k</strong>|<strong>d</strong>|<strong>n</strong>[<em>n</em>]|<strong>u</strong>[<em>n</em>]</dt>
+<dd><p class="first">Choose profile type (the type of Y axis).</p>
+<blockquote class="last">
 <div><p><strong>a</strong>: azimuth profile.</p>
 <p><strong>b</strong>: back-azimuth profile.</p>
 <p><strong>k</strong>: epicentral distance (in km) profile.</p>
@@ -190,21 +318,23 @@ If <em>dy</em> is not given it is set equal to <em>dx</em>.</p>
 </div></blockquote>
 </dd>
 </dl>
-<dl id="f">
-<dt><strong>-F</strong>[<strong>i</strong>][<strong>q</strong>][<strong>r</strong>]</dt><dd><p>Data preprocess before plotting.</p>
+<dl class="docutils" id="f">
+<dt><strong>-F</strong>[<strong>i</strong>][<strong>q</strong>][<strong>r</strong>]</dt>
+<dd><p class="first">Data preprocess before plotting.</p>
 <blockquote>
 <div><p><strong>i</strong>: integral</p>
 <p><strong>q</strong>: square</p>
 <p><strong>r</strong>: remove mean value</p>
 </div></blockquote>
-<p><strong>i</strong>|<strong>q</strong>|<strong>r</strong> can repeat multiple times. For example, <strong>-Frii</strong> will convert acceleration to displacement.
+<p class="last"><strong>i</strong>|<strong>q</strong>|<strong>r</strong> can repeat multiple times. For example, <strong>-Frii</strong> will convert acceleration to displacement.
 The order of <strong>i</strong>|<strong>q</strong>|<strong>r</strong> controls the order of the data processing.</p>
 </dd>
 </dl>
-<dl id="g">
-<dt><strong>-G</strong>[<strong>p</strong>|<strong>n</strong>][<strong>+g</strong><em>fill</em>][<strong>+z</strong><em>zero</em>][<strong>+t</strong><em>t0/t1</em>]</dt><dd><p>Paint positive or negative portion of traces.
+<dl class="docutils" id="g">
+<dt><strong>-G</strong>[<strong>p</strong>|<strong>n</strong>][<strong>+g</strong><em>fill</em>][<strong>+z</strong><em>zero</em>][<strong>+t</strong><em>t0/t1</em>]</dt>
+<dd><p class="first">Paint positive or negative portion of traces.
 If only <strong>-G</strong> is used, default to fill the positive portion black.</p>
-<blockquote>
+<blockquote class="last">
 <div><p><strong>p</strong>|<strong>n</strong> controls the painting of positive <strong>p</strong>ortion or <strong>n</strong>egative portion.
 Repeat <strong>-G</strong> option to specify fills for positive and negative portions, respectively.</p>
 <p><strong>+g</strong><em>fill</em>: color to fill</p>
@@ -213,9 +343,10 @@ Repeat <strong>-G</strong> option to specify fills for positive and negative por
 </div></blockquote>
 </dd>
 </dl>
-<dl id="m">
-<dt><strong>-M</strong><em>size</em>[<em>u</em>][<em>/alpha</em>]</dt><dd><p>Vertical scaling.</p>
-<blockquote>
+<dl class="docutils" id="m">
+<dt><strong>-M</strong><em>size</em>[<em>u</em>][<em>/alpha</em>]</dt>
+<dd><p class="first">Vertical scaling.</p>
+<blockquote class="last">
 <div><p><em>size</em>[<em>u</em>]: scale all traces <em>size</em>[<em>u</em>] on a map. The default unit is <a class="reference internal" href="../../gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a>.
 The scaling factor is defined as <code class="docutils literal notranslate"><span class="pre">yscale</span> <span class="pre">=</span> <span class="pre">size*(north-south)/(depmax-depmin)/map_height</span></code>.</p>
 <p><em>size</em>/<em>alpha</em>:</p>
@@ -227,84 +358,85 @@ The scaling factor is defined as <code class="docutils literal notranslate"><spa
 </div></blockquote>
 </dd>
 </dl>
-<dl class="simple" id="q">
-<dt><strong>-Q</strong></dt><dd><p>Plot traces vertically.</p>
-</dd>
+<dl class="docutils" id="q">
+<dt><strong>-Q</strong></dt>
+<dd>Plot traces vertically.</dd>
 </dl>
-<dl class="simple" id="s">
-<dt><strong>-S</strong>[<strong>i</strong>]<em>scale</em>[<em>unit</em>]</dt><dd><p>Sets time scale in seconds per <em>unit</em> while plotting on geographic plots.
+<dl class="docutils" id="s">
+<dt><strong>-S</strong>[<strong>i</strong>]<em>scale</em>[<em>unit</em>]</dt>
+<dd>Sets time scale in seconds per <em>unit</em> while plotting on geographic plots.
 Append <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> to indicate cm, inch or points as the unit.
 Use <a class="reference internal" href="../../gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a> if <em>unit</em> is omitted.
 Use <strong>-Si</strong><em>scale</em>[<em>unit</em>] to give the reciprocal scale,
-i.e. cm per second or inch per second.</p>
-</dd>
+i.e. cm per second or inch per second.</dd>
 </dl>
-<dl id="t">
-<dt><strong>-T</strong>[<strong>+t</strong><em>n</em>][<strong>+r</strong><em>reduce_vel</em>][<strong>+s</strong><em>shift</em>]</dt><dd><p>Time alignment and shift.</p>
-<blockquote>
+<dl class="docutils" id="t">
+<dt><strong>-T</strong>[<strong>+t</strong><em>n</em>][<strong>+r</strong><em>reduce_vel</em>][<strong>+s</strong><em>shift</em>]</dt>
+<dd><p class="first">Time alignment and shift.</p>
+<blockquote class="last">
 <div><p><strong>+t</strong><em>tmark</em>: align all trace along time mark. <em>tmark</em> are -5(b), -4(e), -3(o), -2(a), 0-9(t0-t9).</p>
 <p><strong>+r</strong><em>reduce_vel</em>: reduce velocity in km/s.</p>
 <p><strong>+s</strong><em>shift</em>: shift all traces by <em>shift</em> seconds.</p>
 </div></blockquote>
 </dd>
 </dl>
-<dl class="simple" id="u">
-<dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>] <a class="reference internal" href="../../gmt.html#u-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Draw GMT time stamp logo on plot.</p>
-</dd>
+<dl class="docutils" id="u">
+<dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>] <a class="reference internal" href="../../gmt.html#u-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Draw GMT time stamp logo on plot.</dd>
 </dl>
-<dl class="simple" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
-</dd>
+<dl class="docutils" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select verbosity level [c].  </dd>
 </dl>
-<dl class="simple" id="w">
-<dt><strong>-W</strong><em>pen</em></dt><dd><p>Set pen attributes for all traces unless overruled by <em>pen</em> specified in <em>saclist</em>.
-[Defaults: width = default, color = black, style = solid].</p>
-</dd>
+<dl class="docutils" id="w">
+<dt><strong>-W</strong><em>pen</em></dt>
+<dd>Set pen attributes for all traces unless overruled by <em>pen</em> specified in <em>saclist</em>.
+[Defaults: width = default, color = black, style = solid].</dd>
 </dl>
 <p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</p>
-<dl class="simple">
-<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="../../gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Shift plot origin.</p>
-</dd>
+<dl class="docutils">
+<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="../../gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Shift plot origin.</dd>
 </dl>
-<dl class="simple">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="../../gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Skip or produce header record(s).  </p>
-</dd>
+<dl class="docutils">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="../../gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Skip or produce header record(s).  </dd>
 </dl>
-<dl class="simple">
-<dt><strong>-p</strong>[<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>azim</em>[/<em>elev</em>[/<em>zlevel</em>]][<strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>z0</em>]][<strong>+v</strong><em>x0</em>/<em>y0</em>] <a class="reference internal" href="../../gmt.html#perspective-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select perspective view.  </p>
-</dd>
+<dl class="docutils">
+<dt><strong>-p</strong>[<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>azim</em>[/<em>elev</em>[/<em>zlevel</em>]][<strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>z0</em>]][<strong>+v</strong><em>x0</em>/<em>y0</em>] <a class="reference internal" href="../../gmt.html#perspective-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select perspective view.  </dd>
 </dl>
-<dl class="simple">
-<dt><strong>-t</strong>[<em>transp</em>] <a class="reference internal" href="../../gmt.html#t-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set transparency level in percent.</p>
-</dd>
+<dl class="docutils">
+<dt><strong>-t</strong>[<em>transp</em>] <a class="reference internal" href="../../gmt.html#t-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Set transparency level in percent.</dd>
 </dl>
-<dl class="simple">
-<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
-</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</p>
-</dd>
-<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
-</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="../../gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
-</dd>
+<dl class="docutils">
+<dt><strong>-^</strong> or just <strong>-</strong></dt>
+<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt>
+<dd>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</dd>
+<dt><strong>-?</strong> or no arguments</dt>
+<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt>
+<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="../../gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
 </dl>
 </div>
 <div class="section" id="classic-mode-arguments">
 <h2>Classic Mode Arguments<a class="headerlink" href="#classic-mode-arguments" title="Permalink to this headline">¶</a></h2>
 <p>These options are used to manipulate the building of layered GMT PostScript plots in classic mode.
 They are not available when using GMT modern mode.</p>
-<dl class="simple" id="k">
-<dt><strong>-K</strong> <a class="reference internal" href="../../gmt.html#k-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Do not finalize the PostScript plot.</p>
-</dd>
+<dl class="docutils" id="k">
+<dt><strong>-K</strong> <a class="reference internal" href="../../gmt.html#k-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Do not finalize the PostScript plot.</dd>
 </dl>
-<dl class="simple" id="o">
-<dt><strong>-O</strong> <a class="reference internal" href="../../gmt.html#o-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Append to existing PostScript plot.</p>
-</dd>
+<dl class="docutils" id="o">
+<dt><strong>-O</strong> <a class="reference internal" href="../../gmt.html#o-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Append to existing PostScript plot.</dd>
 </dl>
-<dl class="simple" id="p">
-<dt><strong>-P</strong> <a class="reference internal" href="../../gmt.html#p-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select “Portrait” plot orientation.</p>
-</dd>
+<dl class="docutils" id="p">
+<dt><strong>-P</strong> <a class="reference internal" href="../../gmt.html#p-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select “Portrait” plot orientation.</dd>
 </dl>
 </div>
 <div class="section" id="examples">
@@ -345,83 +477,49 @@ University of Science and Technology of China, Hefei, Anhui, China</p>
 </div>
 
 
+           </div>
+           
           </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="../../index.html">Table of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">pssac</a><ul>
-<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
-<li><a class="reference internal" href="#description">Description</a></li>
-<li><a class="reference internal" href="#required-arguments">Required Arguments</a></li>
-<li><a class="reference internal" href="#optional-arguments">Optional Arguments</a></li>
-<li><a class="reference internal" href="#classic-mode-arguments">Classic Mode Arguments</a></li>
-<li><a class="reference internal" href="#examples">Examples</a></li>
-<li><a class="reference internal" href="#references">References</a></li>
-<li><a class="reference internal" href="#authors">Authors</a></li>
-<li><a class="reference internal" href="#see-also">See Also</a></li>
-</ul>
-</li>
-</ul>
-
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="pspolar.html"
-                        title="previous chapter">pspolar</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="../../Gallery.html"
-                        title="next chapter">The GMT historical collection</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../../_sources/supplements/seis/pssac.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="../../Gallery.html" title="The GMT historical collection"
-             >next</a> </li>
-        <li class="right" >
-          <a href="pspolar.html" title="pspolar"
-             >previous</a> </li>
-  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
+          <footer>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.0.0_ebeea76_2019.09.13 documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="../../SUP_SEIS_classic.html" >SEIS</a> &#187;</li>
-<li class="right">
-<form class="search" accept-charset="UTF-8" action="search.html" method="get">
-  <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
-  <label for="q">
-    <a class="search" href="search.html" accesskey="s" original-title="">Search:</a>
-  </label>
-  <input accesskey="f" class="small" id="q" name="q" size="20" type="text">
-  <input type="hidden" name="check_keywords" value="yes">
-  <input type="hidden" name="area" value="default">
-</form></li>
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, The GMT Team.
+      <span class="lastupdated">
+        Last updated on Sep 16, 2019.
+      </span>
+
+    </p>
+  </div>
+    
+    
+      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
    
 
-      </ul>
-    </div>
-<div class="footer">
-    &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 14, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
-  <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
-
-</div>
-
-
-  </body>
+</body>
 </html>

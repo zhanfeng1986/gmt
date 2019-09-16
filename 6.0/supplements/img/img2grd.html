@@ -1,66 +1,193 @@
 
+
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-  <head>
-    <meta charset="utf-8" />
-
-    <title>img2grd &#8212; GMT 6.0.0_ebeea76_2019.09.13 documentation</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-
-
-    <link rel="stylesheet" href="../../_static/rtd.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../../_static/jquery.js"></script>
-    <script type="text/javascript" src="../../_static/underscore.js"></script>
-    <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <script type="text/javascript" src="../../_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/javascript" src="../../../../_static/searchtools.js"></script>
-    <script type="text/javascript" src="../../../../_static/rtd-sidebar.js"></script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="img2google" href="img2google.html" />
-    <link rel="prev" title="IMG" href="../../SUP_IMG.html" /> 
-  </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="img2google.html" title="img2google"
-             accesskey="N">next</a> </li>
-        <li class="right" >
-          <a href="../../SUP_IMG.html" title="IMG"
-             accesskey="P">previous</a> </li>
-  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.0.0_ebeea76_2019.09.13 documentation</a> &#187;</li>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>img2grd &mdash; GMT 6.0.0 documentation</title>
+  
 
-          <li class="nav-item nav-item-1"><a href="../../SUP_IMG.html" accesskey="U">IMG</a> &#187;</li>
-<li class="right">
-<form class="search" accept-charset="UTF-8" action="search.html" method="get">
-  <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
-  <label for="q">
-    <a class="search" href="search.html" accesskey="s" original-title="">Search:</a>
-  </label>
-  <input accesskey="f" class="small" id="q" name="q" size="20" type="text">
-  <input type="hidden" name="check_keywords" value="yes">
-  <input type="hidden" name="area" value="default">
-</form></li>
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
    
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
 
-      </ul>
-    </div>  
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> GMT
+          
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Example gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">The GMT Tutorial</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">GMT Core Modules — thematic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules_alphabetic.html">GMT Core Modules — alphabetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../supplements.html">GMT Supplemental Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cookbook.html">The GMT Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../std_opts.html">Common Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../proj_codes.html">Projection Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gmt.conf.html">GMT Defaults</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../datasets.html">Datasets</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Users_contrib_script.html">Users Script Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Users_contrib_symbols.html">Users Symbol Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changes.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compatibility.html">Incompatibilities between GMT 5 and GMT 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../switching.html">Switching between different GMT versions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Classic Mode</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../std_opts_classic.html">Common Options (Classic Mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules_classic.html">GMT Core Modules (Classic Mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../supplements_classic.html">GMT Supplemental Modules (Classic Mode)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">GMT C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">postscriptlight</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">GMT</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>img2grd</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/GenericMappingTools/gmt/blob/6.0/doc/rst/source/supplements/img/img2grd.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="img2grd">
 <span id="index-0"></span><h1>img2grd<a class="headerlink" href="#img2grd" title="Permalink to this headline">¶</a></h1>
@@ -89,20 +216,21 @@ is selected you can also request a resampling onto the exact <strong>-R</strong>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="simple">
-<dt><em>imgfile</em></dt><dd><p>A Mercator img format file such as the marine gravity or seafloor
+<dl class="docutils">
+<dt><em>imgfile</em></dt>
+<dd>A Mercator img format file such as the marine gravity or seafloor
 topography fields estimated from satellite altimeter data by
 Sandwell and Smith. If the user has set an environment variable
 <strong>$GMT_DATADIR</strong>, then <strong>img2grd</strong> will try to find <em>imgfile</em> in
-<strong>$GMT_DATADIR</strong>; else it will try to open <em>imgfile</em> directly.</p>
-</dd>
+<strong>$GMT_DATADIR</strong>; else it will try to open <em>imgfile</em> directly.</dd>
 </dl>
-<dl class="simple" id="g">
-<dt><strong>-G</strong><em>grdfile</em></dt><dd><p><em>grdfile</em> is the name of the output grid file.</p>
-</dd>
+<dl class="docutils" id="g">
+<dt><strong>-G</strong><em>grdfile</em></dt>
+<dd><em>grdfile</em> is the name of the output grid file.</dd>
 </dl>
-<dl class="simple" id="r">
-<dt><strong>-R</strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt><dd><p><em>west</em>, <em>east</em>, <em>south</em>, and <em>north</em> specify the region of interest,
+<dl class="docutils" id="r">
+<dt><strong>-R</strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt>
+<dd><em>west</em>, <em>east</em>, <em>south</em>, and <em>north</em> specify the region of interest,
 and you may specify them in decimal degrees or in
 [±]dd:mm[:ss.xxx][<strong>W</strong>|<strong>E</strong>|<strong>S</strong>|<strong>N</strong>] format
 Append <strong>+r</strong> if lower left
@@ -136,21 +264,21 @@ In case of perspective view (<strong>-p</strong>), a z-range (<em>zmin</em>, <em
 can be appended to indicate the third dimension. This needs to be
 done only when using the <strong>-Jz</strong> option, not when using only the
 <strong>-p</strong> option. In the latter case a perspective view of the plane is
-plotted, with no third dimension.  </p>
-</dd>
+plotted, with no third dimension.  </dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="simple" id="d">
-<dt><strong>-D</strong>[<em>minlat/maxlat</em>]</dt><dd><p>Use the extended latitude range -80.738/+80.738. Alternatively,
+<dl class="docutils" id="d">
+<dt><strong>-D</strong>[<em>minlat/maxlat</em>]</dt>
+<dd>Use the extended latitude range -80.738/+80.738. Alternatively,
 append <em>minlat/maxlat</em> as the latitude extent of the input img file.
 [Default is -72.006/72.006]. Not usually required since we can
-determine the extent from inspection of the file size.</p>
-</dd>
+determine the extent from inspection of the file size.</dd>
 </dl>
-<dl class="simple" id="e">
-<dt><strong>-E</strong></dt><dd><p>Can be used when <strong>-M</strong> is not set to force the final grid to have
+<dl class="docutils" id="e">
+<dt><strong>-E</strong></dt>
+<dd>Can be used when <strong>-M</strong> is not set to force the final grid to have
 the exact same region as requested with <strong>-R</strong>. By default, the
 final region is a direct projection of the original Mercator region
 and will typically extend slightly beyond the requested latitude
@@ -159,23 +287,23 @@ the longitude increment. However, the extra resampling introduces
 small interpolation errors and should only be used if the output
 grid must match the requested region and have x_inc = y_inc. In
 this case the region set by <strong>-R</strong> must be given in multiples of the
-increment (.e.g, <strong>-R</strong>0/45/45/72).</p>
-</dd>
+increment (.e.g, <strong>-R</strong>0/45/45/72).</dd>
 </dl>
-<dl class="simple" id="f">
-<dt><strong>-F</strong></dt><dd><p>Translate the x and y Mercator coordinates so that they are relative
-to the lower left corner, which then is (0,0). Requires <strong>-M</strong>.</p>
-</dd>
+<dl class="docutils" id="f">
+<dt><strong>-F</strong></dt>
+<dd>Translate the x and y Mercator coordinates so that they are relative
+to the lower left corner, which then is (0,0). Requires <strong>-M</strong>.</dd>
 </dl>
-<dl class="simple" id="i">
-<dt><strong>-I</strong></dt><dd><p>Indicate <em>inc</em> as the width of an input img pixel in minutes of
+<dl class="docutils" id="i">
+<dt><strong>-I</strong></dt>
+<dd>Indicate <em>inc</em> as the width of an input img pixel in minutes of
 longitude [Default is 2]. Append <strong>m</strong> [Default] or <strong>s</strong> to
 indicate unit.  Not usually required since we can
-determine the pixel size from inspection of the size.</p>
-</dd>
+determine the pixel size from inspection of the size.</dd>
 </dl>
-<dl class="simple" id="m">
-<dt><strong>-M</strong></dt><dd><p>Output a Spherical Mercator grid [Default is a geographic lon/lat
+<dl class="docutils" id="m">
+<dt><strong>-M</strong></dt>
+<dd>Output a Spherical Mercator grid [Default is a geographic lon/lat
 grid]. The Spherical Mercator projection of the img file is
 preserved, so that the region <strong>-R</strong> set by the user is modified
 slightly; the modified region corresponds to the edges of pixels [or
@@ -187,32 +315,32 @@ of the image, measured in user default units, with <strong>-Jm</strong>1 and
 the adjusted <strong>-R</strong>. By setting the default <strong>PROJ_ ELLIPSOID</strong> =
 Sphere, the user can make overlays with the adjusted <strong>-R</strong> so that
 they match. See <strong>EXAMPLES</strong> below. The adjusted <strong>-R</strong> is also
-written in the grid header remark, so it can be found later.</p>
-</dd>
+written in the grid header remark, so it can be found later.</dd>
 </dl>
-<dl class="simple" id="n">
-<dt><strong>-N</strong><em>navg</em></dt><dd><p>Average the values in the input img pixels into <em>navg</em> by <em>navg</em>
+<dl class="docutils" id="n">
+<dt><strong>-N</strong><em>navg</em></dt>
+<dd>Average the values in the input img pixels into <em>navg</em> by <em>navg</em>
 squares, and create one output pixel for each such square. If used
 with <strong>-T</strong><em>3</em> it will report an average constraint between 0 and
 1. If used with <strong>-T</strong><em>2</em> the output will be average data value or
 NaN according to whether average constraint is &gt; 0.5. <em>navg</em> must
 evenly divide into the dimensions of the imgfile in pixels. [Default
-<em>1</em> does no averaging].</p>
-</dd>
+<em>1</em> does no averaging].</dd>
 </dl>
-<dl class="simple" id="s">
-<dt><strong>-S</strong>[<em>scale</em>]</dt><dd><p>Multiply the img file values by <em>scale</em> before storing in grid file.
+<dl class="docutils" id="s">
+<dt><strong>-S</strong>[<em>scale</em>]</dt>
+<dd>Multiply the img file values by <em>scale</em> before storing in grid file.
 [Default is 1.0]. For recent img files: img topo files are stored in
 (corrected) meters [<strong>-S</strong>1]; free-air gravity files in mGal*10
 [<strong>-S</strong>0.1 to get mGal]; vertical deflection files in
 micro-radians*10 [<strong>-S</strong>0.1 to get micro-radians], vertical gravity
 gradient files in Eotvos*10 [<strong>-S</strong>0.1 to get Eotvos, or
 <strong>-S</strong>0.01 to get mGal/km]). If no <em>scale</em> is given we try to
-determine the scale by examining the file name for clues.</p>
-</dd>
+determine the scale by examining the file name for clues.</dd>
 </dl>
-<dl class="simple" id="t">
-<dt><strong>-T</strong><em>type</em></dt><dd><p><em>type</em> handles the encoding of constraint information. <em>type</em> = 0
+<dl class="docutils" id="t">
+<dt><strong>-T</strong><em>type</em></dt>
+<dd><em>type</em> handles the encoding of constraint information. <em>type</em> = 0
 indicates that no such information is encoded in the img file (used
 for pre-1995 versions of the gravity data) and gets all data. <em>type</em>
 &gt; 0 indicates that constraint information is encoded (1995 and later
@@ -220,34 +348,33 @@ for pre-1995 versions of the gravity data) and gets all data. <em>type</em>
 file as follows: <strong>-T</strong><em>1</em> gets data values at all points,
 <strong>-T</strong><em>2</em> gets data values at constrained points and NaN at
 interpolated points; <strong>-T</strong><em>3</em> gets 1 at constrained points and 0
-at interpolated points [Default is 1].</p>
-</dd>
+at interpolated points [Default is 1].</dd>
 </dl>
-<dl class="simple" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c]. Particularly recommended here, as it is
-helpful to see how the coordinates are adjusted.</p>
-</dd>
+<dl class="docutils" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select verbosity level [c]. Particularly recommended here, as it is
+helpful to see how the coordinates are adjusted.</dd>
 </dl>
-<dl class="simple" id="w">
-<dt><strong>-W</strong><em>maxlon</em></dt><dd><p>Indicate <em>maxlon</em> as the maximum longitude extent of the input img
+<dl class="docutils" id="w">
+<dt><strong>-W</strong><em>maxlon</em></dt>
+<dd>Indicate <em>maxlon</em> as the maximum longitude extent of the input img
 file. Versions since 1995 have had <em>maxlon</em> = 360.0, while some
-earlier files had <em>maxlon</em> = 390.0. [Default is 360.0].</p>
-</dd>
+earlier files had <em>maxlon</em> = 390.0. [Default is 360.0].</dd>
 </dl>
-<dl class="simple">
-<dt><strong>-n</strong>[<strong>b</strong>|<strong>c</strong>|<strong>l</strong>|<strong>n</strong>][<strong>+a</strong>][<strong>+b</strong><em>BC</em>][<strong>+c</strong>][<strong>+t</strong><em>threshold</em>] <a class="reference internal" href="../../gmt.html#n-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select interpolation mode for grids.</p>
-</dd>
+<dl class="docutils">
+<dt><strong>-n</strong>[<strong>b</strong>|<strong>c</strong>|<strong>l</strong>|<strong>n</strong>][<strong>+a</strong>][<strong>+b</strong><em>BC</em>][<strong>+c</strong>][<strong>+t</strong><em>threshold</em>] <a class="reference internal" href="../../gmt.html#n-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select interpolation mode for grids.</dd>
 </dl>
-<dl class="simple">
-<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
-</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</p>
-</dd>
-<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
-</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="../../gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
-</dd>
+<dl class="docutils">
+<dt><strong>-^</strong> or just <strong>-</strong></dt>
+<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt>
+<dd>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</dd>
+<dt><strong>-?</strong> or no arguments</dt>
+<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt>
+<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="../../gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
 </dl>
 </div>
 <div class="section" id="geographic-examples">
@@ -380,81 +507,49 @@ eliminate NaNs, and pipe through <a class="reference internal" href="../../mappr
 </div>
 
 
+           </div>
+           
           </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="../../index.html">Table of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">img2grd</a><ul>
-<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
-<li><a class="reference internal" href="#description">Description</a></li>
-<li><a class="reference internal" href="#required-arguments">Required Arguments</a></li>
-<li><a class="reference internal" href="#optional-arguments">Optional Arguments</a></li>
-<li><a class="reference internal" href="#geographic-examples">Geographic Examples</a></li>
-<li><a class="reference internal" href="#mercator-examples">Mercator Examples</a></li>
-<li><a class="reference internal" href="#see-also">See Also</a></li>
-</ul>
-</li>
-</ul>
-
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="../../SUP_IMG.html"
-                        title="previous chapter">IMG</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="img2google.html"
-                        title="next chapter">img2google</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../../_sources/supplements/img/img2grd.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="img2google.html" title="img2google"
-             >next</a> </li>
-        <li class="right" >
-          <a href="../../SUP_IMG.html" title="IMG"
-             >previous</a> </li>
-  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
+          <footer>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 6.0.0_ebeea76_2019.09.13 documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="../../SUP_IMG.html" >IMG</a> &#187;</li>
-<li class="right">
-<form class="search" accept-charset="UTF-8" action="search.html" method="get">
-  <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
-  <label for="q">
-    <a class="search" href="search.html" accesskey="s" original-title="">Search:</a>
-  </label>
-  <input accesskey="f" class="small" id="q" name="q" size="20" type="text">
-  <input type="hidden" name="check_keywords" value="yes">
-  <input type="hidden" name="area" value="default">
-</form></li>
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, The GMT Team.
+      <span class="lastupdated">
+        Last updated on Sep 16, 2019.
+      </span>
+
+    </p>
+  </div>
+    
+    
+      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
    
 
-      </ul>
-    </div>
-<div class="footer">
-    &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 14, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
-  <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
-
-</div>
-
-
-  </body>
+</body>
 </html>

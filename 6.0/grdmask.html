@@ -1,66 +1,193 @@
 
+
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-  <head>
-    <meta charset="utf-8" />
-
-    <title>grdmask &#8212; GMT 6.0.0_ebeea76_2019.09.13 documentation</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-
-
-    <link rel="stylesheet" href="_static/rtd.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/javascript" src="_static/searchtools.js"></script>
-    <script type="text/javascript" src="_static/rtd-sidebar.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="grdmath" href="grdmath.html" />
-    <link rel="prev" title="grdlandmask" href="grdlandmask.html" /> 
-  </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="grdmath.html" title="grdmath"
-             accesskey="N">next</a> </li>
-        <li class="right" >
-          <a href="grdlandmask.html" title="grdlandmask"
-             accesskey="P">previous</a> </li>
-  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_ebeea76_2019.09.13 documentation</a> &#187;</li>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>grdmask &mdash; GMT 6.0.0 documentation</title>
+  
 
-          <li class="nav-item nav-item-1"><a href="GR.html" accesskey="U">GR</a> &#187;</li>
-<li class="right">
-<form class="search" accept-charset="UTF-8" action="search.html" method="get">
-  <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
-  <label for="q">
-    <a class="search" href="search.html" accesskey="s" original-title="">Search:</a>
-  </label>
-  <input accesskey="f" class="small" id="q" name="q" size="20" type="text">
-  <input type="hidden" name="check_keywords" value="yes">
-  <input type="hidden" name="area" value="default">
-</form></li>
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
    
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
 
-      </ul>
-    </div>  
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> GMT
+          
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">GMT Core Modules — thematic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules_alphabetic.html">GMT Core Modules — alphabetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supplements.html">GMT Supplemental Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cookbook.html">The GMT Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="std_opts.html">Common Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proj_codes.html">Projection Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gmt.conf.html">GMT Defaults</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Users_contrib_script.html">Users Script Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Users_contrib_symbols.html">Users Symbol Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changes.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compatibility.html">Incompatibilities between GMT 5 and GMT 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="switching.html">Switching between different GMT versions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Classic Mode</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="std_opts_classic.html">Common Options (Classic Mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules_classic.html">GMT Core Modules (Classic Mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supplements_classic.html">GMT Supplemental Modules (Classic Mode)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">GMT</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>grdmask</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/GenericMappingTools/gmt/blob/6.0/doc/rst/source/grdmask.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="grdmask">
 <span id="index-0"></span><h1>grdmask<a class="headerlink" href="#grdmask" title="Permalink to this headline">¶</a></h1>
@@ -104,17 +231,18 @@ are considered “inside”.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="simple">
-<dt><em>pathfiles</em></dt><dd><p>The name of 1 or more ASCII [or binary, see
-<strong>-bi</strong>] files holding the polygon(s) or data points.</p>
-</dd>
+<dl class="docutils">
+<dt><em>pathfiles</em></dt>
+<dd>The name of 1 or more ASCII [or binary, see
+<strong>-bi</strong>] files holding the polygon(s) or data points.</dd>
 </dl>
-<dl class="simple" id="g">
-<dt><strong>-G</strong><em>mask_grd_file</em>]</dt><dd><p>Name of resulting output mask grid file. (See GRID FILE FORMATS below).</p>
-</dd>
+<dl class="docutils" id="g">
+<dt><strong>-G</strong><em>mask_grd_file</em>]</dt>
+<dd>Name of resulting output mask grid file. (See GRID FILE FORMATS below).</dd>
 </dl>
-<dl class="simple" id="i">
-<dt><strong>-I</strong><em>xinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>]]</dt><dd><p><em>x_inc</em> [and optionally <em>y_inc</em>] is the grid spacing. Optionally,
+<dl class="docutils" id="i">
+<dt><strong>-I</strong><em>xinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>]]</dt>
+<dd><em>x_inc</em> [and optionally <em>y_inc</em>] is the grid spacing. Optionally,
 append a suffix modifier. <strong>Geographical (degrees) coordinates</strong>: Append
 <strong>m</strong> to indicate arc minutes or <strong>s</strong> to indicate arc seconds. If one
 of the units <strong>e</strong>, <strong>f</strong>, <strong>k</strong>, <strong>M</strong>, <strong>n</strong> or <strong>u</strong> is appended
@@ -131,31 +259,31 @@ giving an increment you may specify the <em>number of nodes</em> desired by
 appending <strong>+n</strong> to the supplied integer argument; the increment is then
 recalculated from the number of nodes and the domain. The resulting
 increment value depends on whether you have selected a
-gridline-registered or pixel-registered grid; see <a class="reference internal" href="GMT_Docs_classic.html#app-file-formats"><span class="std std-ref">GMT File Formats</span></a> for
+gridline-registered or pixel-registered grid; see <a class="reference internal" href="GMT_Docs.html#app-file-formats"><span class="std std-ref">GMT File Formats</span></a> for
 details. Note: if <strong>-R</strong><em>grdfile</em> is used then the grid spacing has
-already been initialized; use <strong>-I</strong> to override the values.</p>
-</dd>
+already been initialized; use <strong>-I</strong> to override the values.</dd>
 </dl>
-<dl class="simple" id="r">
-<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify the region of interest.  </p>
-</dd>
+<dl class="docutils" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Specify the region of interest.  </dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="simple" id="a">
-<dt><strong>-A</strong>[<strong>m</strong>|<strong>p</strong>|<strong>x</strong>|<strong>y</strong>]</dt><dd><p>If the input data are geographic (as indicated by <strong>-f</strong>) then the
+<dl class="docutils" id="a">
+<dt><strong>-A</strong>[<strong>m</strong>|<strong>p</strong>|<strong>x</strong>|<strong>y</strong>]</dt>
+<dd>If the input data are geographic (as indicated by <strong>-f</strong>) then the
 sides in the polygons will be approximated by great circle arcs.
 When using the <strong>-A</strong> sides will be regarded as straight lines.
 Alternatively, append <strong>m</strong> to have sides first follow meridians,
 then parallels. Or append <strong>p</strong> to first follow parallels, then meridians.
 For Cartesian data, points are simply connected, unless you append
 <strong>x</strong> or <strong>y</strong> to construct stair-case paths whose first move is along
-<em>x</em> or <em>y</em>, respectively.</p>
-</dd>
+<em>x</em> or <em>y</em>, respectively.</dd>
 </dl>
-<dl class="simple" id="n">
-<dt><strong>-N</strong>[<strong>z</strong>|<strong>Z</strong>|<strong>p</strong>|<strong>P</strong>]<em>values</em></dt><dd><p>Sets the <em>out/edge/in</em> that will be assigned to nodes that are
+<dl class="docutils" id="n">
+<dt><strong>-N</strong>[<strong>z</strong>|<strong>Z</strong>|<strong>p</strong>|<strong>P</strong>]<em>values</em></dt>
+<dd>Sets the <em>out/edge/in</em> that will be assigned to nodes that are
 <em>out</em>side the polygons, on the <em>edge</em>, or <em>in</em>side. Values can
 be any number, including the textstring NaN [Default is 0/0/1].
 Optionally, use <strong>Nz</strong> to set polygon insides to the z-value
@@ -166,11 +294,11 @@ the polygon boundary as part of the inside. Alternatively, use
 start of the sequence [0]. Here, <strong>-NP</strong> includes the polygon
 perimeter as inside. Note:
 <strong>-N</strong><strong>z</strong>|<strong>Z</strong>|<strong>p</strong>|<strong>P</strong> cannot be used in
-conjunction with <strong>-S</strong>; they also all optionally accept /<em>out</em> [0].</p>
-</dd>
+conjunction with <strong>-S</strong>; they also all optionally accept /<em>out</em> [0].</dd>
 </dl>
-<dl class="simple" id="s">
-<dt><strong>-S</strong><em>search_radius</em>[<em>unit</em>] |<em>xlim</em>/<em>ylim</em></dt><dd><p>Set nodes to inside, on edge, or outside depending on their distance
+<dl class="docutils" id="s">
+<dt><strong>-S</strong><em>search_radius</em>[<em>unit</em>] |<em>xlim</em>/<em>ylim</em></dt>
+<dd>Set nodes to inside, on edge, or outside depending on their distance
 to the nearest data point. Nodes within <em>radius</em> [0] from the
 nearest data point are considered inside; append a distance unit
 (see <a class="reference internal" href="ternary.html#unit-attributes"><span class="std std-ref">Units</span></a>). If <em>radius</em> is given as <strong>z</strong> then we instead read
@@ -184,69 +312,68 @@ perform a rectangular search where all nodes within ±<em>xlim</em> and
 One can also achieve the rectangular selection effect by using the <strong>-S</strong><em>n_cells</em><strong>c</strong> form.
 Here <em>n_cells</em> means the number of cells around each data point. As an example, <strong>-S</strong>0<strong>c</strong> means
 that only the cell where point lies is masked, <strong>-S</strong>1<strong>c</strong> masks one cell beyond that
-(i.e. makes a 3x3 neighborhood), and so on.</p>
-</dd>
+(i.e. makes a 3x3 neighborhood), and so on.</dd>
 </dl>
-<dl class="simple" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
-</dd>
+<dl class="docutils" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select verbosity level [c].  </dd>
 </dl>
-<dl class="simple">
-<dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select native binary format for primary input. [Default is 2 input columns (3 with <strong>-Sz</strong>)].</p>
-</dd>
+<dl class="docutils">
+<dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select native binary format for primary input. [Default is 2 input columns (3 with <strong>-Sz</strong>)].</dd>
 </dl>
-<dl class="simple">
-<dt><strong>-di</strong><em>nodata</em> <a class="reference internal" href="gmt.html#di-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Replace input columns that equal <em>nodata</em> with NaN.  </p>
-</dd>
+<dl class="docutils">
+<dt><strong>-di</strong><em>nodata</em> <a class="reference internal" href="gmt.html#di-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Replace input columns that equal <em>nodata</em> with NaN.  </dd>
 </dl>
-<dl class="simple">
-<dt><strong>-e</strong>[<strong>~</strong>]<em>”pattern”</em> <strong>|</strong> <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] <a class="reference internal" href="gmt.html#e-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Only accept data records that match the given pattern.  </p>
-</dd>
+<dl class="docutils">
+<dt><strong>-e</strong>[<strong>~</strong>]<em>”pattern”</em> <strong>|</strong> <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] <a class="reference internal" href="gmt.html#e-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Only accept data records that match the given pattern.  </dd>
 </dl>
-<dl class="simple">
-<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify data types of input and/or output columns.  </p>
-</dd>
+<dl class="docutils">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Specify data types of input and/or output columns.  </dd>
 </dl>
-<dl class="simple">
-<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>] <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Determine data gaps and line breaks.  </p>
-</dd>
+<dl class="docutils">
+<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>] <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Determine data gaps and line breaks.  </dd>
 </dl>
-<dl class="simple">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Skip or produce header record(s).  </p>
-</dd>
+<dl class="docutils">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Skip or produce header record(s).  </dd>
 </dl>
-<dl class="simple">
-<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select input columns and transformations (0 is first column, <em>t</em> is trailing text, append <em>word</em> to read one word only).</p>
-</dd>
+<dl class="docutils">
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select input columns and transformations (0 is first column, <em>t</em> is trailing text, append <em>word</em> to read one word only).</dd>
 </dl>
-<dl class="simple">
-<dt><strong>-je</strong>|<strong>f</strong>|<strong>g</strong> <a class="reference internal" href="gmt.html#distcalc-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Determine how spherical distances are calculated.</p>
-</dd>
-<dt><strong>-n</strong>[<strong>b</strong>|<strong>c</strong>|<strong>l</strong>|<strong>n</strong>][<strong>+a</strong>][<strong>+b</strong><em>BC</em>][<strong>+t</strong><em>threshold</em>]</dt><dd><p>Append <strong>+b</strong><em>BC</em> to set any boundary conditions to be used,
+<dl class="docutils">
+<dt><strong>-je</strong>|<strong>f</strong>|<strong>g</strong> <a class="reference internal" href="gmt.html#distcalc-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Determine how spherical distances are calculated.</dd>
+<dt><strong>-n</strong>[<strong>b</strong>|<strong>c</strong>|<strong>l</strong>|<strong>n</strong>][<strong>+a</strong>][<strong>+b</strong><em>BC</em>][<strong>+t</strong><em>threshold</em>]</dt>
+<dd>Append <strong>+b</strong><em>BC</em> to set any boundary conditions to be used,
 adding <strong>g</strong> for geographic, <strong>p</strong> for periodic, or <strong>n</strong> for
 natural boundary conditions. For the latter two you may append <strong>x</strong>
 or <strong>y</strong> to specify just one direction, otherwise both are assumed.
-[Default is geographic if grid is geographic].</p>
-</dd>
+[Default is geographic if grid is geographic].</dd>
 </dl>
-<dl class="simple">
-<dt><strong>-r</strong> <a class="reference internal" href="gmt.html#nodereg-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set node registration [gridline].  </p>
-</dd>
+<dl class="docutils">
+<dt><strong>-r</strong> <a class="reference internal" href="gmt.html#nodereg-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Set node registration [gridline].  </dd>
 </dl>
-<dl class="simple">
-<dt><strong>-x</strong>[[-]<em>n</em>] <a class="reference internal" href="gmt.html#core-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Limit number of cores used in multi-threaded algorithms (OpenMP required).</p>
-</dd>
+<dl class="docutils">
+<dt><strong>-x</strong>[[-]<em>n</em>] <a class="reference internal" href="gmt.html#core-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Limit number of cores used in multi-threaded algorithms (OpenMP required).</dd>
 </dl>
-<dl class="simple">
-<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
-</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</p>
-</dd>
-<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
-</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
-</dd>
+<dl class="docutils">
+<dt><strong>-^</strong> or just <strong>-</strong></dt>
+<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt>
+<dd>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</dd>
+<dt><strong>-?</strong> or no arguments</dt>
+<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt>
+<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
 </dl>
 </div>
 <div class="section" id="units">
@@ -256,7 +383,7 @@ minute, and <strong>s</strong> for arc second, or <strong>e</strong> for meter [
 for foot, <strong>k</strong> for km, <strong>M</strong> for statute mile, <strong>n</strong> for nautical mile,
 and <strong>u</strong> for US survey foot. By default we compute such distances using
 a spherical approximation with great circles (<strong>-jg</strong>) using the authalic radius
-(see <span class="xref std std-ref">PROJ_MEAN_RADIUS</span>). You can use <strong>-jf</strong> to perform
+(see <a class="reference internal" href="gmt.conf.html#proj-mean-radius"><span class="std std-ref">PROJ_MEAN_RADIUS</span></a>). You can use <strong>-jf</strong> to perform
 “Flat Earth” calculations (quicker but less accurate) or <strong>-je</strong> to perform
 exact geodesic calculations (slower but more accurate; see
 <a class="reference internal" href="gmt.conf.html#proj-geodesic"><span class="std std-ref">PROJ_GEODESIC</span></a> for method used).</p>
@@ -274,7 +401,7 @@ offset, the user should add the suffix
 <em>scale</em> and <em>offset</em> are optional scale factor and offset to be applied
 to all grid values, and <em>invalid</em> is the value used to indicate missing
 data. See <a class="reference internal" href="grdconvert.html"><span class="doc">grdconvert</span></a> and Section
-<a class="reference internal" href="GMT_Docs_classic.html#grid-file-format"><span class="std std-ref">Grid file format specifications</span></a>
+<a class="reference internal" href="GMT_Docs.html#grid-file-format"><span class="std std-ref">Grid file format specifications</span></a>
 of the GMT Technical Reference and Cookbook for more information.</p>
 <p>When writing a netCDF file, the grid is stored by default with the
 variable name “z”. To specify another variable name <em>varname</em>, append
@@ -364,86 +491,49 @@ in plates.gmt, based on the attribute POL_ID, do</p>
 </div>
 
 
+           </div>
+           
           </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">grdmask</a><ul>
-<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
-<li><a class="reference internal" href="#description">Description</a></li>
-<li><a class="reference internal" href="#required-arguments">Required Arguments</a></li>
-<li><a class="reference internal" href="#optional-arguments">Optional Arguments</a></li>
-<li><a class="reference internal" href="#units">Units</a></li>
-<li><a class="reference internal" href="#grid-file-formats">Grid File Formats</a></li>
-<li><a class="reference internal" href="#geographical-and-time-coordinates">Geographical And Time Coordinates</a></li>
-<li><a class="reference internal" href="#inside-outside-status">Inside/outside Status</a></li>
-<li><a class="reference internal" href="#notes">Notes</a></li>
-<li><a class="reference internal" href="#save-storage-space">Save storage space</a></li>
-<li><a class="reference internal" href="#examples">Examples</a></li>
-<li><a class="reference internal" href="#see-also">See Also</a></li>
-</ul>
-</li>
-</ul>
-
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="grdlandmask.html"
-                        title="previous chapter">grdlandmask</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="grdmath.html"
-                        title="next chapter">grdmath</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/grdmask.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="grdmath.html" title="grdmath"
-             >next</a> </li>
-        <li class="right" >
-          <a href="grdlandmask.html" title="grdlandmask"
-             >previous</a> </li>
-  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
+          <footer>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_ebeea76_2019.09.13 documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="GR.html" >GR</a> &#187;</li>
-<li class="right">
-<form class="search" accept-charset="UTF-8" action="search.html" method="get">
-  <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
-  <label for="q">
-    <a class="search" href="search.html" accesskey="s" original-title="">Search:</a>
-  </label>
-  <input accesskey="f" class="small" id="q" name="q" size="20" type="text">
-  <input type="hidden" name="check_keywords" value="yes">
-  <input type="hidden" name="area" value="default">
-</form></li>
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, The GMT Team.
+      <span class="lastupdated">
+        Last updated on Sep 16, 2019.
+      </span>
+
+    </p>
+  </div>
+    
+    
+      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
    
 
-      </ul>
-    </div>
-<div class="footer">
-    &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 14, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
-  <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
-
-</div>
-
-
-  </body>
+</body>
 </html>

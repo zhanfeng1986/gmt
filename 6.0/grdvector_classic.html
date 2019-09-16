@@ -1,66 +1,193 @@
 
+
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-  <head>
-    <meta charset="utf-8" />
-
-    <title>grdvector &#8212; GMT 6.0.0_ebeea76_2019.09.13 documentation</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-
-
-    <link rel="stylesheet" href="_static/rtd.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/javascript" src="_static/searchtools.js"></script>
-    <script type="text/javascript" src="_static/rtd-sidebar.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="grdview" href="grdview_classic.html" />
-    <link rel="prev" title="grdcontour" href="grdcontour_classic.html" /> 
-  </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="grdview_classic.html" title="grdview"
-             accesskey="N">next</a> </li>
-        <li class="right" >
-          <a href="grdcontour_classic.html" title="grdcontour"
-             accesskey="P">previous</a> </li>
-  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_ebeea76_2019.09.13 documentation</a> &#187;</li>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>grdvector &mdash; GMT 6.0.0 documentation</title>
+  
 
-          <li class="nav-item nav-item-1"><a href="PS_classic.html" accesskey="U">Classic Mode Mapping</a> &#187;</li>
-<li class="right">
-<form class="search" accept-charset="UTF-8" action="search.html" method="get">
-  <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
-  <label for="q">
-    <a class="search" href="search.html" accesskey="s" original-title="">Search:</a>
-  </label>
-  <input accesskey="f" class="small" id="q" name="q" size="20" type="text">
-  <input type="hidden" name="check_keywords" value="yes">
-  <input type="hidden" name="area" value="default">
-</form></li>
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
    
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
 
-      </ul>
-    </div>  
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> GMT
+          
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Reference documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">GMT Core Modules — thematic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules_alphabetic.html">GMT Core Modules — alphabetic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supplements.html">GMT Supplemental Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cookbook.html">The GMT Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="std_opts.html">Common Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proj_codes.html">Projection Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gmt.conf.html">GMT Defaults</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Users_contrib_script.html">Users Script Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Users_contrib_symbols.html">Users Symbol Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changes.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compatibility.html">Incompatibilities between GMT 5 and GMT 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="switching.html">Switching between different GMT versions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Classic Mode</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="std_opts_classic.html">Common Options (Classic Mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules_classic.html">GMT Core Modules (Classic Mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="supplements_classic.html">GMT Supplemental Modules (Classic Mode)</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">GMT</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>grdvector</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/GenericMappingTools/gmt/blob/6.0/doc/rst/source/grdvector_classic.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="grdvector">
 <span id="index-0"></span><h1>grdvector<a class="headerlink" href="#grdvector" title="Permalink to this headline">¶</a></h1>
@@ -97,30 +224,31 @@ instead.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="simple">
-<dt><em>compx.nc</em></dt><dd><p>Contains the x-components of the vector field.</p>
-</dd>
-<dt><em>compy.nc</em></dt><dd><p>Contains the y-components of the vector field. (See GRID FILE FORMATS below.)</p>
-</dd>
+<dl class="docutils">
+<dt><em>compx.nc</em></dt>
+<dd>Contains the x-components of the vector field.</dd>
+<dt><em>compy.nc</em></dt>
+<dd>Contains the y-components of the vector field. (See GRID FILE FORMATS below.)</dd>
 </dl>
-<dl class="simple" id="j">
-<dt><strong>-J</strong><em>parameters</em> <a class="reference internal" href="gmt.html#j-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select map projection.  </p>
-</dd>
+<dl class="docutils" id="j">
+<dt><strong>-J</strong><em>parameters</em> <a class="reference internal" href="gmt.html#j-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select map projection.  </dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="simple" id="a">
-<dt><strong>-A</strong></dt><dd><p>The grid files contain polar (r, theta) components instead of
-Cartesian (x, y) [Default is Cartesian components].</p>
-</dd>
+<dl class="docutils" id="a">
+<dt><strong>-A</strong></dt>
+<dd>The grid files contain polar (r, theta) components instead of
+Cartesian (x, y) [Default is Cartesian components].</dd>
 </dl>
-<dl class="simple" id="b">
-<dt><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> <a class="reference internal" href="gmt.html#b-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set map boundary frame and axes attributes.</p>
-</dd>
+<dl class="docutils" id="b">
+<dt><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> <a class="reference internal" href="gmt.html#b-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Set map boundary frame and axes attributes.</dd>
 </dl>
-<dl class="simple" id="c">
-<dt><strong>-C</strong>[<em>cpt</em> |<em>master</em>[<strong>+i</strong><em>zinc</em>] |<em>color1,color2</em>[,<em>color3</em>,…]]</dt><dd><p>Use <em>cpt</em> to assign colors based on vector length. Alternatively,
+<dl class="docutils" id="c">
+<dt><strong>-C</strong>[<em>cpt</em> |<em>master</em>[<strong>+i</strong><em>zinc</em>] |<em>color1,color2</em>[,<em>color3</em>,…]]</dt>
+<dd>Use <em>cpt</em> to assign colors based on vector length. Alternatively,
 supply the name of a GMT color master dynamic CPT [turbo] to
 automatically determine a continuous CPT from
 the grid’s z-range; you may round up/down the z-range by adding <strong>+i</strong><em>zinc</em>..
@@ -128,36 +256,36 @@ Yet another option is to specify <strong>-C</strong><em>color1,color2</em>[,<em>
 to build a linear continuous cpt from those colors automatically.
 In this case <em>color</em><strong>n</strong> can be a r/g/b triplet, a color name,
 or an HTML hexadecimal color (e.g. #aabbcc ).  If no argument is given to <strong>-C</strong>
-then under modern mode we select the current CPT.</p>
-</dd>
+then under modern mode we select the current CPT.</dd>
 </dl>
-<dl class="simple" id="g">
-<dt><strong>-G</strong><em>fill</em></dt><dd><p>Sets color or shade for vector interiors [Default is no fill].</p>
-</dd>
+<dl class="docutils" id="g">
+<dt><strong>-G</strong><em>fill</em></dt>
+<dd>Sets color or shade for vector interiors [Default is no fill].</dd>
 </dl>
-<dl class="simple" id="i">
-<dt><strong>-I</strong>[<strong>x</strong>]<em>dx</em>[/<em>dy</em>]</dt><dd><p>Only plot vectors at nodes every <em>x_inc</em>, <em>y_inc</em> apart (must be
+<dl class="docutils" id="i">
+<dt><strong>-I</strong>[<strong>x</strong>]<em>dx</em>[/<em>dy</em>]</dt>
+<dd>Only plot vectors at nodes every <em>x_inc</em>, <em>y_inc</em> apart (must be
 multiples of original grid spacing). Append <strong>m</strong> for arc minutes or
 <strong>s</strong> for arc seconds.  Alternatively, use <strong>-Ix</strong> to specify the
-multiples <em>multx</em>[/<em>multy</em>] directly [Default plots every node].</p>
-</dd>
+multiples <em>multx</em>[/<em>multy</em>] directly [Default plots every node].</dd>
 </dl>
-<dl class="simple" id="n">
-<dt><strong>-N</strong></dt><dd><p>Do NOT clip vectors at map boundaries [Default will clip].</p>
-</dd>
+<dl class="docutils" id="n">
+<dt><strong>-N</strong></dt>
+<dd>Do NOT clip vectors at map boundaries [Default will clip].</dd>
 </dl>
-<dl class="simple" id="q">
-<dt><strong>-Q</strong><em>parameters</em></dt><dd><p>Modify vector parameters. For vector heads, append vector head
+<dl class="docutils" id="q">
+<dt><strong>-Q</strong><em>parameters</em></dt>
+<dd>Modify vector parameters. For vector heads, append vector head
 <em>size</em> [Default is 0, i.e., stick-plot]. See VECTOR ATTRIBUTES for
-specifying additional attributes.</p>
-</dd>
+specifying additional attributes.</dd>
 </dl>
-<dl class="simple" id="r">
-<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify the region of interest. Specify a subset of the grid.</p>
-</dd>
+<dl class="docutils" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Specify the region of interest. Specify a subset of the grid.</dd>
 </dl>
-<dl class="simple" id="s">
-<dt><strong>-S</strong>[<strong>i</strong>|<strong>l</strong>]<em>scale</em>[<em>unit</em>]</dt><dd><p>Sets scale for vector plot length in data units per plot distance measurement
+<dl class="docutils" id="s">
+<dt><strong>-S</strong>[<strong>i</strong>|<strong>l</strong>]<em>scale</em>[<em>unit</em>]</dt>
+<dd>Sets scale for vector plot length in data units per plot distance measurement
 unit [1]. Append <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> to indicate the measurement
 unit (cm, inch, or point); if no unit is given we use the default value that
 is controlled by <a class="reference internal" href="gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a>. Alternatively,
@@ -170,60 +298,59 @@ which are projected to plot dimensions.  These are geo-vectors that follow
 great circle paths and their lengths are affected by the map projection and their
 coordinates.  Finally, use <strong>-Si</strong> if it is simpler to give the reciprocal scale in
 measurement unit per data unit or km per data unit.  To report the minimum, maximum,
-and mean scaled vector length, use <strong>-Vl</strong>.</p>
-</dd>
+and mean scaled vector length, use <strong>-Vl</strong>.</dd>
 </dl>
-<dl class="simple" id="t">
-<dt><strong>-T</strong></dt><dd><p>Means the azimuths of Cartesian data sets should be adjusted according to the
+<dl class="docutils" id="t">
+<dt><strong>-T</strong></dt>
+<dd>Means the azimuths of Cartesian data sets should be adjusted according to the
 signs of the scales in the x- and y-directions [Leave alone].  This option can
 be used to convert vector azimuths in cases when a negative scale is used in
-one of both directions (e.g., positive down).</p>
-</dd>
+one of both directions (e.g., positive down).</dd>
 </dl>
-<dl class="simple" id="u">
-<dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>] <a class="reference internal" href="gmt.html#u-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Draw GMT time stamp logo on plot.</p>
-</dd>
+<dl class="docutils" id="u">
+<dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>] <a class="reference internal" href="gmt.html#u-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Draw GMT time stamp logo on plot.</dd>
 </dl>
-<dl class="simple" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
-</dd>
+<dl class="docutils" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select verbosity level [c].  </dd>
 </dl>
-<dl class="simple" id="w">
-<dt><strong>-W</strong><em>pen</em></dt><dd><p>Set pen attributes used for vector outlines [Default: width =
-default, color = black, style = solid].</p>
-</dd>
+<dl class="docutils" id="w">
+<dt><strong>-W</strong><em>pen</em></dt>
+<dd>Set pen attributes used for vector outlines [Default: width =
+default, color = black, style = solid].</dd>
 </dl>
 <p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</p>
-<dl class="simple">
-<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Shift plot origin.</p>
-</dd>
+<dl class="docutils">
+<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Shift plot origin.</dd>
 </dl>
-<dl class="simple" id="z">
-<dt><strong>-Z</strong></dt><dd><p>The theta grid provided contains azimuths rather than directions (implies <strong>-A</strong>).</p>
-</dd>
+<dl class="docutils" id="z">
+<dt><strong>-Z</strong></dt>
+<dd>The theta grid provided contains azimuths rather than directions (implies <strong>-A</strong>).</dd>
 </dl>
-<dl class="simple">
-<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify data types of input and/or output columns.  </p>
-</dd>
+<dl class="docutils">
+<dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Specify data types of input and/or output columns.  </dd>
 </dl>
-<dl class="simple">
-<dt><strong>-p</strong>[<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>azim</em>[/<em>elev</em>[/<em>zlevel</em>]][<strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>z0</em>]][<strong>+v</strong><em>x0</em>/<em>y0</em>] <a class="reference internal" href="gmt.html#perspective-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select perspective view.  </p>
-</dd>
+<dl class="docutils">
+<dt><strong>-p</strong>[<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>azim</em>[/<em>elev</em>[/<em>zlevel</em>]][<strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>z0</em>]][<strong>+v</strong><em>x0</em>/<em>y0</em>] <a class="reference internal" href="gmt.html#perspective-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select perspective view.  </dd>
 </dl>
-<dl class="simple">
-<dt><strong>-t</strong>[<em>transp</em>] <a class="reference internal" href="gmt.html#t-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set transparency level in percent.</p>
-</dd>
+<dl class="docutils">
+<dt><strong>-t</strong>[<em>transp</em>] <a class="reference internal" href="gmt.html#t-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Set transparency level in percent.</dd>
 </dl>
-<dl class="simple">
-<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
-</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</p>
-</dd>
-<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
-</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt><dd><p>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</p>
-</dd>
+<dl class="docutils">
+<dt><strong>-^</strong> or just <strong>-</strong></dt>
+<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt>
+<dd>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</dd>
+<dt><strong>-?</strong> or no arguments</dt>
+<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt>
+<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
 </dl>
 </div>
 <div class="section" id="units">
@@ -233,7 +360,7 @@ minute, and <strong>s</strong> for arc second, or <strong>e</strong> for meter [
 for foot, <strong>k</strong> for km, <strong>M</strong> for statute mile, <strong>n</strong> for nautical mile,
 and <strong>u</strong> for US survey foot. By default we compute such distances using
 a spherical approximation with great circles (<strong>-jg</strong>) using the authalic radius
-(see <span class="xref std std-ref">PROJ_MEAN_RADIUS</span>). You can use <strong>-jf</strong> to perform
+(see <a class="reference internal" href="gmt.conf.html#proj-mean-radius"><span class="std std-ref">PROJ_MEAN_RADIUS</span></a>). You can use <strong>-jf</strong> to perform
 “Flat Earth” calculations (quicker but less accurate) or <strong>-je</strong> to perform
 exact geodesic calculations (slower but more accurate; see
 <a class="reference internal" href="gmt.conf.html#proj-geodesic"><span class="std std-ref">PROJ_GEODESIC</span></a> for method used).</p>
@@ -308,25 +435,24 @@ coordinates of the vector end point.</p>
 </div></blockquote>
 <p>Finally, Cartesian vectors may take these modifiers:</p>
 <blockquote>
-<div><p><strong>+z</strong><em>scale</em>[<em>unit</em>] expects input <em>dx</em>,<em>dy</em> vector components and
-uses the <em>scale</em> to convert to polar coordinates with length in given unit.</p>
-</div></blockquote>
+<div><strong>+z</strong><em>scale</em>[<em>unit</em>] expects input <em>dx</em>,<em>dy</em> vector components and
+uses the <em>scale</em> to convert to polar coordinates with length in given unit.</div></blockquote>
 </div>
 <div class="section" id="classic-mode-arguments">
 <h2>Classic Mode Arguments<a class="headerlink" href="#classic-mode-arguments" title="Permalink to this headline">¶</a></h2>
 <p>These options are used to manipulate the building of layered GMT PostScript plots in classic mode.
 They are not available when using GMT modern mode.</p>
-<dl class="simple" id="k">
-<dt><strong>-K</strong> <a class="reference internal" href="gmt.html#k-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Do not finalize the PostScript plot.</p>
-</dd>
+<dl class="docutils" id="k">
+<dt><strong>-K</strong> <a class="reference internal" href="gmt.html#k-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Do not finalize the PostScript plot.</dd>
 </dl>
-<dl class="simple" id="o">
-<dt><strong>-O</strong> <a class="reference internal" href="gmt.html#o-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Append to existing PostScript plot.</p>
-</dd>
+<dl class="docutils" id="o">
+<dt><strong>-O</strong> <a class="reference internal" href="gmt.html#o-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Append to existing PostScript plot.</dd>
 </dl>
-<dl class="simple" id="p">
-<dt><strong>-P</strong> <a class="reference internal" href="gmt.html#p-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select “Portrait” plot orientation.</p>
-</dd>
+<dl class="docutils" id="p">
+<dt><strong>-P</strong> <a class="reference internal" href="gmt.html#p-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select “Portrait” plot orientation.</dd>
 </dl>
 </div>
 <div class="section" id="examples">
@@ -363,85 +489,49 @@ larger grid increment and use these grids instead of the originals.</p>
 </div>
 
 
+           </div>
+           
           </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">grdvector</a><ul>
-<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
-<li><a class="reference internal" href="#description">Description</a></li>
-<li><a class="reference internal" href="#required-arguments">Required Arguments</a></li>
-<li><a class="reference internal" href="#optional-arguments">Optional Arguments</a></li>
-<li><a class="reference internal" href="#units">Units</a></li>
-<li><a class="reference internal" href="#grid-file-formats">Grid File Formats</a></li>
-<li><a class="reference internal" href="#vector-attributes">Vector Attributes</a></li>
-<li><a class="reference internal" href="#classic-mode-arguments">Classic Mode Arguments</a></li>
-<li><a class="reference internal" href="#examples">Examples</a></li>
-<li><a class="reference internal" href="#notes">Notes</a></li>
-<li><a class="reference internal" href="#see-also">See Also</a></li>
-</ul>
-</li>
-</ul>
-
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="grdcontour_classic.html"
-                        title="previous chapter">grdcontour</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="grdview_classic.html"
-                        title="next chapter">grdview</a></p>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/grdvector_classic.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="grdview_classic.html" title="grdview"
-             >next</a> </li>
-        <li class="right" >
-          <a href="grdcontour_classic.html" title="grdcontour"
-             >previous</a> </li>
-  <li><a href="https://www.generic-mapping-tools.org/">Project Home</a>  &#187;</li>
+          <footer>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 6.0.0_ebeea76_2019.09.13 documentation</a> &#187;</li>
 
-          <li class="nav-item nav-item-1"><a href="PS_classic.html" >Classic Mode Mapping</a> &#187;</li>
-<li class="right">
-<form class="search" accept-charset="UTF-8" action="search.html" method="get">
-  <div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
-  <label for="q">
-    <a class="search" href="search.html" accesskey="s" original-title="">Search:</a>
-  </label>
-  <input accesskey="f" class="small" id="q" name="q" size="20" type="text">
-  <input type="hidden" name="check_keywords" value="yes">
-  <input type="hidden" name="area" value="default">
-</form></li>
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, The GMT Team.
+      <span class="lastupdated">
+        Last updated on Sep 16, 2019.
+      </span>
+
+    </p>
+  </div>
+    
+    
+      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
    
 
-      </ul>
-    </div>
-<div class="footer">
-    &copy; Copyright 2019, The GMT Team.
-  Last updated on Sep 14, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
-  <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
-
-</div>
-
-
-  </body>
+</body>
 </html>
