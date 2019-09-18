@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -84,6 +85,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -111,7 +113,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -139,12 +140,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -270,8 +289,8 @@ shown if you run the module with no arguments) and the equidistant
 <p>To make discrete and continuous color CPTs for data that ranges
 from -20 to 60, with color changes at every 10, try these two variants:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">makecpt</span> <span class="o">-</span><span class="n">Crainbow</span> <span class="o">-</span><span class="n">T</span><span class="o">-</span><span class="mi">20</span><span class="o">/</span><span class="mi">60</span><span class="o">/</span><span class="mi">10</span> <span class="o">&gt;</span> <span class="n">disc</span><span class="o">.</span><span class="n">cpt</span>
-<span class="n">gmt</span> <span class="n">makecpt</span> <span class="o">-</span><span class="n">Crainbow</span> <span class="o">-</span><span class="n">T</span><span class="o">-</span><span class="mi">20</span><span class="o">/</span><span class="mi">60</span><span class="o">/</span><span class="mi">10</span> <span class="o">-</span><span class="n">Z</span> <span class="o">&gt;</span> <span class="n">cont</span><span class="o">.</span><span class="n">cpt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt makecpt -Crainbow -T-20/60/10 &gt; disc.cpt
+gmt makecpt -Crainbow -T-20/60/10 -Z &gt; cont.cpt
 </pre></div>
 </div>
 </div></blockquote>
@@ -317,13 +336,13 @@ add the -H option for modern mode to allow output to stdout.</p>
 </div></blockquote>
 <p>Here is an example of four different ways of presenting the color bar:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">begin</span> <span class="n">GMT_tut_14</span> <span class="n">pdf</span>
-  <span class="n">gmt</span> <span class="n">basemap</span> <span class="o">-</span><span class="n">R0</span><span class="o">/</span><span class="mi">6</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">9</span> <span class="o">-</span><span class="n">Jx1i</span> <span class="o">-</span><span class="n">B0</span> <span class="o">-</span><span class="n">Xc</span>
-  <span class="n">gmt</span> <span class="n">colorbar</span> <span class="o">-</span><span class="n">Dx1i</span><span class="o">/</span><span class="mi">1</span><span class="n">i</span><span class="o">+</span><span class="n">w4i</span><span class="o">/</span><span class="mf">0.5</span><span class="n">i</span><span class="o">+</span><span class="n">h</span> <span class="o">-</span><span class="n">Cdisc</span><span class="o">.</span><span class="n">cpt</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">tdiscrete</span>
-  <span class="n">gmt</span> <span class="n">colorbar</span> <span class="o">-</span><span class="n">Dx1i</span><span class="o">/</span><span class="mi">3</span><span class="n">i</span><span class="o">+</span><span class="n">w4i</span><span class="o">/</span><span class="mf">0.5</span><span class="n">i</span><span class="o">+</span><span class="n">h</span> <span class="o">-</span><span class="n">Ccont</span><span class="o">.</span><span class="n">cpt</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">tcontinuous</span>
-  <span class="n">gmt</span> <span class="n">colorbar</span> <span class="o">-</span><span class="n">Dx1i</span><span class="o">/</span><span class="mi">5</span><span class="n">i</span><span class="o">+</span><span class="n">w4i</span><span class="o">/</span><span class="mf">0.5</span><span class="n">i</span><span class="o">+</span><span class="n">h</span> <span class="o">-</span><span class="n">Cdisc</span><span class="o">.</span><span class="n">cpt</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">tdiscrete</span> <span class="o">-</span><span class="n">I0</span><span class="o">.</span><span class="mi">5</span>
-  <span class="n">gmt</span> <span class="n">colorbar</span> <span class="o">-</span><span class="n">Dx1i</span><span class="o">/</span><span class="mi">7</span><span class="n">i</span><span class="o">+</span><span class="n">w4i</span><span class="o">/</span><span class="mf">0.5</span><span class="n">i</span><span class="o">+</span><span class="n">h</span> <span class="o">-</span><span class="n">Ccont</span><span class="o">.</span><span class="n">cpt</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">tcontinuous</span> <span class="o">-</span><span class="n">I0</span><span class="o">.</span><span class="mi">5</span>
-<span class="n">gmt</span> <span class="n">end</span> <span class="n">show</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_14 pdf
+  gmt basemap -R0/6/0/9 -Jx1i -B0 -Xc
+  gmt colorbar -Dx1i/1i+w4i/0.5i+h -Cdisc.cpt -B+tdiscrete
+  gmt colorbar -Dx1i/3i+w4i/0.5i+h -Ccont.cpt -B+tcontinuous
+  gmt colorbar -Dx1i/5i+w4i/0.5i+h -Cdisc.cpt -B+tdiscrete -I0.5
+  gmt colorbar -Dx1i/7i+w4i/0.5i+h -Ccont.cpt -B+tcontinuous -I0.5
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -388,14 +407,14 @@ illumination effect, and transform back the modified RGB values.</p>
 a color image of a gridded data.  Here, we will extract a subset of the
 global 30” DEM called SRTM30+:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdcut</span> <span class="nd">@earth_relief_30s</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">108</span><span class="o">/-</span><span class="mi">103</span><span class="o">/</span><span class="mi">35</span><span class="o">/</span><span class="mi">40</span> <span class="o">-</span><span class="n">Gtut_relief</span><span class="o">.</span><span class="n">nc</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcut @earth_relief_30s -R-108/-103/35/40 -Gtut_relief.nc
 </pre></div>
 </div>
 </div></blockquote>
 <p>Using <a class="reference internal" href="../grdinfo.html"><span class="doc">grdinfo</span></a> we find that the data ranges from about 1000m to
 about 4300m so we make a CPT accordingly:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">makecpt</span> <span class="o">-</span><span class="n">Crainbow</span> <span class="o">-</span><span class="n">T1000</span><span class="o">/</span><span class="mi">5000</span><span class="o">/</span><span class="mi">500</span> <span class="o">-</span><span class="n">Z</span> <span class="o">&gt;</span> <span class="n">topo</span><span class="o">.</span><span class="n">cpt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt makecpt -Crainbow -T1000/5000/500 -Z &gt; topo.cpt
 </pre></div>
 </div>
 </div></blockquote>
@@ -429,10 +448,10 @@ and a CPT; the main other options are:</p>
 <p>We want to make a plain color map with a color bar superimposed above
 the plot.  We try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">begin</span> <span class="n">GMT_tut_15</span> <span class="n">pdf</span>
-  <span class="n">gmt</span> <span class="n">grdimage</span> <span class="nd">@tut_relief</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">JM6i</span> <span class="o">-</span><span class="n">B</span> <span class="o">-</span><span class="n">Ctopo</span><span class="o">.</span><span class="n">cpt</span> <span class="o">-</span><span class="n">V</span>
-  <span class="n">gmt</span> <span class="n">colorbar</span> <span class="o">-</span><span class="n">DjTC</span><span class="o">+</span><span class="n">w5i</span><span class="o">/</span><span class="mf">0.25</span><span class="n">i</span><span class="o">+</span><span class="n">h</span><span class="o">+</span><span class="n">o0</span><span class="o">/-</span><span class="mi">1</span><span class="n">i</span> <span class="o">-</span><span class="n">Ctopo</span><span class="o">.</span><span class="n">cpt</span> <span class="o">-</span><span class="n">I0</span><span class="o">.</span><span class="mi">4</span> <span class="o">-</span><span class="n">By</span><span class="o">+</span><span class="n">lm</span>
-<span class="n">gmt</span> <span class="n">end</span> <span class="n">show</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_15 pdf
+  gmt grdimage @tut_relief.nc -JM6i -B -Ctopo.cpt -V
+  gmt colorbar -DjTC+w5i/0.25i+h+o0/-1i -Ctopo.cpt -I0.4 -By+lm
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -495,17 +514,17 @@ we prefer to use the <strong>-Ne</strong> option; the value of
 <em>norm</em> is subjective and you may experiment somewhat in the
 0.5-5 range.  For our case we choose</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdgradient</span> <span class="nd">@tut_relief</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Ne0</span><span class="o">.</span><span class="mi">8</span> <span class="o">-</span><span class="n">A100</span> <span class="o">-</span><span class="n">fg</span> <span class="o">-</span><span class="n">Gus_i</span><span class="o">.</span><span class="n">nc</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdgradient @tut_relief.nc -Ne0.8 -A100 -fg -Gus_i.nc
 </pre></div>
 </div>
 </div></blockquote>
 <p>Given the CPT and the two gridded data sets we can
 create the shaded relief image:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">begin</span> <span class="n">GMT_tut_16</span> <span class="n">pdf</span>
-  <span class="n">gmt</span> <span class="n">grdimage</span> <span class="nd">@tut_relief</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Ius_i</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">JM6i</span> <span class="o">-</span><span class="n">B</span> <span class="o">-</span><span class="n">Ctopo</span><span class="o">.</span><span class="n">cpt</span>
-  <span class="n">gmt</span> <span class="n">colorbar</span> <span class="o">-</span><span class="n">DjTC</span><span class="o">+</span><span class="n">w5i</span><span class="o">/</span><span class="mf">0.25</span><span class="n">i</span><span class="o">+</span><span class="n">h</span><span class="o">+</span><span class="n">o0</span><span class="o">/-</span><span class="mi">1</span><span class="n">i</span> <span class="o">-</span><span class="n">Ctopo</span><span class="o">.</span><span class="n">cpt</span> <span class="o">-</span><span class="n">I0</span><span class="o">.</span><span class="mi">4</span> <span class="o">-</span><span class="n">By</span><span class="o">+</span><span class="n">lm</span>
-<span class="n">gmt</span> <span class="n">end</span> <span class="n">show</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_16 pdf
+  gmt grdimage @tut_relief.nc -Ius_i.nc -JM6i -B -Ctopo.cpt
+  gmt colorbar -DjTC+w5i/0.25i+h+o0/-1i -Ctopo.cpt -I0.4 -By+lm
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -534,14 +553,14 @@ otemp.anal1deg.nc (<a class="reference external" href="ftp://ftp.cdc.noaa.gov/Da
 notice that the variable that we want to plot (otemp) is a four-dimensional variable of time,
 level (i.e., depth), latitude and longitude.</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ncdump</span> <span class="o">-</span><span class="n">h</span> <span class="n">otemp</span><span class="o">.</span><span class="n">anal1deg</span><span class="o">.</span><span class="n">nc</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ncdump -h otemp.anal1deg.nc
 </pre></div>
 </div>
 </div></blockquote>
 <p>We will need to make an appropriate color scale, running from -2ºC (freezing temperature of salt
 water) to 30ºC (highest likely ocean temperature). We do this as follows:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">makecpt</span> <span class="o">-</span><span class="n">Cno_green</span> <span class="o">-</span><span class="n">T</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="mi">30</span><span class="o">/</span><span class="mi">2</span> <span class="o">&gt;</span> <span class="n">otemp</span><span class="o">.</span><span class="n">cpt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt makecpt -Cno_green -T-2/30/2 &gt; otemp.cpt
 </pre></div>
 </div>
 </div></blockquote>
@@ -549,7 +568,7 @@ water) to 30ºC (highest likely ocean temperature). We do this as follows:</p>
 September) at sea level (that is the first level). To plot these in a Mollweide projection we
 use:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdimage</span> <span class="o">-</span><span class="n">Rg</span> <span class="o">-</span><span class="n">JW180</span><span class="o">/</span><span class="mi">9</span><span class="n">i</span> <span class="s2">&quot;@otemp.anal1deg.nc?otemp[2,0]&quot;</span> <span class="o">-</span><span class="n">Cotemp</span><span class="o">.</span><span class="n">cpt</span> <span class="o">-</span><span class="n">Bag</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">GMT_tut_17</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdimage -Rg -JW180/9i <span class="s2">&quot;@otemp.anal1deg.nc?otemp[2,0]&quot;</span> -Cotemp.cpt -Bag -pdf GMT_tut_17
 </pre></div>
 </div>
 </div></blockquote>
@@ -630,13 +649,13 @@ GMT module that produces perspective views of gridded data files is
 subset of the ETOPO5 data over Bermuda and make a quick-and-dirty
 CPT:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grd2cpt</span> <span class="nd">@tut_bathy</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Cocean</span> <span class="o">&gt;</span> <span class="n">bermuda</span><span class="o">.</span><span class="n">cpt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grd2cpt @tut_bathy.nc -Cocean &gt; bermuda.cpt
 </pre></div>
 </div>
 </div></blockquote>
 <p>A simple mesh plot can therefore be obtained with</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdview</span> <span class="nd">@tut_bathy</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">JM5i</span> <span class="o">-</span><span class="n">JZ2i</span> <span class="o">-</span><span class="n">p135</span><span class="o">/</span><span class="mi">30</span> <span class="o">-</span><span class="n">B</span> <span class="o">-</span><span class="n">Cbermuda</span><span class="o">.</span><span class="n">cpt</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">GMT_tut_18</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdview @tut_bathy.nc -JM5i -JZ2i -p135/30 -B -Cbermuda.cpt -pdf GMT_tut_18
 </pre></div>
 </div>
 </div></blockquote>
@@ -655,7 +674,7 @@ CPT:</p>
 <p>We will make a perspective, color-coded view of the US Rockies
 from the southeast.  This is done using</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdview</span> <span class="nd">@tut_relief</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">JM6i</span> <span class="o">-</span><span class="n">p135</span><span class="o">/</span><span class="mi">35</span> <span class="o">-</span><span class="n">Qi50</span> <span class="o">-</span><span class="n">Ius_i</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Ctopo</span><span class="o">.</span><span class="n">cpt</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">B</span> <span class="o">-</span><span class="n">JZ0</span><span class="o">.</span><span class="mi">5</span><span class="n">i</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">GMT_tut_19</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdview @tut_relief.nc -JM6i -p135/35 -Qi50 -Ius_i.nc -Ctopo.cpt -V -B -JZ0.5i -pdf GMT_tut_19
 </pre></div>
 </div>
 </div></blockquote>
@@ -701,7 +720,7 @@ appropriate <em>dpi</em> for the final output device and let it rip.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

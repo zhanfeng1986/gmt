@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -372,7 +391,7 @@ specify more decimals using the <a class="reference internal" href="gmt.conf.htm
 coordinates are in cm) into as few complete lines as possible, assuming
 the end points slop could be up to 0.1 mm, run</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">connect</span> <span class="n">segment_</span><span class="o">*.</span><span class="n">txt</span> <span class="o">-</span><span class="n">T0</span><span class="o">.</span><span class="mi">1</span> <span class="o">&gt;</span> <span class="n">new_segments</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt connect segment_*.txt -T0.1 &gt; new_segments.txt
 </pre></div>
 </div>
 </div></blockquote>
@@ -382,7 +401,7 @@ possible, assuming the end points slop could be up to 150 m, and write
 the complete segments to separate files called Map_segment_0001.dat,
 Map_segment_0002.dat, etc., run</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">connect</span> <span class="n">my_lines</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">T150e</span> <span class="o">-</span><span class="n">DMap_segment_</span><span class="o">%</span><span class="mi">04</span><span class="n">d</span><span class="o">.</span><span class="n">dat</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt connect my_lines.txt -T150e -DMap_segment_%04d.dat
 </pre></div>
 </div>
 </div></blockquote>
@@ -418,7 +437,7 @@ all close lines.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

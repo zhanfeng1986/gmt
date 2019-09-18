@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -406,14 +425,14 @@ Make sure these are set to give you enough significant digits to achieve the des
 <p>To compute all internal crossovers in the gmt-formatted file c2104.gmt,
 and using the tag GMT, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">x2sys_cross</span> <span class="n">c2104</span><span class="o">.</span><span class="n">gmt</span> <span class="o">-</span><span class="n">TGMT</span> <span class="o">&gt;</span> <span class="n">c2104</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt x2sys_cross c2104.gmt -TGMT &gt; c2104.txt
 </pre></div>
 </div>
 </div></blockquote>
 <p>To find the crossover locations with bathymetry between the two MGD77
 files A13232.mgd77 and A99938.mgd77, using the MGD77 tag, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">x2sys_cross</span> <span class="n">A13232</span><span class="o">.</span><span class="n">mgd77</span> <span class="n">A99938</span><span class="o">.</span><span class="n">mgd77</span> <span class="o">-</span><span class="n">Qe</span> <span class="o">-</span><span class="n">TMGD77</span> <span class="o">&gt;</span> <span class="n">crossovers</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt x2sys_cross A13232.mgd77 A99938.mgd77 -Qe -TMGD77 &gt; crossovers.txt
 </pre></div>
 </div>
 </div></blockquote>
@@ -453,7 +472,7 @@ package. <em>Computers and Geosciences</em>, <strong>36</strong>, 348-354.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

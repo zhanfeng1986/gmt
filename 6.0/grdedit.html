@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -371,21 +390,21 @@ will indicate both this unit and epoch.</p>
 change the boundaries from geodetic longitudes to geographic and put a
 new title in the header. We accomplish this by</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdedit</span> <span class="n">data</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">60</span><span class="o">/-</span><span class="mi">50</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="mi">30</span> <span class="o">-</span><span class="n">D</span><span class="o">+</span><span class="n">t</span><span class="s2">&quot;Gravity Anomalies&quot;</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdedit data.nc -R-60/-50/10/30 -D+t<span class="s2">&quot;Gravity Anomalies&quot;</span>
 </pre></div>
 </div>
 </div></blockquote>
 <p>The grid world.nc has the limits 0/360/-72/72. To shift the data so that
 the limits would be -180/180/-72/72, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdedit</span> <span class="n">world</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">180</span><span class="o">/</span><span class="mi">180</span><span class="o">/-</span><span class="mi">72</span><span class="o">/</span><span class="mi">72</span> <span class="o">-</span><span class="n">S</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdedit world.nc -R-180/180/-72/72 -S
 </pre></div>
 </div>
 </div></blockquote>
 <p>The file junk.nc was created prior to GMT 3.1 with incompatible
 <strong>-R</strong> and <strong>-I</strong> arguments. To reset the x- and y-increments we run</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdedit</span> <span class="n">junk</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">A</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdedit junk.nc -A
 </pre></div>
 </div>
 </div></blockquote>
@@ -393,20 +412,20 @@ the limits would be -180/180/-72/72, use</p>
 the required information to indicate that the grid is geographic. To add
 this information, run</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdedit</span> <span class="n">junk</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">fg</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdedit junk.nc -fg
 </pre></div>
 </div>
 </div></blockquote>
 <p>To rotate the grid oblique.nc 90 degrees counter-clockwise and write out
 the rotated grid to a new file, run</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdedit</span> <span class="n">oblique</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">El</span> <span class="o">-</span><span class="n">Goblique_rot</span><span class="o">.</span><span class="n">nc</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdedit oblique.nc -El -Goblique_rot.nc
 </pre></div>
 </div>
 </div></blockquote>
 <p>To ensure that the grid depths.nc only has positive longitude values, run</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdedit</span> <span class="n">depths</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">L</span><span class="o">+</span><span class="n">p</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdedit depths.nc -L+p
 </pre></div>
 </div>
 </div></blockquote>
@@ -443,7 +462,7 @@ any revised output.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

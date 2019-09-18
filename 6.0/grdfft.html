@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -433,14 +452,14 @@ white radial spectrum as well.</p>
 <p>To upward continue the sea-level magnetic anomalies in the file
 mag_0.nc to a level 800 m above sealevel:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdfft</span> <span class="n">mag_0</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">C800</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">Gmag_800</span><span class="o">.</span><span class="n">nc</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdfft mag_0.nc -C800 -V -Gmag_800.nc
 </pre></div>
 </div>
 </div></blockquote>
 <p>To transform geoid heights in m (geoid.nc) on a geographical grid to
 free-air gravity anomalies in mGal:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdfft</span> <span class="n">geoid</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Dg</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">Ggrav</span><span class="o">.</span><span class="n">nc</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdfft geoid.nc -Dg -V -Ggrav.nc
 </pre></div>
 </div>
 </div></blockquote>
@@ -449,7 +468,7 @@ vertical (in micro-radians) in the 038 direction, we must first
 integrate gravity to get geoid, then take the directional derivative,
 and finally scale radians to micro-radians:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdfft</span> <span class="n">faa</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Ig</span> <span class="o">-</span><span class="n">A38</span> <span class="o">-</span><span class="n">S1e6</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">Gdefl_38</span><span class="o">.</span><span class="n">nc</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdfft faa.nc -Ig -A38 -S1e6 -V -Gdefl_38.nc
 </pre></div>
 </div>
 </div></blockquote>
@@ -457,14 +476,14 @@ and finally scale radians to micro-radians:</p>
 curvature of the field. We can compute these as mGal/m^2 by
 differentiating twice:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdfft</span> <span class="n">gravity</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">D</span> <span class="o">-</span><span class="n">D</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">Ggrav_2nd_derivative</span><span class="o">.</span><span class="n">nc</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdfft gravity.nc -D -D -V -Ggrav_2nd_derivative.nc
 </pre></div>
 </div>
 </div></blockquote>
 <p>To compute cross-spectral estimates for co-registered bathymetry and
 gravity grids, and report result as functions of wavelengths in km, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdfft</span> <span class="n">bathymetry</span><span class="o">.</span><span class="n">nc</span> <span class="n">gravity</span><span class="o">.</span><span class="n">grd</span> <span class="o">-</span><span class="n">E</span><span class="o">+</span><span class="n">wk</span> <span class="o">-</span><span class="n">fg</span> <span class="o">-</span><span class="n">V</span> <span class="o">&gt;</span> <span class="n">cross_spectra</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdfft bathymetry.nc gravity.grd -E+wk -fg -V &gt; cross_spectra.txt
 </pre></div>
 </div>
 </div></blockquote>
@@ -472,7 +491,7 @@ gravity grids, and report result as functions of wavelengths in km, try</p>
 and tapering has been applied, as well as saving the real and imaginary
 components of the raw spectrum of the data in topo.nc, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdfft</span> <span class="n">topo</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">N</span><span class="o">+</span><span class="n">w</span><span class="o">+</span><span class="n">z</span> <span class="o">-</span><span class="n">fg</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdfft topo.nc -N+w+z -fg -V
 </pre></div>
 </div>
 </div></blockquote>
@@ -502,7 +521,7 @@ components of the raw spectrum of the data in topo.nc, try</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

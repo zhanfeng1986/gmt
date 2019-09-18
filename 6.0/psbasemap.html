@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -459,7 +478,7 @@ of upper case letters to specify map width instead of map scale.</p>
 axes annotated, using xscale = yscale = 1.0, ticking every 1 unit and
 annotating every 2, and using xlabel = “Distance” and ylabel = “No of samples”, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">R0</span><span class="o">/</span><span class="mi">9</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">5</span> <span class="o">-</span><span class="n">Jx1</span> <span class="o">-</span><span class="n">Bf1a2</span> <span class="o">-</span><span class="n">Bx</span><span class="o">+</span><span class="n">lDistance</span> <span class="o">-</span><span class="n">By</span><span class="o">+</span><span class="n">l</span><span class="s2">&quot;No of samples&quot;</span> <span class="o">-</span><span class="n">BWeSn</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">linear</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R0/9/0/5 -Jx1 -Bf1a2 -Bx+lDistance -By+l<span class="s2">&quot;No of samples&quot;</span> -BWeSn -P &gt; linear.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -470,7 +489,7 @@ annotating every 2, and using xlabel = “Distance” and ylabel = “No of samp
 x-axis is 25 cm and annotated every 1-2-5 and the y-axis is 15 cm and
 annotated every power of 10 but has tick-marks every 0.1, run</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">R1</span><span class="o">/</span><span class="mi">10000</span><span class="o">/</span><span class="mf">1e20</span><span class="o">/</span><span class="mf">1e25</span> <span class="o">-</span><span class="n">JX25cl</span><span class="o">/</span><span class="mi">15</span><span class="n">cl</span> <span class="o">-</span><span class="n">Bx2</span><span class="o">+</span><span class="n">lWavelength</span> <span class="o">-</span><span class="n">Bya1pf3</span><span class="o">+</span><span class="n">lPower</span> <span class="o">-</span><span class="n">BWS</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">loglog</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R1/10000/1e20/1e25 -JX25cl/15cl -Bx2+lWavelength -Bya1pf3+lPower -BWS -P &gt; loglog.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -481,7 +500,7 @@ annotated every power of 10 but has tick-marks every 0.1, run</p>
 depth positive down, ticked and annotated every 500m, and ages annotated
 at 1 my, 4 my, 9 my etc, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">R0</span><span class="o">/</span><span class="mi">100</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">5000</span> <span class="o">-</span><span class="n">Jx1p0</span><span class="o">.</span><span class="mi">5</span><span class="o">/-</span><span class="mf">0.001</span> <span class="o">-</span><span class="n">Bx1p</span><span class="o">+</span><span class="n">l</span><span class="s2">&quot;Crustal age&quot;</span> <span class="o">-</span><span class="n">By500</span><span class="o">+</span><span class="n">lDepth</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">power</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R0/100/0/5000 -Jx1p0.5/-0.001 -Bx1p+l<span class="s2">&quot;Crustal age&quot;</span> -By500+lDepth -P &gt; power.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -492,7 +511,7 @@ at 1 my, 4 my, 9 my etc, use</p>
 to 1000 should correspond to 3 inch and with gridlines and ticks intervals
 automatically determined, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">R0</span><span class="o">/</span><span class="mi">360</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">1000</span> <span class="o">-</span><span class="n">JP6i</span> <span class="o">-</span><span class="n">Bafg</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">polar</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R0/360/0/1000 -JP6i -Bafg -P &gt; polar.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -504,7 +523,7 @@ automatically determined, use</p>
 <h3>Cassini<a class="headerlink" href="#cassini" title="Permalink to this headline">¶</a></h3>
 <p>A 10-cm-wide basemap using the Cassini projection may be obtained by</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">R20</span><span class="o">/</span><span class="mi">50</span><span class="o">/</span><span class="mi">20</span><span class="o">/</span><span class="mi">35</span> <span class="o">-</span><span class="n">JC35</span><span class="o">/</span><span class="mi">28</span><span class="o">/</span><span class="mi">10</span><span class="n">c</span> <span class="o">-</span><span class="n">P</span> <span class="o">-</span><span class="n">Bafg</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">tCassini</span> <span class="o">&gt;</span> <span class="n">cassini</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R20/50/20/35 -JC35/28/10c -P -Bafg -B+tCassini &gt; cassini.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -515,7 +534,7 @@ automatically determined, use</p>
 the length of 5000 km along the equator (centered on 1/1 inch), may be
 plotted as</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">R90</span><span class="o">/</span><span class="mi">180</span><span class="o">/-</span><span class="mi">50</span><span class="o">/</span><span class="mi">50</span> <span class="o">-</span><span class="n">Jm0</span><span class="o">.</span><span class="mi">025</span><span class="n">i</span> <span class="o">-</span><span class="n">Bafg</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">tMercator</span> <span class="o">-</span><span class="n">Lx1i</span><span class="o">/</span><span class="mi">1</span><span class="n">i</span><span class="o">+</span><span class="n">c0</span><span class="o">+</span><span class="n">w5000k</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">mercator</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R90/180/-50/50 -Jm0.025i -Bafg -B+tMercator -Lx1i/1i+c0+w5000k -P &gt; mercator.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -524,7 +543,7 @@ plotted as</p>
 <h3>Miller<a class="headerlink" href="#miller" title="Permalink to this headline">¶</a></h3>
 <p>A global Miller cylindrical map with scale 1:200,000,000 may be plotted as</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">Rg</span> <span class="o">-</span><span class="n">Jj180</span><span class="o">/</span><span class="mi">1</span><span class="p">:</span><span class="mi">200000000</span> <span class="o">-</span><span class="n">Bafg</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">tMiller</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">miller</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -Rg -Jj180/1:200000000 -Bafg -B+tMiller -P &gt; miller.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -534,7 +553,7 @@ plotted as</p>
 <p>To create a page-size global oblique Mercator basemap for a pole at
 (90,30) with gridlines every 30 degrees, run</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">R0</span><span class="o">/</span><span class="mi">360</span><span class="o">/-</span><span class="mi">70</span><span class="o">/</span><span class="mi">70</span> <span class="o">-</span><span class="n">Joc0</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">90</span><span class="o">/</span><span class="mi">30</span><span class="o">/</span><span class="mf">0.064</span><span class="n">cd</span> <span class="o">-</span><span class="n">B30g30</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">t</span><span class="s2">&quot;Oblique Mercator&quot;</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">oblmerc</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R0/360/-70/70 -Joc0/0/90/30/0.064cd -B30g30 -B+t<span class="s2">&quot;Oblique Mercator&quot;</span> -P &gt; oblmerc.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -543,7 +562,7 @@ plotted as</p>
 <h3>Transverse Mercator [conformal]<a class="headerlink" href="#transverse-mercator-conformal" title="Permalink to this headline">¶</a></h3>
 <p>A regular Transverse Mercator basemap for some region may look like</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">R69</span><span class="p">:</span><span class="mi">30</span><span class="o">/</span><span class="mi">71</span><span class="p">:</span><span class="mi">45</span><span class="o">/-</span><span class="mi">17</span><span class="o">/-</span><span class="mi">15</span><span class="p">:</span><span class="mi">15</span> <span class="o">-</span><span class="n">Jt70</span><span class="o">/</span><span class="mi">1</span><span class="p">:</span><span class="mi">1000000</span> <span class="o">-</span><span class="n">Bafg</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">t</span><span class="s2">&quot;Survey area&quot;</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">transmerc</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R69:30/71:45/-17/-15:15 -Jt70/1:1000000 -Bafg -B+t<span class="s2">&quot;Survey area&quot;</span> -P &gt; transmerc.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -553,7 +572,7 @@ plotted as</p>
 <p>This projection only needs the central meridian and scale. A 25 cm wide
 global basemap centered on the 130E meridian is made by</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">50</span><span class="o">/</span><span class="mi">310</span><span class="o">/-</span><span class="mi">90</span><span class="o">/</span><span class="mi">90</span> <span class="o">-</span><span class="n">JQ130</span><span class="o">/</span><span class="mi">25</span><span class="n">c</span> <span class="o">-</span><span class="n">Bafg</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">t</span><span class="s2">&quot;Equidistant Cylindrical&quot;</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">cyl_eqdist</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R-50/310/-90/90 -JQ130/25c -Bafg -B+t<span class="s2">&quot;Equidistant Cylindrical&quot;</span> -P &gt; cyl_eqdist.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -563,7 +582,7 @@ global basemap centered on the 130E meridian is made by</p>
 <p>To use this projection you must know the UTM zone number, which defines
 the central meridian. A UTM basemap for Indo-China can be plotted as</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">R95</span><span class="o">/</span><span class="mi">5</span><span class="o">/</span><span class="mi">108</span><span class="o">/</span><span class="mi">20</span><span class="n">r</span> <span class="o">-</span><span class="n">Ju46</span><span class="o">/</span><span class="mi">1</span><span class="p">:</span><span class="mi">10000000</span> <span class="o">-</span><span class="n">Bafg</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">tUTM</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">utm</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R95/5/108/20r -Ju46/1:10000000 -Bafg -B+tUTM -P &gt; utm.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -575,7 +594,7 @@ deciding on the standard parallel. Here we will use 45 degrees which
 gives the Gall projection. A 9 inch wide global basemap centered
 on the Pacific is made by</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">Rg</span> <span class="o">-</span><span class="n">JY180</span><span class="o">/</span><span class="mi">45</span><span class="o">/</span><span class="mi">9</span><span class="n">i</span> <span class="o">-</span><span class="n">Bafg</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">tGall</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">gall</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -Rg -JY180/45/9i -Bafg -B+tGall -P &gt; gall.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -587,7 +606,7 @@ on the Pacific is made by</p>
 <h3>Albers [equal-area]<a class="headerlink" href="#albers-equal-area" title="Permalink to this headline">¶</a></h3>
 <p>A basemap for middle Europe may be created by</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">R0</span><span class="o">/</span><span class="mi">90</span><span class="o">/</span><span class="mi">25</span><span class="o">/</span><span class="mi">55</span> <span class="o">-</span><span class="n">Jb45</span><span class="o">/</span><span class="mi">20</span><span class="o">/</span><span class="mi">32</span><span class="o">/</span><span class="mi">45</span><span class="o">/</span><span class="mf">0.25</span><span class="n">c</span> <span class="o">-</span><span class="n">Bafg</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">t</span><span class="s2">&quot;Albers Equal-area&quot;</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">albers</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R0/90/25/55 -Jb45/20/32/45/0.25c -Bafg -B+t<span class="s2">&quot;Albers Equal-area&quot;</span> -P &gt; albers.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -596,7 +615,7 @@ on the Pacific is made by</p>
 <h3>Lambert [conformal]<a class="headerlink" href="#lambert-conformal" title="Permalink to this headline">¶</a></h3>
 <p>Another basemap for middle Europe may be created by</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">R0</span><span class="o">/</span><span class="mi">90</span><span class="o">/</span><span class="mi">25</span><span class="o">/</span><span class="mi">55</span> <span class="o">-</span><span class="n">Jl45</span><span class="o">/</span><span class="mi">20</span><span class="o">/</span><span class="mi">32</span><span class="o">/</span><span class="mi">45</span><span class="o">/</span><span class="mf">0.1</span><span class="n">i</span> <span class="o">-</span><span class="n">Bafg</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">t</span><span class="s2">&quot;Lambert Conformal Conic&quot;</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">lambertc</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R0/90/25/55 -Jl45/20/32/45/0.1i -Bafg -B+t<span class="s2">&quot;Lambert Conformal Conic&quot;</span> -P &gt; lambertc.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -605,7 +624,7 @@ on the Pacific is made by</p>
 <h3>Equidistant<a class="headerlink" href="#equidistant" title="Permalink to this headline">¶</a></h3>
 <p>Yet another basemap of width 6 inch for middle Europe may be created by</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">R0</span><span class="o">/</span><span class="mi">90</span><span class="o">/</span><span class="mi">25</span><span class="o">/</span><span class="mi">55</span> <span class="o">-</span><span class="n">JD45</span><span class="o">/</span><span class="mi">20</span><span class="o">/</span><span class="mi">32</span><span class="o">/</span><span class="mi">45</span><span class="o">/</span><span class="mi">6</span><span class="n">i</span> <span class="o">-</span><span class="n">Bafg</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">t</span><span class="s2">&quot;Equidistant conic&quot;</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">econic</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R0/90/25/55 -JD45/20/32/45/6i -Bafg -B+t<span class="s2">&quot;Equidistant conic&quot;</span> -P &gt; econic.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -614,7 +633,7 @@ on the Pacific is made by</p>
 <h3>Polyconic<a class="headerlink" href="#polyconic" title="Permalink to this headline">¶</a></h3>
 <p>A basemap for north America may be created by</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">180</span><span class="o">/-</span><span class="mi">20</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">90</span> <span class="o">-</span><span class="n">JPoly</span><span class="o">/</span><span class="mi">4</span><span class="n">i</span> <span class="o">-</span><span class="n">Bafg</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">tPolyconic</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">polyconic</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R-180/-20/0/90 -JPoly/4i -Bafg -B+tPolyconic -P &gt; polyconic.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -627,7 +646,7 @@ on the Pacific is made by</p>
 <p>A 15-cm-wide global view of the world from the vantage point -80/-30
 will give the following basemap:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">Rg</span> <span class="o">-</span><span class="n">JA</span><span class="o">-</span><span class="mi">80</span><span class="o">/-</span><span class="mi">30</span><span class="o">/</span><span class="mi">15</span><span class="n">c</span> <span class="o">-</span><span class="n">Bafg</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">t</span><span class="s2">&quot;Lambert Azimuthal&quot;</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">lamberta</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -Rg -JA-80/-30/15c -Bafg -B+t<span class="s2">&quot;Lambert Azimuthal&quot;</span> -P &gt; lamberta.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -640,7 +659,7 @@ substitute <strong>-Ja</strong> for <strong>-Js</strong>.</p>
 <p>A 15-cm-wide global map in which distances from the center (here 125/10)
 to any point is true can be obtained by:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">Rg</span> <span class="o">-</span><span class="n">JE125</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="mi">15</span><span class="n">c</span> <span class="o">-</span><span class="n">Bafg</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">tEquidistant</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">equi</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -Rg -JE125/10/15c -Bafg -B+tEquidistant -P &gt; equi.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -650,7 +669,7 @@ to any point is true can be obtained by:</p>
 <p>A view of the world from the vantage point -100/40 out to a horizon of
 60 degrees from the center can be made using the Gnomonic projection:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">Rg</span> <span class="o">-</span><span class="n">JF</span><span class="o">-</span><span class="mi">100</span><span class="o">/</span><span class="mi">40</span><span class="o">/</span><span class="mi">60</span><span class="o">/</span><span class="mi">6</span><span class="n">i</span> <span class="o">-</span><span class="n">Bafg</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">tGnomonic</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">gnomonic</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -Rg -JF-100/40/60/6i -Bafg -B+tGnomonic -P &gt; gnomonic.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -660,7 +679,7 @@ to any point is true can be obtained by:</p>
 <p>A global perspective (from infinite distance) view of the world from the
 vantage point 125/10 will give the following 6-inch-wide basemap:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">Rg</span> <span class="o">-</span><span class="n">JG125</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="mi">6</span><span class="n">i</span> <span class="o">-</span><span class="n">Bafg</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">tOrthographic</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">ortho</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -Rg -JG125/10/6i -Bafg -B+tOrthographic -P &gt; ortho.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -673,7 +692,7 @@ twist and tilt. A view from 160 km above -74/41.5 with a tilt of 55 and
 azimuth of 210 degrees, and limiting the viewpoint to 30 degrees width
 and height will product a 6-inch-wide basemap:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">Rg</span> <span class="o">-</span><span class="n">JG</span><span class="o">-</span><span class="mi">74</span><span class="o">/</span><span class="mf">41.5</span><span class="o">/</span><span class="mi">160</span><span class="o">/</span><span class="mi">210</span><span class="o">/</span><span class="mi">55</span><span class="o">/</span><span class="mi">30</span><span class="o">/</span><span class="mi">30</span><span class="o">/</span><span class="mi">6</span><span class="n">i</span> <span class="o">-</span><span class="n">Bafg</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">t</span><span class="s2">&quot;General Perspective&quot;</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">genper</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -Rg -JG-74/41.5/160/210/55/30/30/6i -Bafg -B+t<span class="s2">&quot;General Perspective&quot;</span> -P &gt; genper.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -684,7 +703,7 @@ and height will product a 6-inch-wide basemap:</p>
 -60 degree latitude, with plot title “Salinity measurements”, using 5
 degrees annotation/tick interval and 1 degree gridlines, run</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">45</span><span class="o">/</span><span class="mi">45</span><span class="o">/-</span><span class="mi">90</span><span class="o">/-</span><span class="mi">60</span> <span class="o">-</span><span class="n">Js0</span><span class="o">/-</span><span class="mi">90</span><span class="o">/</span><span class="mi">12</span><span class="n">c</span><span class="o">/-</span><span class="mi">60</span> <span class="o">-</span><span class="n">B5g1</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">t</span><span class="s2">&quot;Salinity measurements&quot;</span> <span class="o">&gt;</span> <span class="n">stereo1</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R-45/45/-90/-60 -Js0/-90/12c/-60 -B5g1 -B+t<span class="s2">&quot;Salinity measurements&quot;</span> &gt; stereo1.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -695,7 +714,7 @@ indicate the lower left and upper right corners (in lon/lat) that will
 define our rectangle. We choose a pole at 130/-30 and use 100/-45 and
 160/-5 as our corners. The command becomes</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">R100</span><span class="o">/-</span><span class="mi">45</span><span class="o">/</span><span class="mi">160</span><span class="o">/-</span><span class="mi">5</span><span class="n">r</span> <span class="o">-</span><span class="n">JS130</span><span class="o">/-</span><span class="mi">30</span><span class="o">/</span><span class="mi">12</span><span class="n">c</span> <span class="o">-</span><span class="n">Bafg</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">t</span><span class="s2">&quot;General Stereographic View&quot;</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">stereo2</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R100/-45/160/-5r -JS130/-30/12c -Bafg -B+t<span class="s2">&quot;General Stereographic View&quot;</span> -P &gt; stereo2.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -709,7 +728,7 @@ define our rectangle. We choose a pole at 130/-30 and use 100/-45 and
 spherical form is used. To get a world map centered on Greenwich at a
 scale of 1:200000000, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">Rd</span> <span class="o">-</span><span class="n">Jh0</span><span class="o">/</span><span class="mi">1</span><span class="p">:</span><span class="mi">200000000</span> <span class="o">-</span><span class="n">Bafg</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">tHammer</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">hammer</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -Rd -Jh0/1:200000000 -Bafg -B+tHammer -P &gt; hammer.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -719,7 +738,7 @@ scale of 1:200000000, use</p>
 <p>To make a sinusoidal world map centered on Greenwich, with a scale along
 the equator of 0.02 inch/degree, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">Rd</span> <span class="o">-</span><span class="n">Ji0</span><span class="o">/</span><span class="mf">0.02</span><span class="n">i</span> <span class="o">-</span><span class="n">Bafg</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">tSinusoidal</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">sinus1</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -Rd -Ji0/0.02i -Bafg -B+tSinusoidal -P &gt; sinus1.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -727,9 +746,9 @@ the equator of 0.02 inch/degree, use</p>
 and 60E, with a scale along the equator of 0.02 inch/degree, run the
 following sequence of commands:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">160</span><span class="o">/-</span><span class="mi">20</span><span class="o">/-</span><span class="mi">90</span><span class="o">/</span><span class="mi">90</span> <span class="o">-</span><span class="n">Ji</span><span class="o">-</span><span class="mi">90</span><span class="o">/</span><span class="mf">0.02</span><span class="n">i</span> <span class="o">-</span><span class="n">Bx30g30</span> <span class="o">-</span><span class="n">By15g15</span> <span class="o">-</span><span class="n">BWesn</span> <span class="o">-</span><span class="n">K</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">sinus_i</span><span class="o">.</span><span class="n">ps</span>
-<span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">20</span><span class="o">/</span><span class="mi">60</span><span class="o">/-</span><span class="mi">90</span><span class="o">/</span><span class="mi">90</span> <span class="o">-</span><span class="n">Ji20</span><span class="o">/</span><span class="mf">0.02</span><span class="n">i</span> <span class="o">-</span><span class="n">Bx30g30</span> <span class="o">-</span><span class="n">By15g15</span> <span class="o">-</span><span class="n">Bwesn</span> <span class="o">-</span><span class="n">O</span> <span class="o">-</span><span class="n">K</span> <span class="o">-</span><span class="n">X2</span><span class="o">.</span><span class="mi">8</span><span class="n">i</span> <span class="o">&gt;&gt;</span> <span class="n">sinus_i</span><span class="o">.</span><span class="n">ps</span>
-<span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">R60</span><span class="o">/</span><span class="mi">200</span><span class="o">/-</span><span class="mi">90</span><span class="o">/</span><span class="mi">90</span> <span class="o">-</span><span class="n">Ji130</span><span class="o">/</span><span class="mf">0.02</span><span class="n">i</span> <span class="o">-</span><span class="n">Bx30g30</span> <span class="o">-</span><span class="n">By15g15</span> <span class="o">-</span><span class="n">BwEsn</span> <span class="o">-</span><span class="n">O</span> <span class="o">-</span><span class="n">X1</span><span class="o">.</span><span class="mi">6</span><span class="n">i</span> <span class="o">&gt;&gt;</span> <span class="n">sinus_i</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R-160/-20/-90/90 -Ji-90/0.02i -Bx30g30 -By15g15 -BWesn -K -P &gt; sinus_i.ps
+gmt psbasemap -R-20/60/-90/90 -Ji20/0.02i -Bx30g30 -By15g15 -Bwesn -O -K -X2.8i &gt;&gt; sinus_i.ps
+gmt psbasemap -R60/200/-90/90 -Ji130/0.02i -Bx30g30 -By15g15 -BwEsn -O -X1.6i &gt;&gt; sinus_i.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -739,7 +758,7 @@ following sequence of commands:</p>
 <p>Pseudo-cylindrical projection typically used for global maps only. Set
 the central longitude and scale, e.g.,</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">Rg</span> <span class="o">-</span><span class="n">Jkf180</span><span class="o">/</span><span class="mf">0.064</span><span class="n">c</span> <span class="o">-</span><span class="n">Bafg</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">t</span><span class="s2">&quot;Eckert IV&quot;</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">eckert4</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -Rg -Jkf180/0.064c -Bafg -B+t<span class="s2">&quot;Eckert IV&quot;</span> -P &gt; eckert4.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -749,7 +768,7 @@ the central longitude and scale, e.g.,</p>
 <p>Another pseudo-cylindrical projection typically used for global maps
 only. Set the central longitude and scale, e.g.,</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">Rg</span> <span class="o">-</span><span class="n">Jks180</span><span class="o">/</span><span class="mf">0.064</span><span class="n">c</span> <span class="o">-</span><span class="n">Bafg</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">t</span><span class="s2">&quot;Eckert VI&quot;</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">eckert6</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -Rg -Jks180/0.064c -Bafg -B+t<span class="s2">&quot;Eckert VI&quot;</span> -P &gt; eckert6.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -759,7 +778,7 @@ only. Set the central longitude and scale, e.g.,</p>
 <p>Projection designed to make global maps “look right”. Set the central
 longitude and width, e.g.,</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">Rd</span> <span class="o">-</span><span class="n">JN0</span><span class="o">/</span><span class="mi">8</span><span class="n">i</span> <span class="o">-</span><span class="n">Bafg</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">tRobinson</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">robinson</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -Rd -JN0/8i -Bafg -B+tRobinson -P &gt; robinson.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -769,7 +788,7 @@ longitude and width, e.g.,</p>
 <p>Yet another projection typically used for global maps only. You can set
 the central longitude, e.g.,</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">R90</span><span class="o">/</span><span class="mi">450</span><span class="o">/-</span><span class="mi">90</span><span class="o">/</span><span class="mi">90</span> <span class="o">-</span><span class="n">JR270</span><span class="o">/</span><span class="mi">25</span><span class="n">c</span> <span class="o">-</span><span class="n">Bafg</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">t</span><span class="s2">&quot;Winkel Tripel&quot;</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">winkel</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R90/450/-90/90 -JR270/25c -Bafg -B+t<span class="s2">&quot;Winkel Tripel&quot;</span> -P &gt; winkel.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -780,7 +799,7 @@ the central longitude, e.g.,</p>
 the spherical form is used. To get a 25-cm-wide world map centered on
 the Dateline:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psbasemap</span> <span class="o">-</span><span class="n">Rg</span> <span class="o">-</span><span class="n">JW180</span><span class="o">/</span><span class="mi">25</span><span class="n">c</span> <span class="o">-</span><span class="n">Bafg</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">tMollweide</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">mollweide</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>psbasemap -Rg -JW180/25c -Bafg -B+tMollweide -P &gt; mollweide.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -790,7 +809,7 @@ the Dateline:</p>
 <p>The Van der Grinten projection is also mostly used for global maps and
 thus the spherical form is used. To get a 18-cm-wide world map centered on the Dateline:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">Rg</span> <span class="o">-</span><span class="n">JV180</span><span class="o">/</span><span class="mi">18</span><span class="n">c</span> <span class="o">-</span><span class="n">Bafg</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">t</span><span class="s2">&quot;Van der Grinten&quot;</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">grinten</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -Rg -JV180/18c -Bafg -B+t<span class="s2">&quot;Van der Grinten&quot;</span> -P &gt; grinten.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -801,7 +820,7 @@ thus the spherical form is used. To get a 18-cm-wide world map centered on the D
 use the <strong>-p</strong> option.  For instance, the rotate the basemap below 90
 degrees about an axis centered on the map, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psbasemap</span> <span class="o">-</span><span class="n">R10</span><span class="o">/</span><span class="mi">40</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="mi">40</span> <span class="o">-</span><span class="n">JM10c</span> <span class="o">-</span><span class="n">P</span> <span class="o">-</span><span class="n">Bafg</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">t</span><span class="s2">&quot;I am rotated&quot;</span> <span class="o">-</span><span class="n">p90</span><span class="o">+</span><span class="n">w25</span><span class="o">/</span><span class="mi">25</span> <span class="o">-</span><span class="n">Xc</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">rotated</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psbasemap -R10/40/10/40 -JM10c -P -Bafg -B+t<span class="s2">&quot;I am rotated&quot;</span> -p90+w25/25 -Xc -P &gt; rotated.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -854,7 +873,7 @@ However, it is fairly simple for most applications (see examples).</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -84,6 +85,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -109,7 +111,6 @@
 <li class="toctree-l2"><a class="reference internal" href="session-4.html">Session Four</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -137,12 +138,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -218,7 +237,7 @@ data sets needed for this tutorial are obtained via the Internet
 as they are needed.  Here, we will use <a class="reference internal" href="../grdcut.html"><span class="doc">grdcut</span></a> to obtain
 and extract a GMT-ready grid that we will next use for contouring:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdcut</span> <span class="nd">@earth_relief_05m</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">66</span><span class="o">/-</span><span class="mi">60</span><span class="o">/</span><span class="mi">30</span><span class="o">/</span><span class="mi">35</span> <span class="o">-</span><span class="n">Gtut_bathy</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcut @earth_relief_05m -R-66/-60/30/35 -Gtut_bathy.nc -V
 </pre></div>
 </div>
 </div></blockquote>
@@ -233,7 +252,7 @@ You can also obtain tut_bathy.nc from the GMT cache server as we are doing below
 Feel free to open it in any other program and compare results with GMT.</p>
 <p>We first use the GMT module <a class="reference internal" href="../grdinfo.html"><span class="doc">grdinfo</span></a> to see what’s in this file:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdinfo</span> <span class="nd">@tut_bathy</span><span class="o">.</span><span class="n">nc</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdinfo @tut_bathy.nc
 </pre></div>
 </div>
 </div></blockquote>
@@ -300,7 +319,7 @@ useful options:</p>
 interval and 250 m as contour interval.  We choose a 7-inch-wide
 Mercator plot and annotate the borders every 2º:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdcontour</span> <span class="nd">@tut_bathy</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">JM7i</span> <span class="o">-</span><span class="n">C250</span> <span class="o">-</span><span class="n">A1000</span> <span class="o">-</span><span class="n">B</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">GMT_tut_11</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcontour @tut_bathy.nc -JM7i -C250 -A1000 -B -pdf GMT_tut_11
 </pre></div>
 </div>
 </div></blockquote>
@@ -410,14 +429,14 @@ ship observations of bathymetry off Baja California.  We obtain the
 file via the cache server as before.
 We desire to make a 5’ by 5’ grid.  Running gmt info on &#64;tut_ship.xyz yields</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tut_ship</span><span class="o">.</span><span class="n">xyz</span><span class="p">:</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">82970</span>     <span class="o">&lt;</span><span class="mi">245</span><span class="o">/</span><span class="mf">254.705</span><span class="o">&gt;</span>   <span class="o">&lt;</span><span class="mi">20</span><span class="o">/</span><span class="mf">29.99131</span><span class="o">&gt;</span>   <span class="o">&lt;-</span><span class="mi">7708</span><span class="o">/-</span><span class="mi">9</span><span class="o">&gt;</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tut_ship.xyz: <span class="nv">N</span> <span class="o">=</span> <span class="m">82970</span>     &lt;<span class="m">245</span>/254.705&gt;   &lt;<span class="m">20</span>/29.99131&gt;   &lt;-7708/-9&gt;
 </pre></div>
 </div>
 </div></blockquote>
 <p>so we choose the region accordingly, and get a view of the contour map using</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">nearneighbor</span> <span class="o">-</span><span class="n">R245</span><span class="o">/</span><span class="mi">255</span><span class="o">/</span><span class="mi">20</span><span class="o">/</span><span class="mi">30</span> <span class="o">-</span><span class="n">I5m</span> <span class="o">-</span><span class="n">S40k</span> <span class="o">-</span><span class="n">Gship</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">V</span> <span class="nd">@tut_ship</span><span class="o">.</span><span class="n">xyz</span>
-<span class="n">gmt</span> <span class="n">grdcontour</span> <span class="n">ship</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">JM6i</span> <span class="o">-</span><span class="n">B</span> <span class="o">-</span><span class="n">C250</span> <span class="o">-</span><span class="n">A1000</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">GMT_tut_12</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt nearneighbor -R245/255/20/30 -I5m -S40k -Gship.nc -V @tut_ship.xyz
+gmt grdcontour ship.nc -JM6i -B -C250 -A1000 -pdf GMT_tut_12
 </pre></div>
 </div>
 </div></blockquote>
@@ -514,13 +533,13 @@ all take the same options shown below:</p>
 </div></blockquote>
 <p>With respect to our ship data we preprocess it using the median method:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">blockmedian</span> <span class="o">-</span><span class="n">R245</span><span class="o">/</span><span class="mi">255</span><span class="o">/</span><span class="mi">20</span><span class="o">/</span><span class="mi">30</span> <span class="o">-</span><span class="n">I5m</span> <span class="o">-</span><span class="n">V</span> <span class="nd">@tut_ship</span><span class="o">.</span><span class="n">xyz</span> <span class="o">&gt;</span> <span class="n">ship_5m</span><span class="o">.</span><span class="n">xyz</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt blockmedian -R245/255/20/30 -I5m -V @tut_ship.xyz &gt; ship_5m.xyz
 </pre></div>
 </div>
 </div></blockquote>
 <p>The output data can now be used with surface:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">surface</span> <span class="n">ship_5m</span><span class="o">.</span><span class="n">xyz</span> <span class="o">-</span><span class="n">R245</span><span class="o">/</span><span class="mi">255</span><span class="o">/</span><span class="mi">20</span><span class="o">/</span><span class="mi">30</span> <span class="o">-</span><span class="n">I5m</span> <span class="o">-</span><span class="n">Gship</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt surface ship_5m.xyz -R245/255/20/30 -I5m -Gship.nc -V
 </pre></div>
 </div>
 </div></blockquote>
@@ -542,11 +561,11 @@ based on the data distribution.  Once the clip path is activated we can
 contour the final grid; we finally deactivate the clipping with a second
 call to <a class="reference internal" href="../mask.html"><span class="doc">mask</span></a>.  Here’s the recipe:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">begin</span> <span class="n">GMT_tut_13</span> <span class="n">pdf</span>
-  <span class="n">gmt</span> <span class="n">mask</span> <span class="o">-</span><span class="n">R245</span><span class="o">/</span><span class="mi">255</span><span class="o">/</span><span class="mi">20</span><span class="o">/</span><span class="mi">30</span> <span class="o">-</span><span class="n">I5m</span> <span class="n">ship_5m</span><span class="o">.</span><span class="n">xyz</span> <span class="o">-</span><span class="n">JM6i</span> <span class="o">-</span><span class="n">B</span> <span class="o">-</span><span class="n">V</span>
-  <span class="n">gmt</span> <span class="n">grdcontour</span> <span class="n">ship</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">C250</span> <span class="o">-</span><span class="n">A1000</span>
-  <span class="n">gmt</span> <span class="n">mask</span> <span class="o">-</span><span class="n">C</span>
-<span class="n">gmt</span> <span class="n">end</span> <span class="n">show</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_13 pdf
+  gmt mask -R245/255/20/30 -I5m ship_5m.xyz -JM6i -B -V
+  gmt grdcontour ship.nc -C250 -A1000
+  gmt mask -C
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -586,7 +605,7 @@ call to <a class="reference internal" href="../mask.html"><span class="doc">mask
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

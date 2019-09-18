@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -450,28 +469,28 @@ normalizing the data prior to processing.</p>
 <p>To extract the second layer from a 3-dimensional grid named temp from a
 COARDS-compliant netCDF file climate.nc:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>gmt grdconvert climate.nc?temp[1] -Gtemp.nc -V
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdconvert climate.nc?temp<span class="o">[</span><span class="m">1</span><span class="o">]</span> -Gtemp.nc -V
 </pre></div>
 </div>
 </div></blockquote>
 <p>To create a 4-byte native floating point grid from the COARDS-compliant
 netCDF file data.nc:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdconvert</span> <span class="n">data</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Gras_data</span><span class="o">.</span><span class="n">b4</span><span class="o">=</span><span class="n">bf</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdconvert data.nc -Gras_data.b4<span class="o">=</span>bf -V
 </pre></div>
 </div>
 </div></blockquote>
 <p>To make a 2-byte short integer file, scale it by 10, subtract 32000,
 setting NaNs to -9999, do</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdconvert</span> <span class="n">values</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Gshorts</span><span class="o">.</span><span class="n">i2</span><span class="o">=</span><span class="n">bs</span><span class="o">+</span><span class="n">s10</span><span class="o">+</span><span class="n">o</span><span class="o">-</span><span class="mi">32000</span><span class="o">+</span><span class="n">n</span><span class="o">-</span><span class="mi">9999</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdconvert values.nc -Gshorts.i2<span class="o">=</span>bs+s10+o-32000+n-9999 -V
 </pre></div>
 </div>
 </div></blockquote>
 <p>To create a Sun standard 8-bit rasterfile for a subset of the data file
 image.nc, assuming the range in image.nc is 0-1 and we need 0-255, run</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdconvert</span> <span class="n">image</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">60</span><span class="o">/-</span><span class="mi">40</span><span class="o">/-</span><span class="mi">40</span><span class="o">/-</span><span class="mi">30</span> <span class="o">-</span><span class="n">Gimage</span><span class="o">.</span><span class="n">ras8</span><span class="o">=</span><span class="n">rb</span><span class="o">+</span><span class="n">s255</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdconvert image.nc -R-60/-40/-40/-30 -Gimage.ras8<span class="o">=</span>rb+s255 -V
 </pre></div>
 </div>
 </div></blockquote>
@@ -498,7 +517,7 @@ image.nc, assuming the range in image.nc is 0-1 and we need 0-255, run</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

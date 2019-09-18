@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -576,15 +595,15 @@ permanent major rivers in thick blue pen, additional major rivers in
 thin blue pen, and national borders as dashed lines on a Mercator map at
 scale 0.1 inch/degree, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">coast</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">30</span><span class="o">/</span><span class="mi">30</span><span class="o">/-</span><span class="mi">40</span><span class="o">/</span><span class="mi">40</span> <span class="o">-</span><span class="n">Jm0</span><span class="o">.</span><span class="mi">1</span><span class="n">i</span> <span class="o">-</span><span class="n">B5</span> <span class="o">-</span><span class="n">I1</span><span class="o">/</span><span class="mi">1</span><span class="n">p</span><span class="p">,</span><span class="n">blue</span> <span class="o">-</span><span class="n">N1</span><span class="o">/</span><span class="mf">0.25</span><span class="n">p</span><span class="p">,</span><span class="o">-</span>
-            <span class="o">-</span><span class="n">I2</span><span class="o">/</span><span class="mf">0.25</span><span class="n">p</span><span class="p">,</span><span class="n">blue</span> <span class="o">-</span><span class="n">W0</span><span class="o">.</span><span class="mi">25</span><span class="n">p</span><span class="p">,</span><span class="n">white</span> <span class="o">-</span><span class="n">Ggreen</span> <span class="o">-</span><span class="n">Sblue</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">africa</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -R-30/30/-40/40 -Jm0.1i -B5 -I1/1p,blue -N1/0.25p,-
+            -I2/0.25p,blue -W0.25p,white -Ggreen -Sblue -pdf africa
 </pre></div>
 </div>
 </div></blockquote>
 <p>To plot Iceland using the lava pattern (# 28) at 100 dots per inch, on a
 Mercator map at scale 1 cm/degree, run</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">coast</span> <span class="o">-</span><span class="n">RIS</span><span class="o">+</span><span class="n">r1</span> <span class="o">-</span><span class="n">Jm1c</span> <span class="o">-</span><span class="n">B</span> <span class="o">-</span><span class="n">Wthin</span> <span class="o">-</span><span class="n">Gp28</span><span class="o">+</span><span class="n">r100</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">iceland</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -RIS+r1 -Jm1c -B -Wthin -Gp28+r100 -pdf iceland
 </pre></div>
 </div>
 </div></blockquote>
@@ -592,11 +611,11 @@ Mercator map at scale 1 cm/degree, run</p>
 gridded topography is only seen over land, using a Mercator map at scale
 0.1 inch/degree, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">begin</span>
-<span class="n">gmt</span> <span class="n">coast</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">30</span><span class="o">/</span><span class="mi">30</span><span class="o">/-</span><span class="mi">40</span><span class="o">/</span><span class="mi">40</span> <span class="o">-</span><span class="n">Jm0</span><span class="o">.</span><span class="mi">1</span><span class="n">i</span> <span class="o">-</span><span class="n">B5</span> <span class="o">-</span><span class="n">Gc</span>
-<span class="n">gmt</span> <span class="n">grdimage</span> <span class="n">etopo5</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Ccolors</span><span class="o">.</span><span class="n">cpt</span>
-<span class="n">gmt</span> <span class="n">coast</span> <span class="o">-</span><span class="n">Q</span>
-<span class="n">gmt</span> <span class="n">end</span> <span class="n">show</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin
+gmt coast -R-30/30/-40/40 -Jm0.1i -B5 -Gc
+gmt grdimage etopo5.nc -Ccolors.cpt
+gmt coast -Q
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -604,14 +623,14 @@ gridded topography is only seen over land, using a Mercator map at scale
 Spain, Portugal and Greece in yellow (no outline), and pick up the plot
 domain form the extents of these countries, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">coast</span> <span class="o">-</span><span class="n">JM6i</span> <span class="o">-</span><span class="n">Baf</span> <span class="o">-</span><span class="n">EGB</span><span class="p">,</span><span class="n">IT</span><span class="p">,</span><span class="n">FR</span><span class="o">+</span><span class="n">gblue</span><span class="o">+</span><span class="n">p0</span><span class="o">.</span><span class="mi">25</span><span class="n">p</span><span class="p">,</span><span class="n">red</span> <span class="o">-</span><span class="n">EES</span><span class="p">,</span><span class="n">PT</span><span class="p">,</span><span class="n">GR</span><span class="o">+</span><span class="n">gyellow</span> <span class="o">-</span><span class="n">pdf</span> <span class="nb">map</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -JM6i -Baf -EGB,IT,FR+gblue+p0.25p,red -EES,PT,GR+gyellow -pdf map
 </pre></div>
 </div>
 </div></blockquote>
 <p>To extract a high-resolution coastline data table for Iceland to be used
 in your analysis, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">coast</span> <span class="o">-</span><span class="n">RIS</span> <span class="o">-</span><span class="n">Dh</span> <span class="o">-</span><span class="n">W</span> <span class="o">-</span><span class="n">M</span> <span class="o">&gt;</span> <span class="n">iceland</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -RIS -Dh -W -M &gt; iceland.txt
 </pre></div>
 </div>
 </div></blockquote>
@@ -703,7 +722,7 @@ Institute, Lensfield Road, Cambridge CB2 1ER, United Kingdom.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

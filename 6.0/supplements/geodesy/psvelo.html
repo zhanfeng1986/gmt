@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -557,17 +576,17 @@ They are not available when using GMT modern mode.</p>
 in red. Note that the 39% confidence scaling will give an ellipse which
 fits inside a rectangle of dimension Esig by Nsig.</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psvelo</span> <span class="o">&lt;&lt;</span> <span class="n">END</span> <span class="o">-</span><span class="n">h2</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">10</span><span class="o">/</span><span class="mi">10</span><span class="o">/-</span><span class="mi">10</span><span class="o">/</span><span class="mi">10</span> <span class="o">-</span><span class="n">W0</span><span class="o">.</span><span class="mi">25</span><span class="n">p</span><span class="p">,</span><span class="n">red</span> <span class="o">-</span><span class="n">Ggreen</span> <span class="o">-</span><span class="n">L</span> <span class="o">-</span><span class="n">Se0</span><span class="o">.</span><span class="mi">2</span><span class="o">/</span><span class="mf">0.39</span><span class="o">/</span><span class="mi">18</span> \
-    <span class="o">-</span><span class="n">B1g1</span> <span class="o">-</span><span class="n">Jx0</span><span class="o">.</span><span class="mi">4</span><span class="o">/</span><span class="mf">0.4</span> <span class="o">-</span><span class="n">A1c</span><span class="o">+</span><span class="n">p3p</span><span class="o">+</span><span class="n">e</span> <span class="o">-</span><span class="n">P</span> <span class="o">-</span><span class="n">V</span> <span class="o">&gt;</span> <span class="n">test</span><span class="o">.</span><span class="n">ps</span>
-<span class="c1">#Long. Lat. Evel Nvel Esig Nsig CorEN SITE</span>
-<span class="c1">#(deg) (deg) (mm/yr) (mm/yr)</span>
-<span class="mf">0.</span> <span class="o">-</span><span class="mf">8.</span> <span class="mf">0.0</span> <span class="mf">0.0</span> <span class="mf">4.0</span> <span class="mf">6.0</span> <span class="mf">0.500</span> <span class="mi">4</span><span class="n">x6</span>
-<span class="o">-</span><span class="mf">8.</span> <span class="mf">5.</span> <span class="mf">3.0</span> <span class="mf">3.0</span> <span class="mf">0.0</span> <span class="mf">0.0</span> <span class="mf">0.500</span> <span class="mi">3</span><span class="n">x3</span>
-<span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">4.0</span> <span class="mf">6.0</span> <span class="mf">4.0</span> <span class="mf">6.0</span> <span class="mf">0.500</span>
-<span class="o">-</span><span class="mf">5.</span> <span class="o">-</span><span class="mf">5.</span> <span class="mf">6.0</span> <span class="mf">4.0</span> <span class="mf">6.0</span> <span class="mf">4.0</span> <span class="mf">0.500</span> <span class="mi">6</span><span class="n">x4</span>
-<span class="mf">5.</span> <span class="mf">0.</span> <span class="o">-</span><span class="mf">6.0</span> <span class="mf">4.0</span> <span class="mf">6.0</span> <span class="mf">4.0</span> <span class="o">-</span><span class="mf">0.500</span> <span class="o">-</span><span class="mi">6</span><span class="n">x4</span>
-<span class="mf">0.</span> <span class="o">-</span><span class="mf">5.</span> <span class="mf">6.0</span> <span class="o">-</span><span class="mf">4.0</span> <span class="mf">6.0</span> <span class="mf">4.0</span> <span class="o">-</span><span class="mf">0.500</span> <span class="mi">6</span><span class="n">x</span><span class="o">-</span><span class="mi">4</span>
-<span class="n">END</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psvelo <span class="s">&lt;&lt; END -h2 -R-10/10/-10/10 -W0.25p,red -Ggreen -L -Se0.2/0.39/18 \</span>
+<span class="s">    -B1g1 -Jx0.4/0.4 -A1c+p3p+e -P -V &gt; test.ps</span>
+<span class="s">#Long. Lat. Evel Nvel Esig Nsig CorEN SITE</span>
+<span class="s">#(deg) (deg) (mm/yr) (mm/yr)</span>
+<span class="s">0. -8. 0.0 0.0 4.0 6.0 0.500 4x6</span>
+<span class="s">-8. 5. 3.0 3.0 0.0 0.0 0.500 3x3</span>
+<span class="s">0. 0. 4.0 6.0 4.0 6.0 0.500</span>
+<span class="s">-5. -5. 6.0 4.0 6.0 4.0 0.500 6x4</span>
+<span class="s">5. 0. -6.0 4.0 6.0 4.0 -0.500 -6x4</span>
+<span class="s">0. -5. 6.0 -4.0 6.0 4.0 -0.500 6x-4</span>
+<span class="s">END</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -575,18 +594,18 @@ fits inside a rectangle of dimension Esig by Nsig.</p>
 Transverse Ranges, California. The wedges will be dark gray, with light
 gray wedges to represent the 2-sigma uncertainties.</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psvelo</span> <span class="o">&lt;&lt;</span> <span class="n">END</span> <span class="o">-</span><span class="n">Sw0</span><span class="o">.</span><span class="mi">4</span><span class="o">/</span><span class="mf">1.e7</span> <span class="o">-</span><span class="n">W0</span><span class="o">.</span><span class="mi">75</span><span class="n">p</span> <span class="o">-</span><span class="n">Gdarkgray</span> <span class="o">-</span><span class="n">Elightgray</span> <span class="o">-</span><span class="n">h1</span> <span class="o">-</span><span class="n">D2</span> <span class="o">-</span><span class="n">Jm2</span><span class="o">.</span><span class="mi">2</span><span class="n">i</span> \
-    <span class="o">-</span><span class="n">R240</span><span class="o">./</span><span class="mf">243.</span><span class="o">/</span><span class="mf">32.5</span><span class="o">/</span><span class="mf">34.75</span> <span class="o">-</span><span class="n">Baf</span> <span class="o">-</span><span class="n">BWeSn</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">test</span><span class="o">.</span><span class="n">ps</span>
-<span class="c1">#lon lat spin(rad/yr) spin_sigma (rad/yr)</span>
-<span class="mf">241.4806</span> <span class="mf">34.2073</span> <span class="mf">5.65E-08</span> <span class="mf">1.17E-08</span>
-<span class="mf">241.6024</span> <span class="mf">34.4468</span> <span class="o">-</span><span class="mf">4.85E-08</span> <span class="mf">1.85E-08</span>
-<span class="mf">241.0952</span> <span class="mf">34.4079</span> <span class="mf">4.46E-09</span> <span class="mf">3.07E-08</span>
-<span class="mf">241.2542</span> <span class="mf">34.2581</span> <span class="mf">1.28E-07</span> <span class="mf">1.59E-08</span>
-<span class="mf">242.0593</span> <span class="mf">34.0773</span> <span class="o">-</span><span class="mf">6.62E-08</span> <span class="mf">1.74E-08</span>
-<span class="mf">241.0553</span> <span class="mf">34.5369</span> <span class="o">-</span><span class="mf">2.38E-07</span> <span class="mf">4.27E-08</span>
-<span class="mf">241.1993</span> <span class="mf">33.1894</span> <span class="o">-</span><span class="mf">2.99E-10</span> <span class="mf">7.64E-09</span>
-<span class="mf">241.1084</span> <span class="mf">34.2565</span> <span class="mf">2.17E-08</span> <span class="mf">3.53E-08</span>
-<span class="n">END</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psvelo <span class="s">&lt;&lt; END -Sw0.4/1.e7 -W0.75p -Gdarkgray -Elightgray -h1 -D2 -Jm2.2i \</span>
+<span class="s">    -R240./243./32.5/34.75 -Baf -BWeSn -P &gt; test.ps</span>
+<span class="s">#lon lat spin(rad/yr) spin_sigma (rad/yr)</span>
+<span class="s">241.4806 34.2073 5.65E-08 1.17E-08</span>
+<span class="s">241.6024 34.4468 -4.85E-08 1.85E-08</span>
+<span class="s">241.0952 34.4079 4.46E-09 3.07E-08</span>
+<span class="s">241.2542 34.2581 1.28E-07 1.59E-08</span>
+<span class="s">242.0593 34.0773 -6.62E-08 1.74E-08</span>
+<span class="s">241.0553 34.5369 -2.38E-07 4.27E-08</span>
+<span class="s">241.1993 33.1894 -2.99E-10 7.64E-09</span>
+<span class="s">241.1084 34.2565 2.17E-08 3.53E-08</span>
+<span class="s">END</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -613,7 +632,7 @@ Geophysics at University of Wisconsin-Madison, Madison, Wisconsin, USA</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

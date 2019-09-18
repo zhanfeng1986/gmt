@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -84,6 +85,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -149,7 +151,6 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -177,12 +178,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -256,9 +275,9 @@ by the dual annotation system. In this example we will display the trend
 of the stock price of RedHat (RHAT) from their initial public offering
 until late 2006. The data file is a comma-separated table and the
 records look like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Date</span><span class="p">,</span><span class="n">Open</span><span class="p">,</span><span class="n">High</span><span class="p">,</span><span class="n">Low</span><span class="p">,</span><span class="n">Close</span><span class="p">,</span><span class="n">Volume</span><span class="p">,</span><span class="n">Adj</span><span class="o">.</span><span class="n">Close</span><span class="o">*</span>
-<span class="mi">12</span><span class="o">-</span><span class="n">Mar</span><span class="o">-</span><span class="mi">04</span><span class="p">,</span><span class="mf">17.74</span><span class="p">,</span><span class="mf">18.49</span><span class="p">,</span><span class="mf">17.67</span><span class="p">,</span><span class="mf">18.02</span><span class="p">,</span><span class="mi">4827500</span><span class="p">,</span><span class="mf">18.02</span>
-<span class="mi">11</span><span class="o">-</span><span class="n">Mar</span><span class="o">-</span><span class="mi">04</span><span class="p">,</span><span class="mf">17.60</span><span class="p">,</span><span class="mf">18.90</span><span class="p">,</span><span class="mf">17.37</span><span class="p">,</span><span class="mf">18.09</span><span class="p">,</span><span class="mi">7700400</span><span class="p">,</span><span class="mf">18.09</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Date,Open,High,Low,Close,Volume,Adj.Close*
+<span class="m">12</span>-Mar-04,17.74,18.49,17.67,18.02,4827500,18.02
+<span class="m">11</span>-Mar-04,17.60,18.90,17.37,18.09,7700400,18.09
 </pre></div>
 </div>
 <p>Hence, we have a single header record and various prices in USD for each
@@ -378,7 +397,7 @@ Internet bubble…</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

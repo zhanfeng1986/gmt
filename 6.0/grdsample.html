@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -345,13 +364,13 @@ more control on aspects such as tension but it also leads to a solution that
 is not likely to have fully converged.  The general approach would be
 something like</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grd2xyz</span> <span class="n">old</span><span class="o">.</span><span class="n">grd</span> <span class="o">|</span> <span class="n">gmt</span> <span class="n">surface</span> <span class="o">-</span><span class="n">Rold</span><span class="o">.</span><span class="n">grd</span> <span class="o">-</span><span class="n">Inewinc</span> <span class="o">-</span><span class="n">Gnew</span><span class="o">.</span><span class="n">grd</span> <span class="p">[</span><span class="n">other</span> <span class="n">options</span><span class="p">]</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grd2xyz old.grd <span class="p">|</span> gmt surface -Rold.grd -Inewinc -Gnew.grd <span class="o">[</span>other options<span class="o">]</span>
 </pre></div>
 </div>
 </div></blockquote>
 <p>For moderate data set one could also achieve an exact solution with <a class="reference internal" href="greenspline.html"><span class="doc">greenspline</span></a>,
 such as</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grd2xyz</span> <span class="n">old</span><span class="o">.</span><span class="n">grd</span> <span class="o">|</span> <span class="n">gmt</span> <span class="n">greenspline</span> <span class="o">-</span><span class="n">Rold</span><span class="o">.</span><span class="n">grd</span> <span class="o">-</span><span class="n">Inewinc</span> <span class="o">-</span><span class="n">Gnew</span><span class="o">.</span><span class="n">grd</span> <span class="p">[</span><span class="n">other</span> <span class="n">options</span><span class="p">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grd2xyz old.grd <span class="p">|</span> gmt greenspline -Rold.grd -Inewinc -Gnew.grd <span class="o">[</span>other options<span class="o">]</span>
 </pre></div>
 </div>
 </div>
@@ -359,14 +378,14 @@ such as</p>
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>To resample the 5 x 5 minute grid in hawaii_5by5_topo.nc onto a 1 minute grid:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdsample</span> <span class="n">hawaii_5by5_topo</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">I1m</span> <span class="o">-</span><span class="n">Ghawaii_1by1_topo</span><span class="o">.</span><span class="n">nc</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdsample hawaii_5by5_topo.nc -I1m -Ghawaii_1by1_topo.nc
 </pre></div>
 </div>
 </div></blockquote>
 <p>To translate the gridline-registered file surface.nc to pixel
 registration while keeping the same region and grid interval:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdsample</span> <span class="n">surface</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">T</span> <span class="o">-</span><span class="n">Gpixel</span><span class="o">.</span><span class="n">nc</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdsample surface.nc -T -Gpixel.nc
 </pre></div>
 </div>
 </div></blockquote>
@@ -396,7 +415,7 @@ registration while keeping the same region and grid interval:</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -362,54 +381,54 @@ specify more decimals using the <a class="reference internal" href="gmt.conf.htm
 compute the spherical angle between each of these points and the
 location 133/34. Try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">vector</span> <span class="n">points</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">S133</span><span class="o">/</span><span class="mi">34</span> <span class="o">-</span><span class="n">TD</span> <span class="o">-</span><span class="n">fg</span> <span class="o">&gt;</span> <span class="n">angles</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt vector points.txt -S133/34 -TD -fg &gt; angles.txt
 </pre></div>
 </div>
 </div></blockquote>
 <p>To rotate the same points 35 degrees around a pole at 133/34, and output
 Cartesian 3-D vectors, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">vector</span> <span class="n">points</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">Tr133</span><span class="o">/</span><span class="mi">34</span><span class="o">/</span><span class="mi">35</span> <span class="o">-</span><span class="n">Co</span> <span class="o">-</span><span class="n">fg</span> <span class="o">&gt;</span> <span class="n">reconstructed</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt vector points.txt -Tr133/34/35 -Co -fg &gt; reconstructed.txt
 </pre></div>
 </div>
 </div></blockquote>
 <p>To rotate the point 65/33 by all rotations given in file rots.txt, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">vector</span> <span class="n">rots</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">TR</span> <span class="o">-</span><span class="n">S64</span><span class="o">/</span><span class="mi">33</span> <span class="o">-</span><span class="n">fg</span> <span class="o">&gt;</span> <span class="n">reconstructed</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt vector rots.txt -TR -S64/33 -fg &gt; reconstructed.txt
 </pre></div>
 </div>
 </div></blockquote>
 <p>To compute the cross-product between the two Cartesian vectors 0.5/1/2
 and 1/0/0.4, and normalizing the result, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">vector</span> <span class="o">-</span><span class="n">A0</span><span class="o">.</span><span class="mi">5</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="o">-</span><span class="n">Tx</span> <span class="o">-</span><span class="n">S1</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mf">0.4</span> <span class="o">-</span><span class="n">N</span> <span class="o">-</span><span class="n">C</span> <span class="o">&gt;</span> <span class="n">cross</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt vector -A0.5/1/2 -Tx -S1/0/0.4 -N -C &gt; cross.txt
 </pre></div>
 </div>
 </div></blockquote>
 <p>To rotate the 2-D vector, given in polar form as r = 2 and theta = 35,
 by an angle of 120, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">vector</span> <span class="o">-</span><span class="n">A2</span><span class="o">/</span><span class="mi">35</span> <span class="o">-</span><span class="n">Tr120</span> <span class="o">&gt;</span> <span class="n">rotated</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt vector -A2/35 -Tr120 &gt; rotated.txt
 </pre></div>
 </div>
 </div></blockquote>
 <p>To find the mid-point along the great circle connecting the points 123/35 and -155/-30, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">vector</span> <span class="o">-</span><span class="n">A123</span><span class="o">/</span><span class="mi">35</span> <span class="o">-</span><span class="n">S</span><span class="o">-</span><span class="mi">155</span><span class="o">/-</span><span class="mi">30</span> <span class="o">-</span><span class="n">Ta</span> <span class="o">-</span><span class="n">fg</span> <span class="o">&gt;</span> <span class="n">midpoint</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt vector -A123/35 -S-155/-30 -Ta -fg &gt; midpoint.txt
 </pre></div>
 </div>
 </div></blockquote>
 <p>To find the mean location of the geographical points listed in
 points.txt, with its 99% confidence ellipse, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">vector</span> <span class="n">points</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">Am99</span> <span class="o">-</span><span class="n">fg</span> <span class="o">&gt;</span> <span class="n">centroid</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt vector points.txt -Am99 -fg &gt; centroid.txt
 </pre></div>
 </div>
 </div></blockquote>
 <p>To find the pole corresponding to the great circle that goes through
 the point -30/60 at an azimuth of 105 degrees, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">vector</span> <span class="o">-</span><span class="n">A</span><span class="o">-</span><span class="mi">30</span><span class="o">/</span><span class="mi">60</span> <span class="o">-</span><span class="n">Tp105</span> <span class="o">-</span><span class="n">fg</span> <span class="o">&gt;</span> <span class="n">pole</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt vector -A-30/60 -Tp105 -fg &gt; pole.txt
 </pre></div>
 </div>
 </div></blockquote>
@@ -439,7 +458,7 @@ reconstructions, see the GMT “spotter” supplement.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

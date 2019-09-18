@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -273,14 +292,14 @@ data as 1- or 2-byte integers. <a class="reference internal" href="gmt.html#grd-
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>To set all values &gt; 70 to NaN and all values &lt; 0 to 0 in file data.nc:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdclip</span> <span class="n">data</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Gnew_data</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Sa70</span><span class="o">/</span><span class="n">NaN</span> <span class="o">-</span><span class="n">Sb0</span><span class="o">/</span><span class="mi">0</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdclip data.nc -Gnew_data.nc -Sa70/NaN -Sb0/0 -V
 </pre></div>
 </div>
 </div></blockquote>
 <p>To reclassify all values in the 25-30 range to 99, those in 35-39 to 55,
 exchange 17 for 11 and all values &lt; 10 to 0 in file classes.nc, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdclip</span> <span class="n">classes</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Gnew_classes</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Si25</span><span class="o">/</span><span class="mi">30</span><span class="o">/</span><span class="mi">99</span> <span class="o">-</span><span class="n">Si35</span><span class="o">/</span><span class="mi">39</span><span class="o">/</span><span class="mi">55</span> <span class="o">-</span><span class="n">Sr17</span><span class="o">/</span><span class="mi">11</span> <span class="o">-</span><span class="n">Sb10</span><span class="o">/</span><span class="mi">0</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdclip classes.nc -Gnew_classes.nc -Si25/30/99 -Si35/39/55 -Sr17/11 -Sb10/0 -V
 </pre></div>
 </div>
 </div></blockquote>
@@ -309,7 +328,7 @@ exchange 17 for 11 and all values &lt; 10 to 0 in file classes.nc, try</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

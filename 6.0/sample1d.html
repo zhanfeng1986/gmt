@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -384,47 +403,47 @@ Alternatively, append <strong>+e</strong> to keep <em>inc</em> exact and adjust 
 (time,distance,gravity,magnetics,bathymetry) records, at 1km equidistant
 intervals using Akima’s spline, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">sample1d</span> <span class="n">profiles</span><span class="o">.</span><span class="n">tdgmb</span> <span class="o">-</span><span class="n">N1</span> <span class="o">-</span><span class="n">Fa</span> <span class="o">-</span><span class="n">T1</span> <span class="o">&gt;</span> <span class="n">profiles_equi_d</span><span class="o">.</span><span class="n">tdgmb</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt sample1d profiles.tdgmb -N1 -Fa -T1 &gt; profiles_equi_d.tdgmb
 </pre></div>
 </div>
 </div></blockquote>
 <p>To resample the file depths.dt at positions listed in the file
 grav_pos.dg, using a cubic spline for the interpolation, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">sample1d</span> <span class="n">depths</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">Tgrav_pos</span><span class="o">.</span><span class="n">dg</span> <span class="o">-</span><span class="n">Fc</span> <span class="o">&gt;</span> <span class="n">new_depths</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt sample1d depths.txt -Tgrav_pos.dg -Fc &gt; new_depths.txt
 </pre></div>
 </div>
 </div></blockquote>
 <p>To resample the file points.txt every 0.01 from 0-6, using a cubic spline for the
 interpolation, but output the first derivative instead (the slope), try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">sample1d</span> <span class="n">points</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">T0</span><span class="o">/</span><span class="mi">6</span><span class="o">/</span><span class="mf">0.01</span> <span class="o">-</span><span class="n">Fc</span><span class="o">+</span><span class="mi">1</span> <span class="o">&gt;</span> <span class="n">slopes</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt sample1d points.txt -T0/6/0.01 -Fc+1 &gt; slopes.txt
 </pre></div>
 </div>
 </div></blockquote>
 <p>To resample the file track.txt which contains lon, lat, depth every 2
 nautical miles, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">sample1d</span> <span class="n">track</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">T2n</span> <span class="o">-</span><span class="n">AR</span> <span class="o">&gt;</span> <span class="n">new_track</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt sample1d track.txt -T2n -AR &gt; new_track.txt
 </pre></div>
 </div>
 </div></blockquote>
 <p>To do approximately the same, but make sure the original points are
 included, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">sample1d</span> <span class="n">track</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">T2n</span> <span class="o">-</span><span class="n">Af</span> <span class="o">&gt;</span> <span class="n">new_track</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt sample1d track.txt -T2n -Af &gt; new_track.txt
 </pre></div>
 </div>
 </div></blockquote>
 <p>To obtain a rhumb line (loxodrome) sampled every 5 km instead, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">sample1d</span> <span class="n">track</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">T5k</span> <span class="o">-</span><span class="n">AR</span><span class="o">+</span><span class="n">l</span> <span class="o">&gt;</span> <span class="n">new_track</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt sample1d track.txt -T5k -AR+l &gt; new_track.txt
 </pre></div>
 </div>
 </div></blockquote>
 <p>To sample temperatures.txt every month from 2000 to 2018, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">sample1d</span> <span class="n">temperatures</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">T2000T</span><span class="o">/</span><span class="mi">2018</span><span class="n">T</span><span class="o">/</span><span class="mi">1</span><span class="n">o</span> <span class="o">&gt;</span> <span class="n">monthly_temp</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt sample1d temperatures.txt -T2000T/2018T/1o &gt; monthly_temp.txt
 </pre></div>
 </div>
 </div></blockquote>
@@ -452,7 +471,7 @@ included, use</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

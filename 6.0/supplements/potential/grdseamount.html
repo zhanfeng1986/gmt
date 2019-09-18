@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -402,12 +421,12 @@ exact geodesic calculations (slower but more accurate; see
 <p>To compute the incremental loads from two elliptical, truncated Gaussian seamounts being constructed
 from 3 Ma to 2 Ma and 2.8 M to 1.9 Ma using a linear volumetric production rate,
 and output an incremental grid every 0.1 Myr from 3 Ma to 1.9 Ma, we can try:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">&lt;&lt;</span> <span class="n">EOF</span> <span class="o">&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">txt</span>
-<span class="c1">#lon lat azimuth, semi-major, semi-minor, height tstart tend</span>
-<span class="mi">0</span>   <span class="mi">0</span>       <span class="o">-</span><span class="mi">20</span>     <span class="mi">120</span>     <span class="mi">60</span>      <span class="mi">5000</span>    <span class="mf">3.0</span><span class="n">M</span>    <span class="mi">2</span><span class="n">M</span>
-<span class="mi">50</span>  <span class="mi">80</span>      <span class="o">-</span><span class="mi">40</span>     <span class="mi">110</span>     <span class="mi">50</span>      <span class="mi">4000</span>    <span class="mf">2.8</span><span class="n">M</span>    <span class="mf">21.9</span><span class="n">M</span>
-<span class="n">EOF</span>
-<span class="n">gmt</span> <span class="n">grdseamount</span> <span class="o">-</span><span class="n">Rk</span><span class="o">-</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1022</span><span class="o">/-</span><span class="mi">1122</span><span class="o">/</span><span class="mi">924</span> <span class="o">-</span><span class="n">I2000</span> <span class="o">-</span><span class="n">Gsmt_</span><span class="o">%</span><span class="mf">3.1</span><span class="n">f_</span><span class="o">%</span><span class="n">s</span><span class="o">.</span><span class="n">nc</span> <span class="n">t</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">T3M</span><span class="o">/</span><span class="mf">1.9</span><span class="n">M</span><span class="o">/</span><span class="mf">0.1</span><span class="n">M</span> <span class="o">-</span><span class="n">Qi</span><span class="o">/</span><span class="n">l</span> <span class="o">-</span><span class="n">Dk</span> <span class="o">-</span><span class="n">E</span> <span class="o">-</span><span class="n">F0</span><span class="o">.</span><span class="mi">2</span> <span class="o">-</span><span class="n">Cg</span> <span class="o">-</span><span class="n">Ml</span><span class="o">.</span><span class="n">lis</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat <span class="s">&lt;&lt; EOF &gt; t.txt</span>
+<span class="s">#lon lat azimuth, semi-major, semi-minor, height tstart tend</span>
+<span class="s">0   0       -20     120     60      5000    3.0M    2M</span>
+<span class="s">50  80      -40     110     50      4000    2.8M    21.9M</span>
+<span class="s">EOF</span>
+gmt grdseamount -Rk-1024/1022/-1122/924 -I2000 -Gsmt_%3.1f_%s.nc t.txt -T3M/1.9M/0.1M -Qi/l -Dk -E -F0.2 -Cg -Ml.lis
 </pre></div>
 </div>
 </div>
@@ -433,7 +452,7 @@ and output an incremental grid every 0.1 Myr from 3 Ma to 1.9 Ma, we can try:</p
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -407,7 +426,7 @@ exact geodesic calculations (slower but more accurate; see
 <p>To compute the <em>u</em> and <em>v</em> strain rate grids from the GPS data set <em>gps.txt</em>,
 containing <em>x y u v du dv</em>, on a 2x2 arc minute grid for California, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">gpsgridder</span> <span class="n">gps</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">125</span><span class="o">/-</span><span class="mi">114</span><span class="o">/</span><span class="mi">31</span><span class="o">/</span><span class="mi">41</span> <span class="o">-</span><span class="n">I2m</span> <span class="o">-</span><span class="n">fg</span> <span class="o">-</span><span class="n">W</span> <span class="o">-</span><span class="n">r</span> <span class="o">-</span><span class="n">Ggps_strain_</span><span class="o">%</span><span class="n">s</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt gpsgridder gps.txt -R-125/-114/31/41 -I2m -fg -W -r -Ggps_strain_%s.nc -V
 </pre></div>
 </div>
 </div></blockquote>
@@ -443,7 +462,7 @@ doi:10.1007/978-3-319-21578-5_2.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

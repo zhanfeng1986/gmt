@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -507,14 +526,14 @@ specify more decimals using the <a class="reference internal" href="gmt.conf.htm
 <p>To convert UTM coordinates in meters to geographic locations, given
 a file utm.txt and knowing the UTM zone (and zone or hemisphere), try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">mapproject</span> <span class="n">utm</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">Ju</span><span class="o">+</span><span class="mi">11</span><span class="o">/</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span> <span class="o">-</span><span class="n">C</span> <span class="o">-</span><span class="n">I</span> <span class="o">-</span><span class="n">F</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mapproject utm.txt -Ju+11/1:1 -C -I -F
 </pre></div>
 </div>
 </div></blockquote>
 <p>To transform a file with (longitude,latitude) into (x,y) positions in cm
 on a Mercator grid for a given scale of 0.5 cm per degree, run</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">mapproject</span> <span class="n">lonlatfile</span> <span class="o">-</span><span class="n">R20</span><span class="o">/</span><span class="mi">50</span><span class="o">/</span><span class="mi">12</span><span class="o">/</span><span class="mi">25</span> <span class="o">-</span><span class="n">Jm0</span><span class="o">.</span><span class="mi">5</span><span class="n">c</span> <span class="o">&gt;</span> <span class="n">xyfile</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mapproject lonlatfile -R20/50/12/25 -Jm0.5c &gt; xyfile
 </pre></div>
 </div>
 </div></blockquote>
@@ -523,7 +542,7 @@ on a Mercator grid for a given scale of 0.5 cm per degree, run</p>
 Mercator grid (central longitude 75W) for scale = 1:500000 and suppress
 those points that would fall outside the map area, run</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">mapproject</span> <span class="n">tracks</span><span class="o">.*</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">80</span><span class="o">/-</span><span class="mi">70</span><span class="o">/</span><span class="mi">20</span><span class="o">/</span><span class="mi">40</span> <span class="o">-</span><span class="n">Jt</span><span class="o">-</span><span class="mi">75</span><span class="o">/</span><span class="mi">1</span><span class="p">:</span><span class="mi">500000</span> <span class="o">-</span><span class="p">:</span> <span class="o">-</span><span class="n">S</span> <span class="o">-</span><span class="n">Di</span> <span class="o">-</span><span class="n">bo</span> <span class="o">-</span><span class="n">bi2</span> <span class="o">&gt;</span> <span class="n">tmfile</span><span class="o">.</span><span class="n">b</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mapproject tracks.* -R-80/-70/20/40 -Jt-75/1:500000 -: -S -Di -bo -bi2 &gt; tmfile.b
 </pre></div>
 </div>
 </div></blockquote>
@@ -531,7 +550,7 @@ those points that would fall outside the map area, run</p>
 old.txt from the NAD27 CONUS datum (Datum ID 131 which uses the
 Clarke-1866 ellipsoid) to WGS 84, run</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">mapproject</span> <span class="n">old</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">Th131</span> <span class="o">&gt;</span> <span class="n">new</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mapproject old.txt -Th131 &gt; new.txt
 </pre></div>
 </div>
 </div></blockquote>
@@ -539,7 +558,7 @@ Clarke-1866 ellipsoid) to WGS 84, run</p>
 file quakes.txt and the line segments given in the multisegment ASCII
 file coastline.xy, run</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">mapproject</span> <span class="n">quakes</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">Lcoastline</span><span class="o">.</span><span class="n">xy</span><span class="o">+</span><span class="n">uk</span> <span class="o">&gt;</span> <span class="n">quake_dist</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mapproject quakes.txt -Lcoastline.xy+uk &gt; quake_dist.txt
 </pre></div>
 </div>
 </div></blockquote>
@@ -547,7 +566,7 @@ file coastline.xy, run</p>
 and accumulated distance along track, and estimate travel times
 assuming a fixed speed of 12 knots.  We do this with</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">mapproject</span> <span class="n">track</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">Gn</span><span class="o">+</span><span class="n">a</span><span class="o">+</span><span class="n">i</span> <span class="o">-</span><span class="n">Z12</span><span class="o">+</span><span class="n">a</span> <span class="o">--</span><span class="n">TIME_UNIT</span><span class="o">=</span><span class="n">h</span> <span class="o">&gt;</span> <span class="n">elapsed_time</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mapproject track.txt -Gn+a+i -Z12+a --TIME_UNIT<span class="o">=</span>h &gt; elapsed_time.txt
 </pre></div>
 </div>
 </div></blockquote>
@@ -557,7 +576,7 @@ Elapsed times will be reported in hours (unless <strong>+f</strong> is added to 
 for ISO elapsed time).</p>
 <p>To determine the geographic coordinates of the mid-point of this transverse Mercator map, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">mapproject</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">80</span><span class="o">/-</span><span class="mi">70</span><span class="o">/</span><span class="mi">20</span><span class="o">/</span><span class="mi">40</span> <span class="o">-</span><span class="n">Jt</span><span class="o">-</span><span class="mi">75</span><span class="o">/</span><span class="mi">1</span><span class="p">:</span><span class="mi">500000</span> <span class="o">-</span><span class="n">WjCM</span> <span class="o">&gt;</span> <span class="n">mid_point</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mapproject -R-80/-70/20/40 -Jt-75/1:500000 -WjCM &gt; mid_point.txt
 </pre></div>
 </div>
 </div></blockquote>
@@ -655,7 +674,7 @@ North-Holland Publ., ISBN: 0 444 86149 1.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

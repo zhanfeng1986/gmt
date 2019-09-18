@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -377,8 +396,8 @@ normalizing the data prior to processing.</p>
 using a 0.5 min grid, a 5 km search radius, using an octant search with
 100% sector coverage, and set empty nodes to -9999:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">nearneighbor</span> <span class="n">seaMARCII_bathy</span><span class="o">.</span><span class="n">lon_lat_z</span> <span class="o">-</span><span class="n">R242</span><span class="o">/</span><span class="mi">244</span><span class="o">/-</span><span class="mi">22</span><span class="o">/-</span><span class="mi">20</span> <span class="o">-</span><span class="n">I0</span><span class="o">.</span><span class="mi">5</span><span class="n">m</span> \
-                 <span class="o">-</span><span class="n">E</span><span class="o">-</span><span class="mi">9999</span> <span class="o">-</span><span class="n">Gbathymetry</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">S5k</span> <span class="o">-</span><span class="n">N8</span><span class="o">+</span><span class="n">m8</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt nearneighbor seaMARCII_bathy.lon_lat_z -R242/244/-22/-20 -I0.5m <span class="se">\</span>
+                 -E-9999 -Gbathymetry.nc -S5k -N8+m8
 </pre></div>
 </div>
 </div></blockquote>
@@ -387,7 +406,7 @@ grid, a 200 km search radius, spherical distances, using an quadrant
 search, and set nodes to NaN only when fewer than two quadrants contain
 at least one value:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">nearneighbor</span> <span class="n">geoid</span><span class="o">.</span><span class="n">xyz</span> <span class="o">-</span><span class="n">R0</span><span class="o">/</span><span class="mi">360</span><span class="o">/-</span><span class="mi">90</span><span class="o">/</span><span class="mi">90</span> <span class="o">-</span><span class="n">I1</span> <span class="o">-</span><span class="n">Lg</span> <span class="o">-</span><span class="n">Ggeoid</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">S200k</span> <span class="o">-</span><span class="n">N4</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt nearneighbor geoid.xyz -R0/360/-90/90 -I1 -Lg -Ggeoid.nc -S200k -N4
 </pre></div>
 </div>
 </div></blockquote>
@@ -418,7 +437,7 @@ at least one value:</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

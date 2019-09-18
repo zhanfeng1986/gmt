@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -306,14 +325,14 @@ any module-specific option (but not the GMT common options), then exits.</dd>
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>To make a simple basemap plot called inset.pdf that demonstrates the inset module, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">begin</span> <span class="n">inset</span> <span class="n">pdf</span>
-  <span class="n">gmt</span> <span class="n">basemap</span> <span class="o">-</span><span class="n">R0</span><span class="o">/</span><span class="mi">40</span><span class="o">/</span><span class="mi">20</span><span class="o">/</span><span class="mi">60</span> <span class="o">-</span><span class="n">JM6</span><span class="o">.</span><span class="mi">5</span><span class="n">i</span> <span class="o">-</span><span class="n">Bafg</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">glightgreen</span>
-  <span class="n">gmt</span> <span class="n">inset</span> <span class="n">begin</span> <span class="o">-</span><span class="n">DjTR</span><span class="o">+</span><span class="n">w2</span><span class="o">.</span><span class="mi">5</span><span class="n">i</span><span class="o">+</span><span class="n">o0</span><span class="o">.</span><span class="mi">2</span><span class="n">i</span> <span class="o">-</span><span class="n">F</span><span class="o">+</span><span class="n">gpink</span><span class="o">+</span><span class="n">p0</span><span class="o">.</span><span class="mi">5</span><span class="n">p</span> <span class="o">-</span><span class="n">M0</span><span class="o">.</span><span class="mi">25</span><span class="n">i</span>
-    <span class="n">gmt</span> <span class="n">basemap</span> <span class="o">-</span><span class="n">Rg</span> <span class="o">-</span><span class="n">JA20</span><span class="o">/</span><span class="mi">20</span><span class="o">/</span><span class="mi">2</span><span class="n">i</span> <span class="o">-</span><span class="n">Bafg</span>
-    <span class="n">gmt</span> <span class="n">text</span> <span class="o">-</span><span class="n">F</span><span class="o">+</span><span class="n">f18p</span><span class="o">+</span><span class="n">cTR</span><span class="o">+</span><span class="n">tINSET</span> <span class="o">-</span><span class="n">Dj</span><span class="o">-</span><span class="mf">0.15</span><span class="n">i</span> <span class="o">-</span><span class="n">N</span>
-  <span class="n">gmt</span> <span class="n">inset</span> <span class="n">end</span>
-  <span class="n">gmt</span> <span class="n">text</span> <span class="o">-</span><span class="n">F</span><span class="o">+</span><span class="n">f18p</span><span class="o">+</span><span class="n">cBL</span><span class="o">+</span><span class="n">tMAP</span> <span class="o">-</span><span class="n">Dj0</span><span class="o">.</span><span class="mi">2</span><span class="n">i</span>
-<span class="n">gmt</span> <span class="n">end</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin inset pdf
+  gmt basemap -R0/40/20/60 -JM6.5i -Bafg -B+glightgreen
+  gmt inset begin -DjTR+w2.5i+o0.2i -F+gpink+p0.5p -M0.25i
+    gmt basemap -Rg -JA20/20/2i -Bafg
+    gmt text -F+f18p+cTR+tINSET -Dj-0.15i -N
+  gmt inset end
+  gmt text -F+f18p+cBL+tMAP -Dj0.2i
+gmt end
 </pre></div>
 </div>
 </div></blockquote>
@@ -344,7 +363,7 @@ any module-specific option (but not the GMT common options), then exits.</dd>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

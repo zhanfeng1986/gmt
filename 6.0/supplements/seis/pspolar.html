@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -502,27 +521,27 @@ They are not available when using GMT modern mode.</p>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">pspolar</span> <span class="o">-</span><span class="n">R239</span><span class="o">/</span><span class="mi">240</span><span class="o">/</span><span class="mi">34</span><span class="o">/</span><span class="mf">35.2</span> <span class="o">-</span><span class="n">JM8c</span> <span class="o">-</span><span class="n">N</span> <span class="o">-</span><span class="n">Sc0</span><span class="o">.</span><span class="mi">4</span> <span class="o">-</span><span class="n">h1</span> <span class="o">-</span><span class="n">D39</span><span class="o">.</span><span class="mi">5</span><span class="o">/</span><span class="mf">34.5</span> <span class="o">-</span><span class="n">M5</span> <span class="o">&lt;&lt;</span> <span class="n">END</span> <span class="o">&gt;</span> <span class="n">test</span><span class="o">.</span><span class="n">ps</span>
-<span class="c1">#stat azim ih pol</span>
-<span class="mi">0481</span> <span class="mi">11</span> <span class="mi">147</span> <span class="n">c</span>
-<span class="mi">6185</span> <span class="mi">247</span> <span class="mi">120</span> <span class="n">d</span>
-<span class="mi">0485</span> <span class="mi">288</span> <span class="mi">114</span> <span class="o">+</span>
-<span class="mi">0490</span> <span class="mi">223</span> <span class="mi">112</span> <span class="o">-</span>
-<span class="mi">0487</span> <span class="mi">212</span> <span class="mi">109</span> <span class="o">.</span>
-<span class="n">END</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pspolar -R239/240/34/35.2 -JM8c -N -Sc0.4 -h1 -D39.5/34.5 -M5 <span class="s">&lt;&lt; END &gt; test.ps</span>
+<span class="s">#stat azim ih pol</span>
+<span class="s">0481 11 147 c</span>
+<span class="s">6185 247 120 d</span>
+<span class="s">0485 288 114 +</span>
+<span class="s">0490 223 112 -</span>
+<span class="s">0487 212 109 .</span>
+<span class="s">END</span>
 </pre></div>
 </div>
 </div></blockquote>
 <p>or</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">pspolar</span> <span class="o">-</span><span class="n">R239</span><span class="o">/</span><span class="mi">240</span><span class="o">/</span><span class="mi">34</span><span class="o">/</span><span class="mf">35.2</span> <span class="o">-</span><span class="n">JM8c</span> <span class="o">-</span><span class="n">N</span> <span class="o">-</span><span class="n">Sc0</span><span class="o">.</span><span class="mi">4</span> <span class="o">-</span><span class="n">h1</span> <span class="o">-</span><span class="n">D239</span><span class="o">.</span><span class="mi">5</span><span class="o">/</span><span class="mf">34.5</span> <span class="o">-</span><span class="n">M5</span> <span class="o">&lt;&lt;</span><span class="n">END</span> <span class="o">&gt;</span> <span class="n">test</span><span class="o">.</span><span class="n">ps</span>
-<span class="c1">#Date Or. time stat azim ih</span>
-<span class="mi">910223</span> <span class="mi">1</span> <span class="mi">22</span> <span class="mi">0481</span> <span class="mi">11</span> <span class="mi">147</span> <span class="n">ipu0</span>
-<span class="mi">910223</span> <span class="mi">1</span> <span class="mi">22</span> <span class="mi">6185</span> <span class="mi">247</span> <span class="mi">120</span> <span class="n">ipd0</span>
-<span class="mi">910223</span> <span class="mi">1</span> <span class="mi">22</span> <span class="mi">0485</span> <span class="mi">288</span> <span class="mi">114</span> <span class="n">epu0</span>
-<span class="mi">910223</span> <span class="mi">1</span> <span class="mi">22</span> <span class="mi">0490</span> <span class="mi">223</span> <span class="mi">112</span> <span class="n">epd0</span>
-<span class="mi">910223</span> <span class="mi">1</span> <span class="mi">22</span> <span class="mi">0487</span> <span class="mi">212</span> <span class="mi">109</span> <span class="n">epu0</span>
-<span class="n">END</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pspolar -R239/240/34/35.2 -JM8c -N -Sc0.4 -h1 -D239.5/34.5 -M5 <span class="s">&lt;&lt;END &gt; test.ps</span>
+<span class="s">#Date Or. time stat azim ih</span>
+<span class="s">910223 1 22 0481 11 147 ipu0</span>
+<span class="s">910223 1 22 6185 247 120 ipd0</span>
+<span class="s">910223 1 22 0485 288 114 epu0</span>
+<span class="s">910223 1 22 0490 223 112 epd0</span>
+<span class="s">910223 1 22 0487 212 109 epu0</span>
+<span class="s">END</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -565,7 +584,7 @@ Institut de Physique du Globe de Paris, Departement de Sismologie, Paris, France
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

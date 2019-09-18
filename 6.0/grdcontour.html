@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -590,13 +609,13 @@ for a constant <strong>-S</strong>.</p>
 0.5 inch/degree, annotate every 50 mGal (using fontsize = 10p), using 1
 degree tickmarks, and draw 30 minute gridlines:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdcontour</span> <span class="n">hawaii_grav</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Jm0</span><span class="o">.</span><span class="mi">5</span><span class="n">i</span> <span class="o">-</span><span class="n">C25</span> <span class="o">-</span><span class="n">A50</span><span class="o">+</span><span class="n">f10p</span> <span class="o">-</span><span class="n">B1g30m</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">hawaii_grav</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcontour hawaii_grav.nc -Jm0.5i -C25 -A50+f10p -B1g30m -pdf hawaii_grav
 </pre></div>
 </div>
 </div></blockquote>
 <p>To do the same map but only draw the 50 and 150 and annotate the 100 contour:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdcontour</span> <span class="n">hawaii_grav</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Jm0</span><span class="o">.</span><span class="mi">5</span><span class="n">i</span> <span class="o">-</span><span class="n">C50</span><span class="o">.</span><span class="mi">150</span> <span class="o">-</span><span class="n">A100</span><span class="p">,</span><span class="o">+</span><span class="n">f10p</span> <span class="o">-</span><span class="n">B1g30m</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">hawaii_grav</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcontour hawaii_grav.nc -Jm0.5i -C50.150 -A100,+f10p -B1g30m -pdf hawaii_grav
 </pre></div>
 </div>
 </div></blockquote>
@@ -606,8 +625,8 @@ linear projection at 0.1 cm/x-unit and 50 cm/y-unit, using 20 (x) and
 plot-title, use a thick red pen for annotated contours, and a thin,
 dashed, blue pen for the rest, and send the output to the default printer:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdcontour</span> <span class="n">image</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Jx0</span><span class="o">.</span><span class="mi">1</span><span class="n">c</span><span class="o">/</span><span class="mf">50.0</span><span class="n">c</span> <span class="o">-</span><span class="n">Ccont</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">S4</span> <span class="o">-</span><span class="n">Bx20</span> <span class="o">-</span><span class="n">By0</span><span class="o">.</span><span class="mi">1</span>
-           <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">t</span><span class="s2">&quot;RMS Misfit&quot;</span> <span class="o">-</span><span class="n">Wathick</span><span class="p">,</span><span class="n">red</span> <span class="o">-</span><span class="n">Wcthinnest</span><span class="p">,</span><span class="n">blue</span><span class="p">,</span><span class="o">-</span> <span class="o">|</span> <span class="n">lp</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcontour image.nc -Jx0.1c/50.0c -Ccont.txt -S4 -Bx20 -By0.1
+           -B+t<span class="s2">&quot;RMS Misfit&quot;</span> -Wathick,red -Wcthinnest,blue,- <span class="p">|</span> lp
 </pre></div>
 </div>
 </div></blockquote>
@@ -618,7 +637,7 @@ position the label.</p>
 into two multisegment files: contours_C.txt for closed and
 contours_O.txt for open contours, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdcontour</span> <span class="n">topo</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">C100</span> <span class="o">-</span><span class="n">S4</span> <span class="o">-</span><span class="n">Dcontours_</span><span class="o">%</span><span class="n">c</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcontour topo.nc -C100 -S4 -Dcontours_%c.txt
 </pre></div>
 </div>
 </div></blockquote>
@@ -647,7 +666,7 @@ contours_O.txt for open contours, try</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -510,7 +529,7 @@ important. Use bilinear to minimize the propagation of NaNs, or lower
 (An ASCII table containing longitude, latitude, and SEASAT-derived
 gravity, preceded by one header record):</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grdtrack</span> <span class="n">track_4</span><span class="o">.</span><span class="n">xyg</span> <span class="o">-</span><span class="n">Ghawaii_topo</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">h</span> <span class="o">&gt;</span> <span class="n">track_4</span><span class="o">.</span><span class="n">xygt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grdtrack track_4.xyg -Ghawaii_topo.nc -h &gt; track_4.xygt
 </pre></div>
 </div>
 </div></blockquote>
@@ -519,7 +538,7 @@ predicted bathymetry on a Mercator grid) and the Muller et al age grid
 age.3.2.nc along the lon,lat coordinates given in the file
 cruise_track.xy, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grdtrack</span> <span class="n">cruise_track</span><span class="o">.</span><span class="n">xy</span> <span class="o">-</span><span class="n">Gtopo</span><span class="o">.</span><span class="mf">8.2</span><span class="o">.</span><span class="n">img</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span> <span class="o">-</span><span class="n">Gage</span><span class="o">.</span><span class="mf">3.2</span><span class="o">.</span><span class="n">nc</span> <span class="o">&gt;</span> <span class="n">depths</span><span class="o">-</span><span class="n">age</span><span class="o">.</span><span class="n">d</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grdtrack cruise_track.xy -Gtopo.8.2.img,1,1 -Gage.3.2.nc &gt; depths-age.d
 </pre></div>
 </div>
 </div></blockquote>
@@ -528,7 +547,7 @@ free-air anomalies on a Mercator grid) along 100-km-long cross-profiles
 that are orthogonal to the line segment given in the file track.xy,
 erecting cross-profiles every 25 km and sampling the grid every 3 km, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grdtrack</span> <span class="n">track</span><span class="o">.</span><span class="n">xy</span> <span class="o">-</span><span class="n">Ggrav</span><span class="o">.</span><span class="mf">18.1</span><span class="o">.</span><span class="n">img</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">1</span> <span class="o">-</span><span class="n">C100k</span><span class="o">/</span><span class="mi">3</span><span class="o">/</span><span class="mi">25</span> <span class="o">-</span><span class="n">Ar</span> <span class="o">&gt;</span> <span class="n">xprofiles</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grdtrack track.xy -Ggrav.18.1.img,0.1,1 -C100k/3/25 -Ar &gt; xprofiles.txt
 </pre></div>
 </div>
 </div></blockquote>
@@ -536,7 +555,7 @@ erecting cross-profiles every 25 km and sampling the grid every 3 km, try</p>
 right corner, using a grid spacing of 1 km on the geodesic, and output distances as well,
 try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grdtrack</span> <span class="o">-</span><span class="n">ELB</span><span class="o">/</span><span class="n">RT</span><span class="o">+</span><span class="n">i1k</span><span class="o">+</span><span class="n">d</span> <span class="o">-</span><span class="n">Gdata</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">je</span> <span class="o">&gt;</span> <span class="n">profiles</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grdtrack -ELB/RT+i1k+d -Gdata.nc -je &gt; profiles.txt
 </pre></div>
 </div>
 </div></blockquote>
@@ -565,7 +584,7 @@ try</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -430,13 +449,13 @@ files, or even non-GMT ps files, can provide the information
 <strong>psconvert</strong> requires by manually editing a line into the
 PostScript file, prefixed with %%PROJ.</p>
 <p>For example the command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">coast</span> <span class="o">-</span><span class="n">JM0</span><span class="o">/</span><span class="mi">12</span><span class="n">c</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">10</span><span class="o">/-</span><span class="mi">4</span><span class="o">/</span><span class="mi">37</span><span class="o">/</span><span class="mi">43</span> <span class="o">-</span><span class="n">W1</span> <span class="o">-</span><span class="n">Di</span> <span class="o">-</span><span class="n">Bg30m</span> <span class="o">--</span><span class="n">MAP_FRAME_TYPE</span><span class="o">=</span><span class="n">inside</span> <span class="o">&gt;</span> <span class="n">cara</span><span class="o">.</span><span class="n">ps</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -JM0/12c -R-10/-4/37/43 -W1 -Di -Bg30m --MAP_FRAME_TYPE<span class="o">=</span>inside &gt; cara.ps
 </pre></div>
 </div>
 <p>adds this comment line:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">PROJ</span><span class="p">:</span> <span class="n">merc</span> <span class="o">-</span><span class="mf">10.0</span> <span class="o">-</span><span class="mf">4.0</span> <span class="mf">37.0</span> <span class="mf">43.0</span> <span class="o">-</span><span class="mf">1113194.908</span> <span class="o">-</span><span class="mf">445277.963</span>
-<span class="mf">4413389.889</span> <span class="mf">5282821.824</span> <span class="o">+</span><span class="n">proj</span><span class="o">=</span><span class="n">merc</span> <span class="o">+</span><span class="n">lon_0</span><span class="o">=</span><span class="mi">0</span> <span class="o">+</span><span class="n">k</span><span class="o">=-</span><span class="mi">1</span> <span class="o">+</span><span class="n">x_0</span><span class="o">=</span><span class="mi">0</span> <span class="o">+</span><span class="n">y_0</span><span class="o">=</span><span class="mi">0</span>
-<span class="o">+</span><span class="n">a</span><span class="o">=</span><span class="mf">6378137.0</span> <span class="o">+</span><span class="n">b</span><span class="o">=</span><span class="mf">6356752.314245</span> <span class="o">+</span><span class="n">ellps</span><span class="o">=</span><span class="n">WGS84</span> <span class="o">+</span><span class="n">datum</span><span class="o">=</span><span class="n">WGS84</span> <span class="o">+</span><span class="n">units</span><span class="o">=</span><span class="n">m</span> <span class="o">+</span><span class="n">no_defs</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>%%PROJ: merc -10.0 -4.0 <span class="m">37</span>.0 <span class="m">43</span>.0 -1113194.908 -445277.963
+<span class="m">4413389</span>.889 <span class="m">5282821</span>.824 +proj<span class="o">=</span>merc +lon_0<span class="o">=</span><span class="m">0</span> +k<span class="o">=</span>-1 +x_0<span class="o">=</span><span class="m">0</span> +y_0<span class="o">=</span><span class="m">0</span>
++a<span class="o">=</span><span class="m">6378137</span>.0 +b<span class="o">=</span><span class="m">6356752</span>.314245 +ellps<span class="o">=</span>WGS84 +datum<span class="o">=</span>WGS84 +units<span class="o">=</span>m +no_defs
 </pre></div>
 </div>
 <p class="last">where ‘merc’ is the keyword for the coordinate conversion; the 2 to
@@ -511,56 +530,56 @@ the <strong>-Qp</strong> option to activate, since most users are unaware of Geo
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>To convert the file psfile.ps to PNG using a tight BoundingBox:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psconvert</span> <span class="n">psfile</span><span class="o">.</span><span class="n">ps</span> <span class="o">-</span><span class="n">A</span> <span class="o">-</span><span class="n">Tg</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psconvert psfile.ps -A -Tg
 </pre></div>
 </div>
 </div></blockquote>
 <p>To convert the file map.ps to PDF, extend the BoundingBox by 0.2 cm,
 fill it with lightblue paint and draw outline with a thick pen:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psconvert</span> <span class="nb">map</span><span class="o">.</span><span class="n">ps</span> <span class="o">-</span><span class="n">A</span><span class="o">+</span><span class="n">m0</span><span class="o">.</span><span class="mi">2</span><span class="n">c</span><span class="o">+</span><span class="n">glightblue</span><span class="o">+</span><span class="n">pthick</span> <span class="o">-</span><span class="n">Tf</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psconvert map.ps -A+m0.2c+glightblue+pthick -Tf
 </pre></div>
 </div>
 </div></blockquote>
 <p>To create a 5 cm PNG version at 300 dpi of our example_01.ps file</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psconvert</span> <span class="n">example_01</span><span class="o">.</span><span class="n">ps</span> <span class="o">-</span><span class="n">A</span><span class="o">+</span><span class="n">s5c</span> <span class="o">-</span><span class="n">Tg</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psconvert example_01.ps -A+s5c -Tg
 </pre></div>
 </div>
 </div></blockquote>
 <p>To create a 3 pages PDF file from 3 individual PS files</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psconvert</span> <span class="o">-</span><span class="n">TF</span> <span class="o">-</span><span class="n">Fabc</span> <span class="n">a</span><span class="o">.</span><span class="n">ps</span> <span class="n">b</span><span class="o">.</span><span class="n">ps</span> <span class="n">c</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psconvert -TF -Fabc a.ps b.ps c.ps
 </pre></div>
 </div>
 </div></blockquote>
 <p>To create a simple linear map with <a class="reference internal" href="coast.html"><span class="doc">coast</span></a> and convert it to tif with a
 .tfw the tight BoundingBox computation.</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">coast</span> <span class="o">-</span><span class="n">JX12cd</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">10</span><span class="o">/-</span><span class="mi">4</span><span class="o">/</span><span class="mi">37</span><span class="o">/</span><span class="mi">43</span> <span class="o">-</span><span class="n">W1</span> <span class="o">-</span><span class="n">Di</span> <span class="o">-</span><span class="n">Bg30m</span> <span class="o">-</span><span class="n">G200</span> <span class="o">--</span><span class="n">MAP_FRAME_TYPE</span><span class="o">=</span><span class="n">inside</span> <span class="o">&gt;</span> <span class="n">cara</span><span class="o">.</span><span class="n">ps</span>
-<span class="n">gmt</span> <span class="n">psconvert</span> <span class="n">cara</span><span class="o">.</span><span class="n">ps</span> <span class="o">-</span><span class="n">Tt</span> <span class="o">-</span><span class="n">W</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -JX12cd -R-10/-4/37/43 -W1 -Di -Bg30m -G200 --MAP_FRAME_TYPE<span class="o">=</span>inside &gt; cara.ps
+gmt psconvert cara.ps -Tt -W
 </pre></div>
 </div>
 </div></blockquote>
 <p>To create a Mercator version of the above example and use GDAL to
 produce a true geotiff file.</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">coast</span> <span class="o">-</span><span class="n">JM0</span><span class="o">/</span><span class="mi">12</span><span class="n">c</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">10</span><span class="o">/-</span><span class="mi">4</span><span class="o">/</span><span class="mi">37</span><span class="o">/</span><span class="mi">43</span> <span class="o">-</span><span class="n">W1</span> <span class="o">-</span><span class="n">Di</span> <span class="o">-</span><span class="n">Bg30m</span> <span class="o">-</span><span class="n">G200</span> <span class="o">--</span><span class="n">MAP_FRAME_TYPE</span><span class="o">=</span><span class="n">inside</span> <span class="o">&gt;</span> <span class="n">cara</span><span class="o">.</span><span class="n">ps</span>
-<span class="n">gdalwarp</span> <span class="o">-</span><span class="n">s_srs</span> <span class="o">+</span><span class="n">proj</span><span class="o">=</span><span class="n">merc</span> <span class="n">cara</span><span class="o">.</span><span class="n">tif</span> <span class="n">carageo</span><span class="o">.</span><span class="n">tiff</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -JM0/12c -R-10/-4/37/43 -W1 -Di -Bg30m -G200 --MAP_FRAME_TYPE<span class="o">=</span>inside &gt; cara.ps
+gdalwarp -s_srs +proj<span class="o">=</span>merc cara.tif carageo.tiff
 </pre></div>
 </div>
 </div></blockquote>
 <p>To create a Polar Stereographic geotiff file of Patagonia</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">coast</span> <span class="o">-</span><span class="n">JS</span><span class="o">-</span><span class="mi">55</span><span class="o">/-</span><span class="mi">60</span><span class="o">/</span><span class="mi">15</span><span class="n">c</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">77</span><span class="o">/-</span><span class="mi">55</span><span class="o">/-</span><span class="mf">57.5</span><span class="o">/-</span><span class="mi">48</span><span class="n">r</span> <span class="o">-</span><span class="n">Di</span> <span class="o">-</span><span class="n">Gred</span> <span class="o">-</span><span class="n">Bg2</span> <span class="o">--</span><span class="n">MAP_FRAME_TYPE</span><span class="o">=</span><span class="n">inside</span> <span class="o">&gt;</span> <span class="n">patagonia</span><span class="o">.</span><span class="n">ps</span>
-<span class="n">gmt</span> <span class="n">psconvert</span> <span class="n">patagonia</span><span class="o">.</span><span class="n">ps</span> <span class="o">-</span><span class="n">Tt</span> <span class="o">-</span><span class="n">W</span><span class="o">+</span><span class="n">g</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -JS-55/-60/15c -R-77/-55/-57.5/-48r -Di -Gred -Bg2 --MAP_FRAME_TYPE<span class="o">=</span>inside &gt; patagonia.ps
+gmt psconvert patagonia.ps -Tt -W+g -V
 </pre></div>
 </div>
 </div></blockquote>
 <p>To create a simple KML file for use in Google Earth, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdimage</span> <span class="n">lonlatgrid</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Jx1</span> <span class="o">-</span><span class="n">Ccolors</span><span class="o">.</span><span class="n">cpt</span> <span class="o">-</span><span class="n">B0g2</span> <span class="o">--</span><span class="n">MAP_FRAME_TYPE</span><span class="o">=</span><span class="n">inside</span> <span class="o">&gt;</span> <span class="n">tile</span><span class="o">.</span><span class="n">ps</span>
-<span class="n">gmt</span> <span class="n">psconvert</span> <span class="n">tile</span><span class="o">.</span><span class="n">ps</span> <span class="o">-</span><span class="n">Tg</span> <span class="o">-</span><span class="n">W</span><span class="o">+</span><span class="n">k</span><span class="o">+</span><span class="n">t</span><span class="s2">&quot;my title&quot;</span><span class="o">+</span><span class="n">l256</span><span class="o">/-</span><span class="mi">1</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdimage lonlatgrid.nc -Jx1 -Ccolors.cpt -B0g2 --MAP_FRAME_TYPE<span class="o">=</span>inside &gt; tile.ps
+gmt psconvert tile.ps -Tg -W+k+t<span class="s2">&quot;my title&quot;</span>+l256/-1 -V
 </pre></div>
 </div>
 </div></blockquote>
@@ -611,7 +630,7 @@ use it.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

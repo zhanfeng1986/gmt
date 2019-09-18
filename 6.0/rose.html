@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -495,9 +514,9 @@ interval, radial direction annotated every 50 km, using a light blue
 shading outlined by a solid red pen (width = 0.75 points), draw the mean
 azimuth, and shown in Portrait orientation, use:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">rose</span> <span class="n">fault_segments</span><span class="o">.</span><span class="n">az_r</span> <span class="o">-</span><span class="n">R0</span><span class="o">/</span><span class="mi">150</span><span class="o">/-</span><span class="mi">90</span><span class="o">/</span><span class="mi">90</span> <span class="o">-</span><span class="n">Bx50g25</span><span class="o">+</span><span class="n">l</span><span class="s2">&quot;Fault length&quot;</span>
-           <span class="o">-</span><span class="n">Byg30</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">t</span><span class="s2">&quot;Rose diagram&quot;</span> <span class="o">-</span><span class="n">JX6i</span> <span class="o">-</span><span class="n">A10</span><span class="o">+</span><span class="n">r</span> <span class="o">-</span><span class="n">Glightblue</span>
-           <span class="o">-</span><span class="n">W0</span><span class="o">.</span><span class="mi">75</span><span class="n">p</span><span class="p">,</span><span class="n">red</span> <span class="o">-</span><span class="n">Z0</span><span class="o">.</span><span class="mi">001</span> <span class="o">-</span><span class="n">Em</span> <span class="o">-</span><span class="n">T</span> <span class="o">-</span><span class="p">:</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">half_rose</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt rose fault_segments.az_r -R0/150/-90/90 -Bx50g25+l<span class="s2">&quot;Fault length&quot;</span>
+           -Byg30 -B+t<span class="s2">&quot;Rose diagram&quot;</span> -JX6i -A10+r -Glightblue
+           -W0.75p,red -Z0.001 -Em -T -: -pdf half_rose
 </pre></div>
 </div>
 </div></blockquote>
@@ -507,14 +526,14 @@ lines.r_az, on a circle of diameter = 10 cm, grid going out to radius =
 solid pen (width = 0.5 point, and shown in landscape [Default]
 orientation with a timestamp and command line plotted, use:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">rose</span> <span class="n">lines</span><span class="o">.</span><span class="n">az_r</span> <span class="o">-</span><span class="n">R0</span><span class="o">/</span><span class="mi">500</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">360</span> <span class="o">-</span><span class="n">JX10c</span> <span class="o">-</span><span class="n">Bxg100</span> <span class="o">-</span><span class="n">Byg45</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">t</span><span class="s2">&quot;Windrose diagram&quot;</span> <span class="o">-</span><span class="n">W0</span><span class="o">.</span><span class="mi">5</span><span class="n">p</span> <span class="o">-</span><span class="n">U</span><span class="o">+</span><span class="n">c</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">rose</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt rose lines.az_r -R0/500/0/360 -JX10c -Bxg100 -Byg45 -B+t<span class="s2">&quot;Windrose diagram&quot;</span> -W0.5p -U+c -pdf rose
 </pre></div>
 </div>
 </div></blockquote>
 <p>Redo the same plot but this time add orange vector heads to each direction (with nominal head size
 0.5 cm but this will be reduced linearly for lengths less than 1 cm) and save the plot, use:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">rose</span> <span class="n">lines</span><span class="o">.</span><span class="n">az_r</span> <span class="o">-</span><span class="n">R0</span><span class="o">/</span><span class="mi">500</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">360</span> <span class="o">-</span><span class="n">JX10c</span> <span class="o">-</span><span class="n">Bxg100</span> <span class="o">-</span><span class="n">Byg45</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">t</span><span class="s2">&quot;Windrose diagram&quot;</span> <span class="o">-</span><span class="n">M0</span><span class="o">.</span><span class="mi">5</span><span class="n">c</span><span class="o">+</span><span class="n">e</span><span class="o">+</span><span class="n">gorange</span><span class="o">+</span><span class="n">n1c</span> <span class="o">-</span><span class="n">W0</span><span class="o">.</span><span class="mi">5</span><span class="n">p</span> <span class="o">-</span><span class="n">U</span><span class="o">+</span><span class="n">c</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">rose</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt rose lines.az_r -R0/500/0/360 -JX10c -Bxg100 -Byg45 -B+t<span class="s2">&quot;Windrose diagram&quot;</span> -M0.5c+e+gorange+n1c -W0.5p -U+c -pdf rose
 </pre></div>
 </div>
 </div></blockquote>
@@ -549,7 +568,7 @@ must run the module with <strong>-I</strong> to find max length in binned data s
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

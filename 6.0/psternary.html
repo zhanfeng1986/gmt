@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -585,9 +604,9 @@ They are not available when using GMT modern mode.</p>
 in the file ternary.txt, with default annotations and gridline spacings, using the
 specified labeling, tru</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psternary</span> <span class="n">ternary</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">R0</span><span class="o">/</span><span class="mi">100</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">100</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">100</span> <span class="o">-</span><span class="n">JX6i</span> <span class="o">-</span><span class="n">P</span> <span class="o">-</span><span class="n">Xc</span> <span class="o">-</span><span class="n">Baafg</span><span class="o">+</span><span class="n">l</span><span class="s2">&quot;Water component&quot;</span><span class="o">+</span><span class="sa">u</span><span class="s2">&quot; %&quot;</span> \
-<span class="o">-</span><span class="n">Bbafg</span><span class="o">+</span><span class="n">l</span><span class="s2">&quot;Air component&quot;</span><span class="o">+</span><span class="sa">u</span><span class="s2">&quot; %&quot;</span> <span class="o">-</span><span class="n">Bcagf</span><span class="o">+</span><span class="n">l</span><span class="s2">&quot;Limestone component&quot;</span><span class="o">+</span><span class="sa">u</span><span class="s2">&quot; %&quot;</span> \
-<span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">givory</span><span class="o">+</span><span class="n">t</span><span class="s2">&quot;Example data from MATLAB Central&quot;</span> <span class="o">-</span><span class="n">Sc0</span><span class="o">.</span><span class="mi">1</span><span class="n">c</span> <span class="o">-</span><span class="n">Ct</span><span class="o">.</span><span class="n">cpt</span> <span class="o">-</span><span class="n">Y2i</span> <span class="o">-</span><span class="n">LWater</span><span class="o">/</span><span class="n">Air</span><span class="o">/</span><span class="n">Limestone</span> <span class="o">&gt;</span> <span class="nb">map</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psternary ternary.txt -R0/100/0/100/0/100 -JX6i -P -Xc -Baafg+l<span class="s2">&quot;Water component&quot;</span>+u<span class="s2">&quot; %&quot;</span> <span class="se">\</span>
+-Bbafg+l<span class="s2">&quot;Air component&quot;</span>+u<span class="s2">&quot; %&quot;</span> -Bcagf+l<span class="s2">&quot;Limestone component&quot;</span>+u<span class="s2">&quot; %&quot;</span> <span class="se">\</span>
+-B+givory+t<span class="s2">&quot;Example data from MATLAB Central&quot;</span> -Sc0.1c -Ct.cpt -Y2i -LWater/Air/Limestone &gt; map.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -616,7 +635,7 @@ specified labeling, tru</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

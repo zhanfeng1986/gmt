@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -388,26 +407,26 @@ If you use <strong>-QR</strong> for the final tile then the statistics file is r
 normalized gradients in the range [-0.6,0.6] imitating light sources in
 the north and west directions:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdgradient</span> <span class="n">geoid</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">A0</span><span class="o">/</span><span class="mi">270</span> <span class="o">-</span><span class="n">Ggradients</span><span class="o">.</span><span class="n">nc</span><span class="o">=</span><span class="n">nb</span><span class="o">/</span><span class="n">a</span> <span class="o">-</span><span class="n">Ne0</span><span class="o">.</span><span class="mi">6</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdgradient geoid.nc -A0/270 -Ggradients.nc<span class="o">=</span>nb/a -Ne0.6 -V
 </pre></div>
 </div>
 </div></blockquote>
 <p>To find the azimuth orientations of seafloor fabric in the file topo.nc:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdgradient</span> <span class="n">topo</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Dno</span> <span class="o">-</span><span class="n">Gazimuths</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdgradient topo.nc -Dno -Gazimuths.nc -V
 </pre></div>
 </div>
 </div></blockquote>
 <p>To determine the offset and sigma suitable for normalizing the intensities from topo.nc, do</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdgradient</span> <span class="n">topo</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">A30</span> <span class="o">-</span><span class="n">Nt0</span><span class="o">.</span><span class="mi">6</span> <span class="o">-</span><span class="n">Qc</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdgradient topo.nc -A30 -Nt0.6 -Qc -V
 </pre></div>
 </div>
 </div></blockquote>
 <p>Without <strong>-G</strong>, only the hidden statistics file is created and no output grid is written.</p>
 <p>To use the previously determined offset and sigma to normalize the intensities in tile_3.nc, do</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdgradient</span> <span class="n">tile_3</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">A30</span> <span class="o">-</span><span class="n">Nt0</span><span class="o">.</span><span class="mi">6</span><span class="o">+</span><span class="n">o</span><span class="o">+</span><span class="n">s</span> <span class="o">-</span><span class="n">Qr</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">Gtile_3_int</span><span class="o">.</span><span class="n">nc</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdgradient tile_3.nc -A30 -Nt0.6+o+s -Qr -V -Gtile_3_int.nc
 </pre></div>
 </div>
 </div></blockquote>
@@ -443,7 +462,7 @@ IEEE, Vol. 69, No. 1, January 1981, pp. 14-47.
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

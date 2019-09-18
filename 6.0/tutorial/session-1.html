@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -84,6 +85,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -125,7 +127,6 @@
 <li class="toctree-l2"><a class="reference internal" href="session-4.html">Session Four</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -153,12 +154,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -228,62 +247,43 @@
 <h1>Session One<a class="headerlink" href="#session-one" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="tutorial-setup">
 <h2>Tutorial setup<a class="headerlink" href="#tutorial-setup" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p class="first">We assume that GMT has been properly and fully
-installed and that the GMT executables are in your executable path
-described on the GMT wiki.  You should be able to type gmt in your
-terminal and it will display the GMT splash screen with version number
+<ol class="arabic simple">
+<li>We assume that GMT has been properly and fully
+installed and that the GMT executables are in your executable path.
+You should be able to type <code class="docutils literal notranslate"><span class="pre">gmt</span></code> in your terminal and it will display
+the GMT splash screen with version number
 and the top-level options.  If not then you need to work on your user
-environment, adding the path to the gmt executable to your search path.</p>
-</li>
-<li><p class="first">All GMT man pages, documentation, and gallery example scripts
+environment, adding the path to the gmt executable to your search path.</li>
+<li>All GMT man pages, documentation, and gallery example scripts
 are available from the GMT documentation web page.  It is
 assumed these pages have been installed locally at your site;
-if not they are always available from the main GMT site.</p>
-</li>
-<li><p class="first">We recommend you create a sub-directory called <em>tutorial</em>,
-cd into that directory, and run the commands there to keep things tidy.</p>
-</li>
-<li><p class="first">As we discuss GMT principles it may be a good idea to
-consult the GMT Technical Reference and Cookbook for more
-detailed explanations.</p>
-</li>
-<li><p class="first">The tutorial data sets are distributed via the GMT cache server.
+if not they are always available from <a class="reference external" href="https://docs.generic-mapping-tools.org">https://docs.generic-mapping-tools.org</a>.</li>
+<li>We recommend you create a sub-directory called <em>tutorial</em>,
+cd into that directory, and run the commands there to keep things tidy.</li>
+<li>As we discuss GMT principles it may be a good idea to
+consult <a class="reference internal" href="../cookbook.html"><span class="doc">the GMT Cookbook</span></a> for more
+detailed explanations.</li>
+<li>The tutorial data sets are distributed via the GMT cache server.
 You will therefore find that all the data files have a “&#64;” prepended to
 their names.  This will ensure the file is copied from the server
 before being used, hence you do not need to download any of the
 data manually.  The only downside is that you will need an Internet
-connection to run the examples by cut and paste.</p>
-</li>
-<li><p class="first">For all but the simplest GMT jobs it is recommended that
+connection to run the examples by cut and paste.</li>
+<li>For all but the simplest GMT jobs it is recommended that
 you place all the GMT (and UNIX) commands in a shell script
 file and make it executable.  To ensure that UNIX recognizes
 your script as a shell script it is a good habit always to start
-the script with the line #!/usr/bin/env bash or #!/usr/bin/env csh, depending on the shell you prefer to use.
+the script with the line <code class="docutils literal notranslate"><span class="pre">#!/usr/bin/env</span> <span class="pre">bash</span></code> or <code class="docutils literal notranslate"><span class="pre">#!/usr/bin/env</span> <span class="pre">csh</span></code>,
+depending on the shell you prefer to use.
 All the examples in this tutorial assumes you are running the Bourne Again shell, bash,
 and you will need to modify some of the constructs, such as i/o redirection, to run
 these examples under csh.
-We strongly recommend bash over csh due the ability to define <em>functions</em>.</p>
-</li>
-<li><p class="first">Making a script executable is accomplished using the chmod
+We strongly recommend bash over csh due the ability to define <em>functions</em>.</li>
+<li>Making a script executable is accomplished using the chmod
 command, e.g., the script figure_1.sh is made executable
-with “chmod +x figure_1.sh”.</p>
-</li>
-<li><p class="first">To view a PostScript file (e.g., map.ps) on a UNIX workstation
-we use gv map.ps.  On some systems there
-will be similar commands, like ghostview or gs and even open
-under OS X (which first converts your PostScript to PDF).  In this text we will use
-gv; please substitute the relevant PostScript previewer
-on your system.  Very often it is more productive to convert these PS
-files to PDF using the <a class="reference internal" href="../psconvert.html"><span class="doc">psconvert</span></a> module.  Turning the file map.ps to map.pdf
-is done with</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psconvert</span> <span class="o">-</span><span class="n">Tf</span> <span class="nb">map</span><span class="o">.</span><span class="n">ps</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">Please cd into the directory <em>tutorial</em>.  We are
-now ready to start.</p>
-</li>
+with “chmod +x figure_1.sh”.</li>
+<li>Please cd into the directory <em>tutorial</em>.  We are
+now ready to start.</li>
 </ol>
 </div>
 <div class="section" id="the-gmt-environment-what-happens-when-you-run-gmt">
@@ -373,9 +373,9 @@ the relationships shown in Figure <a class="reference internal" href="#gmt-envir
 terminal (called <em>stdout</em>).  To use files instead one can
 use redirection:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">module</span> <span class="nb">input</span><span class="o">-</span><span class="n">file</span> <span class="o">&gt;</span> <span class="n">output</span><span class="o">-</span><span class="n">file</span>         <span class="c1"># Read a file and redirect output</span>
-<span class="n">gmt</span> <span class="n">module</span> <span class="o">&lt;</span> <span class="nb">input</span><span class="o">-</span><span class="n">file</span> <span class="o">&gt;</span> <span class="n">output</span><span class="o">-</span><span class="n">file</span>       <span class="c1"># Redirect input and output</span>
-<span class="n">gmt</span> <span class="n">module</span> <span class="nb">input</span><span class="o">-</span><span class="n">file</span> <span class="o">&gt;&gt;</span> <span class="n">output</span><span class="o">-</span><span class="n">file</span>        <span class="c1"># Append output to existing file</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt module input-file &gt; output-file         <span class="c1"># Read a file and redirect output</span>
+gmt module &lt; input-file &gt; output-file       <span class="c1"># Redirect input and output</span>
+gmt module input-file &gt;&gt; output-file        <span class="c1"># Append output to existing file</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -388,7 +388,7 @@ That may be a noble cause, but it is extremely annoying. So please, <strong>unse
 <p>Sometimes we want to use the output from one module as input
 to another module.  This is achieved with <em>pipes</em>:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Someprogram</span> <span class="o">|</span> <span class="n">gmt</span> <span class="n">module1</span> <span class="o">|</span> <span class="n">gmt</span> <span class="n">module1</span> <span class="o">&gt;</span> <span class="n">OutputFile</span> <span class="p">(</span><span class="ow">or</span> <span class="o">|</span> <span class="n">lp</span><span class="p">)</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Someprogram <span class="p">|</span> gmt module1 <span class="p">|</span> gmt module1 &gt; OutputFile <span class="o">(</span>or <span class="p">|</span> lp<span class="o">)</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -401,14 +401,14 @@ These are typically written to a separate data stream called
 output (which goes to <em>stdout</em>).  To send the error messages to the same location
 as standard output we use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">program</span> <span class="o">&gt;</span> <span class="n">errors</span><span class="o">.</span><span class="n">log</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>program &gt; errors.log <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
 </pre></div>
 </div>
 </div></blockquote>
 <p>When we want to save both program output and error messages to
 separate files we use the following syntax:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">module</span> <span class="o">&gt;</span> <span class="n">output</span><span class="o">.</span><span class="n">txt</span> <span class="mi">2</span><span class="o">&gt;</span> <span class="n">errors</span><span class="o">.</span><span class="n">log</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt module &gt; output.txt <span class="m">2</span>&gt; errors.log
 </pre></div>
 </div>
 </div></blockquote>
@@ -475,7 +475,7 @@ from -3 to 8 in <em>y</em>, with automatic annotation intervals.  Finally,
 we let the canvas be painted light red and have dimensions of
 4 by 3 inches.  Here’s how we do it:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">basemap</span> <span class="o">-</span><span class="n">R10</span><span class="o">/</span><span class="mi">70</span><span class="o">/-</span><span class="mi">3</span><span class="o">/</span><span class="mi">8</span> <span class="o">-</span><span class="n">JX4i</span><span class="o">/</span><span class="mi">3</span><span class="n">i</span> <span class="o">-</span><span class="n">B</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">glightred</span><span class="o">+</span><span class="n">t</span><span class="s2">&quot;My first plot&quot;</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">GMT_tut_1</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt basemap -R10/70/-3/8 -JX4i/3i -B -B+glightred+t<span class="s2">&quot;My first plot&quot;</span> -pdf GMT_tut_1
 </pre></div>
 </div>
 </div></blockquote>
@@ -489,7 +489,6 @@ Examine the <a class="reference internal" href="../basemap.html"><span class="do
 <ol class="arabic simple">
 <li>Try change the <strong>-JX</strong> values.</li>
 <li>Try change the <strong>-B</strong> values.</li>
-<li>Omit the <strong>-P</strong>.</li>
 <li>Change title and canvas color.</li>
 </ol>
 </div>
@@ -498,9 +497,9 @@ Examine the <a class="reference internal" href="../basemap.html"><span class="do
 <p>We next will show how to do a basemap for a log–log plot.  We have
 no data set yet but we will
 imagine that the raw <em>x</em> data range from 3 to 9613 and that <em>y</em>
-ranges from 3.2 10^20 to 6.8 10^24.  One possibility is</p>
+ranges from 10^20 to 10^24.  One possibility is</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">basemap</span> <span class="o">-</span><span class="n">R1</span><span class="o">/</span><span class="mi">10000</span><span class="o">/</span><span class="mf">1e20</span><span class="o">/</span><span class="mf">1e25</span> <span class="o">-</span><span class="n">JX9il</span><span class="o">/</span><span class="mi">6</span><span class="n">il</span> <span class="o">-</span><span class="n">Bxa2</span><span class="o">+</span><span class="n">l</span><span class="s2">&quot;Wavelength (m)&quot;</span> <span class="o">-</span><span class="n">Bya1pf3</span><span class="o">+</span><span class="n">l</span><span class="s2">&quot;Power (W)&quot;</span> <span class="o">-</span><span class="n">BWS</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">GMT_tut_2</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt basemap -R1/10000/1e20/1e25 -JX9il/6il -Bxa2+l<span class="s2">&quot;Wavelength (m)&quot;</span> -Bya1pf3+l<span class="s2">&quot;Power (W)&quot;</span> -BWS -pdf GMT_tut_2
 </pre></div>
 </div>
 </div></blockquote>
@@ -572,7 +571,7 @@ to the common switches we may need to use some of several coast-specific options
 <p>One of <strong>-W</strong>, <strong>-G</strong>, <strong>-S</strong> must be selected.  Our first coastline
 example is from Latin America:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">coast</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">90</span><span class="o">/-</span><span class="mi">70</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">20</span> <span class="o">-</span><span class="n">JM6i</span> <span class="o">-</span><span class="n">B</span> <span class="o">-</span><span class="n">Gchocolate</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">GMT_tut_3</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -R-90/-70/0/20 -JM6i -B -Gchocolate -pdf GMT_tut_3
 </pre></div>
 </div>
 </div></blockquote>
@@ -604,7 +603,7 @@ The general syntax is</p>
 are the two standard parallels where the cone intersects the Earth’s surface.
 We try the following command:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">coast</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">130</span><span class="o">/-</span><span class="mi">70</span><span class="o">/</span><span class="mi">24</span><span class="o">/</span><span class="mi">52</span> <span class="o">-</span><span class="n">JB</span><span class="o">-</span><span class="mi">100</span><span class="o">/</span><span class="mi">35</span><span class="o">/</span><span class="mi">33</span><span class="o">/</span><span class="mi">45</span><span class="o">/</span><span class="mi">6</span><span class="n">i</span> <span class="o">-</span><span class="n">B</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">t</span><span class="s2">&quot;Conic Projection&quot;</span> <span class="o">-</span><span class="n">N1</span><span class="o">/</span><span class="n">thickest</span> <span class="o">-</span><span class="n">N2</span><span class="o">/</span><span class="n">thinnest</span> <span class="o">-</span><span class="n">A500</span> <span class="o">-</span><span class="n">Ggray</span> <span class="o">-</span><span class="n">Wthinnest</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">GMT_tut_4</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -R-130/-70/24/52 -JB-100/35/33/45/6i -B -B+t<span class="s2">&quot;Conic Projection&quot;</span> -N1/thickest -N2/thinnest -A500 -Ggray -Wthinnest -pdf GMT_tut_4
 </pre></div>
 </div>
 </div></blockquote>
@@ -631,7 +630,7 @@ The syntax for this projection is</p>
 <p>where (<em>lon_0, lat_0</em>) is the center of the map (projection).
 As an example we will try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">coast</span> <span class="o">-</span><span class="n">Rg</span> <span class="o">-</span><span class="n">JG280</span><span class="o">/</span><span class="mi">30</span><span class="o">/</span><span class="mi">6</span><span class="n">i</span> <span class="o">-</span><span class="n">Bag</span> <span class="o">-</span><span class="n">Dc</span> <span class="o">-</span><span class="n">A5000</span> <span class="o">-</span><span class="n">Gwhite</span> <span class="o">-</span><span class="n">SDarkTurquoise</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">GMT_tut_5</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -Rg -JG280/30/6i -Bag -Dc -A5000 -Gwhite -SDarkTurquoise -pdf GMT_tut_5
 </pre></div>
 </div>
 </div></blockquote>
@@ -657,7 +656,7 @@ The <em>lon_0</em> is the central meridian (which takes precedence over
 the mid-value implied by the <strong>-R</strong> setting).  A simple Eckert VI world map
 is thus generated by</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">coast</span> <span class="o">-</span><span class="n">Rg</span> <span class="o">-</span><span class="n">JKs180</span><span class="o">/</span><span class="mi">9</span><span class="n">i</span> <span class="o">-</span><span class="n">Bag</span> <span class="o">-</span><span class="n">Dc</span> <span class="o">-</span><span class="n">A5000</span> <span class="o">-</span><span class="n">Gchocolate</span> <span class="o">-</span><span class="n">SDarkTurquoise</span> <span class="o">-</span><span class="n">Wthinnest</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">GMT_tut_6</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -Rg -JKs180/9i -Bag -Dc -A5000 -Gchocolate -SDarkTurquoise -Wthinnest -pdf GMT_tut_6
 </pre></div>
 </div>
 </div></blockquote>
@@ -698,7 +697,7 @@ is thus generated by</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -385,26 +404,26 @@ kept low.</p>
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>To remove a linear trend from data.xy by ordinary least squares, use:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">trend1d</span> <span class="n">data</span><span class="o">.</span><span class="n">xy</span> <span class="o">-</span><span class="n">Fxr</span> <span class="o">-</span><span class="n">Np1</span> <span class="o">&gt;</span> <span class="n">detrended_data</span><span class="o">.</span><span class="n">xy</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt trend1d data.xy -Fxr -Np1 &gt; detrended_data.xy
 </pre></div>
 </div>
 </div></blockquote>
 <p>To make the above linear trend robust with respect to outliers, use:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">trend1d</span> <span class="n">data</span><span class="o">.</span><span class="n">xy</span> <span class="o">-</span><span class="n">Fxr</span> <span class="o">-</span><span class="n">Np1</span><span class="o">+</span><span class="n">r</span> <span class="o">&gt;</span> <span class="n">detrended_data</span><span class="o">.</span><span class="n">xy</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt trend1d data.xy -Fxr -Np1+r &gt; detrended_data.xy
 </pre></div>
 </div>
 </div></blockquote>
 <p>To fit the model y(x) = a + bx^2 + c * cos(2*pi*3*(x/l) + d * sin(2*pi*3*(x/l), with l the fundamental period (here l = 15), try:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">trend1d</span> <span class="n">data</span><span class="o">.</span><span class="n">xy</span> <span class="o">-</span><span class="n">Fxm</span> <span class="o">-</span><span class="n">NP0</span><span class="p">,</span><span class="n">P2</span><span class="p">,</span><span class="n">F3</span><span class="o">+</span><span class="n">l15</span> <span class="o">&gt;</span> <span class="n">model</span><span class="o">.</span><span class="n">xy</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt trend1d data.xy -Fxm -NP0,P2,F3+l15 &gt; model.xy
 </pre></div>
 </div>
 </div></blockquote>
 <p>To find out how many terms (up to 20, say in a robust Fourier
 interpolant are significant in fitting data.xy, use:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">trend1d</span> <span class="n">data</span><span class="o">.</span><span class="n">xy</span> <span class="o">-</span><span class="n">Nf20</span><span class="o">+</span><span class="n">r</span> <span class="o">-</span><span class="n">I</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt trend1d data.xy -Nf20+r -I -V
 </pre></div>
 </div>
 </div></blockquote>
@@ -440,7 +459,7 @@ Revised Edition, Academic Press, San Diego.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

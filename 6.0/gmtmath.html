@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -1274,20 +1293,20 @@ columns will have been loaded but are then ignored until you undo the effect of 
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>To add two plot dimensions of different units, we can run</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>length=`gmt math -Q 15c 2i SUB =`
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">length</span><span class="o">=</span><span class="sb">`</span>gmt math -Q 15c 2i <span class="nv">SUB</span> <span class="o">=</span><span class="sb">`</span>
 </pre></div>
 </div>
 </div></blockquote>
 <p>To take the square root of the content of the second data column being
 piped through <strong>gmtmath</strong> by process1 and pipe it through a 3rd process, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">process1</span> <span class="o">|</span> <span class="n">gmt</span> <span class="n">math</span> <span class="n">STDIN</span> <span class="n">SQRT</span> <span class="o">=</span> <span class="o">|</span> <span class="n">process3</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>process1 <span class="p">|</span> gmt math STDIN <span class="nv">SQRT</span> <span class="o">=</span> <span class="p">|</span> process3
 </pre></div>
 </div>
 </div></blockquote>
 <p>To take log10 of the average of 2 data files, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">math</span> <span class="n">file1</span><span class="o">.</span><span class="n">txt</span> <span class="n">file2</span><span class="o">.</span><span class="n">txt</span> <span class="n">ADD</span> <span class="mf">0.5</span> <span class="n">MUL</span> <span class="n">LOG10</span> <span class="o">=</span> <span class="n">file3</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math file1.txt file2.txt ADD <span class="m">0</span>.5 MUL <span class="nv">LOG10</span> <span class="o">=</span> file3.txt
 </pre></div>
 </div>
 </div></blockquote>
@@ -1295,27 +1314,27 @@ piped through <strong>gmtmath</strong> by process1 and pipe it through a 3rd pro
 depth in m, use the relation depth(in m) = 2500 + 350 * sqrt (age) to
 print the depth anomalies:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">math</span> <span class="n">samples</span><span class="o">.</span><span class="n">txt</span> <span class="n">T</span> <span class="n">SQRT</span> <span class="mi">350</span> <span class="n">MUL</span> <span class="mi">2500</span> <span class="n">ADD</span> <span class="n">SUB</span> <span class="o">=</span> <span class="o">|</span> <span class="n">lpr</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math samples.txt T SQRT <span class="m">350</span> MUL <span class="m">2500</span> ADD <span class="nv">SUB</span> <span class="o">=</span> <span class="p">|</span> lpr
 </pre></div>
 </div>
 </div></blockquote>
 <p>To take the average of columns 1 and 4-6 in the three data sets sizes.1,
 sizes.2, and sizes.3, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">math</span> <span class="o">-</span><span class="n">C1</span><span class="p">,</span><span class="mi">4</span><span class="o">-</span><span class="mi">6</span> <span class="n">sizes</span><span class="o">.</span><span class="mi">1</span> <span class="n">sizes</span><span class="o">.</span><span class="mi">2</span> <span class="n">ADD</span> <span class="n">sizes</span><span class="o">.</span><span class="mi">3</span> <span class="n">ADD</span> <span class="mi">3</span> <span class="n">DIV</span> <span class="o">=</span> <span class="n">ave</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math -C1,4-6 sizes.1 sizes.2 ADD sizes.3 ADD <span class="m">3</span> <span class="nv">DIV</span> <span class="o">=</span> ave.txt
 </pre></div>
 </div>
 </div></blockquote>
 <p>To take the 1-column data set ages.txt and calculate the modal value and
 assign it to a variable, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mode_age=`gmt math -S -T ages.txt MODE =`
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">mode_age</span><span class="o">=</span><span class="sb">`</span>gmt math -S -T ages.txt <span class="nv">MODE</span> <span class="o">=</span><span class="sb">`</span>
 </pre></div>
 </div>
 </div></blockquote>
 <p>To evaluate the dilog(x) function for coordinates given in the file t.txt:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">math</span> <span class="o">-</span><span class="n">Tt</span><span class="o">.</span><span class="n">txt</span> <span class="n">T</span> <span class="n">DILOG</span> <span class="o">=</span> <span class="n">dilog</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math -Tt.txt T <span class="nv">DILOG</span> <span class="o">=</span> dilog.txt
 </pre></div>
 </div>
 </div></blockquote>
@@ -1323,8 +1342,8 @@ assign it to a variable, try</p>
 first 3 cosine harmonics where we store and repeatedly recall the
 trigonometric argument (2*pi*T/360):</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">math</span> <span class="o">-</span><span class="n">T0</span><span class="o">/</span><span class="mi">360</span><span class="o">/</span><span class="mi">1</span> <span class="mi">2</span> <span class="n">PI</span> <span class="n">MUL</span> <span class="mi">360</span> <span class="n">DIV</span> <span class="n">T</span> <span class="n">MUL</span> <span class="n">STO</span><span class="nd">@kT</span> <span class="n">COS</span> <span class="nd">@kT</span> <span class="mi">2</span> <span class="n">MUL</span> <span class="n">COS</span> <span class="n">ADD</span> \
-            <span class="nd">@kT</span> <span class="mi">3</span> <span class="n">MUL</span> <span class="n">COS</span> <span class="n">ADD</span> <span class="o">=</span> <span class="n">harmonics</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math -T0/360/1 <span class="m">2</span> PI MUL <span class="m">360</span> DIV T MUL STO@kT COS @kT <span class="m">2</span> MUL COS ADD <span class="se">\</span>
+            @kT <span class="m">3</span> MUL COS <span class="nv">ADD</span> <span class="o">=</span> harmonics.txt
 </pre></div>
 </div>
 </div></blockquote>
@@ -1333,7 +1352,7 @@ input files) and calculate arbitrary expressions, use the <strong>-Q</strong> op
 As an example, we will calculate the value of Kei (((1 + 1.75)/2.2) +
 cos (60)) and store the result in the shell variable z:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>set z = `gmt math -Q 1 1.75 ADD 2.2 DIV 60 COSD ADD KEI =`
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span> <span class="nv">z</span> <span class="o">=</span> <span class="sb">`</span>gmt math -Q <span class="m">1</span> <span class="m">1</span>.75 ADD <span class="m">2</span>.2 DIV <span class="m">60</span> COSD ADD <span class="nv">KEI</span> <span class="o">=</span><span class="sb">`</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -1348,7 +1367,7 @@ function for a given t0 = 1.55. Then, you need a 4-column augmented
 table loaded with t in column 1 and your observed y(t) in column 3. The
 calculation becomes</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">math</span> <span class="o">-</span><span class="n">N4</span><span class="o">/</span><span class="mi">1</span> <span class="o">-</span><span class="n">Aty</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">C0</span> <span class="mi">1</span> <span class="n">ADD</span> <span class="o">-</span><span class="n">C2</span> <span class="mf">1.55</span> <span class="n">STEPT</span> <span class="n">ADD</span> <span class="o">-</span><span class="n">Ca</span> <span class="n">LSQFIT</span> <span class="o">=</span> <span class="n">solution</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math -N4/1 -Aty.txt -C0 <span class="m">1</span> ADD -C2 <span class="m">1</span>.55 STEPT ADD -Ca <span class="nv">LSQFIT</span> <span class="o">=</span> solution.txt
 </pre></div>
 </div>
 </div></blockquote>
@@ -1360,20 +1379,20 @@ columns are zero. If you already have a pre-calculated table with the
 augmented matrix [ A | b ] in a file (say lsqsys.txt), the least squares
 solution is simply</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">math</span> <span class="o">-</span><span class="n">T</span> <span class="n">lsqsys</span><span class="o">.</span><span class="n">txt</span> <span class="n">LSQFIT</span> <span class="o">=</span> <span class="n">solution</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math -T lsqsys.txt <span class="nv">LSQFIT</span> <span class="o">=</span> solution.txt
 </pre></div>
 </div>
 </div></blockquote>
 <p>Users must be aware that when <strong>-C</strong> controls which columns are to be
 active the control extends to placing columns from files as well.
 Contrast the different result obtained by these very similar commands:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="o">|</span> <span class="n">gmt</span> <span class="n">math</span> <span class="n">STDIN</span> <span class="o">-</span><span class="n">C3</span> <span class="mi">1</span> <span class="n">ADD</span> <span class="o">=</span>
-<span class="mi">1</span>    <span class="mi">2</span>    <span class="mi">3</span>    <span class="mi">5</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="p">|</span> gmt math STDIN -C3 <span class="m">1</span> <span class="nv">ADD</span> <span class="o">=</span>
+<span class="m">1</span>    <span class="m">2</span>    <span class="m">3</span>    <span class="m">5</span>
 </pre></div>
 </div>
 <p>versus</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="o">|</span> <span class="n">gmt</span> <span class="n">math</span> <span class="o">-</span><span class="n">C3</span> <span class="n">STDIN</span> <span class="mi">1</span> <span class="n">ADD</span> <span class="o">=</span>
-<span class="mi">0</span>    <span class="mi">0</span>    <span class="mi">0</span>    <span class="mi">5</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="p">|</span> gmt math -C3 STDIN <span class="m">1</span> <span class="nv">ADD</span> <span class="o">=</span>
+<span class="m">0</span>    <span class="m">0</span>    <span class="m">0</span>    <span class="m">5</span>
 </pre></div>
 </div>
 </div>
@@ -1411,7 +1430,7 @@ Publishing Corp.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

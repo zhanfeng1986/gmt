@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -324,28 +343,28 @@ will indicate both this unit and epoch.</p>
 between 148E - 162E and 8N - 32N, and you do not trust the gridding near
 the edges, so you want to keep only the area between 150E - 160E and 10N - 30N, then:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdcut</span> <span class="n">grav_148_162_8_32</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Ggrav_150_160_10_30</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">R150</span><span class="o">/</span><span class="mi">160</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="mi">30</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcut grav_148_162_8_32.nc -Ggrav_150_160_10_30.nc -R150/160/10/30 -V
 </pre></div>
 </div>
 </div></blockquote>
 <p>To return the subregion of a grid such that any boundary strips where
 all values are entirely above 0 are excluded, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdcut</span> <span class="n">bathy</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Gtrimmed_bathy</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Z</span><span class="o">-/</span><span class="mi">0</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcut bathy.nc -Gtrimmed_bathy.nc -Z-/0 -V
 </pre></div>
 </div>
 </div></blockquote>
 <p>To return the subregion of a grid such that any boundary rows or columns
 that are all NaNs, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdcut</span> <span class="n">bathy</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Gtrimmed_bathy</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Z</span><span class="o">+</span><span class="n">N</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcut bathy.nc -Gtrimmed_bathy.nc -Z+N -V
 </pre></div>
 </div>
 </div></blockquote>
 <p>To return the subregion of a grid that contains all nodes within a
 distance of 500 km from the point 45,30 try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdcut</span> <span class="n">bathy</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Gsubset_bathy</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">S45</span><span class="o">/</span><span class="mi">30</span><span class="o">/</span><span class="mi">500</span><span class="n">k</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcut bathy.nc -Gsubset_bathy.nc -S45/30/500k -V
 </pre></div>
 </div>
 </div></blockquote>
@@ -356,7 +375,7 @@ oblique map in general does not. Hence, to get all the data from the
 ETOPO2 data needed to make a contour map for the region defined by its
 lower left and upper right corners and the desired projection, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdcut</span> <span class="nd">@earth_relief_02m</span> <span class="o">-</span><span class="n">R160</span><span class="o">/</span><span class="mi">20</span><span class="o">/</span><span class="mi">220</span><span class="o">/</span><span class="mi">30</span><span class="n">r</span> <span class="o">-</span><span class="n">Joc190</span><span class="o">/</span><span class="mf">25.5</span><span class="o">/</span><span class="mi">292</span><span class="o">/</span><span class="mi">69</span><span class="o">/</span><span class="mi">1</span> <span class="o">-</span><span class="n">Gdata</span><span class="o">.</span><span class="n">nc</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcut @earth_relief_02m -R160/20/220/30r -Joc190/25.5/292/69/1 -Gdata.nc
 </pre></div>
 </div>
 </div></blockquote>
@@ -386,7 +405,7 @@ lower left and upper right corners and the desired projection, use</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

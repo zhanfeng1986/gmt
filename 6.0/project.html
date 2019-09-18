@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -432,7 +451,7 @@ specify more decimals using the <a class="reference internal" href="gmt.conf.htm
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>To generate points every 10km along a great circle from 10N,50W to 30N,10W:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">project</span> <span class="o">-</span><span class="n">C</span><span class="o">-</span><span class="mi">50</span><span class="o">/</span><span class="mi">10</span> <span class="o">-</span><span class="n">E</span><span class="o">-</span><span class="mi">10</span><span class="o">/</span><span class="mi">30</span> <span class="o">-</span><span class="n">G10</span> <span class="o">-</span><span class="n">Q</span> <span class="o">&gt;</span> <span class="n">great_circle_points</span><span class="o">.</span><span class="n">xyp</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt project -C-50/10 -E-10/30 -G10 -Q &gt; great_circle_points.xyp
 </pre></div>
 </div>
 </div></blockquote>
@@ -440,13 +459,13 @@ specify more decimals using the <a class="reference internal" href="gmt.conf.htm
 <p>To generate points every 1 degree along a great circle from 30N,10W with
 azimuth 30 and covering a full 360, try:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">project</span> <span class="o">-</span><span class="n">C10W</span><span class="o">/</span><span class="mi">30</span><span class="n">N</span> <span class="o">-</span><span class="n">A30</span> <span class="o">-</span><span class="n">G1</span> <span class="o">-</span><span class="n">L</span><span class="o">-</span><span class="mi">180</span><span class="o">/</span><span class="mi">180</span> <span class="o">&gt;</span> <span class="n">great_circle</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt project -C10W/30N -A30 -G1 -L-180/180 &gt; great_circle.txt
 </pre></div>
 </div>
 </div></blockquote>
 <p>To generate points every 10km along a small circle of colatitude 60 from 10N,50W to 30N,10W:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">project</span> <span class="o">-</span><span class="n">C</span><span class="o">-</span><span class="mi">50</span><span class="o">/</span><span class="mi">10</span> <span class="o">-</span><span class="n">E</span><span class="o">-</span><span class="mi">10</span><span class="o">/</span><span class="mi">30</span> <span class="o">-</span><span class="n">G10</span><span class="o">/</span><span class="mi">60</span> <span class="o">-</span><span class="n">Q</span> <span class="o">&gt;</span> <span class="n">small_circle_points</span><span class="o">.</span><span class="n">xyp</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt project -C-50/10 -E-10/30 -G10/60 -Q &gt; small_circle_points.xyp
 </pre></div>
 </div>
 </div></blockquote>
@@ -454,14 +473,14 @@ azimuth 30 and covering a full 360, try:</p>
 40E,85N, with extent of 45 degrees to either side of the meridian
 defined by the great circle from the pole to a point 15E,15N, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">project</span> <span class="o">-</span><span class="n">C15</span><span class="o">/</span><span class="mi">15</span> <span class="o">-</span><span class="n">T40</span><span class="o">/</span><span class="mi">85</span> <span class="o">-</span><span class="n">G1</span><span class="o">/</span><span class="mi">80</span> <span class="o">-</span><span class="n">L</span><span class="o">-</span><span class="mi">45</span><span class="o">/</span><span class="mi">45</span> <span class="o">&gt;</span> <span class="n">some_circle</span><span class="o">.</span><span class="n">xyp</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt project -C15/15 -T40/85 -G1/80 -L-45/45 &gt; some_circle.xyp
 </pre></div>
 </div>
 </div></blockquote>
 <p>To generate points approximately every 10km along a an ellipse centered on (30W,70N) with
 major axis of 1500 km with azimuth of 30 degree and a minor axis of 600 km, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">project</span> <span class="o">-</span><span class="n">C</span><span class="o">-</span><span class="mi">30</span><span class="o">/</span><span class="mi">70</span> <span class="o">-</span><span class="n">G10</span> <span class="o">-</span><span class="n">Z1500</span><span class="o">/</span><span class="mi">600</span><span class="o">/</span><span class="mi">30</span><span class="o">+</span><span class="n">e</span> <span class="o">&gt;</span> <span class="n">ellipse</span><span class="o">.</span><span class="n">xyp</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt project -C-30/70 -G10 -Z1500/600/30+e &gt; ellipse.xyp
 </pre></div>
 </div>
 </div></blockquote>
@@ -470,7 +489,7 @@ c2610.xygmb along a great circle through an origin at 30S, 30W, the
 great circle having an azimuth of N20W at the origin, keeping only the
 data from NE of the profile and within ±500 km of the origin, run:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">project</span> <span class="n">c2610</span><span class="o">.</span><span class="n">xygmb</span> <span class="o">-</span><span class="n">C</span><span class="o">-</span><span class="mi">30</span><span class="o">/-</span><span class="mi">30</span> <span class="o">-</span><span class="n">A</span><span class="o">-</span><span class="mi">20</span> <span class="o">-</span><span class="n">W</span><span class="o">-</span><span class="mi">10000</span><span class="o">/</span><span class="mi">0</span> <span class="o">-</span><span class="n">L</span><span class="o">-</span><span class="mi">500</span><span class="o">/</span><span class="mi">500</span> <span class="o">-</span><span class="n">Fpz</span> <span class="o">-</span><span class="n">Q</span> <span class="o">&gt;</span> <span class="n">c2610_projected</span><span class="o">.</span><span class="n">pgmb</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt project c2610.xygmb -C-30/-30 -A-20 -W-10000/0 -L-500/500 -Fpz -Q &gt; c2610_projected.pgmb
 </pre></div>
 </div>
 </div></blockquote>
@@ -481,7 +500,7 @@ are on our right as we walk along the great circle path, or to the NE in this ex
 new origin is at 5,3 and the new <em>x</em> axis (<em>p</em>) makes
 an angle of 20 degrees with the old <em>x</em> axis, use:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">project</span> <span class="n">mydata</span><span class="o">.</span><span class="n">xy</span> <span class="o">-</span><span class="n">C5</span><span class="o">/</span><span class="mi">3</span> <span class="o">-</span><span class="n">A70</span> <span class="o">-</span><span class="n">Fpq</span> <span class="o">&gt;</span> <span class="n">mydata</span><span class="o">.</span><span class="n">pq</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt project mydata.xy -C5/3 -A70 -Fpq &gt; mydata.pq
 </pre></div>
 </div>
 </div></blockquote>
@@ -489,14 +508,14 @@ an angle of 20 degrees with the old <em>x</em> axis, use:</p>
 coordinates using a pole from the hotspot reference frame and placing
 the oblique zero meridian (<em>p</em> = 0 line) through Tahiti, run:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">project</span> <span class="n">pacific</span><span class="o">.</span><span class="n">lonlat</span> <span class="o">-</span><span class="n">T</span><span class="o">-</span><span class="mi">75</span><span class="o">/</span><span class="mi">68</span> <span class="o">-</span><span class="n">C</span><span class="o">-</span><span class="mi">149</span><span class="p">:</span><span class="mi">26</span><span class="o">/-</span><span class="mi">17</span><span class="p">:</span><span class="mi">37</span> <span class="o">-</span><span class="n">Fpq</span> <span class="o">&gt;</span> <span class="n">pacific</span><span class="o">.</span><span class="n">pq</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt project pacific.lonlat -T-75/68 -C-149:26/-17:37 -Fpq &gt; pacific.pq
 </pre></div>
 </div>
 </div></blockquote>
 <p>Suppose that pacific_topo.nc is a grid file of bathymetry, and you want
 to make a file of flowlines in the hotspot reference frame. If you run:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grd2xyz</span> <span class="n">pacific_topo</span><span class="o">.</span><span class="n">nc</span> <span class="o">|</span> <span class="n">project</span> <span class="o">-</span><span class="n">T</span><span class="o">-</span><span class="mi">75</span><span class="o">/</span><span class="mi">68</span> <span class="o">-</span><span class="n">C0</span><span class="o">/-</span><span class="mi">90</span> <span class="o">-</span><span class="n">Fxyq</span> <span class="o">|</span> <span class="n">xyz2grd</span> <span class="o">-</span><span class="n">Retc</span> <span class="o">-</span><span class="n">Ietc</span> <span class="o">-</span><span class="n">Cflow</span><span class="o">.</span><span class="n">nc</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grd2xyz pacific_topo.nc <span class="p">|</span> project -T-75/68 -C0/-90 -Fxyq <span class="p">|</span> xyz2grd -Retc -Ietc -Cflow.nc
 </pre></div>
 </div>
 </div></blockquote>
@@ -540,7 +559,7 @@ This gives coordinates for an oblique small circle.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

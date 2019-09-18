@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -471,33 +490,33 @@ They are not available when using GMT modern mode.</p>
 <p>To plot just the red outlines of the (lon lat text strings) stored in the
 file text.txt on a Mercator plot with the given specifications, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">pstext</span> <span class="n">text</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">30</span><span class="o">/</span><span class="mi">30</span><span class="o">/-</span><span class="mi">10</span><span class="o">/</span><span class="mi">20</span> <span class="o">-</span><span class="n">Jm0</span><span class="o">.</span><span class="mi">1</span><span class="n">i</span> <span class="o">-</span><span class="n">P</span> <span class="o">-</span><span class="n">F</span><span class="o">+</span><span class="n">f18p</span><span class="p">,</span><span class="n">Helvetica</span><span class="p">,</span><span class="o">-=</span><span class="mf">0.5</span><span class="n">p</span><span class="p">,</span><span class="n">red</span> <span class="o">-</span><span class="n">B5</span> <span class="o">&gt;</span> <span class="n">plot</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pstext text.txt -R-30/30/-10/20 -Jm0.1i -P -F+f18p,Helvetica,-<span class="o">=</span><span class="m">0</span>.5p,red -B5 &gt; plot.ps
 </pre></div>
 </div>
 </div></blockquote>
 <p>To plot a text at the upper left corner of a 10 cm map</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="n">TopLeft</span> <span class="o">|</span> <span class="n">gmt</span> <span class="n">pstext</span> <span class="o">-</span><span class="n">R1</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="mi">10</span> <span class="o">-</span><span class="n">JX10</span> <span class="o">-</span><span class="n">F</span><span class="o">+</span><span class="n">cTL</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">plot</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> TopLeft <span class="p">|</span> gmt pstext -R1/10/1/10 -JX10 -F+cTL -P &gt; plot.ps
 </pre></div>
 </div>
 </div></blockquote>
 <p>To add a typeset figure caption for a 3-inch wide illustration, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">pstext</span> <span class="o">-</span><span class="n">R0</span><span class="o">/</span><span class="mi">3</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">5</span> <span class="o">-</span><span class="n">JX3i</span> <span class="o">-</span><span class="n">O</span> <span class="o">-</span><span class="n">h1</span> <span class="o">-</span><span class="n">M</span> <span class="o">-</span><span class="n">N</span> <span class="o">-</span><span class="n">F</span><span class="o">+</span><span class="n">f12</span><span class="p">,</span><span class="n">Times</span><span class="o">-</span><span class="n">Roman</span><span class="o">+</span><span class="n">jLT</span> <span class="o">&lt;&lt;</span> <span class="n">EOF</span> <span class="o">&gt;&gt;</span> <span class="n">figure</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pstext -R0/3/0/5 -JX3i -O -h1 -M -N -F+f12,Times-Roman+jLT &lt;&lt; EOF &gt;&gt; figure.ps
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="ow">is</span> <span class="n">an</span> <span class="n">unmarked</span> <span class="n">header</span> <span class="n">record</span> <span class="ow">not</span> <span class="n">starting</span> <span class="k">with</span> <span class="c1">#</span>
-<span class="o">&gt;</span> <span class="mi">0</span> <span class="o">-</span><span class="mf">0.5</span> <span class="mi">13</span><span class="n">p</span> <span class="mi">3</span><span class="n">i</span> <span class="n">j</span>
-<span class="o">@%</span><span class="mi">5</span><span class="o">%</span><span class="n">Figure</span> <span class="mf">1.</span><span class="o">@%%</span> <span class="n">This</span> <span class="n">illustration</span> <span class="n">shows</span> <span class="n">nothing</span> <span class="n">useful</span><span class="p">,</span> <span class="n">but</span> <span class="n">it</span> <span class="n">still</span> <span class="n">needs</span>
-<span class="n">a</span> <span class="n">figure</span> <span class="n">caption</span><span class="o">.</span> <span class="n">Highlighted</span> <span class="ow">in</span> <span class="o">@</span><span class="p">;</span><span class="mi">255</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">0</span><span class="p">;</span><span class="n">red</span><span class="o">@</span><span class="p">;;</span> <span class="n">you</span> <span class="n">can</span> <span class="n">see</span> <span class="n">the</span> <span class="n">locations</span>
-<span class="n">of</span> <span class="n">cities</span> <span class="n">where</span> <span class="n">it</span> <span class="ow">is</span> <span class="o">@</span>\<span class="n">_impossible</span><span class="o">@</span>\<span class="n">_</span> <span class="n">to</span> <span class="n">get</span> <span class="nb">any</span> <span class="n">good</span> <span class="n">Thai</span> <span class="n">food</span><span class="p">;</span> <span class="n">these</span> <span class="n">are</span> <span class="n">to</span> <span class="n">be</span> <span class="n">avoided</span><span class="o">.</span>
-<span class="n">EOF</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>This is an unmarked header record not starting with <span class="c1">#</span>
+&gt; <span class="m">0</span> -0.5 13p 3i j
+@%5%Figure <span class="m">1</span>.@%% This illustration shows nothing useful, but it still needs
+a figure caption. Highlighted in @<span class="p">;</span><span class="m">255</span>/0/0<span class="p">;</span>red@<span class="p">;;</span> you can see the locations
+of cities where it is @<span class="se">\_</span>impossible@<span class="se">\_</span> to get any good Thai food<span class="p">;</span> these are to be avoided.
+EOF
 </pre></div>
 </div>
 </div></blockquote>
 <p>To add a text without using input data but only the fixed text option</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">pstext</span> <span class="o">-</span><span class="n">R0</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">10</span> <span class="o">-</span><span class="n">JX14</span> <span class="o">-</span><span class="n">Baf</span> <span class="o">-</span><span class="n">F</span><span class="o">+</span><span class="n">f40</span><span class="o">+</span><span class="n">cTC</span><span class="o">+</span><span class="n">t</span><span class="s2">&quot;Inner Title&quot;</span> <span class="o">-</span><span class="n">D0</span><span class="o">/-</span><span class="mf">0.5</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="n">figure</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pstext -R0/10/0/10 -JX14 -Baf -F+f40+cTC+t<span class="s2">&quot;Inner Title&quot;</span> -D0/-0.5 -P &gt; figure.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -558,7 +577,7 @@ trailing text.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>

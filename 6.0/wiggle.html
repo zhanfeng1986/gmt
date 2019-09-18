@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -401,8 +420,8 @@ any module-specific option (but not the GMT common options), then exits.</dd>
 mode, with positive anomalies in red on a blue track of width 0.25
 points, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">wiggle</span> <span class="n">track</span><span class="o">.</span><span class="n">xym</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">20</span><span class="o">/</span><span class="mi">10</span><span class="o">/-</span><span class="mi">80</span><span class="o">/-</span><span class="mi">60</span> <span class="o">-</span><span class="n">JS0</span><span class="o">/</span><span class="mi">90</span><span class="o">/</span><span class="mi">15</span><span class="n">c</span> <span class="o">-</span><span class="n">Z500</span> <span class="o">-</span><span class="n">B5</span>
-             <span class="o">-</span><span class="n">C32000</span> <span class="o">-</span><span class="n">Gred</span> <span class="o">-</span><span class="n">T0</span><span class="o">.</span><span class="mi">25</span><span class="n">p</span><span class="p">,</span><span class="n">blue</span> <span class="o">-</span><span class="n">DjRM</span><span class="o">+</span><span class="n">w1000</span><span class="o">+</span><span class="n">lnT</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">track_xym</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt wiggle track.xym -R-20/10/-80/-60 -JS0/90/15c -Z500 -B5
+             -C32000 -Gred -T0.25p,blue -DjRM+w1000+lnT -V -pdf track_xym
 </pre></div>
 </div>
 </div></blockquote>
@@ -411,8 +430,8 @@ We used <strong>-D</strong> to place a vertical scale bar indicating a 1000 nT a
 To instead enforce a fixed azimuth of 45 for the positive wiggles, we add <strong>-I</strong>
 and obtain</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">wiggle</span> <span class="n">track</span><span class="o">.</span><span class="n">xym</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">20</span><span class="o">/</span><span class="mi">10</span><span class="o">/-</span><span class="mi">80</span><span class="o">/-</span><span class="mi">60</span> <span class="o">-</span><span class="n">JS0</span><span class="o">/</span><span class="mi">90</span><span class="o">/</span><span class="mi">15</span><span class="n">c</span> <span class="o">-</span><span class="n">Z1000</span> <span class="o">-</span><span class="n">B5</span>
-          <span class="o">-</span><span class="n">C32000</span> <span class="o">-</span><span class="n">Gred</span> <span class="o">-</span><span class="n">I45</span> <span class="o">-</span><span class="n">T0</span><span class="o">.</span><span class="mi">25</span><span class="n">p</span><span class="p">,</span><span class="n">blue</span> <span class="o">-</span><span class="n">DjRM</span><span class="o">+</span><span class="n">w1000</span><span class="o">+</span><span class="n">lnT</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">track_xym</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt wiggle track.xym -R-20/10/-80/-60 -JS0/90/15c -Z1000 -B5
+          -C32000 -Gred -I45 -T0.25p,blue -DjRM+w1000+lnT -V -pdf track_xym
 </pre></div>
 </div>
 </div></blockquote>
@@ -423,15 +442,15 @@ and obtain</p>
 digits, so the local perpendicular to the track swings around a lot. To
 see if this is the problem, you should do this:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">awk</span> <span class="s1">&#39;{ if (NR &gt; 1) print atan2(y-$1, x-$2); y=$1; x=$2; }&#39;</span> <span class="n">yourdata</span><span class="o">.</span><span class="n">xyz</span> <span class="o">|</span> <span class="n">more</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>awk <span class="s1">&#39;{ if (NR &gt; 1) print atan2(y-$1, x-$2); y=$1; x=$2; }&#39;</span> yourdata.xyz <span class="p">|</span> more
 </pre></div>
 </div>
 </div></blockquote>
 <p>(note that output is in radians; on some machines you need “nawk” to do
 this). Then if these numbers jump around a lot, you may do this:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">awk</span> <span class="s1">&#39;{ print NR, $0 }&#39;</span> <span class="n">yourdata</span><span class="o">.</span><span class="n">xyz</span> <span class="o">|</span> <span class="n">filter1d</span> <span class="o">-</span><span class="n">Fb5</span> <span class="o">-</span><span class="n">N4</span><span class="o">/</span><span class="mi">0</span>
-<span class="o">--</span><span class="n">FORMAT_FLOAT_OUT</span><span class="o">=%.</span><span class="mi">12</span><span class="n">g</span> <span class="o">&gt;</span> <span class="n">smoothed</span><span class="o">.</span><span class="n">xyz</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>awk <span class="s1">&#39;{ print NR, $0 }&#39;</span> yourdata.xyz <span class="p">|</span> filter1d -Fb5 -N4/0
+--FORMAT_FLOAT_OUT<span class="o">=</span>%.12g &gt; smoothed.xyz
 </pre></div>
 </div>
 </div></blockquote>
@@ -460,7 +479,7 @@ this). Then if these numbers jump around a lot, you may do this:</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 17, 2019.
+        Last updated on Sep 18, 2019.
       </span>
 
     </p>
