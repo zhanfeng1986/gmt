@@ -337,6 +337,8 @@ add the -H option for modern mode to allow output to stdout.</p>
 <p>Here is an example of four different ways of presenting the color bar:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_14 pdf
+  gmt makecpt -H -Crainbow -T-20/60/10 &gt; disc.cpt
+  gmt makecpt -H -Crainbow -T-20/60 &gt; cont.cpt
   gmt basemap -R0/6/0/9 -Jx1i -B0 -Xc
   gmt colorbar -Dx1i/1i+w4i/0.5i+h -Cdisc.cpt -B+tdiscrete
   gmt colorbar -Dx1i/3i+w4i/0.5i+h -Ccont.cpt -B+tcontinuous
@@ -412,12 +414,7 @@ global 30” DEM called SRTM30+:</p>
 </div>
 </div></blockquote>
 <p>Using <a class="reference internal" href="../grdinfo.html"><span class="doc">grdinfo</span></a> we find that the data ranges from about 1000m to
-about 4300m so we make a CPT accordingly:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt makecpt -Crainbow -T1000/5000/500 -Z &gt; topo.cpt
-</pre></div>
-</div>
-</div></blockquote>
+about 4300m so we need to make a CPT with that range.</p>
 <p>Color images are made with <a class="reference internal" href="../grdimage.html"><span class="doc">grdimage</span></a> which takes the usual
 common command options (by default the <strong>-R</strong> is taken from the data set)
 and a CPT; the main other options are:</p>
@@ -449,8 +446,9 @@ and a CPT; the main other options are:</p>
 the plot.  We try</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_15 pdf
-  gmt grdimage @tut_relief.nc -JM6i -B -Ctopo.cpt -V
-  gmt colorbar -DjTC+w5i/0.25i+h+o0/-1i -Ctopo.cpt -I0.4 -By+lm
+  gmt makecpt -Crainbow -T1000/5000/500 -Z
+  gmt grdimage @tut_relief.nc -JM6i -B
+  gmt colorbar -DjTC -I0.4 -Bxa -By+lm
 gmt end show
 </pre></div>
 </div>
@@ -522,8 +520,9 @@ we prefer to use the <strong>-Ne</strong> option; the value of
 create the shaded relief image:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_16 pdf
-  gmt grdimage @tut_relief.nc -Ius_i.nc -JM6i -B -Ctopo.cpt
-  gmt colorbar -DjTC+w5i/0.25i+h+o0/-1i -Ctopo.cpt -I0.4 -By+lm
+  gmt makecpt -Crainbow -T1000/5000/500 -Z
+  gmt grdimage @tut_relief.nc -Ius_i.nc -JM6i -B
+  gmt colorbar -DjTC -I0.4 -Bxa -By+lm
 gmt end show
 </pre></div>
 </div>
@@ -558,17 +557,15 @@ level (i.e., depth), latitude and longitude.</p>
 </div>
 </div></blockquote>
 <p>We will need to make an appropriate color scale, running from -2ºC (freezing temperature of salt
-water) to 30ºC (highest likely ocean temperature). We do this as follows:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt makecpt -Cno_green -T-2/30/2 &gt; otemp.cpt
-</pre></div>
-</div>
-</div></blockquote>
-<p>Let us focus on the temperatures in Summer (that is the third season, July through
+water) to 30ºC (highest likely ocean temperature).
+Let us focus on the temperatures in Summer (that is the third season, July through
 September) at sea level (that is the first level). To plot these in a Mollweide projection we
 use:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdimage -Rg -JW180/9i <span class="s2">&quot;@otemp.anal1deg.nc?otemp[2,0]&quot;</span> -Cotemp.cpt -Bag -pdf GMT_tut_17
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_17
+  gmt makecpt -Cno_green -T-2/30/2
+  gmt grdimage -Rg -JW180/9i <span class="s2">&quot;@otemp.anal1deg.nc?otemp[2,0]&quot;</span> -Cotemp.cpt -Bag
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -646,16 +643,13 @@ GMT module that produces perspective views of gridded data files is
 <div class="section" id="mesh-plot">
 <h3>Mesh-plot<a class="headerlink" href="#mesh-plot" title="Permalink to this headline">¶</a></h3>
 <p>Mesh plots work best on smaller data sets.  We again use the small
-subset of the ETOPO5 data over Bermuda and make a quick-and-dirty
-CPT:</p>
+subset of the ETOPO5 data over Bermuda and will use the ocean CPT.
+A simple mesh plot can therefore be obtained with</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grd2cpt @tut_bathy.nc -Cocean &gt; bermuda.cpt
-</pre></div>
-</div>
-</div></blockquote>
-<p>A simple mesh plot can therefore be obtained with</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdview @tut_bathy.nc -JM5i -JZ2i -p135/30 -B -Cbermuda.cpt -pdf GMT_tut_18
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_18
+  gmt grd2cpt @tut_bathy.nc -Cocean
+  gmt grdview @tut_bathy.nc -JM5i -JZ2i -p135/30 -B
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -674,7 +668,10 @@ CPT:</p>
 <p>We will make a perspective, color-coded view of the US Rockies
 from the southeast.  This is done using</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdview @tut_relief.nc -JM6i -p135/35 -Qi50 -Ius_i.nc -Ctopo.cpt -V -B -JZ0.5i -pdf GMT_tut_19
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_19
+  gmt makecpt -Crainbow -T1000/5000/500 -Z
+  gmt grdview @tut_relief.nc -JM6i -p135/35 -Qi50 -Ius_i.nc -B -JZ0.5i
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>

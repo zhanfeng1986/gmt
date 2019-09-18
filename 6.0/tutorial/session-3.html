@@ -319,7 +319,9 @@ useful options:</p>
 interval and 250 m as contour interval.  We choose a 7-inch-wide
 Mercator plot and annotate the borders every 2º:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcontour @tut_bathy.nc -JM7i -C250 -A1000 -B -pdf GMT_tut_11
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_11
+  gmt grdcontour @tut_bathy.nc -JM7i -C250 -A1000 -B
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -435,8 +437,10 @@ We desire to make a 5’ by 5’ grid.  Running gmt info on &#64;tut_ship.xyz yi
 </div></blockquote>
 <p>so we choose the region accordingly, and get a view of the contour map using</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt nearneighbor -R245/255/20/30 -I5m -S40k -Gship.nc -V @tut_ship.xyz
-gmt grdcontour ship.nc -JM6i -B -C250 -A1000 -pdf GMT_tut_12
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_12
+  gmt nearneighbor -R245/255/20/30 -I5m -S40k -Gship.nc -V @tut_ship.xyz
+  gmt grdcontour ship.nc -JM6i -B -C250 -A1000
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -562,7 +566,7 @@ contour the final grid; we finally deactivate the clipping with a second
 call to <a class="reference internal" href="../mask.html"><span class="doc">mask</span></a>.  Here’s the recipe:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_13 pdf
-  gmt mask -R245/255/20/30 -I5m ship_5m.xyz -JM6i -B -V
+  gmt mask -R245/255/20/30 -I5m ship_5m.xyz -JM6i -B
   gmt grdcontour ship.nc -C250 -A1000
   gmt mask -C
 gmt end show

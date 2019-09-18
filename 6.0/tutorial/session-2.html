@@ -544,7 +544,9 @@ dashed pen.</li>
 </ol>
 <p>To simply plot the data as a line we choose no symbol and specify a pen thickness instead:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt plot @tut_data.txt -R0/6/0/6 -Jx1i -B -Wthinner -pdf GMT_tut_7
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_7
+  gmt plot @tut_data.txt -R0/6/0/6 -Jx1i -B -Wthinner
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -569,7 +571,7 @@ symbols with a line we must use the overlay approach:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_8 pdf
   gmt plot @tut_data.txt -R0/6/0/6 -Jx1i -B -Wthinner
-  gmt plot tut_data.txt -Wthin -Si0.2
+  gmt plot tut_data.txt -Wthin -Si0.2i
 gmt end show
 </pre></div>
 </div>
@@ -772,12 +774,14 @@ Technical Reference.  For accented European characters you must
 set <a class="reference internal" href="../gmt.conf.html#ps-char-encoding"><span class="std std-ref">PS_CHAR_ENCODING</span></a> to ISOLatin1 in your <a class="reference internal" href="../gmt.conf.html"><span class="doc">gmt.conf</span></a> file.</p>
 <p>We will demonstrate <a class="reference internal" href="../text.html"><span class="doc">text</span></a> with the following script:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt text -R0/7/0/5 -Jx1i -B -F+f30p,Times-Roman,DarkOrange+jBL <span class="s">&lt;&lt; EOF -pdf GMT_tut_10</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_10
+  gmt text -R0/7/0/5 -Jx1i -B -F+f30p,Times-Roman,DarkOrange+jBL <span class="s">&lt;&lt; EOF</span>
 <span class="s">1  1  It&#39;s P@al, not Pal!</span>
 <span class="s">1  2  Try @%33%ZapfChancery@%% today</span>
 <span class="s">1  3  @~D@~g@-b@- = 2@~pr@~G@~D@~h.</span>
 <span class="s">1  4  University of Hawaii at M@!a\225noa</span>
 <span class="s">EOF</span>
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
