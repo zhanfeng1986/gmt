@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -346,7 +365,7 @@ any module-specific option (but not the GMT common options), then exits.</dd>
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>To create a grid file from an even spaced SEGY file test.segy, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">segy2grd</span> <span class="n">test</span><span class="o">.</span><span class="n">segy</span> <span class="o">-</span><span class="n">I0</span><span class="o">.</span><span class="mi">1</span><span class="o">/</span><span class="mf">0.1</span> <span class="o">-</span><span class="n">Gtest</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">R198</span><span class="o">/</span><span class="mi">208</span><span class="o">/</span><span class="mi">18</span><span class="o">/</span><span class="mi">25</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt segy2grd test.segy -I0.1/0.1 -Gtest.nc -R198/208/18/25 -V
 </pre></div>
 </div>
 </div></blockquote>
@@ -356,7 +375,7 @@ first trace will be assumed to be at X=198</p>
 according to the CDP number, where there are 10 CDPs per km and the
 sample interval is 0.1, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">segy2grd</span> <span class="n">test</span><span class="o">.</span><span class="n">segy</span> <span class="o">-</span><span class="n">Gtest</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">R0</span><span class="o">/</span><span class="mi">100</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">10</span> <span class="o">-</span><span class="n">I0</span><span class="o">.</span><span class="mi">5</span><span class="o">/</span><span class="mf">0.2</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">Qx0</span><span class="o">.</span><span class="mi">1</span> <span class="o">-</span><span class="n">Qy0</span><span class="o">.</span><span class="mi">1</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt segy2grd test.segy -Gtest.nc -R0/100/0/10 -I0.5/0.2 -V -Qx0.1 -Qy0.1
 </pre></div>
 </div>
 </div></blockquote>
@@ -385,7 +404,7 @@ individual samples will be averaged in bins</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 18, 2019.
+        Last updated on Sep 19, 2019.
       </span>
 
     </p>

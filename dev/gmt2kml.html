@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -472,7 +491,7 @@ any module-specific option (but not the GMT common options), then exits.</dd>
 <p>To convert a file with point locations (lon, lat) into a KML file with
 red circle symbols, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="mi">2</span><span class="n">kml</span> <span class="n">mypoints</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">Gred</span><span class="o">+</span><span class="n">f</span> <span class="o">-</span><span class="n">Fs</span> <span class="o">&gt;</span> <span class="n">mypoints</span><span class="o">.</span><span class="n">kml</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt 2kml mypoints.txt -Gred+f -Fs &gt; mypoints.kml
 </pre></div>
 </div>
 </div></blockquote>
@@ -480,7 +499,7 @@ red circle symbols, try</p>
 segment headers that contain a <strong>-L</strong>labelstring with the feature
 name, selecting a thick white pen, and title the document, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="mi">2</span><span class="n">kml</span> <span class="n">mylines</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">Wthick</span><span class="p">,</span><span class="n">white</span> <span class="o">-</span><span class="n">Fl</span> <span class="o">-</span><span class="n">T</span><span class="s2">&quot;Lines from here to there&quot;</span> <span class="o">&gt;</span> <span class="n">mylines</span><span class="o">.</span><span class="n">kml</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt 2kml mylines.txt -Wthick,white -Fl -T<span class="s2">&quot;Lines from here to there&quot;</span> &gt; mylines.kml
 </pre></div>
 </div>
 </div></blockquote>
@@ -490,7 +509,7 @@ name, selecting a thick black pen and semi-transparent yellow fill,
 giving a title to the document, and prescribing a particular region
 limit, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="mi">2</span><span class="n">kml</span> <span class="n">mypolygons</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">Gyellow</span><span class="nd">@50</span><span class="o">+</span><span class="n">f</span> <span class="o">-</span><span class="n">Fp</span> <span class="o">-</span><span class="n">T</span><span class="s2">&quot;My polygons&quot;</span> <span class="o">-</span><span class="n">R30</span><span class="o">/</span><span class="mi">90</span><span class="o">/-</span><span class="mi">20</span><span class="o">/</span><span class="mi">40</span> <span class="o">&gt;</span> <span class="n">mypolygons</span><span class="o">.</span><span class="n">kml</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt 2kml mypolygons.txt -Gyellow@50+f -Fp -T<span class="s2">&quot;My polygons&quot;</span> -R30/90/-20/40 &gt; mypolygons.kml
 </pre></div>
 </div>
 </div></blockquote>
@@ -498,7 +517,7 @@ limit, try</p>
 with green circle symbols that will go active at the specified time and
 stay active going forward, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">awk</span> <span class="s1">&#39;{print $1, $2, $3, &quot;NaN&quot;}&#39;</span> <span class="n">mypoints</span><span class="o">.</span><span class="n">txt</span> <span class="o">|</span> <span class="n">gmt</span> <span class="mi">2</span><span class="n">kml</span> <span class="o">-</span><span class="n">Ggreen</span><span class="o">+</span><span class="n">f</span> <span class="o">-</span><span class="n">Ft</span> <span class="o">&gt;</span> <span class="n">mytimepoints</span><span class="o">.</span><span class="n">kml</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>awk <span class="s1">&#39;{print $1, $2, $3, &quot;NaN&quot;}&#39;</span> mypoints.txt <span class="p">|</span> gmt 2kml -Ggreen+f -Ft &gt; mytimepoints.kml
 </pre></div>
 </div>
 </div></blockquote>
@@ -506,16 +525,16 @@ stay active going forward, try</p>
 plot them in KML, using red lines at 75% transparency and red labels (no
 transparency), try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdcontour</span> <span class="n">temp</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Jx1id</span> <span class="o">-</span><span class="n">A10</span><span class="o">+</span><span class="n">tlabel</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">C10</span> <span class="o">-</span><span class="n">Dcontours</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">gmt</span> <span class="mi">2</span><span class="n">kml</span>    <span class="n">contours</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">Fl</span> <span class="o">-</span><span class="n">W1p</span><span class="p">,</span><span class="n">red</span><span class="nd">@75</span> <span class="o">-</span><span class="n">K</span> <span class="o">&gt;</span> <span class="n">contours</span><span class="o">.</span><span class="n">kml</span>
-<span class="n">gmt</span> <span class="mi">2</span><span class="n">kml</span>    <span class="o">-</span><span class="n">O</span> <span class="o">-</span><span class="n">Nt</span> <span class="o">-</span><span class="n">Fs</span> <span class="o">-</span><span class="n">Sn2</span> <span class="o">-</span><span class="n">Gred</span><span class="nd">@0</span><span class="o">+</span><span class="n">n</span> <span class="n">label</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">I</span><span class="o">-</span> <span class="o">&gt;&gt;</span> <span class="n">contours</span><span class="o">.</span><span class="n">kml</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcontour temp.nc -Jx1id -A10+tlabel.txt -C10 -Dcontours.txt
+gmt 2kml    contours.txt -Fl -W1p,red@75 -K &gt; contours.kml
+gmt 2kml    -O -Nt -Fs -Sn2 -Gred@0+n label.txt -I- &gt;&gt; contours.kml
 </pre></div>
 </div>
 </div></blockquote>
 <p>To instead plot the contours as lines with colors taken from the cpt
 file contours.cpt, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="mi">2</span><span class="n">kml</span> <span class="n">contours</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">Fl</span> <span class="o">-</span><span class="n">Ccontours</span><span class="o">.</span><span class="n">cpt</span> <span class="o">&gt;</span> <span class="n">contours</span><span class="o">.</span><span class="n">kml</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt 2kml contours.txt -Fl -Ccontours.cpt &gt; contours.kml
 </pre></div>
 </div>
 </div></blockquote>
@@ -525,7 +544,7 @@ of width 2p, scaling the magnetic anomalies (in nTesla) so that
 50 nT equals 1 nm on the map, and place the wiggles 50m above the
 sea surface, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="mi">2</span><span class="n">kml</span> <span class="n">magnetics_lon_lat_mag</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">Fw</span> <span class="o">-</span><span class="n">Gorange</span><span class="o">+</span><span class="n">f</span> <span class="o">-</span><span class="n">W2p</span> <span class="o">-</span><span class="n">Ag50</span> <span class="o">-</span><span class="n">Qs50n</span> <span class="o">&gt;</span> <span class="n">wiggles</span><span class="o">.</span><span class="n">kml</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt 2kml magnetics_lon_lat_mag.txt -Fw -Gorange+f -W2p -Ag50 -Qs50n &gt; wiggles.kml
 </pre></div>
 </div>
 </div></blockquote>
@@ -629,7 +648,7 @@ use it.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 18, 2019.
+        Last updated on Sep 19, 2019.
       </span>
 
     </p>

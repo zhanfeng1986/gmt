@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -703,7 +722,7 @@ any module-specific option (but not the GMT common options), then exits.</dd>
 01010047.mgd77, starting at June 3 1971 20:45 and ending at distance =
 5000 km, use the following command:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">mgd77list</span> <span class="mi">01010047</span> <span class="o">-</span><span class="n">Da1971</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">03</span><span class="n">T20</span><span class="p">:</span><span class="mi">45</span> <span class="o">-</span><span class="n">Sb5000</span> <span class="o">-</span><span class="n">Fdist</span><span class="p">,</span><span class="n">azim</span><span class="p">,</span><span class="n">faa</span><span class="p">,</span><span class="n">depth</span> <span class="o">&gt;</span> <span class="n">myfile</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mgd77list <span class="m">01010047</span> -Da1971-06-03T20:45 -Sb5000 -Fdist,azim,faa,depth &gt; myfile.txt
 </pre></div>
 </div>
 </div></blockquote>
@@ -711,7 +730,7 @@ any module-specific option (but not the GMT common options), then exits.</dd>
 from all the cruises listed in the file cruises.lis, but only the data
 that are inside the specified area, and make the output binary:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>gmt mgd77list `cat cruises.lis` -Flon,lat,faa -R-40/-30/25/35 -bo &gt; allgrav.b
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mgd77list <span class="sb">`</span>cat cruises.lis<span class="sb">`</span> -Flon,lat,faa -R-40/-30/25/35 -bo &gt; allgrav.b
 </pre></div>
 </div>
 </div></blockquote>
@@ -719,7 +738,7 @@ that are inside the specified area, and make the output binary:</p>
 interpolated (<strong>btc</strong> != 1) from all the cruises listed in the file
 cruises.lis:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>gmt mgd77list `cat cruises.lis` -F&quot;depth,DEPTH&gt;9000,BTC!=1&quot; &gt; really_deep.txt
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mgd77list <span class="sb">`</span>cat cruises.lis<span class="sb">`</span> -F<span class="s2">&quot;depth,DEPTH&gt;9000,BTC!=1&quot;</span> &gt; really_deep.txt
 </pre></div>
 </div>
 </div></blockquote>
@@ -728,7 +747,7 @@ shallower than 3 km and where none of the requested fields are NaN, from
 all the MGD77+ netCDF files whose cruise ids are listed in the file
 cruises.lis, we try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>gmt mgd77list `cat cruises.lis` -E -Ia -F&quot;dist,faa,grav12_2,depth&lt;3000&quot; &gt; \
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mgd77list <span class="sb">`</span>cat cruises.lis<span class="sb">`</span> -E -Ia -F<span class="s2">&quot;dist,faa,grav12_2,depth&lt;3000&quot;</span> &gt; <span class="se">\</span>
     shallow_grav.txt
 </pre></div>
 </div>
@@ -737,7 +756,7 @@ cruises.lis, we try</p>
 whose cruise ids are listed in the file cruises.lis, but only retrieve
 records whose bitflag for faa indicates BAD values, we try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>gmt mgd77list `cat cruises.lis` -E -Ia -F&quot;dist,faa,grav12_2:+faa&quot; &gt; bad_grav.txt
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mgd77list <span class="sb">`</span>cat cruises.lis<span class="sb">`</span> -E -Ia -F<span class="s2">&quot;dist,faa,grav12_2:+faa&quot;</span> &gt; bad_grav.txt
 </pre></div>
 </div>
 </div></blockquote>
@@ -745,7 +764,7 @@ records whose bitflag for faa indicates BAD values, we try</p>
 cruises.lis, but recalculate the two residuals based on the latest
 reference fields, try:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>gmt mgd77list `cat cruises.lis` -Flon,lat,mag,faa -Af2,4 -Am2 &gt; data.txt
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mgd77list <span class="sb">`</span>cat cruises.lis<span class="sb">`</span> -Flon,lat,mag,faa -Af2,4 -Am2 &gt; data.txt
 </pre></div>
 </div>
 </div></blockquote>
@@ -845,7 +864,7 @@ corrected by a strange dependency on ship heading and latitude, and
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 18, 2019.
+        Last updated on Sep 19, 2019.
       </span>
 
     </p>

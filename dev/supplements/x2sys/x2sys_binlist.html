@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -279,7 +298,7 @@ any module-specific option (but not the GMT common options), then exits.</dd>
 <p>To create a bin index file from the MGD77 file 01030061.mgd77 using the
 settings associated with the tag MGD77, do</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">x2sys_binlist</span> <span class="mf">01030061.</span><span class="n">mgd77</span> <span class="o">-</span><span class="n">TMGD77</span> <span class="o">&gt;</span> <span class="mf">01030061.</span><span class="n">tbf</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt x2sys_binlist <span class="m">01030061</span>.mgd77 -TMGD77 &gt; <span class="m">01030061</span>.tbf
 </pre></div>
 </div>
 </div></blockquote>
@@ -287,7 +306,7 @@ settings associated with the tag MGD77, do</p>
 current directory using the settings associated with the tag MGD77+ and
 calculate track distances, run</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">x2sys_binlist</span> <span class="o">*.</span><span class="n">nc</span> <span class="o">-</span><span class="n">TMGD77</span><span class="o">+</span> <span class="o">-</span><span class="n">D</span> <span class="o">&gt;</span> <span class="nb">all</span><span class="o">.</span><span class="n">tbf</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt x2sys_binlist *.nc -TMGD77+ -D &gt; all.tbf
 </pre></div>
 </div>
 </div></blockquote>
@@ -318,7 +337,7 @@ calculate track distances, run</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 18, 2019.
+        Last updated on Sep 19, 2019.
       </span>
 
     </p>

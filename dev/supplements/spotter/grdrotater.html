@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -411,21 +430,21 @@ is changed to Sphere.</p>
 clip_path.txt, using a total reconstruction rotation with pole at (135.5,
 -33.0) and a rotation angle of 37.3 degrees and bicubic interpolation, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdrotater</span> <span class="n">topo</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">E135</span><span class="o">.</span><span class="mi">5</span><span class="o">/-</span><span class="mi">33</span><span class="o">/</span><span class="mf">37.3</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">Fclip_path</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">Grot_topo</span><span class="o">.</span><span class="n">nc</span> <span class="o">&gt;</span> <span class="n">rot_clip_path</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdrotater topo.nc -E135.5/-33/37.3 -V -Fclip_path.txt -Grot_topo.nc &gt; rot_clip_path.txt
 </pre></div>
 </div>
 </div></blockquote>
 <p>To rotate the entire grid faa.nc back to 32 Ma using the rotation file
 <em>rotations.txt</em> and a bilinear interpolation, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdrotater</span> <span class="n">faa</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Erotations</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">T32</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">Grot_faa</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">nl</span> <span class="o">&gt;</span> <span class="n">rot_faa_path</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdrotater faa.nc -Erotations.txt -T32 -V -Grot_faa.nc -nl &gt; rot_faa_path.txt
 </pre></div>
 </div>
 </div></blockquote>
 <p>To just see how the outline of the grid large.nc will plot after the
 same rotation, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdrotater</span> <span class="n">large</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Erotations</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">T32</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">S</span> \<span class="o">|</span> <span class="n">plot</span> <span class="o">-</span><span class="n">Rg</span> <span class="o">-</span><span class="n">JH180</span><span class="o">/</span><span class="mi">6</span><span class="n">i</span> <span class="o">-</span><span class="n">B30</span> <span class="o">-</span><span class="n">W0</span><span class="o">.</span><span class="mi">5</span><span class="n">p</span> \<span class="o">|</span> <span class="n">gv</span> <span class="o">-</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdrotater large.nc -Erotations.txt -T32 -V -S <span class="se">\|</span> plot -Rg -JH180/6i -B30 -W0.5p <span class="se">\|</span> gv -
 </pre></div>
 </div>
 </div></blockquote>
@@ -433,7 +452,7 @@ same rotation, try</p>
 <em>rotations.txt</em> and request a reconstruction every 10 Myr, saving
 both grids and outlines to filenames that derive from templates, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdrotater</span> <span class="n">topo</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Erotations</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">T10</span><span class="o">/</span><span class="mi">100</span><span class="o">/</span><span class="mi">10</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">Grot_topo_</span><span class="o">%</span><span class="n">g</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Drot_topo_path_</span><span class="o">%</span><span class="n">g</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdrotater topo.nc -Erotations.txt -T10/100/10 -V -Grot_topo_%g.nc -Drot_topo_path_%g.txt
 </pre></div>
 </div>
 </div></blockquote>
@@ -443,7 +462,7 @@ using rotation A = (123W,22S,16,4) and rotation B = (108W, 16S, -14.5),
 yielding rotated grids rot_gridA.nc and rot_gridB.nc. To determine the
 region of overlap between the rotated grids, we use <a class="reference internal" href="../../grdmath.html"><span class="doc">grdmath</span></a>:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdmath</span> <span class="mi">1</span> <span class="n">rot_gridA</span><span class="o">.</span><span class="n">nc</span> <span class="n">ISNAN</span> <span class="n">SUB</span> <span class="mi">1</span> <span class="n">rot_gridB</span><span class="o">.</span><span class="n">nc</span> <span class="n">ISNAN</span> <span class="n">SUB</span> <span class="mi">2</span> <span class="n">EQ</span> <span class="o">=</span> <span class="n">overlap</span><span class="o">.</span><span class="n">nc</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath <span class="m">1</span> rot_gridA.nc ISNAN SUB <span class="m">1</span> rot_gridB.nc ISNAN SUB <span class="m">2</span> <span class="nv">EQ</span> <span class="o">=</span> overlap.nc
 </pre></div>
 </div>
 </div></blockquote>
@@ -485,7 +504,7 @@ To use an alternate rotation file, create an environmental parameters named
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 18, 2019.
+        Last updated on Sep 19, 2019.
       </span>
 
     </p>

@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -445,8 +464,8 @@ your <strong>-n</strong> option.</p>
 the cruises 01010047.nc and 01010008.nc, storing the values as mGal*10
 in a 2-byte short integer, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">mgd77manage</span> <span class="mi">01010047</span> <span class="mi">01010008</span> <span class="o">-</span><span class="n">Ai10</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="n">grav</span><span class="o">.</span><span class="mf">11.2</span><span class="o">.</span><span class="n">img</span> \
-    <span class="o">-</span><span class="n">Isatgrav</span><span class="o">/</span><span class="s2">&quot;Geosat/ERS-1 gravity&quot;</span><span class="o">/</span><span class="s2">&quot;mGal&quot;</span><span class="o">/</span><span class="n">s</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="s2">&quot;Sandwell/Smith version 11.2&quot;</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mgd77manage <span class="m">01010047</span> <span class="m">01010008</span> -Ai10/1/grav.11.2.img <span class="se">\</span>
+    -Isatgrav/<span class="s2">&quot;Geosat/ERS-1 gravity&quot;</span>/<span class="s2">&quot;mGal&quot;</span>/s/10/0/<span class="s2">&quot;Sandwell/Smith version 11.2&quot;</span> -V
 </pre></div>
 </div>
 </div></blockquote>
@@ -454,23 +473,23 @@ in a 2-byte short integer, try</p>
 type float for the cruise 01010047.nc, and interpolate the filtered data
 at the times given in the MGD77+ file, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">mgd77manage</span> <span class="mi">01010047</span> <span class="o">-</span><span class="n">ATmymag</span><span class="o">.</span><span class="n">tm</span> <span class="o">-</span><span class="n">Ifiltmag</span><span class="o">/</span><span class="s2">&quot;Intermediate-wavelength </span><span class="se">\</span>
-<span class="s2">    magnetic residuals&quot;</span><span class="o">/</span><span class="s2">&quot;nTesla&quot;</span><span class="o">/</span><span class="n">f</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="s2">&quot;Useful for looking for isochrons&quot;</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mgd77manage <span class="m">01010047</span> -ATmymag.tm -Ifiltmag/<span class="s2">&quot;Intermediate-wavelength \</span>
+<span class="s2">    magnetic residuals&quot;</span>/<span class="s2">&quot;nTesla&quot;</span>/f/1/0/<span class="s2">&quot;Useful for looking for isochrons&quot;</span> -V
 </pre></div>
 </div>
 </div></blockquote>
 <p>To delete the existing extra columns satfaa, coastdist, and satvgg from
 all MGD77+ files, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">mgd77manage</span> <span class="o">=</span><span class="n">allmgd77</span><span class="o">.</span><span class="n">lis</span> <span class="o">-</span><span class="n">Dsatfaa</span><span class="p">,</span><span class="n">coastdist</span><span class="p">,</span><span class="n">satvgg</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nv">mgd77manage</span> <span class="o">=</span>allmgd77.lis -Dsatfaa,coastdist,satvgg -V
 </pre></div>
 </div>
 </div></blockquote>
 <p>To create a 4-byte float column with the correct IGRF reference field in
 all MGD77+ files, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">mgd77manage</span> <span class="o">=</span><span class="n">allmgd77</span><span class="o">.</span><span class="n">lis</span> <span class="o">-</span><span class="n">Acm</span> <span class="o">-</span><span class="n">Iigrf</span><span class="o">/</span><span class="s2">&quot;IGRF reference </span><span class="se">\</span>
-<span class="s2">    field&quot;</span><span class="o">/</span><span class="s2">&quot;nTesla&quot;</span><span class="o">/</span><span class="n">f</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="s2">&quot;IGRF version 10 for 1990-2010&quot;</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nv">mgd77manage</span> <span class="o">=</span>allmgd77.lis -Acm -Iigrf/<span class="s2">&quot;IGRF reference \</span>
+<span class="s2">    field&quot;</span>/<span class="s2">&quot;nTesla&quot;</span>/f/1/0/<span class="s2">&quot;IGRF version 10 for 1990-2010&quot;</span> -V
 </pre></div>
 </div>
 </div></blockquote>
@@ -613,7 +632,7 @@ Luis, and adapted to GMT style by Paul Wessel.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 18, 2019.
+        Last updated on Sep 19, 2019.
       </span>
 
     </p>

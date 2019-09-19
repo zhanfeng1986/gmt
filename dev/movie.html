@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -495,15 +514,15 @@ to named files.</p>
 frame number to serve as the view longitude, using a custom square 600x600 pixel canvas and 360 frames,
 and place a frame counter in the top left corner, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">movie</span> <span class="n">globe</span><span class="o">.</span><span class="n">sh</span> <span class="o">-</span><span class="n">Nglobe</span> <span class="o">-</span><span class="n">T360</span> <span class="o">-</span><span class="n">Agif</span> <span class="o">-</span><span class="n">C6ix6ix100</span> <span class="o">-</span><span class="n">Lf</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt movie globe.sh -Nglobe -T360 -Agif -C6ix6ix100 -Lf
 </pre></div>
 </div>
 </div></blockquote>
 <p>Here, the globe.sh bash script simply plots a map with <a class="reference internal" href="coast.html"><span class="doc">coast</span></a> but uses the frame number variable
 as the center longitude:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>gmt begin
-   gmt coast -Rg -JG${MOVIE_FRAME}/20/${MOVIE_WIDTH} -Gmaroon -Sturquoise -Bg -X0 -Y0
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin
+   gmt coast -Rg -JG<span class="si">${</span><span class="nv">MOVIE_FRAME</span><span class="si">}</span>/20/<span class="si">${</span><span class="nv">MOVIE_WIDTH</span><span class="si">}</span> -Gmaroon -Sturquoise -Bg -X0 -Y0
 gmt end
 </pre></div>
 </div>
@@ -511,15 +530,15 @@ gmt end
 <p>As the automatic frame loop is executed the different frames will be produced with different
 longitudes.  The equivalent DOS batch script setup would be</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">movie</span> <span class="n">globe</span><span class="o">.</span><span class="n">bat</span> <span class="o">-</span><span class="n">Nglobe</span> <span class="o">-</span><span class="n">T360</span> <span class="o">-</span><span class="n">Agif</span> <span class="o">-</span><span class="n">C6ix6ix100</span> <span class="o">-</span><span class="n">Lf</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt movie globe.bat -Nglobe -T360 -Agif -C6ix6ix100 -Lf
 </pre></div>
 </div>
 </div></blockquote>
 <p>Now, the globe.bat DOS script is simply</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">begin</span>
-   <span class="n">gmt</span> <span class="n">coast</span> <span class="o">-</span><span class="n">Rg</span> <span class="o">-</span><span class="n">JG</span><span class="o">%</span><span class="n">MOVIE_FRAME</span><span class="o">%/</span><span class="mi">20</span><span class="o">/%</span><span class="n">MOVIE_WIDTH</span><span class="o">%</span> <span class="o">-</span><span class="n">Gmaroon</span> <span class="o">-</span><span class="n">Sturquoise</span> <span class="o">-</span><span class="n">Bg</span> <span class="o">-</span><span class="n">X0</span> <span class="o">-</span><span class="n">Y0</span>
-<span class="n">gmt</span> <span class="n">end</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin
+   gmt coast -Rg -JG%MOVIE_FRAME%/20/%MOVIE_WIDTH% -Gmaroon -Sturquoise -Bg -X0 -Y0
+gmt end
 </pre></div>
 </div>
 </div></blockquote>
@@ -566,7 +585,7 @@ as QuickTime Pro, iMovie, MovieMaker, and similar commercial programs to make a 
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 18, 2019.
+        Last updated on Sep 19, 2019.
       </span>
 
     </p>

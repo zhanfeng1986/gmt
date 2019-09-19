@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -466,20 +485,20 @@ aspects of the color changes by aliasing the signal.</p>
 <p>To make a CPT with z-values from -200 to 200, with discrete color
 changes every 25, and using a polar blue-white-red colortable:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">makecpt</span> <span class="o">-</span><span class="n">Cpolar</span> <span class="o">-</span><span class="n">T</span><span class="o">-</span><span class="mi">200</span><span class="o">/</span><span class="mi">200</span><span class="o">/</span><span class="mi">25</span> <span class="o">&gt;</span> <span class="n">colors</span><span class="o">.</span><span class="n">cpt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt makecpt -Cpolar -T-200/200/25 &gt; colors.cpt
 </pre></div>
 </div>
 </div></blockquote>
 <p>To make an equidistant CPT from z = -2 to 6 using the
 continuous default turbo rainbow of colors:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">makecpt</span> <span class="o">-</span><span class="n">T</span><span class="o">-</span><span class="mi">2</span><span class="o">/</span><span class="mi">6</span> <span class="o">-</span><span class="n">Z</span> <span class="o">&gt;</span> <span class="n">colors</span><span class="o">.</span><span class="n">cpt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt makecpt -T-2/6 -Z &gt; colors.cpt
 </pre></div>
 </div>
 </div></blockquote>
 <p>To use the GEBCO look-alike CPT with its default range for bathymetry, run</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">makecpt</span> <span class="o">-</span><span class="n">Cgebco</span> <span class="o">&gt;</span> <span class="n">my_gebco</span><span class="o">.</span><span class="n">cpt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt makecpt -Cgebco &gt; my_gebco.cpt
 </pre></div>
 </div>
 </div></blockquote>
@@ -487,14 +506,14 @@ continuous default turbo rainbow of colors:</p>
 To create a 24-level color table suitable for plotting the depths in
 the data table depths.txt (with lon, lat, depths), run</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">makecpt</span> <span class="o">-</span><span class="n">Cgebco</span> <span class="n">depths</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">i2</span> <span class="o">-</span><span class="n">Z</span> <span class="o">-</span><span class="n">E24</span> <span class="o">&gt;</span> <span class="n">my_depths</span><span class="o">.</span><span class="n">cpt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt makecpt -Cgebco depths.txt -i2 -Z -E24 &gt; my_depths.cpt
 </pre></div>
 </div>
 </div></blockquote>
 <p>To use the gebco color table but reverse the z-values so it can be used for
 positive depth values, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">makecpt</span> <span class="o">-</span><span class="n">Cgebco</span> <span class="o">-</span><span class="n">Iz</span> <span class="o">&gt;</span> <span class="n">my_positive_gebco</span><span class="o">.</span><span class="n">cpt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt makecpt -Cgebco -Iz &gt; my_positive_gebco.cpt
 </pre></div>
 </div>
 </div></blockquote>
@@ -502,14 +521,14 @@ positive depth values, try</p>
 hypocenters between 0 and 100 km, green for 100-300 km, and blue for deep (300-1000 km)
 earthquakes, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">makecpt</span> <span class="o">-</span><span class="n">Cred</span><span class="p">,</span><span class="n">green</span><span class="p">,</span><span class="n">blue</span> <span class="o">-</span><span class="n">T0</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">1000</span> <span class="o">-</span><span class="n">N</span> <span class="o">&gt;</span> <span class="n">seis</span><span class="o">.</span><span class="n">cpt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt makecpt -Cred,green,blue -T0,80,300,1000 -N &gt; seis.cpt
 </pre></div>
 </div>
 </div></blockquote>
 <p>To make a continuous CPT from white to blue as z goes from
 3 to 10, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">makecpt</span> <span class="o">-</span><span class="n">Cwhite</span><span class="p">,</span><span class="n">blue</span> <span class="o">-</span><span class="n">T3</span><span class="p">,</span><span class="mi">10</span> <span class="o">-</span><span class="n">Z</span> <span class="o">&gt;</span> <span class="n">cold</span><span class="o">.</span><span class="n">cpt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt makecpt -Cwhite,blue -T3,10 -Z &gt; cold.cpt
 </pre></div>
 </div>
 </div></blockquote>
@@ -517,7 +536,7 @@ earthquakes, use</p>
 0 to 500, i.e., the color will be wrapped every 500 z-units so that
 we always get a color regardless of the <em>z</em> value, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">makecpt</span> <span class="o">-</span><span class="n">Cjet</span> <span class="o">-</span><span class="n">T0</span><span class="o">/</span><span class="mi">500</span> <span class="o">-</span><span class="n">Ww</span> <span class="o">&gt;</span> <span class="n">wrapped</span><span class="o">.</span><span class="n">cpt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt makecpt -Cjet -T0/500 -Ww &gt; wrapped.cpt
 </pre></div>
 </div>
 </div></blockquote>
@@ -584,7 +603,7 @@ directory.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 18, 2019.
+        Last updated on Sep 19, 2019.
       </span>
 
     </p>

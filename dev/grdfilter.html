@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -390,8 +409,8 @@ which you choose to be from 150E to 250E and 10N to 40N, and you want
 the output values every 0.5 degree. Using spherical distance
 calculations, you need:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdfilter</span> <span class="n">north_pacific_etopo5</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Gfiltered_pacific</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Fm600</span> \
-              <span class="o">-</span><span class="n">D4</span> <span class="o">-</span><span class="n">R150</span><span class="o">/</span><span class="mi">250</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="mi">40</span> <span class="o">-</span><span class="n">I0</span><span class="o">.</span><span class="mi">5</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdfilter north_pacific_etopo5.nc -Gfiltered_pacific.nc -Fm600 <span class="se">\</span>
+              -D4 -R150/250/10/40 -I0.5 -V
 </pre></div>
 </div>
 </div></blockquote>
@@ -400,8 +419,8 @@ corresponding low-pass filter using a coarse grid interval as <strong>grdfilter<
 will resample the result to the same resolution as the input grid so we
 can compute the residuals, e.g.,</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdfilter</span> <span class="n">north_pacific_etopo5</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Gresidual_pacific</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Fm600</span><span class="o">+</span><span class="n">h</span> \
-              <span class="o">-</span><span class="n">D4</span> <span class="o">-</span><span class="n">R150</span><span class="o">/</span><span class="mi">250</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="mi">40</span> <span class="o">-</span><span class="n">I0</span><span class="o">.</span><span class="mi">5</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdfilter north_pacific_etopo5.nc -Gresidual_pacific.nc -Fm600+h <span class="se">\</span>
+              -D4 -R150/250/10/40 -I0.5 -V
 </pre></div>
 </div>
 </div></blockquote>
@@ -412,9 +431,9 @@ filter exp (-0.5*r^2) whose distances r from the center is given by
 (2x^2 + y^2 -2xy)/6, with major axis at an angle of 63 degrees with the
 horizontal, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdmath</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">10</span><span class="o">/</span><span class="mi">10</span><span class="o">/-</span><span class="mi">10</span><span class="o">/</span><span class="mi">10</span> <span class="o">-</span><span class="n">I1</span> <span class="n">X</span> <span class="mi">2</span> <span class="n">POW</span> <span class="mi">2</span> <span class="n">MUL</span> <span class="n">Y</span> <span class="mi">2</span> <span class="n">POW</span> <span class="n">ADD</span> <span class="n">X</span> <span class="n">Y</span> <span class="n">MUL</span> <span class="mi">2</span> <span class="n">MUL</span> \
-            <span class="n">SUB</span> <span class="mi">6</span> <span class="n">DIV</span> <span class="n">NEG</span> <span class="mi">2</span> <span class="n">DIV</span> <span class="n">EXP</span> <span class="n">DUP</span> <span class="n">SUM</span> <span class="n">DIV</span> <span class="o">=</span> <span class="n">gfilter</span><span class="o">.</span><span class="n">nc</span>
-<span class="n">gmt</span> <span class="n">grdfilter</span> <span class="n">ripples</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Ffgfilter</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">D0</span> <span class="o">-</span><span class="n">Gsmooth</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath -R-10/10/-10/10 -I1 X <span class="m">2</span> POW <span class="m">2</span> MUL Y <span class="m">2</span> POW ADD X Y MUL <span class="m">2</span> MUL <span class="se">\</span>
+            SUB <span class="m">6</span> DIV NEG <span class="m">2</span> DIV EXP DUP SUM <span class="nv">DIV</span> <span class="o">=</span> gfilter.nc
+gmt grdfilter ripples.nc -Ffgfilter.nc -D0 -Gsmooth.nc -V
 </pre></div>
 </div>
 </div></blockquote>
@@ -450,7 +469,7 @@ of the increments in the input data, filtering will be considerably slower.
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 18, 2019.
+        Last updated on Sep 19, 2019.
       </span>
 
     </p>

@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -452,15 +471,15 @@ the double type’s 53-bit mantissa.</p>
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>To create a grid file from the ASCII data in hawaii_grv.xyz, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">xyz2grd</span> <span class="n">hawaii_grv</span><span class="o">.</span><span class="n">xyz</span> <span class="o">-</span><span class="n">D</span><span class="o">+</span><span class="n">xdegree</span><span class="o">+</span><span class="n">ydegree</span><span class="o">+</span><span class="n">zGal</span><span class="o">+</span><span class="n">t</span><span class="s2">&quot;Hawaiian Gravity&quot;</span><span class="o">+</span><span class="sa">r</span><span class="s2">&quot;GRS-80 Ellipsoid used&quot;</span>
-            <span class="o">-</span><span class="n">Ghawaii_grv_new</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">R198</span><span class="o">/</span><span class="mi">208</span><span class="o">/</span><span class="mi">18</span><span class="o">/</span><span class="mi">25</span> <span class="o">-</span><span class="n">I5m</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt xyz2grd hawaii_grv.xyz -D+xdegree+ydegree+zGal+t<span class="s2">&quot;Hawaiian Gravity&quot;</span>+r<span class="s2">&quot;GRS-80 Ellipsoid used&quot;</span>
+            -Ghawaii_grv_new.nc -R198/208/18/25 -I5m -V
 </pre></div>
 </div>
 </div></blockquote>
 <p>To create a grid file from the raw binary (3-column, single-precision
 scanline-oriented data raw.b, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">xyz2grd</span> <span class="n">raw</span><span class="o">.</span><span class="n">b</span> <span class="o">-</span><span class="n">D</span><span class="o">+</span><span class="n">xm</span><span class="o">+</span><span class="n">ym</span><span class="o">+</span><span class="n">zm</span> <span class="o">-</span><span class="n">Graw</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">R0</span><span class="o">/</span><span class="mi">100</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">100</span> <span class="o">-</span><span class="n">I1</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">Z</span> <span class="o">-</span><span class="n">bi3f</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt xyz2grd raw.b -D+xm+ym+zm -Graw.nc -R0/100/0/100 -I1 -V -Z -bi3f
 </pre></div>
 </div>
 </div></blockquote>
@@ -469,7 +488,7 @@ scanline-oriented data topo30.b on the NGDC global relief Data CD-ROM,
 with values of -9999 indicate missing data, one must on some machine
 reverse the byte-order. On such machines (like Sun), use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">xyz2grd</span> <span class="n">topo30</span><span class="o">.</span><span class="n">b</span> <span class="o">-</span><span class="n">D</span><span class="o">+</span><span class="n">xm</span><span class="o">+</span><span class="n">ym</span><span class="o">+</span><span class="n">zm</span> <span class="o">-</span><span class="n">Gustopo</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">R234</span><span class="o">/</span><span class="mi">294</span><span class="o">/</span><span class="mi">24</span><span class="o">/</span><span class="mi">50</span> <span class="o">-</span><span class="n">I30s</span> <span class="o">-</span><span class="n">di</span><span class="o">-</span><span class="mi">9999</span> <span class="o">-</span><span class="n">ZTLhw</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt xyz2grd topo30.b -D+xm+ym+zm -Gustopo.nc -R234/294/24/50 -I30s -di-9999 -ZTLhw
 </pre></div>
 </div>
 </div></blockquote>
@@ -477,14 +496,14 @@ reverse the byte-order. On such machines (like Sun), use</p>
 were written on a machine of different byte-order than yours. You can
 swap the byte-order with</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">xyz2grd</span> <span class="n">floats</span><span class="o">.</span><span class="n">bin</span> <span class="o">-</span><span class="n">Snew_floats</span><span class="o">.</span><span class="n">bin</span> <span class="o">-</span><span class="n">V</span> <span class="o">-</span><span class="n">Zf</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt xyz2grd floats.bin -Snew_floats.bin -V -Zf
 </pre></div>
 </div>
 </div></blockquote>
 <p>To make a pixel node registrated tiff of the number of data points
 that is assigned to each node in a cartesian data set, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">xyz2grd</span> <span class="n">data</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">R0</span><span class="o">/</span><span class="mi">100</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">100</span> <span class="o">-</span><span class="n">r</span> <span class="o">-</span><span class="n">I10</span> <span class="o">-</span><span class="n">An</span> <span class="o">-</span><span class="n">Gnumber_of_points</span><span class="o">.</span><span class="n">tif</span><span class="o">=</span><span class="n">gd</span><span class="p">:</span><span class="n">GTiff</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt xyz2grd data.txt -R0/100/0/100 -r -I10 -An -Gnumber_of_points.tif<span class="o">=</span>gd:GTiff
 </pre></div>
 </div>
 </div></blockquote>
@@ -516,7 +535,7 @@ that is assigned to each node in a cartesian data set, use</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 18, 2019.
+        Last updated on Sep 19, 2019.
       </span>
 
     </p>

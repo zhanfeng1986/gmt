@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -373,8 +392,8 @@ biased by the sloping plane, you want to divide the filter circle into 6
 sectors and to choose the lowest value among 6 medians. Using spherical
 distance calculations, you need:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">dimfilter</span> <span class="n">north_pacific_dbdb5</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Gfiltered_pacific</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Fm600</span> <span class="o">-</span><span class="n">D4</span> \
-    <span class="o">-</span><span class="n">Nl6</span> <span class="o">-</span><span class="n">R150</span><span class="o">/</span><span class="mi">250</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="mi">40</span> <span class="o">-</span><span class="n">I0</span><span class="o">.</span><span class="mi">5</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt dimfilter north_pacific_dbdb5.nc -Gfiltered_pacific.nc -Fm600 -D4 <span class="se">\</span>
+    -Nl6 -R150/250/10/40 -I0.5 -V
 </pre></div>
 </div>
 </div></blockquote>
@@ -384,8 +403,8 @@ in order to define a swell in an area extending from 27.5W to 20.5W and
 12.5N to 19.5N, and you want the output value every 2 minute. Using
 cartesian distance calculations, you need:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">dimfilter</span> <span class="n">cape_verde</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Gt</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Fm220</span> <span class="o">-</span><span class="n">Nl8</span> <span class="o">-</span><span class="n">D2</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mf">27.5</span><span class="o">/-</span><span class="mf">20.5</span><span class="o">/</span><span class="mf">12.5</span><span class="o">/</span><span class="mf">19.5</span> <span class="o">-</span><span class="n">I2m</span> <span class="o">-</span><span class="n">V</span>
-<span class="n">gmt</span> <span class="n">grdfilter</span> <span class="n">t</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Gcape_swell</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Fg50</span> <span class="o">-</span><span class="n">D2</span> <span class="o">-</span><span class="n">V</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt dimfilter cape_verde.nc -Gt.nc -Fm220 -Nl8 -D2 -R-27.5/-20.5/12.5/19.5 -I2m -V
+gmt grdfilter t.nc -Gcape_swell.nc -Fg50 -D2 -V
 </pre></div>
 </div>
 </div></blockquote>
@@ -396,12 +415,12 @@ regional trend using the range of filter widths, and you want to obtain
 median absolute deviation (MAD) estimates at each data point. Then, you
 will need to do:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grd2xyz</span> <span class="n">f100</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Z</span> <span class="o">&gt;</span> <span class="n">f100</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">gmt</span> <span class="n">grd2xyz</span> <span class="n">f110</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Z</span> <span class="o">&gt;</span> <span class="n">f110</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">gmt</span> <span class="n">grd2xyz</span> <span class="n">f120</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Z</span> <span class="o">&gt;</span> <span class="n">f120</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">gmt</span> <span class="n">grd2xyz</span> <span class="n">f130</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Z</span> <span class="o">&gt;</span> <span class="n">f130</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">paste</span> <span class="n">f100</span><span class="o">.</span><span class="n">txt</span> <span class="n">f110</span><span class="o">.</span><span class="n">txt</span> <span class="n">f120</span><span class="o">.</span><span class="n">txt</span> <span class="n">f130</span><span class="o">.</span><span class="n">txt</span> <span class="o">&gt;</span> <span class="n">depths</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">gmt</span> <span class="n">dimfilter</span> <span class="n">depths</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">Q</span> <span class="o">&gt;</span> <span class="n">output</span><span class="o">.</span><span class="n">z</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grd2xyz f100.nc -Z &gt; f100.txt
+gmt grd2xyz f110.nc -Z &gt; f110.txt
+gmt grd2xyz f120.nc -Z &gt; f120.txt
+gmt grd2xyz f130.nc -Z &gt; f130.txt
+paste f100.txt f110.txt f120.txt f130.txt &gt; depths.txt
+gmt dimfilter depths.txt -Q &gt; output.z
 </pre></div>
 </div>
 </div></blockquote>
@@ -451,7 +470,7 @@ Geosyst.</em>, <strong>9</strong>, Q03005, doi:10.1029/2007GC001850.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 18, 2019.
+        Last updated on Sep 19, 2019.
       </span>
 
     </p>

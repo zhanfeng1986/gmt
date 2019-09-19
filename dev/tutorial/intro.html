@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -84,6 +85,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -94,12 +96,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example gallery</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../tutorial.html">The GMT Tutorial</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Introduction</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#gmt-overview-history-philosophy-and-usage">GMT overview: History, philosophy, and usage</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#historical-highlights">Historical highlights</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#philosophy">Philosophy</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#gmt-installation-considerations">GMT installation considerations</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="#historical-highlights">Historical highlights</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#philosophy">Philosophy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gmt-installation-considerations">GMT installation considerations</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="session-1.html">Session One</a></li>
@@ -108,7 +107,6 @@
 <li class="toctree-l2"><a class="reference internal" href="session-4.html">Session Four</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -136,12 +134,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -209,10 +225,8 @@
             
   <div class="section" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="gmt-overview-history-philosophy-and-usage">
-<h2>GMT overview: History, philosophy, and usage<a class="headerlink" href="#gmt-overview-history-philosophy-and-usage" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="historical-highlights">
-<h3>Historical highlights<a class="headerlink" href="#historical-highlights" title="Permalink to this headline">¶</a></h3>
+<h2>Historical highlights<a class="headerlink" href="#historical-highlights" title="Permalink to this headline">¶</a></h2>
 <p>The GMT system was initiated in late 1987 at Lamont-Doherty
 Earth Observatory, Columbia University by graduate students Paul
 Wessel and Walter H. F. Smith.  Version 1 was officially introduced
@@ -230,7 +244,7 @@ backwards compatible with GMT 4 syntax.
 GMT is used by tens of thousands of users worldwide in a broad range of disciplines.</p>
 </div>
 <div class="section" id="philosophy">
-<h3>Philosophy<a class="headerlink" href="#philosophy" title="Permalink to this headline">¶</a></h3>
+<h2>Philosophy<a class="headerlink" href="#philosophy" title="Permalink to this headline">¶</a></h2>
 <p>GMT follows the UNIX philosophy in which complex tasks are broken
 down into smaller and more manageable components.  Individual GMT
 modules are small, easy to maintain, and can be used as any other
@@ -244,12 +258,14 @@ coastlines, GMT completely decouples data retrieval from the main
 GMT modules.  GMT uses architecture-independent file formats.</p>
 </div>
 <div class="section" id="gmt-installation-considerations">
-<h3>GMT installation considerations<a class="headerlink" href="#gmt-installation-considerations" title="Permalink to this headline">¶</a></h3>
-<p>See the GMT wiki for how to install GMT.  In addition, we recommend
-access to a PostScript previewer (e.g., gv (or ghostview or plain ghostscript)),
-and any flavor of the UNIX operating system (UNIX, Linux, OS X, Cygwin, MinGW, etc.).
+<h2>GMT installation considerations<a class="headerlink" href="#gmt-installation-considerations" title="Permalink to this headline">¶</a></h2>
+<p>See the <a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/INSTALL.md">install guide</a>
+for instructions and to make sure you have all required dependencies installed.
+Alternatively, you can build GMT from source by following the
+<a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/BUILDING.md">building guide</a>.</p>
+<p>In addition, we recommend access to any flavor of the UNIX operating system
+(UNIX, Linux, macOS, Cygwin, MinGW, etc.).
 We do not recommend using the DOS command window under Windows.</p>
-</div>
 </div>
 </div>
 
@@ -276,7 +292,7 @@ We do not recommend using the DOS command window under Windows.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 18, 2019.
+        Last updated on Sep 19, 2019.
       </span>
 
     </p>

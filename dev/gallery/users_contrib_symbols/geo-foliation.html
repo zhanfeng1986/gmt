@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -84,6 +85,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -93,7 +95,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -154,12 +155,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -227,21 +246,21 @@
             
   <div class="section" id="strike-dip-direction-and-dip-of-foliation">
 <span id="geo-foliation"></span><h1>Strike, dip direction and dip of foliation<a class="headerlink" href="#strike-dip-direction-and-dip-of-foliation" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Symbols made for GMT by Jose A. Alvarez-Gomez
-#
-# Geological symbol: Foliation
-#
-# The symbol reads the strike and dip in the 3rd and 4th columns in psxy
-#
-N: 2 ao
-if $1 [&gt; 0:90 then 0.5 -0.5 0.3 $2 l+fHelvetica-Oblique+jBR -W-
-if $1 [&gt; 90:180 then 0.5 0.5 0.3 $2 l+fHelvetica-Oblique+jTR -W-
-if $1 [&gt; 180:270 then -0.5 0.5 0.3 $2 l+fHelvetica-Oblique+jTL -W-
-if $1 [&gt; 270:360 then -0.5 -0.5 0.3 $2 l+fHelvetica-Oblique+jBL -W-
-$1 R
-0 0 1 y
-30 R
-0.06 -0.02 0.25 t
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Symbols made for GMT by Jose A. Alvarez-Gomez</span>
+<span class="c1">#</span>
+<span class="c1"># Geological symbol: Foliation</span>
+<span class="c1">#</span>
+<span class="c1"># The symbol reads the strike and dip in the 3rd and 4th columns in psxy</span>
+<span class="c1">#</span>
+N: <span class="m">2</span> ao
+<span class="k">if</span> <span class="nv">$1</span> <span class="o">[</span>&gt; <span class="m">0</span>:90 <span class="k">then</span> <span class="m">0</span>.5 -0.5 <span class="m">0</span>.3 <span class="nv">$2</span> l+fHelvetica-Oblique+jBR -W-
+<span class="k">if</span> <span class="nv">$1</span> <span class="o">[</span>&gt; <span class="m">90</span>:180 <span class="k">then</span> <span class="m">0</span>.5 <span class="m">0</span>.5 <span class="m">0</span>.3 <span class="nv">$2</span> l+fHelvetica-Oblique+jTR -W-
+<span class="k">if</span> <span class="nv">$1</span> <span class="o">[</span>&gt; <span class="m">180</span>:270 <span class="k">then</span> -0.5 <span class="m">0</span>.5 <span class="m">0</span>.3 <span class="nv">$2</span> l+fHelvetica-Oblique+jTL -W-
+<span class="k">if</span> <span class="nv">$1</span> <span class="o">[</span>&gt; <span class="m">270</span>:360 <span class="k">then</span> -0.5 -0.5 <span class="m">0</span>.3 <span class="nv">$2</span> l+fHelvetica-Oblique+jBL -W-
+<span class="nv">$1</span> R
+<span class="m">0</span> <span class="m">0</span> <span class="m">1</span> y
+<span class="m">30</span> R
+<span class="m">0</span>.06 -0.02 <span class="m">0</span>.25 t
 </pre></div>
 </div>
 </div>
@@ -269,7 +288,7 @@ $1 R
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 18, 2019.
+        Last updated on Sep 19, 2019.
       </span>
 
     </p>

@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -444,14 +463,14 @@ linear plot with scale 5 cm per data unit, using vector rather than
 stick plot, scale vector magnitudes so that 10 units equal 1 inch, and
 center vectors on the node locations, run</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdvector</span> <span class="n">r</span><span class="o">.</span><span class="n">nc</span> <span class="n">theta</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Jx5c</span> <span class="o">-</span><span class="n">A</span> <span class="o">-</span><span class="n">Q0</span><span class="o">.</span><span class="mi">1</span><span class="n">i</span><span class="o">+</span><span class="n">e</span><span class="o">+</span><span class="n">jc</span> <span class="o">-</span><span class="n">S10i</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">gradient</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdvector r.nc theta.nc -Jx5c -A -Q0.1i+e+jc -S10i -pdf gradient
 </pre></div>
 </div>
 </div></blockquote>
 <p>To plot a geographic data sets given the files comp_x.nc and comp_y.nc,
 using a length scale of 200 km per data unit and only plot every 3rd node in either direction, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdvector</span> <span class="n">comp_x</span><span class="o">.</span><span class="n">nc</span> <span class="n">comp_y</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Ix3</span> <span class="o">-</span><span class="n">JH0</span><span class="o">/</span><span class="mi">20</span><span class="n">c</span> <span class="o">-</span><span class="n">Q0</span><span class="o">.</span><span class="mi">1</span><span class="n">i</span><span class="o">+</span><span class="n">e</span><span class="o">+</span><span class="n">jc</span> <span class="o">-</span><span class="n">S200k</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">globe</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdvector comp_x.nc comp_y.nc -Ix3 -JH0/20c -Q0.1i+e+jc -S200k -pdf globe
 </pre></div>
 </div>
 </div></blockquote>
@@ -484,7 +503,7 @@ larger grid increment and use these grids instead of the originals.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 18, 2019.
+        Last updated on Sep 19, 2019.
       </span>
 
     </p>

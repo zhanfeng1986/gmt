@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -266,47 +285,47 @@ be determined automatically.</p>
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>To start a new figure in your current modern mode session by the name Regional and
 request we make both a PDF and an EPS file, try:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">begin</span>
-<span class="n">gmt</span> <span class="n">figure</span> <span class="n">Regional</span> <span class="n">pdf</span><span class="p">,</span><span class="n">eps</span>
-<span class="n">gmt</span> <span class="o">...</span>
-<span class="n">gmt</span> <span class="n">end</span> <span class="n">show</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin
+gmt figure Regional pdf,eps
+gmt ...
+gmt end show
 </pre></div>
 </div>
 <p>To start a new figure GlobalMap that should be returned as a JPEG file with a 1 cm padding
 around the image, try:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">begin</span>
-<span class="n">gmt</span> <span class="n">figure</span> <span class="n">GlobalMap</span> <span class="n">jpg</span> <span class="n">A1c</span>
-<span class="n">gmt</span> <span class="o">...</span>
-<span class="n">gmt</span> <span class="n">end</span> <span class="n">show</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin
+gmt figure GlobalMap jpg A1c
+gmt ...
+gmt end show
 </pre></div>
 </div>
 <p>If the same figure were to be called Global Map.jpg you would need quotes:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">begin</span>
-<span class="n">gmt</span> <span class="n">figure</span> <span class="s1">&#39;Global Map&#39;</span> <span class="n">jpg</span> <span class="n">A1c</span>
-<span class="n">gmt</span> <span class="o">...</span>
-<span class="n">gmt</span> <span class="n">end</span> <span class="n">show</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin
+gmt figure <span class="s1">&#39;Global Map&#39;</span> jpg A1c
+gmt ...
+gmt end show
 </pre></div>
 </div>
 <p>To make two figures in one session and go back and forth between different figures:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">begin</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin
 
 <span class="c1"># Activate figure Fig1</span>
-<span class="n">gmt</span> <span class="n">figure</span> <span class="n">Fig1</span> <span class="n">pdf</span>
-<span class="n">gmt</span> <span class="o">...</span>
+gmt figure Fig1 pdf
+gmt ...
 
 <span class="c1"># Activate figure Fig1</span>
-<span class="n">gmt</span> <span class="n">figure</span> <span class="n">Fig2</span> <span class="n">pdf</span>
-<span class="n">gmt</span> <span class="o">...</span>
+gmt figure Fig2 pdf
+gmt ...
 
 <span class="c1"># Go back to figure Fig1</span>
-<span class="n">gmt</span> <span class="n">figure</span> <span class="n">Fig1</span>
-<span class="n">gmt</span> <span class="o">...</span>
+gmt figure Fig1
+gmt ...
 
 <span class="c1"># Go back to figure Fig2</span>
-<span class="n">gmt</span> <span class="n">figure</span> <span class="n">Fig2</span>
-<span class="n">gmt</span> <span class="o">...</span>
+gmt figure Fig2
+gmt ...
 
-<span class="n">gmt</span> <span class="n">end</span> <span class="n">show</span>
+gmt end show
 </pre></div>
 </div>
 </div>
@@ -336,7 +355,7 @@ around the image, try:</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 18, 2019.
+        Last updated on Sep 19, 2019.
       </span>
 
     </p>

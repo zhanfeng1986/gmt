@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -537,7 +556,7 @@ automatically detected then please let us know its magic bytes so we can add it.
 <p>For a quick-and-dirty illuminated color map of the data in the file stuff.nc, with
 the maximum map dimension limited to be 6 inches, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdimage</span> <span class="n">stuff</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">JX6i</span><span class="o">+</span> <span class="o">-</span><span class="n">I</span><span class="o">+</span><span class="n">d</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">quick</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdimage stuff.nc -JX6i+ -I+d -pdf quick
 </pre></div>
 </div>
 </div></blockquote>
@@ -545,7 +564,7 @@ the maximum map dimension limited to be 6 inches, try</p>
 on a Lambert map at 1.5 cm/degree along the standard parallels 18 and
 24, and using 1 degree tickmarks:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdimage</span> <span class="n">hawaii_grav</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Jl18</span><span class="o">/</span><span class="mi">24</span><span class="o">/</span><span class="mf">1.5</span><span class="n">c</span> <span class="o">-</span><span class="n">Cshades</span><span class="o">.</span><span class="n">cpt</span> <span class="o">-</span><span class="n">B1</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">hawaii_grav_image</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdimage hawaii_grav.nc -Jl18/24/1.5c -Cshades.cpt -B1 -pdf hawaii_grav_image
 </pre></div>
 </div>
 </div></blockquote>
@@ -554,7 +573,7 @@ image.nc, using the intensities provided by the file intens.nc, and
 color levels in the file colors.cpt, with linear scaling at 10
 inch/x-unit, tickmarks every 5 units:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdimage</span> <span class="n">image</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Jx10i</span> <span class="o">-</span><span class="n">Ccolors</span><span class="o">.</span><span class="n">cpt</span> <span class="o">-</span><span class="n">Iintens</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">B5</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">image</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdimage image.nc -Jx10i -Ccolors.cpt -Iintens.nc -B5 -pdf image
 </pre></div>
 </div>
 </div></blockquote>
@@ -562,16 +581,16 @@ inch/x-unit, tickmarks every 5 units:</p>
 red.nc, green.nc, and blue.nc, with linear scaling at 10 inch/x-unit,
 tickmarks every 5 units:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdimage</span> <span class="n">red</span><span class="o">.</span><span class="n">nc</span> <span class="n">green</span><span class="o">.</span><span class="n">nc</span> <span class="n">blue</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Jx10i</span> <span class="o">-</span><span class="n">B5</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">rgbimage</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdimage red.nc green.nc blue.nc -Jx10i -B5 -pdf rgbimage
 </pre></div>
 </div>
 </div></blockquote>
 <p>When GDAL support is built in: To create a sinusoidal projection of a
 remotely located Jessica Rabbit</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdimage</span> <span class="o">-</span><span class="n">JI15c</span> <span class="o">-</span><span class="n">Rd</span>
-    <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">larryfire</span><span class="o">.</span><span class="n">files</span><span class="o">.</span><span class="n">wordpress</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="mi">2009</span><span class="o">/</span><span class="mi">07</span><span class="o">/</span><span class="n">untooned_jessicarabbit</span><span class="o">.</span><span class="n">jpg</span>
-    <span class="o">-</span><span class="n">pdf</span> <span class="n">jess</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdimage -JI15c -Rd
+    http://larryfire.files.wordpress.com/2009/07/untooned_jessicarabbit.jpg
+    -pdf jess
 </pre></div>
 </div>
 </div></blockquote>
@@ -629,7 +648,7 @@ CPTs.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 18, 2019.
+        Last updated on Sep 19, 2019.
       </span>
 
     </p>

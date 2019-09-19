@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -931,15 +950,15 @@ file heights.xyz on a 3-D projection of the space (0-10), (0-10),
 (0-100), with tickmarks every 2, 2, and 10, viewing it from the
 southeast at 30 degree elevation, use:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">plot3d</span> <span class="n">heights</span><span class="o">.</span><span class="n">xyz</span> <span class="o">-</span><span class="n">R0</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">100</span> <span class="o">-</span><span class="n">Jx1</span><span class="o">.</span><span class="mi">25</span><span class="n">c</span> <span class="o">-</span><span class="n">Jz0</span><span class="o">.</span><span class="mi">125</span><span class="n">c</span> <span class="o">-</span><span class="n">So1</span><span class="o">.</span><span class="mi">25</span><span class="n">c</span>
-          <span class="o">-</span><span class="n">Gblue</span> <span class="o">-</span><span class="n">Bx2</span><span class="o">+</span><span class="n">lXLABEL</span> <span class="o">-</span><span class="n">By2</span><span class="o">+</span><span class="n">lYLABEL</span> <span class="o">-</span><span class="n">Bz10</span><span class="o">+</span><span class="n">lZLABEL</span> <span class="o">-</span><span class="n">B</span><span class="o">+</span><span class="n">t</span><span class="s2">&quot;3-D PLOT&quot;</span> <span class="o">-</span><span class="n">p135</span><span class="o">/</span><span class="mi">30</span>
-          <span class="o">-</span><span class="n">U</span><span class="o">+</span><span class="n">c</span> <span class="o">-</span><span class="n">W</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">heights</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt plot3d heights.xyz -R0/10/0/10/0/100 -Jx1.25c -Jz0.125c -So1.25c
+          -Gblue -Bx2+lXLABEL -By2+lYLABEL -Bz10+lZLABEL -B+t<span class="s2">&quot;3-D PLOT&quot;</span> -p135/30
+          -U+c -W -pdf heights
 </pre></div>
 </div>
 </div></blockquote>
 <p>To plot a point with color and outline dictated by the <em>t.cpt</em> file for the <em>level</em>-value 65, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="mi">175</span> <span class="mi">30</span> <span class="mi">0</span> <span class="o">|</span> <span class="n">gmt</span> <span class="n">plot3d</span> <span class="o">-</span><span class="n">R150</span><span class="o">/</span><span class="mi">200</span><span class="o">/</span><span class="mi">20</span><span class="o">/</span><span class="mi">50</span> <span class="o">-</span><span class="n">JM15c</span> <span class="o">-</span><span class="n">Sc0</span><span class="o">.</span><span class="mi">5</span><span class="n">c</span> <span class="o">-</span><span class="n">Z65</span> <span class="o">-</span><span class="n">Ct</span><span class="o">.</span><span class="n">cpt</span> <span class="o">-</span><span class="n">pdf</span> <span class="nb">map</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">175</span> <span class="m">30</span> <span class="m">0</span> <span class="p">|</span> gmt plot3d -R150/200/20/50 -JM15c -Sc0.5c -Z65 -Ct.cpt -pdf map
 </pre></div>
 </div>
 </div></blockquote>
@@ -1018,7 +1037,7 @@ original polygon.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 18, 2019.
+        Last updated on Sep 19, 2019.
       </span>
 
     </p>

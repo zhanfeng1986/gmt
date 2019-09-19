@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -422,7 +441,7 @@ gravity, magnetics, topography, and distance (in m) with a 10 km
 Gaussian filter, removing outliers, and output a filtered value every 2
 km between 0 and 100 km:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">filter1d</span> <span class="n">cruise</span><span class="o">.</span><span class="n">gmtd</span> <span class="o">-</span><span class="n">T0</span><span class="o">/</span><span class="mf">1.0e5</span><span class="o">/</span><span class="mi">2000</span> <span class="o">-</span><span class="n">FG10000</span> <span class="o">-</span><span class="n">N3</span> <span class="o">-</span><span class="n">V</span> <span class="o">&gt;</span> <span class="n">filtered_cruise</span><span class="o">.</span><span class="n">gmtd</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt filter1d cruise.gmtd -T0/1.0e5/2000 -FG10000 -N3 -V &gt; filtered_cruise.gmtd
 </pre></div>
 </div>
 </div></blockquote>
@@ -431,14 +450,14 @@ want to interpolate using <a class="reference internal" href="sample1d.html"><sp
 km window every 25 km along the track of cruise v3312, stored in
 v3312.dt, checking for gaps of 10km and asymmetry of 0.3:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">filter1d</span> <span class="n">v3312</span><span class="o">.</span><span class="n">dt</span> <span class="o">-</span><span class="n">FM50</span> <span class="o">-</span><span class="n">T0</span><span class="o">/</span><span class="mi">100000</span><span class="o">/</span><span class="mi">25</span> <span class="o">-</span><span class="n">L10</span> <span class="o">-</span><span class="n">S0</span><span class="o">.</span><span class="mi">3</span> <span class="o">&gt;</span> <span class="n">v3312_filt</span><span class="o">.</span><span class="n">dt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt filter1d v3312.dt -FM50 -T0/100000/25 -L10 -S0.3 &gt; v3312_filt.dt
 </pre></div>
 </div>
 </div></blockquote>
 <p>To smooth a noisy geospatial track using a Gaussian filter of full-width 100 km
 and not shorten the track, and add the distances to the file, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">filter1d</span> <span class="n">track</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">Tk</span><span class="o">+</span><span class="n">a</span> <span class="o">-</span><span class="n">E</span> <span class="o">-</span><span class="n">Fg200</span> <span class="o">&gt;</span> <span class="n">smooth_track</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt filter1d track.txt -Tk+a -E -Fg200 &gt; smooth_track.txt
 </pre></div>
 </div>
 </div></blockquote>
@@ -465,7 +484,7 @@ and not shorten the track, and add the distances to the file, use</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 18, 2019.
+        Last updated on Sep 19, 2019.
       </span>
 
     </p>

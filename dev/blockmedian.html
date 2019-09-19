@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -413,7 +432,7 @@ specify more decimals using the <a class="reference internal" href="gmt.conf.htm
 <p>To find 5 by 5 minute block medians from the ASCII data in ship_15.txt
 and output a binary table with double precision triplets, run</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">blockmedian</span> <span class="nd">@ship_15</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">R245</span><span class="o">/</span><span class="mi">255</span><span class="o">/</span><span class="mi">20</span><span class="o">/</span><span class="mi">30</span> <span class="o">-</span><span class="n">I5m</span> <span class="o">-</span><span class="n">bo3d</span> <span class="o">&gt;</span> <span class="n">ship_5x5</span><span class="o">.</span><span class="n">b</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt blockmedian @ship_15.txt -R245/255/20/30 -I5m -bo3d &gt; ship_5x5.b
 </pre></div>
 </div>
 </div></blockquote>
@@ -422,14 +441,14 @@ box-and-whisker diagram we need the 0%, 25%, 50%, 75%, and 100%
 quantiles. To do so on a global 5 by 5 degree basis from the ASCII table
 mars370.txt and send output to an ASCII table, run</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">gmt</span> <span class="n">blockmedian</span> <span class="nd">@mars370</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">Rg</span> <span class="o">-</span><span class="n">I5</span> <span class="o">-</span><span class="n">Eb</span> <span class="o">-</span><span class="n">r</span> <span class="o">&gt;</span> <span class="n">mars_5x5</span><span class="o">.</span><span class="n">txt</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt gmt blockmedian @mars370.txt -Rg -I5 -Eb -r &gt; mars_5x5.txt
 </pre></div>
 </div>
 </div></blockquote>
 <p>To determine the median and L1 scale (MAD) on the median per 10 minute bin and save these to two separate grids
 called field_z.nc and field_s.nc, run</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">blockmedian</span> <span class="nd">@ship_15</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">I10m</span> <span class="o">-</span><span class="n">R</span><span class="o">-</span><span class="mi">115</span><span class="o">/-</span><span class="mi">105</span><span class="o">/</span><span class="mi">20</span><span class="o">/</span><span class="mi">30</span> <span class="o">-</span><span class="n">E</span> <span class="o">-</span><span class="n">Gfield_</span><span class="o">%</span><span class="n">s</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Az</span><span class="p">,</span><span class="n">s</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt blockmedian @ship_15.txt -I10m -R-115/-105/20/30 -E -Gfield_%s.nc -Az,s
 </pre></div>
 </div>
 </div></blockquote>
@@ -461,7 +480,7 @@ called field_z.nc and field_s.nc, run</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 18, 2019.
+        Last updated on Sep 19, 2019.
       </span>
 
     </p>

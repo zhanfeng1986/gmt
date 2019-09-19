@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -360,16 +379,16 @@ Alternatively, append <strong>+e</strong> to keep <em>inc</em> exact and adjust 
 <p>To compute the free-air anomalies on a equidistant profile over a 2-D body that has been contoured
 and saved to body2d.txt, using 1700 kg/m^3 as a constant density contrast, with all distances in meters,
 try</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">talwani2d</span> <span class="o">-</span><span class="n">T</span><span class="o">-</span><span class="mi">200</span><span class="o">/</span><span class="mi">200</span><span class="o">/</span><span class="mi">2</span> <span class="n">body2d</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">D1700</span> <span class="o">-</span><span class="n">Ff</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="n">dgrav</span><span class="o">.</span><span class="n">txt</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt talwani2d -T-200/200/2 body2d.txt -D1700 -Ff &gt; 2dgrav.txt
 </pre></div>
 </div>
 <p>To obtain the vertical gravity gradient anomaly along the track given by the file crossing.txt
 for the same model, try</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">talwani2d</span> <span class="o">-</span><span class="n">Ncrossing</span><span class="o">.</span><span class="n">txt</span> <span class="n">body2d</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">D1700</span> <span class="o">-</span><span class="n">Fv</span> <span class="o">&gt;</span> <span class="n">vgg_crossing</span><span class="o">.</span><span class="n">txt</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt talwani2d -Ncrossing.txt body2d.txt -D1700 -Fv &gt; vgg_crossing.txt
 </pre></div>
 </div>
 <p>The geoid anomaly for the same setup, evaluated at 60N, is given by</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">talwani2d</span> <span class="o">-</span><span class="n">Ncrossing</span><span class="o">.</span><span class="n">txt</span> <span class="n">body2d</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">D1700</span> <span class="o">-</span><span class="n">Fn60</span> <span class="o">&gt;</span> <span class="n">n_crossing</span><span class="o">.</span><span class="n">txt</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt talwani2d -Ncrossing.txt body2d.txt -D1700 -Fn60 &gt; n_crossing.txt
 </pre></div>
 </div>
 </div>
@@ -421,7 +440,7 @@ two-dimensional bodies with application to the Mendocino submarine fracture zone
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 18, 2019.
+        Last updated on Sep 19, 2019.
       </span>
 
     </p>

@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -447,7 +466,7 @@ using 2700 and 1035 for the densities of crust and water and writing the
 result on water_g.grd (computing up to the fourth power of bathymetry
 in Parker expansion):</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">gravfft</span> <span class="n">bat</span><span class="o">.</span><span class="n">grd</span> <span class="o">-</span><span class="n">D1665</span> <span class="o">-</span><span class="n">Gwater_g</span><span class="o">.</span><span class="n">grd</span> <span class="o">-</span><span class="n">E4</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt gravfft bat.grd -D1665 -Gwater_g.grd -E4
 </pre></div>
 </div>
 </div></blockquote>
@@ -459,7 +478,7 @@ dense than the rocks below. The answer relies on the way gravity
 effects are computed by the Parker’s method and practical aspects of
 using the FFT.</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdmath</span> <span class="n">faa</span><span class="o">.</span><span class="n">grd</span> <span class="n">water_g</span><span class="o">.</span><span class="n">grd</span> <span class="n">SUB</span> <span class="o">=</span> <span class="n">bouguer</span><span class="o">.</span><span class="n">grd</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath faa.grd water_g.grd <span class="nv">SUB</span> <span class="o">=</span> bouguer.grd
 </pre></div>
 </div>
 </div></blockquote>
@@ -473,13 +492,13 @@ comes in hand. Notice that we didn’t need to do that before because mean water
 depth was computed directly from data (notice also the negative sign of the
 offset due to the fact that <em>z</em> is positive up):</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">gravfft</span> <span class="n">bat</span><span class="o">.</span><span class="n">grd</span><span class="o">=</span><span class="n">nf</span><span class="o">/</span><span class="mi">1</span><span class="o">/-</span><span class="mi">6000</span> <span class="o">-</span><span class="n">D600</span> <span class="o">-</span><span class="n">Gmoho_g</span><span class="o">.</span><span class="n">grd</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt gravfft bat.grd<span class="o">=</span>nf/1/-6000 -D600 -Gmoho_g.grd
 </pre></div>
 </div>
 </div></blockquote>
 <p>Now, subtract it from the Bouguer to obtain the MBA anomaly. That is:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdmath</span> <span class="n">bouguer</span><span class="o">.</span><span class="n">grd</span> <span class="n">moho_g</span><span class="o">.</span><span class="n">grd</span> <span class="n">SUB</span> <span class="o">=</span> <span class="n">mba</span><span class="o">.</span><span class="n">grd</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath bouguer.grd moho_g.grd <span class="nv">SUB</span> <span class="o">=</span> mba.grd
 </pre></div>
 </div>
 </div></blockquote>
@@ -487,7 +506,7 @@ offset due to the fact that <em>z</em> is positive up):</p>
 7 km, density of 2700, over a mantle of density 3300, at an average depth
 of 9 km</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">gravfft</span> <span class="n">bat</span><span class="o">.</span><span class="n">grd</span> <span class="o">-</span><span class="n">Gelastic</span><span class="o">.</span><span class="n">grd</span> <span class="o">-</span><span class="n">T7000</span><span class="o">/</span><span class="mi">2700</span><span class="o">/</span><span class="mi">3300</span><span class="o">/</span><span class="mi">1035</span><span class="o">+</span><span class="n">m</span> <span class="o">-</span><span class="n">Z9000</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt gravfft bat.grd -Gelastic.grd -T7000/2700/3300/1035+m -Z9000
 </pre></div>
 </div>
 </div></blockquote>
@@ -495,9 +514,9 @@ of 9 km</p>
 gravity response of your isostatic model. We will use here only the
 first term in Parker expansion.</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">gravfft</span> <span class="n">bat</span><span class="o">.</span><span class="n">grd</span> <span class="o">-</span><span class="n">D1665</span> <span class="o">-</span><span class="n">Gwater_g</span><span class="o">.</span><span class="n">grd</span> <span class="o">-</span><span class="n">E1</span>
-<span class="n">gmt</span> <span class="n">gravfft</span> <span class="n">bat</span><span class="o">.</span><span class="n">grd</span> <span class="o">-</span><span class="n">Gelastic</span><span class="o">.</span><span class="n">grd</span> <span class="o">-</span><span class="n">T7000</span><span class="o">/</span><span class="mi">2700</span><span class="o">/</span><span class="mi">3300</span><span class="o">/</span><span class="mi">1035</span><span class="o">+</span><span class="n">m</span> <span class="o">-</span><span class="n">Z9000</span> <span class="o">-</span><span class="n">E1</span>
-<span class="n">gmt</span> <span class="n">grdmath</span> <span class="n">water_g</span><span class="o">.</span><span class="n">grd</span> <span class="n">elastic</span><span class="o">.</span><span class="n">grd</span> <span class="n">ADD</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">grd</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt gravfft bat.grd -D1665 -Gwater_g.grd -E1
+gmt gravfft bat.grd -Gelastic.grd -T7000/2700/3300/1035+m -Z9000 -E1
+gmt grdmath water_g.grd elastic.grd <span class="nv">ADD</span> <span class="o">=</span> model.grd
 </pre></div>
 </div>
 </div></blockquote>
@@ -508,7 +527,7 @@ the previous commands only give the same result if <strong>-E</strong>1 is used.
 For higher powers of bathymetry in Parker expansion,
 only the above example seams to give the correct result.</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">gravfft</span> <span class="n">bat</span><span class="o">.</span><span class="n">grd</span> <span class="o">-</span><span class="n">Gmodel</span><span class="o">.</span><span class="n">grd</span> <span class="o">-</span><span class="n">T7000</span><span class="o">/</span><span class="mi">2700</span><span class="o">/</span><span class="mi">3300</span><span class="o">/</span><span class="mi">1035</span> <span class="o">-</span><span class="n">Z9000</span> <span class="o">-</span><span class="n">E1</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt gravfft bat.grd -Gmodel.grd -T7000/2700/3300/1035 -Z9000 -E1
 </pre></div>
 </div>
 </div></blockquote>
@@ -516,7 +535,7 @@ only the above example seams to give the correct result.</p>
 below a region whose bathymetry is given by bat.grd, a Moho at 9 km
 depth and the same densities as before?</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">gravfft</span> <span class="n">topo</span><span class="o">.</span><span class="n">grd</span> <span class="o">-</span><span class="n">Gswell_geoid</span><span class="o">.</span><span class="n">grd</span> <span class="o">-</span><span class="n">T7000</span><span class="o">/</span><span class="mi">2700</span><span class="o">/</span><span class="mi">3300</span><span class="o">/</span><span class="mi">1035</span> <span class="o">-</span><span class="n">Fg</span> <span class="o">-</span><span class="n">Z9000</span><span class="o">/</span><span class="mi">50000</span> <span class="o">-</span><span class="n">S</span> <span class="o">-</span><span class="n">E1</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt gravfft topo.grd -Gswell_geoid.grd -T7000/2700/3300/1035 -Fg -Z9000/50000 -S -E1
 </pre></div>
 </div>
 </div></blockquote>
@@ -525,7 +544,7 @@ free-air anomaly grid using the elastic plate model of a crust of 6 km
 mean thickness with 10 km effective elastic thickness in a region of 3 km
 mean water depth:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">gravfft</span> <span class="n">topo</span><span class="o">.</span><span class="n">grd</span> <span class="n">faa</span><span class="o">.</span><span class="n">grd</span> <span class="o">-</span><span class="n">It</span> <span class="o">-</span><span class="n">T10000</span><span class="o">/</span><span class="mi">2700</span><span class="o">/</span><span class="mi">3300</span><span class="o">/</span><span class="mi">1035</span> <span class="o">-</span><span class="n">Z9000</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt gravfft topo.grd faa.grd -It -T10000/2700/3300/1035 -Z9000
 </pre></div>
 </div>
 </div></blockquote>
@@ -534,14 +553,14 @@ geoid grid with the “loading from below” (LFB) model with the same as
 above and sub-surface load at 40 km, but assuming now the grids are in
 geographic and we want wavelengths instead of frequency:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">gravfft</span> <span class="n">topo</span><span class="o">.</span><span class="n">grd</span> <span class="n">geoid</span><span class="o">.</span><span class="n">grd</span> <span class="o">-</span><span class="n">Ibw</span> <span class="o">-</span><span class="n">T10000</span><span class="o">/</span><span class="mi">2700</span><span class="o">/</span><span class="mi">3300</span><span class="o">/</span><span class="mi">1035</span> <span class="o">-</span><span class="n">Z9000</span><span class="o">/</span><span class="mi">40000</span> <span class="o">-</span><span class="n">fg</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt gravfft topo.grd geoid.grd -Ibw -T10000/2700/3300/1035 -Z9000/40000 -fg
 </pre></div>
 </div>
 </div></blockquote>
 <p>To compute the gravity theoretical admittance of a LFB along a 2000 km
 long profile using the same parameters as above</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">gravfft</span> <span class="o">-</span><span class="n">C400</span><span class="o">/</span><span class="mi">5000</span><span class="o">/</span><span class="mi">3000</span><span class="o">/</span><span class="n">b</span> <span class="o">-</span><span class="n">T10000</span><span class="o">/</span><span class="mi">2700</span><span class="o">/</span><span class="mi">3300</span><span class="o">/</span><span class="mi">1035</span> <span class="o">-</span><span class="n">Z9000</span><span class="o">/</span><span class="mi">40000</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt gravfft -C400/5000/3000/b -T10000/2700/3300/1035 -Z9000/40000
 </pre></div>
 </div>
 </div></blockquote>
@@ -578,7 +597,7 @@ J. Geophys. Res., 106(B9), 19,431–19,441,
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 18, 2019.
+        Last updated on Sep 19, 2019.
       </span>
 
     </p>

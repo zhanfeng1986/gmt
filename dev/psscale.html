@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -485,8 +504,8 @@ They are not available when using GMT modern mode.</p>
 <p>To plot a horizontal color scale (12 cm long; 0.5 cm wide) at the reference point (8,1)
 (paper coordinates) with justification at top center and automatic annotation interval, do</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">makecpt</span> <span class="o">-</span><span class="n">T</span><span class="o">-</span><span class="mi">200</span><span class="o">/</span><span class="mi">1000</span><span class="o">/</span><span class="mi">100</span> <span class="o">-</span><span class="n">Crainbow</span> <span class="o">&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">cpt</span>
-<span class="n">gmt</span> <span class="n">psscale</span> <span class="o">-</span><span class="n">Ct</span><span class="o">.</span><span class="n">cpt</span> <span class="o">-</span><span class="n">Dx8c</span><span class="o">/</span><span class="mi">1</span><span class="n">c</span><span class="o">+</span><span class="n">w12c</span><span class="o">/</span><span class="mf">0.5</span><span class="n">c</span><span class="o">+</span><span class="n">jTC</span><span class="o">+</span><span class="n">h</span> <span class="o">-</span><span class="n">Bxaf</span><span class="o">+</span><span class="n">l</span><span class="s2">&quot;topography&quot;</span> <span class="o">-</span><span class="n">By</span><span class="o">+</span><span class="n">lkm</span> <span class="o">-</span><span class="n">P</span> <span class="o">&gt;</span> <span class="nb">map</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt makecpt -T-200/1000/100 -Crainbow &gt; t.cpt
+gmt psscale -Ct.cpt -Dx8c/1c+w12c/0.5c+jTC+h -Bxaf+l<span class="s2">&quot;topography&quot;</span> -By+lkm -P &gt; map.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -495,14 +514,14 @@ right of a plot that is 6 inch wide and 4 inch high, using illumination,
 and show back- and foreground colors, and annotating every 5 units, we
 provide the reference point and select the left-mid anchor point via</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psscale</span> <span class="o">-</span><span class="n">Dx6</span><span class="o">.</span><span class="mi">5</span><span class="n">i</span><span class="o">+</span><span class="n">jLM</span><span class="o">/</span><span class="mi">2</span><span class="n">i</span><span class="o">+</span><span class="n">w7</span><span class="o">.</span><span class="mi">5</span><span class="n">c</span><span class="o">/</span><span class="mf">1.25</span><span class="n">c</span><span class="o">+</span><span class="n">e</span> <span class="o">-</span><span class="n">O</span> <span class="o">-</span><span class="n">Ccolors</span><span class="o">.</span><span class="n">cpt</span> <span class="o">-</span><span class="n">I</span> <span class="o">-</span><span class="n">Bx5</span><span class="o">+</span><span class="n">lBATHYMETRY</span> <span class="o">-</span><span class="n">By</span><span class="o">+</span><span class="n">lm</span> <span class="o">&gt;&gt;</span> <span class="nb">map</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psscale -Dx6.5i+jLM/2i+w7.5c/1.25c+e -O -Ccolors.cpt -I -Bx5+lBATHYMETRY -By+lm &gt;&gt; map.ps
 </pre></div>
 </div>
 </div></blockquote>
 <p>To overlay a horizontal color scale (4 inches long and default width) above a
 Mercator map produced by a previous call, ensuring a 2 cm offset from the map frame, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">psscale</span> <span class="o">-</span><span class="n">DjCT</span><span class="o">+</span><span class="n">w4i</span><span class="o">+</span><span class="n">o0</span><span class="o">/</span><span class="mi">2</span><span class="n">c</span><span class="o">+</span><span class="n">h</span> <span class="o">-</span><span class="n">O</span> <span class="o">-</span><span class="n">Ccolors</span><span class="o">.</span><span class="n">cpt</span> <span class="o">-</span><span class="n">Baf</span> <span class="o">-</span><span class="n">R</span> <span class="o">-</span><span class="n">J</span> <span class="o">&gt;&gt;</span> <span class="nb">map</span><span class="o">.</span><span class="n">ps</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psscale -DjCT+w4i+o0/2c+h -O -Ccolors.cpt -Baf -R -J &gt;&gt; map.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -544,7 +563,7 @@ symbol at the left, unless <strong>+n</strong> was used in which case we center 
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 18, 2019.
+        Last updated on Sep 19, 2019.
       </span>
 
     </p>

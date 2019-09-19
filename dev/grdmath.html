@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -1514,20 +1533,20 @@ is required that the optional comment flag (:) must be followed by a space.</p>
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>To compute all distances to north pole:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdmath</span> <span class="o">-</span><span class="n">Rg</span> <span class="o">-</span><span class="n">I1</span> <span class="mi">0</span> <span class="mi">90</span> <span class="n">SDIST</span> <span class="o">=</span> <span class="n">dist_to_NP</span><span class="o">.</span><span class="n">nc</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath -Rg -I1 <span class="m">0</span> <span class="m">90</span> <span class="nv">SDIST</span> <span class="o">=</span> dist_to_NP.nc
 </pre></div>
 </div>
 </div></blockquote>
 <p>To take log10 of the average of 2 files, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdmath</span> <span class="n">file1</span><span class="o">.</span><span class="n">nc</span> <span class="n">file2</span><span class="o">.</span><span class="n">nc</span> <span class="n">ADD</span> <span class="mf">0.5</span> <span class="n">MUL</span> <span class="n">LOG10</span> <span class="o">=</span> <span class="n">file3</span><span class="o">.</span><span class="n">nc</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath file1.nc file2.nc ADD <span class="m">0</span>.5 MUL <span class="nv">LOG10</span> <span class="o">=</span> file3.nc
 </pre></div>
 </div>
 </div></blockquote>
 <p>Given the file ages.nc, which holds seafloor ages in m.y., use the
 relation depth(in m) = 2500 + 350 * sqrt (age) to estimate normal seafloor depths:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdmath</span> <span class="n">ages</span><span class="o">.</span><span class="n">nc</span> <span class="n">SQRT</span> <span class="mi">350</span> <span class="n">MUL</span> <span class="mi">2500</span> <span class="n">ADD</span> <span class="o">=</span> <span class="n">depths</span><span class="o">.</span><span class="n">nc</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath ages.nc SQRT <span class="m">350</span> MUL <span class="m">2500</span> <span class="nv">ADD</span> <span class="o">=</span> depths.nc
 </pre></div>
 </div>
 </div></blockquote>
@@ -1535,7 +1554,7 @@ relation depth(in m) = 2500 + 350 * sqrt (age) to estimate normal seafloor depth
 the stress tensor given by the three files s_xx.nc s_yy.nc, and
 s_xy.nc from the relation tan (2*a) = 2 * s_xy / (s_xx - s_yy), use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdmath</span> <span class="mi">2</span> <span class="n">s_xy</span><span class="o">.</span><span class="n">nc</span> <span class="n">MUL</span> <span class="n">s_xx</span><span class="o">.</span><span class="n">nc</span> <span class="n">s_yy</span><span class="o">.</span><span class="n">nc</span> <span class="n">SUB</span> <span class="n">DIV</span> <span class="n">ATAN</span> <span class="mi">2</span> <span class="n">DIV</span> <span class="o">=</span> <span class="n">direction</span><span class="o">.</span><span class="n">nc</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath <span class="m">2</span> s_xy.nc MUL s_xx.nc s_yy.nc SUB DIV ATAN <span class="m">2</span> <span class="nv">DIV</span> <span class="o">=</span> direction.nc
 </pre></div>
 </div>
 </div></blockquote>
@@ -1543,47 +1562,47 @@ s_xy.nc from the relation tan (2*a) = 2 * s_xy / (s_xx - s_yy), use</p>
 order 4 on a 1 by 1 degree world map, using the real amplitude 0.4 and
 the imaginary amplitude 1.1:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdmath</span> <span class="o">-</span><span class="n">R0</span><span class="o">/</span><span class="mi">360</span><span class="o">/-</span><span class="mi">90</span><span class="o">/</span><span class="mi">90</span> <span class="o">-</span><span class="n">I1</span> <span class="mi">8</span> <span class="mi">4</span> <span class="n">YLM</span> <span class="mf">1.1</span> <span class="n">MUL</span> <span class="n">EXCH</span> <span class="mf">0.4</span> <span class="n">MUL</span> <span class="n">ADD</span> <span class="o">=</span> <span class="n">harm</span><span class="o">.</span><span class="n">nc</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath -R0/360/-90/90 -I1 <span class="m">8</span> <span class="m">4</span> YLM <span class="m">1</span>.1 MUL EXCH <span class="m">0</span>.4 MUL <span class="nv">ADD</span> <span class="o">=</span> harm.nc
 </pre></div>
 </div>
 </div></blockquote>
 <p>To extract the locations of local maxima that exceed 100 mGal in the file faa.nc:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdmath</span> <span class="n">faa</span><span class="o">.</span><span class="n">nc</span> <span class="n">DUP</span> <span class="n">EXTREMA</span> <span class="mi">2</span> <span class="n">EQ</span> <span class="n">MUL</span> <span class="n">DUP</span> <span class="mi">100</span> <span class="n">GT</span> <span class="n">MUL</span> <span class="mi">0</span> <span class="n">NAN</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">nc</span>
-<span class="n">gmt</span> <span class="n">grd2xyz</span> <span class="n">z</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">s</span> <span class="o">&gt;</span> <span class="nb">max</span><span class="o">.</span><span class="n">xyz</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath faa.nc DUP EXTREMA <span class="m">2</span> EQ MUL DUP <span class="m">100</span> GT MUL <span class="m">0</span> <span class="nv">NAN</span> <span class="o">=</span> z.nc
+gmt grd2xyz z.nc -s &gt; max.xyz
 </pre></div>
 </div>
 </div></blockquote>
 <p>To demonstrate the use of named variables, consider this radial wave
 where we store and recall the normalized radial arguments in radians:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdmath</span> <span class="o">-</span><span class="n">R0</span><span class="o">/</span><span class="mi">10</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">10</span> <span class="o">-</span><span class="n">I0</span><span class="o">.</span><span class="mi">25</span> <span class="mi">5</span> <span class="mi">5</span> <span class="n">CDIST</span> <span class="mi">2</span> <span class="n">MUL</span> <span class="n">PI</span> <span class="n">MUL</span> <span class="mi">5</span> <span class="n">DIV</span> <span class="n">STO</span><span class="nd">@r</span> <span class="n">COS</span> <span class="nd">@r</span> <span class="n">SIN</span> <span class="n">MUL</span> <span class="o">=</span> <span class="n">wave</span><span class="o">.</span><span class="n">nc</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath -R0/10/0/10 -I0.25 <span class="m">5</span> <span class="m">5</span> CDIST <span class="m">2</span> MUL PI MUL <span class="m">5</span> DIV STO@r COS @r SIN <span class="nv">MUL</span> <span class="o">=</span> wave.nc
 </pre></div>
 </div>
 </div></blockquote>
 <p>To create a dumb file saved as a 32 bits float GeoTiff using GDAL, run</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdmath</span> <span class="o">-</span><span class="n">Rd</span> <span class="o">-</span><span class="n">I10</span> <span class="n">X</span> <span class="n">Y</span> <span class="n">MUL</span> <span class="o">=</span> <span class="n">lixo</span><span class="o">.</span><span class="n">tiff</span><span class="o">=</span><span class="n">gd</span><span class="p">:</span><span class="n">GTiff</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath -Rd -I10 X Y <span class="nv">MUL</span> <span class="o">=</span> lixo.tiff<span class="o">=</span>gd:GTiff
 </pre></div>
 </div>
 </div></blockquote>
 <p>To compute distances in km from the line trace.txt for the area represented by the
 geographic grid data.grd, run</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdmath</span> <span class="o">-</span><span class="n">Rdata</span><span class="o">.</span><span class="n">grd</span> <span class="n">trace</span><span class="o">.</span><span class="n">txt</span> <span class="n">LDIST</span> <span class="o">=</span> <span class="n">dist_from_line</span><span class="o">.</span><span class="n">grd</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath -Rdata.grd trace.txt <span class="nv">LDIST</span> <span class="o">=</span> dist_from_line.grd
 </pre></div>
 </div>
 </div></blockquote>
 <p>To demonstrate the stack-reducing effect of <strong>-S</strong>, we compute the standard deviation
 per node of all the grids matching the name model_*.grd using</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdmath</span> <span class="n">model_</span><span class="o">*.</span><span class="n">grd</span> <span class="o">-</span><span class="n">S</span> <span class="n">STD</span> <span class="o">=</span> <span class="n">std_of_models</span><span class="o">.</span><span class="n">grd</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath model_*.grd -S <span class="nv">STD</span> <span class="o">=</span> std_of_models.grd
 </pre></div>
 </div>
 </div></blockquote>
 <p>To create a geotiff with resolution 0.5x0.5 degrees with distances in km from the coast line, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grdmath</span> <span class="o">-</span><span class="n">RNO</span><span class="p">,</span><span class="n">IS</span> <span class="o">-</span><span class="n">Dc</span> <span class="o">-</span><span class="n">I</span><span class="o">.</span><span class="mi">5</span> <span class="n">LDISTG</span> <span class="o">=</span> <span class="n">distance</span><span class="o">.</span><span class="n">tif</span><span class="o">=</span><span class="n">gd</span><span class="p">:</span><span class="n">GTIFF</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grdmath -RNO,IS -Dc -I.5 <span class="nv">LDISTG</span> <span class="o">=</span> distance.tif<span class="o">=</span>gd:GTIFF
 </pre></div>
 </div>
 </div></blockquote>
@@ -1623,7 +1642,7 @@ Publishing Corp.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 18, 2019.
+        Last updated on Sep 19, 2019.
       </span>
 
     </p>

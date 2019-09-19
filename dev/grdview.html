@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -82,6 +83,7 @@
         
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
+    
             
             
               
@@ -91,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://doi.org/10.1029/2019GC008515">Modern Mode Primer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -119,12 +120,30 @@
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">postscriptlight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
 </ul>
 
             
           
+
+    
+        <p class="caption">
+            <span class="caption-text">Getting help</span>
+        </p>
+        <ul>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+            
+                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
+            
+        </ul>
+    
+
         </div>
         
       </div>
@@ -414,8 +433,8 @@ contours given in the CPT hawaii.cpt on a Lambert map at
 scale 20 mgal/cm, and looking at the surface from SW at 30 degree
 elevation, run</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdview</span> <span class="n">hawaii_grav</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Jl18</span><span class="o">/</span><span class="mi">24</span><span class="o">/</span><span class="mf">1.5</span><span class="n">c</span> <span class="o">-</span><span class="n">Chawaii</span><span class="o">.</span><span class="n">cpt</span>
-            <span class="o">-</span><span class="n">Jz0</span><span class="o">.</span><span class="mi">05</span><span class="n">c</span> <span class="o">-</span><span class="n">Qm</span> <span class="o">-</span><span class="n">N</span><span class="o">-</span><span class="mi">100</span> <span class="o">-</span><span class="n">p225</span><span class="o">/</span><span class="mi">30</span> <span class="o">-</span><span class="n">Wc</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">hawaii_grav_image</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdview hawaii_grav.nc -Jl18/24/1.5c -Chawaii.cpt
+            -Jz0.05c -Qm -N-100 -p225/30 -Wc -pdf hawaii_grav_image
 </pre></div>
 </div>
 </div></blockquote>
@@ -424,13 +443,13 @@ image.nc, using the CPT color.cpt, with linear scaling at
 10 cm/x-unit and tickmarks every 5 units, with intensities provided by
 the file intens.nc, and looking from the SE, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdview</span> <span class="n">image</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Jx10c</span> <span class="o">-</span><span class="n">Ccolor</span><span class="o">.</span><span class="n">cpt</span> <span class="o">-</span><span class="n">Qs</span> <span class="o">-</span><span class="n">p135</span><span class="o">/</span><span class="mi">30</span> <span class="o">-</span><span class="n">Iintens</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">image3D</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdview image.nc -Jx10c -Ccolor.cpt -Qs -p135/30 -Iintens.nc -pdf image3D
 </pre></div>
 </div>
 </div></blockquote>
 <p>To make the same plot using the rastering option with dpi = 50, use</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdview</span> <span class="n">image</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Jx10c</span> <span class="o">-</span><span class="n">Ccolor</span><span class="o">.</span><span class="n">cpt</span> <span class="o">-</span><span class="n">Qi50</span> <span class="o">-</span><span class="n">p135</span><span class="o">/</span><span class="mi">30</span> <span class="o">-</span><span class="n">Iintens</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">image3D</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdview image.nc -Jx10c -Ccolor.cpt -Qi50 -p135/30 -Iintens.nc -pdf image3D
 </pre></div>
 </div>
 </div></blockquote>
@@ -440,8 +459,8 @@ the relief given by the file topography.nc, with Mercator map width of 6
 inch and tickmarks every 1 degree, with intensities provided by the file
 topo_intens.nc, and looking from the SE, run</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdview</span> <span class="n">topography</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">JM6i</span> <span class="o">-</span><span class="n">Gmagnetics</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Cmag_intens</span><span class="o">.</span><span class="n">cpt</span>
-            <span class="o">-</span><span class="n">Qs</span> <span class="o">-</span><span class="n">p140</span><span class="o">/</span><span class="mi">30</span> <span class="o">-</span><span class="n">Itopo_intens</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">pdf</span> <span class="n">draped3D</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdview topography.nc -JM6i -Gmagnetics.nc -Cmag_intens.cpt
+            -Qs -p140/30 -Itopo_intens.nc -pdf draped3D
 </pre></div>
 </div>
 </div></blockquote>
@@ -485,7 +504,7 @@ variations within polygons by using scanline conversion to image the polygons.</
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 18, 2019.
+        Last updated on Sep 19, 2019.
       </span>
 
     </p>
