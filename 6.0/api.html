@@ -521,7 +521,7 @@ expects.</li>
 <p>In version 5, the standard GMT programs are themselves simple invocations
 of the <a class="reference internal" href="gmt.html"><span class="doc">gmt</span></a> application with the function name as argument.
 However, some of these modules, such as
-<a class="reference internal" href="legend.html"><span class="doc">legend</span></a>, <a class="reference internal" href="gmtconvert.html"><span class="doc">convert</span></a>,
+<a class="reference internal" href="legend.html"><span class="doc">legend</span></a>, <a class="reference internal" href="gmtconvert.html"><span class="doc">gmtconvert</span></a>,
 <a class="reference internal" href="grdblend.html"><span class="doc">grdblend</span></a>,
 <a class="reference internal" href="grdfilter.html"><span class="doc">grdfilter</span></a> and others may call several additional modules.</p>
 </div>
@@ -3209,11 +3209,11 @@ rule says that all required input data items must be listed before any
 secondary input data items, and all primary output items must be listed
 on the left hand side before any secondary output items.
 There are three situations where the parsing will need further help;
-(1) Specifying the positions of memory arguments given to <a class="reference internal" href="gmtmath.html"><span class="doc">math</span></a>,
+(1) Specifying the positions of memory arguments given to <a class="reference internal" href="gmtmath.html"><span class="doc">gmtmath</span></a>,
 (2) specifying the positions of memory arguments given to <a class="reference internal" href="grdmath.html"><span class="doc">grdmath</span></a>,
 and (3) using -R? when passing a memory grid to the -R option (since just -R
 means use the previous region in the command history).
-Thus, in the <a class="reference internal" href="gmtmath.html"><span class="doc">math</span></a> call we we needed to specify where
+Thus, in the <a class="reference internal" href="gmtmath.html"><span class="doc">gmtmath</span></a> call we we needed to specify where
 the specific arguments should be placed among the operators.
 API developers will rely on <a class="reference internal" href="#gmt-open-virtualfile">GMT_Open_VirtualFile</a> to convert the
 above syntax to correct options for <a class="reference internal" href="#gmt-call-module">GMT_Call_Module</a>.
@@ -4083,7 +4083,7 @@ own threads.</td></tr>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 18, 2019.
+        Last updated on Sep 19, 2019.
       </span>
 
     </p>
