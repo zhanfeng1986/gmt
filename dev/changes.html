@@ -345,14 +345,14 @@ will require the use of the new (and standard) syntax.</li>
 files and cache directories via the new commands
 <strong>gmt clear</strong> <em>all</em>|<em>history</em>|<em>conf</em>|<em>cache</em>.</li>
 <li><a class="reference internal" href="gmt2kml.html"><span class="doc">gmt2kml</span></a> adds option <strong>-Fw</strong> for drawing wiggles along track.</li>
-<li><a class="reference internal" href="gmtinfo.html"><span class="doc">info</span></a> adds option <strong>-F</strong> for reporting the number of tables,
+<li><a class="reference internal" href="gmtinfo.html"><span class="doc">gmtinfo</span></a> adds option <strong>-F</strong> for reporting the number of tables,
 segments, records, headers, etc.</li>
-<li><a class="reference internal" href="gmtmath.html"><span class="doc">math</span></a> will convert all plot dimensions given on the command line
+<li><a class="reference internal" href="gmtmath.html"><span class="doc">gmtmath</span></a> will convert all plot dimensions given on the command line
 to the prevailing length unit set via <a class="reference internal" href="gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a>.
 This allows you to combine measurements like 12c, 4i, and 72p. The module
 also has a new <strong>SORT</strong> operator for sorting columns and <strong>RMSW</strong> for weighted
 root-mean-square.</li>
-<li><a class="reference internal" href="gmtwhich.html"><span class="doc">which</span></a> <strong>-G</strong> will download a file from the internet (as discussed
+<li><a class="reference internal" href="gmtwhich.html"><span class="doc">gmtwhich</span></a> <strong>-G</strong> will download a file from the internet (as discussed
 above) before reporting the path to the file (which will then be in the
 user’s cache directory).</li>
 <li><a class="reference internal" href="grd2xyz.html"><span class="doc">grd2xyz</span></a> can now write weights equal to the area each node represents
@@ -505,23 +505,23 @@ uncertainties instead of weights and compute weight = 1/sigma.</li>
 <li><a class="reference internal" href="filter1d.html"><span class="doc">filter1d</span></a>: can now compute high-pass filtered output via a new
 <strong>+h</strong> modifier to the filter settings, similar to existing capability
 in <a class="reference internal" href="grdfilter.html"><span class="doc">grdfilter</span></a>.</li>
-<li><a class="reference internal" href="gmtconvert.html"><span class="doc">convert</span></a> has a new option (<strong>-F</strong>) for line segmentation and
+<li><a class="reference internal" href="gmtconvert.html"><span class="doc">gmtconvert</span></a> has a new option (<strong>-F</strong>) for line segmentation and
 network configuration. Also, the <strong>-D</strong> option has a new modifier <strong>+o</strong>
 that sets the origin used for the numbering of tables and segments.</li>
-<li><a class="reference internal" href="gmtinfo.html"><span class="doc">info</span></a> has a new option <strong>-L</strong> for finding the common bounds
+<li><a class="reference internal" href="gmtinfo.html"><span class="doc">gmtinfo</span></a> has a new option <strong>-L</strong> for finding the common bounds
 across multiple files or segments.  Also, the <strong>-T</strong> option has been
 modified (while still being backwards compatible) to allow <em>dz</em> to be
 optional, with modifiers <strong>+s</strong> forcing a symmetric range and <strong>+a</strong>
 offering <em>alpha</em>-trimming of the tails before estimating the range.</li>
-<li><a class="reference internal" href="gmtmath.html"><span class="doc">math</span></a> has gained new operators <strong>VAR</strong>,
+<li><a class="reference internal" href="gmtmath.html"><span class="doc">gmtmath</span></a> has gained new operators <strong>VAR</strong>,
 <strong>RMS</strong>, <strong>DENAN</strong>, as well as the weighted statistical operators
 <strong>LMSSCLW</strong>, <strong>MADW</strong>, <strong>MEANW</strong>, <strong>MEDIANW</strong>, <strong>MODEW</strong>, <strong>PQUANTW</strong>,
 <strong>STDW</strong>, and <strong>VARW</strong>.  Finally, we added a <strong>SORT</strong> operator that lets
 you sort an entire table in ascending or descending order based on the
 values in a selected column.</li>
-<li><a class="reference internal" href="gmtselect.html"><span class="doc">select</span></a> has a new option <strong>-G</strong> for selecting based on a mask grid.
+<li><a class="reference internal" href="gmtselect.html"><span class="doc">gmtselect</span></a> has a new option <strong>-G</strong> for selecting based on a mask grid.
 Points falling in bins whose grid nodes are non-zero are selected (or not if <strong>-Ig</strong>)</li>
-<li><a class="reference internal" href="gmtspatial.html"><span class="doc">spatial</span></a> has two new modifiers for the <strong>-Q</strong> option that allow
+<li><a class="reference internal" href="gmtspatial.html"><span class="doc">gmtspatial</span></a> has two new modifiers for the <strong>-Q</strong> option that allow
 output segments to be limited based on the segment length (or area for
 polygons) as well as sorting the output in ascending or descending order.</li>
 <li><a class="reference internal" href="grd2cpt.html"><span class="doc">grd2cpt</span></a> existing <strong>-F</strong> option now takes a new modifier <strong>+c</strong>
@@ -595,7 +595,7 @@ Here is a summary of these changes in six key areas:</p>
 <p><a class="reference internal" href="gmtlogo.html"><span class="doc">gmtlogo</span></a> is modeled after the shell script with the same
 name but is now a regular C module that can be used to add the
 GMT logo to maps and posters.</p>
-<p><a class="reference internal" href="gmtregress.html"><span class="doc">regress</span></a> determines linear regressions for data sets using
+<p><a class="reference internal" href="gmtregress.html"><span class="doc">gmtregress</span></a> determines linear regressions for data sets using
 a variety of misfit norms and regression modes.</p>
 <p>Four new modules have also been added to the <em>potential</em> supplement:</p>
 <dl class="docutils">
@@ -730,11 +730,11 @@ changes to existing syntax will be backwards compatible:</p>
 form of coordinates only (no text report) and you may choose which items to
 return by appending suitable flags.</li>
 <li><a class="reference internal" href="gmt.html"><span class="doc">gmt</span></a> now has a --show-cores option that reports the available cores.</li>
-<li><a class="reference internal" href="gmtconvert.html"><span class="doc">convert</span></a> adds a <strong>-C</strong> option that can be used to eliminate
+<li><a class="reference internal" href="gmtconvert.html"><span class="doc">gmtconvert</span></a> adds a <strong>-C</strong> option that can be used to eliminate
 segments on output based on the number of records it contains.  We also
 added a <strong>-F</strong> option to create line segments from an input data sets using
 a variety of connectivity modes.</li>
-<li><a class="reference internal" href="gmtmath.html"><span class="doc">math</span></a> adds a long list of new operators.  We have the operator <strong>BPDF</strong> for binomial probability distribution and
+<li><a class="reference internal" href="gmtmath.html"><span class="doc">gmtmath</span></a> adds a long list of new operators.  We have the operator <strong>BPDF</strong> for binomial probability distribution and
 <strong>BCDF</strong> for the cumulative binomial distribution function.  Due to confusion with
 other probability distributions we have introduced a series of new operator names
 (but honor backwards compatibility).  Listing the pdf and cdf for each distribution,
@@ -753,7 +753,7 @@ normalized coordinates from <strong>Tn</strong> to <strong>TNORM</strong> (but t
 operator <strong>POINT</strong> which reads a data table and places the mean x and mean y on the stack.
 Finally, we added new hyperbolic and inverse hyperbolic functions <strong>COTH</strong> and <strong>ACOTH</strong>,
 <strong>SECH</strong> and <strong>ASECH</strong>, and <strong>CSCH</strong> and <strong>ACSCH</strong>.</li>
-<li><a class="reference internal" href="gmtspatial.html"><span class="doc">spatial</span></a> now lets you specify Flat Earth or Geodesic distance calculations
+<li><a class="reference internal" href="gmtspatial.html"><span class="doc">gmtspatial</span></a> now lets you specify Flat Earth or Geodesic distance calculations
 for line lengths via <strong>-Q</strong>.</li>
 <li><a class="reference internal" href="grdblend.html"><span class="doc">grdblend</span></a> relaxes the <strong>-W</strong> restriction on only one output grid
 and adds the new mode <strong>-Wz</strong> to write the weight*zsum grid.</li>
@@ -918,25 +918,25 @@ be abbreviated, e.g., “gmt gmtconvert” may be called as “gmt convert”.</
 <dt><a class="reference internal" href="gmt2kml.html"><span class="doc">gmt2kml</span></a></dt>
 <dd>A <a class="reference internal" href="plot.html"><span class="doc">plot</span></a> -like tool to produce KML overlays for Google Earth. Previously
 found in the misc supplement.</dd>
-<dt><a class="reference internal" href="gmtconnect.html"><span class="doc">connect</span></a></dt>
+<dt><a class="reference internal" href="gmtconnect.html"><span class="doc">gmtconnect</span></a></dt>
 <dd>Connect individual lines whose end points match within given tolerance.
 Previously known as gmtstitch in the misc supplement (this name is recognized
 when GMT is running in compatibility mode).</dd>
-<dt><a class="reference internal" href="gmtget.html"><span class="doc">get</span></a></dt>
+<dt><a class="reference internal" href="gmtget.html"><span class="doc">gmtget</span></a></dt>
 <dd>Return the values of the specified GMT defaults.  Previously only
 implemented as a shell script and thus not available on all platforms.</dd>
-<dt><a class="reference internal" href="gmtinfo.html"><span class="doc">info</span></a></dt>
+<dt><a class="reference internal" href="gmtinfo.html"><span class="doc">gmtinfo</span></a></dt>
 <dd>Report information about data tables. Previously known by the name minmax
 (this name is still recognized when GMT is running in compatibility mode).</dd>
-<dt><a class="reference internal" href="gmtsimplify.html"><span class="doc">simplify</span></a></dt>
+<dt><a class="reference internal" href="gmtsimplify.html"><span class="doc">gmtsimplify</span></a></dt>
 <dd>A line-reduction tool for coastlines and similar lines. Previously found
 in the misc supplement under the name gmtdp (this name is recognized when
 GMT is running in compatibility mode).</dd>
-<dt><a class="reference internal" href="gmtspatial.html"><span class="doc">spatial</span></a></dt>
+<dt><a class="reference internal" href="gmtspatial.html"><span class="doc">gmtspatial</span></a></dt>
 <dd>Perform various geospatial operations on lines and polygons.</dd>
-<dt><a class="reference internal" href="gmtvector.html"><span class="doc">vector</span></a></dt>
+<dt><a class="reference internal" href="gmtvector.html"><span class="doc">gmtvector</span></a></dt>
 <dd>Perform basic vector manipulation in 2-D and 3-D.</dd>
-<dt><a class="reference internal" href="gmtwhich.html"><span class="doc">which</span></a></dt>
+<dt><a class="reference internal" href="gmtwhich.html"><span class="doc">gmtwhich</span></a></dt>
 <dd>Return the full path to specified data files.</dd>
 <dt>grdraster</dt>
 <dd>Extracts subsets from large global grids.  Previously
@@ -986,7 +986,7 @@ implemented by a series of new lower-case GMT common options:</p>
 <li>Programs that read data tables can now process the aspatial metadata
 in OGR/GMT files with the new <strong>-a</strong> option. These can be produced by
 <strong>ogr2ogr</strong> (a GDAL tool) when selecting the -f “GMT” output
-format. See Chapter <a class="reference internal" href="GMT_Docs.html#ogr-compat"><span class="std std-ref">The GMT Vector Data Format for OGR Compatibility</span></a> for an explanation of the OGR/GMT file format.
+format. See Chapter <a class="reference internal" href="cookbook/ogrgmt_format.html#ogr-compat"><span class="std std-ref">The GMT Vector Data Format for OGR Compatibility</span></a> for an explanation of the OGR/GMT file format.
 Because all GIS information is encoded via GMT comment lines these
 files can also be used in GMT 4 (the GIS metadata is simply
 skipped).</li>
@@ -1017,7 +1017,7 @@ transparency you can only see the effect if you convert it to PDF.</li>
 improvements; these include:</p>
 <ul class="simple">
 <li>The completely revised <strong>-B</strong> option can now handle irregular and custom annotations
-(see Section <a class="reference internal" href="GMT_Docs.html#custom-axes"><span class="std std-ref">Custom axes</span></a>). It also has a new automatic mode which
+(see Section <a class="reference internal" href="cookbook/features.html#custom-axes"><span class="std std-ref">Custom axes</span></a>). It also has a new automatic mode which
 will select optimal intervals given data range and plot size. The 3-D base maps can now have
 horizontal gridlines on xz and yz back walls.</li>
 <li>The <strong>-R</strong> option may now accept a leading unit which implies the
@@ -1099,7 +1099,7 @@ option.</li>
 name[=<em>ID</em>[<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][<strong>+n</strong><em>nan</em>] mechanism, there are times
 when we wish to scale the x,y domain as well. Users can now
 append <strong>+u</strong><em>unit</em> to their gridfile names, where <em>unit</em> is one of non-arc units listed
-in Table <a class="reference internal" href="GMT_Docs.html#tbl-distunits"><span class="std std-ref">distunits</span></a>.  This will convert your Cartesian
+in Table <a class="reference internal" href="cookbook/features.html#tbl-distunits"><span class="std std-ref">distunits</span></a>.  This will convert your Cartesian
 x and y coordinates <em>from</em> the given unit <em>to</em> meters.  We also support the inverse
 option <strong>+U</strong><em>unit</em>, which can be used to convert your grid
 coordinates <em>from</em> meters <em>to</em> the specified unit.</li>
@@ -1135,18 +1135,18 @@ output source id for median value.</li>
 <li><a class="reference internal" href="blockmode.html"><span class="doc">blockmode</span></a> added <strong>-Er</strong>[-] but
 for modal value. Added <strong>-Es</strong> to read and output source id for modal
 value.</li>
-<li><a class="reference internal" href="gmtconvert.html"><span class="doc">convert</span></a> now has optional PCRE (regular expression) support,
+<li><a class="reference internal" href="gmtconvert.html"><span class="doc">gmtconvert</span></a> now has optional PCRE (regular expression) support,
 as well as a new option to select a subset of segments specified by
 segment running numbers (<strong>-Q</strong>) and improved options to extract a
 subset of records (<strong>-E</strong>) and support for a list of search strings
 via <strong>-S+f</strong><em>patternfile</em>.</li>
-<li><a class="reference internal" href="gmtinfo.html"><span class="doc">info</span></a> has new option <strong>-A</strong> to
+<li><a class="reference internal" href="gmtinfo.html"><span class="doc">gmtinfo</span></a> has new option <strong>-A</strong> to
 select what group to report on (all input, per file, or per segment).
 Also, use <strong>-If</strong> to report an extended region optimized for fastest results in FFTs.
 and <strong>-Is</strong> to report an extended region optimized for fastest results in <a class="reference internal" href="surface.html"><span class="doc">surface</span></a>.
 Finally, new option <strong>-D</strong>[<em>inc</em>] to align regions found via <strong>-I</strong> with the center
 of the data.</li>
-<li><a class="reference internal" href="gmtmath.html"><span class="doc">math</span></a> with <strong>-N</strong><em>ncol</em> and input
+<li><a class="reference internal" href="gmtmath.html"><span class="doc">gmtmath</span></a> with <strong>-N</strong><em>ncol</em> and input
 files will add extra blank columns, if needed.  A new option <strong>-E</strong>
 sets the minimum eigenvalue used by operators LSQFIT and SVDFIT.
 Option <strong>-L</strong> applies operators on a per-segment basis instead of
@@ -1155,7 +1155,7 @@ operators have been added (BITAND, BITLEFT, BITNOT, BITOR, BITRIGHT,
 BITTEST, BITXOR, DIFF, IFELSE, ISFINITE, SVDFIT, TAPER).  Finally,
 we have implemented user macros for long or commonly used expressions,
 as well as ability to store and recall using named variables.</li>
-<li><a class="reference internal" href="gmtselect.html"><span class="doc">select</span></a> Takes <strong>-E</strong> to indicate if points exactly on a polygon
+<li><a class="reference internal" href="gmtselect.html"><span class="doc">gmtselect</span></a> Takes <strong>-E</strong> to indicate if points exactly on a polygon
 boundary are inside or outside, and <strong>-Z</strong> can now be extended to apply
 to other columns than the third.</li>
 <li><a class="reference internal" href="grd2cpt.html"><span class="doc">grd2cpt</span></a> takes <strong>-F</strong> to specify output color model and <strong>-G</strong> to
@@ -1273,7 +1273,7 @@ radial distance from point to annotation. Change all text to upper or
 lower case with <strong>-Q</strong>.</li>
 <li><a class="reference internal" href="plot.html"><span class="doc">plot</span></a> and <a class="reference internal" href="plot3d.html"><span class="doc">plot3d</span></a> both support the revised custom symbol macro
 language which has been expanded considerably to allow for complicated,
-multi-parameter symbols; see Chapter <a class="reference internal" href="GMT_Docs.html#app-custom-symbols"><span class="std std-ref">Custom Plot Symbols</span></a>
+multi-parameter symbols; see Chapter <a class="reference internal" href="cookbook/custom_symbols.html#app-custom-symbols"><span class="std std-ref">Custom Plot Symbols</span></a>
 for details. Finally, we allow the base for bars and columns optionally to be
 read from data file by not specifying the base value.</li>
 <li><a class="reference internal" href="sample1d.html"><span class="doc">sample1d</span></a> offers <strong>-A</strong> to control resampling of spatial curves (with <strong>-I</strong>).</li>
