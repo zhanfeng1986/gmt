@@ -244,7 +244,7 @@ format of the file being read. This mechanism is actually used
 automatically when the file format is not one of those that GMT
 recognize. However, sometimes the guessing may fail, so adding
 <em>id=gd</em> forces a read via GDAL.
-See Section <a class="reference internal" href="GMT_Docs.html#grid-file-format"><span class="std std-ref">Grid file format specifications</span></a> of the GMT Technical Reference and Cookbook for more information.</dd>
+See Section <a class="reference internal" href="cookbook/features.html#grid-file-format"><span class="std std-ref">Grid file format specifications</span></a> of the GMT Technical Reference and Cookbook for more information.</dd>
 <dt><strong>-G</strong><em>outgrdfile</em> [=id[<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][<strong>+n</strong><em>invalid</em>]][<em>:driver</em>[/<em>datatype</em>]]]</dt>
 <dd><p class="first">The grid file to be written. Append format =<em>id</em> code if not a
 standard COARDS-compliant netCDF grid file. If =<em>id</em> is set (see
@@ -268,7 +268,7 @@ netCDF, GTiFF, etc.), and the data type is one of
 where ‘i’ and ‘u’ denote signed and unsigned integers respectively.
 The default type is <em>float32</em>. Note also that both driver names and
 data types are case insensitive.
-See Section <a class="reference internal" href="GMT_Docs.html#grid-file-format"><span class="std std-ref">Grid file format specifications</span></a> of the GMT Technical Reference and Cookbook for more information.</p>
+See Section <a class="reference internal" href="cookbook/features.html#grid-file-format"><span class="std std-ref">Grid file format specifications</span></a> of the GMT Technical Reference and Cookbook for more information.</p>
 <p class="last">Consider setting <a class="reference internal" href="gmt.conf.html#io-nc4-deflation-level"><span class="std std-ref">IO_NC4_DEFLATION_LEVEL</span></a>
 to reduce file size and to further increase read/write performance.
 Especially when working with subsets of global grids, masks, and grids with
@@ -413,7 +413,7 @@ numerous third-party programs and are platform-independent. Some
 disk-space can be saved by storing the data as bytes or shorts in stead
 of integers. Use the <em>scale</em> and <em>offset</em> parameters to make this work
 without loss of data range or significance. For more details, see
-<a class="reference internal" href="GMT_Docs.html#app-file-formats"><span class="std std-ref">GMT File Formats</span></a> and <a class="reference internal" href="GMT_Docs.html#write-grids-images"><span class="std std-ref">Writing grids and images</span></a>.</p>
+<a class="reference internal" href="cookbook/file_formats.html#gmt-file-formats"><span class="std std-ref">GMT File Formats</span></a> and <a class="reference internal" href="cookbook/features.html#write-grids-images"><span class="std std-ref">Writing grids and images</span></a>.</p>
 <p><strong>Multi-variable grid files</strong></p>
 <p>By default, GMT programs will read the first 2-dimensional grid
 contained in a COARDS-compliant netCDF file. Alternatively, use
@@ -451,7 +451,7 @@ note that it is not possible for GMT to determine uniquely if a
 4-byte grid is float or int; in such cases it is best to use the <em>=ID</em>
 mechanism to specify the file format. In all cases a native grid is
 considered to be signed (i.e., there are no provision for unsigned short
-ints or unsigned bytes). For header and grid details, see <a class="reference internal" href="GMT_Docs.html#app-file-formats"><span class="std std-ref">GMT File Formats</span></a>.</p>
+ints or unsigned bytes). For header and grid details, see <a class="reference internal" href="cookbook/file_formats.html#gmt-file-formats"><span class="std std-ref">GMT File Formats</span></a>.</p>
 </div>
 <div class="section" id="grid-values-precision">
 <h2>Grid Values Precision<a class="headerlink" href="#grid-values-precision" title="Permalink to this headline">¶</a></h2>

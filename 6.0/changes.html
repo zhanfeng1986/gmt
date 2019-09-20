@@ -986,7 +986,7 @@ implemented by a series of new lower-case GMT common options:</p>
 <li>Programs that read data tables can now process the aspatial metadata
 in OGR/GMT files with the new <strong>-a</strong> option. These can be produced by
 <strong>ogr2ogr</strong> (a GDAL tool) when selecting the -f “GMT” output
-format. See Chapter <a class="reference internal" href="GMT_Docs.html#ogr-compat"><span class="std std-ref">The GMT Vector Data Format for OGR Compatibility</span></a> for an explanation of the OGR/GMT file format.
+format. See Chapter <a class="reference internal" href="cookbook/ogrgmt_format.html#ogr-compat"><span class="std std-ref">The GMT Vector Data Format for OGR Compatibility</span></a> for an explanation of the OGR/GMT file format.
 Because all GIS information is encoded via GMT comment lines these
 files can also be used in GMT 4 (the GIS metadata is simply
 skipped).</li>
@@ -1017,7 +1017,7 @@ transparency you can only see the effect if you convert it to PDF.</li>
 improvements; these include:</p>
 <ul class="simple">
 <li>The completely revised <strong>-B</strong> option can now handle irregular and custom annotations
-(see Section <a class="reference internal" href="GMT_Docs.html#custom-axes"><span class="std std-ref">Custom axes</span></a>). It also has a new automatic mode which
+(see Section <a class="reference internal" href="cookbook/features.html#custom-axes"><span class="std std-ref">Custom axes</span></a>). It also has a new automatic mode which
 will select optimal intervals given data range and plot size. The 3-D base maps can now have
 horizontal gridlines on xz and yz back walls.</li>
 <li>The <strong>-R</strong> option may now accept a leading unit which implies the
@@ -1099,7 +1099,7 @@ option.</li>
 name[=<em>ID</em>[<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][<strong>+n</strong><em>nan</em>] mechanism, there are times
 when we wish to scale the x,y domain as well. Users can now
 append <strong>+u</strong><em>unit</em> to their gridfile names, where <em>unit</em> is one of non-arc units listed
-in Table <a class="reference internal" href="GMT_Docs.html#tbl-distunits"><span class="std std-ref">distunits</span></a>.  This will convert your Cartesian
+in Table <a class="reference internal" href="cookbook/features.html#tbl-distunits"><span class="std std-ref">distunits</span></a>.  This will convert your Cartesian
 x and y coordinates <em>from</em> the given unit <em>to</em> meters.  We also support the inverse
 option <strong>+U</strong><em>unit</em>, which can be used to convert your grid
 coordinates <em>from</em> meters <em>to</em> the specified unit.</li>
@@ -1273,7 +1273,7 @@ radial distance from point to annotation. Change all text to upper or
 lower case with <strong>-Q</strong>.</li>
 <li><a class="reference internal" href="plot.html"><span class="doc">plot</span></a> and <a class="reference internal" href="plot3d.html"><span class="doc">plot3d</span></a> both support the revised custom symbol macro
 language which has been expanded considerably to allow for complicated,
-multi-parameter symbols; see Chapter <a class="reference internal" href="GMT_Docs.html#app-custom-symbols"><span class="std std-ref">Custom Plot Symbols</span></a>
+multi-parameter symbols; see Chapter <a class="reference internal" href="cookbook/custom_symbols.html#app-custom-symbols"><span class="std std-ref">Custom Plot Symbols</span></a>
 for details. Finally, we allow the base for bars and columns optionally to be
 read from data file by not specifying the base value.</li>
 <li><a class="reference internal" href="sample1d.html"><span class="doc">sample1d</span></a> offers <strong>-A</strong> to control resampling of spatial curves (with <strong>-I</strong>).</li>
