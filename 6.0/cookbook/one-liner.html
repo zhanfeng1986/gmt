@@ -91,7 +91,7 @@
             
               <p class="caption"><span class="caption-text">Getting started</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial.html">The GMT Tutorial</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
@@ -99,9 +99,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../modules.html">GMT Core Modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../supplements.html">GMT Supplemental Modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cookbook.html">The GMT Cookbook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../std_opts.html">Common Options</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../proj_codes.html">Projection Specifications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../gmt.conf.html">GMT Defaults</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../datasets.html">Datasets</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
@@ -214,8 +211,9 @@
 <p>Modern mode simplifies GMT by placing all commands between gmt <a class="reference internal" href="../begin.html"><span class="doc">begin</span></a> and gmt <a class="reference internal" href="../end.html"><span class="doc">end</span></a>.
 However, for very simply plots, such as a simple coastline map that only requires a call to
 a single module, having to place that command between <strong>begin</strong> and <strong>end</strong> makes the documentation
-longer and more tedious to maintain.  Because of this, we have implemented a special way
-to begin and end GMT modern mode within a single call to a plotting module.</p>
+longer and more tedious to maintain.  Because of this, we have implemented a special and quick way
+to begin and end GMT modern mode within a single call to a plotting module. When the plot finishes
+we automatically call gmt <a class="reference internal" href="../end.html"><span class="doc">end</span></a> with the show command to display the plot(s).</p>
 </div>
 <div class="section" id="one-liner-syntax">
 <h2>One-liner Syntax<a class="headerlink" href="#one-liner-syntax" title="Permalink to this headline">¶</a></h2>
@@ -263,7 +261,7 @@ grid, making a JPG plot called France2, try</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 21, 2019.
+        Last updated on Sep 22, 2019.
       </span>
 
     </p>

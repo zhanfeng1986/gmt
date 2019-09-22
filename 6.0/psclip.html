@@ -91,7 +91,7 @@
             
               <p class="caption"><span class="caption-text">Getting started</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Example Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
@@ -99,9 +99,6 @@
 <li class="toctree-l1"><a class="reference internal" href="modules.html">GMT Core Modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="supplements.html">GMT Supplemental Modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cookbook.html">The GMT Cookbook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="std_opts.html">Common Options</a></li>
-<li class="toctree-l1"><a class="reference internal" href="proj_codes.html">Projection Specifications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gmt.conf.html">GMT Defaults</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
@@ -220,6 +217,7 @@
 [ <a class="reference internal" href="#p"><span> <strong>-P</strong></span></a></strong> ] [ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong> ]
 [ <a class="reference internal" href="#u"><span> <strong>-U</strong></span></a></strong>[<em>stamp</em>] ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
+[ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong>[<em>pen</em>] ]
 [ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] ]
 [ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] ]
 [ <strong>-bi</strong><a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">binary</span></a> ]
@@ -317,6 +315,10 @@ the module with the arguments <strong>-N</strong> /dev/null (or, under Windows,
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Select verbosity level [c].  </dd>
 </dl>
+<dl class="docutils" id="w">
+<dt><strong>-W</strong><em>pen</em></dt>
+<dd>Draw outline of clip path using given pen attributes [Default is no outline].</dd>
+</dl>
 <p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</p>
 <dl class="docutils">
 <dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -393,19 +395,21 @@ They are not available when using GMT modern mode.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p>To set up a complex clip
-area to which all subsequent plotting will be confined, run:</p>
+<p>To see the effect of a simple clip path which result in some symbols
+being partly visible or missing altogether, try</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psclip my_region.xy -R0/40/0/40 -Jm0.3i -K &gt; clip_mask_on.ps
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psclip -R0/6/0/6 -Jx2.5c -W1p,blue -P -K <span class="s">&lt;&lt; EOF &gt; clip.ps</span>
+<span class="s">0 0</span>
+<span class="s">5 1</span>
+<span class="s">5 5</span>
+<span class="s">EOF</span>
+gmt psxy @tut_data.txt -Gred -Sc2c -R -J -O -K &gt;&gt; clip.ps
+gmt psclip -C -O -R -J -Baf &gt;&gt; clip.ps
 </pre></div>
 </div>
 </div></blockquote>
-<p>To deactivate the clipping in an existing plotfile, run:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psclip -C -O &gt;&gt; complex_plot.ps
-</pre></div>
-</div>
-</div></blockquote>
+<p>where we activate and deactivate the clip path.  Note we also draw the
+outline of the clip path to make it clear what is being clipped.</p>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
@@ -428,7 +432,7 @@ area to which all subsequent plotting will be confined, run:</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 21, 2019.
+        Last updated on Sep 22, 2019.
       </span>
 
     </p>
