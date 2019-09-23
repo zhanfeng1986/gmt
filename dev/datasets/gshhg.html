@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>18. The GMT High-Resolution Coastline Data &mdash; GMT 6.1.0 documentation</title>
+  <title>The GMT High-Resolution Coastline Data &mdash; GMT 6.1.0 documentation</title>
   
 
   
@@ -40,8 +40,8 @@
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="19. GMT on non-UNIX Platforms" href="non_unix_platforms.html" />
-    <link rel="prev" title="17. Filtering of Data in GMT" href="data_filtering.html" /> 
+    <link rel="next" title="Global Earth Relief Grids" href="earth_relief.html" />
+    <link rel="prev" title="Datasets" href="../datasets.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -93,56 +93,32 @@
             
               <p class="caption"><span class="caption-text">Getting started</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial.html">The GMT Tutorial</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../modules.html">GMT Core Modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../supplements.html">GMT Supplemental Modules</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../cookbook.html">The GMT Cookbook</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="acknowledgments.html">1. Acknowledgments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="citation.html">2. A Reminder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="copyright.html">3. Copyright and Caveat Emptor!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="preface.html">4. Preface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html">5. Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="overview.html">6. GMT Overview and Quick Reference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="features.html">7. General Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coordinate_transformations.html">8. GMT Coordinate Transformations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="map_projections.html">9. GMT Map Projections</a></li>
-<li class="toctree-l2"><a class="reference internal" href="supplemental_packages.html">10. GMT Supplemental Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file_formats.html">11. GMT File Formats</a></li>
-<li class="toctree-l2"><a class="reference internal" href="include_figures.html">12. Including GMT Graphics into your Documents</a></li>
-<li class="toctree-l2"><a class="reference internal" href="predefined_patterns.html">13. Predefined Bit and Hachure Patterns in GMT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="octal_codes.html">14. Chart of Octal Codes for Characters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="postscript_fonts.html">15. PostScript Fonts Used by GMT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="colorspace.html">16. Color Space: The Final Frontier</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_filtering.html">17. Filtering of Data in GMT</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">18. The GMT High-Resolution Coastline Data</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#selecting-the-right-data">18.1. Selecting the right data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#format-required-by-gmt">18.2. Format required by GMT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#the-long-and-winding-road">18.3. The long and winding road</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#the-five-resolutions">18.4. The Five Resolutions</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#the-crude-resolution-dc">18.4.1. The crude resolution (<strong>-Dc</strong>)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#the-low-resolution-dl">18.4.2. The low resolution (<strong>-Dl</strong>)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#the-intermediate-resolution-di">18.4.3. The intermediate resolution (<strong>-Di</strong>)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#the-high-resolution-dh">18.4.4. The high resolution (<strong>-Dh</strong>)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#the-full-resolution-df">18.4.5. The full resolution (<strong>-Df</strong>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookbook.html">The GMT Cookbook</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../datasets.html">Datasets</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">The GMT High-Resolution Coastline Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#selecting-the-right-data">Selecting the right data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#format-required-by-gmt">Format required by GMT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-long-and-winding-road">The long and winding road</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-five-resolutions">The Five Resolutions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-crude-resolution-dc">The crude resolution (<strong>-Dc</strong>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-low-resolution-dl">The low resolution (<strong>-Dl</strong>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-intermediate-resolution-di">The intermediate resolution (<strong>-Di</strong>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-high-resolution-dh">The high resolution (<strong>-Dh</strong>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-full-resolution-df">The full resolution (<strong>-Df</strong>)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="non_unix_platforms.html">19. GMT on non-UNIX Platforms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="colorbars.html">20. Of Colors and Color Legends</a></li>
-<li class="toctree-l2"><a class="reference internal" href="custom_symbols.html">21. Custom Plot Symbols</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contour_annotations.html">22. Annotation of Contours and “Quoted Lines”</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ogrgmt_format.html">23. The GMT Vector Data Format for OGR Compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="earth_relief.html">Global Earth Relief Grids</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../std_opts.html">Common Options</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../proj_codes.html">Projection Specifications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../gmt.conf.html">GMT Defaults</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../datasets.html">Datasets</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
@@ -226,16 +202,16 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../cookbook.html">The GMT Cookbook</a> &raquo;</li>
+          <li><a href="../datasets.html">Datasets</a> &raquo;</li>
         
-      <li>18. The GMT High-Resolution Coastline Data</li>
+      <li>The GMT High-Resolution Coastline Data</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/GenericMappingTools/gmt/blob/6.1/doc/rst/source/cookbook/coastline.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/GenericMappingTools/gmt/blob/6.1/doc/rst/source/datasets/gshhg.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -250,7 +226,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="the-gmt-high-resolution-coastline-data">
-<h1>18. The GMT High-Resolution Coastline Data<a class="headerlink" href="#the-gmt-high-resolution-coastline-data" title="Permalink to this headline">¶</a></h1>
+<h1>The GMT High-Resolution Coastline Data<a class="headerlink" href="#the-gmt-high-resolution-coastline-data" title="Permalink to this headline">¶</a></h1>
 <p>Starting with version 3.0, GMT use a completely new coastline database
 and the <a class="reference internal" href="../coast.html"><span class="doc">coast</span></a> utility was been
 completely rewritten to handle the new file format. Many users have
@@ -260,7 +236,7 @@ public domain for years. To answer such questions we will take you along
 the road that starts with these public domain data sets and ends up with
 the database used by GMT.</p>
 <div class="section" id="selecting-the-right-data">
-<h2>18.1. Selecting the right data<a class="headerlink" href="#selecting-the-right-data" title="Permalink to this headline">¶</a></h2>
+<h2>Selecting the right data<a class="headerlink" href="#selecting-the-right-data" title="Permalink to this headline">¶</a></h2>
 <p>There are two well-known public-domain data sets that could be used for
 this purpose. Once is known as the World Data Bank II or CIA Data Bank
 (WDB) and contains coastlines, lakes, political boundaries, and rivers.
@@ -270,10 +246,10 @@ data is far superior to the WDB data as far as data quality goes, but as
 noted it lacks lakes, not to mention rivers and borders. We decided to
 use the WVS whenever possible and supplement it with WDB data. We got
 these data over the Internet; they are also available on CD-ROM from the
-National Geophysical Data Center in Boulder, Colorado <a class="footnote-reference" href="#id5" id="id1">[31]</a>.</p>
+National Geophysical Data Center in Boulder, Colorado <a class="footnote-reference" href="#id5" id="id1">[1]</a>.</p>
 </div>
 <div class="section" id="format-required-by-gmt">
-<h2>18.2. Format required by GMT<a class="headerlink" href="#format-required-by-gmt" title="Permalink to this headline">¶</a></h2>
+<h2>Format required by GMT<a class="headerlink" href="#format-required-by-gmt" title="Permalink to this headline">¶</a></h2>
 <p>In order to paint continents or oceans it is necessary that the
 coastline data be organized in polygons that may be filled. Simple line
 segments can be used to draw the coastline, but for painting polygons
@@ -292,7 +268,7 @@ older versions of <a class="reference internal" href="../coast.html"><span class
 painted lakes and wiped out whatever was plotted beneath).</p>
 </div>
 <div class="section" id="the-long-and-winding-road">
-<h2>18.3. The long and winding road<a class="headerlink" href="#the-long-and-winding-road" title="Permalink to this headline">¶</a></h2>
+<h2>The long and winding road<a class="headerlink" href="#the-long-and-winding-road" title="Permalink to this headline">¶</a></h2>
 <p>The WVS and WDB together represent more than 100 Mb of binary data and
 something like 20 million data points. Hence, it becomes obvious that
 any manipulation of these data must be automated. For instance, the
@@ -367,13 +343,13 @@ most of them will plot several times on the same pixel and the
 operation would take a very long time to complete. We chose to make 5
 versions on the database, corresponding to different resolutions. The
 decimation was carried out using the Douglas-Peucker (DP)
-line-reduction algorithm <a class="footnote-reference" href="#id6" id="id2">[32]</a>. We chose the cutoffs so that each
+line-reduction algorithm <a class="footnote-reference" href="#id6" id="id2">[2]</a>. We chose the cutoffs so that each
 subset was approximately 20% the size of the next higher resolution.
 The five resolutions are called <strong>f</strong>ull, <strong>h</strong>igh,
 <strong>i</strong>ntermediate, <strong>l</strong>ow, and <strong>c</strong>rude; they are accessed in
 <a class="reference internal" href="../coast.html"><span class="doc">coast</span></a>, <a class="reference internal" href="../gmtselect.html"><span class="doc">gmtselect</span></a>, and
 <a class="reference internal" href="../grdlandmask.html"><span class="doc">grdlandmask</span></a> with the <strong>-D</strong>
-option <a class="footnote-reference" href="#id7" id="id3">[33]</a>. For each of these 5 data sets (<strong>f</strong>, <strong>h</strong>, <strong>i</strong>,
+option <a class="footnote-reference" href="#id7" id="id3">[3]</a>. For each of these 5 data sets (<strong>f</strong>, <strong>h</strong>, <strong>i</strong>,
 <strong>l</strong>, <strong>c</strong>) we specified an equidistant grid (1, 2, 5, 10, 20) and
 split all polygons into line-segments that each fit inside one of the
 many boxes defined by these grid lines. Thus, to paint the entire
@@ -384,7 +360,7 @@ came from in order to prescribe the correct paint or ignore if the
 feature is smaller than the cutoff specified by the user. The
 resulting segment coordinates were then scaled to fit in short
 integer format to preserve precision and written in netCDF format for
-ultimate portability across hardware platforms <a class="footnote-reference" href="#id8" id="id4">[34]</a>.</p>
+ultimate portability across hardware platforms <a class="footnote-reference" href="#id8" id="id4">[4]</a>.</p>
 </li>
 <li><p class="first">While we are now back to a file of line-segments we are in a much
 better position to create smaller polygons for painting. Two problems
@@ -405,7 +381,7 @@ island.</li>
 </ul>
 </div>
 <div class="section" id="the-five-resolutions">
-<h2>18.4. The Five Resolutions<a class="headerlink" href="#the-five-resolutions" title="Permalink to this headline">¶</a></h2>
+<h2>The Five Resolutions<a class="headerlink" href="#the-five-resolutions" title="Permalink to this headline">¶</a></h2>
 <p>We will demonstrate the power of the new database by starting with a
 regional hemisphere map centered near Papua New Guinea and zoom in on a
 specified point. The map regions will be specified in projected km from
@@ -415,7 +391,7 @@ Also, as we zoom in on the projection center we want to draw the outline
 of the next map region on the plot. To do that we use the <strong>-D</strong> option
 in <a class="reference internal" href="../basemap.html"><span class="doc">basemap</span></a>.</p>
 <div class="section" id="the-crude-resolution-dc">
-<h3>18.4.1. The crude resolution (<strong>-Dc</strong>)<a class="headerlink" href="#the-crude-resolution-dc" title="Permalink to this headline">¶</a></h3>
+<h3>The crude resolution (<strong>-Dc</strong>)<a class="headerlink" href="#the-crude-resolution-dc" title="Permalink to this headline">¶</a></h3>
 <p>We begin with an azimuthal equidistant map of the hemisphere centered on
 130°21’E, 0°12’S, which is slightly west of New Guinea, near the Strait of
 Dampier. The edges of the map are all 9000 km true distance from the
@@ -448,7 +424,7 @@ longitudinal annotations near the S pole that otherwise would overprint.
 The square box indicates the outline of the next map.</p>
 </div>
 <div class="section" id="the-low-resolution-dl">
-<h3>18.4.2. The low resolution (<strong>-Dl</strong>)<a class="headerlink" href="#the-low-resolution-dl" title="Permalink to this headline">¶</a></h3>
+<h3>The low resolution (<strong>-Dl</strong>)<a class="headerlink" href="#the-low-resolution-dl" title="Permalink to this headline">¶</a></h3>
 <p>We have now reduced the map area by zooming in on the map center. Now,
 the edges of the map are all 2000 km true distance from the projection
 center. At this scale we choose the low resolution data that faithfully
@@ -472,7 +448,7 @@ gmt end show
 </div>
 </div>
 <div class="section" id="the-intermediate-resolution-di">
-<h3>18.4.3. The intermediate resolution (<strong>-Di</strong>)<a class="headerlink" href="#the-intermediate-resolution-di" title="Permalink to this headline">¶</a></h3>
+<h3>The intermediate resolution (<strong>-Di</strong>)<a class="headerlink" href="#the-intermediate-resolution-di" title="Permalink to this headline">¶</a></h3>
 <p>We continue to zoom in on the map center. In this map, the edges of the
 map are all 500 km true distance from the projection center. We abandon
 the low resolution data set as it would look too jagged at this scale
@@ -502,7 +478,7 @@ rose just because we have the power to do so.</span></p>
 </div>
 </div>
 <div class="section" id="the-high-resolution-dh">
-<h3>18.4.4. The high resolution (<strong>-Dh</strong>)<a class="headerlink" href="#the-high-resolution-dh" title="Permalink to this headline">¶</a></h3>
+<h3>The high resolution (<strong>-Dh</strong>)<a class="headerlink" href="#the-high-resolution-dh" title="Permalink to this headline">¶</a></h3>
 <p>The relentless zooming continues! Now, the edges of the map are all 100
 km true distance from the projection center. We step up to the high
 resolution data set as it is needed to accurately portray the detailed
@@ -527,7 +503,7 @@ gmt end show
 </div>
 </div>
 <div class="section" id="the-full-resolution-df">
-<h3>18.4.5. The full resolution (<strong>-Df</strong>)<a class="headerlink" href="#the-full-resolution-df" title="Permalink to this headline">¶</a></h3>
+<h3>The full resolution (<strong>-Df</strong>)<a class="headerlink" href="#the-full-resolution-df" title="Permalink to this headline">¶</a></h3>
 <p>We now arrive at our final plot, which shows a detailed view of the
 western side of the small island of Waigeo. The map area is
 approximately 40 by 40 km. We call upon the full resolution data set to
@@ -551,13 +527,13 @@ and wise use of this vast data set.</p>
 <table class="docutils footnote" frame="void" id="id5" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[31]</a></td><td><a class="reference external" href="http://www.ngdc.noaa.gov/">National Geophysical Data Center, Boulder, Colorado</a></td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="http://www.ngdc.noaa.gov/">National Geophysical Data Center, Boulder, Colorado</a></td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id6" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[32]</a></td><td>Douglas, D.H., and T. K. Peucker, 1973, Algorithms for the reduction
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>Douglas, D.H., and T. K. Peucker, 1973, Algorithms for the reduction
 of the number of points required to represent a digitized line or its
 caricature, <em>Canadian Cartographer</em>, 10, 112–122.</td></tr>
 </tbody>
@@ -565,7 +541,7 @@ caricature, <em>Canadian Cartographer</em>, 10, 112–122.</td></tr>
 <table class="docutils footnote" frame="void" id="id7" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[33]</a></td><td>The full and high resolution files are in separate archives because
+<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td>The full and high resolution files are in separate archives because
 of their size. Not all users may need these files as the intermediate
 data set is better than the data provided with version 2.2.4.</td></tr>
 </tbody>
@@ -573,7 +549,7 @@ data set is better than the data provided with version 2.2.4.</td></tr>
 <table class="docutils footnote" frame="void" id="id8" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[34]</a></td><td>If you need complete polygons in a simpler format, see the article on
+<tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td><td>If you need complete polygons in a simpler format, see the article on
 GSHHG (Wessel, P., and W. H. F. Smith, 1996, A Global,
 self-consistent, hierarchical, high-resolution shoreline database,
 <em>J. Geophys. Res. 101</em>, 8741–8743).</td></tr>
@@ -591,10 +567,10 @@ self-consistent, hierarchical, high-resolution shoreline database,
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="non_unix_platforms.html" class="btn btn-neutral float-right" title="19. GMT on non-UNIX Platforms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="earth_relief.html" class="btn btn-neutral float-right" title="Global Earth Relief Grids" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="data_filtering.html" class="btn btn-neutral float-left" title="17. Filtering of Data in GMT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../datasets.html" class="btn btn-neutral float-left" title="Datasets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -606,7 +582,7 @@ self-consistent, hierarchical, high-resolution shoreline database,
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 22, 2019.
+        Last updated on Sep 23, 2019.
       </span>
 
     </p>

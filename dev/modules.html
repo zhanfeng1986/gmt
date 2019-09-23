@@ -93,7 +93,7 @@
             
               <p class="caption"><span class="caption-text">Getting started</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="gallery.html">Example gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery.html">Example Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
@@ -115,9 +115,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="supplements.html">GMT Supplemental Modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cookbook.html">The GMT Cookbook</a></li>
-<li class="toctree-l1"><a class="reference internal" href="std_opts.html">Common Options</a></li>
-<li class="toctree-l1"><a class="reference internal" href="proj_codes.html">Projection Specifications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gmt.conf.html">GMT Defaults</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
@@ -242,13 +239,15 @@
 <li><a class="reference internal" href="coast.html"><span class="doc">coast</span></a></li>
 <li><a class="reference internal" href="colorbar.html"><span class="doc">colorbar</span></a></li>
 <li><a class="reference internal" href="contour.html"><span class="doc">contour</span></a></li>
+<li><a class="reference internal" href="dimfilter.html"><span class="doc">dimfilter</span></a></li>
+<li><a class="reference internal" href="docs.html"><span class="doc">docs</span></a></li>
 <li><a class="reference internal" href="end.html"><span class="doc">end</span></a></li>
 <li><a class="reference internal" href="events.html"><span class="doc">events</span></a></li>
 <li><a class="reference internal" href="figure.html"><span class="doc">figure</span></a></li>
 <li><a class="reference internal" href="filter1d.html"><span class="doc">filter1d</span></a></li>
-<li><a class="reference internal" href="fitcircle.html"><span class="doc">fitcircle</span></a></li>
 </ul>
 </td><td><ul class="simple">
+<li><a class="reference internal" href="fitcircle.html"><span class="doc">fitcircle</span></a></li>
 <li><a class="reference internal" href="gmt2kml.html"><span class="doc">gmt2kml</span></a></li>
 <li><a class="reference internal" href="gmtconnect.html"><span class="doc">gmtconnect</span></a></li>
 <li><a class="reference internal" href="gmtconvert.html"><span class="doc">gmtconvert</span></a></li>
@@ -276,13 +275,14 @@
 <li><a class="reference internal" href="grdcut.html"><span class="doc">grdcut</span></a></li>
 <li><a class="reference internal" href="grdedit.html"><span class="doc">grdedit</span></a></li>
 <li><a class="reference internal" href="grdfft.html"><span class="doc">grdfft</span></a></li>
+<li><a class="reference internal" href="grdfill.html"><span class="doc">grdfill</span></a></li>
 <li><a class="reference internal" href="grdfilter.html"><span class="doc">grdfilter</span></a></li>
 <li><a class="reference internal" href="grdgradient.html"><span class="doc">grdgradient</span></a></li>
 <li><a class="reference internal" href="grdhisteq.html"><span class="doc">grdhisteq</span></a></li>
 <li><a class="reference internal" href="grdimage.html"><span class="doc">grdimage</span></a></li>
-<li><a class="reference internal" href="grdinfo.html"><span class="doc">grdinfo</span></a></li>
 </ul>
 </td><td><ul class="simple">
+<li><a class="reference internal" href="grdinfo.html"><span class="doc">grdinfo</span></a></li>
 <li><a class="reference internal" href="grdlandmask.html"><span class="doc">grdlandmask</span></a></li>
 <li><a class="reference internal" href="grdmask.html"><span class="doc">grdmask</span></a></li>
 <li><a class="reference internal" href="grdmath.html"><span class="doc">grdmath</span></a></li>
@@ -297,9 +297,9 @@
 <li><a class="reference internal" href="greenspline.html"><span class="doc">greenspline</span></a></li>
 <li><a class="reference internal" href="histogram.html"><span class="doc">histogram</span></a></li>
 <li><a class="reference internal" href="image.html"><span class="doc">image</span></a></li>
-<li><a class="reference internal" href="inset.html"><span class="doc">inset</span></a></li>
 </ul>
 </td><td><ul class="simple">
+<li><a class="reference internal" href="inset.html"><span class="doc">inset</span></a></li>
 <li><a class="reference internal" href="kml2gmt.html"><span class="doc">kml2gmt</span></a></li>
 <li><a class="reference internal" href="legend.html"><span class="doc">legend</span></a></li>
 <li><a class="reference internal" href="makecpt.html"><span class="doc">makecpt</span></a></li>
@@ -324,6 +324,7 @@
 <li><a class="reference internal" href="splitxyz.html"><span class="doc">splitxyz</span></a></li>
 <li><a class="reference internal" href="subplot.html"><span class="doc">subplot</span></a></li>
 <li><a class="reference internal" href="surface.html"><span class="doc">surface</span></a></li>
+<li><a class="reference internal" href="ternary.html"><span class="doc">ternary</span></a></li>
 <li><a class="reference internal" href="text.html"><span class="doc">text</span></a></li>
 <li><a class="reference internal" href="trend1d.html"><span class="doc">trend1d</span></a></li>
 <li><a class="reference internal" href="trend2d.html"><span class="doc">trend2d</span></a></li>
@@ -458,10 +459,13 @@
 <tr class="row-odd"><td><a class="reference internal" href="blockmode.html"><span class="doc">blockmode</span></a></td>
 <td>Mode estimate (<em>x</em>,<em>y</em>,<em>z</em>) table data filter/decimator</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="filter1d.html"><span class="doc">filter1d</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="dimfilter.html"><span class="doc">dimfilter</span></a></td>
+<td>Directional filtering of 2-D gridded files in the space/time domain</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="filter1d.html"><span class="doc">filter1d</span></a></td>
 <td>Time domain filtering of 1-D data tables</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="grdfilter.html"><span class="doc">grdfilter</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="grdfilter.html"><span class="doc">grdfilter</span></a></td>
 <td>Filter 2-D gridded data sets in the space domain</td>
 </tr>
 </tbody>
@@ -658,8 +662,8 @@
 <tr class="row-even"><td><a class="reference internal" href="gmtregress.html"><span class="doc">gmtregress</span></a></td>
 <td>Linear regression of 1-D data sets</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="grdtrack.html"><span class="doc">grdtrack</span></a></td>
-<td>Sample 2-D gridded data sets at specified (<em>x</em>,<em>y</em>) locations</td>
+<tr class="row-odd"><td><a class="reference internal" href="grdtrend.html"><span class="doc">grdtrend</span></a></td>
+<td>Fit trend surface to grids and compute residuals</td>
 </tr>
 <tr class="row-even"><td><a class="reference internal" href="trend1d.html"><span class="doc">trend1d</span></a></td>
 <td>Fits polynomial or Fourier trends to <span class="math notranslate nohighlight">\(y = f(x)\)</span> series</td>
@@ -725,13 +729,16 @@
 <tr class="row-odd"><td><a class="reference internal" href="gmt2kml.html"><span class="doc">gmt2kml</span></a></td>
 <td>Like <a class="reference internal" href="plot.html"><span class="doc">plot</span></a> but writes KML for use in Google Earth</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="kml2gmt.html"><span class="doc">kml2gmt</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="gmtwhich.html"><span class="doc">gmtwhich</span></a></td>
+<td>Find full path to specified files</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="kml2gmt.html"><span class="doc">kml2gmt</span></a></td>
 <td>Extracts coordinates from Google Earth KML files</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="movie.html"><span class="doc">movie</span></a></td>
+<tr class="row-even"><td><a class="reference internal" href="movie.html"><span class="doc">movie</span></a></td>
 <td>Create animation sequences and movies</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="psconvert.html"><span class="doc">psconvert</span></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="psconvert.html"><span class="doc">psconvert</span></a></td>
 <td>Crop and convert PostScript files to raster images, EPS, and PDF</td>
 </tr>
 </tbody>
@@ -762,7 +769,7 @@
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 22, 2019.
+        Last updated on Sep 23, 2019.
       </span>
 
     </p>

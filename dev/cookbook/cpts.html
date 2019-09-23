@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>20. Of Colors and Color Legends &mdash; GMT 6.1.0 documentation</title>
+  <title>19. Of Colors and Color Legends &mdash; GMT 6.1.0 documentation</title>
   
 
   
@@ -40,8 +40,8 @@
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="21. Custom Plot Symbols" href="custom_symbols.html" />
-    <link rel="prev" title="19. GMT on non-UNIX Platforms" href="non_unix_platforms.html" /> 
+    <link rel="next" title="20. Custom Plot Symbols" href="custom_symbols.html" />
+    <link rel="prev" title="18. GMT on non-UNIX Platforms" href="non_unix_platforms.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -93,7 +93,7 @@
             
               <p class="caption"><span class="caption-text">Getting started</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example Gallery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial.html">The GMT Tutorial</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
@@ -118,21 +118,18 @@
 <li class="toctree-l2"><a class="reference internal" href="postscript_fonts.html">15. PostScript Fonts Used by GMT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="colorspace.html">16. Color Space: The Final Frontier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_filtering.html">17. Filtering of Data in GMT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coastline.html">18. The GMT High-Resolution Coastline Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="non_unix_platforms.html">19. GMT on non-UNIX Platforms</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">20. Of Colors and Color Legends</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#built-in-color-palette-tables-cpt">20.1. Built-in color palette tables (CPT)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#labeled-and-non-equidistant-color-legends">20.2. Labeled and non-equidistant color legends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="non_unix_platforms.html">18. GMT on non-UNIX Platforms</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">19. Of Colors and Color Legends</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#built-in-color-palette-tables-cpt">19.1. Built-in color palette tables (CPT)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#labeled-and-non-equidistant-color-legends">19.2. Labeled and non-equidistant color legends</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="custom_symbols.html">21. Custom Plot Symbols</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contour_annotations.html">22. Annotation of Contours and “Quoted Lines”</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ogrgmt_format.html">23. The GMT Vector Data Format for OGR Compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom_symbols.html">20. Custom Plot Symbols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contour_annotations.html">21. Annotation of Contours and “Quoted Lines”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ogrgmt_format.html">22. The GMT Vector Data Format for OGR Compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="one-liner.html">23. GMT Modern Mode One-line Commands</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../std_opts.html">Common Options</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../proj_codes.html">Projection Specifications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../gmt.conf.html">GMT Defaults</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../datasets.html">Datasets</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
@@ -219,14 +216,14 @@
         
           <li><a href="../cookbook.html">The GMT Cookbook</a> &raquo;</li>
         
-      <li>20. Of Colors and Color Legends</li>
+      <li>19. Of Colors and Color Legends</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/GenericMappingTools/gmt/blob/6.1/doc/rst/source/cookbook/colorbars.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/GenericMappingTools/gmt/blob/6.1/doc/rst/source/cookbook/cpts.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -241,9 +238,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="of-colors-and-color-legends">
-<span id="id1"></span><h1>20. Of Colors and Color Legends<a class="headerlink" href="#of-colors-and-color-legends" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>19. Of Colors and Color Legends<a class="headerlink" href="#of-colors-and-color-legends" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="built-in-color-palette-tables-cpt">
-<h2>20.1. Built-in color palette tables (CPT)<a class="headerlink" href="#built-in-color-palette-tables-cpt" title="Permalink to this headline">¶</a></h2>
+<h2>19.1. Built-in color palette tables (CPT)<a class="headerlink" href="#built-in-color-palette-tables-cpt" title="Permalink to this headline">¶</a></h2>
 <p>Figures <a class="reference internal" href="#cpt-files-a"><span class="std std-ref">CPTs a</span></a>, <a class="reference internal" href="#cpt-files-b"><span class="std std-ref">b</span></a> and
 <a class="reference internal" href="#cpt-files-c"><span class="std std-ref">b</span></a> show the built-in
 color palettes, stored in so-called CPTs <a class="footnote-reference" href="#id3" id="id2">[35]</a>. The programs
@@ -272,7 +269,7 @@ bar are built by using <a class="reference internal" href="../makecpt.html"><spa
 <a class="reference external" href="http://www.fabiocrameri.ch/colourmaps.php">Scientific Colour-Maps</a>.</p>
 </div>
 <div class="section" id="labeled-and-non-equidistant-color-legends">
-<h2>20.2. Labeled and non-equidistant color legends<a class="headerlink" href="#labeled-and-non-equidistant-color-legends" title="Permalink to this headline">¶</a></h2>
+<h2>19.2. Labeled and non-equidistant color legends<a class="headerlink" href="#labeled-and-non-equidistant-color-legends" title="Permalink to this headline">¶</a></h2>
 <p>The use of color legends has already been introduced in Examples
 <a class="reference internal" href="../gallery/ex02.html#example-02"><span class="std std-ref">2</span></a>, <a class="reference internal" href="../gallery/ex16.html#example-16"><span class="std std-ref">16</span></a>, and <a class="reference internal" href="../gallery/ex17.html#example-17"><span class="std std-ref">17</span></a>.
 Things become a bit more
@@ -309,10 +306,10 @@ colors suitable for categorical plots.</td></tr>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="custom_symbols.html" class="btn btn-neutral float-right" title="21. Custom Plot Symbols" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="custom_symbols.html" class="btn btn-neutral float-right" title="20. Custom Plot Symbols" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="non_unix_platforms.html" class="btn btn-neutral float-left" title="19. GMT on non-UNIX Platforms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="non_unix_platforms.html" class="btn btn-neutral float-left" title="18. GMT on non-UNIX Platforms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -324,7 +321,7 @@ colors suitable for categorical plots.</td></tr>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 22, 2019.
+        Last updated on Sep 23, 2019.
       </span>
 
     </p>
