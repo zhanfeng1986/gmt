@@ -417,6 +417,9 @@ any module-specific option (but not the GMT common options), then exits.</dd>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>Note: Since many GMT plot examples are very short (i.e., one module call between the
+<strong>gmt begin</strong> and <strong>gmt end</strong> commands), we will often present them using the quick
+modern mode <a class="reference internal" href="cookbook/one-liner.html"><span class="doc">GMT Modern Mode One-line Commands</span></a> syntax, which simplifies such short scripts.</p>
 <p>The following section illustrates the use of the options by giving some
 examples for the available map projections. Note how scales may be given
 in several different ways depending on the projection. Also note the use
@@ -429,6 +432,16 @@ of upper case letters to specify map width instead of map scale.</p>
 <p>To make a linear x/y frame with all axes, but with only left and bottom
 axes annotated, using xscale = yscale = 1.0, ticking every 1 unit and
 annotating every 2, and using xlabel = “Distance” and ylabel = “No of samples”, use</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin linear
+  gmt basemap -R0/9/0/5 -Jx1 -Bf1a2 -Bx+lDistance -By+l<span class="s2">&quot;No of samples&quot;</span> -BWeSn
+gmt end show
+</pre></div>
+</div>
+</div></blockquote>
+<p>As mentioned above, such simple modern mode script can take advantage of the one-liner
+format.  We repeat the same example using the one-liner format and then only show this
+format for the remaining examples:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt basemap -R0/9/0/5 -Jx1 -Bf1a2 -Bx+lDistance -By+l<span class="s2">&quot;No of samples&quot;</span> -BWeSn -pdf linear
 </pre></div>
@@ -827,7 +840,7 @@ However, it is fairly simple for most applications (see examples).</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 22, 2019.
+        Last updated on Sep 23, 2019.
       </span>
 
     </p>

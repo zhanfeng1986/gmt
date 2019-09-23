@@ -487,7 +487,9 @@ will plot the two characters (here, L and H) as labels. For more elaborate
 labels, separate the low and high label strings with a comma (e.g.,
 <strong>+l</strong><em>lo</em>,<em>hi</em>). If a file is given by <strong>-C</strong> and <strong>-T</strong> is set,
 then only contours marked with upper case C or A will have tick marks
-[and annotations].</dd>
+[and annotations].  Note: The labeling of local highs and lows may plot sometimes
+outside the innermost contour since only the mean value of the contour coordinates
+is used to position the label.</dd>
 </dl>
 <dl class="docutils" id="u">
 <dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>] <a class="reference internal" href="gmt.html#u-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -602,49 +604,49 @@ for a constant <strong>-S</strong>.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p>To contour the file hawaii_grav.nc every 25 mGal on a Mercator map at
-0.5 inch/degree, annotate every 50 mGal (using fontsize = 10p), using 1
-degree tickmarks, and draw 30 minute gridlines:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcontour hawaii_grav.nc -Jm0.5i -C25 -A50+f10p -B1g30m -pdf hawaii_grav
+<p>Note: Since many GMT plot examples are very short (i.e., one module call between the
+<strong>gmt begin</strong> and <strong>gmt end</strong> commands), we will often present them using the quick
+modern mode <a class="reference internal" href="cookbook/one-liner.html"><span class="doc">GMT Modern Mode One-line Commands</span></a> syntax, which simplifies such short scripts.</p>
+<p>To contour the remote file AK_gulf_grav.nc every 25 mGal on a Mercator map at
+0.5 inch/degree, annotate every 50 mGal (using font size = 10p), using 1
+degree tick marks, and draw 30 minute gridlines:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcontour @AK_gulf_grav.nc -JM16c -C25 -A50+f10p -B -pdf alaska_grav1
 </pre></div>
 </div>
-</div></blockquote>
 <p>To do the same map but only draw the 50 and 150 and annotate the 100 contour:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcontour hawaii_grav.nc -Jm0.5i -C50.150 -A100,+f10p -B1g30m -pdf hawaii_grav
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcontour @AK_gulf_grav.nc -JM16c -C50,150 -A100,+f10p -B -pdf alaska_grav2
 </pre></div>
 </div>
-</div></blockquote>
-<p>To contour the file image.nc using the levels in the file cont.txt on a
-linear projection at 0.1 cm/x-unit and 50 cm/y-unit, using 20 (x) and
-0.1 (y) tickmarks, smooth the contours a bit, use “RMS Misfit” as
-plot-title, use a thick red pen for annotated contours, and a thin,
-dashed, blue pen for the rest, and send the output to the default printer:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcontour image.nc -Jx0.1c/50.0c -Ccont.txt -S4 -Bx20 -By0.1
-           -B+t<span class="s2">&quot;RMS Misfit&quot;</span> -Wathick,red -Wcthinnest,blue,- <span class="p">|</span> lp
+<p>To contour the Alaska gravity data every 10 mGal with labels every 50 mGal, smooth
+the contours a bit, use “Gravity Anomalies” as plot-title, use a thick red pen for
+the annotated contours and a thin, dashed, blue pen for the rest, try:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcontour @AK_gulf_grav.nc -C10 -A50 -S4 -B -B+t<span class="s2">&quot;Gravity Anomalies&quot;</span> -Wathick,red -Wcthinnest,blue,- -pdf alaska_grav3
 </pre></div>
 </div>
-</div></blockquote>
-<p>The labeling of local highs and lows may plot outside the innermost
-contour since only the mean value of the contour coordinates is used to
-position the label.</p>
-<p>To save the smoothed 100-m contour lines in topo.nc and separate them
+<p>Same, but this time we want all negative contours to be blue and positive to be red, with
+the zero-contour black:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin alaska_grav4
+  grdcontour @AK_gulf_grav.nc -C10 -A50 -S4 -B -B+t<span class="s2">&quot;Gravity Anomalies&quot;</span> -Ln -Wathick,blue -Wcthinnest,blue,-
+  grdcontour @AK_gulf_grav.nc -C10 -A50 -S4 -Lp -Wathick,red -Wcthinnest,red,-
+  grdcontour @AK_gulf_grav.nc -A0, -S4
+gmt end show
+</pre></div>
+</div>
+<p>To save the smoothed 50-mGal contour lines in AK_gulf_grav.nc and separate them
 into two multisegment files: contours_C.txt for closed and
-contours_O.txt for open contours, try</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcontour topo.nc -C100 -S4 -Dcontours_%c.txt
+contours_O.txt for open contours, try:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcontour @AK_gulf_grav.nc -C150 -S4 -DAK_contours_%c.txt
 </pre></div>
 </div>
-</div></blockquote>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="gmt.html"><span class="doc">gmt</span></a>, <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a>,
+<p><a class="reference internal" href="gmt.html"><span class="doc">gmt</span></a>,
+<a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a>,
 <a class="reference internal" href="gmtcolors.html"><span class="doc">gmtcolors</span></a>,
 <a class="reference internal" href="basemap.html"><span class="doc">basemap</span></a>,
-<a class="reference internal" href="grdimage.html"><span class="doc">grdimage</span></a>, <a class="reference internal" href="grdview.html"><span class="doc">grdview</span></a>,
+<a class="reference internal" href="grdimage.html"><span class="doc">grdimage</span></a>,
+<a class="reference internal" href="grdview.html"><span class="doc">grdview</span></a>,
 <a class="reference internal" href="contour.html"><span class="doc">contour</span></a></p>
 </div>
 </div>
@@ -663,7 +665,7 @@ contours_O.txt for open contours, try</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 22, 2019.
+        Last updated on Sep 23, 2019.
       </span>
 
     </p>

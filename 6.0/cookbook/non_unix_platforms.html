@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>19. GMT on non-UNIX Platforms &mdash; GMT 6.0.0 documentation</title>
+  <title>18. GMT on non-UNIX Platforms &mdash; GMT 6.0.0 documentation</title>
   
 
   
@@ -40,8 +40,8 @@
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="20. Of Colors and Color Legends" href="cpts.html" />
-    <link rel="prev" title="18. The GMT High-Resolution Coastline Data" href="coastline.html" /> 
+    <link rel="next" title="19. Of Colors and Color Legends" href="cpts.html" />
+    <link rel="prev" title="17. Filtering of Data in GMT" href="data_filtering.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -118,17 +118,17 @@
 <li class="toctree-l2"><a class="reference internal" href="postscript_fonts.html">15. PostScript Fonts Used by GMT</a></li>
 <li class="toctree-l2"><a class="reference internal" href="colorspace.html">16. Color Space: The Final Frontier</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_filtering.html">17. Filtering of Data in GMT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coastline.html">18. The GMT High-Resolution Coastline Data</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">19. GMT on non-UNIX Platforms</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#introduction">19.1. Introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cygwin-and-gmt">19.2. Cygwin and GMT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#mingw-msys-and-gmt">19.3. MINGW|MSYS and GMT</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">18. GMT on non-UNIX Platforms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">18.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cygwin-and-gmt">18.2. Cygwin and GMT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mingw-msys-and-gmt">18.3. MINGW|MSYS and GMT</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="cpts.html">20. Of Colors and Color Legends</a></li>
-<li class="toctree-l2"><a class="reference internal" href="custom_symbols.html">21. Custom Plot Symbols</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contour_annotations.html">22. Annotation of Contours and “Quoted Lines”</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ogrgmt_format.html">23. The GMT Vector Data Format for OGR Compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpts.html">19. Of Colors and Color Legends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom_symbols.html">20. Custom Plot Symbols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contour_annotations.html">21. Annotation of Contours and “Quoted Lines”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ogrgmt_format.html">22. The GMT Vector Data Format for OGR Compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="one-liner.html">23. GMT Modern Mode One-line Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../datasets.html">Datasets</a></li>
@@ -217,7 +217,7 @@
         
           <li><a href="../cookbook.html">The GMT Cookbook</a> &raquo;</li>
         
-      <li>19. GMT on non-UNIX Platforms</li>
+      <li>18. GMT on non-UNIX Platforms</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -239,9 +239,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="gmt-on-non-unix-platforms">
-<h1>19. GMT on non-UNIX Platforms<a class="headerlink" href="#gmt-on-non-unix-platforms" title="Permalink to this headline">¶</a></h1>
+<h1>18. GMT on non-UNIX Platforms<a class="headerlink" href="#gmt-on-non-unix-platforms" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
-<h2>19.1. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<h2>18.1. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>While GMT was ported to non-UNIX systems such as Windows, it is
 also true that one of the strengths of GMT lies its symbiotic
 relationship with UNIX. We therefore recommend that GMT be installed
@@ -264,7 +264,7 @@ with DOS batch files.</li>
 </dl>
 </div>
 <div class="section" id="cygwin-and-gmt">
-<h2>19.2. Cygwin and GMT<a class="headerlink" href="#cygwin-and-gmt" title="Permalink to this headline">¶</a></h2>
+<h2>18.2. Cygwin and GMT<a class="headerlink" href="#cygwin-and-gmt" title="Permalink to this headline">¶</a></h2>
 <p>Because GMT works best in conjugation with UNIX tools we suggest you
 install GMT using the Cygwin product from Cygnus (now assimilated by
 Redhat, Inc.). This free version works on any Windows version and it
@@ -302,7 +302,7 @@ regtool -v list /HKLM/Software/Cygnus<span class="se">\ </span>Solutions/Cygwin
 <p>For more installation details see the general README file.</p>
 </div>
 <div class="section" id="mingw-msys-and-gmt">
-<h2>19.3. MINGW|MSYS and GMT<a class="headerlink" href="#mingw-msys-and-gmt" title="Permalink to this headline">¶</a></h2>
+<h2>18.3. MINGW|MSYS and GMT<a class="headerlink" href="#mingw-msys-and-gmt" title="Permalink to this headline">¶</a></h2>
 <p>Though one can install GMT natively using CMake, the simplest way of installing
 under MINGW|MSYS is to just install the Windows binaries and use them from
 the msys bash shell. As simple as that. Furthermore, GMT programs launch
@@ -319,10 +319,10 @@ GMT on Windows.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="cpts.html" class="btn btn-neutral float-right" title="20. Of Colors and Color Legends" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="cpts.html" class="btn btn-neutral float-right" title="19. Of Colors and Color Legends" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="coastline.html" class="btn btn-neutral float-left" title="18. The GMT High-Resolution Coastline Data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="data_filtering.html" class="btn btn-neutral float-left" title="17. Filtering of Data in GMT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -334,7 +334,7 @@ GMT on Windows.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 22, 2019.
+        Last updated on Sep 23, 2019.
       </span>
 
     </p>

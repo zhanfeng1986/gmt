@@ -490,7 +490,9 @@ will plot the two characters (here, L and H) as labels. For more elaborate
 labels, separate the low and high label strings with a comma (e.g.,
 <strong>+l</strong><em>lo</em>,<em>hi</em>). If a file is given by <strong>-C</strong> and <strong>-T</strong> is set,
 then only contours marked with upper case C or A will have tick marks
-[and annotations].</dd>
+[and annotations].  Note: The labeling of local highs and lows may plot sometimes
+outside the innermost contour since only the mean value of the contour coordinates
+is used to position the label.</dd>
 </dl>
 <dl class="docutils" id="u">
 <dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>] <a class="reference internal" href="gmt.html#u-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -683,7 +685,7 @@ contours_O.txt for open contours, try</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 22, 2019.
+        Last updated on Sep 23, 2019.
       </span>
 
     </p>
