@@ -1371,10 +1371,14 @@ rm -f <span class="o">[</span>xy<span class="o">]</span>annots.txt
 </div>
 <div class="section" id="timestamps-on-plots-the-u-option">
 <h3>7.4.4. Timestamps on plots: The <strong>-U</strong> option<a class="headerlink" href="#timestamps-on-plots-the-u-option" title="Permalink to this headline">¶</a></h3>
-<p>The <strong>-U</strong> option draws UNIX System time stamp. Optionally, append an
-arbitrary text string (surrounded by double quotes), or the code <strong>c</strong>,
-which will plot the current command string (Figure
-<a class="reference internal" href="#u-option"><span class="std std-ref">Time stamp</span></a>).</p>
+<p>The <strong>-U</strong> option draws the GMT UNIX System time stamp on the plot.
+By appending <strong>+j</strong><em>just</em> and/or <strong>+o</strong><em>dx/dy</em>, the user may
+specify the justification of the stamp and where the stamp should fall
+on the page relative to lower left corner of the plot.
+For example, +jBL+o0/0 will align the lower left corner of the time stamp
+with the bottom left corner of the plot [BL]. Optionally, append  an
+arbitrary text string (surrounded by double quotes), or give <strong>+c</strong>,
+which will plot the current command string (Figure <a class="reference internal" href="#u-option"><span class="std std-ref">Time stamp</span></a>).</p>
 <div class="figure align-center" id="id49">
 <span id="u-option"></span><a class="reference internal image-reference" href="../_images/GMT_-U.png"><img alt="../_images/GMT_-U.png" src="../_images/GMT_-U.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">The -U option makes it easy to date a plot.</span></p>
@@ -4182,7 +4186,7 @@ off; see <a class="reference internal" href="../gmt.conf.html#ps-comments"><span
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 24, 2019.
+        Last updated on Sep 25, 2019.
       </span>
 
     </p>
