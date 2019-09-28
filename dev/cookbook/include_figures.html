@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>12. Including GMT Graphics into your Documents &mdash; GMT 6.1.0 documentation</title>
+  <title>11. Including GMT Graphics into your Documents &mdash; GMT 6.1.0 documentation</title>
   
 
   
@@ -40,8 +40,8 @@
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="13. Predefined Bit and Hachure Patterns in GMT" href="predefined_patterns.html" />
-    <link rel="prev" title="11. GMT File Formats" href="file_formats.html" /> 
+    <link rel="next" title="12. Predefined Bit and Hachure Patterns in GMT" href="predefined_patterns.html" />
+    <link rel="prev" title="10. GMT File Formats" href="file_formats.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -98,46 +98,44 @@
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../modules.html">GMT Core Modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../supplements.html">GMT Supplemental Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">GMT Modules</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../cookbook.html">The GMT Cookbook</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="acknowledgments.html">1. Acknowledgments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="citation.html">2. A Reminder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="copyright.html">3. Copyright and Caveat Emptor!</a></li>
 <li class="toctree-l2"><a class="reference internal" href="preface.html">4. Preface</a></li>
 <li class="toctree-l2"><a class="reference internal" href="introduction.html">5. Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="overview.html">6. GMT Overview and Quick Reference</a></li>
-<li class="toctree-l2"><a class="reference internal" href="features.html">7. General Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coordinate_transformations.html">8. GMT Coordinate Transformations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="map_projections.html">9. GMT Map Projections</a></li>
-<li class="toctree-l2"><a class="reference internal" href="supplemental_packages.html">10. GMT Supplemental Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file_formats.html">11. GMT File Formats</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">12. Including GMT Graphics into your Documents</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#making-gmt-encapsulated-postscript-files">12.1. Making GMT Encapsulated PostScript Files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#converting-gmt-postscript-to-pdf-or-raster-images">12.2. Converting GMT PostScript to PDF or raster images</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#when-converting-or-viewing-postscript-goes-awry">12.2.1. When converting or viewing PostScript goes awry</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#using-psconvert">12.2.2. Using <code class="docutils literal notranslate"><span class="pre">/psconvert</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="features.html">6. General Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coordinate_transformations.html">7. GMT Coordinate Transformations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="map_projections.html">8. GMT Map Projections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supplemental_packages.html">9. GMT Supplemental Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_formats.html">10. GMT File Formats</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">11. Including GMT Graphics into your Documents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#making-gmt-encapsulated-postscript-files">11.1. Making GMT Encapsulated PostScript Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#converting-gmt-postscript-to-pdf-or-raster-images">11.2. Converting GMT PostScript to PDF or raster images</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#when-converting-or-viewing-postscript-goes-awry">11.2.1. When converting or viewing PostScript goes awry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-psconvert">11.2.2. Using <code class="docutils literal notranslate"><span class="pre">/psconvert</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#examples">12.3. Examples</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#gmt-graphics-in-latex">12.3.1. GMT graphics in LaTeX</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#gmt-graphics-in-powerpoint">12.3.2. GMT graphics in <strong>PowerPoint</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#examples">11.3. Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#gmt-graphics-in-latex">11.3.1. GMT graphics in LaTeX</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gmt-graphics-in-powerpoint">11.3.2. GMT graphics in <strong>PowerPoint</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#concluding-remarks">12.4. Concluding remarks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#concluding-remarks">11.4. Concluding remarks</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="predefined_patterns.html">13. Predefined Bit and Hachure Patterns in GMT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="octal_codes.html">14. Chart of Octal Codes for Characters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="postscript_fonts.html">15. PostScript Fonts Used by GMT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="colorspace.html">16. Color Space: The Final Frontier</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_filtering.html">17. Filtering of Data in GMT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="non_unix_platforms.html">18. GMT on non-UNIX Platforms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cpts.html">19. Of Colors and Color Legends</a></li>
-<li class="toctree-l2"><a class="reference internal" href="custom_symbols.html">20. Custom Plot Symbols</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contour_annotations.html">21. Annotation of Contours and “Quoted Lines”</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ogrgmt_format.html">22. The GMT Vector Data Format for OGR Compatibility</a></li>
-<li class="toctree-l2"><a class="reference internal" href="one-liner.html">23. GMT Modern Mode One-line Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="predefined_patterns.html">12. Predefined Bit and Hachure Patterns in GMT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="octal_codes.html">13. Chart of Octal Codes for Characters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="postscript_fonts.html">14. PostScript Fonts Used by GMT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="colorspace.html">15. Color Space: The Final Frontier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_filtering.html">16. Filtering of Data in GMT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="non_unix_platforms.html">17. GMT on non-UNIX Platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpts.html">18. Of Colors and Color Legends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom_symbols.html">19. Custom Plot Symbols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contour_annotations.html">20. Annotation of Contours and “Quoted Lines”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ogrgmt_format.html">21. The GMT Vector Data Format for OGR Compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="one-liner.html">22. GMT Modern Mode One-line Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../datasets.html">Datasets</a></li>
@@ -153,8 +151,7 @@
 <p class="caption"><span class="caption-text">Classic Mode</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../std_opts_classic.html">Common Options (Classic Mode)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules_classic.html">GMT Core Modules (Classic Mode)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../supplements_classic.html">GMT Supplemental Modules (Classic Mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules_classic.html">GMT Modules (Classic Mode)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
@@ -226,7 +223,7 @@
         
           <li><a href="../cookbook.html">The GMT Cookbook</a> &raquo;</li>
         
-      <li>12. Including GMT Graphics into your Documents</li>
+      <li>11. Including GMT Graphics into your Documents</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -248,7 +245,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="including-gmt-graphics-into-your-documents">
-<span id="include-gmt-graphics"></span><h1>12. Including GMT Graphics into your Documents<a class="headerlink" href="#including-gmt-graphics-into-your-documents" title="Permalink to this headline">¶</a></h1>
+<span id="include-gmt-graphics"></span><h1>11. Including GMT Graphics into your Documents<a class="headerlink" href="#including-gmt-graphics-into-your-documents" title="Permalink to this headline">¶</a></h1>
 <p>Now that you made some nice graphics with GMT, it is time to add them
 to a document, an article, a report, your dissertation, a poster, a web
 page, or a presentation. Of course, you could try the old-fashioned
@@ -278,7 +275,7 @@ straightforward as incorporating a PostScript file into a document is
 a far from trivial exercise. This Chapter will show how to include
 GMT graphics into documents and how to achieve the best quality results.</p>
 <div class="section" id="making-gmt-encapsulated-postscript-files">
-<h2>12.1. Making GMT Encapsulated PostScript Files<a class="headerlink" href="#making-gmt-encapsulated-postscript-files" title="Permalink to this headline">¶</a></h2>
+<h2>11.1. Making GMT Encapsulated PostScript Files<a class="headerlink" href="#making-gmt-encapsulated-postscript-files" title="Permalink to this headline">¶</a></h2>
 <p>GMT produces freeform PostScript files. Note that a freeform
 PostScript file may contain special operators (such as
 <code class="docutils literal notranslate"><span class="pre">Setpagedevice</span></code>) that is specific to printers (e.g., selection of
@@ -350,7 +347,7 @@ Except for Pages, you will not be able to view the EPS figure
 on-screen, but it will print correctly.</p>
 </div>
 <div class="section" id="converting-gmt-postscript-to-pdf-or-raster-images">
-<h2>12.2. Converting GMT PostScript to PDF or raster images<a class="headerlink" href="#converting-gmt-postscript-to-pdf-or-raster-images" title="Permalink to this headline">¶</a></h2>
+<h2>11.2. Converting GMT PostScript to PDF or raster images<a class="headerlink" href="#converting-gmt-postscript-to-pdf-or-raster-images" title="Permalink to this headline">¶</a></h2>
 <p>Since Adobe’s PDF (Portable Document Format) seems to have become the
 <em>de facto</em> standard for vector graphics, you are often well off
 converting GMT produced PostScript files to PDF. Being both vector
@@ -378,7 +375,7 @@ Apple’s <strong>Preview</strong>. So a lot of the times when people report tha
 their PostScript plot does not look right but prints fine, it is the
 way ghostscript is used with its most basic settings that is to blame.</p>
 <div class="section" id="when-converting-or-viewing-postscript-goes-awry">
-<h3>12.2.1. When converting or viewing PostScript goes awry<a class="headerlink" href="#when-converting-or-viewing-postscript-goes-awry" title="Permalink to this headline">¶</a></h3>
+<h3>11.2.1. When converting or viewing PostScript goes awry<a class="headerlink" href="#when-converting-or-viewing-postscript-goes-awry" title="Permalink to this headline">¶</a></h3>
 <p>Here are some notorious pitfalls with ghostscript (and other
 rendering programs for that matter).</p>
 <dl class="docutils">
@@ -448,7 +445,7 @@ that engine) will not do so by default.</dd>
 </dl>
 </div>
 <div class="section" id="using-psconvert">
-<h3>12.2.2. Using <a class="reference internal" href="../psconvert.html"><span class="doc">psconvert</span></a><a class="headerlink" href="#using-psconvert" title="Permalink to this headline">¶</a></h3>
+<h3>11.2.2. Using <a class="reference internal" href="../psconvert.html"><span class="doc">psconvert</span></a><a class="headerlink" href="#using-psconvert" title="Permalink to this headline">¶</a></h3>
 <p>The remedy to all the problems mentioned in the previous section is
 readily available to you in the form of the GMT utility
 <a class="reference internal" href="../psconvert.html"><span class="doc">psconvert</span></a>. It is designed to provide
@@ -481,9 +478,9 @@ scaling of the result.</p>
 </div>
 </div>
 <div class="section" id="examples">
-<h2>12.3. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<h2>11.3. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="gmt-graphics-in-latex">
-<h3>12.3.1. GMT graphics in LaTeX<a class="headerlink" href="#gmt-graphics-in-latex" title="Permalink to this headline">¶</a></h3>
+<h3>11.3.1. GMT graphics in LaTeX<a class="headerlink" href="#gmt-graphics-in-latex" title="Permalink to this headline">¶</a></h3>
 <p>To add the graphics into a LaTeX document we use the
 <code class="docutils literal notranslate"><span class="pre">\includegraphics</span></code> command supplied by the package. In the preamble of
 your LaTeX document you will need to include the line</p>
@@ -520,7 +517,7 @@ you will need to rotate the plot as well. For example,</p>
 (after rotation) will be 80% of the width of the text column.</p>
 </div>
 <div class="section" id="gmt-graphics-in-powerpoint">
-<h3>12.3.2. GMT graphics in <strong>PowerPoint</strong><a class="headerlink" href="#gmt-graphics-in-powerpoint" title="Permalink to this headline">¶</a></h3>
+<h3>11.3.2. GMT graphics in <strong>PowerPoint</strong><a class="headerlink" href="#gmt-graphics-in-powerpoint" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-center" id="id1">
 <span id="rendering"></span><a class="reference internal image-reference" href="../_images/rendering.png"><img alt="../_images/rendering.png" src="../_images/rendering.png" style="width: 360.0px; height: 270.0px;" /></a>
 <p class="caption"><span class="caption-text">Examples of rendered images in a PowerPoint presentation</span></p>
@@ -569,7 +566,7 @@ one-button mouse).</p>
 </div>
 </div>
 <div class="section" id="concluding-remarks">
-<h2>12.4. Concluding remarks<a class="headerlink" href="#concluding-remarks" title="Permalink to this headline">¶</a></h2>
+<h2>11.4. Concluding remarks<a class="headerlink" href="#concluding-remarks" title="Permalink to this headline">¶</a></h2>
 <p>These examples do not constitute endorsements of the products mentioned
 above; they only represent our limited experience with adding
 PostScript to various types of documents. For other solutions and
@@ -585,10 +582,10 @@ further help, please post messages to the GMT user forum.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="predefined_patterns.html" class="btn btn-neutral float-right" title="13. Predefined Bit and Hachure Patterns in GMT" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="predefined_patterns.html" class="btn btn-neutral float-right" title="12. Predefined Bit and Hachure Patterns in GMT" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="file_formats.html" class="btn btn-neutral float-left" title="11. GMT File Formats" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="file_formats.html" class="btn btn-neutral float-left" title="10. GMT File Formats" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -622,7 +619,7 @@ further help, please post messages to the GMT user forum.</p>
 
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
+          SphinxRtdTheme.Navigation.enable(false);
       });
   </script>
 

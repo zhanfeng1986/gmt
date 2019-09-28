@@ -39,7 +39,9 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="gmt.conf" href="gmt.conf.html" />
+    <link rel="prev" title="Common Options" href="std_opts.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -96,8 +98,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">GMT Core Modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="supplements.html">GMT Supplemental Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">GMT Modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cookbook.html">The GMT Cookbook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
 </ul>
@@ -112,8 +113,7 @@
 <p class="caption"><span class="caption-text">Classic Mode</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="std_opts_classic.html">Common Options (Classic Mode)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules_classic.html">GMT Core Modules (Classic Mode)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="supplements_classic.html">GMT Supplemental Modules (Classic Mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules_classic.html">GMT Modules (Classic Mode)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
@@ -206,6 +206,9 @@
             
   <div class="section" id="projection-specifications">
 <h1>Projection Specifications<a class="headerlink" href="#projection-specifications" title="Permalink to this headline">¶</a></h1>
+<p>GMT offers 31 map projections. These are specified using the <strong>-J</strong> common option.
+There are two conventions you may use: (a) GMT-style syntax and (b) <strong>Proj4</strong>-style syntax.
+The projection codes for the GMT-style and the <strong>Proj4</strong>-style are tabulated below.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="36%" />
@@ -303,8 +306,8 @@
 <td><strong>-Jomercp/</strong>lon<sub>0</sub>/lat<sub>0</sub>/lon<sub>p</sub>/lat<sub>p</sub>/<em>scale</em></td>
 <td>Oblique Mercator, 3: origin and pole <a class="reference internal" href="gmt.html#jo-full"><span class="std std-ref">…</span></a></td>
 </tr>
-<tr class="row-odd"><td><strong>-JP</strong>[<strong>a</strong>]<em>width</em>[/<em>origin</em>]</td>
-<td><strong>-Jpolar/</strong>[<strong>a</strong>]<em>scale</em>[/<em>origin</em>]</td>
+<tr class="row-odd"><td><strong>-JP</strong>[<strong>a</strong>]<em>width</em>[/<em>origin</em>][<strong>r</strong><a href="#id1"><span class="problematic" id="id2">|</span></a><strong>z</strong>]</td>
+<td><strong>-Jpolar/</strong>[<strong>a</strong>]<em>scale</em>[/<em>origin</em>][<strong>r</strong><a href="#id3"><span class="problematic" id="id4">|</span></a><strong>z</strong>]</td>
 <td>Polar [azimuthal] (<span class="math notranslate nohighlight">\(\theta, r\)</span>) (or cylindrical)</td>
 </tr>
 <tr class="row-even"><td><strong>-JPoly</strong>[lon<sub>0</sub>[/lat<sub>0</sub>]/]<em>width</em></td>
@@ -358,6 +361,15 @@
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="gmt.conf.html" class="btn btn-neutral float-right" title="gmt.conf" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="std_opts.html" class="btn btn-neutral float-left" title="Common Options" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
@@ -388,7 +400,7 @@
 
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
+          SphinxRtdTheme.Navigation.enable(false);
       });
   </script>
 
