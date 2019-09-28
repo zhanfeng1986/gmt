@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>GMT Core Modules (Classic Mode) &mdash; GMT 6.0.0 documentation</title>
+  <title>GMT Modules (Classic Mode) &mdash; GMT 6.0.0 documentation</title>
   
 
   
@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="GMT Supplemental Modules (Classic Mode)" href="supplements_classic.html" />
+    <link rel="next" title="gmtlogo" href="gmtlogo_classic.html" />
     <link rel="prev" title="Common Options (Classic Mode)" href="std_opts_classic.html" /> 
 </head>
 
@@ -114,7 +114,9 @@
 <p class="caption"><span class="caption-text">Classic Mode</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="std_opts_classic.html">Common Options (Classic Mode)</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">GMT Core Modules (Classic Mode)</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">GMT Modules (Classic Mode)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#core-modules">Core Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#supplemental-modules">Supplemental Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#plotting">Plotting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#filtering">Filtering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#gridding">Gridding</a></li>
@@ -126,9 +128,17 @@
 <li class="toctree-l2"><a class="reference internal" href="#trends-in-1-d-and-2-d-data">Trends in 1-D and 2-D data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#grid-operations">Grid operations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#miscellaneous">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#geodesy">geodesy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gshhg">GSHHG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#img">IMG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mgd77">MGD77</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#potential">potential</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#segy">SEGY</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#seis">seis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#spotter">spotter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#x2sys">x2sys</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="supplements_classic.html">GMT Supplemental Modules (Classic Mode)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
@@ -198,7 +208,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>GMT Core Modules (Classic Mode)</li>
+      <li>GMT Modules (Classic Mode)</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -219,15 +229,21 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="gmt-core-modules-classic-mode">
-<span id="modules-classic"></span><h1>GMT Core Modules (Classic Mode)<a class="headerlink" href="#gmt-core-modules-classic-mode" title="Permalink to this headline">¶</a></h1>
-<p>This is a list of all GMT “classic mode” modules and their respective documentation.
+  <div class="section" id="gmt-modules-classic-mode">
+<span id="modules-classic"></span><h1>GMT Modules (Classic Mode)<a class="headerlink" href="#gmt-modules-classic-mode" title="Permalink to this headline">¶</a></h1>
+<p>This is a list of all GMT “classic mode” core and supplemental modules and their respective documentation.
 These modules are fully compatible with GMT 4 and 5.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Looking for the <em>modern mode</em> modules like <code class="docutils literal notranslate"><span class="pre">begin</span></code> and <code class="docutils literal notranslate"><span class="pre">figure</span></code>? See the
 <a class="reference internal" href="modules.html#modules"><span class="std std-ref">equivalent page for modern mode</span></a>.</p>
 </div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="core-modules">
+<h2>Core Modules<a class="headerlink" href="#core-modules" title="Permalink to this headline">¶</a></h2>
 <table class="hlist"><tr><td><ul class="simple">
 <li><a class="reference internal" href="blockmean.html"><span class="doc">blockmean</span></a></li>
 <li><a class="reference internal" href="blockmedian.html"><span class="doc">blockmedian</span></a></li>
@@ -325,6 +341,73 @@ These modules are fully compatible with GMT 4 and 5.</p>
 <li><a class="reference internal" href="xyz2grd.html"><span class="doc">xyz2grd</span></a></li>
 </ul>
 </td></tr></table>
+</div>
+<div class="section" id="supplemental-modules">
+<h2>Supplemental Modules<a class="headerlink" href="#supplemental-modules" title="Permalink to this headline">¶</a></h2>
+<table class="hlist"><tr><td><ul class="simple">
+<li><a class="reference internal" href="supplements/geodesy/earthtide.html"><span class="doc">earthtide</span></a></li>
+<li><a class="reference internal" href="supplements/geodesy/gpsgridder.html"><span class="doc">gpsgridder</span></a></li>
+<li><a class="reference internal" href="supplements/geodesy/psvelo.html"><span class="doc">psvelo</span></a></li>
+<li><a class="reference internal" href="supplements/gshhg/gshhg.html"><span class="doc">gshhg</span></a></li>
+<li><a class="reference internal" href="supplements/img/img2grd.html"><span class="doc">img2grd</span></a></li>
+<li><a class="reference internal" href="supplements/mgd77/mgd77convert.html"><span class="doc">mgd77convert</span></a></li>
+<li><a class="reference internal" href="supplements/mgd77/mgd77header.html"><span class="doc">mgd77header</span></a></li>
+<li><a class="reference internal" href="supplements/mgd77/mgd77info.html"><span class="doc">mgd77info</span></a></li>
+<li><a class="reference internal" href="supplements/mgd77/mgd77list.html"><span class="doc">mgd77list</span></a></li>
+</ul>
+</td><td><ul class="simple">
+<li><a class="reference internal" href="supplements/mgd77/mgd77magref.html"><span class="doc">mgd77magref</span></a></li>
+<li><a class="reference internal" href="supplements/mgd77/mgd77manage.html"><span class="doc">mgd77manage</span></a></li>
+<li><a class="reference internal" href="supplements/mgd77/mgd77path.html"><span class="doc">mgd77path</span></a></li>
+<li><a class="reference internal" href="supplements/mgd77/mgd77sniffer.html"><span class="doc">mgd77sniffer</span></a></li>
+<li><a class="reference internal" href="supplements/mgd77/mgd77track_classic.html"><span class="doc">mgd77track</span></a></li>
+<li><a class="reference internal" href="supplements/potential/gmtflexure.html"><span class="doc">gmtflexure</span></a></li>
+<li><a class="reference internal" href="supplements/potential/gmtgravmag3d.html"><span class="doc">gmtgravmag3d</span></a></li>
+<li><a class="reference internal" href="supplements/potential/gravfft.html"><span class="doc">gravfft</span></a></li>
+<li><a class="reference internal" href="supplements/potential/grdflexure.html"><span class="doc">grdflexure</span></a></li>
+</ul>
+</td><td><ul class="simple">
+<li><a class="reference internal" href="supplements/potential/grdgravmag3d.html"><span class="doc">grdgravmag3d</span></a></li>
+<li><a class="reference internal" href="supplements/potential/grdredpol.html"><span class="doc">grdredpol</span></a></li>
+<li><a class="reference internal" href="supplements/potential/grdseamount.html"><span class="doc">grdseamount</span></a></li>
+<li><a class="reference internal" href="supplements/potential/talwani2d.html"><span class="doc">talwani2d</span></a></li>
+<li><a class="reference internal" href="supplements/potential/talwani3d.html"><span class="doc">talwani3d</span></a></li>
+<li><a class="reference internal" href="supplements/segy/pssegy.html"><span class="doc">pssegy</span></a></li>
+<li><a class="reference internal" href="supplements/segy/pssegyz.html"><span class="doc">pssegyz</span></a></li>
+<li><a class="reference internal" href="supplements/segy/segy2grd.html"><span class="doc">segy2grd</span></a></li>
+</ul>
+</td><td><ul class="simple">
+<li><a class="reference internal" href="supplements/seis/pscoupe.html"><span class="doc">pscoupe</span></a></li>
+<li><a class="reference internal" href="supplements/seis/psmeca.html"><span class="doc">psmeca</span></a></li>
+<li><a class="reference internal" href="supplements/seis/pspolar.html"><span class="doc">pspolar</span></a></li>
+<li><a class="reference internal" href="supplements/seis/pssac.html"><span class="doc">pssac</span></a></li>
+<li><a class="reference internal" href="supplements/spotter/backtracker.html"><span class="doc">backtracker</span></a></li>
+<li><a class="reference internal" href="supplements/spotter/gmtpmodeler.html"><span class="doc">gmtpmodeler</span></a></li>
+<li><a class="reference internal" href="supplements/spotter/grdpmodeler.html"><span class="doc">grdpmodeler</span></a></li>
+<li><a class="reference internal" href="supplements/spotter/grdrotater.html"><span class="doc">grdrotater</span></a></li>
+</ul>
+</td><td><ul class="simple">
+<li><a class="reference internal" href="supplements/spotter/grdspotter.html"><span class="doc">grdspotter</span></a></li>
+<li><a class="reference internal" href="supplements/spotter/hotspotter.html"><span class="doc">hotspotter</span></a></li>
+<li><a class="reference internal" href="supplements/spotter/originater.html"><span class="doc">originater</span></a></li>
+<li><a class="reference internal" href="supplements/spotter/polespotter.html"><span class="doc">polespotter</span></a></li>
+<li><a class="reference internal" href="supplements/spotter/rotconverter.html"><span class="doc">rotconverter</span></a></li>
+<li><a class="reference internal" href="supplements/spotter/rotsmoother.html"><span class="doc">rotsmoother</span></a></li>
+<li><a class="reference internal" href="supplements/x2sys/x2sys_binlist.html"><span class="doc">x2sys_binlist</span></a></li>
+<li><a class="reference internal" href="supplements/x2sys/x2sys_cross.html"><span class="doc">x2sys_cross</span></a></li>
+</ul>
+</td><td><ul class="simple">
+<li><a class="reference internal" href="supplements/x2sys/x2sys_datalist.html"><span class="doc">x2sys_datalist</span></a></li>
+<li><a class="reference internal" href="supplements/x2sys/x2sys_get.html"><span class="doc">x2sys_get</span></a></li>
+<li><a class="reference internal" href="supplements/x2sys/x2sys_init.html"><span class="doc">x2sys_init</span></a></li>
+<li><a class="reference internal" href="supplements/x2sys/x2sys_list.html"><span class="doc">x2sys_list</span></a></li>
+<li><a class="reference internal" href="supplements/x2sys/x2sys_merge.html"><span class="doc">x2sys_merge</span></a></li>
+<li><a class="reference internal" href="supplements/x2sys/x2sys_put.html"><span class="doc">x2sys_put</span></a></li>
+<li><a class="reference internal" href="supplements/x2sys/x2sys_report.html"><span class="doc">x2sys_report</span></a></li>
+<li><a class="reference internal" href="supplements/x2sys/x2sys_solve.html"><span class="doc">x2sys_solve</span></a></li>
+</ul>
+</td></tr></table>
+</div>
 <div class="section" id="plotting">
 <h2>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
@@ -701,6 +784,255 @@ These modules are fully compatible with GMT 4 and 5.</p>
 </tbody>
 </table>
 </div>
+<div class="section" id="geodesy">
+<h2>geodesy<a class="headerlink" href="#geodesy" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="supplements/geodesy/earthtide.html"><span class="doc">earthtide</span></a></td>
+<td>Compute grids or time-series of solid Earth tides</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="supplements/geodesy/gpsgridder.html"><span class="doc">gpsgridder</span></a></td>
+<td>Interpolate GPS velocity vectors using Green’s functions for a thin elastic sheet</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="supplements/geodesy/psvelo.html"><span class="doc">psvelo</span></a></td>
+<td>Plot velocity vectors, crosses, and wedges on maps</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="gshhg">
+<h2>GSHHG<a class="headerlink" href="#gshhg" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="64%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="supplements/gshhg/gshhg.html"><span class="doc">gshhg</span></a></td>
+<td>Extract data tables from binary GSHHS or WDBII data files</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="img">
+<h2>IMG<a class="headerlink" href="#img" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="supplements/img/img2grd.html"><span class="doc">img2grd</span></a></td>
+<td>Extract a subset from an img file in Mercator or Geographic format</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="mgd77">
+<h2>MGD77<a class="headerlink" href="#mgd77" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="64%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="supplements/mgd77/mgd77convert.html"><span class="doc">mgd77convert</span></a></td>
+<td>Convert MGD77 data to other file formats</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="supplements/mgd77/mgd77header.html"><span class="doc">mgd77header</span></a></td>
+<td>Create MGD77 headers from A77 files</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="supplements/mgd77/mgd77info.html"><span class="doc">mgd77info</span></a></td>
+<td>Extract information about MGD77 files</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="supplements/mgd77/mgd77list.html"><span class="doc">mgd77list</span></a></td>
+<td>Extract data from MGD77 files</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="supplements/mgd77/mgd77magref.html"><span class="doc">mgd77magref</span></a></td>
+<td>Evaluate the IGRF or CM4 magnetic field models</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="supplements/mgd77/mgd77manage.html"><span class="doc">mgd77manage</span></a></td>
+<td>Manage the content of MGD77+ files</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="supplements/mgd77/mgd77path.html"><span class="doc">mgd77path</span></a></td>
+<td>Return paths to MGD77 cruises and directories</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="supplements/mgd77/mgd77sniffer.html"><span class="doc">mgd77sniffer</span></a></td>
+<td>Along-track quality control of MGD77 cruises</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="supplements/mgd77/mgd77track_classic.html"><span class="doc">mgd77track</span></a></td>
+<td>Plot track-line map of MGD77 cruises</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="potential">
+<h2>potential<a class="headerlink" href="#potential" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="supplements/potential/gmtflexure.html"><span class="doc">gmtflexure</span></a></td>
+<td>Compute flexural deformation of 2-D loads, forces, and bending moments</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="supplements/potential/gmtgravmag3d.html"><span class="doc">gmtgravmag3d</span></a></td>
+<td>Compute the gravity/magnetic anomaly of a 3-D body by the method of Okabe</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="supplements/potential/gravfft.html"><span class="doc">gravfft</span></a></td>
+<td>Spectral calculations of gravity, isostasy, admittance, and coherence for grids</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="supplements/potential/grdflexure.html"><span class="doc">grdflexure</span></a></td>
+<td>Compute flexural deformation of 3-D surfaces for various rheologies</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="supplements/potential/grdgravmag3d.html"><span class="doc">grdgravmag3d</span></a></td>
+<td>Computes the gravity effect of one (or two) grids by the method of Okabe</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="supplements/potential/grdredpol.html"><span class="doc">grdredpol</span></a></td>
+<td>Compute the Continuous Reduction To the Pole, AKA differential RTP</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="supplements/potential/grdseamount.html"><span class="doc">grdseamount</span></a></td>
+<td>Create synthetic seamounts (Gaussian, parabolic, cone or disc, circular or elliptical)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="supplements/potential/talwani2d.html"><span class="doc">talwani2d</span></a></td>
+<td>Compute geopotential anomalies over 2-D bodies by the method of Talwani</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="supplements/potential/talwani3d.html"><span class="doc">talwani3d</span></a></td>
+<td>Compute geopotential anomalies over 3-D bodies by the method of Talwani</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="segy">
+<h2>SEGY<a class="headerlink" href="#segy" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="49%" />
+<col width="51%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="supplements/segy/pssegyz.html"><span class="doc">pssegyz</span></a></td>
+<td>Plot a SEGY file on a map in 3-D</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="supplements/segy/pssegy.html"><span class="doc">pssegy</span></a></td>
+<td>Plot a SEGY file on a map</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="supplements/segy/segy2grd.html"><span class="doc">segy2grd</span></a></td>
+<td>Converting SEGY data to a GMT grid</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="seis">
+<h2>seis<a class="headerlink" href="#seis" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="supplements/seis/pscoupe.html"><span class="doc">pscoupe</span></a></td>
+<td>Plot cross-sections of focal mechanisms</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="supplements/seis/psmeca.html"><span class="doc">psmeca</span></a></td>
+<td>Plot focal mechanisms on maps</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="supplements/seis/pspolar.html"><span class="doc">pspolar</span></a></td>
+<td>Plot polarities on the inferior focal half-sphere on maps</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="supplements/seis/pssac.html"><span class="doc">pssac</span></a></td>
+<td>Plot seismograms in SAC format on maps</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="spotter">
+<h2>spotter<a class="headerlink" href="#spotter" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="supplements/spotter/backtracker.html"><span class="doc">backtracker</span></a></td>
+<td>Generate forward and backward flowlines and hotspot tracks</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="supplements/spotter/gmtpmodeler.html"><span class="doc">gmtpmodeler</span></a></td>
+<td>Evaluate a plate motion model at given locations</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="supplements/spotter/grdpmodeler.html"><span class="doc">grdpmodeler</span></a></td>
+<td>Evaluate a plate motion model on a geographic grid</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="supplements/spotter/grdrotater.html"><span class="doc">grdrotater</span></a></td>
+<td>Finite rotation reconstruction of geographic grid</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="supplements/spotter/grdspotter.html"><span class="doc">grdspotter</span></a></td>
+<td>Create CVA image from a gravity or topography grid</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="supplements/spotter/hotspotter.html"><span class="doc">hotspotter</span></a></td>
+<td>Create CVA image from seamount locations</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="supplements/spotter/originater.html"><span class="doc">originater</span></a></td>
+<td>Associate seamounts with nearest hotspot point sources</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="supplements/spotter/polespotter.html"><span class="doc">polespotter</span></a></td>
+<td>Find stage poles given fracture zones and abyssal hills</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="supplements/spotter/rotconverter.html"><span class="doc">rotconverter</span></a></td>
+<td>Manipulate total reconstruction and stage rotations</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="supplements/spotter/rotsmoother.html"><span class="doc">rotsmoother</span></a></td>
+<td>Get mean rotations and covariance matrices from set of finite rotations</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="x2sys">
+<h2>x2sys<a class="headerlink" href="#x2sys" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="62%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="supplements/x2sys/x2sys_binlist.html"><span class="doc">x2sys_binlist</span></a></td>
+<td>Create bin index listing from track data files</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="supplements/x2sys/x2sys_cross.html"><span class="doc">x2sys_cross</span></a></td>
+<td>Calculate crossovers between track data files</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="supplements/x2sys/x2sys_datalist.html"><span class="doc">x2sys_datalist</span></a></td>
+<td>Extract content of track data files</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="supplements/x2sys/x2sys_get.html"><span class="doc">x2sys_get</span></a></td>
+<td>Get track listing from track index database</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="supplements/x2sys/x2sys_init.html"><span class="doc">x2sys_init</span></a></td>
+<td>Initialize a new x2sys track database</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="supplements/x2sys/x2sys_list.html"><span class="doc">x2sys_list</span></a></td>
+<td>Extract subset from crossover data base</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="supplements/x2sys/x2sys_merge.html"><span class="doc">x2sys_merge</span></a></td>
+<td>Merge an updated COEs table (smaller) into the main table (bigger)</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="supplements/x2sys/x2sys_put.html"><span class="doc">x2sys_put</span></a></td>
+<td>Update track index database from track bin file</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="supplements/x2sys/x2sys_report.html"><span class="doc">x2sys_report</span></a></td>
+<td>Report statistics from crossover data base</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="supplements/x2sys/x2sys_solve.html"><span class="doc">x2sys_solve</span></a></td>
+<td>Determine least-squares systematic correction from crossovers</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
@@ -711,7 +1043,7 @@ These modules are fully compatible with GMT 4 and 5.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="supplements_classic.html" class="btn btn-neutral float-right" title="GMT Supplemental Modules (Classic Mode)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="gmtlogo_classic.html" class="btn btn-neutral float-right" title="gmtlogo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="std_opts_classic.html" class="btn btn-neutral float-left" title="Common Options (Classic Mode)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -726,7 +1058,7 @@ These modules are fully compatible with GMT 4 and 5.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 26, 2019.
+        Last updated on Sep 28, 2019.
       </span>
 
     </p>
@@ -748,7 +1080,7 @@ These modules are fully compatible with GMT 4 and 5.</p>
 
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
+          SphinxRtdTheme.Navigation.enable(false);
       });
   </script>
 

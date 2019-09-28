@@ -39,7 +39,9 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" /> 
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="sac" href="sac.html" />
+    <link rel="prev" title="meca" href="meca.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -112,8 +114,7 @@
 <p class="caption"><span class="caption-text">Classic Mode</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../std_opts_classic.html">Common Options (Classic Mode)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules_classic.html">GMT Core Modules (Classic Mode)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../supplements_classic.html">GMT Supplemental Modules (Classic Mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules_classic.html">GMT Modules (Classic Mode)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
@@ -182,6 +183,8 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../supplements.html">GMT Supplemental Modules</a> &raquo;</li>
         
       <li>polar</li>
     
@@ -499,9 +502,21 @@ uses the <em>scale</em> to convert to polar coordinates with length in given uni
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>Note: Since many GMT plot examples are very short (i.e., one module call between the
+<strong>gmt begin</strong> and <strong>gmt end</strong> commands), we will often present them using the quick
+modern mode <a class="reference internal" href="../../cookbook/one-liner.html"><span class="doc">GMT Modern Mode One-line Commands</span></a> syntax, which simplifies such short scripts.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt polar -R239/240/34/35.2 -JM8c -N -Sc0.4 -h1 -D39.5/34.5 -M5 -pdf <span class="nb">test</span> <span class="s">&lt;&lt; END</span>
+<span class="s">#stat azim ih pol</span>
+<span class="s">0481 11 147 c</span>
+<span class="s">6185 247 120 d</span>
+<span class="s">0485 288 114 +</span>
+<span class="s">0490 223 112 -</span>
+<span class="s">0487 212 109 .</span>
+<span class="s">END</span>
+</pre></div>
+</div>
 <p>or</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt polar -R239/240/34/35.2 -JM8c -N -Sc0.4 -h1 -D239.5/34.5 -M5 -pdf <span class="nb">test</span> <span class="s">&lt;&lt;END</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt polar -R239/240/34/35.2 -JM8c -N -Sc0.4 -h1 -D239.5/34.5 -M5 -pdf <span class="nb">test</span> <span class="s">&lt;&lt;END</span>
 <span class="s">#Date Or. time stat azim ih</span>
 <span class="s">910223 1 22 0481 11 147 ipu0</span>
 <span class="s">910223 1 22 6185 247 120 ipd0</span>
@@ -511,7 +526,6 @@ uses the <em>scale</em> to convert to polar coordinates with length in given uni
 <span class="s">END</span>
 </pre></div>
 </div>
-</div></blockquote>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
@@ -543,6 +557,15 @@ Institut de Physique du Globe de Paris, Departement de Sismologie, Paris, France
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sac.html" class="btn btn-neutral float-right" title="sac" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="meca.html" class="btn btn-neutral float-left" title="meca" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
@@ -551,7 +574,7 @@ Institut de Physique du Globe de Paris, Departement de Sismologie, Paris, France
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 26, 2019.
+        Last updated on Sep 28, 2019.
       </span>
 
     </p>
@@ -573,7 +596,7 @@ Institut de Physique du Globe de Paris, Departement de Sismologie, Paris, France
 
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
+          SphinxRtdTheme.Navigation.enable(false);
       });
   </script>
 
