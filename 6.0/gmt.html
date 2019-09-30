@@ -39,7 +39,9 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="gmt5syntax" href="gmt5syntax.html" />
+    <link rel="prev" title="GMT Modules" href="modules.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -180,6 +182,8 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html">GMT Modules</a> &raquo;</li>
         
       <li>gmt</li>
     
@@ -1179,7 +1183,9 @@ not specified) separated by commas.  Columns may be repeated.
 Normally, any trailing text in the internal records will be written but
 when <strong>-o</strong> is used you must explicitly add the column <em>t</em>. To only output a single word from the
 trailing text, append the word number (first word is 0).  Finally, <strong>-on</strong> will
-simply write the numerical output only and skip any trailing text.</dd>
+simply write the numerical output only and skip any trailing text.  Note: If <strong>-i</strong> is
+also used then columns given to <strong>-o</strong> correspond to the order <em>after</em> the <strong>-i</strong> selection
+and not the columns in the original record.</dd>
 </dl>
 <dl class="docutils" id="perspective-full">
 <dt><strong>-p</strong>[<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>azim</em>[/<em>elev</em>[/<em>zlevel</em>]][<strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>z0</em>]][<strong>+v</strong><em>x0</em>/<em>y0</em>]</dt>
@@ -1449,6 +1455,15 @@ GMT documentation site <a class="reference external" href="https://docs.generic-
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="gmt5syntax.html" class="btn btn-neutral float-right" title="gmt5syntax" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="modules.html" class="btn btn-neutral float-left" title="GMT Modules" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
@@ -1457,7 +1472,7 @@ GMT documentation site <a class="reference external" href="https://docs.generic-
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 29, 2019.
+        Last updated on Sep 30, 2019.
       </span>
 
     </p>

@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="gmtlogo" href="gmtlogo_classic.html" />
+    <link rel="next" title="isogmt" href="isogmt.html" />
     <link rel="prev" title="Common Options (Classic Mode)" href="std_opts_classic.html" /> 
 </head>
 
@@ -114,8 +114,10 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="std_opts_classic.html">Common Options (Classic Mode)</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">GMT Modules (Classic Mode)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#program">Program</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#core-modules">Core Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#supplemental-modules">Supplemental Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#utility-scripts">Utility Scripts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#plotting">Plotting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#filtering">Filtering</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#gridding">Gridding</a></li>
@@ -230,16 +232,26 @@
             
   <div class="section" id="gmt-modules-classic-mode">
 <h1>GMT Modules (Classic Mode)<a class="headerlink" href="#gmt-modules-classic-mode" title="Permalink to this headline">¶</a></h1>
-<p>This is a list of all GMT “classic mode” core and supplemental modules and their respective documentation.
-These modules are fully compatible with GMT 4 and 5.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Looking for the <em>modern mode</em> modules like <code class="docutils literal notranslate"><span class="pre">begin</span></code> and <code class="docutils literal notranslate"><span class="pre">figure</span></code>? See the
 <a class="reference internal" href="modules.html"><span class="doc">equivalent page for modern mode</span></a>.</p>
 </div>
+<p>This is a list of all GMT “classic mode” core and supplemental modules and their uses,
+as well as some utility scripts.
+These modules are fully compatible with GMT 4 and 5.
+All modules are requested via a call to the <a class="reference internal" href="gmt.html"><span class="doc">gmt</span></a> program.</p>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="program">
+<h2>Program<a class="headerlink" href="#program" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="gmt.html"><span class="doc">gmt</span></a></li>
+</ul>
 </div>
 <div class="section" id="core-modules">
 <h2>Core Modules<a class="headerlink" href="#core-modules" title="Permalink to this headline">¶</a></h2>
@@ -405,6 +417,27 @@ These modules are fully compatible with GMT 4 and 5.</p>
 <li><a class="reference internal" href="supplements/x2sys/x2sys_put.html"><span class="doc">x2sys_put</span></a></li>
 <li><a class="reference internal" href="supplements/x2sys/x2sys_report.html"><span class="doc">x2sys_report</span></a></li>
 <li><a class="reference internal" href="supplements/x2sys/x2sys_solve.html"><span class="doc">x2sys_solve</span></a></li>
+</ul>
+</td></tr></table>
+</div>
+<div class="section" id="utility-scripts">
+<h2>Utility Scripts<a class="headerlink" href="#utility-scripts" title="Permalink to this headline">¶</a></h2>
+<table class="hlist"><tr><td><ul class="simple">
+<li><a class="reference internal" href="gmt5syntax.html"><span class="doc">gmt5syntax</span></a></li>
+</ul>
+</td><td><ul class="simple">
+<li><a class="reference internal" href="gmt_shell_functions.sh.html"><span class="doc">gmt_shell_functions.sh</span></a></li>
+</ul>
+</td><td><ul class="simple">
+<li><a class="reference internal" href="gmtswitch.html"><span class="doc">gmtswitch</span></a></li>
+</ul>
+</td><td><ul class="simple">
+<li><a class="reference internal" href="isogmt.html"><span class="doc">isogmt</span></a></li>
+</ul>
+</td><td><ul class="simple">
+<li><a class="reference internal" href="supplements/img/img2google.html"><span class="doc">img2google</span></a></li>
+</ul>
+</td><td><ul class="simple">
 </ul>
 </td></tr></table>
 </div>
@@ -1043,7 +1076,7 @@ These modules are fully compatible with GMT 4 and 5.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="gmtlogo_classic.html" class="btn btn-neutral float-right" title="gmtlogo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="isogmt.html" class="btn btn-neutral float-right" title="isogmt" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="std_opts_classic.html" class="btn btn-neutral float-left" title="Common Options (Classic Mode)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -1058,7 +1091,7 @@ These modules are fully compatible with GMT 4 and 5.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 29, 2019.
+        Last updated on Sep 30, 2019.
       </span>
 
     </p>
