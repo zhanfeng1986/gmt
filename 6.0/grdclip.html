@@ -289,9 +289,14 @@ data as 1- or 2-byte integers. <a class="reference internal" href="gmt.html#grd-
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p>To set all values &gt; 70 to NaN and all values &lt; 0 to 0 in file data.nc:</p>
+<p><strong>Note</strong>: Below are some examples of valid syntax for this module.
+The examples that use remote files (file names starting with <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>)
+can be cut and pasted into your terminal for testing.
+Other commands requiring input files are just dummy examples of the types
+of uses that are common but cannot be run verbatim as written.</p>
+<p>To set all values &gt; 0 to NaN and all values &lt; 0 to 0 in the remote file AFR.nc:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdclip data.nc -Gnew_data.nc -Sa70/NaN -Sb0/0 -V
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdclip @AFR.nc -Gnew_AFR.nc -Sa0/NaN -Sb0/0 -V
 </pre></div>
 </div>
 </div></blockquote>

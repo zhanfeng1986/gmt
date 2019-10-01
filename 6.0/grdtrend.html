@@ -312,12 +312,16 @@ data as 1- or 2-byte integers. <a class="reference internal" href="gmt.html#grd-
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p>To remove a planar trend from hawaii_topo.nc and write result in hawaii_residual.nc:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdtrend hawaii_topo.nc -N3 -Dhawaii_residual.nc
+<p><strong>Note</strong>: Below are some examples of valid syntax for this module.
+The examples that use remote files (file names starting with <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>)
+can be cut and pasted into your terminal for testing.
+Other commands requiring input files are just dummy examples of the types
+of uses that are common but cannot be run verbatim as written.</p>
+<p>To remove a planar trend from the remote grid earth_relief_05m for the region
+around Hawaii and write the result to hawaii_residual.nc:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdtrend @earth_relief_05m -R180/240/10/40 -N3 -Dhawaii_residual.nc
 </pre></div>
 </div>
-</div></blockquote>
 <p>To do a robust fit of a bicubic surface to hawaii_topo.nc, writing the
 result in hawaii_trend.nc and the weights used in hawaii_weight.nc,
 and reporting the progress:</p>

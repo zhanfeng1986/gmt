@@ -511,8 +511,13 @@ problems downstream. If you find the output is not written with enough
 precision, consider switching to binary output (<strong>-bo</strong> if available) or
 specify more decimals using the <a class="reference internal" href="gmt.conf.html#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a> setting.</p>
 </div>
-<div class="section" id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>To determine the centroid of the remote GSHHH high-resolution polygon for Australia,
+as well as the land area in km squared, try:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt spatial @GSHHS_h_Australia.txt -fg -Qk
+</pre></div>
+</div>
 <p>To turn all lines in the multisegment file lines.txt into closed polygons,
 run</p>
 <blockquote>

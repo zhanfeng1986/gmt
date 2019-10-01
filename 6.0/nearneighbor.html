@@ -391,6 +391,22 @@ normalizing the data prior to processing.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>Note</strong>: Below are some examples of valid syntax for this module.
+The examples that use remote files (file names starting with <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>)
+can be cut and pasted into your terminal for testing.
+Other commands requiring input files are just dummy examples of the types
+of uses that are common but cannot be run verbatim as written.</p>
+<p>To grid the data in the remote file &#64;ship_15.txt at 5x5 arc minutes using
+a search radius of 15 arch minutes, and plot the resulting grid using
+default projection and colors, try:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>gmt begin map</dt>
+<dd>gmt nearneighbor &#64;ship_15.txt -R245/255/20/30 -I5m -Ggrid.nc -S15m
+gmt grdimage grid.nc -B</dd>
+</dl>
+<p>gmt end show</p>
+</div></blockquote>
 <p>To create a gridded data set from the file seaMARCII_bathy.lon_lat_z
 using a 0.5 min grid, a 5 km search radius, using an octant search with
 100% sector coverage, and set empty nodes to -9999:</p>

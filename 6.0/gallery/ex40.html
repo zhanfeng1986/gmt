@@ -219,6 +219,10 @@ different thresholds.</p>
 <span class="c1"># GMT modules:  basemap, text, plot, gmtsimplify, gmtspatial, subplot</span>
 <span class="c1"># Unix progs:   awk, rm</span>
 <span class="c1">#</span>
+
+<span class="c1"># set AWK to awk if undefined</span>
+<span class="nv">AWK</span><span class="o">=</span><span class="si">${</span><span class="nv">AWK</span><span class="k">:-</span><span class="nv">awk</span><span class="si">}</span>
+
 gmt begin ex40
   gmt spatial @GSHHS_h_Australia.txt -fg -Qk &gt; centroid.txt
   gmt spatial @GSHHS_h_Australia.txt -fg -Qk <span class="p">|</span> <span class="nv">$AWK</span> <span class="s1">&#39;{printf &quot;Full area = %.0f km@+2@+\n&quot;, $3}&#39;</span> &gt; area.txt

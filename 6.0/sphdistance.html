@@ -435,6 +435,21 @@ normalizing the data prior to processing.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>Note</strong>: Below are some examples of valid syntax for this module.
+The examples that use remote files (file names starting with <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>)
+can be cut and pasted into your terminal for testing.
+Other commands requiring input files are just dummy examples of the types
+of uses that are common but cannot be run verbatim as written.</p>
+<p>To compute a distance grid of the distances between a set of points in the
+remote file hotspots.txt and then contour them on a sphere with a 200 km interval
+and annotations every 1000 km, try:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map
+  gmt sphtriangulate @hotspots.txt -Qv -D &gt; t.txt
+  gmt sphdistance -Rg -I1 -Qt.txt -Gt.nc -Lk
+  gmt grdcontour t.nc -JG-140/30/7i -C200 -A1000 -Bafg
+gmt end show
+</pre></div>
+</div>
 <p>To construct Voronoi polygons from the points in the file testdata.txt
 and then calculate distances from the data to a global 1x1 degree grid, use</p>
 <blockquote>

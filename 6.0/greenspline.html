@@ -488,16 +488,20 @@ any module-specific option (but not the GMT common options), then exits.</dd>
 and stored in 1D.txt, requesting output every 0.1 step from 0 to 10, and
 using a minimum cubic spline, try</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math -T0/10/1 <span class="m">0</span> <span class="m">1</span> <span class="nv">NRAND</span> <span class="o">=</span> 1D.txt
-gmt plot -R0/10/-5/5 -JX6i/3i -B2f1/1 -Sc0.1 -Gblack 1D.txt -K &gt; 1D.ps
-gmt greenspline 1D.txt -R0/10 -I0.1 -Sc -V <span class="p">|</span> plot -R -J -O -Wthin &gt;&gt; 1D.ps
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin 1D
+  gmt math -T0/10/1 <span class="m">0</span> <span class="m">1</span> <span class="nv">NRAND</span> <span class="o">=</span> 1D.txt
+  gmt plot -R0/10/-5/5 -JX6i/3i -B -Sc0.1 -Gblack 1D.txt
+  gmt greenspline 1D.txt -R0/10 -I0.1 -Sc <span class="p">|</span> gmt plot -Wthin
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
 <p>To apply a spline in tension instead, using a tension of 0.7, try</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt plot -R0/10/-5/5 -JX6i/3i -B2f1/1 -Sc0.1 -Gblack 1D.txt -K &gt; 1Dt.ps
-gmt greenspline 1D.txt -R0/10 -I0.1 -St0.7 -V <span class="p">|</span> plot -R -J -O -Wthin &gt;&gt; 1Dt.ps
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin 1Dt
+  gmt plot -R0/10/-5/5 -JX6i/3i -B -Sc0.1 -Gblack 1D.txt
+  gmt greenspline 1D.txt -R0/10 -I0.1 -St0.7 <span class="p">|</span> gmt plot -Wthin
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -508,9 +512,11 @@ gmt greenspline 1D.txt -R0/10 -I0.1 -St0.7 -V <span class="p">|</span> plot -R -
 Cartesian data set from Davis (1986) that is used in the GMT Technical
 Reference and Cookbook example 16, try</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt greenspline table_5.11 -R0/6.5/-0.2/6.5 -I0.1 -Sc -V -D1 -GS1987.nc
-gmt plot -R0/6.5/-0.2/6.5 -JX6i -B2f1 -Sc0.1 -Gblack table_5.11 -K &gt; 2D.ps
-gmt grdcontour -JX6i -B2f1 -O -C25 -A50 S1987.nc &gt;&gt; 2D.ps
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin 2D
+  gmt greenspline @Table_5_11.txt -R0/6.5/-0.2/6.5 -I0.1 -Sc -V -D1 -GS1987.nc
+  gmt plot -R0/6.5/-0.2/6.5 -JX6i -B -Sc0.1 -Gblack @Table_5_11.txt
+  gmt grdcontour -C25 -A50 S1987.nc
+gmt end show
 </pre></div>
 </div>
 </div></blockquote>
@@ -524,7 +530,7 @@ the input mask grid is not NaN, try</p>
 <p>To use Cartesian generalized splines in tension and return the magnitude
 of the surface slope in the NW direction, try</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt greenspline table_5.11 -R0/6.5/-0.2/6.5 -I0.1 -Sr0.95 -V -D1 -Q-45 -Gslopes.nc
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt greenspline @Table_5_11.txt -R0/6.5/-0.2/6.5 -I0.1 -Sr0.95 -V -D1 -Q-45 -Gslopes.nc
 </pre></div>
 </div>
 </div></blockquote>
@@ -544,7 +550,7 @@ remaining constraints specify only the surface slope and direction
 table_5.23 in Davis (1986) that contains <em>x</em>,<em>y</em>,<em>z</em> locations and
 a measure of uranium oxide concentrations (in percent), try</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt greenspline table_5.23 -R5/40/-5/10/5/16 -I0.25 -Sr0.85 -V -D5 -G3D_UO2.txt
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt greenspline @Table_5_23.txt -R5/40/-5/10/5/16 -I0.25 -Sr0.85 -V -D5 -G3D_UO2.txt
 </pre></div>
 </div>
 </div></blockquote>
@@ -552,15 +558,15 @@ a measure of uranium oxide concentrations (in percent), try</p>
 <div class="section" id="d-spherical-surface-examples">
 <h2>2-d Spherical Surface Examples<a class="headerlink" href="#d-spherical-surface-examples" title="Permalink to this headline">¶</a></h2>
 <p>To recreate Parker’s [1994] example on a global 1x1 degree grid,
-assuming the data are in file mag_obs_1990.txt, try</p>
+assuming the data are in the remote file mag_obs_1990.txt, try</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>greenspline -V -Rg -Sp -D3 -I1 -GP1994.nc mag_obs_1990.txt
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt reenspline -V -Rg -Sp -D3 -I1 -GP1994.nc @mag_obs_1990.txt
 </pre></div>
 </div>
 </div></blockquote>
 <p>To do the same problem but applying tension of 0.85, use</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>greenspline -V -Rg -Sq0.85 -D3 -I1 -GWB2008.nc mag_obs_1990.txt
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt greenspline -V -Rg -Sq0.85 -D3 -I1 -GWB2008.nc @mag_obs_1990.txt
 </pre></div>
 </div>
 </div></blockquote>

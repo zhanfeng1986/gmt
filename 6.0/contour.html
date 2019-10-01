@@ -600,20 +600,24 @@ exact geodesic calculations (slower but more accurate; see
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>Note</strong>: Below are some examples of valid syntax for this module.
+The examples that use remote files (file names starting with <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>)
+can be cut and pasted into your terminal for testing.
+Other commands requiring input files are just dummy examples of the types
+of uses that are common but cannot be run verbatim as written.</p>
 <p>Note: Since many GMT plot examples are very short (i.e., one module call between the
 <strong>gmt begin</strong> and <strong>gmt end</strong> commands), we will often present them using the quick
 modern mode <a class="reference internal" href="cookbook/one-liner.html"><span class="doc">GMT Modern Mode One-line Commands</span></a> syntax, which simplifies such short scripts.</p>
-<p>To make a raw contour plot from the file topo.xyz and drawing the
-contours (pen = 2) given in the CPT topo.cpt on a Lambert
-map at 0.5 inch/degree along the standard parallels 18 and 24, use</p>
+<p>To make a raw contour plot from the remote file Table_5.11.txt and draw the
+contours every 25 and annotate every 50, using the default Cartesian projection, try</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt contour topo.xyz -R320/330/20/30 -Jl18/24/0.5i -Ctopo.cpt -W0.5p -pdf topo
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt contour @Table_5_11.txt -Wthin -C25 -A50 -B -pdf map
 </pre></div>
 </div>
 </div></blockquote>
-<p>To use the same data but only contour the values 250 and 700, use</p>
+<p>To use the same data but only contour the values 750 and 800, use</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt contour topo.xyz -R320/330/20/30 -Jl18/24/0.5i -C250,700 -W0.5p -pdf topo
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt contour @Table_5_11.txt -A750,800 -W0.5p -B -pdf map
 </pre></div>
 </div>
 </div></blockquote>

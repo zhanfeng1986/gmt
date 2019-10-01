@@ -334,6 +334,11 @@ width = default, color = black, style = solid].</dd>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>Note</strong>: Below are some examples of valid syntax for this module.
+The examples that use remote files (file names starting with <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>)
+can be cut and pasted into your terminal for testing.
+Other commands requiring input files are just dummy examples of the types
+of uses that are common but cannot be run verbatim as written.</p>
 <p>Print current Sun position and Sunrise, Sunset times at:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt solar -I-7.93/37.079+d2016-02-04T10:01:00
@@ -343,8 +348,8 @@ width = default, color = black, style = solid].</dd>
 <p>Plot the day-night and civil twilight</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin
-gmt coast -Rd -W0.1p -JQ0/14c -Ba -BWSen -Dl -A1000
-gmt solar -W1p -Tdc
+  gmt coast -Rd -W0.1p -JQ0/14c -B -BWSen -Dl -A1000
+  gmt solar -W1p -Tdc
 gmt end show
 </pre></div>
 </div>

@@ -365,18 +365,19 @@ data as 1- or 2-byte integers. <a class="reference internal" href="gmt.html#grd-
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p>To obtain all the information about the data set in file hawaii_topo.nc:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdinfo -L1 -L2 -M hawaii_topo.nc
+<p><strong>Note</strong>: Below are some examples of valid syntax for this module.
+The examples that use remote files (file names starting with <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>)
+can be cut and pasted into your terminal for testing.
+Other commands requiring input files are just dummy examples of the types
+of uses that are common but cannot be run verbatim as written.</p>
+<p>To obtain all the information about the remote data set in file earth_relief_10m:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdinfo -L1 -L2 -M @earth_relief_10m
 </pre></div>
 </div>
-</div></blockquote>
-<p>Get the grid spacing in hawaii_topo.nc:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">dx</span><span class="o">=</span><span class="sb">`</span>gmt grdinfo -Cn -o7 hawaii_topo.nc<span class="sb">`</span>
+<p>Get the grid spacing in earth_relief_10m:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">dx</span><span class="o">=</span><span class="sb">`</span>gmt grdinfo -Cn -o7 @earth_relief_10m<span class="sb">`</span>
 </pre></div>
 </div>
-</div></blockquote>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>

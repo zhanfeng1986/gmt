@@ -453,6 +453,17 @@ specify more decimals using the <a class="reference internal" href="gmt.conf.htm
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>Note</strong>: Below are some examples of valid syntax for this module.
+The examples that use remote files (file names starting with <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>)
+can be cut and pasted into your terminal for testing.
+Other commands requiring input files are just dummy examples of the types
+of uses that are common but cannot be run verbatim as written.</p>
+<p>To project the remote data sets ship_03.txt (lon,lat,depth) onto a great circle specified by
+the two points (330,-18) and (53,21) and sort the records on the projected distances along
+that circle and only output the distance and the depths, try:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt project @ship_03.txt -C330/-18 -T53/21 -S -Fpz -Q &gt; ship_proj.txt
+</pre></div>
+</div>
 <p>To generate points every 10km along a great circle from 10N,50W to 30N,10W:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt project -C-50/10 -E-10/30 -G10 -Q &gt; great_circle_points.xyp

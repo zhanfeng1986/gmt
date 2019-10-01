@@ -315,13 +315,16 @@ data as 1- or 2-byte integers. <a class="reference internal" href="gmt.html#grd-
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p>To find the height intervals that divide the file heights.nc into 16
-divisions of equal area:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdhisteq heights.nc -C16 -D &gt; levels.d
+<p><strong>Note</strong>: Below are some examples of valid syntax for this module.
+The examples that use remote files (file names starting with <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>)
+can be cut and pasted into your terminal for testing.
+Other commands requiring input files are just dummy examples of the types
+of uses that are common but cannot be run verbatim as written.</p>
+<p>To find the height intervals that divide the selected region of the remote file
+earth_relief_05m into 16 divisions of equal area:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdhisteq -C16 -D @earth_relief_05m -R0/20/0/20 &gt; levels.txt
 </pre></div>
 </div>
-</div></blockquote>
 <p>To make the poorly distributed intensities in the file raw_intens.nc
 suitable for use with <a class="reference internal" href="grdimage.html"><span class="doc">grdimage</span></a> or <a class="reference internal" href="grdview.html"><span class="doc">grdview</span></a>, run</p>
 <blockquote>

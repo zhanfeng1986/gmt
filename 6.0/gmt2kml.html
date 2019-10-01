@@ -487,6 +487,17 @@ any module-specific option (but not the GMT common options), then exits.</dd>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>Note</strong>: Below are some examples of valid syntax for this module.
+The examples that use remote files (file names starting with <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>)
+can be cut and pasted into your terminal for testing.
+Other commands requiring input files are just dummy examples of the types
+of uses that are common but cannot be run verbatim as written.</p>
+<p>To plot colored symbols based on a CPT of the remote file &#64;kml_pointsets.txt,
+first make the CPT and then create the KML file thus:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt makecpt -Ccategorical &gt; categories.cpt
+gmt 2kml @kml_pointsets.txt -Ccategories.cpt &gt; points.kml
+</pre></div>
+</div>
 <p>To convert a file with point locations (lon, lat) into a KML file with
 red circle symbols, try</p>
 <blockquote>
