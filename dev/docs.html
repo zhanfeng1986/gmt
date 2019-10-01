@@ -192,7 +192,7 @@
         
             
             
-              <a href="https://github.com/GenericMappingTools/gmt/blob/6.1/doc/rst/source/docs.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/GenericMappingTools/gmt/edit/6.1/doc/rst/source/docs.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -211,7 +211,7 @@
 <p>Show the HTML documentation for selected module</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<p><strong>gmt docs</strong> [ <strong>-Q</strong> ] [ <strong>-S</strong> ] [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ] <em>module-name</em> [<em>-option</em>]</p>
+<p><strong>gmt docs</strong> [ <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong> ] [ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong> ] [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ] <em>module-name</em> [<em>-option</em>]</p>
 <p><strong>Note:</strong> No space is allowed between the option flag and the associated arguments.</p>
 </div>
 <div class="section" id="description">
@@ -220,14 +220,24 @@
 Besides the modules names, the special targets <em>cookbook</em>, <em>gallery</em>, <em>defaults</em>, <em>api</em> and <em>tutorial</em>
 are also accepted.</p>
 </div>
+<div class="section" id="required-arguments">
+<h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><em>module-name</em></dt>
+<dd>One of teh core or supplemental modules,
+or one of api, cookbook, gallery, defaults, and tutorial.</dd>
+</dl>
+</div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
+<dl class="docutils" id="q">
 <dt><strong>-Q</strong></dt>
 <dd>This option means we are doing a “dry-run” and simply want the final URL to be
 printed to standard output.  No file open command will take place. This is useful
 if you are working remotely on a server and do not wish to launch a GUI browser.
 If used, <strong>-Q</strong> must be the first option to <strong>docs</strong>.</dd>
+</dl>
+<dl class="docutils" id="s">
 <dt><strong>-S</strong></dt>
 <dd>Normally, <strong>docs</strong> will open documentation files from the local computer if the document can
 be found there; otherwise it will use the GMT server.  The <strong>-S</strong> option forces <strong>docs</strong> to
@@ -259,42 +269,30 @@ that this operation is only valid for an actual URL, hence we implicitly set
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p>To see the documentation of <em>grdimage</em></p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt docs grdimage
+<p>To see the documentation of <em>grdimage</em>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt docs grdimage
 </pre></div>
 </div>
-</div></blockquote>
-<p>To see the link to the documentation of <em>grdimage</em></p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt docs -Q grdimage
+<p>To see the link to the documentation of <em>grdimage</em>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt docs -Q grdimage
 </pre></div>
 </div>
-</div></blockquote>
-<p>To see the link to the documentation of <em>grdimage</em> on the GMT server</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt docs -Q -S grdimage
+<p>To see the link to the documentation of <em>grdimage</em> on the GMT server:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt docs -Q -S grdimage
 </pre></div>
 </div>
-</div></blockquote>
-<p>To see the documentation of the <strong>-B</strong> option in <em>pscoast</em></p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt docs pscoast -B
+<p>To see the documentation of the <strong>-B</strong> option in <em>pscoast</em>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt docs pscoast -B
 </pre></div>
 </div>
-</div></blockquote>
-<p>To examine the list of GMT defaults, try</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt docs defaults
+<p>To examine the list of GMT defaults, try:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt docs defaults
 </pre></div>
 </div>
-</div></blockquote>
-<p>To see the Gallery</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt docs gallery
+<p>To see the Gallery:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt docs gallery
 </pre></div>
 </div>
-</div></blockquote>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
