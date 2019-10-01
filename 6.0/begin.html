@@ -241,8 +241,9 @@ prefix in single or double quotes.</dd>
 </dl>
 <dl class="docutils" id="begin-formats">
 <dt><em>formats</em></dt>
-<dd>Give one or more comma-separated graphics extensions from the list of allowable graphics formats
-<a class="reference internal" href="#tbl-formats"><span class="std std-ref">formats</span></a> (default is configurable via setting GMT_GRAPHICS_FORMAT [pdf]).</dd>
+<dd>Give one or more comma-separated graphics extensions from the list of allowable
+<a class="reference internal" href="#tbl-formats"><span class="std std-ref">graphics formats</span></a>
+(default is configurable via setting <a class="reference internal" href="gmt.conf.html#gmt-graphics-format"><span class="std std-ref">GMT_GRAPHICS_FORMAT</span></a> [pdf]).</dd>
 </dl>
 <dl class="docutils" id="begin-options">
 <dt><em>options</em></dt>
@@ -252,7 +253,7 @@ The valid subset of options are
 <strong>A</strong>[<em>args</em>],<strong>C</strong><em>args</em>,<strong>D</strong><em>dir</em>,<strong>E</strong><em>dpi</em>,<strong>H</strong><em>factor</em>,<strong>M</strong><em>args</em>,<strong>Q</strong><em>args</em>,<strong>S</strong>.
 See the <a class="reference internal" href="psconvert.html"><span class="doc">psconvert</span></a> documentation for details on these options.</dd>
 </dl>
-<dl class="docutils" id="begin-v">
+<dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Select verbosity level [c].  </dd>
 </dl>
@@ -265,6 +266,9 @@ any module-specific option (but not the GMT common options), then exits.</dd>
 <dt><strong>-?</strong> or no arguments</dt>
 <dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
 </dl>
+</div>
+<div class="section" id="supported-graphic-formats">
+<h2>Supported Graphic Formats<a class="headerlink" href="#supported-graphic-formats" title="Permalink to this headline">¶</a></h2>
 <blockquote id="tbl-formats">
 <div><table border="1" class="docutils">
 <colgroup>
@@ -312,27 +316,21 @@ any module-specific option (but not the GMT common options), then exits.</dd>
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>To initiate a new modern session that will produce a single
 map called Figure_2 saved as both a PDF vector graphics file
-and an opaque PNG raster image, we would run</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin Figure_2 pdf,png
+and an opaque PNG raster image, we would run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin Figure_2 pdf,png
 </pre></div>
 </div>
-</div></blockquote>
 <p>If the modern session is only used for computations and no illustrations
 are produced then we do not need to give any further arguments:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin
 </pre></div>
 </div>
-</div></blockquote>
 <p>Should we give such a command and still produce a plot then it will automatically
-be called gmtsession.pdf (assuming GMT_GRAPHICS_FORMAT is pdf).</p>
-<p>To set up proceedings for a jpg figure with 0.5c white margin, we would run</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin <span class="s1">&#39;My Figure4&#39;</span> pdf,png A+m1c
+be called gmtsession.pdf (assuming <a class="reference internal" href="gmt.conf.html#gmt-graphics-format"><span class="std std-ref">GMT_GRAPHICS_FORMAT</span></a> is pdf).</p>
+<p>To set up proceedings for a jpg figure with 0.5c white margin, we would run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin <span class="s1">&#39;My Figure4&#39;</span> pdf,png A+m1c
 </pre></div>
 </div>
-</div></blockquote>
 </div>
 <div class="section" id="note-on-postscript">
 <h2>Note on PostScript<a class="headerlink" href="#note-on-postscript" title="Permalink to this headline">¶</a></h2>
@@ -357,12 +355,14 @@ Each sub-shell will then have its own process ID and gmt modules started by the 
 have that ID as PPID and it will differ from the one determined by gmt begin.
 If you are using pipes in your modern mode script and you get strange errors about not finding gmt6.#####
 then you can add this command to the top of your script to make the issue go away (in Bourne shell):</p>
-<blockquote>
-<div>export GMT_SESSION_NAME=$$</div></blockquote>
-<p>or in cshell:</p>
-<blockquote>
-<div>setenv GMT_SESSION_NAME $$</div></blockquote>
-<p>This setting is prescribed if you create a new script with <strong>gmt</strong> --new-script.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">GMT_SESSION_NAME</span><span class="o">=</span><span class="nv">$$</span>
+</pre></div>
+</div>
+<p>or in C shell:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>setenv GMT_SESSION_NAME <span class="nv">$$</span>
+</pre></div>
+</div>
+<p>This setting is prescribed if you create a new script with <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--new-script</span></code>.</p>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
@@ -399,7 +399,7 @@ then you can add this command to the top of your script to make the issue go awa
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Sep 30, 2019.
+        Last updated on Oct 01, 2019.
       </span>
 
     </p>
