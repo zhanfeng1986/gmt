@@ -94,12 +94,12 @@
               <p class="caption"><span class="caption-text">Getting started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example Gallery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">The GMT Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">GMT Tutorial</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules.html">GMT Modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cookbook.html">The GMT Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookbook.html">GMT Cookbook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../datasets.html">Datasets</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
@@ -233,6 +233,10 @@ outlined fonts or to convert to a PDF-file.</p>
 <span class="c1"># GMT modules:	set, coast, plot, text, legend</span>
 <span class="c1"># Unix progs:	awk, cat, rm</span>
 <span class="c1">#</span>
+
+<span class="c1"># set AWK to awk if undefined</span>
+<span class="nv">AWK</span><span class="o">=</span><span class="si">${</span><span class="nv">AWK</span><span class="k">:-</span><span class="nv">awk</span><span class="si">}</span>
+
 gmt begin ex31
 	<span class="c1"># create file PSL_custom_fonts.txt in current working directory</span>
 	<span class="c1"># and add PostScript font names of Linux Biolinum and Libertine</span>
@@ -285,7 +289,7 @@ gmt begin ex31
 	<span class="c1"># plot legend</span>
 	gmt legend -DjTR+o0.1c+w8.0c+l1.2 -C0.3c/0.4c -F+p+gwhite legend.txt
 
-	rm -f PSL_custom_fonts.txt legend.txt ex31CropNoLogo.eps
+	rm -f PSL_custom_fonts.txt legend.txt ex31CropNoLogo.eps europe-capitals-ru.csv
 gmt end show
 </pre></div>
 </div>

@@ -94,12 +94,12 @@
               <p class="caption"><span class="caption-text">Getting started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example Gallery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">GMT Tutorial</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">GMT Modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cookbook.html">The GMT Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cookbook.html">GMT Cookbook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
@@ -206,8 +206,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="grdconvert">
-<span id="index-0"></span><h1>grdconvert<a class="headerlink" href="#grdconvert" title="Permalink to this headline">¶</a></h1>
+  <p>. index:: ! grdconvert</p>
+<div class="section" id="grdconvert">
+<h1>grdconvert<a class="headerlink" href="#grdconvert" title="Permalink to this headline">¶</a></h1>
 <p>Convert between different grid formats</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
@@ -465,6 +466,11 @@ normalizing the data prior to processing.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>Note</strong>: Below are some examples of valid syntax for this module.
+The examples that use remote files (file names starting with <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>)
+can be cut and pasted into your terminal for testing.
+Other commands requiring input files are just dummy examples of the types
+of uses that are common but cannot be run verbatim as written.</p>
 <p>To extract the second layer from a 3-dimensional grid named temp from a
 COARDS-compliant netCDF file climate.nc:</p>
 <blockquote>
@@ -473,9 +479,9 @@ COARDS-compliant netCDF file climate.nc:</p>
 </div>
 </div></blockquote>
 <p>To create a 4-byte native floating point grid from the COARDS-compliant
-netCDF file data.nc:</p>
+remote netCDF file AFR.nc:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdconvert data.nc -Gras_data.b4<span class="o">=</span>bf -V
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdconvert @AFR.nc -GAFR_bin.b4<span class="o">=</span>bf -V
 </pre></div>
 </div>
 </div></blockquote>

@@ -94,12 +94,12 @@
               <p class="caption"><span class="caption-text">Getting started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example Gallery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">GMT Tutorial</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">GMT Modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cookbook.html">The GMT Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cookbook.html">GMT Cookbook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
@@ -435,12 +435,15 @@ Alternatively, append <strong>+e</strong> to keep <em>inc</em> exact and adjust 
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p>To filter the data set in the file cruise.gmtd containing evenly spaced
-gravity, magnetics, topography, and distance (in m) with a 10 km
-Gaussian filter, removing outliers, and output a filtered value every 2
-km between 0 and 100 km:</p>
+<p><strong>Note</strong>: Below are some examples of valid syntax for this module.
+The examples that use remote files (file names starting with <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>)
+can be cut and pasted into your terminal for testing.
+Other commands requiring input files are just dummy examples of the types
+of uses that are common but cannot be run verbatim as written.</p>
+<p>To filter the remote CO2 data set in the file MaunaLoa_CO2.txt (year, CO2)
+with a 5 year Gaussian filter, try</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt filter1d cruise.gmtd -T0/1.0e5/2000 -FG10000 -N3 -V &gt; filtered_cruise.gmtd
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt filter1d @MaunaLoa_CO2.txt -Fg5 &gt; CO2_trend.txt
 </pre></div>
 </div>
 </div></blockquote>

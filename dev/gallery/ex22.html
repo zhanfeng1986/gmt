@@ -94,12 +94,12 @@
               <p class="caption"><span class="caption-text">Getting started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example Gallery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">The GMT Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">GMT Tutorial</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules.html">GMT Modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cookbook.html">The GMT Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookbook.html">GMT Cookbook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../datasets.html">Datasets</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
@@ -308,6 +308,8 @@ gmt begin ex22
 	<span class="c1"># OK, now we can actually run gmt legend.  We center the legend below the map.</span>
 	<span class="c1"># Trial and error shows that 1.7i is a good legend height:</span>
 	gmt legend -DJBC+o0/0.4i+w7i/1.7i -F+p+glightyellow neis.legend
+
+	rm neis.legend usgs_quakes_22.txt
 gmt end show
 </pre></div>
 </div>

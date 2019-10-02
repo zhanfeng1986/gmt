@@ -94,12 +94,12 @@
               <p class="caption"><span class="caption-text">Getting started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example Gallery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">GMT Tutorial</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">GMT Modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cookbook.html">The GMT Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cookbook.html">GMT Cookbook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
@@ -338,6 +338,20 @@ will indicate both this unit and epoch.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>Note</strong>: Below are some examples of valid syntax for this module.
+The examples that use remote files (file names starting with <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>)
+can be cut and pasted into your terminal for testing.
+Other commands requiring input files are just dummy examples of the types
+of uses that are common but cannot be run verbatim as written.</p>
+<p>To obtain data for an oblique Mercator projection map we need to extract
+more data that is actually used. This is necessary because the output of
+<strong>grdcut</strong> has edges defined by parallels and meridians, while the
+oblique map in general does not. Hence, to get all the data from the
+ETOPO2 data needed to make a contour map for the region defined by its
+lower left and upper right corners and the desired projection, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcut @earth_relief_02m -R160/20/220/30r -Joc190/25.5/292/69/1 -Gdata.nc
+</pre></div>
+</div>
 <p>Suppose you have used <a class="reference internal" href="surface.html"><span class="doc">surface</span></a> to grid ship gravity in the region
 between 148E - 162E and 8N - 32N, and you do not trust the gridding near
 the edges, so you want to keep only the area between 150E - 160E and 10N - 30N, then:</p>
@@ -364,17 +378,6 @@ that are all NaNs, try</p>
 distance of 500 km from the point 45,30 try</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcut bathy.nc -Gsubset_bathy.nc -S45/30/500k -V
-</pre></div>
-</div>
-</div></blockquote>
-<p>To obtain data for an oblique Mercator projection map we need to extract
-more data that is actually used. This is necessary because the output of
-<strong>grdcut</strong> has edges defined by parallels and meridians, while the
-oblique map in general does not. Hence, to get all the data from the
-ETOPO2 data needed to make a contour map for the region defined by its
-lower left and upper right corners and the desired projection, use</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcut @earth_relief_02m -R160/20/220/30r -Joc190/25.5/292/69/1 -Gdata.nc
 </pre></div>
 </div>
 </div></blockquote>

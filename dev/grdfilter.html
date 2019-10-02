@@ -94,12 +94,12 @@
               <p class="caption"><span class="caption-text">Getting started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="gallery.html">Example Gallery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">The GMT Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">GMT Tutorial</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">GMT Modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cookbook.html">The GMT Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cookbook.html">GMT Cookbook</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
@@ -401,14 +401,19 @@ will indicate both this unit and epoch.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p>Suppose that north_pacific_etopo5.nc is a file of 5 minute bathymetry
-from 140E to 260E and 0N to 50N, and you want to find the medians of
+<p><strong>Note</strong>: Below are some examples of valid syntax for this module.
+The examples that use remote files (file names starting with <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>)
+can be cut and pasted into your terminal for testing.
+Other commands requiring input files are just dummy examples of the types
+of uses that are common but cannot be run verbatim as written.</p>
+<p>The &#64;earth_relief_05m.nc is a remote file of 5 minute bathymetry
+and you want to find the medians of
 values within a 300km radius (600km full width) of the output points,
 which you choose to be from 150E to 250E and 10N to 40N, and you want
 the output values every 0.5 degree. Using spherical distance
 calculations, you need:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdfilter north_pacific_etopo5.nc -Gfiltered_pacific.nc -Fm600 <span class="se">\</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdfilter @earth_relief_05m -Gfiltered_pacific.nc -Fm600 <span class="se">\</span>
               -D4 -R150/250/10/40 -I0.5 -V
 </pre></div>
 </div>
@@ -418,7 +423,7 @@ corresponding low-pass filter using a coarse grid interval as <strong>grdfilter<
 will resample the result to the same resolution as the input grid so we
 can compute the residuals, e.g.,</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdfilter north_pacific_etopo5.nc -Gresidual_pacific.nc -Fm600+h <span class="se">\</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdfilter @earth_relief_05m -Gresidual_pacific.nc -Fm600+h <span class="se">\</span>
               -D4 -R150/250/10/40 -I0.5 -V
 </pre></div>
 </div>
