@@ -523,14 +523,12 @@ Example <a class="reference internal" href="../gallery/ex01.html#example-01"><sp
 <p>Our first example uses the default placement algorithm. Because of the
 size of the map we request contour labels every 1.5 inches along the
 lines:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_O_1
-  gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500
-  gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+f8p -Gd1.5i -S10 -T+lLH
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_O_1
+gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 
+gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+f8p -Gd1.5i -S10 -T+lLH 
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <p>As seen in Figure <a class="reference internal" href="#contour-label-1"><span class="std std-ref">Contour label 1</span></a>, the contours are
 placed rather arbitrary. The string of contours for -40 to
 60 align well but that is a fortuitous consequence of reaching
@@ -545,14 +543,12 @@ available in previous GMT versions.</span></p>
 <h3>20.3.2. Fixed number of labels<a class="headerlink" href="#fixed-number-of-labels" title="Permalink to this headline">¶</a></h3>
 <p>We now exercise the option for specifying exactly how many labels each
 contour line should have:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_O_2
-  gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500
-  gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+f8p -Gn1/1i -S10 -T+lLH
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_O_2
+gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 
+gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+f8p -Gn1/1i -S10 -T+lLH
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <p>By selecting only one label per contour and requiring that labels only
 be placed on contour lines whose length exceed 1 inch, we achieve the
 effect shown in Figure <a class="reference internal" href="#contour-label-2"><span class="std std-ref">Contour label 2</span></a>.</p>
@@ -568,20 +564,18 @@ placed. Our points are not exactly on the contour lines so we give a
 nonzero “slop” to be used in the distance calculations: The point on the
 contour closest to our fixed points and within the given maximum
 distance will host the label.</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat <span class="s">&lt;&lt; EOF &gt; fix.txt</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat <span class="s">&lt;&lt; EOF &gt; fix.txt</span>
 <span class="s">80      -8.5</span>
 <span class="s">55      -7.5</span>
 <span class="s">102     0</span>
 <span class="s">130     10.5</span>
 <span class="s">EOF</span>
 gmt begin GMT_App_O_3
-  gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500
-  gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+f8p -Gffix.txt/0.1i -S10 -T+lLH
+gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 
+gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+f8p -Gffix.txt/0.1i -S10 -T+lLH 
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <p>The angle of the label is evaluated from the contour line geometry, and
 the final result is shown in Figure <a class="reference internal" href="#contour-label-3"><span class="std std-ref">Contour label 3</span></a>.
 To aid in understanding the algorithm we chose to specify “debug” mode
@@ -597,14 +591,12 @@ closest to the locations given in the file fix.txt in the <strong>-Gf</strong> o
 <p>Often, it will suffice to place contours at the imaginary intersections
 between the contour lines and a well-placed straight line segment. The
 <strong>-Gl</strong> or <strong>-GL</strong> algorithms work well in those cases:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_O_4
-  gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500
-  gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+f8p -GLZ-/Z+ -S10 -T+lLH
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_O_4
+gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 
+gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+f8p -GLZ-/Z+ -S10 -T+lLH 
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <p>The obvious choice in this example is to specify a great circle between
 the high and the low, thus placing all labels between these extrema.</p>
 <div class="figure align-center" id="id8">
@@ -623,14 +615,12 @@ the desired label positions becomes too large to be given conveniently
 on the command line, or (2) we have another data set or lines whose
 intersections we wish to use, the general crossing algorithm makes more
 sense:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_O_5
-  gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500
-  gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+f8p -GX@App_O_cross.txt -S10 -T+lLH
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_O_5
+gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 
+gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+f8p -GX@App_O_cross.txt -S10 -T+lLH 
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <div class="figure align-center" id="id9">
 <span id="contour-label-5"></span><a class="reference internal image-reference" href="../_images/GMT_App_O_5.png"><img alt="../_images/GMT_App_O_5.png" src="../_images/GMT_App_O_5.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Labels are placed at the intersections between contours and the
@@ -655,15 +645,13 @@ across-track, and surrounds the labels with an opaque, outlined text box
 so that the label is more readable. We choose the place the labels every
 1000 km along the line and use that distance as the label. The labels
 are placed normal to the line:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_O_6
-  gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500
-  gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+f8p -Gl50/10S/160/10S -S10 -T+l
-  gmt plot -SqD1000k:+g+LD+an+p -Wthick @App_O_transect.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_O_6
+gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 
+gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+f8p -Gl50/10S/160/10S -S10 -T+l 
+gmt plot -SqD1000k:+g+LD+an+p -Wthick @App_O_transect.txt
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <div class="figure align-center" id="id10">
 <span id="contour-label-6"></span><a class="reference internal image-reference" href="../_images/GMT_App_O_6.png"><img alt="../_images/GMT_App_O_6.png" src="../_images/GMT_App_O_6.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Labels attributes are controlled with the arguments to the <strong>-Sq</strong> option.</span></p>
@@ -680,15 +668,13 @@ contour and not the locations of the (local or global) extrema.</p>
 line, use spherical degrees for placement, append the degree symbol as a
 unit for the labels, choose a rounded rectangular text box, and
 inverse-video the label:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_O_7
-  gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500
-  gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+u<span class="s2">&quot; m&quot;</span>+f8p -Gl50/10S/160/10S -S10 -T+l
-  gmt plot -SqD15d:+gblack+fwhite+Ld+o+u@. -Wthick @App_O_transect.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_O_7
+gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 
+gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+u<span class="s2">&quot; m&quot;</span>+f8p -Gl50/10S/160/10S -S10 -T+l
+gmt plot -SqD15d:+gblack+fwhite+Ld+o+u@. -Wthick @App_O_transect.txt
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <p>The output is presented as Figure <a class="reference internal" href="#contour-label-7"><span class="std std-ref">Contour label 7</span></a>.</p>
 <div class="figure align-center" id="id11">
 <span id="contour-label-7"></span><a class="reference internal image-reference" href="../_images/GMT_App_O_7.png"><img alt="../_images/GMT_App_O_7.png" src="../_images/GMT_App_O_7.png" style="width: 500px;" /></a>
@@ -703,16 +689,14 @@ choose to place labels every 1500 km. To do this we need to pull out
 those records whose distances are multiples of 1500 km and create a
 “fixed points” file that can be used to place labels and specify the
 labels. This is done with <strong>awk</strong>.</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_O_8
-  gmt convert -i0,1,4 -Em150 @App_O_transect.txt <span class="p">|</span> <span class="nv">$AWK</span> <span class="s1">&#39;{print $1,$2,int($3)}&#39;</span> &gt; fix2.txt
-  gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500
-  gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+u<span class="s2">&quot; m&quot;</span>+f8p -Gl50/10S/160/10S -S10 -T+l
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_O_8
+gmt convert -i0,1,4 -Em150 @App_O_transect.txt <span class="p">|</span> <span class="nv">$AWK</span> <span class="s1">&#39;{print $1,$2,int($3)}&#39;</span> &gt; fix2.txt
+gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 
+gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+u<span class="s2">&quot; m&quot;</span>+f8p -Gl50/10S/160/10S -S10 -T+l 
 gmt plot -Sqffix2.txt:+g+an+p+Lf+u<span class="s2">&quot; m&quot;</span>+f8p -Wthick @App_O_transect.txt
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <p>The output is presented as Figure <a class="reference internal" href="#contour-label-8"><span class="std std-ref">Contour label 8</span></a>.</p>
 <div class="figure align-center" id="id12">
 <span id="contour-label-8"></span><a class="reference internal image-reference" href="../_images/GMT_App_O_8.png"><img alt="../_images/GMT_App_O_8.png" src="../_images/GMT_App_O_8.png" style="width: 500px;" /></a>
@@ -729,35 +713,33 @@ the previous sections. We make a map showing the tsunami travel times
 Islands <a class="footnote-reference" href="#id4" id="id2">[37]</a>. We lay down a color map based on the travel times and the
 shape of the seafloor, and travel time contours with curved labels as
 well as a few quoted lines. The final script is</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_O_9
-  <span class="nv">R</span><span class="o">=</span>-R-85/5/10/55
-  gmt grdgradient @App_O_topo5.nc -Nt1 -A45 -Gtopo5_int.nc
-  gmt <span class="nb">set</span> FORMAT_GEO_MAP ddd:mm:ssF FONT_ANNOT_PRIMARY +9p FONT_TITLE 22p
-  gmt project -E-74/41 -C-17/28 -G10 -Q &gt; great_NY_Canaries.txt
-  gmt project -E-74/41 -C2.33/48.87 -G100 -Q &gt; great_NY_Paris.txt
-  <span class="nv">km</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> -17 <span class="m">28</span> <span class="p">|</span> gmt mapproject -G-74/41+uk -fg --FORMAT_FLOAT_OUT<span class="o">=</span>%.0f -o2<span class="sb">`</span>
-  gmt makecpt -Clightred,lightyellow,lightgreen -T0,3,6,100 -N &gt; ttt.cpt
-  gmt grdimage @App_O_ttt.nc -Itopo5_int.nc -Cttt.cpt <span class="nv">$R</span> -JM5.3i -nc+t1
-  gmt grdcontour @App_O_ttt.nc -C0.5 -A1+u<span class="s2">&quot; hour&quot;</span>+v+f8p,Bookman-Demi <span class="se">\</span>
-     -GL80W/31N/17W/26N,17W/28N/17W/50N -S2
-  gmt plot -Wfatter,white great_NY_Canaries.txt
-  gmt coast -B20f5 -BWSne+t<span class="s2">&quot;Tsunami travel times from the Canaries&quot;</span> -N1/thick <span class="se">\</span>
-     -Glightgray -Wfaint -A500
-  gmt convert great_NY_*.txt -E <span class="p">|</span> gmt plot <span class="nv">$R</span> -Sa0.15i -Gred -Wthin
-  gmt plot -Wthick great_NY_Canaries.txt <span class="se">\</span>
-   -Sqn1:+f8p,Times-Italic+l<span class="s2">&quot;Distance Canaries to New York = </span><span class="nv">$km</span><span class="s2"> km&quot;</span>+ap+v
-  gmt plot great_NY_Paris.txt -Sc0.08c -Gblack
-  gmt plot -Wthinner great_NY_Paris.txt -SqD1000k:+an+o+gblue+LDk+f7p,Helvetica-Bold,white
-  cat <span class="s">&lt;&lt; EOF | gmt text -Gwhite -Wthin -Dj0.1i -F+f8p,Bookman-Demi+j</span>
-<span class="s">  74W      41N     RT      New York</span>
-<span class="s">  2.33E    48.87N  CT      Paris</span>
-<span class="s">  17W      28N     CT      Canaries</span>
-<span class="s">  EOF</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_O_9
+<span class="nv">R</span><span class="o">=</span>-R-85/5/10/55
+gmt grdgradient @App_O_topo5.nc -Nt1 -A45 -Gtopo5_int.nc
+gmt <span class="nb">set</span> FORMAT_GEO_MAP ddd:mm:ssF FONT_ANNOT_PRIMARY +9p FONT_TITLE 22p
+gmt project -E-74/41 -C-17/28 -G10 -Q &gt; great_NY_Canaries.txt
+gmt project -E-74/41 -C2.33/48.87 -G100 -Q &gt; great_NY_Paris.txt
+<span class="nv">km</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> -17 <span class="m">28</span> <span class="p">|</span> gmt mapproject -G-74/41+uk -fg --FORMAT_FLOAT_OUT<span class="o">=</span>%.0f -o2<span class="sb">`</span>
+gmt makecpt -Clightred,lightyellow,lightgreen -T0,3,6,100 -N
+gmt grdimage @App_O_ttt.nc -Itopo5_int.nc -C <span class="nv">$R</span> -JM5.3i -nc+t1 
+gmt grdcontour @App_O_ttt.nc -C0.5 -A1+u<span class="s2">&quot; hour&quot;</span>+v+f8p,Bookman-Demi <span class="se">\</span>
+	-GL80W/31N/17W/26N,17W/28N/17W/50N -S2
+gmt plot -Wfatter,white great_NY_Canaries.txt
+gmt coast -B20f5 -BWSne+t<span class="s2">&quot;Tsunami travel times from the Canaries&quot;</span> -N1/thick <span class="se">\</span>
+	-Glightgray -Wfaint -A500 
+gmt convert great_NY_*.txt -E <span class="p">|</span> gmt plot <span class="nv">$R</span> -Sa0.15i -Gred -Wthin
+gmt plot -Wthick great_NY_Canaries.txt <span class="se">\</span>
+	-Sqn1:+f8p,Times-Italic+l<span class="s2">&quot;Distance Canaries to New York = </span><span class="nv">$km</span><span class="s2"> km&quot;</span>+ap+v 
+gmt plot great_NY_Paris.txt -Sc0.08c -Gblack
+gmt plot -Wthinner great_NY_Paris.txt -SqD1000k:+an+o+gblue+LDk+f7p,Helvetica-Bold,white 
+cat <span class="s">&lt;&lt; EOF | gmt text -Gwhite -Wthin -Dj0.1i -F+f8p,Bookman-Demi+j </span>
+<span class="s">74W	41N	RT	New York</span>
+<span class="s">2.33E	48.87N	CT	Paris</span>
+<span class="s">17W	28N	CT	Canaries</span>
+<span class="s">EOF</span>
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <p>with the complete illustration presented as Figure
 <a class="reference internal" href="#contour-label-9"><span class="std std-ref">Contour label 9</span></a>.</p>
 <div class="figure align-center" id="id13">
@@ -805,7 +787,7 @@ that New York will experience a large tsunami about 8 hours after the event.</sp
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 02, 2019.
+        Last updated on Oct 03, 2019.
       </span>
 
     </p>

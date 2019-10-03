@@ -312,19 +312,17 @@ add the -H option for modern mode to allow output to stdout.</p>
 </table>
 </div></blockquote>
 <p>Here is an example of four different ways of presenting the color bar:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_14 pdf
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_14
   gmt makecpt -H -Crainbow -T-20/60/10 &gt; disc.cpt
   gmt makecpt -H -Crainbow -T-20/60 &gt; cont.cpt
-  gmt basemap -R0/6/0/9 -Jx1i -B0 -Xc
-  gmt colorbar -Dx1i/1i+w4i/0.5i+h -Cdisc.cpt -B+tdiscrete
-  gmt colorbar -Dx1i/3i+w4i/0.5i+h -Ccont.cpt -B+tcontinuous
-  gmt colorbar -Dx1i/5i+w4i/0.5i+h -Cdisc.cpt -B+tdiscrete -I0.5
-  gmt colorbar -Dx1i/7i+w4i/0.5i+h -Ccont.cpt -B+tcontinuous -I0.5
+  gmt basemap -R0/6/0/9 -Jx1i -B0 -Xc 
+  gmt colorbar -Dx1i/1i+w4i/0.5i+h -Cdisc.cpt -Ba -B+tdiscrete 
+  gmt colorbar -Dx1i/3i+w4i/0.5i+h -Ccont.cpt -Ba -B+tcontinuous 
+  gmt colorbar -Dx1i/5i+w4i/0.5i+h -Cdisc.cpt -Ba -B+tdiscrete -I0.5 
+  gmt colorbar -Dx1i/7i+w4i/0.5i+h -Ccont.cpt -Ba -B+tcontinuous -I0.5 
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <p>Your plot should look like <a class="reference internal" href="#gmt-tut-14"><span class="std std-ref">our example 14 below</span></a></p>
 <div class="figure align-center" id="id1">
 <span id="gmt-tut-14"></span><a class="reference internal image-reference" href="../_images/GMT_tut_14.png"><img alt="../_images/GMT_tut_14.png" src="../_images/GMT_tut_14.png" style="width: 400px;" /></a>
@@ -421,15 +419,13 @@ and a CPT; the main other options are:</p>
 </div></blockquote>
 <p>We want to make a plain color map with a color bar superimposed above
 the plot.  We try</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_15 pdf
-  gmt makecpt -Crainbow -T1000/5000/500 -Z
-  gmt grdimage @tut_relief.nc -JM6i -B
-  gmt colorbar -DjTC -I0.4 -Bxa -By+lm
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_15
+  gmt makecpt -Crainbow -T1000/5000
+  gmt grdimage @tut_relief.nc -JM6i -Ba -BWSnE
+  gmt colorbar -DJTC -I0.4 -Bxa -By+lm 
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <p>Your plot should look like <a class="reference internal" href="#gmt-tut-15"><span class="std std-ref">our example 15 below</span></a></p>
 <div class="figure align-center" id="id2">
 <span id="gmt-tut-15"></span><a class="reference internal image-reference" href="../_images/GMT_tut_15.png"><img alt="../_images/GMT_tut_15.png" src="../_images/GMT_tut_15.png" style="width: 400px;" /></a>
@@ -495,15 +491,14 @@ we prefer to use the <strong>-Ne</strong> option; the value of
 </div></blockquote>
 <p>Given the CPT and the two gridded data sets we can
 create the shaded relief image:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_16 pdf
-  gmt makecpt -Crainbow -T1000/5000/500 -Z
-  gmt grdimage @tut_relief.nc -Ius_i.nc -JM6i -B
-  gmt colorbar -DjTC -I0.4 -Bxa -By+lm
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_16
+  gmt makecpt -Crainbow -T1000/5000
+  gmt grdgradient @tut_relief.nc -Ne0.8 -A100 -fg -Gus_i.nc
+  gmt grdimage tut_relief.nc -Ius_i.nc -JM6i -Ba -BWSnE
+  gmt colorbar -DJTC -I0.4 -Bxa -By+lm 
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <p>Your plot should look like <a class="reference internal" href="#gmt-tut-16"><span class="std std-ref">our example 16 below</span></a></p>
 <div class="figure align-center" id="id4">
 <span id="gmt-tut-16"></span><a class="reference internal image-reference" href="../_images/GMT_tut_16.png"><img alt="../_images/GMT_tut_16.png" src="../_images/GMT_tut_16.png" style="width: 400px;" /></a>
@@ -538,14 +533,12 @@ water) to 30ºC (highest likely ocean temperature).
 Let us focus on the temperatures in Summer (that is the third season, July through
 September) at sea level (that is the first level). To plot these in a Mollweide projection we
 use:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_17
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_17
   gmt makecpt -Cno_green -T-2/30/2
-  gmt grdimage -Rg -JW180/9i <span class="s2">&quot;@otemp.anal1deg.nc?otemp[2,0]&quot;</span> -Cotemp.cpt -Bag
+  gmt grdimage -Rg -JW180/9i <span class="s2">&quot;@otemp.anal1deg.nc?otemp[2,0]&quot;</span> -Bag
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <p>The addition “?otemp[2,0]” indicates which variable to retrieve from the netCDF
 file (otemp) and that we need the third time step and first level. The numbering of the
 time steps and levels starts at zero, therefore “[2,0]”. Make sure to put the
@@ -622,14 +615,12 @@ GMT module that produces perspective views of gridded data files is
 <p>Mesh plots work best on smaller data sets.  We again use the small
 subset of the ETOPO5 data over Bermuda and will use the ocean CPT.
 A simple mesh plot can therefore be obtained with</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_18
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_18
   gmt grd2cpt @tut_bathy.nc -Cocean
-  gmt grdview @tut_bathy.nc -JM5i -JZ2i -p135/30 -B
+  gmt grdview tut_bathy.nc -JM5i -JZ2i -p135/30 -Ba
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <p>Your plot should look like <a class="reference internal" href="#gmt-tut-18"><span class="std std-ref">our example 18 below</span></a></p>
 <div class="figure align-center" id="id6">
 <span id="gmt-tut-18"></span><a class="reference internal image-reference" href="../_images/GMT_tut_18.png"><img alt="../_images/GMT_tut_18.png" src="../_images/GMT_tut_18.png" style="width: 400px;" /></a>
@@ -644,14 +635,13 @@ gmt end show
 <h3>Color-coded view<a class="headerlink" href="#color-coded-view" title="Permalink to this headline">¶</a></h3>
 <p>We will make a perspective, color-coded view of the US Rockies
 from the southeast.  This is done using</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_19
-  gmt makecpt -Crainbow -T1000/5000/500 -Z
-  gmt grdview @tut_relief.nc -JM6i -p135/35 -Qi50 -Ius_i.nc -B -JZ0.5i
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_19
+  gmt makecpt -Ctopo -T1000/5000
+  gmt grdgradient @tut_relief.nc -Ne0.8 -A100 -fg -Gus_i.nc
+  gmt grdview tut_relief.nc -JM4i -p135/35 -Qi50 -Ius_i.nc -Ba -JZ0.5i -C
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <p>Your plot should look like <a class="reference internal" href="#gmt-tut-19"><span class="std std-ref">our example 19 below</span></a></p>
 <div class="figure align-center" id="id7">
 <span id="gmt-tut-19"></span><a class="reference internal image-reference" href="../_images/GMT_tut_19.png"><img alt="../_images/GMT_tut_19.png" src="../_images/GMT_tut_19.png" style="width: 400px;" /></a>
@@ -694,7 +684,7 @@ appropriate <em>dpi</em> for the final output device and let it rip.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 02, 2019.
+        Last updated on Oct 03, 2019.
       </span>
 
     </p>
