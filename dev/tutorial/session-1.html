@@ -437,13 +437,11 @@ We want it to go from 10 to 70 in <em>x</em> and
 from -3 to 8 in <em>y</em>, with automatic annotation intervals.  Finally,
 we let the canvas be painted light red and have dimensions of
 4 by 3 inches.  Here’s how we do it:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_1
-  gmt basemap -R10/70/-3/8 -JX4i/3i -B -B+glightred+t<span class="s2">&quot;My first plot&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_1
+  gmt basemap -R10/70/-3/8 -JX4i/3i -Ba -B+glightred+t<span class="s2">&quot;My first plot&quot;</span>
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <p>This script will open the result GMT_tut_1.pdf in a PDF viewer and it should look like <a class="reference internal" href="#gmt-tut-1"><span class="std std-ref">our example 1 below</span></a>.
 Examine the <a class="reference internal" href="../basemap.html"><span class="doc">basemap</span></a> documentation so you understand what each option means.</p>
 <div class="figure align-center" id="id2">
@@ -463,13 +461,11 @@ Examine the <a class="reference internal" href="../basemap.html"><span class="do
 no data set yet but we will
 imagine that the raw <em>x</em> data range from 3 to 9613 and that <em>y</em>
 ranges from 10^20 to 10^24.  One possibility is</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_2
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_2
   gmt basemap -R1/10000/1e20/1e25 -JX9il/6il -Bxa2+l<span class="s2">&quot;Wavelength (m)&quot;</span> -Bya1pf3+l<span class="s2">&quot;Power (W)&quot;</span> -BWS
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <p>Make sure your plot looks like <a class="reference internal" href="#gmt-tut-2"><span class="std std-ref">our example 2 below</span></a></p>
 <div class="figure align-center" id="id3">
 <span id="gmt-tut-2"></span><a class="reference internal image-reference" href="../_images/GMT_tut_2.png"><img alt="../_images/GMT_tut_2.png" src="../_images/GMT_tut_2.png" style="width: 400px;" /></a>
@@ -537,13 +533,11 @@ to the common switches we may need to use some of several coast-specific options
 <p>Main options when making coastline plots or overlays.</p>
 <p>One of <strong>-W</strong>, <strong>-G</strong>, <strong>-S</strong> must be selected.  Our first coastline
 example is from Latin America:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_3
-  gmt coast -R-90/-70/0/20 -JM6i -B -Gchocolate
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_3
+  gmt coast -R-90/-70/0/20 -JM6i -Ba -Gchocolate
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <p>Your plot should look like <a class="reference internal" href="#gmt-tut-3"><span class="std std-ref">our example 3 below</span></a></p>
 <div class="figure align-center" id="id4">
 <span id="gmt-tut-3"></span><a class="reference internal image-reference" href="../_images/GMT_tut_3.png"><img alt="../_images/GMT_tut_3.png" src="../_images/GMT_tut_3.png" style="width: 400px;" /></a>
@@ -571,13 +565,11 @@ The general syntax is</p>
 <p>where (<em>lon_0, lat_0</em>) is the map (projection) center and <em>lat_1, lat_2</em>
 are the two standard parallels where the cone intersects the Earth’s surface.
 We try the following command:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_4
-  gmt coast -R-130/-70/24/52 -JB-100/35/33/45/6i -B -B+t<span class="s2">&quot;Conic Projection&quot;</span> -N1/thickest -N2/thinnest -A500 -Ggray -Wthinnest
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_4
+  gmt coast -R-130/-70/24/52 -JB-100/35/33/45/6i -Ba -B+t<span class="s2">&quot;Conic Projection&quot;</span> -N1/thickest -N2/thinnest -A500 -Ggray -Wthinnest
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <p>Your plot should look like <a class="reference internal" href="#gmt-tut-4"><span class="std std-ref">our example 4 below</span></a></p>
 <div class="figure align-center" id="id5">
 <span id="gmt-tut-4"></span><a class="reference internal image-reference" href="../_images/GMT_tut_4.png"><img alt="../_images/GMT_tut_4.png" src="../_images/GMT_tut_4.png" style="width: 400px;" /></a>
@@ -600,13 +592,11 @@ The syntax for this projection is</p>
 <p><strong>-JG</strong><em>lon_0/lat_0/width</em></p>
 <p>where (<em>lon_0, lat_0</em>) is the center of the map (projection).
 As an example we will try</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_5
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_5
   gmt coast -Rg -JG280/30/6i -Bag -Dc -A5000 -Gwhite -SDarkTurquoise
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <p>Your plot should look like <a class="reference internal" href="#gmt-tut-5"><span class="std std-ref">our example 5 below</span></a></p>
 <div class="figure align-center" id="id6">
 <span id="gmt-tut-5"></span><a class="reference internal image-reference" href="../_images/GMT_tut_5.png"><img alt="../_images/GMT_tut_5.png" src="../_images/GMT_tut_5.png" style="width: 400px;" /></a>
@@ -628,13 +618,11 @@ are both equal-area projections whose syntax is</p>
 The <em>lon_0</em> is the central meridian (which takes precedence over
 the mid-value implied by the <strong>-R</strong> setting).  A simple Eckert VI world map
 is thus generated by</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_6
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_6
   gmt coast -Rg -JKs180/9i -Bag -Dc -A5000 -Gchocolate -SDarkTurquoise -Wthinnest
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <p>Your plot should look like <a class="reference internal" href="#gmt-tut-6"><span class="std std-ref">our example 6 below</span></a></p>
 <div class="figure align-center" id="id7">
 <span id="gmt-tut-6"></span><a class="reference internal image-reference" href="../_images/GMT_tut_6.png"><img alt="../_images/GMT_tut_6.png" src="../_images/GMT_tut_6.png" style="width: 400px;" /></a>
@@ -672,7 +660,7 @@ gmt end show
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 02, 2019.
+        Last updated on Oct 03, 2019.
       </span>
 
     </p>

@@ -220,6 +220,7 @@
 [ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong> ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
 [ <strong>-f</strong><a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">flags</span></a> ]
+[ <strong>-r</strong><a class="reference internal" href="gmt.html#nodereg-full"><span class="std std-ref">reg</span></a> ]
 [ <strong>--PAR</strong>=<em>value</em> ]</p>
 <p><strong>Note:</strong> No space is allowed between the option flag and the associated arguments.</p>
 </div>
@@ -356,7 +357,8 @@ output points. [Default: Same as input.]</dd>
 <dt><strong>-T</strong></dt>
 <dd>Toggle the node registration for the output grid so as to become the
 opposite of the input grid [Default gives the same registration as
-the input grid].</dd>
+the input grid]. Alternatively, use <strong>-r</strong>[<strong>g</strong>|<strong>p</strong>] to
+set the registration explicitly.</dd>
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -365,6 +367,10 @@ the input grid].</dd>
 <dl class="docutils">
 <dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Specify data types of input and/or output columns.  </dd>
+</dl>
+<dl class="docutils">
+<dt><strong>-r</strong> <a class="reference internal" href="gmt.html#nodereg-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Set node registration [gridline]. <a href="#id1"><span class="problematic" id="id2">|Add_nodereg|</span></a></dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-^</strong> or just <strong>-</strong></dt>
@@ -482,7 +488,7 @@ of the increments in the input data, filtering will be considerably slower.
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 02, 2019.
+        Last updated on Oct 03, 2019.
       </span>
 
     </p>

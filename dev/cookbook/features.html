@@ -1199,12 +1199,12 @@ only show a single <em>x</em>-axis (south, selected via <strong>-BS</strong>), t
 annotations are supported for all axes.</p>
 <p>Our first example shows a time period of almost two months in Spring
 2000. We want to annotate the month intervals as well as the date at the start of each week:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nb">set</span> <span class="nv">FORMAT_DATE_MAP</span><span class="o">=</span>-o FONT_ANNOT_PRIMARY +9p
-gmt basemap -R2000-4-1T/2000-5-25T/0/1 -JX5i/0.2i -Bpa7Rf1d -Bsa1O -BS -pdf GMT_-B_time1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time1
+gmt <span class="nb">set</span> <span class="nv">FORMAT_DATE_MAP</span><span class="o">=</span>-o FONT_ANNOT_PRIMARY +9p
+gmt basemap -R2000-4-1T/2000-5-25T/0/1 -JX5i/0.2i -Bpa7Rf1d -Bsa1O -BS
+gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <p>These commands result in Figure <a class="reference internal" href="#cartesian-axis1"><span class="std std-ref">Cartesian time axis</span></a>.
 Note the leading hyphen in the <a class="reference internal" href="../gmt.conf.html#format-date-map"><span class="std std-ref">FORMAT_DATE_MAP</span></a>
 removes leading zeros from calendar items (e.g., 02 becomes 2).</p>
@@ -1213,15 +1213,13 @@ removes leading zeros from calendar items (e.g., 02 becomes 2).</p>
 <p class="caption"><span class="caption-text">Cartesian time axis, example 1</span></p>
 </div>
 <p>The next example shows two different ways to annotate an axis portraying 2 days in July 1969:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span> gmt <span class="nb">set</span> FORMAT_DATE_MAP <span class="s2">&quot;o dd&quot;</span> FORMAT_CLOCK_MAP hh:mm FONT_ANNOT_PRIMARY +9p
- gmt begin B_time2
-   gmt basemap -R1969-7-21T/1969-7-23T/0/1 -JX5i/0.2i -Bpa6Hf1h -Bsa1K -BS
-   gmt basemap -Bpa6Hf1h -Bsa1D -BS -Y0.65i
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time2
+  gmt <span class="nb">set</span> FORMAT_DATE_MAP <span class="s2">&quot;o dd&quot;</span> FORMAT_CLOCK_MAP hh:mm FONT_ANNOT_PRIMARY +9p
+  gmt basemap -R1969-7-21T/1969-7-23T/0/1 -JX5i/0.2i -Bpa6Hf1h -Bsa1K -BS
+  gmt basemap -Bpa6Hf1h -Bsa1D -BS -Y0.65i
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <p>The lower example (Figure <a class="reference internal" href="#cartesian-axis2"><span class="std std-ref">Cartesian time axis, example 2</span></a>) chooses to annotate the weekdays (by
 specifying <strong>a</strong>1<strong>K</strong>) while the upper example choses dates (by
 specifying <strong>a</strong>1<strong>D</strong>). Note how the clock format only selects
@@ -1233,12 +1231,12 @@ followed by one space and a two-digit day-of-month number.</p>
 </div>
 <p>The third example (Figure <a class="reference internal" href="#cartesian-axis3"><span class="std std-ref">Cartesian time axis, example 3</span></a>) presents two years, annotating
 both the years and every 3rd month.</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nb">set</span> FORMAT_DATE_MAP o FORMAT_TIME_PRIMARY_MAP Character FONT_ANNOT_PRIMARY +9p
-gmt basemap -R1997T/1999T/0/1 -JX5i/0.2i -Bpa3Of1o -Bsa1Y -BS -pdf GMT_-B_time3
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time3
+gmt <span class="nb">set</span> FORMAT_DATE_MAP o FORMAT_TIME_PRIMARY_MAP Character FONT_ANNOT_PRIMARY +9p
+gmt basemap -R1997T/1999T/0/1 -JX5i/0.2i -Bpa3Of1o -Bsa1Y -BS
+gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <p>Note that while the year annotation is centered on the 1-year interval,
 the month annotations must be centered on the corresponding month and
 <em>not</em> the 3-month interval. The <a class="reference internal" href="../gmt.conf.html#format-date-map"><span class="std std-ref">FORMAT_DATE_MAP</span></a> selects month name
@@ -1253,12 +1251,12 @@ case abbreviation of month names using the current language (selected by
 relative time by specifying <strong>t</strong> in the <strong>-R</strong> option while the
 <a class="reference internal" href="../gmt.conf.html#time-unit"><span class="std std-ref">TIME_UNIT</span></a> is <strong>d</strong> (for days). We select both primary and secondary
 annotations, ask for a 12-hour clock, and let time go from right to left:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nb">set</span> <span class="nv">FORMAT_CLOCK_MAP</span><span class="o">=</span>-hham FONT_ANNOT_PRIMARY +9p TIME_UNIT d
-gmt basemap -R0.2t/0.35t/0/1 -JX-5i/0.2i -Bpa15mf5m -Bsa1H -BS -pdf GMT_-B_time4
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time4
+gmt <span class="nb">set</span> <span class="nv">FORMAT_CLOCK_MAP</span><span class="o">=</span>-hham FONT_ANNOT_PRIMARY +9p TIME_UNIT d
+gmt basemap -R0.2t/0.35t/0/1 -JX-5i/0.2i -Bpa15mf5m -Bsa1H -BS
+gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <div class="figure align-center" id="id44">
 <span id="cartesian-axis4"></span><a class="reference internal image-reference" href="../_images/GMT_-B_time4.png"><img alt="../_images/GMT_-B_time4.png" src="../_images/GMT_-B_time4.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Cartesian time axis, example 4</span></p>
@@ -1267,17 +1265,14 @@ gmt basemap -R0.2t/0.35t/0/1 -JX-5i/0.2i -Bpa15mf5m -Bsa1H -BS -pdf GMT_-B_time4
 shows ISO weeks with week numbers and abbreviated names of the weekdays.
 The upper uses Gregorian weeks (which start at the day chosen by
 <a class="reference internal" href="../gmt.conf.html#time-week-start"><span class="std std-ref">TIME_WEEK_START</span></a>); they do not have numbers.</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time5
-  gmt <span class="nb">set</span> FORMAT_DATE_MAP u FORMAT_TIME_PRIMARY_MAP Character <span class="se">\</span>
-       FORMAT_TIME_SECONDARY_MAP full FONT_ANNOT_PRIMARY +9p
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time5
+  gmt <span class="nb">set</span> FORMAT_DATE_MAP u FORMAT_TIME_PRIMARY_MAP Character FORMAT_TIME_SECONDARY_MAP full FONT_ANNOT_PRIMARY +9p
   gmt basemap -R1969-7-21T/1969-8-9T/0/1 -JX5i/0.2i -Bpa1K -Bsa1U -BS
   gmt <span class="nb">set</span> FORMAT_DATE_MAP o TIME_WEEK_START Sunday FORMAT_TIME_SECONDARY_MAP Character
   gmt basemap -Bpa3Kf1k -Bsa1r -BS -Y0.65i
-gmt end show
+gmt end show 
 </pre></div>
 </div>
-</div></blockquote>
 <div class="figure align-center" id="id45">
 <span id="cartesian-axis5"></span><a class="reference internal image-reference" href="../_images/GMT_-B_time5.png"><img alt="../_images/GMT_-B_time5.png" src="../_images/GMT_-B_time5.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Cartesian time axis, example 5</span></p>
@@ -1285,12 +1280,12 @@ gmt end show
 <p>Our sixth example (Figure <a class="reference internal" href="#cartesian-axis6"><span class="std std-ref">Cartesian time axis, example 6</span></a>) shows the first five months of
 1996, and we have annotated each month with an abbreviated, upper case name and
 2-digit year. Only the primary axes information is specified.</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nb">set</span> FORMAT_DATE_MAP <span class="s2">&quot;o yy&quot;</span> FORMAT_TIME_PRIMARY_MAP Abbreviated
-gmt basemap -R1996T/1996-6T/0/1 -JX5i/0.2i -Ba1Of1d -BS -pdf GMT_-B_time6
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time6
+gmt <span class="nb">set</span> FORMAT_DATE_MAP <span class="s2">&quot;o yy&quot;</span> FORMAT_TIME_PRIMARY_MAP Abbreviated
+gmt basemap -R1996T/1996-6T/0/1 -JX5i/0.2i -Ba1Of1d -BS
+gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <div class="figure align-center" id="id46">
 <span id="cartesian-axis6"></span><a class="reference internal image-reference" href="../_images/GMT_-B_time6.png"><img alt="../_images/GMT_-B_time6.png" src="../_images/GMT_-B_time6.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Cartesian time axis, example 6</span></p>
@@ -1301,12 +1296,12 @@ in <a class="reference internal" href="../gmt.conf.html#format-date-map"><span c
 in order to have the two years annotated we need to allow for the annotation of
 small fractional intervals; normally such truncated interval must be at
 least half of a full interval.</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nb">set</span> FORMAT_DATE_MAP jjj TIME_INTERVAL_FRACTION <span class="m">0</span>.05 FONT_ANNOT_PRIMARY +9p
-gmt basemap -R2000-12-15T/2001-1-15T/0/1 -JX5i/0.2i -Bpa5Df1d -Bsa1Y -BS -pdf GMT_-B_time7
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_-B_time7
+gmt <span class="nb">set</span> FORMAT_DATE_MAP jjj TIME_INTERVAL_FRACTION <span class="m">0</span>.05 FONT_ANNOT_PRIMARY +9p
+gmt basemap -R2000-12-15T/2001-1-15T/0/1 -JX5i/0.2i -Bpa5Df1d -Bsa1Y -BS
+gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <div class="figure align-center" id="id47">
 <span id="cartesian-axis7"></span><a class="reference internal image-reference" href="../_images/GMT_-B_time7.png"><img alt="../_images/GMT_-B_time7.png" src="../_images/GMT_-B_time7.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Cartesian time axis, example 7</span></p>
@@ -1332,34 +1327,32 @@ is allowed. The coordinates should be arranged in increasing order. If
 <em>label</em> is given it replaces the normal annotation based on the <em>coord</em>
 value. Our last example (Figure <a class="reference internal" href="#custom-annotations"><span class="std std-ref">Custom and irregular annotations</span></a>) shows such a custom basemap with an interval
 annotations on the <em>x</em>-axis and irregular annotations on the <em>y</em>-axis.</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat <span class="s">&lt;&lt; EOF &gt; xannots.txt</span>
-<span class="s">416.0 ig Devonian</span>
-<span class="s">443.7 ig Silurian</span>
-<span class="s">488.3 ig Ordovician</span>
-<span class="s">542 ig Cambrian</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat <span class="s">&lt;&lt; EOF &gt;| xannots.txt</span>
+<span class="s">416.0	ig	Devonian</span>
+<span class="s">443.7	ig	Silurian</span>
+<span class="s">488.3	ig	Ordovician</span>
+<span class="s">542	ig	Cambrian</span>
 <span class="s">EOF</span>
-cat <span class="s">&lt;&lt; EOF &gt; yannots.txt</span>
-<span class="s">0 a</span>
-<span class="s">1 a</span>
-<span class="s">2 f</span>
-<span class="s">2.71828 ag e</span>
-<span class="s">3 f</span>
-<span class="s">3.1415926 ag @~p@~</span>
-<span class="s">4 f</span>
-<span class="s">5 f</span>
-<span class="s">6 f</span>
-<span class="s">6.2831852 ag 2@~p@~</span>
+cat <span class="s">&lt;&lt; EOF &gt;| yannots.txt</span>
+<span class="s">0	a</span>
+<span class="s">1	a</span>
+<span class="s">2	f</span>
+<span class="s">2.71828	ag	e</span>
+<span class="s">3	f</span>
+<span class="s">3.1415926	ag	@~p@~</span>
+<span class="s">4	f</span>
+<span class="s">5	f</span>
+<span class="s">6	f</span>
+<span class="s">6.2831852	ag	2@~p@~</span>
 <span class="s">EOF</span>
+
 gmt begin GMT_-B_custom
 gmt basemap -R416/542/0/6.2831852 -JX-5i/2.5i -Bpx25f5g25+u<span class="s2">&quot; Ma&quot;</span> -Bpycyannots.txt -BWS+glightblue
 gmt basemap -R416/542/0/6.2831852 -JX-5i/2.5i -Bsxcxannots.txt -Bsy0 -BWS <span class="se">\</span>
-    --MAP_ANNOT_OFFSET_SECONDARY<span class="o">=</span>10p --MAP_GRID_PEN_SECONDARY<span class="o">=</span>2p
+	--MAP_ANNOT_OFFSET_SECONDARY<span class="o">=</span>10p --MAP_GRID_PEN_SECONDARY<span class="o">=</span>2p
 gmt end show
-rm -f <span class="o">[</span>xy<span class="o">]</span>annots.txt
 </pre></div>
 </div>
-</div></blockquote>
 <div class="figure align-center" id="id48">
 <span id="custom-annotations"></span><a class="reference internal image-reference" href="../_images/GMT_-B_custom.png"><img alt="../_images/GMT_-B_custom.png" src="../_images/GMT_-B_custom.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Custom and irregular annotations, tick-marks, and gridlines.</span></p>
@@ -4183,7 +4176,7 @@ off; see <a class="reference internal" href="../gmt.conf.html#ps-comments"><span
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 02, 2019.
+        Last updated on Oct 03, 2019.
       </span>
 
     </p>

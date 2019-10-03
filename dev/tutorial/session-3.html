@@ -297,13 +297,11 @@ useful options:</p>
 <p>We will first make a plain contour map using 1 km as annotation
 interval and 250 m as contour interval.  We choose a 7-inch-wide
 Mercator plot and annotate the borders every 2º:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_11
-  gmt grdcontour @tut_bathy.nc -JM7i -C250 -A1000 -B
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_11
+  gmt grdcontour @tut_bathy.nc -JM6i -C250 -A1000 -Ba
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <p>Your plot should look like <a class="reference internal" href="#gmt-tut-11"><span class="std std-ref">our example 11 below</span></a></p>
 <div class="figure align-center" id="id1">
 <span id="gmt-tut-11"></span><a class="reference internal image-reference" href="../_images/GMT_tut_11.png"><img alt="../_images/GMT_tut_11.png" src="../_images/GMT_tut_11.png" style="width: 400px;" /></a>
@@ -415,14 +413,12 @@ We desire to make a 5’ by 5’ grid.  Running gmt info on &#64;tut_ship.xyz yi
 </div>
 </div></blockquote>
 <p>so we choose the region accordingly, and get a view of the contour map using</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_12
-  gmt nearneighbor -R245/255/20/30 -I5m -S40k -Gship.nc -V @tut_ship.xyz
-  gmt grdcontour ship.nc -JM6i -B -C250 -A1000
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_12
+  gmt nearneighbor -R245/255/20/30 -I5m -S40k -Gship.nc @tut_ship.xyz
+  gmt grdcontour ship.nc -JM6i -Ba -C250 -A1000
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <p>Your plot should look like <a class="reference internal" href="#gmt-tut-12"><span class="std std-ref">our example 12 below</span></a></p>
 <div class="figure align-center" id="id3">
 <span id="gmt-tut-12"></span><a class="reference internal image-reference" href="../_images/GMT_tut_12.png"><img alt="../_images/GMT_tut_12.png" src="../_images/GMT_tut_12.png" style="width: 400px;" /></a>
@@ -543,15 +539,15 @@ module can read the same preprocessed data and set up a contour mask
 based on the data distribution.  Once the clip path is activated we can
 contour the final grid; we finally deactivate the clipping with a second
 call to <a class="reference internal" href="../mask.html"><span class="doc">mask</span></a>.  Here’s the recipe:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_13 pdf
-  gmt mask -R245/255/20/30 -I5m ship_5m.xyz -JM6i -B
-  gmt grdcontour ship.nc -C250 -A1000
-  gmt mask -C
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt blockmedian -R245/255/20/30 -I5m -V @tut_ship.xyz &gt; ship_5m.xyz
+gmt surface ship_5m.xyz -R245/255/20/30 -I5m -Gship.nc
+gmt begin GMT_tut_13
+  gmt mask -R245/255/20/30 -I5m ship_5m.xyz -JM6i -Ba
+  gmt grdcontour ship.nc -C250 -A1000 
+  gmt mask -C 
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <p>Your plot should look like <a class="reference internal" href="#gmt-tut-13"><span class="std std-ref">our example 13 below</span></a></p>
 <div class="figure align-center" id="id4">
 <span id="gmt-tut-13"></span><a class="reference internal image-reference" href="../_images/GMT_tut_13.png"><img alt="../_images/GMT_tut_13.png" src="../_images/GMT_tut_13.png" style="width: 400px;" /></a>
@@ -588,7 +584,7 @@ gmt end show
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 02, 2019.
+        Last updated on Oct 03, 2019.
       </span>
 
     </p>
