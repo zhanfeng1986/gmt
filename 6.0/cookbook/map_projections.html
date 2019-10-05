@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>8. GMT Map Projections &mdash; GMT 6.0.0 documentation</title>
+  <title>7. GMT Map Projections &mdash; GMT 6.0.0 documentation</title>
   
 
   
@@ -40,8 +40,8 @@
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="9. GMT Supplemental Packages" href="supplemental_packages.html" />
-    <link rel="prev" title="7. GMT Coordinate Transformations" href="coordinate_transformations.html" /> 
+    <link rel="next" title="8. GMT Supplemental Packages" href="supplemental_packages.html" />
+    <link rel="prev" title="6. GMT Coordinate Transformations" href="coordinate_transformations.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -100,68 +100,67 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../modules.html">GMT Modules</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../cookbook.html">GMT Cookbook</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="acknowledgments.html">1. Acknowledgments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="citation.html">2. A Reminder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="copyright.html">3. Copyright and Caveat Emptor!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="preface.html">4. Preface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html">5. Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="features.html">6. General Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coordinate_transformations.html">7. GMT Coordinate Transformations</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">8. GMT Map Projections</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#conic-projections">8.1. Conic projections</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#albers-conic-equal-area-projection-jb-jb">8.1.1. Albers conic equal-area projection (<strong>-Jb</strong> <strong>-JB</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#equidistant-conic-projection-jd-jd">8.1.2. Equidistant conic projection (<strong>-Jd</strong> <strong>-JD</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#lambert-conic-conformal-projection-jl-jl">8.1.3. Lambert conic conformal projection (<strong>-Jl</strong> <strong>-JL</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#american-polyconic-projection-jpoly-jpoly">8.1.4. (American) polyconic projection (<strong>-Jpoly</strong> <strong>-JPoly</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="copyright.html">1. Copyright and Caveat Emptor!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="preface.html">2. Preface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">3. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="features.html">4. General Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html">5. Standardized command line options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coordinate_transformations.html">6. GMT Coordinate Transformations</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7. GMT Map Projections</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#conic-projections">7.1. Conic projections</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#albers-conic-equal-area-projection-jb-jb">7.1.1. Albers conic equal-area projection (<strong>-Jb</strong> <strong>-JB</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#equidistant-conic-projection-jd-jd">7.1.2. Equidistant conic projection (<strong>-Jd</strong> <strong>-JD</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lambert-conic-conformal-projection-jl-jl">7.1.3. Lambert conic conformal projection (<strong>-Jl</strong> <strong>-JL</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#american-polyconic-projection-jpoly-jpoly">7.1.4. (American) polyconic projection (<strong>-Jpoly</strong> <strong>-JPoly</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#azimuthal-projections">8.2. Azimuthal projections</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#lambert-azimuthal-equal-area-ja-ja">8.2.1. Lambert Azimuthal Equal-Area (<strong>-Ja</strong> <strong>-JA</strong>)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#stereographic-equal-angle-projection-js-js">8.2.2. Stereographic Equal-Angle projection (<strong>-Js</strong> <strong>-JS</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#perspective-projection-jg-jg">8.2.3. Perspective projection (<strong>-Jg</strong> <strong>-JG</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#orthographic-projection-jg-jg">8.2.4. Orthographic projection (<strong>-Jg</strong> <strong>-JG</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#azimuthal-equidistant-projection-je-je">8.2.5. Azimuthal Equidistant projection (<strong>-Je</strong> <strong>-JE</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#gnomonic-projection-jf-jf">8.2.6. Gnomonic projection (<strong>-Jf</strong> <strong>-JF</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#azimuthal-projections">7.2. Azimuthal projections</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#lambert-azimuthal-equal-area-ja-ja">7.2.1. Lambert Azimuthal Equal-Area (<strong>-Ja</strong> <strong>-JA</strong>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#stereographic-equal-angle-projection-js-js">7.2.2. Stereographic Equal-Angle projection (<strong>-Js</strong> <strong>-JS</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#perspective-projection-jg-jg">7.2.3. Perspective projection (<strong>-Jg</strong> <strong>-JG</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#orthographic-projection-jg-jg">7.2.4. Orthographic projection (<strong>-Jg</strong> <strong>-JG</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#azimuthal-equidistant-projection-je-je">7.2.5. Azimuthal Equidistant projection (<strong>-Je</strong> <strong>-JE</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gnomonic-projection-jf-jf">7.2.6. Gnomonic projection (<strong>-Jf</strong> <strong>-JF</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#cylindrical-projections">8.3. Cylindrical projections</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#mercator-projection-jm-jm">8.3.1. Mercator projection (<strong>-Jm</strong> <strong>-JM</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#transverse-mercator-projection-jt-jt">8.3.2. Transverse Mercator projection (<strong>-Jt</strong> <strong>-JT</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#universal-transverse-mercator-utm-projection-ju-ju">8.3.3. Universal Transverse Mercator (UTM) projection (<strong>-Ju</strong> <strong>-JU</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#oblique-mercator-projection-jo-jo">8.3.4. Oblique Mercator projection (<strong>-Jo</strong> <strong>-JO</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cassini-cylindrical-projection-jc-jc">8.3.5. Cassini cylindrical projection (<strong>-Jc</strong> <strong>-JC</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cylindrical-equidistant-projection-jq-jq">8.3.6. Cylindrical equidistant projection (<strong>-Jq</strong> <strong>-JQ</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cylindrical-equal-area-projections-jy-jy">8.3.7. Cylindrical equal-area projections (<strong>-Jy</strong> <strong>-JY</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#miller-cylindrical-projection-jj-jj">8.3.8. Miller Cylindrical projection (<strong>-Jj</strong> <strong>-JJ</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cylindrical-stereographic-projections-jcyl-stere-jcyl-stere">8.3.9. Cylindrical stereographic projections (<strong>-Jcyl_stere</strong> <strong>-JCyl_stere</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cylindrical-projections">7.3. Cylindrical projections</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mercator-projection-jm-jm">7.3.1. Mercator projection (<strong>-Jm</strong> <strong>-JM</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transverse-mercator-projection-jt-jt">7.3.2. Transverse Mercator projection (<strong>-Jt</strong> <strong>-JT</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#universal-transverse-mercator-utm-projection-ju-ju">7.3.3. Universal Transverse Mercator (UTM) projection (<strong>-Ju</strong> <strong>-JU</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oblique-mercator-projection-jo-jo">7.3.4. Oblique Mercator projection (<strong>-Jo</strong> <strong>-JO</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cassini-cylindrical-projection-jc-jc">7.3.5. Cassini cylindrical projection (<strong>-Jc</strong> <strong>-JC</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cylindrical-equidistant-projection-jq-jq">7.3.6. Cylindrical equidistant projection (<strong>-Jq</strong> <strong>-JQ</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cylindrical-equal-area-projections-jy-jy">7.3.7. Cylindrical equal-area projections (<strong>-Jy</strong> <strong>-JY</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#miller-cylindrical-projection-jj-jj">7.3.8. Miller Cylindrical projection (<strong>-Jj</strong> <strong>-JJ</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cylindrical-stereographic-projections-jcyl-stere-jcyl-stere">7.3.9. Cylindrical stereographic projections (<strong>-Jcyl_stere</strong> <strong>-JCyl_stere</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#miscellaneous-projections">8.4. Miscellaneous projections</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#hammer-projection-jh-jh">8.4.1. Hammer projection (<strong>-Jh</strong> <strong>-JH</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mollweide-projection-jw-jw">8.4.2. Mollweide projection (<strong>-Jw</strong> <strong>-JW</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#winkel-tripel-projection-jr-jr">8.4.3. Winkel Tripel projection (<strong>-Jr</strong> <strong>-JR</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#robinson-projection-jn-jn">8.4.4. Robinson projection (<strong>-Jn</strong> <strong>-JN</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#eckert-iv-and-vi-projection-jk-jk">8.4.5. Eckert IV and VI projection (<strong>-Jk</strong> <strong>-JK</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#sinusoidal-projection-ji-ji">8.4.6. Sinusoidal projection (<strong>-Ji</strong> <strong>-JI</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#van-der-grinten-projection-jv-jv">8.4.7. Van der Grinten projection (<strong>-Jv</strong> <strong>-JV</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#miscellaneous-projections">7.4. Miscellaneous projections</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hammer-projection-jh-jh">7.4.1. Hammer projection (<strong>-Jh</strong> <strong>-JH</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mollweide-projection-jw-jw">7.4.2. Mollweide projection (<strong>-Jw</strong> <strong>-JW</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#winkel-tripel-projection-jr-jr">7.4.3. Winkel Tripel projection (<strong>-Jr</strong> <strong>-JR</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#robinson-projection-jn-jn">7.4.4. Robinson projection (<strong>-Jn</strong> <strong>-JN</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eckert-iv-and-vi-projection-jk-jk">7.4.5. Eckert IV and VI projection (<strong>-Jk</strong> <strong>-JK</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sinusoidal-projection-ji-ji">7.4.6. Sinusoidal projection (<strong>-Ji</strong> <strong>-JI</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#van-der-grinten-projection-jv-jv">7.4.7. Van der Grinten projection (<strong>-Jv</strong> <strong>-JV</strong>) <code class="docutils literal notranslate"><span class="pre">…</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="supplemental_packages.html">9. GMT Supplemental Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file_formats.html">10. GMT File Formats</a></li>
-<li class="toctree-l2"><a class="reference internal" href="include_figures.html">11. Including GMT Graphics into your Documents</a></li>
-<li class="toctree-l2"><a class="reference internal" href="predefined_patterns.html">12. Predefined Bit and Hachure Patterns in GMT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="octal_codes.html">13. Chart of Octal Codes for Characters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="postscript_fonts.html">14. PostScript Fonts Used by GMT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="colorspace.html">15. Color Space: The Final Frontier</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_filtering.html">16. Filtering of Data in GMT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="non_unix_platforms.html">17. GMT on non-UNIX Platforms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cpts.html">18. Of Colors and Color Legends</a></li>
-<li class="toctree-l2"><a class="reference internal" href="custom_symbols.html">19. Custom Plot Symbols</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contour_annotations.html">20. Annotation of Contours and “Quoted Lines”</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ogrgmt_format.html">21. The GMT Vector Data Format for OGR Compatibility</a></li>
-<li class="toctree-l2"><a class="reference internal" href="one-liner.html">22. GMT Modern Mode One-line Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supplemental_packages.html">8. GMT Supplemental Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_formats.html">9. GMT File Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="include_figures.html">10. Including GMT Graphics into your Documents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="predefined_patterns.html">11. Predefined Bit and Hachure Patterns in GMT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="octal_codes.html">12. Chart of Octal Codes for Characters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="postscript_fonts.html">13. PostScript Fonts Used by GMT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="colorspace.html">14. Color Space: The Final Frontier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_filtering.html">15. Filtering of Data in GMT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="non_unix_platforms.html">16. GMT on non-UNIX Platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpts.html">17. Of Colors and Color Legends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom_symbols.html">18. Custom Plot Symbols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contour_annotations.html">19. Annotation of Contours and “Quoted Lines”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ogrgmt_format.html">20. The GMT Vector Data Format for OGR Compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="one-liner.html">21. GMT Modern Mode One-line Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../datasets.html">Datasets</a></li>
@@ -171,7 +170,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../users_contrib_scripts.html">Users Script Contributions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../users_contrib_symbols.html">Users Symbol Contributions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../changes.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../compatibility.html">Incompatibilities between GMT 5 and GMT 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deprecated_defaults.html">Deprecated GMT Defaults Names</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../switching.html">Switching between different GMT versions</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Classic Mode</span></p>
@@ -249,7 +248,7 @@
         
           <li><a href="../cookbook.html">GMT Cookbook</a> &raquo;</li>
         
-      <li>8. GMT Map Projections</li>
+      <li>7. GMT Map Projections</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -271,7 +270,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="gmt-map-projections">
-<h1>8. GMT Map Projections<a class="headerlink" href="#gmt-map-projections" title="Permalink to this headline">¶</a></h1>
+<h1>7. GMT Map Projections<a class="headerlink" href="#gmt-map-projections" title="Permalink to this headline">¶</a></h1>
 <p>GMT implements more than 30 different projections. They all project
 the input coordinates longitude and latitude to positions on a map. In
 general, <em>x’ = f(x,y,z)</em> and <em>y’ = g(x,y,z)</em>, where
@@ -310,9 +309,9 @@ invented some of our own as well. For a full list of both the old 1- and
 reference cards in <a class="reference internal" href="../proj_codes.html"><span class="doc">Projection Specifications</span></a>. For example, <strong>-JM</strong>15c and
 <strong>-JMerc</strong>/15c have the same meaning.</p>
 <div class="section" id="conic-projections">
-<h2>8.1. Conic projections<a class="headerlink" href="#conic-projections" title="Permalink to this headline">¶</a></h2>
+<h2>7.1. Conic projections<a class="headerlink" href="#conic-projections" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="albers-conic-equal-area-projection-jb-jb">
-<h3>8.1.1. Albers conic equal-area projection (<strong>-Jb</strong> <strong>-JB</strong>) <a class="reference internal" href="../gmt.html#jb-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#albers-conic-equal-area-projection-jb-jb" title="Permalink to this headline">¶</a></h3>
+<h3>7.1.1. Albers conic equal-area projection (<strong>-Jb</strong> <strong>-JB</strong>) <a class="reference internal" href="../gmt.html#jb-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#albers-conic-equal-area-projection-jb-jb" title="Permalink to this headline">¶</a></h3>
 <p>This projection, developed by Albers in 1805, is predominantly used to
 map regions of large east-west extent, in particular the United States.
 It is a conic, equal-area projection, in which parallels are unequally
@@ -349,7 +348,7 @@ gmt coast -R110/140/20/35 -JB125/20/25/45/5i -Bag -Dl -Ggreen -Wthinnest -A250 -
 </div>
 </div>
 <div class="section" id="equidistant-conic-projection-jd-jd">
-<h3>8.1.2. Equidistant conic projection (<strong>-Jd</strong> <strong>-JD</strong>) <a class="reference internal" href="../gmt.html#jd-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#equidistant-conic-projection-jd-jd" title="Permalink to this headline">¶</a></h3>
+<h3>7.1.2. Equidistant conic projection (<strong>-Jd</strong> <strong>-JD</strong>) <a class="reference internal" href="../gmt.html#jd-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#equidistant-conic-projection-jd-jd" title="Permalink to this headline">¶</a></h3>
 <p>The equidistant conic projection was described by the Greek philosopher
 Claudius Ptolemy about A.D. 150. It is neither conformal or equal-area,
 but serves as a compromise between them. The scale is true along all
@@ -375,7 +374,7 @@ gmt coast -R-88/-70/18/24 -JD-79/21/19/23/4.5i -Bag -Di -N1/thick,red -Glightgre
 </div>
 </div>
 <div class="section" id="lambert-conic-conformal-projection-jl-jl">
-<h3>8.1.3. Lambert conic conformal projection (<strong>-Jl</strong> <strong>-JL</strong>) <a class="reference internal" href="../gmt.html#jl-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#lambert-conic-conformal-projection-jl-jl" title="Permalink to this headline">¶</a></h3>
+<h3>7.1.3. Lambert conic conformal projection (<strong>-Jl</strong> <strong>-JL</strong>) <a class="reference internal" href="../gmt.html#jl-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#lambert-conic-conformal-projection-jl-jl" title="Permalink to this headline">¶</a></h3>
 <p>This conic projection was designed by the Alsatian mathematician Johann
 Heinrich Lambert (1772) and has been used extensively for mapping of
 regions with predominantly east-west orientation, just like the Albers
@@ -414,7 +413,7 @@ maximum scale error between latitudes 30.5ºN and 47.5ºN of 0.5–1%. Some
 areas, like Florida, experience scale errors of up to 2.5%.</p>
 </div>
 <div class="section" id="american-polyconic-projection-jpoly-jpoly">
-<h3>8.1.4. (American) polyconic projection (<strong>-Jpoly</strong> <strong>-JPoly</strong>) <a class="reference internal" href="../gmt.html#jpoly-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#american-polyconic-projection-jpoly-jpoly" title="Permalink to this headline">¶</a></h3>
+<h3>7.1.4. (American) polyconic projection (<strong>-Jpoly</strong> <strong>-JPoly</strong>) <a class="reference internal" href="../gmt.html#jpoly-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#american-polyconic-projection-jpoly-jpoly" title="Permalink to this headline">¶</a></h3>
 <p>The polyconic projection, in Europe usually referred to as the American
 polyconic projection, was introduced shortly before 1820 by the
 Swiss-American cartographer Ferdinand Rodulph Hassler (1770–1843). As
@@ -444,9 +443,9 @@ every 10 and annotations only every 30º in longitude:</p>
 </div>
 </div>
 <div class="section" id="azimuthal-projections">
-<h2>8.2. Azimuthal projections<a class="headerlink" href="#azimuthal-projections" title="Permalink to this headline">¶</a></h2>
+<h2>7.2. Azimuthal projections<a class="headerlink" href="#azimuthal-projections" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="lambert-azimuthal-equal-area-ja-ja">
-<h3>8.2.1. Lambert Azimuthal Equal-Area (<strong>-Ja</strong> <strong>-JA</strong>)<a class="headerlink" href="#lambert-azimuthal-equal-area-ja-ja" title="Permalink to this headline">¶</a></h3>
+<h3>7.2.1. Lambert Azimuthal Equal-Area (<strong>-Ja</strong> <strong>-JA</strong>)<a class="headerlink" href="#lambert-azimuthal-equal-area-ja-ja" title="Permalink to this headline">¶</a></h3>
 <p>This projection was developed by Lambert in 1772 and is typically used
 for mapping large regions like continents and hemispheres. It is an
 azimuthal, equal-area projection, but is not perspective. Distortion is
@@ -465,7 +464,7 @@ would be the oblique Equator
 <p>Two different types of maps can be made with this projection depending
 on how the region is specified. We will give examples of both types.</p>
 <div class="section" id="rectangular-map">
-<h4>8.2.1.1. Rectangular map<a class="headerlink" href="#rectangular-map" title="Permalink to this headline">¶</a></h4>
+<h4>7.2.1.1. Rectangular map<a class="headerlink" href="#rectangular-map" title="Permalink to this headline">¶</a></h4>
 <p>In this mode we define our region by specifying the longitude/latitude
 of the lower left and upper right corners instead of the usual <em>west,
 east, south, north</em> boundaries. The reason for specifying our area this
@@ -490,7 +489,7 @@ would try to decode the values as <em>west, east, south, north</em> and report
 an error since <em>‘east’</em> &lt; <em>‘west’</em>.</p>
 </div>
 <div class="section" id="hemisphere-map">
-<h4>8.2.1.2. Hemisphere map<a class="headerlink" href="#hemisphere-map" title="Permalink to this headline">¶</a></h4>
+<h4>7.2.1.2. Hemisphere map<a class="headerlink" href="#hemisphere-map" title="Permalink to this headline">¶</a></h4>
 <p>Here, you must specify the world as your region (<strong>-Rg</strong> or
 <strong>-Rd</strong>). E.g., to obtain a hemisphere view that shows the Americas, try</p>
 <blockquote>
@@ -514,7 +513,7 @@ stereonet can be obtained by using the stereographic projection
 </div>
 </div>
 <div class="section" id="stereographic-equal-angle-projection-js-js">
-<h3>8.2.2. Stereographic Equal-Angle projection (<strong>-Js</strong> <strong>-JS</strong>) <a class="reference internal" href="../gmt.html#js-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#stereographic-equal-angle-projection-js-js" title="Permalink to this headline">¶</a></h3>
+<h3>7.2.2. Stereographic Equal-Angle projection (<strong>-Js</strong> <strong>-JS</strong>) <a class="reference internal" href="../gmt.html#js-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#stereographic-equal-angle-projection-js-js" title="Permalink to this headline">¶</a></h3>
 <p>This is a conformal, azimuthal projection that dates back to the Greeks.
 Its main use is for mapping the polar regions. In the polar aspect all
 meridians are straight lines and parallels are arcs of circles. While
@@ -535,7 +534,7 @@ the setting is ignored when a standard parallel has been specified since
 the scale is then implicitly given. We will look at two different types
 of maps.</p>
 <div class="section" id="polar-stereographic-map">
-<h4>8.2.2.1. Polar Stereographic Map <a class="reference internal" href="../gmt.html#js-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#polar-stereographic-map" title="Permalink to this headline">¶</a></h4>
+<h4>7.2.2.1. Polar Stereographic Map <a class="reference internal" href="../gmt.html#js-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#polar-stereographic-map" title="Permalink to this headline">¶</a></h4>
 <p>In our first example we will let the projection center be at the north
 pole. This means we have a polar stereographic projection and the map
 boundaries will coincide with lines of constant longitude and latitude.
@@ -551,7 +550,7 @@ An example is given by</p>
 </div>
 </div>
 <div class="section" id="rectangular-stereographic-map">
-<h4>8.2.2.2. Rectangular stereographic map<a class="headerlink" href="#rectangular-stereographic-map" title="Permalink to this headline">¶</a></h4>
+<h4>7.2.2.2. Rectangular stereographic map<a class="headerlink" href="#rectangular-stereographic-map" title="Permalink to this headline">¶</a></h4>
 <p>As with Lambert’s azimuthal equal-area projection we have the option to
 use rectangular boundaries rather than the wedge-shape typically
 associated with polar projections. This choice is defined by selecting
@@ -570,7 +569,7 @@ gmt coast -R-25/59/70/72r -JS10/90/11c -B20g -Dl -A250 -Gdarkbrown -Wthinnest -S
 </div>
 </div>
 <div class="section" id="general-stereographic-map">
-<h4>8.2.2.3. General stereographic map<a class="headerlink" href="#general-stereographic-map" title="Permalink to this headline">¶</a></h4>
+<h4>7.2.2.3. General stereographic map<a class="headerlink" href="#general-stereographic-map" title="Permalink to this headline">¶</a></h4>
 <p>In terms of usage this projection is identical to the Lambert azimuthal
 equal-area projection. Thus, one can make both rectangular and
 hemispheric maps. Our example shows Australia using a projection pole at
@@ -590,7 +589,7 @@ next to its equal-area cousin in the Section <a class="reference internal" href=
 </div>
 </div>
 <div class="section" id="perspective-projection-jg-jg">
-<h3>8.2.3. Perspective projection (<strong>-Jg</strong> <strong>-JG</strong>) <a class="reference internal" href="../gmt.html#jg-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#perspective-projection-jg-jg" title="Permalink to this headline">¶</a></h3>
+<h3>7.2.3. Perspective projection (<strong>-Jg</strong> <strong>-JG</strong>) <a class="reference internal" href="../gmt.html#jg-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#perspective-projection-jg-jg" title="Permalink to this headline">¶</a></h3>
 <p>The perspective projection imitates in 2 dimensions the 3-dimensional
 view of the earth from space. The implementation in GMT is very
 flexible, and thus requires many input variables. Those are listed and
@@ -632,7 +631,7 @@ looking due east is thus accomplished by the following
 </div>
 </div>
 <div class="section" id="orthographic-projection-jg-jg">
-<h3>8.2.4. Orthographic projection (<strong>-Jg</strong> <strong>-JG</strong>) <a class="reference internal" href="../gmt.html#jg-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#orthographic-projection-jg-jg" title="Permalink to this headline">¶</a></h3>
+<h3>7.2.4. Orthographic projection (<strong>-Jg</strong> <strong>-JG</strong>) <a class="reference internal" href="../gmt.html#jg-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#orthographic-projection-jg-jg" title="Permalink to this headline">¶</a></h3>
 <p>The orthographic azimuthal projection is a perspective projection from
 infinite distance. It is therefore often used to give the appearance of
 a globe viewed from outer space. As with Lambert’s equal-area and the
@@ -665,7 +664,7 @@ generated by the following <a class="reference internal" href="../coast.html"><s
 </div>
 </div>
 <div class="section" id="azimuthal-equidistant-projection-je-je">
-<h3>8.2.5. Azimuthal Equidistant projection (<strong>-Je</strong> <strong>-JE</strong>) <a class="reference internal" href="../gmt.html#je-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#azimuthal-equidistant-projection-je-je" title="Permalink to this headline">¶</a></h3>
+<h3>7.2.5. Azimuthal Equidistant projection (<strong>-Je</strong> <strong>-JE</strong>) <a class="reference internal" href="../gmt.html#je-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#azimuthal-equidistant-projection-je-je" title="Permalink to this headline">¶</a></h3>
 <p>The most noticeable feature of this azimuthal projection is the fact
 that distances measured from the center are true. Therefore, a circle
 about the projection center defines the locus of points that are equally
@@ -697,7 +696,7 @@ in this projection this point plots as the entire map perimeter:</p>
 </div>
 </div>
 <div class="section" id="gnomonic-projection-jf-jf">
-<h3>8.2.6. Gnomonic projection (<strong>-Jf</strong> <strong>-JF</strong>) <a class="reference internal" href="../gmt.html#jf-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#gnomonic-projection-jf-jf" title="Permalink to this headline">¶</a></h3>
+<h3>7.2.6. Gnomonic projection (<strong>-Jf</strong> <strong>-JF</strong>) <a class="reference internal" href="../gmt.html#jf-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#gnomonic-projection-jf-jf" title="Permalink to this headline">¶</a></h3>
 <p>The Gnomonic azimuthal projection is a perspective projection from the
 center onto a plane tangent to the surface. Its origin goes back to the
 old Greeks who used it for star maps almost 2500 years ago. The
@@ -730,7 +729,7 @@ oblique latitude (<strong>-Jf</strong>), or map width (<strong>-JF</strong>).</l
 </div>
 </div>
 <div class="section" id="cylindrical-projections">
-<h2>8.3. Cylindrical projections<a class="headerlink" href="#cylindrical-projections" title="Permalink to this headline">¶</a></h2>
+<h2>7.3. Cylindrical projections<a class="headerlink" href="#cylindrical-projections" title="Permalink to this headline">¶</a></h2>
 <p>Cylindrical projections are easily recognized for its shape: maps are
 rectangular and meridians and parallels are straight lines crossing at
 right angles. But that is where similarities between the cylindrical
@@ -740,7 +739,7 @@ cylindrical equal-area, Miller, and cylindrical stereographic
 projections) stops. Each have a different way of spacing the meridians
 and parallels to obtain certain desirable cartographic properties.</p>
 <div class="section" id="mercator-projection-jm-jm">
-<h3>8.3.1. Mercator projection (<strong>-Jm</strong> <strong>-JM</strong>) <a class="reference internal" href="../gmt.html#jm-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#mercator-projection-jm-jm" title="Permalink to this headline">¶</a></h3>
+<h3>7.3.1. Mercator projection (<strong>-Jm</strong> <strong>-JM</strong>) <a class="reference internal" href="../gmt.html#jm-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#mercator-projection-jm-jm" title="Permalink to this headline">¶</a></h3>
 <p>Probably the most famous of the various map projections, the Mercator
 projection takes its name from the Flemish cartographer Gheert Cremer,
 better known as Gerardus Mercator, who presented it in 1569. The
@@ -787,7 +786,7 @@ another configuration with the <strong>-R</strong> option. A map centered on
 Greenwich would specify the region with <strong>-R</strong>-180/180/-70/70.</p>
 </div>
 <div class="section" id="transverse-mercator-projection-jt-jt">
-<h3>8.3.2. Transverse Mercator projection (<strong>-Jt</strong> <strong>-JT</strong>) <a class="reference internal" href="../gmt.html#jt-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#transverse-mercator-projection-jt-jt" title="Permalink to this headline">¶</a></h3>
+<h3>7.3.2. Transverse Mercator projection (<strong>-Jt</strong> <strong>-JT</strong>) <a class="reference internal" href="../gmt.html#jt-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#transverse-mercator-projection-jt-jt" title="Permalink to this headline">¶</a></h3>
 <p>The transverse Mercator was invented by Lambert in 1772. In this
 projection the cylinder touches a meridian along which there is no
 distortion. The distortion increases away from the central meridian and
@@ -836,7 +835,7 @@ than 90.</p>
 </div>
 </div>
 <div class="section" id="universal-transverse-mercator-utm-projection-ju-ju">
-<h3>8.3.3. Universal Transverse Mercator (UTM) projection (<strong>-Ju</strong> <strong>-JU</strong>) <a class="reference internal" href="../gmt.html#ju-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#universal-transverse-mercator-utm-projection-ju-ju" title="Permalink to this headline">¶</a></h3>
+<h3>7.3.3. Universal Transverse Mercator (UTM) projection (<strong>-Ju</strong> <strong>-JU</strong>) <a class="reference internal" href="../gmt.html#ju-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#universal-transverse-mercator-utm-projection-ju-ju" title="Permalink to this headline">¶</a></h3>
 <p>A particular subset of the transverse Mercator is the Universal
 Transverse Mercator (UTM) which was adopted by the US Army for
 large-scale military maps. Here, the globe is divided into 60 zones
@@ -868,7 +867,7 @@ meridian. For larger regions we use the conformal latitude in the
 general spherical formulae instead.</p>
 </div>
 <div class="section" id="oblique-mercator-projection-jo-jo">
-<h3>8.3.4. Oblique Mercator projection (<strong>-Jo</strong> <strong>-JO</strong>) <a class="reference internal" href="../gmt.html#jo-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#oblique-mercator-projection-jo-jo" title="Permalink to this headline">¶</a></h3>
+<h3>7.3.4. Oblique Mercator projection (<strong>-Jo</strong> <strong>-JO</strong>) <a class="reference internal" href="../gmt.html#jo-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#oblique-mercator-projection-jo-jo" title="Permalink to this headline">¶</a></h3>
 <p>Oblique configurations of the cylinder give rise to the oblique Mercator
 projection. It is particularly useful when mapping regions of large
 lateral extent in an oblique direction. Both parallels and meridians are
@@ -940,7 +939,7 @@ The projected coordinate system is still aligned as before but the Earth has bee
 </div>
 </div>
 <div class="section" id="cassini-cylindrical-projection-jc-jc">
-<h3>8.3.5. Cassini cylindrical projection (<strong>-Jc</strong> <strong>-JC</strong>) <a class="reference internal" href="../gmt.html#jc-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#cassini-cylindrical-projection-jc-jc" title="Permalink to this headline">¶</a></h3>
+<h3>7.3.5. Cassini cylindrical projection (<strong>-Jc</strong> <strong>-JC</strong>) <a class="reference internal" href="../gmt.html#jc-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#cassini-cylindrical-projection-jc-jc" title="Permalink to this headline">¶</a></h3>
 <p>This cylindrical projection was developed in 1745 by César-François
 Cassini de Thury for the survey of France. It is occasionally called
 Cassini-Soldner since the latter provided the more accurate mathematical
@@ -970,7 +969,7 @@ using the Cassini projection can be obtained by running the command:</p>
 rectangular boundary (used here) or a geographical (WESN) boundary.</p>
 </div>
 <div class="section" id="cylindrical-equidistant-projection-jq-jq">
-<h3>8.3.6. Cylindrical equidistant projection (<strong>-Jq</strong> <strong>-JQ</strong>) <a class="reference internal" href="../gmt.html#jq-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#cylindrical-equidistant-projection-jq-jq" title="Permalink to this headline">¶</a></h3>
+<h3>7.3.6. Cylindrical equidistant projection (<strong>-Jq</strong> <strong>-JQ</strong>) <a class="reference internal" href="../gmt.html#jq-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#cylindrical-equidistant-projection-jq-jq" title="Permalink to this headline">¶</a></h3>
 <p>This simple cylindrical projection is really a linear scaling of
 longitudes and latitudes. The most common form is the Plate Carrée
 projection, where the scaling of longitudes and latitudes is the same.
@@ -1031,7 +1030,7 @@ Table <a class="reference internal" href="#tbl-jq"><span class="std std-ref">JQ<
 </table>
 </div>
 <div class="section" id="cylindrical-equal-area-projections-jy-jy">
-<h3>8.3.7. Cylindrical equal-area projections (<strong>-Jy</strong> <strong>-JY</strong>) <a class="reference internal" href="../gmt.html#jy-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#cylindrical-equal-area-projections-jy-jy" title="Permalink to this headline">¶</a></h3>
+<h3>7.3.7. Cylindrical equal-area projections (<strong>-Jy</strong> <strong>-JY</strong>) <a class="reference internal" href="../gmt.html#jy-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#cylindrical-equal-area-projections-jy-jy" title="Permalink to this headline">¶</a></h3>
 <p>This cylindrical projection is actually several projections, depending
 on what latitude is selected as the standard parallel. However, they are
 all equal area and hence non-conformal. All meridians and parallels are
@@ -1094,7 +1093,7 @@ can be obtained by running the command:</p>
 the poles map into lines.</p>
 </div>
 <div class="section" id="miller-cylindrical-projection-jj-jj">
-<h3>8.3.8. Miller Cylindrical projection (<strong>-Jj</strong> <strong>-JJ</strong>) <a class="reference internal" href="../gmt.html#jj-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#miller-cylindrical-projection-jj-jj" title="Permalink to this headline">¶</a></h3>
+<h3>7.3.8. Miller Cylindrical projection (<strong>-Jj</strong> <strong>-JJ</strong>) <a class="reference internal" href="../gmt.html#jj-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#miller-cylindrical-projection-jj-jj" title="Permalink to this headline">¶</a></h3>
 <p>This cylindrical projection, presented by Osborn Maitland Miller of the
 American Geographic Society in 1942, is neither equal nor conformal. All
 meridians and parallels are straight lines. The projection was designed
@@ -1121,7 +1120,7 @@ follows:</p>
 </div>
 </div>
 <div class="section" id="cylindrical-stereographic-projections-jcyl-stere-jcyl-stere">
-<h3>8.3.9. Cylindrical stereographic projections (<strong>-Jcyl_stere</strong> <strong>-JCyl_stere</strong>) <a class="reference internal" href="../gmt.html#jcyl-stere-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#cylindrical-stereographic-projections-jcyl-stere-jcyl-stere" title="Permalink to this headline">¶</a></h3>
+<h3>7.3.9. Cylindrical stereographic projections (<strong>-Jcyl_stere</strong> <strong>-JCyl_stere</strong>) <a class="reference internal" href="../gmt.html#jcyl-stere-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#cylindrical-stereographic-projections-jcyl-stere-jcyl-stere" title="Permalink to this headline">¶</a></h3>
 <p>The cylindrical stereographic projections are certainly not as notable
 as other cylindrical projections, but are still used because of their
 relative simplicity and their ability to overcome some of the downsides
@@ -1185,7 +1184,7 @@ gmt coast -R-180/180/-60/80 -JCyl_stere/0/45/4.5i -Bxa60f30g30 -Bya30g30 -Dc -A5
 </div>
 </div>
 <div class="section" id="miscellaneous-projections">
-<h2>8.4. Miscellaneous projections<a class="headerlink" href="#miscellaneous-projections" title="Permalink to this headline">¶</a></h2>
+<h2>7.4. Miscellaneous projections<a class="headerlink" href="#miscellaneous-projections" title="Permalink to this headline">¶</a></h2>
 <p>GMT supports 8 common projections for global presentation of data or
 models. These are the Hammer, Mollweide, Winkel Tripel, Robinson, Eckert
 IV and VI, Sinusoidal, and Van der Grinten projections. Due to the small
@@ -1195,7 +1194,7 @@ approximation rather than more elaborate elliptical formulae.</p>
 The default is the middle of the longitude range of the plot, specified
 by the (<strong>-R</strong>) option.</p>
 <div class="section" id="hammer-projection-jh-jh">
-<h3>8.4.1. Hammer projection (<strong>-Jh</strong> <strong>-JH</strong>) <a class="reference internal" href="../gmt.html#jh-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#hammer-projection-jh-jh" title="Permalink to this headline">¶</a></h3>
+<h3>7.4.1. Hammer projection (<strong>-Jh</strong> <strong>-JH</strong>) <a class="reference internal" href="../gmt.html#jh-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#hammer-projection-jh-jh" title="Permalink to this headline">¶</a></h3>
 <p>The equal-area Hammer projection, first presented by the German
 mathematician Ernst von Hammer in 1892, is also known as Hammer-Aitoff
 (the Aitoff projection looks similar, but is not equal-area). The border
@@ -1218,7 +1217,7 @@ defined by selecting:</p>
 </div>
 </div>
 <div class="section" id="mollweide-projection-jw-jw">
-<h3>8.4.2. Mollweide projection (<strong>-Jw</strong> <strong>-JW</strong>) <a class="reference internal" href="../gmt.html#jw-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#mollweide-projection-jw-jw" title="Permalink to this headline">¶</a></h3>
+<h3>7.4.2. Mollweide projection (<strong>-Jw</strong> <strong>-JW</strong>) <a class="reference internal" href="../gmt.html#jw-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#mollweide-projection-jw-jw" title="Permalink to this headline">¶</a></h3>
 <p>This pseudo-cylindrical, equal-area projection was developed by the
 German mathematician and astronomer Karl Brandan Mollweide in 1805.
 Parallels are unequally spaced straight lines with the meridians being
@@ -1244,7 +1243,7 @@ longitudes and latitudes into rectangular <em>x</em>/<em>y</em> coordinates:</p>
 </div>
 </div>
 <div class="section" id="winkel-tripel-projection-jr-jr">
-<h3>8.4.3. Winkel Tripel projection (<strong>-Jr</strong> <strong>-JR</strong>) <a class="reference internal" href="../gmt.html#jr-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#winkel-tripel-projection-jr-jr" title="Permalink to this headline">¶</a></h3>
+<h3>7.4.3. Winkel Tripel projection (<strong>-Jr</strong> <strong>-JR</strong>) <a class="reference internal" href="../gmt.html#jr-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#winkel-tripel-projection-jr-jr" title="Permalink to this headline">¶</a></h3>
 <p>In 1921, the German mathematician Oswald Winkel a projection that was to
 strike a compromise between the properties of three elements (area,
 angle and distance). The German word “tripel” refers to this junction of
@@ -1275,7 +1274,7 @@ use it you must enter</p>
 </div>
 </div>
 <div class="section" id="robinson-projection-jn-jn">
-<h3>8.4.4. Robinson projection (<strong>-Jn</strong> <strong>-JN</strong>) <a class="reference internal" href="../gmt.html#jn-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#robinson-projection-jn-jn" title="Permalink to this headline">¶</a></h3>
+<h3>7.4.4. Robinson projection (<strong>-Jn</strong> <strong>-JN</strong>) <a class="reference internal" href="../gmt.html#jn-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#robinson-projection-jn-jn" title="Permalink to this headline">¶</a></h3>
 <p>The Robinson projection, presented by the American geographer and
 cartographer Arthur H. Robinson in 1963, is a modified cylindrical
 projection that is neither conformal nor equal-area. Central meridian
@@ -1302,7 +1301,7 @@ enter</p>
 </div>
 </div>
 <div class="section" id="eckert-iv-and-vi-projection-jk-jk">
-<h3>8.4.5. Eckert IV and VI projection (<strong>-Jk</strong> <strong>-JK</strong>) <a class="reference internal" href="../gmt.html#jk-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#eckert-iv-and-vi-projection-jk-jk" title="Permalink to this headline">¶</a></h3>
+<h3>7.4.5. Eckert IV and VI projection (<strong>-Jk</strong> <strong>-JK</strong>) <a class="reference internal" href="../gmt.html#jk-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#eckert-iv-and-vi-projection-jk-jk" title="Permalink to this headline">¶</a></h3>
 <p>The Eckert IV and VI projections, presented by the German cartographer
 Max Eckert-Greiffendorff in 1906, are pseudo-cylindrical equal-area
 projections. Central meridian and all parallels are straight lines;
@@ -1335,7 +1334,7 @@ this command:</p>
 </div>
 </div>
 <div class="section" id="sinusoidal-projection-ji-ji">
-<h3>8.4.6. Sinusoidal projection (<strong>-Ji</strong> <strong>-JI</strong>) <a class="reference internal" href="../gmt.html#ji-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#sinusoidal-projection-ji-ji" title="Permalink to this headline">¶</a></h3>
+<h3>7.4.6. Sinusoidal projection (<strong>-Ji</strong> <strong>-JI</strong>) <a class="reference internal" href="../gmt.html#ji-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#sinusoidal-projection-ji-ji" title="Permalink to this headline">¶</a></h3>
 <p>The sinusoidal projection is one of the oldest known projections, is
 equal-area, and has been used since the mid-16th century. It has also
 been called the “Equal-area Mercator” projection. The central meridian
@@ -1384,7 +1383,7 @@ limited to display of global, discontinuous data distributions like
 hydrocarbon and mineral resources, etc.</p>
 </div>
 <div class="section" id="van-der-grinten-projection-jv-jv">
-<h3>8.4.7. Van der Grinten projection (<strong>-Jv</strong> <strong>-JV</strong>) <a class="reference internal" href="../gmt.html#jv-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#van-der-grinten-projection-jv-jv" title="Permalink to this headline">¶</a></h3>
+<h3>7.4.7. Van der Grinten projection (<strong>-Jv</strong> <strong>-JV</strong>) <a class="reference internal" href="../gmt.html#jv-full"><span class="std std-ref">…</span></a><a class="headerlink" href="#van-der-grinten-projection-jv-jv" title="Permalink to this headline">¶</a></h3>
 <p>The Van der Grinten projection, presented by Alphons J. van der Grinten
 in 1904, is neither equal-area nor conformal. Central meridian and
 Equator are straight lines; other meridians are arcs of circles. The
@@ -1441,10 +1440,10 @@ file.</td></tr>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="supplemental_packages.html" class="btn btn-neutral float-right" title="9. GMT Supplemental Packages" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="supplemental_packages.html" class="btn btn-neutral float-right" title="8. GMT Supplemental Packages" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="coordinate_transformations.html" class="btn btn-neutral float-left" title="7. GMT Coordinate Transformations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="coordinate_transformations.html" class="btn btn-neutral float-left" title="6. GMT Coordinate Transformations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -1456,7 +1455,7 @@ file.</td></tr>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 04, 2019.
+        Last updated on Oct 05, 2019.
       </span>
 
     </p>
