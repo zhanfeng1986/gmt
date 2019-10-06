@@ -107,7 +107,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../users_contrib_scripts.html">Users Script Contributions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../users_contrib_symbols.html">Users Symbol Contributions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../changes.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../compatibility.html">Incompatibilities between GMT 5 and GMT 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../deprecated_defaults.html">Deprecated GMT Defaults Names</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../switching.html">Switching between different GMT versions</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Classic Mode</span></p>
@@ -305,7 +305,11 @@ read [normally 1]), <em>offset</em> (to add to grid after scaling [normally 0]),
 <em>invalid</em> (a value to represent missing data [NaN]), <em>title</em> (anything you
 like), and <em>remark</em> (anything you like). Items not listed will remain untouched.
 Give a blank name to completely reset a particular string.
-Use quotes to group texts with more than one word.
+Use quotes to group texts with more than one word.  If any of your text contains plus symbols
+you need to escape them (place a backslash before each plus-sign) so they are not confused with the
+option modifiers.  Alternatively, you can place the entire double-quoted string inside single
+quotes.  If you have shell variables that contain plus symbols you cannot use single quotes but
+you can escape the plus symbols in a variable using constructs like ${variable/+/\+}.
 Note that for geographic grids (<strong>-fg</strong>) <em>xname</em> and <em>yname</em> are set automatically.</dd>
 </dl>
 <dl class="docutils" id="l">
@@ -412,7 +416,7 @@ individual samples will be averaged in bins</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 05, 2019.
+        Last updated on Oct 06, 2019.
       </span>
 
     </p>

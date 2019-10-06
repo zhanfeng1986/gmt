@@ -107,7 +107,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../users_contrib_scripts.html">Users Script Contributions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../users_contrib_symbols.html">Users Symbol Contributions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../changes.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../compatibility.html">Incompatibilities between GMT 5 and GMT 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deprecated_defaults.html">Deprecated GMT Defaults Names</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../switching.html">Switching between different GMT versions</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Classic Mode</span></p>
@@ -298,7 +298,7 @@ useful options:</p>
 interval and 250 m as contour interval.  We choose a 7-inch-wide
 Mercator plot and annotate the borders every 2º:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_11
-  gmt grdcontour @tut_bathy.nc -JM6i -C250 -A1000 -Ba
+  gmt grdcontour @tut_bathy.nc -JM6i -C250 -A1000 -B
 gmt end show
 </pre></div>
 </div>
@@ -415,7 +415,7 @@ We desire to make a 5’ by 5’ grid.  Running gmt info on &#64;tut_ship.xyz yi
 <p>so we choose the region accordingly, and get a view of the contour map using</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_12
   gmt nearneighbor -R245/255/20/30 -I5m -S40k -Gship.nc @tut_ship.xyz
-  gmt grdcontour ship.nc -JM6i -Ba -C250 -A1000
+  gmt grdcontour ship.nc -JM6i -B -C250 -A1000
 gmt end show
 </pre></div>
 </div>
@@ -542,7 +542,7 @@ call to <a class="reference internal" href="../mask.html"><span class="doc">mask
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt blockmedian -R245/255/20/30 -I5m -V @tut_ship.xyz &gt; ship_5m.xyz
 gmt surface ship_5m.xyz -R245/255/20/30 -I5m -Gship.nc
 gmt begin GMT_tut_13
-  gmt mask -R245/255/20/30 -I5m ship_5m.xyz -JM6i -Ba
+  gmt mask -R245/255/20/30 -I5m ship_5m.xyz -JM6i -B
   gmt grdcontour ship.nc -C250 -A1000 
   gmt mask -C 
 gmt end show
@@ -584,7 +584,7 @@ gmt end show
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 05, 2019.
+        Last updated on Oct 06, 2019.
       </span>
 
     </p>

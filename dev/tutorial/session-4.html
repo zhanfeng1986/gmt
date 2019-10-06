@@ -107,7 +107,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../users_contrib_scripts.html">Users Script Contributions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../users_contrib_symbols.html">Users Symbol Contributions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../changes.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../compatibility.html">Incompatibilities between GMT 5 and GMT 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deprecated_defaults.html">Deprecated GMT Defaults Names</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../switching.html">Switching between different GMT versions</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Classic Mode</span></p>
@@ -421,7 +421,7 @@ and a CPT; the main other options are:</p>
 the plot.  We try</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_15
   gmt makecpt -Crainbow -T1000/5000
-  gmt grdimage @tut_relief.nc -JM6i -Ba -BWSnE
+  gmt grdimage @tut_relief.nc -JM6i -B -BWSnE
   gmt colorbar -DJTC -I0.4 -Bxa -By+lm 
 gmt end show
 </pre></div>
@@ -494,7 +494,7 @@ create the shaded relief image:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_16
   gmt makecpt -Crainbow -T1000/5000
   gmt grdgradient @tut_relief.nc -Ne0.8 -A100 -fg -Gus_i.nc
-  gmt grdimage tut_relief.nc -Ius_i.nc -JM6i -Ba -BWSnE
+  gmt grdimage tut_relief.nc -Ius_i.nc -JM6i -B -BWSnE
   gmt colorbar -DJTC -I0.4 -Bxa -By+lm 
 gmt end show
 </pre></div>
@@ -617,7 +617,7 @@ subset of the ETOPO5 data over Bermuda and will use the ocean CPT.
 A simple mesh plot can therefore be obtained with</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_18
   gmt grd2cpt @tut_bathy.nc -Cocean
-  gmt grdview tut_bathy.nc -JM5i -JZ2i -p135/30 -Ba
+  gmt grdview tut_bathy.nc -JM5i -JZ2i -p135/30 -B
 gmt end show
 </pre></div>
 </div>
@@ -638,7 +638,7 @@ from the southeast.  This is done using</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_19
   gmt makecpt -Ctopo -T1000/5000
   gmt grdgradient @tut_relief.nc -Ne0.8 -A100 -fg -Gus_i.nc
-  gmt grdview tut_relief.nc -JM4i -p135/35 -Qi50 -Ius_i.nc -Ba -JZ0.5i -C
+  gmt grdview tut_relief.nc -JM4i -p135/35 -Qi50 -Ius_i.nc -B -JZ0.5i -C
 gmt end show
 </pre></div>
 </div>
@@ -684,7 +684,7 @@ appropriate <em>dpi</em> for the final output device and let it rip.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 05, 2019.
+        Last updated on Oct 06, 2019.
       </span>
 
     </p>

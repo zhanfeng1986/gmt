@@ -107,7 +107,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../users_contrib_scripts.html">Users Script Contributions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../users_contrib_symbols.html">Users Symbol Contributions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../changes.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../compatibility.html">Incompatibilities between GMT 5 and GMT 4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deprecated_defaults.html">Deprecated GMT Defaults Names</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../switching.html">Switching between different GMT versions</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Classic Mode</span></p>
@@ -438,7 +438,7 @@ from -3 to 8 in <em>y</em>, with automatic annotation intervals.  Finally,
 we let the canvas be painted light red and have dimensions of
 4 by 3 inches.  Here’s how we do it:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_1
-  gmt basemap -R10/70/-3/8 -JX4i/3i -Ba -B+glightred+t<span class="s2">&quot;My first plot&quot;</span>
+  gmt basemap -R10/70/-3/8 -JX4i/3i -B -B+glightred+t<span class="s2">&quot;My first plot&quot;</span>
 gmt end show
 </pre></div>
 </div>
@@ -534,7 +534,7 @@ to the common switches we may need to use some of several coast-specific options
 <p>One of <strong>-W</strong>, <strong>-G</strong>, <strong>-S</strong> must be selected.  Our first coastline
 example is from Latin America:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_3
-  gmt coast -R-90/-70/0/20 -JM6i -Ba -Gchocolate
+  gmt coast -R-90/-70/0/20 -JM6i -B -Gchocolate
 gmt end show
 </pre></div>
 </div>
@@ -566,7 +566,7 @@ The general syntax is</p>
 are the two standard parallels where the cone intersects the Earth’s surface.
 We try the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_4
-  gmt coast -R-130/-70/24/52 -JB-100/35/33/45/6i -Ba -B+t<span class="s2">&quot;Conic Projection&quot;</span> -N1/thickest -N2/thinnest -A500 -Ggray -Wthinnest
+  gmt coast -R-130/-70/24/52 -JB-100/35/33/45/6i -B -B+t<span class="s2">&quot;Conic Projection&quot;</span> -N1/thickest -N2/thinnest -A500 -Ggray -Wthinnest
 gmt end show
 </pre></div>
 </div>
@@ -660,7 +660,7 @@ gmt end show
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 05, 2019.
+        Last updated on Oct 06, 2019.
       </span>
 
     </p>
