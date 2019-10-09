@@ -120,7 +120,7 @@
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight C API</a></li>
 </ul>
 
             
@@ -224,35 +224,35 @@ different thresholds.</p>
 <span class="nv">AWK</span><span class="o">=</span><span class="si">${</span><span class="nv">AWK</span><span class="k">:-</span><span class="nv">awk</span><span class="si">}</span>
 
 gmt begin ex40
-  gmt spatial @GSHHS_h_Australia.txt -fg -Qk &gt; centroid.txt
-  gmt spatial @GSHHS_h_Australia.txt -fg -Qk <span class="p">|</span> <span class="nv">$AWK</span> <span class="s1">&#39;{printf &quot;Full area = %.0f km@+2@+\n&quot;, $3}&#39;</span> &gt; area.txt
+	gmt spatial @GSHHS_h_Australia.txt -fg -Qk &gt; centroid.txt
+	gmt spatial @GSHHS_h_Australia.txt -fg -Qk <span class="p">|</span> <span class="nv">$AWK</span> <span class="s1">&#39;{printf &quot;Full area = %.0f km@+2@+\n&quot;, $3}&#39;</span> &gt; area.txt
 
-  gmt subplot begin 2x1 -Fs5.5i/5i -R112/154/-40/-10 -JM5.5i
-	gmt subplot <span class="nb">set</span> <span class="m">0</span>
-	gmt basemap -B20+lightgray -BWsne+g240/255/240
-	gmt plot @GSHHS_h_Australia.txt -Wfaint -G240/240/255
-	gmt plot @GSHHS_h_Australia.txt -Sc0.01c -Gred
-	gmt simplify @GSHHS_h_Australia.txt -T100k &gt; T100k.txt
-	gmt spatial T100k.txt -fg -Qk <span class="p">|</span> <span class="nv">$AWK</span> <span class="s1">&#39;{printf &quot;Reduced area = %.0f km@+2@+\n&quot;, $3}&#39;</span> &gt; area_T100k.txt
-	gmt plot -W1p,blue T100k.txt
-	gmt plot -Sx0.3i -W3p centroid.txt
-	gmt text -Dj0.1i/0.1i -F+cLT+jTL+f18p+t<span class="s2">&quot;T = 100 km&quot;</span>
-	gmt text area.txt -F+f14p+cCM
-	gmt text area_T100k.txt -F+f14p+cLB -Dj0.2i
+	gmt subplot begin 2x1 -Fs5.5i/5i -R112/154/-40/-10 -JM5.5i
+		gmt subplot <span class="nb">set</span> <span class="m">0</span>
+		gmt basemap -B20+lightgray -BWsne+g240/255/240
+		gmt plot @GSHHS_h_Australia.txt -Wfaint -G240/240/255
+		gmt plot @GSHHS_h_Australia.txt -Sc0.01c -Gred
+		gmt simplify @GSHHS_h_Australia.txt -T100k &gt; T100k.txt
+		gmt spatial T100k.txt -fg -Qk <span class="p">|</span> <span class="nv">$AWK</span> <span class="s1">&#39;{printf &quot;Reduced area = %.0f km@+2@+\n&quot;, $3}&#39;</span> &gt; area_T100k.txt
+		gmt plot -W1p,blue T100k.txt
+		gmt plot -Sx0.3i -W3p centroid.txt
+		gmt text -Dj0.1i/0.1i -F+cLT+jTL+f18p+t<span class="s2">&quot;T = 100 km&quot;</span>
+		gmt text area.txt -F+f14p+cCM
+		gmt text area_T100k.txt -F+f14p+cLB -Dj0.2i
 
-	gmt subplot <span class="nb">set</span> <span class="m">1</span>
-	gmt basemap -B20+lightgray -BWSne+g240/255/240
-	gmt plot @GSHHS_h_Australia.txt -Wfaint -G240/240/255
-	gmt plot @GSHHS_h_Australia.txt -Sc0.01c -Gred
-	gmt simplify @GSHHS_h_Australia.txt -T500k &gt; T500k.txt
-	gmt spatial T500k.txt -fg -Qk <span class="p">|</span> <span class="nv">$AWK</span> <span class="s1">&#39;{printf &quot;Reduced area = %.0f km@+2@+\n&quot;, $3}&#39;</span> &gt; area_T500k.txt
-	gmt plot -W1p,blue T500k.txt
-	gmt plot -Sx0.3i -W3p centroid.txt
-	gmt text -Dj0.1i/0.1i -F+cLT+jTL+f18p+t<span class="s2">&quot;T = 500 km&quot;</span>
-	gmt text area.txt -F+f14p+cCM
-	gmt text area_T500k.txt -F+f14p+cLB -Dj0.2i
-  gmt subplot end
-  rm -f centroid.txt area*.txt T*.txt
+		gmt subplot <span class="nb">set</span> <span class="m">1</span>
+		gmt basemap -B20+lightgray -BWSne+g240/255/240
+		gmt plot @GSHHS_h_Australia.txt -Wfaint -G240/240/255
+		gmt plot @GSHHS_h_Australia.txt -Sc0.01c -Gred
+		gmt simplify @GSHHS_h_Australia.txt -T500k &gt; T500k.txt
+		gmt spatial T500k.txt -fg -Qk <span class="p">|</span> <span class="nv">$AWK</span> <span class="s1">&#39;{printf &quot;Reduced area = %.0f km@+2@+\n&quot;, $3}&#39;</span> &gt; area_T500k.txt
+		gmt plot -W1p,blue T500k.txt
+		gmt plot -Sx0.3i -W3p centroid.txt
+		gmt text -Dj0.1i/0.1i -F+cLT+jTL+f18p+t<span class="s2">&quot;T = 500 km&quot;</span>
+		gmt text area.txt -F+f14p+cCM
+		gmt text area_T500k.txt -F+f14p+cLB -Dj0.2i
+	gmt subplot end
+	rm -f centroid.txt area*.txt T*.txt
 gmt end show
 </pre></div>
 </div>
@@ -285,7 +285,7 @@ gmt end show
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 07, 2019.
+        Last updated on Oct 09, 2019.
       </span>
 
     </p>

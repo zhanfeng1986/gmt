@@ -120,7 +120,7 @@
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight C API</a></li>
 </ul>
 
             
@@ -231,13 +231,12 @@ the SW and view the surface from SE:</p>
 <span class="c1"># Unix progs:	echo, rm</span>
 <span class="c1">#</span>
 gmt begin ex05
-	gmt grdmath -R-15/15/-15/15 -I0.3 X Y HYPOT DUP <span class="m">2</span> MUL PI MUL <span class="m">8</span> DIV COS EXCH NEG <span class="m">10</span> DIV <span class="se">\</span>
-	EXP <span class="nv">MUL</span> <span class="o">=</span> sombrero.nc
+	gmt grdmath -R-15/15/-15/15 -I0.3 X Y HYPOT DUP <span class="m">2</span> MUL PI MUL <span class="m">8</span> DIV COS EXCH NEG <span class="m">10</span> DIV EXP <span class="nv">MUL</span> <span class="o">=</span> sombrero.nc
 	gmt makecpt -C128 -T-5,5 -N
 	gmt grdview sombrero.nc -JX5i -JZ1.75i -B -Bz0.5 -BSEwnZ -N-1+gwhite -Qs -I+a225+nt0.75 <span class="se">\</span>
-	-C -R-15/15/-15/15/-1/1 -p120/30
+		-C -R-15/15/-15/15/-1/1 -p120/30
 	<span class="nb">echo</span> <span class="s2">&quot;3.5 4.5 z(r) = cos (2@~p@~r/8) @~\327@~e@+-r/10@+&quot;</span> <span class="p">|</span> gmt text -R0/10/0/10 -Jx1i <span class="se">\</span>
-	-F+f50p,ZapfChancery-MediumItalic+jBC
+		-F+f50p,ZapfChancery-MediumItalic+jBC
 	rm -f sombrero.nc
 gmt end show
 </pre></div>
@@ -278,7 +277,7 @@ will result in a plot like the one in Figure.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 07, 2019.
+        Last updated on Oct 09, 2019.
       </span>
 
     </p>

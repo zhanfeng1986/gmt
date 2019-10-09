@@ -120,7 +120,7 @@
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight C API</a></li>
 </ul>
 
             
@@ -229,10 +229,8 @@ gmt begin
 	gmt makecpt -C255,100 -T-10/10/10 -N
 	gmt grdcontour @HI_geoid_04.nc -R195/210/18/25 -Jm0.45i -p60/30 -C1 -A5+o -Gd4i -X1.25i -Y1.25i
 	gmt coast -p -B2 -BNEsw -Gblack -TdjBR+o0.1i+w1i+l
-	gmt grdview @HI_topo_04.nc -R195/210/18/25/-6/4 -Jz0.34i -p -C <span class="se">\</span>
-		-N-6+glightgray -Qsm -B2 -Bz2+l<span class="s2">&quot;Topo (km)&quot;</span> -BneswZ -Y2.2i
-	<span class="nb">echo</span> <span class="s1">&#39;3.25 5.75 H@#awaiian@# R@#idge@#&#39;</span> <span class="p">|</span> gmt text -R0/10/0/10 -Jx1i <span class="se">\</span>
-	-F+f60p,ZapfChancery-MediumItalic+jCB
+	gmt grdview @HI_topo_04.nc -R195/210/18/25/-6/4 -Jz0.34i -p -C -N-6+glightgray -Qsm -B2 -Bz2+l<span class="s2">&quot;Topo (km)&quot;</span> -BneswZ -Y2.2i
+	<span class="nb">echo</span> <span class="s1">&#39;3.25 5.75 H@#awaiian@# R@#idge@#&#39;</span> <span class="p">|</span> gmt text -R0/10/0/10 -Jx1i -F+f60p,ZapfChancery-MediumItalic+jCB
 
 	gmt figure ex04c
 	gmt grdimage @HI_geoid_04.nc -I+a0+nt0.75 -R195/210/18/25 -JM6.75i -p60/30 -C@geoid_04.cpt -X1.25i -Y1.25i
@@ -241,8 +239,7 @@ gmt begin
 	gmt colorbar -p240/30 -DJBC+o0/0.5i+w5i/0.3i+h -C@geoid_04.cpt -I -Bx2+l<span class="s2">&quot;Geoid (m)&quot;</span>
 	gmt grdview @HI_topo_04.nc -I+a0+nt0.75 -R195/210/18/25/-6/4 -JZ3.4i -p60/30 -C@topo_04.cpt <span class="se">\</span>
 		-N-6+glightgray -Qc100 -B2 -Bz2+l<span class="s2">&quot;Topo (km)&quot;</span> -BneswZ -Y2.2i
-	<span class="nb">echo</span> <span class="s1">&#39;3.25 5.75 H@#awaiian@# R@#idge@#&#39;</span> <span class="p">|</span> gmt text -R0/10/0/10 -Jx1i <span class="se">\</span>
-	-F+f60p,ZapfChancery-MediumItalic+jCB
+	<span class="nb">echo</span> <span class="s1">&#39;3.25 5.75 H@#awaiian@# R@#idge@#&#39;</span> <span class="p">|</span> gmt text -R0/10/0/10 -Jx1i -F+f60p,ZapfChancery-MediumItalic+jCB
 gmt end show
 </pre></div>
 </div>
@@ -300,7 +297,7 @@ from Example <a class="reference internal" href="ex02.html#example-02"><span cla
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 07, 2019.
+        Last updated on Oct 09, 2019.
       </span>
 
     </p>

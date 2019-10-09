@@ -120,7 +120,7 @@
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight C API</a></li>
 </ul>
 
             
@@ -223,40 +223,40 @@ the grids being extended and padded to a suitable dimension.</p>
 <span class="c1">#</span>
 
 gmt begin ex37
-    <span class="c1"># Testing gmt grdfft coherence calculation with Karen Marks example data</span>
-    <span class="c1"># Prefix of two .nc files</span>
-    <span class="nv">G</span><span class="o">=</span>@grav.V18.par.surf.1km.sq
-    <span class="nv">T</span><span class="o">=</span>@mb.par.surf.1km.sq
-    gmt <span class="nb">set</span> FONT_TITLE 14p GMT_FFT kiss
+	<span class="c1"># Testing gmt grdfft coherence calculation with Karen Marks example data</span>
+	<span class="c1"># Prefix of two .nc files</span>
+	<span class="nv">G</span><span class="o">=</span>@grav.V18.par.surf.1km.sq
+	<span class="nv">T</span><span class="o">=</span>@mb.par.surf.1km.sq
+	gmt <span class="nb">set</span> FONT_TITLE 14p GMT_FFT kiss
 
-    gmt grdinfo <span class="nv">$T</span>.nc -Ib &gt; bbox
-    <span class="nv">scl</span><span class="o">=</span><span class="m">1</span>.4e-5
-    <span class="nv">sclkm</span><span class="o">=</span><span class="m">1</span>.4e-2
-    gmt makecpt -Crainbow -T-5000/-3000
-    gmt grdimage <span class="nv">$T</span>.nc -I+a0+nt1 -R<span class="nv">$T</span>.nc -Jx<span class="si">${</span><span class="nv">scl</span><span class="si">}</span>i -C -X1.474i -Y1i
-    gmt basemap -R-84/75/-78/81 -Jx<span class="si">${</span><span class="nv">sclkm</span><span class="si">}</span>i -Ba -BWSne+t<span class="s2">&quot;Multibeam bathymetry&quot;</span>
+	gmt grdinfo <span class="nv">$T</span>.nc -Ib &gt; bbox
+	<span class="nv">scl</span><span class="o">=</span><span class="m">1</span>.4e-5
+	<span class="nv">sclkm</span><span class="o">=</span><span class="m">1</span>.4e-2
+	gmt makecpt -Crainbow -T-5000/-3000
+	gmt grdimage <span class="nv">$T</span>.nc -I+a0+nt1 -R<span class="nv">$T</span>.nc -Jx<span class="si">${</span><span class="nv">scl</span><span class="si">}</span>i -C -X1.474i -Y1i
+	gmt basemap -R-84/75/-78/81 -Jx<span class="si">${</span><span class="nv">sclkm</span><span class="si">}</span>i -Ba -BWSne+t<span class="s2">&quot;Multibeam bathymetry&quot;</span>
 
-    gmt makecpt -Crainbow -T-50/25
-    gmt grdimage <span class="nv">$G</span>.nc -I+a0+nt1 -R<span class="nv">$G</span>.nc -Jx<span class="si">${</span><span class="nv">scl</span><span class="si">}</span>i -C -X3.25i
-    gmt basemap -R-84/75/-78/81 -Jx<span class="si">${</span><span class="nv">sclkm</span><span class="si">}</span>i -Ba -BWSne+t<span class="s2">&quot;Satellite gravity&quot;</span>
+	gmt makecpt -Crainbow -T-50/25
+	gmt grdimage <span class="nv">$G</span>.nc -I+a0+nt1 -R<span class="nv">$G</span>.nc -Jx<span class="si">${</span><span class="nv">scl</span><span class="si">}</span>i -C -X3.25i
+	gmt basemap -R-84/75/-78/81 -Jx<span class="si">${</span><span class="nv">sclkm</span><span class="si">}</span>i -Ba -BWSne+t<span class="s2">&quot;Satellite gravity&quot;</span>
 
-    gmt grdfft <span class="nv">$T</span>.nc <span class="nv">$G</span>.nc -E+wk -N192/192+d+wtmp &gt; cross.txt
+	gmt grdfft <span class="nv">$T</span>.nc <span class="nv">$G</span>.nc -E+wk -N192/192+d+wtmp &gt; cross.txt
 
-    gmt makecpt -Crainbow -T-1500/1500
-    gmt grdimage <span class="si">${</span><span class="nv">T</span><span class="si">}</span>_tmp.nc -I+a0+nt1 -R<span class="si">${</span><span class="nv">T</span><span class="si">}</span>_tmp.nc -Jx<span class="si">${</span><span class="nv">scl</span><span class="si">}</span>i -X-3.474i -Y3i
-    gmt plot bbox -L -W0.5p,-
-    gmt basemap -R-100/91/-94/97 -Jx<span class="si">${</span><span class="nv">sclkm</span><span class="si">}</span>i -Ba -BWSne+t<span class="s2">&quot;Detrended and extended&quot;</span>
+	gmt makecpt -Crainbow -T-1500/1500
+	gmt grdimage <span class="si">${</span><span class="nv">T</span><span class="si">}</span>_tmp.nc -I+a0+nt1 -R<span class="si">${</span><span class="nv">T</span><span class="si">}</span>_tmp.nc -Jx<span class="si">${</span><span class="nv">scl</span><span class="si">}</span>i -X-3.474i -Y3i
+	gmt plot bbox -L -W0.5p,-
+	gmt basemap -R-100/91/-94/97 -Jx<span class="si">${</span><span class="nv">sclkm</span><span class="si">}</span>i -Ba -BWSne+t<span class="s2">&quot;Detrended and extended&quot;</span>
 
-    gmt makecpt -Crainbow -T-40/40
-    gmt grdimage <span class="si">${</span><span class="nv">G</span><span class="si">}</span>_tmp.nc -I+a0+nt1 -R<span class="si">${</span><span class="nv">G</span><span class="si">}</span>_tmp.nc -Jx<span class="si">${</span><span class="nv">scl</span><span class="si">}</span>i -C -X3.25i
-    gmt plot bbox -L -W0.5p,-
-    gmt basemap -R-100/91/-94/97 -Jx<span class="si">${</span><span class="nv">sclkm</span><span class="si">}</span>i -Ba -BWSne+t<span class="s2">&quot;Detrended and extended&quot;</span>
+	gmt makecpt -Crainbow -T-40/40
+	gmt grdimage <span class="si">${</span><span class="nv">G</span><span class="si">}</span>_tmp.nc -I+a0+nt1 -R<span class="si">${</span><span class="nv">G</span><span class="si">}</span>_tmp.nc -Jx<span class="si">${</span><span class="nv">scl</span><span class="si">}</span>i -C -X3.25i
+	gmt plot bbox -L -W0.5p,-
+	gmt basemap -R-100/91/-94/97 -Jx<span class="si">${</span><span class="nv">sclkm</span><span class="si">}</span>i -Ba -BWSne+t<span class="s2">&quot;Detrended and extended&quot;</span>
 
-    gmt <span class="nb">set</span> FONT_TITLE 24p
-    gmt plot -R2/160/0/1 -JX-6il/2.5i -Bxa2f3g3+u<span class="s2">&quot; km&quot;</span> -Byafg0.5+l<span class="s2">&quot;Coherency@+2@+&quot;</span> <span class="se">\</span>
-        -BWsNe+t<span class="s2">&quot;Coherency between gravity and bathymetry&quot;</span> -X-3.25i -Y3.3i cross.txt -i0,15 -W0.5p
-    gmt plot cross.txt -i0,15,16 -Sc0.075i -Gred -W0.25p -Ey
-    rm -f cross.txt *_tmp.nc ?.cpt bbox
+	gmt <span class="nb">set</span> FONT_TITLE 24p
+	gmt plot -R2/160/0/1 -JX-6il/2.5i -Bxa2f3g3+u<span class="s2">&quot; km&quot;</span> -Byafg0.5+l<span class="s2">&quot;Coherency@+2@+&quot;</span> <span class="se">\</span>
+		-BWsNe+t<span class="s2">&quot;Coherency between gravity and bathymetry&quot;</span> -X-3.25i -Y3.3i cross.txt -i0,15 -W0.5p
+	gmt plot cross.txt -i0,15,16 -Sc0.075i -Gred -W0.25p -Ey
+	rm -f cross.txt *_tmp.nc ?.cpt bbox
 gmt end show
 </pre></div>
 </div>
@@ -289,7 +289,7 @@ gmt end show
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 07, 2019.
+        Last updated on Oct 09, 2019.
       </span>
 
     </p>

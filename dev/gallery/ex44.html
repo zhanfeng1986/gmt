@@ -120,7 +120,7 @@
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight C API</a></li>
 </ul>
 
             
@@ -225,17 +225,17 @@ example requires us to compute the dimensions of the inset first, via
 <span class="c1">#</span>
 
 gmt begin ex44
-  gmt subplot begin 2x1 -Fs6i/4i -B -BWSne
-    gmt coast -R10W/5E/35N/44N -JM6i -EES+gbisque -Gbrown -Wfaint -N1/1p -Sazure1 -Df --FORMAT_GEO_MAP<span class="o">=</span>dddF -c0
-    gmt inset begin -DjTR+w2i/0.93i+o0.15i/0.1i -F+gwhite+p1p+c0.1c+s
-      gmt coast -R15W/35E/30N/48N -JM? -Da -Gbrown -B0 -EES+gbisque --MAP_FRAME_TYPE<span class="o">=</span>plain
-    gmt inset end
+	gmt subplot begin 2x1 -Fs6i/4i -B -BWSne
+		gmt coast -R10W/5E/35N/44N -JM6i -EES+gbisque -Gbrown -Wfaint -N1/1p -Sazure1 -Df --FORMAT_GEO_MAP<span class="o">=</span>dddF -c0
+		gmt inset begin -DjTR+w2i/0.93i+o0.15i/0.1i -F+gwhite+p1p+c0.1c+s
+			gmt coast -R15W/35E/30N/48N -JM? -Da -Gbrown -B0 -EES+gbisque --MAP_FRAME_TYPE<span class="o">=</span>plain
+		gmt inset end
 
-    gmt coast -R110E/170E/44S/9S -JM6i -Wfaint -N2/1p -EAU+gbisque -Gbrown -Sazure1 -Da --FORMAT_GEO_MAP<span class="o">=</span>dddF -c1
-    gmt inset begin -DjTR+w1.5i+o0.15i/0.1i -F+gwhite+p1p+c0.1c+s
-      gmt coast -Rg -JG120/30S/? -Da -Gbrown -A5000 -Bg -Wfaint -EAU+gbisque
-    gmt inset end
-  gmt subplot end
+		gmt coast -R110E/170E/44S/9S -JM6i -Wfaint -N2/1p -EAU+gbisque -Gbrown -Sazure1 -Da --FORMAT_GEO_MAP<span class="o">=</span>dddF -c1
+		gmt inset begin -DjTR+w1.5i+o0.15i/0.1i -F+gwhite+p1p+c0.1c+s
+			gmt coast -Rg -JG120/30S/? -Da -Gbrown -A5000 -Bg -Wfaint -EAU+gbisque
+		gmt inset end
+	gmt subplot end
 gmt end show
 </pre></div>
 </div>
@@ -268,7 +268,7 @@ gmt end show
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 07, 2019.
+        Last updated on Oct 09, 2019.
       </span>
 
     </p>

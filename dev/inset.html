@@ -120,7 +120,7 @@
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight C API</a></li>
 </ul>
 
             
@@ -220,6 +220,7 @@ canvas and restores the plot region and map projection that was in effect prior 
 <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>inset-box</em>
 [ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong><em>box</em> ]
 [ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong><em>margins</em> ]
+[ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong> ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
 [ <strong>--PAR</strong>=<em>value</em> ]</p>
 <p><strong>Note:</strong> No space is allowed between the option flag and the associated arguments.</p>
@@ -282,6 +283,10 @@ indicates the shift relative to the foreground frame
 within the inner region only. The margins can be a single value, a pair of values separated by slashes
 (for setting separate horizontal and vertical margins), or the full set of four margins (for setting
 separate left, right, bottom, and top margins) [no margins].</dd>
+</dl>
+<dl class="docutils" id="inset-begin-n">
+<dt><strong>-N</strong></dt>
+<dd>Do NOT clip features extruding outside map inset boundaries [Default will clip].</dd>
 </dl>
 <dl class="docutils" id="inset-begin-v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -376,7 +381,7 @@ gmt end
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 07, 2019.
+        Last updated on Oct 09, 2019.
       </span>
 
     </p>

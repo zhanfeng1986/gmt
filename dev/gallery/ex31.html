@@ -120,7 +120,7 @@
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight C API</a></li>
 </ul>
 
             
@@ -250,8 +250,8 @@ gmt begin ex31
 	<span class="nv">capitals</span><span class="o">=</span><span class="sb">`</span>gmt which -G @europe-capitals-ru.csv<span class="sb">`</span>
 	<span class="c1"># common settings</span>
 	gmt <span class="nb">set</span> FORMAT_GEO_MAP ddd:mm:ssF MAP_DEGREE_SYMBOL colon MAP_TITLE_OFFSET 20p <span class="se">\</span>
-	MAP_GRID_CROSS_SIZE_PRIMARY <span class="m">0</span>.4c PS_LINE_JOIN round PS_CHAR_ENCODING ISO-8859-5 <span class="se">\</span>
-	FONT LinBiolinumO FONT_TITLE 24p,LinLibertineOB MAP_ANNOT_OBLIQUE <span class="m">42</span>
+		MAP_GRID_CROSS_SIZE_PRIMARY <span class="m">0</span>.4c PS_LINE_JOIN round PS_CHAR_ENCODING ISO-8859-5 <span class="se">\</span>
+		FONT LinBiolinumO FONT_TITLE 24p,LinLibertineOB MAP_ANNOT_OBLIQUE <span class="m">42</span>
 
 	<span class="c1"># map of countries</span>
 	gmt coast -R-7/31/64/66+r -JL15/50/40/60/16c -Bx10g10 -By5g5 -B+t<span class="s2">&quot;Europe\072 Countries and Capital Cities&quot;</span> -A250 <span class="se">\</span>
@@ -322,7 +322,7 @@ gmt end show
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 07, 2019.
+        Last updated on Oct 09, 2019.
       </span>
 
     </p>

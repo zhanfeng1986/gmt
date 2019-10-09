@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4. General Features &mdash; GMT 6.1.0 documentation</title>
+  <title>3. General Features &mdash; GMT 6.1.0 documentation</title>
   
 
   
@@ -40,8 +40,8 @@
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5. Standardized command line options" href="options.html" />
-    <link rel="prev" title="3. Introduction" href="introduction.html" /> 
+    <link rel="next" title="4. Standardized command line options" href="options.html" />
+    <link rel="prev" title="2. Introduction" href="introduction.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -100,92 +100,91 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../modules.html">GMT Modules</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../cookbook.html">GMT Cookbook</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="copyright.html">1. Copyright and Caveat Emptor!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="preface.html">2. Preface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html">3. Introduction</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4. General Features</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#gmt-units">4.1. GMT units</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#distance-units">4.1.1. Distance units</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#distance-calculations">4.1.2. Distance calculations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#length-units">4.1.3. Length units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="preface.html">1. Preface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">2. Introduction</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3. General Features</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gmt-units">3.1. GMT units</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#distance-units">3.1.1. Distance units</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#distance-calculations">3.1.2. Distance calculations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#length-units">3.1.3. Length units</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#gmt-defaults">4.2. GMT defaults</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#overview-and-the-gmt-conf-file">4.2.1. Overview and the gmt.conf file</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#changing-gmt-defaults">4.2.2. Changing GMT defaults</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gmt-defaults">3.2. GMT defaults</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview-and-the-gmt-conf-file">3.2.1. Overview and the gmt.conf file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#changing-gmt-defaults">3.2.2. Changing GMT defaults</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#command-line-arguments">4.3. Command line arguments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#command-line-history">4.4. Command line history</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#usage-messages-syntax-and-general-error-messages">4.5. Usage messages, syntax- and general error messages</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#standard-input-or-file-header-records">4.6. Standard input or file, header records</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#urls-and-remote-files">4.7. URLs and remote files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#verbose-operation">4.8. Verbose operation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#program-output">4.9. Program output</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#input-data-formats">4.10. Input data formats</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#output-data-formats">4.11. Output data formats</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#postscript-features">4.12. PostScript features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#specifying-pen-attributes">4.13. Specifying pen attributes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#specifying-line-attributes">4.14. Specifying line attributes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#specifying-area-fill-attributes">4.15. Specifying area fill attributes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#specifying-fonts">4.16. Specifying Fonts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#stroke-fill-and-font-transparency">4.17. Stroke, Fill and Font Transparency</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#placement-of-text">4.18. Placement of text</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#color-palette-tables">4.19. Color palette tables</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#categorical-cpts">4.19.1. Categorical CPTs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#regular-cpts">4.19.2. Regular CPTs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#master-dynamic-cpts">4.19.3. Master (dynamic) CPTs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cyclic-wrapped-cpts">4.19.4. Cyclic (wrapped) CPTs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#manipulating-cpts">4.19.5. Manipulating CPTs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#automatic-cpts">4.19.6. Automatic CPTs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#command-line-arguments">3.3. Command line arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#command-line-history">3.4. Command line history</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usage-messages-syntax-and-general-error-messages">3.5. Usage messages, syntax- and general error messages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#standard-input-or-file-header-records">3.6. Standard input or file, header records</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#urls-and-remote-files">3.7. URLs and remote files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#verbose-operation">3.8. Verbose operation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#program-output">3.9. Program output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#input-data-formats">3.10. Input data formats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#output-data-formats">3.11. Output data formats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#postscript-features">3.12. PostScript features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#specifying-pen-attributes">3.13. Specifying pen attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#specifying-line-attributes">3.14. Specifying line attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#specifying-area-fill-attributes">3.15. Specifying area fill attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#specifying-fonts">3.16. Specifying Fonts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stroke-fill-and-font-transparency">3.17. Stroke, Fill and Font Transparency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#placement-of-text">3.18. Placement of text</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#color-palette-tables">3.19. Color palette tables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#categorical-cpts">3.19.1. Categorical CPTs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#regular-cpts">3.19.2. Regular CPTs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#master-dynamic-cpts">3.19.3. Master (dynamic) CPTs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cyclic-wrapped-cpts">3.19.4. Cyclic (wrapped) CPTs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#manipulating-cpts">3.19.5. Manipulating CPTs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#automatic-cpts">3.19.6. Automatic CPTs</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#the-drawing-of-vectors">4.20. The Drawing of Vectors</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#character-escape-sequences">4.21. Character escape sequences</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#plot-embellishments">4.22. Plot embellishments</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#reference-and-anchor-point-specification">4.22.1. Reference and anchor point specification</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#the-background-panel">4.22.2. The background panel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#placing-map-scales">4.22.3. Placing map scales</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#placing-directional-map-roses">4.22.4. Placing directional map roses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#placing-magnetic-map-roses">4.22.5. Placing magnetic map roses</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#placing-color-scale-bars">4.22.6. Placing color scale bars</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#placing-map-legends">4.22.7. Placing map legends</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#placing-raster-and-eps-images-on-maps">4.22.8. Placing raster and EPS images on maps</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#placing-a-gmt-logo-on-maps">4.22.9. Placing a GMT logo on maps</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#placing-map-insets">4.22.10. Placing map insets</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#placing-a-vertical-scale-on-maps">4.22.11. Placing a vertical scale on maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-drawing-of-vectors">3.20. The Drawing of Vectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#character-escape-sequences">3.21. Character escape sequences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#plot-embellishments">3.22. Plot embellishments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#reference-and-anchor-point-specification">3.22.1. Reference and anchor point specification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-background-panel">3.22.2. The background panel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#placing-map-scales">3.22.3. Placing map scales</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#placing-directional-map-roses">3.22.4. Placing directional map roses</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#placing-magnetic-map-roses">3.22.5. Placing magnetic map roses</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#placing-color-scale-bars">3.22.6. Placing color scale bars</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#placing-map-legends">3.22.7. Placing map legends</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#placing-raster-and-eps-images-on-maps">3.22.8. Placing raster and EPS images on maps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#placing-a-gmt-logo-on-maps">3.22.9. Placing a GMT logo on maps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#placing-map-insets">3.22.10. Placing map insets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#placing-a-vertical-scale-on-maps">3.22.11. Placing a vertical scale on maps</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#grid-file-format-specifications">4.23. Grid file format specifications</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#modifiers-for-changing-units-of-grid-coordinates">4.24. Modifiers for changing units of grid coordinates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#modifiers-for-coards-compliant-netcdf-files">4.25. Modifiers for COARDS-compliant netCDF files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#modifiers-to-read-and-write-grids-and-images-via-gdal">4.26. Modifiers to read and write grids and images via GDAL</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#reading-multi-band-images">4.26.1. Reading multi-band images</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#reading-more-complex-multi-band-images-or-grids">4.26.2. Reading more complex multi-band IMAGES or GRIDS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#writing-grids-and-images">4.26.3. Writing grids and images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#grid-file-format-specifications">3.23. Grid file format specifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modifiers-for-changing-units-of-grid-coordinates">3.24. Modifiers for changing units of grid coordinates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modifiers-for-coards-compliant-netcdf-files">3.25. Modifiers for COARDS-compliant netCDF files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modifiers-to-read-and-write-grids-and-images-via-gdal">3.26. Modifiers to read and write grids and images via GDAL</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#reading-multi-band-images">3.26.1. Reading multi-band images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reading-more-complex-multi-band-images-or-grids">3.26.2. Reading more complex multi-band IMAGES or GRIDS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#writing-grids-and-images">3.26.3. Writing grids and images</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#the-nan-data-value">4.27. The NaN data value</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#directory-parameters">4.28. Directory parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-nan-data-value">3.27. The NaN data value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#directory-parameters">3.28. Directory parameters</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="options.html">5. Standardized command line options</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coordinate_transformations.html">6. GMT Coordinate Transformations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="map_projections.html">7. GMT Map Projections</a></li>
-<li class="toctree-l2"><a class="reference internal" href="supplemental_packages.html">8. GMT Supplemental Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file_formats.html">9. GMT File Formats</a></li>
-<li class="toctree-l2"><a class="reference internal" href="include_figures.html">10. Including GMT Graphics into your Documents</a></li>
-<li class="toctree-l2"><a class="reference internal" href="predefined_patterns.html">11. Predefined Bit and Hachure Patterns in GMT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="octal_codes.html">12. Chart of Octal Codes for Characters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="postscript_fonts.html">13. PostScript Fonts Used by GMT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="colorspace.html">14. Color Space: The Final Frontier</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_filtering.html">15. Filtering of Data in GMT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="non_unix_platforms.html">16. GMT on non-UNIX Platforms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cpts.html">17. Of Colors and Color Legends</a></li>
-<li class="toctree-l2"><a class="reference internal" href="custom_symbols.html">18. Custom Plot Symbols</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contour_annotations.html">19. Annotation of Contours and “Quoted Lines”</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ogrgmt_format.html">20. The GMT Vector Data Format for OGR Compatibility</a></li>
-<li class="toctree-l2"><a class="reference internal" href="one-liner.html">21. GMT Modern Mode One-line Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options.html">4. Standardized command line options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coordinate_transformations.html">5. GMT Coordinate Transformations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="map_projections.html">6. GMT Map Projections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supplemental_packages.html">7. GMT Supplemental Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_formats.html">8. GMT File Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="include_figures.html">9. Including GMT Graphics into your Documents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="predefined_patterns.html">10. Predefined Bit and Hachure Patterns in GMT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="octal_codes.html">11. Chart of Octal Codes for Characters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="postscript_fonts.html">12. PostScript Fonts Used by GMT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="colorspace.html">13. Color Space: The Final Frontier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_filtering.html">14. Filtering of Data in GMT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="non_unix_platforms.html">15. GMT on non-UNIX Platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpts.html">16. Of Colors and Color Legends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom_symbols.html">17. Custom Plot Symbols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contour_annotations.html">18. Annotation of Contours and “Quoted Lines”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ogrgmt_format.html">19. The GMT Vector Data Format for OGR Compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="one-liner.html">20. GMT Modern Mode One-line Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../datasets.html">Datasets</a></li>
@@ -208,7 +207,7 @@
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight C API</a></li>
 </ul>
 
             
@@ -273,7 +272,7 @@
         
           <li><a href="../cookbook.html">GMT Cookbook</a> &raquo;</li>
         
-      <li>4. General Features</li>
+      <li>3. General Features</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -295,20 +294,20 @@
            <div itemprop="articleBody">
             
   <div class="section" id="general-features">
-<span id="gmt-general-features"></span><h1>4. General Features<a class="headerlink" href="#general-features" title="Permalink to this headline">¶</a></h1>
+<span id="gmt-general-features"></span><h1>3. General Features<a class="headerlink" href="#general-features" title="Permalink to this headline">¶</a></h1>
 <p>This section explains features common to all the programs in GMT and
 summarizes the philosophy behind the system. Some of the features
 described here may make more sense once you reach the cook-book section
 where we present actual examples of their use.</p>
 <div class="section" id="gmt-units">
-<h2>4.1. GMT units<a class="headerlink" href="#gmt-units" title="Permalink to this headline">¶</a></h2>
+<h2>3.1. GMT units<a class="headerlink" href="#gmt-units" title="Permalink to this headline">¶</a></h2>
 <p>While GMT has default units for both actual Earth distances and plot
 lengths (i.e., dimensions) of maps, it is recommended that you explicitly
 indicate the units of your arguments by appending the unit character, as
 discussed below. This will aid you in debugging, let others understand your
 scripts, and remove any uncertainty as to what unit you thought you wanted.</p>
 <div class="section" id="distance-units">
-<h3>4.1.1. Distance units<a class="headerlink" href="#distance-units" title="Permalink to this headline">¶</a></h3>
+<h3>3.1.1. Distance units<a class="headerlink" href="#distance-units" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils" id="tbl-distunits">
 <colgroup>
 <col width="16%" />
@@ -362,13 +361,13 @@ will be consider to be in meters. For example, a distance of 30 nautical
 miles should be given as 30<strong>n</strong>.</p>
 </div>
 <div class="section" id="distance-calculations">
-<h3>4.1.2. Distance calculations<a class="headerlink" href="#distance-calculations" title="Permalink to this headline">¶</a></h3>
+<h3>3.1.2. Distance calculations<a class="headerlink" href="#distance-calculations" title="Permalink to this headline">¶</a></h3>
 <p>The calculation of distances on Earth (or other planetary bodies)
 depends on the ellipsoidal parameters of the body (via
 <a class="reference internal" href="../gmt.conf.html#proj-ellipsoid"><span class="std std-ref">PROJ_ELLIPSOID</span></a>) and the method of computation. GMT offers three
 alternatives that trade off accuracy and computation time.</p>
 <div class="section" id="flat-earth-distances">
-<h4>4.1.2.1. Flat Earth distances<a class="headerlink" href="#flat-earth-distances" title="Permalink to this headline">¶</a></h4>
+<h4>3.1.2.1. Flat Earth distances<a class="headerlink" href="#flat-earth-distances" title="Permalink to this headline">¶</a></h4>
 <p>Quick, but approximate “Flat Earth” calculations make a first-order
 correction for the spherical nature of a planetary body by computing the
 distance between two points A and B as</p>
@@ -387,7 +386,7 @@ of computation by specifying the common GMT option <strong>-j</strong> and appen
 using this mode of computation might be specified via <strong>-S</strong>50<strong>M</strong> <strong>-jf</strong>.</p>
 </div>
 <div class="section" id="great-circle-distances">
-<h4>4.1.2.2. Great circle distances<a class="headerlink" href="#great-circle-distances" title="Permalink to this headline">¶</a></h4>
+<h4>3.1.2.2. Great circle distances<a class="headerlink" href="#great-circle-distances" title="Permalink to this headline">¶</a></h4>
 <p>This is the default distance calculation, which will also approximate
 the planetary body by a sphere of mean radius <em>R</em>. However, we
 compute an exact distance between two points A and B on such a sphere
@@ -415,7 +414,7 @@ these last two settings are only used if the <a class="reference internal" href=
 is not set to “sphere”.</p>
 </div>
 <div class="section" id="geodesic-distances">
-<h4>4.1.2.3. Geodesic distances<a class="headerlink" href="#geodesic-distances" title="Permalink to this headline">¶</a></h4>
+<h4>3.1.2.3. Geodesic distances<a class="headerlink" href="#geodesic-distances" title="Permalink to this headline">¶</a></h4>
 <p>For the most accurate calculations we use a full ellipsoidal
 formulation. Currently, we are using Vincenty’s [1975] formula <a class="footnote-reference" href="#id13" id="id1">[7]</a>
 which is accurate to 0.5 mm. You
@@ -430,7 +429,7 @@ that is much faster to compute.</p>
 </div>
 </div>
 <div class="section" id="length-units">
-<h3>4.1.3. Length units<a class="headerlink" href="#length-units" title="Permalink to this headline">¶</a></h3>
+<h3>3.1.3. Length units<a class="headerlink" href="#length-units" title="Permalink to this headline">¶</a></h3>
 <p>GMT programs can accept dimensional quantities and plot lengths in
 <strong>c</strong>m, <strong>i</strong>nch, or <strong>p</strong>oint (1/72 of an inch) <a class="footnote-reference" href="#id14" id="id2">[8]</a>. There are
 two ways to ensure that GMT understands which unit you intend to use:</p>
@@ -448,9 +447,9 @@ recommend you always supply the desired unit explicitly.</p>
 </div>
 </div>
 <div class="section" id="gmt-defaults">
-<h2>4.2. GMT defaults<a class="headerlink" href="#gmt-defaults" title="Permalink to this headline">¶</a></h2>
+<h2>3.2. GMT defaults<a class="headerlink" href="#gmt-defaults" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="overview-and-the-gmt-conf-file">
-<h3>4.2.1. Overview and the gmt.conf file<a class="headerlink" href="#overview-and-the-gmt-conf-file" title="Permalink to this headline">¶</a></h3>
+<h3>3.2.1. Overview and the gmt.conf file<a class="headerlink" href="#overview-and-the-gmt-conf-file" title="Permalink to this headline">¶</a></h3>
 <p>There are almost 150 parameters which can be adjusted individually to
 modify the appearance of plots or affect the manipulation of data. When
 a program is run, it initializes all parameters to the
@@ -513,7 +512,7 @@ micro-editing of illustrations.</li>
 </ol>
 </div>
 <div class="section" id="changing-gmt-defaults">
-<h3>4.2.2. Changing GMT defaults<a class="headerlink" href="#changing-gmt-defaults" title="Permalink to this headline">¶</a></h3>
+<h3>3.2.2. Changing GMT defaults<a class="headerlink" href="#changing-gmt-defaults" title="Permalink to this headline">¶</a></h3>
 <p>As mentioned, GMT programs will attempt to open a file named  <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code>. At
 times it may be desirable to override that default. There are several
 ways in which this can be accomplished.</p>
@@ -553,7 +552,7 @@ described mechanisms.  The gmt.conf file can be cleared by running
 </div>
 </div>
 <div class="section" id="command-line-arguments">
-<h2>4.3. Command line arguments<a class="headerlink" href="#command-line-arguments" title="Permalink to this headline">¶</a></h2>
+<h2>3.3. Command line arguments<a class="headerlink" href="#command-line-arguments" title="Permalink to this headline">¶</a></h2>
 <p>Each program requires certain arguments specific to its operation. These
 are explained in the manual pages and in the usage messages.
 We have tried to choose letters of the alphabet which
@@ -569,7 +568,7 @@ letter, and number or string. <em>Do</em> space between options. Example:</p>
 </div></blockquote>
 </div>
 <div class="section" id="command-line-history">
-<h2>4.4. Command line history<a class="headerlink" href="#command-line-history" title="Permalink to this headline">¶</a></h2>
+<h2>3.4. Command line history<a class="headerlink" href="#command-line-history" title="Permalink to this headline">¶</a></h2>
 <p>GMT programs “remember” the standardized command line options (See
 Chapter <a class="reference internal" href="options.html"><span class="doc">Standardized command line options</span></a>) given during their previous invocations and this
 provides a shorthand notation for complex options. For example, if a
@@ -600,7 +599,7 @@ of commands connected with pipes.  The history can be cleared by running
 <strong>gmt clear history</strong>.</p>
 </div>
 <div class="section" id="usage-messages-syntax-and-general-error-messages">
-<h2>4.5. Usage messages, syntax- and general error messages<a class="headerlink" href="#usage-messages-syntax-and-general-error-messages" title="Permalink to this headline">¶</a></h2>
+<h2>3.5. Usage messages, syntax- and general error messages<a class="headerlink" href="#usage-messages-syntax-and-general-error-messages" title="Permalink to this headline">¶</a></h2>
 <p>Each program carries a usage message. If you enter the program name
 without any arguments, the program will write the complete usage message
 to standard error (your screen, unless you redirect it). This message
@@ -617,7 +616,7 @@ the error occurred; if you have several programs piped together this
 tells you where the trouble is.</p>
 </div>
 <div class="section" id="standard-input-or-file-header-records">
-<h2>4.6. Standard input or file, header records<a class="headerlink" href="#standard-input-or-file-header-records" title="Permalink to this headline">¶</a></h2>
+<h2>3.6. Standard input or file, header records<a class="headerlink" href="#standard-input-or-file-header-records" title="Permalink to this headline">¶</a></h2>
 <p>Most of the programs which expect table data input can read either
 standard input or input in one or several files. These programs will try
 to read <em>stdin</em> unless you type the filename(s) on the command line
@@ -659,7 +658,7 @@ for details. Program output is always written to the current directory
 unless a full path has been specified.</p>
 </div>
 <div class="section" id="urls-and-remote-files">
-<h2>4.7. URLs and remote files<a class="headerlink" href="#urls-and-remote-files" title="Permalink to this headline">¶</a></h2>
+<h2>3.7. URLs and remote files<a class="headerlink" href="#urls-and-remote-files" title="Permalink to this headline">¶</a></h2>
 <p>Three classes of files are given special treatment in GMT.</p>
 <ol class="arabic simple">
 <li>Some data sets are ubiquitous and used by nearly all GMT users.
@@ -716,7 +715,7 @@ grid via</p>
 </div>
 </div>
 <div class="section" id="verbose-operation">
-<h2>4.8. Verbose operation<a class="headerlink" href="#verbose-operation" title="Permalink to this headline">¶</a></h2>
+<h2>3.8. Verbose operation<a class="headerlink" href="#verbose-operation" title="Permalink to this headline">¶</a></h2>
 <p>Most of the programs take an optional <strong>-V</strong> argument which will run the
 program in the “verbose” mode (see Section <a class="reference internal" href="options.html#option-v"><span class="std std-ref">Verbose feedback: The -V option</span></a>).
 Verbose will write to standard error information about the
@@ -738,7 +737,7 @@ more messages with an increasing level of details. The modes are</p>
 <strong>n</strong> as well. will be reported.</p>
 </div>
 <div class="section" id="program-output">
-<h2>4.9. Program output<a class="headerlink" href="#program-output" title="Permalink to this headline">¶</a></h2>
+<h2>3.9. Program output<a class="headerlink" href="#program-output" title="Permalink to this headline">¶</a></h2>
 <p>Most programs write their results, including PostScript plots, to
 standard output. The exceptions are those which may create binary netCDF
 grid files such as <a class="reference internal" href="../surface.html"><span class="doc">surface</span></a> (due to the
@@ -754,7 +753,7 @@ redirection differ among the main shells (Bash and C-shell) and is a bit
 limited in DOS.</p>
 </div>
 <div class="section" id="input-data-formats">
-<span id="id5"></span><h2>4.10. Input data formats<a class="headerlink" href="#input-data-formats" title="Permalink to this headline">¶</a></h2>
+<span id="id5"></span><h2>3.10. Input data formats<a class="headerlink" href="#input-data-formats" title="Permalink to this headline">¶</a></h2>
 <p>Most of the time, GMT will know what kind of <em>x</em> and <em>y</em>
 coordinates it is reading because you have selected a particular
 coordinate transformation or map projection. However, there may be times
@@ -798,7 +797,7 @@ calendar time, we add <strong>-fi</strong>0x,1y,2T to the command line. For more
 details, see the man page for the program you need to use.</p>
 </div>
 <div class="section" id="output-data-formats">
-<span id="id6"></span><h2>4.11. Output data formats<a class="headerlink" href="#output-data-formats" title="Permalink to this headline">¶</a></h2>
+<span id="id6"></span><h2>3.11. Output data formats<a class="headerlink" href="#output-data-formats" title="Permalink to this headline">¶</a></h2>
 <p>The numerical output from GMT programs can be binary (when <strong>-bo</strong> is
 used) or ASCII [Default]. In the latter case the issue of formatting
 becomes important. GMT provides extensive machinery for allowing just
@@ -814,7 +813,7 @@ to create limited FORTRAN-style card records by setting
 [Default is tab].</p>
 </div>
 <div class="section" id="postscript-features">
-<h2>4.12. PostScript features<a class="headerlink" href="#postscript-features" title="Permalink to this headline">¶</a></h2>
+<h2>3.12. PostScript features<a class="headerlink" href="#postscript-features" title="Permalink to this headline">¶</a></h2>
 <p>PostScript is a command language for driving graphics devices such as
 laser printers. It is ASCII text which you can read and edit as you wish
 (assuming you have some knowledge of the syntax). We prefer this to
@@ -837,7 +836,7 @@ embellishment, simply run gmt <a class="reference internal" href="../psconvert.h
 PostScript to other formats.</p>
 </div>
 <div class="section" id="specifying-pen-attributes">
-<span id="wpen-attrib"></span><h2>4.13. Specifying pen attributes<a class="headerlink" href="#specifying-pen-attributes" title="Permalink to this headline">¶</a></h2>
+<span id="wpen-attrib"></span><h2>3.13. Specifying pen attributes<a class="headerlink" href="#specifying-pen-attributes" title="Permalink to this headline">¶</a></h2>
 <p>A pen in GMT has three attributes: <em>width</em>, <em>color</em>, and
 <em>style</em>. Most programs will accept pen attributes in the form of an
 option argument, with commas separating the given attributes, e.g.,</p>
@@ -1006,7 +1005,7 @@ red line (1p width) illustrates the extent of the input coordinates.</span></p>
 </div>
 </div>
 <div class="section" id="specifying-line-attributes">
-<h2>4.14. Specifying line attributes<a class="headerlink" href="#specifying-line-attributes" title="Permalink to this headline">¶</a></h2>
+<h2>3.14. Specifying line attributes<a class="headerlink" href="#specifying-line-attributes" title="Permalink to this headline">¶</a></h2>
 <p>A line is drawn with the texture provided by the chosen pen (<a class="reference internal" href="#specifying-pen-attributes">Specifying pen attributes</a>).
 However, depending on the module, a line also may have other attributes that can be changed in some modules.
 Given as modifiers to a pen specification, one or more modifiers may be appended to a pen
@@ -1068,7 +1067,7 @@ Note that we also prescribed the line offsets in addition to the symbol endings.
 </div>
 </div>
 <div class="section" id="specifying-area-fill-attributes">
-<span id="gfill-attrib"></span><h2>4.15. Specifying area fill attributes<a class="headerlink" href="#specifying-area-fill-attributes" title="Permalink to this headline">¶</a></h2>
+<span id="gfill-attrib"></span><h2>3.15. Specifying area fill attributes<a class="headerlink" href="#specifying-area-fill-attributes" title="Permalink to this headline">¶</a></h2>
 <p>Many plotting programs will allow the user to draw filled polygons or
 symbols. The fill specification may take two forms:</p>
 <dl class="docutils">
@@ -1156,7 +1155,7 @@ may not</em> solve the problem!</p>
 </table>
 </div>
 <div class="section" id="specifying-fonts">
-<h2>4.16. Specifying Fonts<a class="headerlink" href="#specifying-fonts" title="Permalink to this headline">¶</a></h2>
+<h2>3.16. Specifying Fonts<a class="headerlink" href="#specifying-fonts" title="Permalink to this headline">¶</a></h2>
 <p>The fonts used by GMT are typically set indirectly via the
 GMT defaults parameters. However, some programs, like
 <a class="reference internal" href="../text.html"><span class="doc">text</span></a> may wish to have this
@@ -1177,7 +1176,7 @@ previous setting will be retained. See Chapter <a class="reference internal" hre
 for a list of all fonts recognized by GMT.</p>
 </div>
 <div class="section" id="stroke-fill-and-font-transparency">
-<h2>4.17. Stroke, Fill and Font Transparency<a class="headerlink" href="#stroke-fill-and-font-transparency" title="Permalink to this headline">¶</a></h2>
+<h2>3.17. Stroke, Fill and Font Transparency<a class="headerlink" href="#stroke-fill-and-font-transparency" title="Permalink to this headline">¶</a></h2>
 <p>The PostScript language has no built-in mechanism for transparency.
 However, PostScript extensions make it possible to request
 transparency, and tools that can render such extensions will produce
@@ -1204,7 +1203,7 @@ make transparency effective: change the parameter /AllowTransparency to
 true in your *.joboptions file.</p>
 </div>
 <div class="section" id="placement-of-text">
-<h2>4.18. Placement of text<a class="headerlink" href="#placement-of-text" title="Permalink to this headline">¶</a></h2>
+<h2>3.18. Placement of text<a class="headerlink" href="#placement-of-text" title="Permalink to this headline">¶</a></h2>
 <p>Many text labels placed on maps are part of the standard basemap
 machinery (e.g., annotations, axis labels, plot titles) and GMT
 automatically takes care of where these are placed and how they
@@ -1241,7 +1240,7 @@ additional specification of a corner radius, <em>r</em>.</span></p>
 </div>
 </div>
 <div class="section" id="color-palette-tables">
-<span id="cpt-section"></span><h2>4.19. Color palette tables<a class="headerlink" href="#color-palette-tables" title="Permalink to this headline">¶</a></h2>
+<span id="cpt-section"></span><h2>3.19. Color palette tables<a class="headerlink" href="#color-palette-tables" title="Permalink to this headline">¶</a></h2>
 <p>Several programs need to relate user data to colors, shades, or even patterns.
 For instance, programs that read 2-D gridded data sets and
 create colored images or shaded reliefs  need to be told what colors to
@@ -1280,7 +1279,7 @@ saturation and value ranging from 0-1) separated by hyphens (model = <em>hsv</em
 or the CMYK system of specifying cyan/magenta/yellow/black quadruples in percent,
 separated by slashes (model = <em>cmyk</em>).</p>
 <div class="section" id="categorical-cpts">
-<h3>4.19.1. Categorical CPTs<a class="headerlink" href="#categorical-cpts" title="Permalink to this headline">¶</a></h3>
+<h3>3.19.1. Categorical CPTs<a class="headerlink" href="#categorical-cpts" title="Permalink to this headline">¶</a></h3>
 <p>Categorical data are information on which normal numerical operations
 are not defined. As an example, consider various land classifications
 (desert, forest, glacier, etc.) and it is clear that even if we assigned
@@ -1335,7 +1334,7 @@ overridden by the statement</p>
 </table>
 </div>
 <div class="section" id="regular-cpts">
-<h3>4.19.2. Regular CPTs<a class="headerlink" href="#regular-cpts" title="Permalink to this headline">¶</a></h3>
+<h3>3.19.2. Regular CPTs<a class="headerlink" href="#regular-cpts" title="Permalink to this headline">¶</a></h3>
 <p>Suitable for continuous data types and allowing for color
 interpolations, the format of the regular CPTs is:</p>
 <table border="1" class="docutils">
@@ -1475,7 +1474,7 @@ the former. Similarly, one could portray magnetic anomalies superimposed
 on topography by using the former for colors and the latter for shading.</p>
 </div>
 <div class="section" id="master-dynamic-cpts">
-<h3>4.19.3. Master (dynamic) CPTs<a class="headerlink" href="#master-dynamic-cpts" title="Permalink to this headline">¶</a></h3>
+<h3>3.19.3. Master (dynamic) CPTs<a class="headerlink" href="#master-dynamic-cpts" title="Permalink to this headline">¶</a></h3>
 <p>The CPTs distributed with GMT are <em>dynamic</em>.  This means they have several
 special properties that modify the behavior of programs that use them.
 All dynamic CPTs are normalized in one of two ways: If a CPT was designed
@@ -1515,7 +1514,7 @@ to honor the desired range while utilizing the full color range.</span></p>
 </div>
 </div>
 <div class="section" id="cyclic-wrapped-cpts">
-<h3>4.19.4. Cyclic (wrapped) CPTs<a class="headerlink" href="#cyclic-wrapped-cpts" title="Permalink to this headline">¶</a></h3>
+<h3>3.19.4. Cyclic (wrapped) CPTs<a class="headerlink" href="#cyclic-wrapped-cpts" title="Permalink to this headline">¶</a></h3>
 <p>Any color table you produce can be turned into a cyclic or <em>wrapped</em> color table.
 This is performed by adding the <strong>-Ww</strong> option when running <a class="reference internal" href="../makecpt.html"><span class="doc">makecpt</span></a> or
 <a class="reference internal" href="../grd2cpt.html"><span class="doc">grd2cpt</span></a>.  This option simply adds the special comment</p>
@@ -1533,7 +1532,7 @@ color tables are useful for highlighting small changes.</p>
 </div>
 </div>
 <div class="section" id="manipulating-cpts">
-<span id="id10"></span><h3>4.19.5. Manipulating CPTs<a class="headerlink" href="#manipulating-cpts" title="Permalink to this headline">¶</a></h3>
+<span id="id10"></span><h3>3.19.5. Manipulating CPTs<a class="headerlink" href="#manipulating-cpts" title="Permalink to this headline">¶</a></h3>
 <p>There are many ways to turn a master CPT into a custom CPT that works for your
 particular data range.  The tools <a class="reference internal" href="../makecpt.html"><span class="doc">makecpt</span></a> and <a class="reference internal" href="../grd2cpt.html"><span class="doc">grd2cpt</span></a> allow
 several types of transformations to take place:</p>
@@ -1562,7 +1561,7 @@ subset of the master before scaling while the other (right) used the entire rang
 </div>
 </div>
 <div class="section" id="automatic-cpts">
-<h3>4.19.6. Automatic CPTs<a class="headerlink" href="#automatic-cpts" title="Permalink to this headline">¶</a></h3>
+<h3>3.19.6. Automatic CPTs<a class="headerlink" href="#automatic-cpts" title="Permalink to this headline">¶</a></h3>
 <p>A few modules (<a class="reference internal" href="../grdimage.html"><span class="doc">grdimage</span></a>, <a class="reference internal" href="../grdview.html"><span class="doc">grdview</span></a>) that expects a CPT option will
 provide a default CPT if none is provided.  By default, the default CPT is the
 “turbo” color table, but this is overridden if the user uses the &#64;eart_relief
@@ -1571,7 +1570,7 @@ these CPTs are read and scaled to match the range of the grid values.</p>
 </div>
 </div>
 <div class="section" id="the-drawing-of-vectors">
-<h2>4.20. The Drawing of Vectors<a class="headerlink" href="#the-drawing-of-vectors" title="Permalink to this headline">¶</a></h2>
+<h2>3.20. The Drawing of Vectors<a class="headerlink" href="#the-drawing-of-vectors" title="Permalink to this headline">¶</a></h2>
 <p>GMT supports plotting vectors in various forms. A vector is one of
 many symbols that may be plotted by <a class="reference internal" href="../plot.html"><span class="doc">plot</span></a>
 and <a class="reference internal" href="../plot3d.html"><span class="doc">plot3d</span></a>, is the main feature in
@@ -1616,7 +1615,7 @@ are line-drawings only and cannot be filled.</span></p>
 </div>
 </div>
 <div class="section" id="character-escape-sequences">
-<span id="char-esc-seq"></span><h2>4.21. Character escape sequences<a class="headerlink" href="#character-escape-sequences" title="Permalink to this headline">¶</a></h2>
+<span id="char-esc-seq"></span><h2>3.21. Character escape sequences<a class="headerlink" href="#character-escape-sequences" title="Permalink to this headline">¶</a></h2>
 <p>For annotation labels or text strings plotted with
 <a class="reference internal" href="../text.html"><span class="doc">text</span></a>, GMT provides several escape
 sequences that allow the user to temporarily switch to the symbol font,
@@ -1755,7 +1754,7 @@ sequences. A chart of characters and their octal codes is given in
 Chapter <a class="reference internal" href="octal_codes.html"><span class="doc">Chart of Octal Codes for Characters</span></a>.</p>
 </div>
 <div class="section" id="plot-embellishments">
-<span id="gmt-embellishments"></span><h2>4.22. Plot embellishments<a class="headerlink" href="#plot-embellishments" title="Permalink to this headline">¶</a></h2>
+<span id="gmt-embellishments"></span><h2>3.22. Plot embellishments<a class="headerlink" href="#plot-embellishments" title="Permalink to this headline">¶</a></h2>
 <p>Apart from visualizing your data sets, GMT maps can also be embellished in several ways.
 The 9 embellishments currently available are</p>
 <ul class="simple">
@@ -1776,7 +1775,7 @@ the different features in more detail we will first review the “reference poin
 system used by GMT to specify such locations in relation to the underlying map, and then discuss
 the background panel attribute settings.</p>
 <div class="section" id="reference-and-anchor-point-specification">
-<h3>4.22.1. Reference and anchor point specification<a class="headerlink" href="#reference-and-anchor-point-specification" title="Permalink to this headline">¶</a></h3>
+<h3>3.22.1. Reference and anchor point specification<a class="headerlink" href="#reference-and-anchor-point-specification" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-center" id="id37">
 <a class="reference internal image-reference" href="../_images/GMT_anchor.png"><img alt="../_images/GMT_anchor.png" src="../_images/GMT_anchor.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">The placement of a map feature (here represented by a green rectangle) in relation
@@ -1846,7 +1845,7 @@ and 1 cm up. When using middle (M) or center (C) justifications, to offset works
 respectively, i.e., moving the map feature up or to the right.</p>
 </div>
 <div class="section" id="the-background-panel">
-<h3>4.22.2. The background panel<a class="headerlink" href="#the-background-panel" title="Permalink to this headline">¶</a></h3>
+<h3>3.22.2. The background panel<a class="headerlink" href="#the-background-panel" title="Permalink to this headline">¶</a></h3>
 <p>For most maps you will wish to place a background panel of uniform color behind
 any of the map features you plan to add.  Because the panel is linked to the map feature
 you have selected, the parameters such as location and dimensions are handled automatically.
@@ -1888,7 +1887,7 @@ dashed box to indicate the effect of the clearance setting).</span></p>
 </div>
 </div>
 <div class="section" id="placing-map-scales">
-<h3>4.22.3. Placing map scales<a class="headerlink" href="#placing-map-scales" title="Permalink to this headline">¶</a></h3>
+<h3>3.22.3. Placing map scales<a class="headerlink" href="#placing-map-scales" title="Permalink to this headline">¶</a></h3>
 <p>Traditionally, a map scale is added to maps for helping the reader understand the particular scale
 used for this map, i.e., it portrays the relationship between actual distances on the Earth
 (in km, miles, meters, etc.) and distances on the map (in cm, inches, points).  Depending on
@@ -1931,7 +1930,7 @@ considered the rectangle that contains the scale and all selected labels and ann
 the map scale’s <em>bounding box</em>.</p>
 </div>
 <div class="section" id="placing-directional-map-roses">
-<span id="placing-dir-map-roses"></span><h3>4.22.4. Placing directional map roses<a class="headerlink" href="#placing-directional-map-roses" title="Permalink to this headline">¶</a></h3>
+<span id="placing-dir-map-roses"></span><h3>3.22.4. Placing directional map roses<a class="headerlink" href="#placing-directional-map-roses" title="Permalink to this headline">¶</a></h3>
 <p>Map roses showing the cardinal directions of a map help the reader orient themselves, especially
 for oblique projections where north-south is not vertically aligned.  However, these roses also
 have ornamental value and can be used on any map projection.  As for map scales, a directional
@@ -1967,7 +1966,7 @@ at level 3 with labels by adding <strong>+f</strong>3<strong>+l</strong>.</span>
 </div>
 </div>
 <div class="section" id="placing-magnetic-map-roses">
-<span id="placing-mag-map-roses"></span><h3>4.22.5. Placing magnetic map roses<a class="headerlink" href="#placing-magnetic-map-roses" title="Permalink to this headline">¶</a></h3>
+<span id="placing-mag-map-roses"></span><h3>3.22.5. Placing magnetic map roses<a class="headerlink" href="#placing-magnetic-map-roses" title="Permalink to this headline">¶</a></h3>
 <p>Map roses showing the magnetic directions of a map are useful when magnetic data are presented,
 or when declinations are significantly nonzero.  However, as for directional roses the magnetic rose
 also has ornamental value.  The magnetic rose consists of two concentric angular scales: The first
@@ -2016,7 +2015,7 @@ See <a class="reference internal" href="../gmt.conf.html"><span class="doc">gmt.
 </div>
 </div>
 <div class="section" id="placing-color-scale-bars">
-<h3>4.22.6. Placing color scale bars<a class="headerlink" href="#placing-color-scale-bars" title="Permalink to this headline">¶</a></h3>
+<h3>3.22.6. Placing color scale bars<a class="headerlink" href="#placing-color-scale-bars" title="Permalink to this headline">¶</a></h3>
 <p>Color scale bars are used in conjunction with color-coded surfaces, symbols, lines, or even text, to
 relate the chosen color to a data value or category.  For instance, color images of topography
 or other gridded data will need a mechanism for users to decode what the colors represent.  Typically, we do this
@@ -2048,7 +2047,7 @@ colors, and used the frame-annotation machinery to add labels.  The bar was plac
 </div>
 </div>
 <div class="section" id="placing-map-legends">
-<h3>4.22.7. Placing map legends<a class="headerlink" href="#placing-map-legends" title="Permalink to this headline">¶</a></h3>
+<h3>3.22.7. Placing map legends<a class="headerlink" href="#placing-map-legends" title="Permalink to this headline">¶</a></h3>
 <p>Adding map legends is the standard way to communicate what various symbols placed on your map
 represent.  For instance, you may use this mechanism to convey the information that circles are
 earthquake locations, triangles are places where you ate Thai food, and dashed lines indicate
@@ -2076,7 +2075,7 @@ simply used <strong>-Dx</strong>0/0<strong>+w</strong>5.6i<strong>+j</strong><em
 </div>
 </div>
 <div class="section" id="placing-raster-and-eps-images-on-maps">
-<h3>4.22.8. Placing raster and EPS images on maps<a class="headerlink" href="#placing-raster-and-eps-images-on-maps" title="Permalink to this headline">¶</a></h3>
+<h3>3.22.8. Placing raster and EPS images on maps<a class="headerlink" href="#placing-raster-and-eps-images-on-maps" title="Permalink to this headline">¶</a></h3>
 <p>When preparing posters for meetings one will often need to include the organization’s logo,
 which may be available to you as an Encapsulated PostScript File (EPS) or as a raster image,
 such as PNG or JPG.  At other times, you may wish to place photos or other raster images on
@@ -2106,7 +2105,7 @@ hosts the gmt server and its EPS logo is shown via <strong>-Dj</strong><em>MR</e
 </div>
 </div>
 <div class="section" id="placing-a-gmt-logo-on-maps">
-<h3>4.22.9. Placing a GMT logo on maps<a class="headerlink" href="#placing-a-gmt-logo-on-maps" title="Permalink to this headline">¶</a></h3>
+<h3>3.22.9. Placing a GMT logo on maps<a class="headerlink" href="#placing-a-gmt-logo-on-maps" title="Permalink to this headline">¶</a></h3>
 <p>It is possible to overlay the GMT logo on maps as well, using the module <a class="reference internal" href="../gmtlogo.html"><span class="doc">gmtlogo</span></a>.
 Like other features it requires reference and anchor points and their optional adjustments via the <strong>-D</strong> option.
 In addition, we require one modifier to set the logo’s size.</p>
@@ -2122,7 +2121,7 @@ module allows additional attributes such as a background map panel.</span></p>
 </div>
 </div>
 <div class="section" id="placing-map-insets">
-<h3>4.22.10. Placing map insets<a class="headerlink" href="#placing-map-insets" title="Permalink to this headline">¶</a></h3>
+<h3>3.22.10. Placing map insets<a class="headerlink" href="#placing-map-insets" title="Permalink to this headline">¶</a></h3>
 <p>Our penultimate map embellishment is the map inset.
 A map inset may appear to be the easiest feature to add since it only consists of an empty map panel.
 What you put in this panel is up to you (and we will show some examples).  However, unlike
@@ -2167,7 +2166,7 @@ See Example <a class="reference internal" href="../gallery/ex44.html#example-44"
 </div>
 </div>
 <div class="section" id="placing-a-vertical-scale-on-maps">
-<h3>4.22.11. Placing a vertical scale on maps<a class="headerlink" href="#placing-a-vertical-scale-on-maps" title="Permalink to this headline">¶</a></h3>
+<h3>3.22.11. Placing a vertical scale on maps<a class="headerlink" href="#placing-a-vertical-scale-on-maps" title="Permalink to this headline">¶</a></h3>
 <p>Our final embellishment is reserved for wiggles plotted along track with <a class="reference internal" href="../wiggle.html"><span class="doc">wiggle</span></a> and
 is activated as an option within that module.
 Like other features, it requires reference and anchor points and their optional adjustments via the <strong>-D</strong> option.
@@ -2191,7 +2190,7 @@ module allows additional attributes such as a background map panel.</span></p>
 </div>
 </div>
 <div class="section" id="grid-file-format-specifications">
-<span id="grid-file-format"></span><h2>4.23. Grid file format specifications<a class="headerlink" href="#grid-file-format-specifications" title="Permalink to this headline">¶</a></h2>
+<span id="grid-file-format"></span><h2>3.23. Grid file format specifications<a class="headerlink" href="#grid-file-format-specifications" title="Permalink to this headline">¶</a></h2>
 <p>GMT has the ability to read and write grids using more than one grid file format
 (see Table <a class="reference internal" href="#tbl-grdformats"><span class="std std-ref">grdformats</span></a> for supported format and their IDs).
 For reading, GMT will automatically determine the format of grid files, while for
@@ -2468,7 +2467,7 @@ the nodes are either 1 or NaN, the bit or mask format file may be as
 small as 1/32 the size of the corresponding grid float format file.</p>
 </div>
 <div class="section" id="modifiers-for-changing-units-of-grid-coordinates">
-<h2>4.24. Modifiers for changing units of grid coordinates<a class="headerlink" href="#modifiers-for-changing-units-of-grid-coordinates" title="Permalink to this headline">¶</a></h2>
+<h2>3.24. Modifiers for changing units of grid coordinates<a class="headerlink" href="#modifiers-for-changing-units-of-grid-coordinates" title="Permalink to this headline">¶</a></h2>
 <p>A few GMT tools require that the two horizontal dimensions be
 specified in meters. One example is
 <a class="reference internal" href="../grdfft.html"><span class="doc">grdfft</span></a> which must compute the 2-D
@@ -2500,7 +2499,7 @@ These modifiers are only allowed when map projections are not selected
 (or are Cartesian).</p>
 </div>
 <div class="section" id="modifiers-for-coards-compliant-netcdf-files">
-<span id="modifiers-for-cf"></span><h2>4.25. Modifiers for COARDS-compliant netCDF files<a class="headerlink" href="#modifiers-for-coards-compliant-netcdf-files" title="Permalink to this headline">¶</a></h2>
+<span id="modifiers-for-cf"></span><h2>3.25. Modifiers for COARDS-compliant netCDF files<a class="headerlink" href="#modifiers-for-coards-compliant-netcdf-files" title="Permalink to this headline">¶</a></h2>
 <p>When the netCDF grid file contains more than one 2-dimensional variable,
 GMT programs will load the first such variable in the file and ignore
 all others. Alternatively, the user can select the required variable by
@@ -2625,13 +2624,13 @@ user is, however, still responsible for setting the variable name and
 unit of the z-coordinate. The default is simply “z”.</p>
 </div>
 <div class="section" id="modifiers-to-read-and-write-grids-and-images-via-gdal">
-<h2>4.26. Modifiers to read and write grids and images via GDAL<a class="headerlink" href="#modifiers-to-read-and-write-grids-and-images-via-gdal" title="Permalink to this headline">¶</a></h2>
+<h2>3.26. Modifiers to read and write grids and images via GDAL<a class="headerlink" href="#modifiers-to-read-and-write-grids-and-images-via-gdal" title="Permalink to this headline">¶</a></h2>
 <p>If the support has been configured during installation, then GMT can
 read and write a variety of grid and image formats via GDAL. This
 extends the capability of GMT to handle data sets from a variety of
 sources.</p>
 <div class="section" id="reading-multi-band-images">
-<h3>4.26.1. Reading multi-band images<a class="headerlink" href="#reading-multi-band-images" title="Permalink to this headline">¶</a></h3>
+<h3>3.26.1. Reading multi-band images<a class="headerlink" href="#reading-multi-band-images" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="../grdimage.html"><span class="doc">grdimage</span></a> and <a class="reference internal" href="../image.html"><span class="doc">image</span></a> both lets the user select
 individual bands in a multi-band image file and treats the result as an
 image (that is the values, in the 0–255 range, are treated as colors,
@@ -2667,7 +2666,7 @@ which is defined as NDVI = (NIR - R) / (NIR + R), as</p>
 <p>The resulting grid <code class="docutils literal notranslate"><span class="pre">ndvi.nc</span></code> can then be plotted as usual.</p>
 </div>
 <div class="section" id="reading-more-complex-multi-band-images-or-grids">
-<h3>4.26.2. Reading more complex multi-band IMAGES or GRIDS<a class="headerlink" href="#reading-more-complex-multi-band-images-or-grids" title="Permalink to this headline">¶</a></h3>
+<h3>3.26.2. Reading more complex multi-band IMAGES or GRIDS<a class="headerlink" href="#reading-more-complex-multi-band-images-or-grids" title="Permalink to this headline">¶</a></h3>
 <p>It is also possible to access to sub-datasets in a multi-band grid. The
 next example shows how we can extract the SST from the MODIS file <code class="docutils literal notranslate"><span class="pre">A20030012003365.L3m_YR_NSST_9</span></code>
 that is stored in the HDF “format”. We need to run the GDAL program
@@ -2732,7 +2731,7 @@ via <a class="reference internal" href="../grdmath.html"><span class="doc">grdma
 <p>then plot the <code class="docutils literal notranslate"><span class="pre">sst.nc</span></code> directly.</p>
 </div>
 <div class="section" id="writing-grids-and-images">
-<span id="write-grids-images"></span><h3>4.26.3. Writing grids and images<a class="headerlink" href="#writing-grids-and-images" title="Permalink to this headline">¶</a></h3>
+<span id="write-grids-images"></span><h3>3.26.3. Writing grids and images<a class="headerlink" href="#writing-grids-and-images" title="Permalink to this headline">¶</a></h3>
 <p>Saving images in the common raster formats is possible but, for the time being, only from <a class="reference internal" href="../grdimage.html"><span class="doc">grdimage</span></a> and even
 that is restricted to raster type information. That is, vector data (for instance, coast lines) or text will not
 be saved. To save an image with <a class="reference internal" href="../grdimage.html"><span class="doc">grdimage</span></a> use the <strong>-A</strong><em>outimg=driver</em> mechanism, where <em>driver</em>
@@ -2750,7 +2749,7 @@ should be replaced by zero.</p>
 </div>
 </div>
 <div class="section" id="the-nan-data-value">
-<h2>4.27. The NaN data value<a class="headerlink" href="#the-nan-data-value" title="Permalink to this headline">¶</a></h2>
+<h2>3.27. The NaN data value<a class="headerlink" href="#the-nan-data-value" title="Permalink to this headline">¶</a></h2>
 <p>For a variety of data processing and plotting tasks there is a need to
 acknowledge that a data point is missing or unassigned. In the “old
 days”, such information was passed by letting a value like -9999.99 take
@@ -2789,7 +2788,7 @@ such interpretation and simply reports back how many bad records were
 skipped during reading; see Section <a class="reference internal" href="options.html#option-g"><span class="std std-ref">Data gap detection: The -g option</span></a> for details.</p>
 </div>
 <div class="section" id="directory-parameters">
-<span id="id12"></span><h2>4.28. Directory parameters<a class="headerlink" href="#directory-parameters" title="Permalink to this headline">¶</a></h2>
+<span id="id12"></span><h2>3.28. Directory parameters<a class="headerlink" href="#directory-parameters" title="Permalink to this headline">¶</a></h2>
 <p>GMT versions prior to GMT 5 relied solely on several environment variables
 ($GMT_SHAREDIR, $GMT_DATADIR, $GMT_USERDIR, and $GMT_TMPDIR), pointing
 to folders with data files and program settings. Beginning with version
@@ -2912,10 +2911,10 @@ off; see <a class="reference internal" href="../gmt.conf.html#ps-comments"><span
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="options.html" class="btn btn-neutral float-right" title="5. Standardized command line options" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="options.html" class="btn btn-neutral float-right" title="4. Standardized command line options" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="introduction.html" class="btn btn-neutral float-left" title="3. Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="introduction.html" class="btn btn-neutral float-left" title="2. Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -2927,7 +2926,7 @@ off; see <a class="reference internal" href="../gmt.conf.html#ps-comments"><span
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 07, 2019.
+        Last updated on Oct 09, 2019.
       </span>
 
     </p>

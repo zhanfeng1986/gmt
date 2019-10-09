@@ -120,7 +120,7 @@
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight C API</a></li>
 </ul>
 
             
@@ -224,11 +224,11 @@ this script:</p>
 <span class="c1"># GMT modules:	histogram, rose</span>
 <span class="c1">#</span>
 gmt begin ex06
-  gmt subplot begin 2x1 -A+JTL+o0.3i -Fs6i/3.5i -M0.4i -X1.25i
-    gmt histogram -Bx+l<span class="s2">&quot;Topography (m)&quot;</span> -By+l<span class="s2">&quot;Frequency&quot;</span>+u<span class="s2">&quot; %&quot;</span> -BWSne+t<span class="s2">&quot;Histograms&quot;</span>+glightblue @v3206_06.txt <span class="se">\</span>
-	-R-6000/0/0/30 -Gorange -L1p -Z1 -W250 -c0
-    gmt rose @fractures_06.txt -: -A10r -S -Gorange -R0/1/0/360 -Bx0.2g0.2 -By30g30 -B+glightblue -W1p -c1
-  gmt subplot end
+	gmt subplot begin 2x1 -A+JTL+o0.3i -Fs6i/3.5i -M0.4i -X1.25i
+		gmt histogram -Bx+l<span class="s2">&quot;Topography (m)&quot;</span> -By+l<span class="s2">&quot;Frequency&quot;</span>+u<span class="s2">&quot; %&quot;</span> -BWSne+t<span class="s2">&quot;Histograms&quot;</span>+glightblue @v3206_06.txt <span class="se">\</span>
+			-R-6000/0/0/30 -Gorange -L1p -Z1 -W250 -c0
+		gmt rose @fractures_06.txt -: -A10r -S -Gorange -R0/1/0/360 -Bx0.2g0.2 -By30g30 -B+glightblue -W1p -c1
+	gmt subplot end
 gmt end show
 </pre></div>
 </div>
@@ -261,7 +261,7 @@ gmt end show
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 07, 2019.
+        Last updated on Oct 09, 2019.
       </span>
 
     </p>

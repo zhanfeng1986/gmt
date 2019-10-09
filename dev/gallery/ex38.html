@@ -120,7 +120,7 @@
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight C API</a></li>
 </ul>
 
             
@@ -219,34 +219,34 @@ used here is <a class="reference internal" href="../grdhisteq.html"><span class=
 <span class="c1"># Unix progs:   rm</span>
 <span class="c1">#</span>
 gmt begin ex38
-  gmt <span class="nb">set</span> FONT_TAG 14p
+	gmt <span class="nb">set</span> FONT_TAG 14p
 
-  gmt makecpt -Crainbow -T0/1700 -H &gt; t.cpt
-  gmt makecpt -Crainbow -T0/15/1 -H &gt; c.cpt
-  gmt makecpt -Crainbow -T-3/3 -H &gt; n.cpt
-  gmt makecpt -Crainbow -T0/15 -H &gt; q.cpt
+	gmt makecpt -Crainbow -T0/1700 -H &gt; t.cpt
+	gmt makecpt -Crainbow -T0/15/1 -H &gt; c.cpt
+	gmt makecpt -Crainbow -T-3/3 -H &gt; n.cpt
+	gmt makecpt -Crainbow -T0/15 -H &gt; q.cpt
 
-  gmt subplot begin 2x2 -Fs7c -A+jTR+gwhite+p1p+o0.2c/0.2c -M0.75c/1.2c -R@topo_38.nc -JM7c -B5 -BWSen -Y10c
-    gmt subplot <span class="nb">set</span> <span class="m">0</span> -A<span class="s2">&quot;Original&quot;</span>
-    gmt grdimage @topo_38.nc -I+d -Ct.cpt
+	gmt subplot begin 2x2 -Fs7c -A+jTR+gwhite+p1p+o0.2c/0.2c -M0.75c/1.2c -R@topo_38.nc -JM7c -B5 -BWSen -Y10c
+		gmt subplot <span class="nb">set</span> <span class="m">0</span> -A<span class="s2">&quot;Original&quot;</span>
+		gmt grdimage @topo_38.nc -I+d -Ct.cpt
 
-    gmt subplot <span class="nb">set</span> <span class="m">1</span> -A<span class="s2">&quot;Equalized&quot;</span>
-    gmt grdhisteq @topo_38.nc -Gout.nc -C16
-    gmt grdimage out.nc -Cc.cpt
+		gmt subplot <span class="nb">set</span> <span class="m">1</span> -A<span class="s2">&quot;Equalized&quot;</span>
+		gmt grdhisteq @topo_38.nc -Gout.nc -C16
+		gmt grdimage out.nc -Cc.cpt
 
-    gmt subplot <span class="nb">set</span> <span class="m">2</span> -A<span class="s2">&quot;Normalized&quot;</span>
-    gmt grdhisteq @topo_38.nc -Gout.nc -N
-    gmt grdimage out.nc -Cn.cpt
+		gmt subplot <span class="nb">set</span> <span class="m">2</span> -A<span class="s2">&quot;Normalized&quot;</span>
+		gmt grdhisteq @topo_38.nc -Gout.nc -N
+		gmt grdimage out.nc -Cn.cpt
 
-    gmt subplot <span class="nb">set</span> <span class="m">3</span> -A<span class="s2">&quot;Quadratic&quot;</span>
-    gmt grdhisteq @topo_38.nc -Gout.nc -Q
-    gmt grdimage out.nc -Cq.cpt
-  gmt subplot end
+		gmt subplot <span class="nb">set</span> <span class="m">3</span> -A<span class="s2">&quot;Quadratic&quot;</span>
+		gmt grdhisteq @topo_38.nc -Gout.nc -Q
+		gmt grdimage out.nc -Cq.cpt
+	gmt subplot end
 
-  gmt colorbar -DJTC+w5i/0.15i+jTC+o0c/6c+h+e+n -Ct.cpt -Ba500 -By+lm
-  gmt colorbar -DJBC+w5i/0.15i+h+e+n -Cn.cpt -Bx1 -By+l<span class="s2">&quot;z@-n@-&quot;</span>
-  gmt colorbar -DJBC+w5i/0.15i+h+e+n+o0c/2.5c -Cq.cpt -Bx1 -By+l<span class="s2">&quot;z@-q@-&quot;</span>
-  rm -f out.nc ?.cpt
+	gmt colorbar -DJTC+w5i/0.15i+jTC+o0c/6c+h+e+n -Ct.cpt -Ba500 -By+lm
+	gmt colorbar -DJBC+w5i/0.15i+h+e+n -Cn.cpt -Bx1 -By+l<span class="s2">&quot;z@-n@-&quot;</span>
+	gmt colorbar -DJBC+w5i/0.15i+h+e+n+o0c/2.5c -Cq.cpt -Bx1 -By+l<span class="s2">&quot;z@-q@-&quot;</span>
+	rm -f out.nc ?.cpt
 gmt end show
 </pre></div>
 </div>
@@ -279,7 +279,7 @@ gmt end show
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 07, 2019.
+        Last updated on Oct 09, 2019.
       </span>
 
     </p>

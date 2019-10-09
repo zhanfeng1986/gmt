@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>5. Standardized command line options &mdash; GMT 6.1.0 documentation</title>
+  <title>4. Standardized command line options &mdash; GMT 6.1.0 documentation</title>
   
 
   
@@ -40,8 +40,8 @@
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6. GMT Coordinate Transformations" href="coordinate_transformations.html" />
-    <link rel="prev" title="4. General Features" href="features.html" /> 
+    <link rel="next" title="5. GMT Coordinate Transformations" href="coordinate_transformations.html" />
+    <link rel="prev" title="3. General Features" href="features.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -100,66 +100,65 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../modules.html">GMT Modules</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../cookbook.html">GMT Cookbook</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="copyright.html">1. Copyright and Caveat Emptor!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="preface.html">2. Preface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html">3. Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="features.html">4. General Features</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">5. Standardized command line options</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#data-domain-or-map-region-the-r-option">5.1. Data domain or map region: The <strong>-R</strong> option</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#coordinate-transformations-and-map-projections-the-j-option">5.2. Coordinate transformations and map projections: The <strong>-J</strong> option</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#map-frame-and-axes-annotations-the-b-option">5.3. Map frame and axes annotations: The <strong>-B</strong> option</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#geographic-basemaps">5.3.1. Geographic basemaps</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cartesian-linear-axes">5.3.2. Cartesian linear axes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cartesian-log10-axes">5.3.3. Cartesian log<sub>10</sub> axes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cartesian-exponential-axes">5.3.4. Cartesian exponential axes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cartesian-time-axes">5.3.5. Cartesian time axes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#custom-axes">5.3.6. Custom axes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="preface.html">1. Preface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">2. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="features.html">3. General Features</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4. Standardized command line options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#data-domain-or-map-region-the-r-option">4.1. Data domain or map region: The <strong>-R</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#coordinate-transformations-and-map-projections-the-j-option">4.2. Coordinate transformations and map projections: The <strong>-J</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#map-frame-and-axes-annotations-the-b-option">4.3. Map frame and axes annotations: The <strong>-B</strong> option</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#geographic-basemaps">4.3.1. Geographic basemaps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cartesian-linear-axes">4.3.2. Cartesian linear axes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cartesian-log10-axes">4.3.3. Cartesian log<sub>10</sub> axes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cartesian-exponential-axes">4.3.4. Cartesian exponential axes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cartesian-time-axes">4.3.5. Cartesian time axes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#custom-axes">4.3.6. Custom axes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#timestamps-on-plots-the-u-option">5.4. Timestamps on plots: The <strong>-U</strong> option</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#verbose-feedback-the-v-option">5.5. Verbose feedback: The <strong>-V</strong> option</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#plot-positioning-and-layout-the-x-y-options">5.6. Plot positioning and layout: The <strong>-X</strong> <strong>-Y</strong> options</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ogr-gmt-gis-i-o-the-a-option">5.7. OGR/GMT GIS i/o: The <strong>-a</strong> option</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#ogr-gmt-input-with-a-option">5.7.1. OGR/GMT input with <strong>-a</strong> option</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ogr-gmt-output-with-a-option">5.7.2. OGR/GMT output with <strong>-a</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#timestamps-on-plots-the-u-option">4.4. Timestamps on plots: The <strong>-U</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#verbose-feedback-the-v-option">4.5. Verbose feedback: The <strong>-V</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#plot-positioning-and-layout-the-x-y-options">4.6. Plot positioning and layout: The <strong>-X</strong> <strong>-Y</strong> options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ogr-gmt-gis-i-o-the-a-option">4.7. OGR/GMT GIS i/o: The <strong>-a</strong> option</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ogr-gmt-input-with-a-option">4.7.1. OGR/GMT input with <strong>-a</strong> option</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ogr-gmt-output-with-a-option">4.7.2. OGR/GMT output with <strong>-a</strong> option</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#binary-table-i-o-the-b-option">5.8. Binary table i/o: The <strong>-b</strong> option</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#missing-data-conversion-the-d-option">5.9. Missing data conversion: The <strong>-d</strong> option</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#data-record-pattern-matching-the-e-option">5.10. Data record pattern matching: The <strong>-e</strong> option</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#data-type-selection-the-f-option">5.11. Data type selection: The <strong>-f</strong> option</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#data-gap-detection-the-g-option">5.12. Data gap detection: The <strong>-g</strong> option</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#header-data-records-the-h-option">5.13. Header data records: The <strong>-h</strong> option</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#input-columns-selection-the-i-option">5.14. Input columns selection: The <strong>-i</strong> option</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#grid-interpolation-parameters-the-n-option">5.15. Grid interpolation parameters: The <strong>-n</strong> option</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#output-columns-selection-the-o-option">5.16. Output columns selection: The <strong>-o</strong> option</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#perspective-view-the-p-option">5.17. Perspective view: The <strong>-p</strong> option</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#grid-registration-the-r-option">5.18. Grid registration: The <strong>-r</strong> option</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#gridline-registration">5.18.1. Gridline registration</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pixel-registration">5.18.2. Pixel registration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#binary-table-i-o-the-b-option">4.8. Binary table i/o: The <strong>-b</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#missing-data-conversion-the-d-option">4.9. Missing data conversion: The <strong>-d</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-record-pattern-matching-the-e-option">4.10. Data record pattern matching: The <strong>-e</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-type-selection-the-f-option">4.11. Data type selection: The <strong>-f</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-gap-detection-the-g-option">4.12. Data gap detection: The <strong>-g</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#header-data-records-the-h-option">4.13. Header data records: The <strong>-h</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#input-columns-selection-the-i-option">4.14. Input columns selection: The <strong>-i</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#grid-interpolation-parameters-the-n-option">4.15. Grid interpolation parameters: The <strong>-n</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#output-columns-selection-the-o-option">4.16. Output columns selection: The <strong>-o</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#perspective-view-the-p-option">4.17. Perspective view: The <strong>-p</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#grid-registration-the-r-option">4.18. Grid registration: The <strong>-r</strong> option</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#gridline-registration">4.18.1. Gridline registration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pixel-registration">4.18.2. Pixel registration</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#nan-record-treatment-the-s-option">5.19. NaN-record treatment: The <strong>-s</strong> option</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#layer-transparency-the-t-option">5.20. Layer transparency: The <strong>-t</strong> option</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#latitude-longitude-or-longitude-latitude-the-option">5.21. Latitude/Longitude or Longitude/Latitude?: The <strong>-:</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nan-record-treatment-the-s-option">4.19. NaN-record treatment: The <strong>-s</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#layer-transparency-the-t-option">4.20. Layer transparency: The <strong>-t</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#latitude-longitude-or-longitude-latitude-the-option">4.21. Latitude/Longitude or Longitude/Latitude?: The <strong>-:</strong> option</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="coordinate_transformations.html">6. GMT Coordinate Transformations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="map_projections.html">7. GMT Map Projections</a></li>
-<li class="toctree-l2"><a class="reference internal" href="supplemental_packages.html">8. GMT Supplemental Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="file_formats.html">9. GMT File Formats</a></li>
-<li class="toctree-l2"><a class="reference internal" href="include_figures.html">10. Including GMT Graphics into your Documents</a></li>
-<li class="toctree-l2"><a class="reference internal" href="predefined_patterns.html">11. Predefined Bit and Hachure Patterns in GMT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="octal_codes.html">12. Chart of Octal Codes for Characters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="postscript_fonts.html">13. PostScript Fonts Used by GMT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="colorspace.html">14. Color Space: The Final Frontier</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_filtering.html">15. Filtering of Data in GMT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="non_unix_platforms.html">16. GMT on non-UNIX Platforms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cpts.html">17. Of Colors and Color Legends</a></li>
-<li class="toctree-l2"><a class="reference internal" href="custom_symbols.html">18. Custom Plot Symbols</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contour_annotations.html">19. Annotation of Contours and “Quoted Lines”</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ogrgmt_format.html">20. The GMT Vector Data Format for OGR Compatibility</a></li>
-<li class="toctree-l2"><a class="reference internal" href="one-liner.html">21. GMT Modern Mode One-line Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coordinate_transformations.html">5. GMT Coordinate Transformations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="map_projections.html">6. GMT Map Projections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supplemental_packages.html">7. GMT Supplemental Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_formats.html">8. GMT File Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="include_figures.html">9. Including GMT Graphics into your Documents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="predefined_patterns.html">10. Predefined Bit and Hachure Patterns in GMT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="octal_codes.html">11. Chart of Octal Codes for Characters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="postscript_fonts.html">12. PostScript Fonts Used by GMT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="colorspace.html">13. Color Space: The Final Frontier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_filtering.html">14. Filtering of Data in GMT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="non_unix_platforms.html">15. GMT on non-UNIX Platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpts.html">16. Of Colors and Color Legends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom_symbols.html">17. Custom Plot Symbols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contour_annotations.html">18. Annotation of Contours and “Quoted Lines”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ogrgmt_format.html">19. The GMT Vector Data Format for OGR Compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="one-liner.html">20. GMT Modern Mode One-line Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../datasets.html">Datasets</a></li>
@@ -182,7 +181,7 @@
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight C API</a></li>
 </ul>
 
             
@@ -247,7 +246,7 @@
         
           <li><a href="../cookbook.html">GMT Cookbook</a> &raquo;</li>
         
-      <li>5. Standardized command line options</li>
+      <li>4. Standardized command line options</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -269,7 +268,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="standardized-command-line-options">
-<h1>5. Standardized command line options<a class="headerlink" href="#standardized-command-line-options" title="Permalink to this headline">¶</a></h1>
+<h1>4. Standardized command line options<a class="headerlink" href="#standardized-command-line-options" title="Permalink to this headline">¶</a></h1>
 <p>Most of the programs take many of the same arguments such as those related
 to setting the data region, the map projection, etc. The 24 switches in
 Table <a class="reference internal" href="#tbl-switches"><span class="std std-ref">switches</span></a> have the same meaning in all the programs (although
@@ -363,7 +362,7 @@ importance (some are used a lot more than others).</p>
 </tbody>
 </table>
 <div class="section" id="data-domain-or-map-region-the-r-option">
-<span id="option-r"></span><h2>5.1. Data domain or map region: The <strong>-R</strong> option<a class="headerlink" href="#data-domain-or-map-region-the-r-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-r"></span><h2>4.1. Data domain or map region: The <strong>-R</strong> option<a class="headerlink" href="#data-domain-or-map-region-the-r-option" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>-R</strong> option defines the map region or data domain of interest. It
 may be specified in one of five ways, two of which are shown in Figure
 <a class="reference internal" href="#gmt-region"><span class="std std-ref">Map region</span></a>:</p>
@@ -498,7 +497,7 @@ representation. <a class="footnote-reference" href="#id8" id="id2">[12]</a></dd>
 </dl>
 </div>
 <div class="section" id="coordinate-transformations-and-map-projections-the-j-option">
-<span id="option-j"></span><h2>5.2. Coordinate transformations and map projections: The <strong>-J</strong> option<a class="headerlink" href="#coordinate-transformations-and-map-projections-the-j-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-j"></span><h2>4.2. Coordinate transformations and map projections: The <strong>-J</strong> option<a class="headerlink" href="#coordinate-transformations-and-map-projections-the-j-option" title="Permalink to this headline">¶</a></h2>
 <p>This option selects the coordinate transformation or map projection. The
 general format is</p>
 <ul class="simple">
@@ -539,7 +538,7 @@ syntax is listed in <a class="reference internal" href="../proj_codes.html"><spa
 </div>
 </div>
 <div class="section" id="map-frame-and-axes-annotations-the-b-option">
-<span id="option-b"></span><h2>5.3. Map frame and axes annotations: The <strong>-B</strong> option<a class="headerlink" href="#map-frame-and-axes-annotations-the-b-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-b"></span><h2>4.3. Map frame and axes annotations: The <strong>-B</strong> option<a class="headerlink" href="#map-frame-and-axes-annotations-the-b-option" title="Permalink to this headline">¶</a></h2>
 <p>This is potentially the most complicated option in GMT,
 but most examples of its usage are actually quite simple. We distinguish
 between to sets of information: Frame settings and Axes parameters.  These
@@ -760,7 +759,7 @@ hierarchical order of units: The “primary” annotation interval is
 usually smaller (e.g., days) while the “secondary” annotation interval
 typically is larger (e.g., months).</p>
 <div class="section" id="geographic-basemaps">
-<h3>5.3.1. Geographic basemaps<a class="headerlink" href="#geographic-basemaps" title="Permalink to this headline">¶</a></h3>
+<h3>4.3.1. Geographic basemaps<a class="headerlink" href="#geographic-basemaps" title="Permalink to this headline">¶</a></h3>
 <p>Geographic basemaps may differ from regular plot axis in that some
 projections support a “fancy” form of axis and is selected by the
 <a class="reference internal" href="../gmt.conf.html#map-frame-type"><span class="std std-ref">MAP_FRAME_TYPE</span></a> setting. The annotations will be formatted
@@ -785,7 +784,7 @@ attributes for grid lines and grid crosses, see Figure <a class="reference inter
 </div>
 </div>
 <div class="section" id="cartesian-linear-axes">
-<h3>5.3.2. Cartesian linear axes<a class="headerlink" href="#cartesian-linear-axes" title="Permalink to this headline">¶</a></h3>
+<h3>4.3.2. Cartesian linear axes<a class="headerlink" href="#cartesian-linear-axes" title="Permalink to this headline">¶</a></h3>
 <p>For non-geographic axes, the <a class="reference internal" href="../gmt.conf.html#map-frame-type"><span class="std std-ref">MAP_FRAME_TYPE</span></a> setting is implicitly
 set to plain. Other than that, cartesian linear axes are very similar to
 geographic axes. The annotation format may be controlled with the
@@ -815,7 +814,7 @@ For the y-axis only the modifier <strong>+ap</strong> for parallel is allowed.</
 </div>
 </div>
 <div class="section" id="cartesian-log10-axes">
-<h3>5.3.3. Cartesian log<sub>10</sub> axes<a class="headerlink" href="#cartesian-log10-axes" title="Permalink to this headline">¶</a></h3>
+<h3>4.3.3. Cartesian log<sub>10</sub> axes<a class="headerlink" href="#cartesian-log10-axes" title="Permalink to this headline">¶</a></h3>
 <p>Due to the logarithmic nature of annotation spacings, the <em>stride</em>
 parameter takes on specific meanings. The following concerns are
 specific to log axes (see Figure <a class="reference internal" href="#log-projection"><span class="std std-ref">Logarithmic projection axis</span></a>):</p>
@@ -843,7 +842,7 @@ values as exponents, with -Ba1f2g3p.</span></p>
 </div>
 </div>
 <div class="section" id="cartesian-exponential-axes">
-<h3>5.3.4. Cartesian exponential axes<a class="headerlink" href="#cartesian-exponential-axes" title="Permalink to this headline">¶</a></h3>
+<h3>4.3.4. Cartesian exponential axes<a class="headerlink" href="#cartesian-exponential-axes" title="Permalink to this headline">¶</a></h3>
 <p>Normally, <em>stride</em> will be used to create equidistant (in the user’s
 unit) annotations or ticks, but because of the exponential nature of the
 axis, such annotations may converge on each other at one end of the
@@ -863,7 +862,7 @@ uses the corresponding unprojected values, as in -Ba3f2g1p.</span></p>
 </div>
 </div>
 <div class="section" id="cartesian-time-axes">
-<span id="id4"></span><h3>5.3.5. Cartesian time axes<a class="headerlink" href="#cartesian-time-axes" title="Permalink to this headline">¶</a></h3>
+<span id="id4"></span><h3>4.3.5. Cartesian time axes<a class="headerlink" href="#cartesian-time-axes" title="Permalink to this headline">¶</a></h3>
 <p>What sets time axis apart from the other kinds of plot axes is the
 numerous ways in which we may want to tick and annotate the axis. Not
 only do we have both primary and secondary annotation items but we also
@@ -983,7 +982,7 @@ gmt end show
 </div>
 </div>
 <div class="section" id="custom-axes">
-<span id="id5"></span><h3>5.3.6. Custom axes<a class="headerlink" href="#custom-axes" title="Permalink to this headline">¶</a></h3>
+<span id="id5"></span><h3>4.3.6. Custom axes<a class="headerlink" href="#custom-axes" title="Permalink to this headline">¶</a></h3>
 <p>Irregularly spaced annotations or annotations based on
 look-up tables can be implemented using the <em>custom</em> annotation
 mechanism. Here, we given the <strong>c</strong> (custom) type to the <strong>-B</strong> option
@@ -1035,7 +1034,7 @@ gmt end show
 </div>
 </div>
 <div class="section" id="timestamps-on-plots-the-u-option">
-<span id="option-u"></span><h2>5.4. Timestamps on plots: The <strong>-U</strong> option<a class="headerlink" href="#timestamps-on-plots-the-u-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-u"></span><h2>4.4. Timestamps on plots: The <strong>-U</strong> option<a class="headerlink" href="#timestamps-on-plots-the-u-option" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>-U</strong> option draws the GMT UNIX System time stamp on the plot.
 By appending <strong>+j</strong><em>just</em> and/or <strong>+o</strong><em>dx/dy</em>, the user may
 specify the justification of the stamp and where the stamp should fall
@@ -1050,7 +1049,7 @@ which will plot the current command string (Figure <a class="reference internal"
 </div>
 </div>
 <div class="section" id="verbose-feedback-the-v-option">
-<span id="option-v"></span><h2>5.5. Verbose feedback: The <strong>-V</strong> option<a class="headerlink" href="#verbose-feedback-the-v-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-v"></span><h2>4.5. Verbose feedback: The <strong>-V</strong> option<a class="headerlink" href="#verbose-feedback-the-v-option" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>-V</strong> option selects verbose mode, which will send
 progress reports to standard error. Even more verbose levels are <strong>-Vl</strong>
 (long verbose) and <strong>-Vd</strong> (debug). Normal verbosity level produces only
@@ -1063,7 +1062,7 @@ option can also be set by specifying the default <a class="reference internal" h
 <strong>debug</strong>, in order of increased verbosity.</p>
 </div>
 <div class="section" id="plot-positioning-and-layout-the-x-y-options">
-<span id="option-y"></span><span id="option-x"></span><h2>5.6. Plot positioning and layout: The <strong>-X</strong> <strong>-Y</strong> options<a class="headerlink" href="#plot-positioning-and-layout-the-x-y-options" title="Permalink to this headline">¶</a></h2>
+<span id="option-y"></span><span id="option-x"></span><h2>4.6. Plot positioning and layout: The <strong>-X</strong> <strong>-Y</strong> options<a class="headerlink" href="#plot-positioning-and-layout-the-x-y-options" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>-X</strong> and <strong>-Y</strong> options shift origin of plot by (<em>xoff</em>,<em>yoff</em>)
 inches (Default is (<a class="reference internal" href="../gmt.conf.html#map-origin-x"><span class="std std-ref">MAP_ORIGIN_X</span></a>, <a class="reference internal" href="../gmt.conf.html#map-origin-y"><span class="std std-ref">MAP_ORIGIN_Y</span></a>) for new
 plots <a class="footnote-reference" href="#id10" id="id6">[15]</a> and (0,0) for overlays (<strong>-O</strong>)). By default, all
@@ -1083,7 +1082,7 @@ overlays are ignored).</p>
 </div>
 </div>
 <div class="section" id="ogr-gmt-gis-i-o-the-a-option">
-<span id="option-a"></span><h2>5.7. OGR/GMT GIS i/o: The <strong>-a</strong> option<a class="headerlink" href="#ogr-gmt-gis-i-o-the-a-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-a"></span><h2>4.7. OGR/GMT GIS i/o: The <strong>-a</strong> option<a class="headerlink" href="#ogr-gmt-gis-i-o-the-a-option" title="Permalink to this headline">¶</a></h2>
 <p>GMT relies on external tools to translate geospatial files such as
 shapefiles into a format we can read. The tool <strong>ogr2ogr</strong> in the GDAL
 package can do such translations and preserve the aspatial metadata via
@@ -1098,7 +1097,7 @@ that <em>col = 0</em> is the first data columns. Note that if no aspatial
 attributes are needed then the <strong>-a</strong> option is not needed – GMT will
 still process and read such data files.</p>
 <div class="section" id="ogr-gmt-input-with-a-option">
-<h3>5.7.1. OGR/GMT input with <strong>-a</strong> option<a class="headerlink" href="#ogr-gmt-input-with-a-option" title="Permalink to this headline">¶</a></h3>
+<h3>4.7.1. OGR/GMT input with <strong>-a</strong> option<a class="headerlink" href="#ogr-gmt-input-with-a-option" title="Permalink to this headline">¶</a></h3>
 <p>If you need to populate GMT data columns with (constant) values
 specified by aspatial attributes, use <strong>-a</strong> and append any number of
 comma-separated <em>col=name</em> associations. E.g., <em>2=depth</em> will read the
@@ -1111,7 +1110,7 @@ works analogously to how standard multi-segment files can pass such
 options via its segment headers (See Chapter <a class="reference internal" href="file_formats.html"><span class="doc">GMT File Formats</span></a>).</p>
 </div>
 <div class="section" id="ogr-gmt-output-with-a-option">
-<h3>5.7.2. OGR/GMT output with <strong>-a</strong> option<a class="headerlink" href="#ogr-gmt-output-with-a-option" title="Permalink to this headline">¶</a></h3>
+<h3>4.7.2. OGR/GMT output with <strong>-a</strong> option<a class="headerlink" href="#ogr-gmt-output-with-a-option" title="Permalink to this headline">¶</a></h3>
 <p>You can also make GMT table-writing tools output the OGR/GMT format
 directly. Again, specify if certain GMT data columns with constant
 values should be stored as aspatial metadata using the
@@ -1129,7 +1128,7 @@ features that straddle the Dateline.</p>
 </div>
 </div>
 <div class="section" id="binary-table-i-o-the-b-option">
-<span id="option-binary"></span><h2>5.8. Binary table i/o: The <strong>-b</strong> option<a class="headerlink" href="#binary-table-i-o-the-b-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-binary"></span><h2>4.8. Binary table i/o: The <strong>-b</strong> option<a class="headerlink" href="#binary-table-i-o-the-b-option" title="Permalink to this headline">¶</a></h2>
 <p>All GMT programs that accept table data as <em>primary</em> input may read ASCII, native
 binary, shapefiles, or netCDF tables (Any <em>secondary</em> input files provided via command line
 options are always expected to be in ASCII format). Native binary files may have a header section
@@ -1173,7 +1172,7 @@ processed. No <strong>-bi</strong> option is needed in this case.</p>
 information, see Chapter <a class="reference internal" href="file_formats.html"><span class="doc">GMT File Formats</span></a>.</p>
 </div>
 <div class="section" id="missing-data-conversion-the-d-option">
-<span id="option-d"></span><h2>5.9. Missing data conversion: The <strong>-d</strong> option<a class="headerlink" href="#missing-data-conversion-the-d-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-d"></span><h2>4.9. Missing data conversion: The <strong>-d</strong> option<a class="headerlink" href="#missing-data-conversion-the-d-option" title="Permalink to this headline">¶</a></h2>
 <p>Within GMT, any missing values are represented by the IEEE NaN value.
 However, there are occasionally the need to handle user data where
 missing data are represented by some unlikely data value such as -99999.
@@ -1184,7 +1183,7 @@ you can replace all NaNs with the chosen nodata value.  If only input
 or output should be affected, use <strong>-di</strong> or <strong>-do</strong>, respectably.</p>
 </div>
 <div class="section" id="data-record-pattern-matching-the-e-option">
-<span id="option-e"></span><h2>5.10. Data record pattern matching: The <strong>-e</strong> option<a class="headerlink" href="#data-record-pattern-matching-the-e-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-e"></span><h2>4.10. Data record pattern matching: The <strong>-e</strong> option<a class="headerlink" href="#data-record-pattern-matching-the-e-option" title="Permalink to this headline">¶</a></h2>
 <p>Modules that read ASCII tables will normally process all the data records
 that are read.  The <strong>-e</strong> option offers a built-in pattern scanner that
 will only pass records that match the given patterns or regular expressions.
@@ -1192,7 +1191,7 @@ The test can also be inverted to only pass data records that <em>do not</em> mat
 the pattern.  The test is <em>not</em> applied to header or segment headers.</p>
 </div>
 <div class="section" id="data-type-selection-the-f-option">
-<span id="option-f"></span><h2>5.11. Data type selection: The <strong>-f</strong> option<a class="headerlink" href="#data-type-selection-the-f-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-f"></span><h2>4.11. Data type selection: The <strong>-f</strong> option<a class="headerlink" href="#data-type-selection-the-f-option" title="Permalink to this headline">¶</a></h2>
 <p>When map projections are not required we must explicitly state what kind
 of data each input or output column contains. This is accomplished with
 the <strong>-f</strong> option. Following an optional <strong>i</strong> (for input only) or <strong>o</strong>
@@ -1217,7 +1216,7 @@ append a length <em>unit</em> (see Table <a class="reference internal" href="fea
 information, see Sections <a class="reference internal" href="features.html#input-data-formats"><span class="std std-ref">Input data formats</span></a> and <a class="reference internal" href="features.html#output-data-formats"><span class="std std-ref">Output data formats</span></a>.</p>
 </div>
 <div class="section" id="data-gap-detection-the-g-option">
-<span id="option-g"></span><h2>5.12. Data gap detection: The <strong>-g</strong> option<a class="headerlink" href="#data-gap-detection-the-g-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-g"></span><h2>4.12. Data gap detection: The <strong>-g</strong> option<a class="headerlink" href="#data-gap-detection-the-g-option" title="Permalink to this headline">¶</a></h2>
 <p>GMT has several mechanisms that can determine line
 segmentation. Typically, data segments are separated by multiple segment
 header records (see Chapter <a class="reference internal" href="file_formats.html"><span class="doc">GMT File Formats</span></a>). However, if key data columns contain a
@@ -1248,7 +1247,7 @@ as previous minus current column value and <strong>+p</strong> for current minus
 column value.</p>
 </div>
 <div class="section" id="header-data-records-the-h-option">
-<span id="option-h"></span><h2>5.13. Header data records: The <strong>-h</strong> option<a class="headerlink" href="#header-data-records-the-h-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-h"></span><h2>4.13. Header data records: The <strong>-h</strong> option<a class="headerlink" href="#header-data-records-the-h-option" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n_recs</em>] option
 lets GMT know that input file(s) have <em>n_recs</em> header records [0]. If
 there are more than one header record you must specify the number after
@@ -1270,7 +1269,7 @@ how many <em>bytes</em> should be skipped (on input) or padded with the space
 character (on output).</p>
 </div>
 <div class="section" id="input-columns-selection-the-i-option">
-<span id="option-i"></span><h2>5.14. Input columns selection: The <strong>-i</strong> option<a class="headerlink" href="#input-columns-selection-the-i-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-i"></span><h2>4.14. Input columns selection: The <strong>-i</strong> option<a class="headerlink" href="#input-columns-selection-the-i-option" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>-i</strong><em>columns</em> option allows you to specify which
 input file physical data columns to use and in what order. By default, GMT will
 read all the data columns in the file, starting with the first column
@@ -1312,7 +1311,7 @@ after reading the data there is no physical record, only the logical record in m
 </div>
 </div>
 <div class="section" id="grid-interpolation-parameters-the-n-option">
-<span id="option-n"></span><h2>5.15. Grid interpolation parameters: The <strong>-n</strong> option<a class="headerlink" href="#grid-interpolation-parameters-the-n-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-n"></span><h2>4.15. Grid interpolation parameters: The <strong>-n</strong> option<a class="headerlink" href="#grid-interpolation-parameters-the-n-option" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>-n</strong><em>type</em> option controls parameters used for
 2-D grids resampling. You can select the type of spline used (<strong>-nb</strong>
 for B-spline smoothing, <strong>-nc</strong> for bicubic [Default], <strong>-nl</strong> for
@@ -1332,7 +1331,7 @@ non-NaN. 0.5 will interpolate about half way from a non-NaN value; 0.1
 will go about 90% of the way, etc.</p>
 </div>
 <div class="section" id="output-columns-selection-the-o-option">
-<span id="option-o"></span><h2>5.16. Output columns selection: The <strong>-o</strong> option<a class="headerlink" href="#output-columns-selection-the-o-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-o"></span><h2>4.16. Output columns selection: The <strong>-o</strong> option<a class="headerlink" href="#output-columns-selection-the-o-option" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>-o</strong><em>columns</em> option allows you to specify which
 columns to write on output and in what order. By default, GMT will
 write all the data columns produced by the program. Using <strong>-o</strong>
@@ -1349,7 +1348,7 @@ using the <strong>-i</strong> option. To output all numerical columns and ignori
 trailing text, use <strong>-on</strong>.</p>
 </div>
 <div class="section" id="perspective-view-the-p-option">
-<span id="option-p"></span><h2>5.17. Perspective view: The <strong>-p</strong> option<a class="headerlink" href="#perspective-view-the-p-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-p"></span><h2>4.17. Perspective view: The <strong>-p</strong> option<a class="headerlink" href="#perspective-view-the-p-option" title="Permalink to this headline">¶</a></h2>
 <p>All plotting programs that normally produce a flat, two-dimensional
 illustration can be told to view this flat illustration from a
 particular vantage point, resulting in a perspective view. You can
@@ -1369,7 +1368,7 @@ about the z-axis by just giving the rotation angle.  Optionally, use <strong>+v<
 or <strong>+w</strong> to select another axis location than the plot origin.</p>
 </div>
 <div class="section" id="grid-registration-the-r-option">
-<span id="option-nodereg"></span><h2>5.18. Grid registration: The <strong>-r</strong> option<a class="headerlink" href="#grid-registration-the-r-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-nodereg"></span><h2>4.18. Grid registration: The <strong>-r</strong> option<a class="headerlink" href="#grid-registration-the-r-option" title="Permalink to this headline">¶</a></h2>
 <p>All 2-D grids in GMT have their nodes
 organized in one of two ways, known as <em>gridline</em>- and <em>pixel</em>-
 registration. The GMT default is gridline registration; programs that
@@ -1381,7 +1380,7 @@ this conversion looses the Nyquist frequency and dampens the other
 high frequencies.  It is best to avoid any registration conversion if you
 can help it.  Planning ahead may be important.</p>
 <div class="section" id="gridline-registration">
-<h3>5.18.1. Gridline registration<a class="headerlink" href="#gridline-registration" title="Permalink to this headline">¶</a></h3>
+<h3>4.18.1. Gridline registration<a class="headerlink" href="#gridline-registration" title="Permalink to this headline">¶</a></h3>
 <p>In this registration, the nodes are centered on the grid line
 intersections and the data points represent the average value in a cell
 of dimensions (<span class="math notranslate nohighlight">\(x_{inc} \cdot y_{inc}\)</span>) centered on each node
@@ -1396,7 +1395,7 @@ ny &amp; =  &amp;       (y_{max} - y_{min}) / y_{inc} + 1
 <p>which for the example in left side of Figure <a class="reference internal" href="#grid-registration"><span class="std std-ref">Gridline registration</span></a> yields nx = ny = 4.</p>
 </div>
 <div class="section" id="pixel-registration">
-<h3>5.18.2. Pixel registration<a class="headerlink" href="#pixel-registration" title="Permalink to this headline">¶</a></h3>
+<h3>4.18.2. Pixel registration<a class="headerlink" href="#pixel-registration" title="Permalink to this headline">¶</a></h3>
 <p>Here, the nodes are centered in the grid cells, i.e., the areas
 between grid lines, and the data points represent the average values
 within each cell (right side of Figure <a class="reference internal" href="#grid-registration"><span class="std std-ref">Grid registration</span></a>). In the case of
@@ -1418,7 +1417,7 @@ gridline-registered grids; here we find nx = ny = 3.</p>
 </div>
 </div>
 <div class="section" id="nan-record-treatment-the-s-option">
-<span id="option-s"></span><h2>5.19. NaN-record treatment: The <strong>-s</strong> option<a class="headerlink" href="#nan-record-treatment-the-s-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-s"></span><h2>4.19. NaN-record treatment: The <strong>-s</strong> option<a class="headerlink" href="#nan-record-treatment-the-s-option" title="Permalink to this headline">¶</a></h2>
 <p>We can use this option to suppress output for records whose <em>z</em>-value
 equals NaN (by default we output all records). Alternatively, append
 <strong>+r</strong> to reverse the suppression, i.e., only output the records whose
@@ -1428,7 +1427,7 @@ supply a comma-separated list of all columns or column ranges to
 consider (before the optional modifiers) for this NaN test.</p>
 </div>
 <div class="section" id="layer-transparency-the-t-option">
-<span id="option-t"></span><h2>5.20. Layer transparency: The <strong>-t</strong> option<a class="headerlink" href="#layer-transparency-the-t-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-t"></span><h2>4.20. Layer transparency: The <strong>-t</strong> option<a class="headerlink" href="#layer-transparency-the-t-option" title="Permalink to this headline">¶</a></h2>
 <p>While the PostScript language does not support transparency, PDF does,
 and via PostScript extensions one can manipulate the transparency
 levels of objects. The <strong>-t</strong> option allows you to change the
@@ -1441,7 +1440,7 @@ on a record-by-record basis if <strong>-t</strong> is given without argument and
 input file supplies variable transparencies as the last numerical column value.</p>
 </div>
 <div class="section" id="latitude-longitude-or-longitude-latitude-the-option">
-<span id="option-colon"></span><h2>5.21. Latitude/Longitude or Longitude/Latitude?: The <strong>-:</strong> option<a class="headerlink" href="#latitude-longitude-or-longitude-latitude-the-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-colon"></span><h2>4.21. Latitude/Longitude or Longitude/Latitude?: The <strong>-:</strong> option<a class="headerlink" href="#latitude-longitude-or-longitude-latitude-the-option" title="Permalink to this headline">¶</a></h2>
 <p>For geographical data, the first column is expected to contain
 longitudes and the second to contain latitudes. To reverse this
 expectation you must apply the <strong>-:</strong> option. Optionally, append <strong>i</strong>
@@ -1501,10 +1500,10 @@ context they are considered “other”. Thus, when we refer to
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="coordinate_transformations.html" class="btn btn-neutral float-right" title="6. GMT Coordinate Transformations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="coordinate_transformations.html" class="btn btn-neutral float-right" title="5. GMT Coordinate Transformations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="features.html" class="btn btn-neutral float-left" title="4. General Features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="features.html" class="btn btn-neutral float-left" title="3. General Features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -1516,7 +1515,7 @@ context they are considered “other”. Thus, when we refer to
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 07, 2019.
+        Last updated on Oct 09, 2019.
       </span>
 
     </p>

@@ -120,7 +120,7 @@
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight C API</a></li>
 </ul>
 
             
@@ -227,24 +227,24 @@ image the data. We use the CPT <code class="docutils literal notranslate"><span 
 <span class="c1"># Unix progs:	rm</span>
 <span class="c1">#</span>
 gmt begin ex12
-  <span class="c1"># Contour the data and draw triangles using dashed pen; use &quot;gmt gmtinfo&quot; and &quot;gmt makecpt&quot; to make a</span>
-  <span class="c1"># color palette (.cpt) file</span>
-  <span class="nv">T</span><span class="o">=</span><span class="sb">`</span>gmt info -T25+c2 @Table_5_11.txt<span class="sb">`</span>
-  gmt makecpt -Cjet <span class="nv">$T</span>
-  gmt subplot begin 2x2 -M0.05i -Fs3i/0 -SCb -SRl -R0/6.5/-0.2/6.5 -Jx3i -BWSne -T<span class="s2">&quot;Delaunay Triangulation&quot;</span>
-  <span class="c1"># First draw network and label the nodes</span>
-  gmt triangulate @Table_5_11.txt -M &gt; net.xy
-  gmt plot net.xy -Wthinner -c0,0
-  gmt plot @Table_5_11.txt -Sc0.12i -Gwhite -Wthinnest
-  gmt text @Table_5_11.txt -F+f6p+r
-  <span class="c1"># Then draw network and print the node values</span>
-  gmt plot net.xy -Wthinner -c0,1
-  gmt plot @Table_5_11.txt -Sc0.03i -Gblack
-  gmt text @Table_5_11.txt -F+f6p+jLM -Gwhite -W -C0.01i -D0.08i/0i -N
-  gmt contour @Table_5_11.txt -Wthin -C -Lthinnest,- -Gd1i -c1,0
-  <span class="c1"># Finally color the topography</span>
-  gmt contour @Table_5_11.txt -C -I -c1,1
-  gmt subplot end
+	<span class="c1"># Contour the data and draw triangles using dashed pen; use &quot;gmt gmtinfo&quot; and &quot;gmt makecpt&quot; to make a</span>
+	<span class="c1"># color palette (.cpt) file</span>
+	<span class="nv">T</span><span class="o">=</span><span class="sb">`</span>gmt info -T25+c2 @Table_5_11.txt<span class="sb">`</span>
+	gmt makecpt -Cjet <span class="nv">$T</span>
+	gmt subplot begin 2x2 -M0.05i -Fs3i/0 -SCb -SRl -R0/6.5/-0.2/6.5 -Jx3i -BWSne -T<span class="s2">&quot;Delaunay Triangulation&quot;</span>
+	<span class="c1"># First draw network and label the nodes</span>
+	gmt triangulate @Table_5_11.txt -M &gt; net.xy
+	gmt plot net.xy -Wthinner -c0,0
+	gmt plot @Table_5_11.txt -Sc0.12i -Gwhite -Wthinnest
+	gmt text @Table_5_11.txt -F+f6p+r
+	<span class="c1"># Then draw network and print the node values</span>
+	gmt plot net.xy -Wthinner -c0,1
+	gmt plot @Table_5_11.txt -Sc0.03i -Gblack
+	gmt text @Table_5_11.txt -F+f6p+jLM -Gwhite -W -C0.01i -D0.08i/0i -N
+	gmt contour @Table_5_11.txt -Wthin -C -Lthinnest,- -Gd1i -c1,0
+	<span class="c1"># Finally color the topography</span>
+	gmt contour @Table_5_11.txt -C -I -c1,1
+	gmt subplot end
 gmt end show
 <span class="c1">#</span>
 rm -f net.xy
@@ -279,7 +279,7 @@ rm -f net.xy
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 07, 2019.
+        Last updated on Oct 09, 2019.
       </span>
 
     </p>

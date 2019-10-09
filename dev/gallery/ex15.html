@@ -120,7 +120,7 @@
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight C API</a></li>
 </ul>
 
             
@@ -238,27 +238,27 @@ grid files using <a class="reference internal" href="../grdinfo.html"><span clas
 <span class="c1"># Unix progs:	rm</span>
 <span class="c1">#</span>
 gmt begin ex15
-  gmt convert @ship_15.txt -bo &gt; ship.b
-  <span class="nv">region</span><span class="o">=</span><span class="sb">`</span>gmt info ship.b -I1 -bi3d<span class="sb">`</span>
-  gmt subplot begin 2x2 -M0.1i/0.05i -Fs2.9i/0 <span class="nv">$region</span> -JM2.9i -BWSne -T<span class="s2">&quot;Gridding with missing data&quot;</span>
-<span class="c1">#   Raw nearest neighbor contouring</span>
-    gmt nearneighbor <span class="nv">$region</span> -I10m -S40k -Gship.nc ship.b -bi
-    gmt grdcontour ship.nc -JM -C250 -A1000 -Gd2i -c1,0
-<span class="c1">#   Grid via surface but mask out area with no data using coastlines</span>
-    gmt blockmedian ship.b -b3d &gt; ship_10m.b
-    gmt surface ship_10m.b -Gship.nc -bi
-    gmt mask -I10m ship.b -T -Glightgray -bi3d -c1,1
-    gmt grdcontour ship.nc -C250 -L-8000/0 -A1000 -Gd2i
-<span class="c1">#   Grid via surface but mask out area with no data</span>
-    gmt mask -I10m ship_10m.b -bi3d -c0,0
-    gmt grdcontour ship.nc -C250 -A1000 -L-8000/0 -Gd2i
-    gmt mask -C
-<span class="c1">#   Clip data above sealevel then overlay land</span>
-    gmt grdclip ship.nc -Sa-1/NaN -Gship_clipped.nc
-    gmt grdcontour ship_clipped.nc -C250 -A1000 -L-8000/0 -Gd2i -c0,1
-    gmt coast -Ggray -Wthinnest
-    gmt grdinfo -Cn -M ship.nc <span class="p">|</span> gmt plot -Sa0.15i -Wthick -i10,11
-  gmt subplot end
+	gmt convert @ship_15.txt -bo &gt; ship.b
+	<span class="nv">region</span><span class="o">=</span><span class="sb">`</span>gmt info ship.b -I1 -bi3d<span class="sb">`</span>
+	gmt subplot begin 2x2 -M0.1i/0.05i -Fs2.9i/0 <span class="nv">$region</span> -JM2.9i -BWSne -T<span class="s2">&quot;Gridding with missing data&quot;</span>
+		<span class="c1">#   Raw nearest neighbor contouring</span>
+		gmt nearneighbor <span class="nv">$region</span> -I10m -S40k -Gship.nc ship.b -bi
+		gmt grdcontour ship.nc -JM -C250 -A1000 -Gd2i -c1,0
+		<span class="c1">#   Grid via surface but mask out area with no data using coastlines</span>
+		gmt blockmedian ship.b -b3d &gt; ship_10m.b
+		gmt surface ship_10m.b -Gship.nc -bi
+		gmt mask -I10m ship.b -T -Glightgray -bi3d -c1,1
+		gmt grdcontour ship.nc -C250 -L-8000/0 -A1000 -Gd2i
+		<span class="c1">#   Grid via surface but mask out area with no data</span>
+		gmt mask -I10m ship_10m.b -bi3d -c0,0
+		gmt grdcontour ship.nc -C250 -A1000 -L-8000/0 -Gd2i
+		gmt mask -C
+		<span class="c1">#   Clip data above sealevel then overlay land</span>
+		gmt grdclip ship.nc -Sa-1/NaN -Gship_clipped.nc
+		gmt grdcontour ship_clipped.nc -C250 -A1000 -L-8000/0 -Gd2i -c0,1
+		gmt coast -Ggray -Wthinnest
+		gmt grdinfo -Cn -M ship.nc <span class="p">|</span> gmt plot -Sa0.15i -Wthick -i10,11
+	gmt subplot end
 gmt end show
 rm -f ship.b ship_10m.b ship.nc ship_clipped.nc
 </pre></div>
@@ -292,7 +292,7 @@ rm -f ship.b ship_10m.b ship.nc ship_clipped.nc
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 07, 2019.
+        Last updated on Oct 09, 2019.
       </span>
 
     </p>

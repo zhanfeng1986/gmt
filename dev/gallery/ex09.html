@@ -120,7 +120,7 @@
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight C API</a></li>
 </ul>
 
             
@@ -237,7 +237,7 @@ gap between the profile and the label:</p>
 <span class="c1">#</span>
 gmt begin ex09
 	gmt wiggle @tracks_09.txt -R185/250/-68/-42 -Jm0.13i -B -BWSne+g240/255/240 -Gred+p <span class="se">\</span>
-	-Gblue+n -Z2000 -Wthinnest -DjBR+w500+l@~m@~rad+o0.2i --FORMAT_GEO_MAP<span class="o">=</span>dddF
+		-Gblue+n -Z2000 -Wthinnest -DjBR+w500+l@~m@~rad+o0.2i --FORMAT_GEO_MAP<span class="o">=</span>dddF
 	gmt plot @ridge_09.txt -Wthicker
 	gmt plot @fz_09.txt -Wthinner,-
 	<span class="c1"># Take label from segment header and plot near coordinates of last record of each track</span>
@@ -276,7 +276,7 @@ tracks in the Eltanin and Udintsev fracture zone region in a Mercator projection
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 07, 2019.
+        Last updated on Oct 09, 2019.
       </span>
 
     </p>

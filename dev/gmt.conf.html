@@ -120,7 +120,7 @@
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight C API</a></li>
 </ul>
 
             
@@ -535,6 +535,13 @@ information) [%Y %b %d %H:%M:%S].</dd>
 files from the remote server selected via <strong>GMT_DATA_SERVER</strong>.  Default
 is <em>on</em> but you can turn this off by setting it to <em>off</em>.</dd>
 </dl>
+<dl class="docutils" id="gmt-compatibility">
+<dt><strong>GMT_COMPATIBILITY</strong></dt>
+<dd>Determines if this GMT version should be able to parse command-line
+options for a prior major release.  Specify either 4 or 5. If 4 is
+set we will parse obsolete GMT 4 options and issue warnings; if 5
+is set then parsing GMT 4 only syntax will result in errors [4].</dd>
+</dl>
 <dl class="docutils" id="gmt-data-server">
 <dt><strong>GMT_DATA_SERVER</strong></dt>
 <dd>Address of the data directory on the remote server [The SOEST server].</dd>
@@ -544,13 +551,6 @@ is <em>on</em> but you can turn this off by setting it to <em>off</em>.</dd>
 <dd>Upper limit on the size of remote file to download [unlimited].  Give
 the maximum file size in bytes, or append k, m, or g for kilo-, mega-,
 or giga-bytes.</dd>
-</dl>
-<dl class="docutils" id="gmt-compatibility">
-<dt><strong>GMT_COMPATIBILITY</strong></dt>
-<dd>Determines if this GMT version should be able to parse command-line
-options for a prior major release.  Specify either 4 or 5. If 4 is
-set we will parse obsolete GMT 4 options and issue warnings; if 5
-is set then parsing GMT 4 only syntax will result in errors [4].</dd>
 </dl>
 <dl class="docutils" id="gmt-export-type">
 <dt><strong>GMT_EXPORT_TYPE</strong></dt>
@@ -1422,7 +1422,7 @@ correspond to 1800 through 1828. [1950].</dd>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 07, 2019.
+        Last updated on Oct 09, 2019.
       </span>
 
     </p>

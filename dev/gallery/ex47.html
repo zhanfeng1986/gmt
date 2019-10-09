@@ -120,7 +120,7 @@
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">GMT C API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight C API</a></li>
 </ul>
 
             
@@ -226,39 +226,39 @@ four red giants that are outlying with respect to the main trend.</p>
 <span class="c1"># one panel.  It takes a few options that differ between panels.</span>
 
 <span class="k">function</span> plot_one <span class="o">{</span> <span class="c1"># First 3-4 args are: -E -N -c [-Barg]</span>
-  gmt plot -B+ghoneydew<span class="si">${</span><span class="nv">4</span><span class="si">}</span> data.txt -Sc0.05i -Gblue <span class="nv">$3</span>
-  gmt plot giants.txt -Sc0.05i -Gred   -N
-  gmt plot giants.txt -Sc0.1i  -W0.25p -N
-  gmt regress data.txt -Fxm <span class="nv">$1</span> <span class="nv">$2</span> -T2.85/5.25/0.1 <span class="p">|</span> gmt plot -W2p
+	gmt plot -B+ghoneydew<span class="si">${</span><span class="nv">4</span><span class="si">}</span> data.txt -Sc0.05i -Gblue <span class="nv">$3</span>
+	gmt plot giants.txt -Sc0.05i -Gred   -N
+	gmt plot giants.txt -Sc0.1i  -W0.25p -N
+	gmt regress data.txt -Fxm <span class="nv">$1</span> <span class="nv">$2</span> -T2.85/5.25/0.1 <span class="p">|</span> gmt plot -W2p
 <span class="o">}</span>
 
 gmt begin ex47
-  <span class="nv">file</span><span class="o">=</span><span class="sb">`</span>gmt which -G @hertzsprung-russell.txt<span class="sb">`</span>
-  <span class="c1"># Allow outliers (commented out by #) to be included in the analysis:</span>
-  sed -e s/#//g <span class="nv">$file</span> &gt; data.txt
-  <span class="c1"># Identify the red giants (outliers)</span>
-  grep <span class="s1">&#39;#&#39;</span> <span class="nv">$file</span> <span class="p">|</span> sed -e s/#//g &gt; giants.txt
-  gmt subplot begin 4x3 -M0p -Fs2i/2i -R2.85/5.25/3.9/6.3 -JX-2i/2i -SRl+l<span class="s2">&quot;Log light intensity&quot;</span> -SCb+l<span class="s2">&quot;Log temperature&quot;</span>+tc -Bwesn -Bafg
-  <span class="c1"># L1 regressions</span>
-  plot_one -Ey -N1 -c0,0 +tL@-1@-
-  plot_one -Er -N1 -c1,0
-  plot_one -Eo -N1 -c2,0
-  plot_one -Ex -N1 -c3,0
-  <span class="c1">#L2 regressions</span>
-  plot_one -Er -N2 -c0,1 +tL@-2@-
-  plot_one -Eo -N2 -c1,1
-  plot_one -Ex -N2 -c2,1
-  plot_one -Ey -N2 -c3,1
-  <span class="c1">#LMS regressions - also add labels on right side</span>
-  plot_one -Er -Nr -c0,2 +tLMS
-  gmt text -F+cRM+jTC+a90+t<span class="s2">&quot;Y ON X&quot;</span> -N -Dj0.2i
-  plot_one -Eo -Nr -c1,2
-  gmt text -F+cRM+jTC+a90+t<span class="s2">&quot;X ON Y&quot;</span> -N -Dj0.2i
-  plot_one -Ex -Nr -c2,2
-  gmt text -F+cRM+jTC+a90+tORTHOGONAL -N -Dj0.2i
-  plot_one -Ey -Nr -c3,2
-  gmt text -F+cRM+jTC+a90+t<span class="s2">&quot;REDUCED MAJOR AXIS&quot;</span> -N -Dj0.2i
-  gmt subplot end
+	<span class="nv">file</span><span class="o">=</span><span class="sb">`</span>gmt which -G @hertzsprung-russell.txt<span class="sb">`</span>
+	<span class="c1"># Allow outliers (commented out by #) to be included in the analysis:</span>
+	sed -e s/#//g <span class="nv">$file</span> &gt; data.txt
+	<span class="c1"># Identify the red giants (outliers)</span>
+	grep <span class="s1">&#39;#&#39;</span> <span class="nv">$file</span> <span class="p">|</span> sed -e s/#//g &gt; giants.txt
+	gmt subplot begin 4x3 -M0p -Fs2i/2i -R2.85/5.25/3.9/6.3 -JX-2i/2i -SRl+l<span class="s2">&quot;Log light intensity&quot;</span> -SCb+l<span class="s2">&quot;Log temperature&quot;</span>+tc -Bwesn -Bafg
+	<span class="c1"># L1 regressions</span>
+	plot_one -Ey -N1 -c0,0 +tL@-1@-
+	plot_one -Er -N1 -c1,0
+	plot_one -Eo -N1 -c2,0
+	plot_one -Ex -N1 -c3,0
+	<span class="c1">#L2 regressions</span>
+	plot_one -Er -N2 -c0,1 +tL@-2@-
+	plot_one -Eo -N2 -c1,1
+	plot_one -Ex -N2 -c2,1
+	plot_one -Ey -N2 -c3,1
+	<span class="c1">#LMS regressions - also add labels on right side</span>
+	plot_one -Er -Nr -c0,2 +tLMS
+	gmt text -F+cRM+jTC+a90+t<span class="s2">&quot;Y ON X&quot;</span> -N -Dj0.2i
+	plot_one -Eo -Nr -c1,2
+	gmt text -F+cRM+jTC+a90+t<span class="s2">&quot;X ON Y&quot;</span> -N -Dj0.2i
+	plot_one -Ex -Nr -c2,2
+	gmt text -F+cRM+jTC+a90+tORTHOGONAL -N -Dj0.2i
+	plot_one -Ey -Nr -c3,2
+	gmt text -F+cRM+jTC+a90+t<span class="s2">&quot;REDUCED MAJOR AXIS&quot;</span> -N -Dj0.2i
+	gmt subplot end
 gmt end show
 rm -f data.txt giants.txt hertzsprung-russell.txt
 </pre></div>
@@ -292,7 +292,7 @@ rm -f data.txt giants.txt hertzsprung-russell.txt
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 07, 2019.
+        Last updated on Oct 09, 2019.
       </span>
 
     </p>
