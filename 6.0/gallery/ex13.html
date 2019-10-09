@@ -228,17 +228,17 @@ the components of the gradient in separate windows. A
 <span class="c1"># Unix progs:	rm</span>
 <span class="c1">#</span>
 gmt begin ex13
-  gmt <span class="nb">set</span> FONT_HEADING 40p,Times-Italic
-  gmt grdmath -R-2/2/-2/2 -I0.1 X Y R2 NEG EXP X <span class="nv">MUL</span> <span class="o">=</span> z.nc
-  gmt grdmath z.nc <span class="nv">DDX</span> <span class="o">=</span> dzdx.nc
-  gmt grdmath z.nc <span class="nv">DDY</span> <span class="o">=</span> dzdy.nc
-  gmt subplot begin 2x2 -M0.05i -Ff6i/6i -BWSne -T<span class="s2">&quot;z(x,y) = x@~\327@~exp(-x@+2@+-y@+2@+)&quot;</span>
-    gmt grdcontour z.nc -C0.05 -A0.1 -Gd2i -S4 -T+d0.1i/0.03i -c0,0
-    gmt grdcontour z.nc -C0.05 -Gd2i -S4 -c0,1
-    gmt grdvector dzdx.nc dzdy.nc -I0.2 -Q0.1i+e+n0.25i+h0.5 -Gblack -W1p -S5i
-    gmt grdcontour dzdx.nc -C0.1  -A0.5 -Gd2i -S4 -T+d0.1i/0.03i -c1,0
-    gmt grdcontour dzdy.nc -C0.05 -A0.2 -Gd2i -S4 -T+d0.1i/0.03i -c1,1
-  gmt subplot end
+	gmt <span class="nb">set</span> FONT_HEADING 40p,Times-Italic
+	gmt grdmath -R-2/2/-2/2 -I0.1 X Y R2 NEG EXP X <span class="nv">MUL</span> <span class="o">=</span> z.nc
+	gmt grdmath z.nc <span class="nv">DDX</span> <span class="o">=</span> dzdx.nc
+	gmt grdmath z.nc <span class="nv">DDY</span> <span class="o">=</span> dzdy.nc
+	gmt subplot begin 2x2 -M0.05i -Ff6i/6i -BWSne -T<span class="s2">&quot;z(x,y) = x@~\327@~exp(-x@+2@+-y@+2@+)&quot;</span>
+		gmt grdcontour z.nc -C0.05 -A0.1 -Gd2i -S4 -T+d0.1i/0.03i -c0,0
+		gmt grdcontour z.nc -C0.05 -Gd2i -S4 -c0,1
+		gmt grdvector dzdx.nc dzdy.nc -I0.2 -Q0.1i+e+n0.25i+h0.5 -Gblack -W1p -S5i
+		gmt grdcontour dzdx.nc -C0.1  -A0.5 -Gd2i -S4 -T+d0.1i/0.03i -c1,0
+		gmt grdcontour dzdy.nc -C0.05 -A0.2 -Gd2i -S4 -T+d0.1i/0.03i -c1,1
+	gmt subplot end
 gmt end show
 rm -f z.nc dzdx.nc dzdy.nc
 </pre></div>
@@ -272,7 +272,7 @@ rm -f z.nc dzdx.nc dzdy.nc
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 07, 2019.
+        Last updated on Oct 09, 2019.
       </span>
 
     </p>

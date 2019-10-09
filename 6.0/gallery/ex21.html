@@ -277,8 +277,7 @@ gmt begin ex21
 	<span class="nb">echo</span> <span class="s2">&quot;01-Jan-08	23.8852&quot;</span> &gt;&gt; RHAT.pw
 	gmt plot RHAT.pw -Wthick,-
 	gmt <span class="nb">set</span> FORMAT_DATE_IN yyyy-mm-dd
-	<span class="nb">echo</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">wesn</span><span class="p">[1]</span><span class="si">}</span><span class="s2"> 23.8852 PW sell&quot;</span> <span class="p">|</span> gmt text -Dj0.8i/0.05i -N <span class="se">\</span>
-		-F+f12p,Bookman-Demi+jRB
+	<span class="nb">echo</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">wesn</span><span class="p">[1]</span><span class="si">}</span><span class="s2"> 23.8852 PW sell&quot;</span> <span class="p">|</span> gmt text -Dj0.8i/0.05i -N -F+f12p,Bookman-Demi+jRB
 	gmt <span class="nb">set</span> FORMAT_DATE_IN dd-o-yy
 
 	<span class="c1"># Get smaller region for inset for trend since 2004</span>
@@ -336,7 +335,7 @@ Internet bubble…</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 07, 2019.
+        Last updated on Oct 09, 2019.
       </span>
 
     </p>

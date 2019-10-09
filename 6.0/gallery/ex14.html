@@ -237,31 +237,31 @@ transect using <a class="reference internal" href="../plot.html"><span class="do
 <span class="c1"># Unix progs:	rm</span>
 <span class="c1">#</span>
 gmt begin ex14
-  gmt <span class="nb">set</span> MAP_GRID_PEN_PRIMARY thinnest,-
-  <span class="c1"># calculate mean data and grids</span>
-  gmt blockmean @Table_5_11.txt -R0/7/0/7 -I1 &gt; mean.xyz
-  gmt surface mean.xyz -Gdata.nc
-  gmt grdtrend data.nc -N10 -Ttrend.nc
-  gmt project -C0/0 -E7/7 -G0.1 -N &gt; track
-  <span class="c1"># Sample along diagonal</span>
-  gmt grdtrack track -Gdata.nc -o2,3 &gt; data.d
-  gmt grdtrack track -Gtrend.nc -o2,3 &gt; trend.d
-  gmt plot -Ra -JX6i/1.4i data.d -Wthick -Bx1 -By50 -BWSne
-  gmt plot trend.d -Wthinner,-
-  gmt subplot begin 2x2 -M0.05i -Ff6i/6i -BWSne -Yh+0.4i
-    <span class="c1"># First draw network and label the nodes</span>
-    gmt plot @Table_5_11.txt -R0/7/0/7 -Sc0.05i -Gblack -c0,0
-    gmt text @Table_5_11.txt -D0.1c/0 -F+f6p+jLM -N
-    <span class="c1"># Then draw gmt blockmean cells and label data values using one decimal</span>
-    gmt plot mean.xyz -Ss0.05i -Gblack -c0,1
-    gmt text -D0.15c/0 -F+f6p+jLM+z%.1f -Gwhite -W -C0.01i -N mean.xyz
-    <span class="c1"># Then gmt surface and contour the data</span>
-    gmt grdcontour data.nc -C25 -A50 -Gd3i -S4 -c1,0
-    gmt plot mean.xyz -Ss0.05i -Gblack
-    <span class="c1"># Fit bicubic trend to data and compare to gridded gmt surface</span>
-    gmt grdcontour trend.nc -C25 -A50 -Glct/cb -S4 -c1,1
-    gmt plot track -Wthick,.
-  gmt subplot end
+	gmt <span class="nb">set</span> MAP_GRID_PEN_PRIMARY thinnest,-
+	<span class="c1"># calculate mean data and grids</span>
+	gmt blockmean @Table_5_11.txt -R0/7/0/7 -I1 &gt; mean.xyz
+	gmt surface mean.xyz -Gdata.nc
+	gmt grdtrend data.nc -N10 -Ttrend.nc
+	gmt project -C0/0 -E7/7 -G0.1 -N &gt; track
+	<span class="c1"># Sample along diagonal</span>
+	gmt grdtrack track -Gdata.nc -o2,3 &gt; data.d
+	gmt grdtrack track -Gtrend.nc -o2,3 &gt; trend.d
+	gmt plot -Ra -JX6i/1.4i data.d -Wthick -Bx1 -By50 -BWSne
+	gmt plot trend.d -Wthinner,-
+	gmt subplot begin 2x2 -M0.05i -Ff6i/6i -BWSne -Yh+0.4i
+		<span class="c1"># First draw network and label the nodes</span>
+		gmt plot @Table_5_11.txt -R0/7/0/7 -Sc0.05i -Gblack -c0,0
+		gmt text @Table_5_11.txt -D0.1c/0 -F+f6p+jLM -N
+		<span class="c1"># Then draw gmt blockmean cells and label data values using one decimal</span>
+		gmt plot mean.xyz -Ss0.05i -Gblack -c0,1
+		gmt text -D0.15c/0 -F+f6p+jLM+z%.1f -Gwhite -W -C0.01i -N mean.xyz
+		<span class="c1"># Then gmt surface and contour the data</span>
+		gmt grdcontour data.nc -C25 -A50 -Gd3i -S4 -c1,0
+		gmt plot mean.xyz -Ss0.05i -Gblack
+		<span class="c1"># Fit bicubic trend to data and compare to gridded gmt surface</span>
+		gmt grdcontour trend.nc -C25 -A50 -Glct/cb -S4 -c1,1
+		gmt plot track -Wthick,.
+	gmt subplot end
 gmt end show
 rm -f mean.xyz track trend.nc data.nc data.d trend.d
 </pre></div>
@@ -295,7 +295,7 @@ rm -f mean.xyz track trend.nc data.nc data.d trend.d
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 07, 2019.
+        Last updated on Oct 09, 2019.
       </span>
 
     </p>

@@ -220,37 +220,37 @@ Mauna Loa.  This yields the famous Keeling curve.</p>
 <span class="c1">#</span>
 
 gmt begin ex45
-  gmt <span class="nb">set</span> FONT_HEADING 24p
-  gmt subplot begin 4x1 -Fs6i/1.9i -R1958/2016/310/410 -Bxaf -Byaf+u<span class="s2">&quot; ppm&quot;</span> -BWSne+gazure1 -T<span class="s2">&quot;The Keeling Curve [CO@-2@- at Mauna Loa]&quot;</span>
+	gmt <span class="nb">set</span> FONT_HEADING 24p
+	gmt subplot begin 4x1 -Fs6i/1.9i -R1958/2016/310/410 -Bxaf -Byaf+u<span class="s2">&quot; ppm&quot;</span> -BWSne+gazure1 -T<span class="s2">&quot;The Keeling Curve [CO@-2@- at Mauna Loa]&quot;</span>
 
-    <span class="c1"># Basic LS line y = a + bx</span>
-    gmt subplot <span class="nb">set</span> <span class="m">3</span>
-    gmt trend1d -Fxm @MaunaLoa_CO2.txt -Np1 &gt; model.txt
-    gmt plot -Sc0.05c -Gred @MaunaLoa_CO2.txt
-    gmt plot -W0.5p,blue model.txt
-    gmt text -F+f12p+cTL+t<span class="s2">&quot;m@-2@-(t) = a + b\264t&quot;</span> -Dj0.1i -Glightyellow
+		<span class="c1"># Basic LS line y = a + bx</span>
+		gmt subplot <span class="nb">set</span> <span class="m">3</span>
+		gmt trend1d -Fxm @MaunaLoa_CO2.txt -Np1 &gt; model.txt
+		gmt plot -Sc0.05c -Gred @MaunaLoa_CO2.txt
+		gmt plot -W0.5p,blue model.txt
+		gmt text -F+f12p+cTL+t<span class="s2">&quot;m@-2@-(t) = a + b\264t&quot;</span> -Dj0.1i -Glightyellow
 
-    <span class="c1"># Basic LS line y = a + bx + cx^2</span>
-    gmt subplot <span class="nb">set</span> <span class="m">2</span>
-    gmt trend1d -Fxm @MaunaLoa_CO2.txt -Np2 &gt; model.txt
-    gmt plot -Sc0.05c -Gred @MaunaLoa_CO2.txt
-    gmt plot -W0.5p,blue model.txt
-    gmt text -F+f12p+cTL+t<span class="s2">&quot;m@-3@-(t) = a + b\264t + c\264t@+2@+&quot;</span> -Dj0.1i -Glightyellow
+		<span class="c1"># Basic LS line y = a + bx + cx^2</span>
+		gmt subplot <span class="nb">set</span> <span class="m">2</span>
+		gmt trend1d -Fxm @MaunaLoa_CO2.txt -Np2 &gt; model.txt
+		gmt plot -Sc0.05c -Gred @MaunaLoa_CO2.txt
+		gmt plot -W0.5p,blue model.txt
+		gmt text -F+f12p+cTL+t<span class="s2">&quot;m@-3@-(t) = a + b\264t + c\264t@+2@+&quot;</span> -Dj0.1i -Glightyellow
 
-    <span class="c1"># Basic LS line y = a + bx + cx^2 + seasonal change</span>
-    gmt subplot <span class="nb">set</span> <span class="m">1</span>
-    gmt trend1d -Fxmr @MaunaLoa_CO2.txt -Np2,f1+o1958+l1 &gt; model.txt
-    gmt plot -Sc0.05c -Gred @MaunaLoa_CO2.txt
-    gmt plot -W0.25p,blue model.txt
-    gmt text -F+f12p+cTL+t<span class="s2">&quot;m@-5@-(t) = a + b\264t + c\264t@+2@+ + d\264cos(2@~p@~t) + e\264sin(2@~p@~t)&quot;</span> -Dj0.1i -Glightyellow
+		<span class="c1"># Basic LS line y = a + bx + cx^2 + seasonal change</span>
+		gmt subplot <span class="nb">set</span> <span class="m">1</span>
+		gmt trend1d -Fxmr @MaunaLoa_CO2.txt -Np2,f1+o1958+l1 &gt; model.txt
+		gmt plot -Sc0.05c -Gred @MaunaLoa_CO2.txt
+		gmt plot -W0.25p,blue model.txt
+		gmt text -F+f12p+cTL+t<span class="s2">&quot;m@-5@-(t) = a + b\264t + c\264t@+2@+ + d\264cos(2@~p@~t) + e\264sin(2@~p@~t)&quot;</span> -Dj0.1i -Glightyellow
 
-    <span class="c1"># Plot residuals of last model</span>
-    gmt subplot <span class="nb">set</span> <span class="m">0</span>
-    gmt plot -R1958/2016/-4/4 -Byafg10+u<span class="s2">&quot; ppm&quot;</span> -Sc0.05c -Gred model.txt -i0,2
-    gmt text -F+f12p+cTL+t<span class="s2">&quot;@~e@~(t) = y(t) - m@-5@-(t)&quot;</span> -Dj0.1i -Glightyellow
+		<span class="c1"># Plot residuals of last model</span>
+		gmt subplot <span class="nb">set</span> <span class="m">0</span>
+		gmt plot -R1958/2016/-4/4 -Byafg10+u<span class="s2">&quot; ppm&quot;</span> -Sc0.05c -Gred model.txt -i0,2
+		gmt text -F+f12p+cTL+t<span class="s2">&quot;@~e@~(t) = y(t) - m@-5@-(t)&quot;</span> -Dj0.1i -Glightyellow
 
-  gmt subplot end
-  rm -f model.txt
+	gmt subplot end
+	rm -f model.txt
 gmt end show
 </pre></div>
 </div>
@@ -283,7 +283,7 @@ gmt end show
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 07, 2019.
+        Last updated on Oct 09, 2019.
       </span>
 
     </p>

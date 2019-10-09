@@ -253,8 +253,7 @@ gmt begin ex27
 	<span class="c1"># Then use gmt coast to plot land; get original -R from grid img remark</span>
 	<span class="c1"># and use Mercator gmt projection with same scale as above on a spherical Earth</span>
 	<span class="nv">R</span><span class="o">=</span><span class="sb">`</span>gmt grdinfo @tasman_grav.nc -Ii<span class="sb">`</span>
-	gmt coast <span class="nv">$R</span> -Jm0.25i -Ba10f5 -BWSne -Gblack --PROJ_ELLIPSOID<span class="o">=</span>Sphere <span class="se">\</span>
-		-Cwhite -Dh+ --FORMAT_GEO_MAP<span class="o">=</span>dddF
+	gmt coast <span class="nv">$R</span> -Jm0.25i -Ba10f5 -BWSne -Gblack --PROJ_ELLIPSOID<span class="o">=</span>Sphere -Cwhite -Dh+ --FORMAT_GEO_MAP<span class="o">=</span>dddF
 
 	<span class="c1"># Put a color legend in top-left corner of the land mask</span>
 	gmt colorbar -DjTL+o1c+w2i/0.15i -Bx50f10 -By+lmGal -I -F+gwhite+p1p
@@ -297,7 +296,7 @@ directly - your only option under DOS</td></tr>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 07, 2019.
+        Last updated on Oct 09, 2019.
       </span>
 
     </p>

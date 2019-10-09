@@ -236,39 +236,39 @@ imaged with <a class="reference internal" href="../grdimage.html"><span class="d
 <span class="c1"># Unix progs:   echo, rm</span>
 <span class="c1">#</span>
 gmt begin ex29
-  <span class="c1"># This example uses 370 radio occultation data for Mars to grid the topography.</span>
-  <span class="c1"># Data and information from Smith, D. E., and M. T. Zuber (1996), The shape of</span>
-  <span class="c1"># Mars and the topographic signature of the hemispheric dichotomy, Science, 271, 184-187.</span>
+	<span class="c1"># This example uses 370 radio occultation data for Mars to grid the topography.</span>
+	<span class="c1"># Data and information from Smith, D. E., and M. T. Zuber (1996), The shape of</span>
+	<span class="c1"># Mars and the topographic signature of the hemispheric dichotomy, Science, 271, 184-187.</span>
 
-  <span class="c1"># Make Mars PROJ_ELLIPSOID given their three best-fitting axes:</span>
-  <span class="nv">a</span><span class="o">=</span><span class="m">3399</span>.472
-  <span class="nv">b</span><span class="o">=</span><span class="m">3394</span>.329
-  <span class="nv">c</span><span class="o">=</span><span class="m">3376</span>.502
-  gmt grdmath -Rg -I4 -r X COSD <span class="nv">$a</span> DIV DUP MUL X SIND <span class="nv">$b</span> DIV DUP MUL ADD Y COSD DUP MUL MUL Y <span class="se">\</span>
-      SIND <span class="nv">$c</span> DIV DUP MUL ADD SQRT <span class="nv">INV</span> <span class="o">=</span> PROJ_ELLIPSOID.nc
+	<span class="c1"># Make Mars PROJ_ELLIPSOID given their three best-fitting axes:</span>
+	<span class="nv">a</span><span class="o">=</span><span class="m">3399</span>.472
+	<span class="nv">b</span><span class="o">=</span><span class="m">3394</span>.329
+	<span class="nv">c</span><span class="o">=</span><span class="m">3376</span>.502
+	gmt grdmath -Rg -I4 -r X COSD <span class="nv">$a</span> DIV DUP MUL X SIND <span class="nv">$b</span> DIV DUP MUL ADD Y COSD DUP MUL MUL Y <span class="se">\</span>
+			SIND <span class="nv">$c</span> DIV DUP MUL ADD SQRT <span class="nv">INV</span> <span class="o">=</span> PROJ_ELLIPSOID.nc
 
-  <span class="c1">#  Do both Parker and Wessel/Becker solutions (tension = 0.9975)</span>
-  gmt greenspline -RPROJ_ELLIPSOID.nc @mars370.txt -D4 -Sp -Gmars.nc
-  gmt greenspline -RPROJ_ELLIPSOID.nc @mars370.txt -D4 -Sq0.9975 -Gmars2.nc
-  <span class="c1"># Scale to km and remove PROJ_ELLIPSOID</span>
-  gmt grdmath mars.nc <span class="m">1000</span> DIV PROJ_ELLIPSOID.nc <span class="nv">SUB</span> <span class="o">=</span> mars.nc
-  gmt grdmath mars2.nc <span class="m">1000</span> DIV PROJ_ELLIPSOID.nc <span class="nv">SUB</span> <span class="o">=</span> mars2.nc
+	<span class="c1">#  Do both Parker and Wessel/Becker solutions (tension = 0.9975)</span>
+	gmt greenspline -RPROJ_ELLIPSOID.nc @mars370.txt -D4 -Sp -Gmars.nc
+	gmt greenspline -RPROJ_ELLIPSOID.nc @mars370.txt -D4 -Sq0.9975 -Gmars2.nc
+	<span class="c1"># Scale to km and remove PROJ_ELLIPSOID</span>
+	gmt grdmath mars.nc <span class="m">1000</span> DIV PROJ_ELLIPSOID.nc <span class="nv">SUB</span> <span class="o">=</span> mars.nc
+	gmt grdmath mars2.nc <span class="m">1000</span> DIV PROJ_ELLIPSOID.nc <span class="nv">SUB</span> <span class="o">=</span> mars2.nc
 
-  gmt <span class="nb">set</span> FONT_TAG 14p,Helvetica-Bold
-  gmt subplot begin 2x1 -Fs7i/0 -Rg -JH0/7i -B30g30 -BWsne -A -M0.25i
-    gmt subplot <span class="nb">set</span> <span class="m">0</span>
-    gmt grdimage mars.nc -I+ne0.75+a45 --FONT_ANNOT_PRIMARY<span class="o">=</span>12p
-    gmt grdcontour mars.nc -C1 -A5 -Glz+/z-
-    gmt plot -Sc0.045i -Gblack @mars370.txt
-    gmt colorbar -DJBC+o0/0.15i+w6i/0.1i -I --FONT_ANNOT_PRIMARY<span class="o">=</span>12p -Bx2f1 -By+lkm
+	gmt <span class="nb">set</span> FONT_TAG 14p,Helvetica-Bold
+	gmt subplot begin 2x1 -Fs7i/0 -Rg -JH0/7i -B30g30 -BWsne -A -M0.25i
+		gmt subplot <span class="nb">set</span> <span class="m">0</span>
+		gmt grdimage mars.nc -I+ne0.75+a45 --FONT_ANNOT_PRIMARY<span class="o">=</span>12p
+		gmt grdcontour mars.nc -C1 -A5 -Glz+/z-
+		gmt plot -Sc0.045i -Gblack @mars370.txt
+		gmt colorbar -DJBC+o0/0.15i+w6i/0.1i -I --FONT_ANNOT_PRIMARY<span class="o">=</span>12p -Bx2f1 -By+lkm
 
-    gmt subplot <span class="nb">set</span> <span class="m">1</span>
-    gmt makecpt -Crainbow -T-7/15
-    gmt grdimage mars2.nc -I+ne0.75+a45 --FONT_ANNOT_PRIMARY<span class="o">=</span>12p
-    gmt grdcontour mars2.nc -C1 -A5 -Glz+/z-
-    gmt plot -Sc0.045i -Gblack @mars370.txt
-  gmt subplot end
-  rm -f mars.nc mars2.nc PROJ_ELLIPSOID.nc
+		gmt subplot <span class="nb">set</span> <span class="m">1</span>
+		gmt makecpt -Crainbow -T-7/15
+		gmt grdimage mars2.nc -I+ne0.75+a45 --FONT_ANNOT_PRIMARY<span class="o">=</span>12p
+		gmt grdcontour mars2.nc -C1 -A5 -Glz+/z-
+		gmt plot -Sc0.045i -Gblack @mars370.txt
+	gmt subplot end
+	rm -f mars.nc mars2.nc PROJ_ELLIPSOID.nc
 gmt end show
 </pre></div>
 </div>
@@ -301,7 +301,7 @@ gmt end show
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 07, 2019.
+        Last updated on Oct 09, 2019.
       </span>
 
     </p>
