@@ -421,6 +421,11 @@ of uses that are common but cannot be run verbatim as written.</p>
 <p>Note: Since many GMT plot examples are very short (i.e., one module call between the
 <strong>gmt begin</strong> and <strong>gmt end</strong> commands), we will often present them using the quick
 modern mode <a class="reference internal" href="cookbook/one-liner.html"><span class="doc">GMT Modern Mode One-line Commands</span></a> syntax, which simplifies such short scripts.</p>
+<p>To demonstrate a basic wiggle plot we create some synthetic data with
+<a class="reference internal" href="gmtmath.html"><span class="doc">gmtmath</span></a> and pipe it through <strong>wiggle</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math -T-8/6/0.01 -N3/0 -C2 T <span class="m">3</span> DIV <span class="m">2</span> POW NEG EXP T PI <span class="m">2</span> MUL MUL COS MUL <span class="m">50</span> <span class="nv">MUL</span> <span class="o">=</span> <span class="p">|</span> gmt wiggle -R-10/10/-3/3 -JM6i -B -Z100i -DjRM+w100+lnT -Tfaint -Gred+p -W1p -BWSne -pdf map
+</pre></div>
+</div>
 <p>To plot the magnetic anomaly stored in the file track.xym along track &#64;
 500 nTesla/cm (after removing a mean value of 32000 nTesla), using a
 15-cm-wide Polar Stereographic map ticked every 5 degrees in Portrait

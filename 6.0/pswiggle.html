@@ -437,6 +437,11 @@ The examples that use remote files (file names starting with <code class="docuti
 can be cut and pasted into your terminal for testing.
 Other commands requiring input files are just dummy examples of the types
 of uses that are common but cannot be run verbatim as written.</p>
+<p>To demonstrate a basic wiggle plot we create some synthetic data with
+<a class="reference internal" href="gmtmath.html"><span class="doc">gmtmath</span></a> and pipe it through <strong>pswiggle</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math -T-8/6/0.01 -N3/0 -C2 T <span class="m">3</span> DIV <span class="m">2</span> POW NEG EXP T PI <span class="m">2</span> MUL MUL COS MUL <span class="m">50</span> <span class="nv">MUL</span> <span class="o">=</span> <span class="p">|</span> gmt pswiggle -R-10/10/-3/3 -JM6i -Baf -Z100i -DjRM+w100+lnT -Tfaint -Gred+p -W1p -BWSne -P &gt; map.ps
+</pre></div>
+</div>
 <p>To plot the magnetic anomaly stored in the file track.xym along track &#64;
 500 nTesla/cm (after removing a mean value of 32000 nTesla), using a
 15-cm-wide Polar Stereographic map ticked every 5 degrees in Portrait
