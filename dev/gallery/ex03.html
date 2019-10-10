@@ -211,8 +211,7 @@
 <p>In this example we will show how to use the GMT programs
 <a class="reference internal" href="../fitcircle.html"><span class="doc">fitcircle</span></a>, <a class="reference internal" href="../project.html"><span class="doc">project</span></a>,
 <a class="reference internal" href="../sample1d.html"><span class="doc">sample1d</span></a>, <a class="reference internal" href="../spectrum1d.html"><span class="doc">spectrum1d</span></a>,
-<a class="reference internal" href="../plot.html"><span class="doc">plot</span></a>, and
-<a class="reference internal" href="../text.html"><span class="doc">text</span></a>. Suppose you have (lon, lat,
+and <a class="reference internal" href="../plot.html"><span class="doc">plot</span></a>. Suppose you have (lon, lat,
 gravity) along a satellite track in a file called <code class="docutils literal notranslate"><span class="pre">sat.xyg</span></code>, and (lon, lat,
 gravity) along a ship track in a file called <code class="docutils literal notranslate"><span class="pre">ship.xyg</span></code>. You want to make a
 cross-spectral analysis of these data. First, you will have to get the
@@ -226,19 +225,11 @@ ranges are in the projected coordinate. The
 <a class="reference internal" href="../gmtinfo.html"><span class="doc">gmtinfo</span></a> utility will report the minimum
 and maximum values for multi-column ASCII tables. Use this information
 to select the range of the projected distance coordinate they have in
-common. The script prompts you for that information after reporting the
-values. We decide to make a file of equidistant sampling points spaced 1
-km apart from -1167 to +1169, and use the UNIX utility <strong>awk</strong> to
-accomplish this step. We can then resample the projected data, and carry
+common. The script computes the common range. We can then resample the projected data, and carry
 out the cross-spectral calculations, assuming that the ship is the input
-and the satellite is the output data. There are several intermediate
-steps that produce helpful plots showing the effect of the various
-processing steps (<code class="docutils literal notranslate"><span class="pre">example_03[a-f].ps</span></code>), while the final plot <code class="docutils literal notranslate"><span class="pre">example_03.ps</span></code> shows the ship and sat power
+and the satellite is the output data. The final plot <code class="docutils literal notranslate"><span class="pre">example_03.ps</span></code> shows the ship and sat power
 in one diagram and the coherency on another diagram, both on the same
-page. Note the extended use of <a class="reference internal" href="../text.html"><span class="doc">text</span></a>
-and <a class="reference internal" href="../plot.html"><span class="doc">plot</span></a> to put labels and legends
-directly on the plots. For that purpose we often use <strong>-Jx</strong>1i and
-specify positions in inches directly. Thus, the complete automated script reads:</p>
+page, with an auto-generated legend. Thus, the complete automated script reads:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 <span class="c1">#		GMT EXAMPLE 03</span>
 <span class="c1">#</span>
@@ -283,16 +274,13 @@ gmt begin ex03
 	<span class="c1"># Now to do the cross-spectra, assuming that the ship is the input and the sat is the output</span>
 	<span class="c1"># data, we do this:</span>
 	gmt convert -A samp_ship.pg samp_sat.pg -o1,3 <span class="p">|</span> gmt spectrum1d -S256 -D1 -W -C -T
-	<span class="c1"># Time to plot spectra</span>
+	<span class="c1"># Time to plot spectra, use -l to build a legend</span>
 	gmt <span class="nb">set</span> FONT_TAG 18p,Helvetica-Bold
 	gmt subplot begin 2x1 -M0.1i -SCb+l<span class="s2">&quot;Wavelength (km)&quot;</span> -T<span class="s2">&quot;Ship and Satellite Gravity&quot;</span> -Fs4i/3.75i -A+jTR+o0.1i -BWeSn+g240/255/240 -X2i -Y1.5i
 		gmt subplot <span class="nb">set</span> <span class="m">0</span>,0 -A<span class="s2">&quot;Input Power&quot;</span>
-		gmt plot spectrum.xpower -JX-?l/?l -Bxa1f3p -Bya1f3p+l<span class="s2">&quot;Power (mGal@+2@+km)&quot;</span> -Gred -ST0.07i -R1/1000/0.1/10000 -Ey+p0.5p
-		gmt plot spectrum.ypower -Gblue -Sc0.07i -Ey+p0.5p
-		gmt legend -DjBL+w1.2i+o0.25i -F+gwhite+pthicker --FONT_ANNOT_PRIMARY<span class="o">=</span>14p,Helvetica-Bold <span class="s">&lt;&lt;- EOF</span>
-<span class="s">		S 0.1i T 0.07i red  - 0.3i Ship</span>
-<span class="s">		S 0.1i c 0.07i blue - 0.3i Satellite</span>
-<span class="s">		EOF</span>
+		gmt plot spectrum.xpower -JX-?l/?l -Bxa1f3p -Bya1f3p+l<span class="s2">&quot;Power (mGal@+2@+km)&quot;</span> -Gred -ST0.07i -R1/1000/0.1/10000 -Ey+p0.5p -lShip
+		gmt plot spectrum.ypower -Gblue -Sc0.07i -Ey+p0.5p -lSatellite
+		gmt legend -DjBL+w1.2i+o0.25i -F+gwhite+pthicker --FONT_ANNOT_PRIMARY<span class="o">=</span>14p,Helvetica-Bold
 		gmt subplot <span class="nb">set</span> <span class="m">1</span>,0 -A<span class="s2">&quot;Coherency@+2@+&quot;</span>
 		gmt plot spectrum.coh -JX-?l/? -Bxa1f3p -Bya0.25f0.05+l<span class="s2">&quot;Coherency@+2@+&quot;</span> -R1/1000/0/1 -Sc0.07i -Gpurple -Ey+p0.5p
 	gmt subplot end

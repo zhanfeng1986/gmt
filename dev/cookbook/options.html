@@ -129,18 +129,19 @@
 <li class="toctree-l3"><a class="reference internal" href="#data-type-selection-the-f-option">4.11. Data type selection: The <strong>-f</strong> option</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#data-gap-detection-the-g-option">4.12. Data gap detection: The <strong>-g</strong> option</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#header-data-records-the-h-option">4.13. Header data records: The <strong>-h</strong> option</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#input-columns-selection-the-i-option">4.14. Input columns selection: The <strong>-i</strong> option</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#grid-interpolation-parameters-the-n-option">4.15. Grid interpolation parameters: The <strong>-n</strong> option</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#output-columns-selection-the-o-option">4.16. Output columns selection: The <strong>-o</strong> option</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#perspective-view-the-p-option">4.17. Perspective view: The <strong>-p</strong> option</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#grid-registration-the-r-option">4.18. Grid registration: The <strong>-r</strong> option</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#gridline-registration">4.18.1. Gridline registration</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pixel-registration">4.18.2. Pixel registration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-automatic-legend-entries-the-l-option">4.14. Setting automatic legend entries: The <strong>-l</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#input-columns-selection-the-i-option">4.15. Input columns selection: The <strong>-i</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#grid-interpolation-parameters-the-n-option">4.16. Grid interpolation parameters: The <strong>-n</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#output-columns-selection-the-o-option">4.17. Output columns selection: The <strong>-o</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#perspective-view-the-p-option">4.18. Perspective view: The <strong>-p</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#grid-registration-the-r-option">4.19. Grid registration: The <strong>-r</strong> option</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#gridline-registration">4.19.1. Gridline registration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pixel-registration">4.19.2. Pixel registration</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#nan-record-treatment-the-s-option">4.19. NaN-record treatment: The <strong>-s</strong> option</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#layer-transparency-the-t-option">4.20. Layer transparency: The <strong>-t</strong> option</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#latitude-longitude-or-longitude-latitude-the-option">4.21. Latitude/Longitude or Longitude/Latitude?: The <strong>-:</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nan-record-treatment-the-s-option">4.20. NaN-record treatment: The <strong>-s</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#layer-transparency-the-t-option">4.21. Layer transparency: The <strong>-t</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#latitude-longitude-or-longitude-latitude-the-option">4.22. Latitude/Longitude or Longitude/Latitude?: The <strong>-:</strong> option</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="coordinate_transformations.html">5. GMT Coordinate Transformations</a></li>
@@ -270,7 +271,7 @@
   <div class="section" id="standardized-command-line-options">
 <h1>4. Standardized command line options<a class="headerlink" href="#standardized-command-line-options" title="Permalink to this headline">¶</a></h1>
 <p>Most of the programs take many of the same arguments such as those related
-to setting the data region, the map projection, etc. The 24 switches in
+to setting the data region, the map projection, etc. The switches in
 Table <a class="reference internal" href="#tbl-switches"><span class="std std-ref">switches</span></a> have the same meaning in all the programs (although
 some programs may not use all of them). These options will be described
 here as well as in the manual pages, as is vital that you understand how
@@ -335,28 +336,31 @@ importance (some are used a lot more than others).</p>
 <tr class="row-odd"><td><strong>-j</strong></td>
 <td>Specify how spherical distances should be computed</td>
 </tr>
-<tr class="row-even"><td><strong>-n</strong></td>
+<tr class="row-even"><td><strong>-l</strong></td>
+<td>Add a legend entry for the symbol or line being plotted</td>
+</tr>
+<tr class="row-odd"><td><strong>-n</strong></td>
 <td>Specify grid interpolation settings</td>
 </tr>
-<tr class="row-odd"><td><strong>-o</strong></td>
+<tr class="row-even"><td><strong>-o</strong></td>
 <td>Specify which output columns to write</td>
 </tr>
-<tr class="row-even"><td><strong>-p</strong></td>
+<tr class="row-odd"><td><strong>-p</strong></td>
 <td>Control perspective views for plots</td>
 </tr>
-<tr class="row-odd"><td><strong>-r</strong></td>
+<tr class="row-even"><td><strong>-r</strong></td>
 <td>Set grid registration [Default is gridline]</td>
 </tr>
-<tr class="row-even"><td><strong>-s</strong></td>
+<tr class="row-odd"><td><strong>-s</strong></td>
 <td>Control output of records containing one or more NaNs</td>
 </tr>
-<tr class="row-odd"><td><strong>-t</strong></td>
+<tr class="row-even"><td><strong>-t</strong></td>
 <td>Change layer transparency</td>
 </tr>
-<tr class="row-even"><td><strong>-x</strong></td>
+<tr class="row-odd"><td><strong>-x</strong></td>
 <td>Set number of cores to be used in multi-threaded applications</td>
 </tr>
-<tr class="row-odd"><td><strong>-:</strong></td>
+<tr class="row-even"><td><strong>-:</strong></td>
 <td>Assume input geographic data are (<em>lat,lon</em>) and not (<em>lon,lat</em>)</td>
 </tr>
 </tbody>
@@ -1268,8 +1272,37 @@ slightly different meaning. Now, the <em>n_recs</em> argument is taken to mean
 how many <em>bytes</em> should be skipped (on input) or padded with the space
 character (on output).</p>
 </div>
+<div class="section" id="setting-automatic-legend-entries-the-l-option">
+<span id="option-l"></span><h2>4.14. Setting automatic legend entries: The <strong>-l</strong> option<a class="headerlink" href="#setting-automatic-legend-entries-the-l-option" title="Permalink to this headline">¶</a></h2>
+<p>Map or plot legends are created by <span class="xref std std-doc">legend</span> and normally this module
+will read a <em>specfile</em> that outlines how the legend should look.  You can
+make very detailed and complicated legends by mixing a variety of items,
+such as symbol, free text, colorbars, scales, images, and more.  Yet, for
+the vast majority of plots displaying symbols or lines a simple legend will suffice.
+The <strong>-l</strong> option is used to automatically build the <em>specfile</em> as we plot
+the various layers that will make up our illustration.  Apart from setting
+the label string that goes with the current symbol or line, you can select
+from a series of modifiers that mirror the effect of control codes normally
+added to the <em>specfile</em> by hand.  For instance, a simple plot with two
+symbols can obtain a legend by using this option and modifiers and is shown
+in Figure <a class="reference internal" href="#auto-legend"><span class="std std-ref">Auto Legend</span></a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin fruit
+  gmt plot -R0/7.2/3/7.2 -Jx2c @Table_5_11.txt -Sc0.35c -Glightgreen -Wfaint -lApples+h<span class="s2">&quot;LEGEND&quot;</span>+f16p+d
+  gmt plot @Table_5_11.txt -St0.35c -Gorange -B -BWStr -lOranges
+  gmt legend -DjTR+w3c+o0.25c -F+p1p+ggray95+s
+gmt end show
+</pre></div>
+</div>
+<p>As the script shows, when no <em>specfile</em> is given to <span class="xref std std-doc">legend</span> then we
+look for the automatically generated on in the session directory.</p>
+<div class="figure align-center" id="id29">
+<span id="auto-legend"></span><a class="reference internal image-reference" href="../_images/GMT_autolegend.png"><img alt="../_images/GMT_autolegend.png" src="../_images/GMT_autolegend.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-text">Each of the two <span class="xref std std-doc">plot</span> commands use <strong>-l</strong> to add a symbol to the
+auto legend; the first also sets a legend header of given size and draws a horizontal line.</span></p>
+</div>
+</div>
 <div class="section" id="input-columns-selection-the-i-option">
-<span id="option-i"></span><h2>4.14. Input columns selection: The <strong>-i</strong> option<a class="headerlink" href="#input-columns-selection-the-i-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-i"></span><h2>4.15. Input columns selection: The <strong>-i</strong> option<a class="headerlink" href="#input-columns-selection-the-i-option" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>-i</strong><em>columns</em> option allows you to specify which
 input file physical data columns to use and in what order. By default, GMT will
 read all the data columns in the file, starting with the first column
@@ -1290,7 +1323,7 @@ by requesting column <strong>t</strong>, otherwise we ignore trailing text.  If 
 want to select one word from the trailing text, then append the word number
 (0 is the first word).  Finally, to use the entire numerical record and
 ignore trailing text, use <strong>-in</strong>.</p>
-<div class="figure align-center" id="id29">
+<div class="figure align-center" id="id30">
 <span id="gmt-record"></span><a class="reference internal image-reference" href="../_images/GMT_record.png"><img alt="../_images/GMT_record.png" src="../_images/GMT_record.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-text">The physical, logical (input) and output record in GMT.  Here, we are
 reading a file with 5 numerical columns plus some free-form text at the
@@ -1311,7 +1344,7 @@ after reading the data there is no physical record, only the logical record in m
 </div>
 </div>
 <div class="section" id="grid-interpolation-parameters-the-n-option">
-<span id="option-n"></span><h2>4.15. Grid interpolation parameters: The <strong>-n</strong> option<a class="headerlink" href="#grid-interpolation-parameters-the-n-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-n"></span><h2>4.16. Grid interpolation parameters: The <strong>-n</strong> option<a class="headerlink" href="#grid-interpolation-parameters-the-n-option" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>-n</strong><em>type</em> option controls parameters used for
 2-D grids resampling. You can select the type of spline used (<strong>-nb</strong>
 for B-spline smoothing, <strong>-nc</strong> for bicubic [Default], <strong>-nl</strong> for
@@ -1331,7 +1364,7 @@ non-NaN. 0.5 will interpolate about half way from a non-NaN value; 0.1
 will go about 90% of the way, etc.</p>
 </div>
 <div class="section" id="output-columns-selection-the-o-option">
-<span id="option-o"></span><h2>4.16. Output columns selection: The <strong>-o</strong> option<a class="headerlink" href="#output-columns-selection-the-o-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-o"></span><h2>4.17. Output columns selection: The <strong>-o</strong> option<a class="headerlink" href="#output-columns-selection-the-o-option" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>-o</strong><em>columns</em> option allows you to specify which
 columns to write on output and in what order. By default, GMT will
 write all the data columns produced by the program. Using <strong>-o</strong>
@@ -1348,7 +1381,7 @@ using the <strong>-i</strong> option. To output all numerical columns and ignori
 trailing text, use <strong>-on</strong>.</p>
 </div>
 <div class="section" id="perspective-view-the-p-option">
-<span id="option-p"></span><h2>4.17. Perspective view: The <strong>-p</strong> option<a class="headerlink" href="#perspective-view-the-p-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-p"></span><h2>4.18. Perspective view: The <strong>-p</strong> option<a class="headerlink" href="#perspective-view-the-p-option" title="Permalink to this headline">¶</a></h2>
 <p>All plotting programs that normally produce a flat, two-dimensional
 illustration can be told to view this flat illustration from a
 particular vantage point, resulting in a perspective view. You can
@@ -1368,7 +1401,7 @@ about the z-axis by just giving the rotation angle.  Optionally, use <strong>+v<
 or <strong>+w</strong> to select another axis location than the plot origin.</p>
 </div>
 <div class="section" id="grid-registration-the-r-option">
-<span id="option-nodereg"></span><h2>4.18. Grid registration: The <strong>-r</strong> option<a class="headerlink" href="#grid-registration-the-r-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-nodereg"></span><h2>4.19. Grid registration: The <strong>-r</strong> option<a class="headerlink" href="#grid-registration-the-r-option" title="Permalink to this headline">¶</a></h2>
 <p>All 2-D grids in GMT have their nodes
 organized in one of two ways, known as <em>gridline</em>- and <em>pixel</em>-
 registration. The GMT default is gridline registration; programs that
@@ -1380,7 +1413,7 @@ this conversion looses the Nyquist frequency and dampens the other
 high frequencies.  It is best to avoid any registration conversion if you
 can help it.  Planning ahead may be important.</p>
 <div class="section" id="gridline-registration">
-<h3>4.18.1. Gridline registration<a class="headerlink" href="#gridline-registration" title="Permalink to this headline">¶</a></h3>
+<h3>4.19.1. Gridline registration<a class="headerlink" href="#gridline-registration" title="Permalink to this headline">¶</a></h3>
 <p>In this registration, the nodes are centered on the grid line
 intersections and the data points represent the average value in a cell
 of dimensions (<span class="math notranslate nohighlight">\(x_{inc} \cdot y_{inc}\)</span>) centered on each node
@@ -1395,13 +1428,13 @@ ny &amp; =  &amp;       (y_{max} - y_{min}) / y_{inc} + 1
 <p>which for the example in left side of Figure <a class="reference internal" href="#grid-registration"><span class="std std-ref">Gridline registration</span></a> yields nx = ny = 4.</p>
 </div>
 <div class="section" id="pixel-registration">
-<h3>4.18.2. Pixel registration<a class="headerlink" href="#pixel-registration" title="Permalink to this headline">¶</a></h3>
+<h3>4.19.2. Pixel registration<a class="headerlink" href="#pixel-registration" title="Permalink to this headline">¶</a></h3>
 <p>Here, the nodes are centered in the grid cells, i.e., the areas
 between grid lines, and the data points represent the average values
 within each cell (right side of Figure <a class="reference internal" href="#grid-registration"><span class="std std-ref">Grid registration</span></a>). In the case of
 pixel registration the number of nodes are related to region and grid
 spacing by</p>
-<div class="figure align-center" id="id30">
+<div class="figure align-center" id="id31">
 <span id="grid-registration"></span><a class="reference internal image-reference" href="../_images/GMT_registration.png"><img alt="../_images/GMT_registration.png" src="../_images/GMT_registration.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Gridline- and pixel-registration of data nodes.  The red shade indicates the
 areas represented by the value at the node (solid circle).</span></p>
@@ -1417,7 +1450,7 @@ gridline-registered grids; here we find nx = ny = 3.</p>
 </div>
 </div>
 <div class="section" id="nan-record-treatment-the-s-option">
-<span id="option-s"></span><h2>4.19. NaN-record treatment: The <strong>-s</strong> option<a class="headerlink" href="#nan-record-treatment-the-s-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-s"></span><h2>4.20. NaN-record treatment: The <strong>-s</strong> option<a class="headerlink" href="#nan-record-treatment-the-s-option" title="Permalink to this headline">¶</a></h2>
 <p>We can use this option to suppress output for records whose <em>z</em>-value
 equals NaN (by default we output all records). Alternatively, append
 <strong>+r</strong> to reverse the suppression, i.e., only output the records whose
@@ -1427,7 +1460,7 @@ supply a comma-separated list of all columns or column ranges to
 consider (before the optional modifiers) for this NaN test.</p>
 </div>
 <div class="section" id="layer-transparency-the-t-option">
-<span id="option-t"></span><h2>4.20. Layer transparency: The <strong>-t</strong> option<a class="headerlink" href="#layer-transparency-the-t-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-t"></span><h2>4.21. Layer transparency: The <strong>-t</strong> option<a class="headerlink" href="#layer-transparency-the-t-option" title="Permalink to this headline">¶</a></h2>
 <p>While the PostScript language does not support transparency, PDF does,
 and via PostScript extensions one can manipulate the transparency
 levels of objects. The <strong>-t</strong> option allows you to change the
@@ -1440,7 +1473,7 @@ on a record-by-record basis if <strong>-t</strong> is given without argument and
 input file supplies variable transparencies as the last numerical column value.</p>
 </div>
 <div class="section" id="latitude-longitude-or-longitude-latitude-the-option">
-<span id="option-colon"></span><h2>4.21. Latitude/Longitude or Longitude/Latitude?: The <strong>-:</strong> option<a class="headerlink" href="#latitude-longitude-or-longitude-latitude-the-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-colon"></span><h2>4.22. Latitude/Longitude or Longitude/Latitude?: The <strong>-:</strong> option<a class="headerlink" href="#latitude-longitude-or-longitude-latitude-the-option" title="Permalink to this headline">¶</a></h2>
 <p>For geographical data, the first column is expected to contain
 longitudes and the second to contain latitudes. To reverse this
 expectation you must apply the <strong>-:</strong> option. Optionally, append <strong>i</strong>

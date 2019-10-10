@@ -218,6 +218,8 @@
 [ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong><em>box</em> ]
 [ <a class="reference internal" href="#j"><span> <strong>-J</strong></span></a></strong><em>parameters</em> ]
 [ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em> ]
+[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>scale</em> ]
+[ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>file</em> ]
 [ <a class="reference internal" href="#u"><span> <strong>-U</strong></span></a></strong>[<em>stamp</em>] ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
 [ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] ]
@@ -291,6 +293,14 @@ indicates the shift relative to the foreground frame
 <dl class="docutils" id="r">
 <dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Specify the region of interest.  </dd>
+</dl>
+<dl class="docutils" id="s">
+<dt><strong>-S</strong><em>scale</em></dt>
+<dd>Scale all symbol sizes by a common <em>scale</em> [1].</dd>
+</dl>
+<dl class="docutils" id="t">
+<dt><strong>-T</strong><em>file</em></dt>
+<dd>Modern mode only: Write hidden legend specification file to <em>file</em>.</dd>
 </dl>
 <dl class="docutils" id="u">
 <dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>] <a class="reference internal" href="gmt.html#u-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -515,10 +525,8 @@ of uses that are common but cannot be run verbatim as written.</p>
 <strong>gmt begin</strong> and <strong>gmt end</strong> commands), we will often present them using the quick
 modern mode <a class="reference internal" href="cookbook/one-liner.html"><span class="doc">GMT Modern Mode One-line Commands</span></a> syntax, which simplifies such short scripts.</p>
 <p>To add an example of a legend to a Mercator plot (map.ps) with the given
-specifications, use</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt legend -R-10/10/-10/10 -JM6i -F+gazure1 -Dx0.5i/0.5i+w5i/3.3i+jBL+l1.2
-           -C0.1i/0.1i -B5f1 -pdf map <span class="s">&lt;&lt; EOF</span>
+specifications, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt legend -R-10/10/-10/10 -JM6i -F+gazure1 -Dx0.5i/0.5i+w5i/3.3i+jBL+l1.2 -C0.1i/0.1i -B5f1 -pdf map <span class="s">&lt;&lt; EOF</span>
 <span class="s"># Legend test for legend</span>
 <span class="s"># G is vertical gap, V is vertical line, N sets # of columns, D draws horizontal line.</span>
 <span class="s"># H is header, L is label, S is symbol, T is paragraph text, M is map scale.</span>
@@ -553,7 +561,17 @@ specifications, use</p>
 <span class="s">EOF</span>
 </pre></div>
 </div>
-</div></blockquote>
+</div>
+<div class="section" id="auto-legends">
+<h2>Auto-legends<a class="headerlink" href="#auto-legends" title="Permalink to this headline">¶</a></h2>
+<p>In modern mode, some modules can access the <strong>-l</strong> option and build the legend
+<em>specfile</em> from individual entries per command.  The <strong>-l</strong> option takes a
+label and allows optional modifiers <strong>+d</strong>, <strong>+g</strong>, <strong>+n</strong>, <strong>+h</strong>, <strong>+j</strong>, and <strong>+v</strong>
+that follows the corresponding uppercase legend codes discussed above.  In addition,
+there is <strong>+f</strong> to set current font and <strong>+s</strong> to set the symbol size (or line length)
+to use for the current entry.  Some defaults are hardwired: We draw a white panel with
+a 1 point outline offset from the justification point (<strong>+j</strong>) by 0.2 cm.  To use
+different settings you must call <strong>legend</strong> explicitly instead.</p>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
