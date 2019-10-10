@@ -294,6 +294,14 @@ indicates the shift relative to the foreground frame
 <dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Specify the region of interest.  </dd>
 </dl>
+<dl class="docutils" id="s">
+<dt><strong>-S</strong><em>scale</em></dt>
+<dd>Scale all symbol sizes by a common <em>scale</em> [1].</dd>
+</dl>
+<dl class="docutils" id="t">
+<dt><strong>-T</strong><em>file</em></dt>
+<dd>Modern mode only: Write hidden legend specification file to <em>file</em>.</dd>
+</dl>
 <dl class="docutils" id="u">
 <dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>] <a class="reference internal" href="gmt.html#u-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Draw GMT time stamp logo on plot.</dd>
@@ -534,7 +542,7 @@ of uses that are common but cannot be run verbatim as written.</p>
 specifications, use</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pslegend -R-10/10/-10/10 -JM6i -F+gazure1 -Dx0.5i/0.5i+w5i/3.3i+jBL+l1.2 <span class="se">\</span>
--C0.1i/0.1i -B5f1 <span class="s">&lt;&lt; EOF &gt;&gt; map.ps</span>
+   -C0.1i/0.1i -B5f1 <span class="s">&lt;&lt; EOF &gt;&gt; map.ps</span>
 <span class="s"># Legend test for pslegend</span>
 <span class="s"># G is vertical gap, V is vertical line, N sets # of columns, D draws horizontal line.</span>
 <span class="s"># H is header, L is label, S is symbol, T is paragraph text, M is map scale.</span>
