@@ -511,6 +511,10 @@ color to -3.0 and the green color to the pattern number returned by
 <strong>PSL_setimage</strong> to select an image pattern as current paint color. For
 PDF transparency, set <em>rgb</em>[3] to a value between 0 (opaque) and 1
 (fully transparent).</div></blockquote>
+<p><strong>long PSL_setcurrentpoint</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>double</strong>
+<em>x</em>, <strong>double</strong> <em>y</em>)</p>
+<blockquote>
+<div>Sets the current point to the location given by (<em>x</em>, <em>y</em>).</div></blockquote>
 <p><strong>long PSL_setimage</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>long</strong>
 <em>image_no</em>, <strong>char</strong> <em>*imagefile</em>, <strong>unsigned char</strong> <em>*image</em>,
 <strong>long</strong> <em>dpi</em>, <strong>long dim[3], **double</strong> <em>f_rgb</em>[], <strong>double</strong> <em>b_rgb</em>[])</p>
