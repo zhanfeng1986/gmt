@@ -2639,14 +2639,14 @@ mechanism that must be appended to the image filename. Here,
 <em>band-number</em> can be the number of one individual band (the counting
 starts at zero), or it could be a comma-separated list of bands. For example</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt image jpeg_image_with_three_bands.jpg+b0
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt image jpeg_image_with_three_bands.jpg+b0 -jpg gray
 </pre></div>
 </div>
 </div></blockquote>
 <p>will plot only the first band (i.e., the red band) of the jpeg image as
 a gray-scale image, and</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt image jpeg_image_with_three_bands.jpg+b2,1,0
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt image jpeg_image_with_three_bands.jpg+b2,1,0 -jpg bgr
 </pre></div>
 </div>
 </div></blockquote>
@@ -2926,7 +2926,7 @@ off; see <a class="reference internal" href="../gmt.conf.html#ps-comments"><span
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 12, 2019.
+        Last updated on Oct 15, 2019.
       </span>
 
     </p>
