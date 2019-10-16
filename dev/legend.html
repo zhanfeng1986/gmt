@@ -443,8 +443,8 @@ value to <strong>-</strong>.</dd>
 (see <a class="reference internal" href="plot.html"><span class="doc">plot</span></a>). The symbol is centered at <em>dx1</em> from the left margin
 of the column, with the optional explanatory <em>text</em> starting <em>dx2</em>
 from the margin, printed with <strong>FONT_ANNOT_PRIMARY</strong>. If <em>dx1</em> is given
-as <strong>-</strong> then it is automatically computed from the largest symbol size.
-If <em>dx2</em> is given as <strong>-</strong> then it is automatically computed as two
+as <strong>-</strong> then it is automatically computed from half the largest symbol size.
+If <em>dx2</em> is given as <strong>-</strong> then it is automatically computed as 1.5
 times the largest symbol size.  Use <strong>-</strong> if
 no <em>fill</em> or outline (<em>pen</em>) is required. Alternatively, the <em>fill</em>
 may be specified indirectly via z=<em>value</em> and the color is assigned
@@ -565,13 +565,17 @@ specifications, use:</p>
 <div class="section" id="auto-legends">
 <h2>Auto-legends<a class="headerlink" href="#auto-legends" title="Permalink to this headline">¶</a></h2>
 <p>In modern mode, some modules can access the <strong>-l</strong> option and build the legend
-<em>specfile</em> from individual entries per command.  The <strong>-l</strong> option takes a
-label and allows optional modifiers <strong>+d</strong>, <strong>+g</strong>, <strong>+n</strong>, <strong>+h</strong>, <strong>+j</strong>, and <strong>+v</strong>
-that follows the corresponding uppercase legend codes discussed above.  In addition,
-there is <strong>+f</strong> to set current font and <strong>+s</strong> to set the symbol size (or line length)
-to use for the current entry.  Some defaults are hardwired: We draw a white panel with
-a 1 point outline offset from the justification point (<strong>+j</strong>) by 0.2 cm.  To use
-different settings you must call <strong>legend</strong> explicitly instead.</p>
+<em>specfile</em> from individual entries for each command.  The <strong>-l</strong> option takes an optional
+label and allows optional modifiers <strong>+d</strong>, <strong>+g</strong>, <strong>+n</strong>, <strong>+h</strong>, <strong>+j</strong>, <strong>+l</strong>, and <strong>+v</strong>
+that follow the corresponding uppercase legend codes discussed above.  In addition,
+there is <strong>+f</strong> to set header (H) or label (L) font,  <strong>+s</strong> to set the symbol size (or line length)
+to use for the current entry, and <strong>+x</strong> to scale all symbols uniformly (see <strong>-S</strong> above).
+Some defaults are hardwired: We draw a white rectangular panel with
+a 1 point black outline offset from the justification point (<strong>+j</strong>) by 0.2 cm.  To use
+different settings you must call <strong>legend</strong> explicitly before <a class="reference internal" href="end.html"><span class="doc">end</span></a> does so
+implicitly instead.  Note: With an explicit call to <strong>legend</strong> you can also use <strong>-T</strong> to
+save the auto-generate <em>specfile</em>, make modification to it, and then pass that to <a href="#id1"><span class="problematic" id="id2">**</span></a>legend*
+directly.</p>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
@@ -605,7 +609,7 @@ different settings you must call <strong>legend</strong> explicitly instead.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 15, 2019.
+        Last updated on Oct 16, 2019.
       </span>
 
     </p>

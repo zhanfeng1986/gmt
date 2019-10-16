@@ -387,20 +387,18 @@ can be cut and pasted into your terminal for testing.
 Other commands requiring input files are just dummy examples of the types
 of uses that are common but cannot be run verbatim as written.</p>
 <p>To see the effect of a simple clip path which result in some symbols
-being partly visible or missing altogether, try</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin clip
+being partly visible or missing altogether, try:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin clip
   gmt clip -R0/6/0/6 -Jx2.5c -W1p,blue <span class="s">&lt;&lt; EOF</span>
 <span class="s">0 0</span>
 <span class="s">5 1</span>
 <span class="s">5 5</span>
 <span class="s">EOF</span>
   gmt plot @tut_data.txt -Gred -Sc2c
-  gmt psclip -C -B
+  gmt clip -C -B
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <p>where we activate and deactivate the clip path.  Note we also draw the
 outline of the clip path to make it clear what is being clipped.</p>
 </div>
@@ -434,7 +432,7 @@ outline of the clip path to make it clear what is being clipped.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 15, 2019.
+        Last updated on Oct 16, 2019.
       </span>
 
     </p>

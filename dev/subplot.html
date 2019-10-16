@@ -216,16 +216,18 @@ plotting is done via the <strong>set</strong> directive.  The subplot process is
 <div class="section" id="synopsis-begin-mode">
 <h2>Synopsis (begin mode)<a class="headerlink" href="#synopsis-begin-mode" title="Permalink to this headline">¶</a></h2>
 <p><strong>gmt subplot begin</strong> <em>nrows</em><strong>x</strong><em>ncols</em>
-<strong>-F</strong>[<strong>f</strong>|<strong>s</strong>]<em>width</em>/<em>height</em>[<strong>+f</strong><em>wfracs</em>/<em>hfracs</em>][<strong>+c</strong><em>dx/dy</em>][<strong>+g</strong><em>fill</em>][<strong>+p</strong><em>pen</em>][<strong>+w</strong><em>pen</em>]
-[ <strong>-A</strong><em>autolabel</em> ]
-[ <strong>-C</strong>[<em>side</em>]/<em>clearance</em>[<strong>u</strong>]]
+<a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong>[<strong>f</strong>|<strong>s</strong>]<em>width</em>/<em>height</em>[<strong>+f</strong><em>wfracs</em>/<em>hfracs</em>][<strong>+c</strong><em>dx/dy</em>][<strong>+g</strong><em>fill</em>][<strong>+p</strong><em>pen</em>][<strong>+w</strong><em>pen</em>]
+[ <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong><em>autolabel</em> ]
+[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong>[<em>side</em>]/<em>clearance</em>[<strong>u</strong>]]
 [ <a class="reference internal" href="#b"><span> <strong>-B</strong></span></a></strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> ]
 [ <a class="reference internal" href="#j"><span> <strong>-J</strong></span></a></strong><em>parameters</em> ]
-[ <strong>-M</strong><em>margins</em> ]
+[ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong><em>margins</em> ]
 [ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em> ]
-[ <strong>-S</strong><em>layout</em> ]
-[ <strong>-T</strong><em>title</em> ]
+[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>layout</em> ]
+[ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>title</em> ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
+[ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] ]
+[ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] ]
 [ <strong>--PAR</strong>=<em>value</em> ]</p>
 <p><strong>Note:</strong> No space is allowed between the option flag and the associated arguments.</p>
 </div>
@@ -242,7 +244,7 @@ options are available to specify the systematic layout, labeling, dimensions, an
 the same number of subplots.
 Note: You are not required to place a plot in each subplot.</dd>
 </dl>
-<dl class="docutils" id="subplot-begin-f">
+<dl class="docutils" id="f">
 <dt><strong>-F</strong>[<strong>f</strong>|<strong>s</strong>]<em>width(s)</em>/<em>height(s)</em>[<strong>+f</strong><em>wfracs</em>/<em>hfracs</em>][<strong>+c</strong><em>dx/dy</em>][<strong>+g</strong><em>fill</em>][<strong>+p</strong><em>pen</em>]</dt>
 <dd>Specify the dimensions of the figure.  There are two different ways to do this:
 (<strong>f</strong>) Specify overall figure dimensions or (<strong>s</strong>) specify the dimensions of
@@ -275,7 +277,7 @@ subplots.</p>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils" id="subplot-begin-a">
+<dl class="docutils" id="a">
 <dt><strong>-A</strong><em>autolabel</em></dt>
 <dd>Specify automatic tagging of each subplot.  Append either a number or letter [a].
 This sets the tag of the first, top-left subplot and others follow sequentially.
@@ -298,7 +300,7 @@ Append <strong>+v</strong> to increase tag numbers vertically down columns [hori
 <dt><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> <a class="reference internal" href="gmt.html#b-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Set map boundary frame and axes attributes.</dd>
 </dl>
-<dl class="docutils" id="subplot-set-c1">
+<dl class="docutils" id="c">
 <dt><strong>-C</strong>[<em>side</em>]/<em>clearance</em>[<strong>u</strong>]</dt>
 <dd>Reserve a space of dimension <em>clearance</em> between the margin and the subplot on the specified
 side, using <em>side</em> values from <strong>w</strong>, <strong>e</strong>, <strong>s</strong>, or <strong>n</strong>, or <strong>x</strong> for both <strong>w</strong> and <strong>e</strong>
@@ -312,7 +314,7 @@ and <strong>-Y</strong> are not available during subplots; use <strong>-C</stron
 <dt><strong>-J</strong><em>parameters</em> <a class="reference internal" href="gmt.html#j-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Select map projection.  </dd>
 </dl>
-<dl class="docutils" id="subplot-begin-m">
+<dl class="docutils" id="m">
 <dt><strong>-M</strong><em>margins</em></dt>
 <dd>This is margin space that is added <em>between</em> neighboring subplots (i.e., the interior margins) <em>in addition</em>
 to the automatic space added for tick marks, annotations, and labels.  The margins can be specified as
@@ -326,7 +328,7 @@ half the primary annotation font size, giving the full annotation font size as t
 <dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Specify the region of interest. This is useful when all subplots share a common plot domain.</dd>
 </dl>
-<dl class="docutils" id="subplot-begin-s">
+<dl class="docutils" id="s">
 <dt><strong>-S</strong><em>layout</em></dt>
 <dd>Set subplot layout for shared axes. May be set separately for rows (<strong>-SR</strong>) and columns (<strong>-SC</strong>).
 Considerations for <strong>-SC</strong>: Use when all subplots in a <strong>C</strong>olumn share a common <em>x</em>-range. The first (i.e., <strong>t</strong>op) and the last
@@ -343,14 +345,19 @@ Append <strong>+p</strong> to make all annotations axis-parallel [horizontal]; i
 extra space for long horizontal annotations.
 Append <strong>+w</strong> to draw horizontal and vertical lines between interior panels using selected pen [no lines].</dd>
 </dl>
-<dl class="docutils" id="subplot-begin-t">
+<dl class="docutils" id="t">
 <dt><strong>-T</strong><em>heading</em></dt>
 <dd>While individual subplots can have titles (see <strong>-S</strong> or <strong>-B</strong>), the entire figure may also have a
 overarching <em>heading</em> [no heading]. Font is determined by setting <a class="reference internal" href="gmt.conf.html#font-heading"><span class="std std-ref">FONT_HEADING</span></a>.</dd>
 </dl>
-<dl class="docutils" id="subplot-begin-v">
+<dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Select verbosity level [c].  </dd>
+</dl>
+<p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</p>
+<dl class="docutils">
+<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Shift plot origin.</dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-^</strong> or just <strong>-</strong></dt>
@@ -490,7 +497,7 @@ gmt end show
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 15, 2019.
+        Last updated on Oct 16, 2019.
       </span>
 
     </p>

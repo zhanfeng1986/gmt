@@ -397,8 +397,8 @@ positioning (i.e., <strong>-X -Y</strong>) as the main script so that the layers
 </dl>
 <dl class="docutils" id="w">
 <dt><strong>-W</strong><em>workdir</em></dt>
-<dd>In addition to the current directory, the <em>prefix</em> directory, and any directories specified via the
-GMT defaults setting <a class="reference internal" href="gmt.conf.html#dir-data"><span class="std std-ref">DIR_DATA</span></a>, add <em>workdir</em> as a place to scan for data files needed by the scripts.</dd>
+<dd>By default, all temporary files and frame PNG file are built in the subdirectory <em>prefix</em> set via <strong>-N</strong>.
+You can override that by giving another <em>workdir</em> as a relative or full directory path.</dd>
 </dl>
 <dl class="docutils" id="z">
 <dt><strong>-Z</strong></dt>
@@ -449,8 +449,7 @@ the trailing text is also split into individual word parameters <strong>MOVIE_WO
 <p>The movie scripts will be able to find any files present in the starting directory when <strong>movie</strong> was initiated,
 as well as any new files produced by <em>mainscript</em> or the optional scripts set via <strong>-S</strong>.
 No path specification is needed to access these files.  Other files may
-require full paths unless their directories were already included in the <a class="reference internal" href="gmt.conf.html#dir-data"><span class="std std-ref">DIR_DATA</span></a> setting
-or specified via <strong>-W</strong>.</p>
+require full paths unless their directories were already included in the <a class="reference internal" href="gmt.conf.html#dir-data"><span class="std std-ref">DIR_DATA</span></a> setting.</p>
 </div>
 <div class="section" id="your-canvas">
 <h2>Your Canvas<a class="headerlink" href="#your-canvas" title="Permalink to this headline">¶</a></h2>
@@ -598,7 +597,7 @@ as QuickTime Pro, iMovie, MovieMaker, and similar commercial programs to make a 
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 15, 2019.
+        Last updated on Oct 16, 2019.
       </span>
 
     </p>
