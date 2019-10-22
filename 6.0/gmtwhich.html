@@ -208,7 +208,7 @@
             
   <div class="section" id="gmtwhich">
 <span id="index-0"></span><h1>gmtwhich<a class="headerlink" href="#gmtwhich" title="Permalink to this headline">¶</a></h1>
-<p>Find full path to specified files</p>
+<p>Find path to specified files</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <p><strong>gmt which</strong> <em>files</em> [ <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong> ] [ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong> ] [ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong> ] [ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong>[<strong>c</strong>|<strong>l</strong>|<strong>u</strong>] ] [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ] [ <strong>--PAR</strong>=<em>value</em> ]</p>
@@ -216,16 +216,18 @@
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
-<p><strong>which</strong> reports the full paths to the files given on the command
+<p><strong>which</strong> reports the paths to the files given on the command
 line. We look for the file in (1) the current directory,
 (2) in $GMT_USERDIR (if defined), (3) in $GMT_DATADIR (if defined), or
 (4) in $GMT_CACHEDIR (if defined). If
-found we print the full path name to the file, just the directory (see
+found we print the path name to the file, just the directory (see
 <strong>-D</strong>), or a confirmation (see <strong>-C</strong>). The $GMT_USERDIR and
 $GMT_DATADIR environment variables can be comma-separated list of
 directories, and we search recursively down any directory that ends with
 / (i.e., /export/data is a single directory whereas /export/data/ will
-be searched recursively.)</p>
+be searched recursively.)  If the file is in the current directory then
+we just return the relative path (i.e., the file name); otherwise we
+return the full path.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
@@ -253,7 +255,7 @@ the files.</dd>
 </dl>
 <dl class="docutils" id="g">
 <dt><strong>-G</strong>[<strong>c</strong>|<strong>l</strong>|<strong>u</strong>]</dt>
-<dd>If a file argument is a downloadable file (either a full URL, a &#64;file for
+<dd>If a file argument is a downloadable file (either a complete URL, a &#64;file for
 downloading from the GMT Site Cache, or &#64;earth_relief_*.grd) we will try
 to download the file if it is not found in your local data or cache dirs.
 By default [<strong>-Gl</strong>] we download to the current directory. Append <strong>c</strong> to place
@@ -282,7 +284,7 @@ The examples that use remote files (file names starting with <code class="docuti
 can be cut and pasted into your terminal for testing.
 Other commands requiring input files are just dummy examples of the types
 of uses that are common but cannot be run verbatim as written.</p>
-<p>To see the full path to the file myjunk.txt, use</p>
+<p>To see the path to the file myjunk.txt, use</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt which myjunk.txt
 </pre></div>
@@ -334,7 +336,7 @@ be placed in the user’s GMT_CACHE_DIR directory.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 21, 2019.
+        Last updated on Oct 22, 2019.
       </span>
 
     </p>

@@ -322,8 +322,8 @@ Figure <a class="reference internal" href="#gmt-linear"><span class="std std-ref
 </div>
 <p>The complete commands given to produce this plot were</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_linear
-gmt plot -R0/100/0/10 -JX3i/1.5i -Bag -BWSne+gsnow -Wthick,blue,- sqrt.txt
-gmt plot -St0.1i -N -Gred -Wfaint sqrt10.txt
+	gmt plot -R0/100/0/10 -JX3i/1.5i -Bag -BWSne+gsnow -Wthick,blue,- sqrt.txt
+	gmt plot -St0.1i -N -Gred -Wfaint sqrt10.txt
 gmt end show
 </pre></div>
 </div>
@@ -355,8 +355,8 @@ appending a <strong>g</strong> or <strong>d</strong> to the end of the <strong>-
 option. As an example, we want to plot a crude world map centered on
 125ºE. Our command will be</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_linear_d
-gmt <span class="nb">set</span> MAP_GRID_CROSS_SIZE_PRIMARY <span class="m">0</span>.1i MAP_FRAME_TYPE FANCY FORMAT_GEO_MAP ddd:mm:ssF
-gmt coast -Rg-55/305/-90/90 -Jx0.014i -Bagf -BWSen -Dc -A1000 -Glightbrown -Wthinnest -Slightblue
+	gmt <span class="nb">set</span> MAP_GRID_CROSS_SIZE_PRIMARY <span class="m">0</span>.1i MAP_FRAME_TYPE FANCY FORMAT_GEO_MAP ddd:mm:ssF
+	gmt coast -Rg-55/305/-90/90 -Jx0.014i -Bagf -BWSen -Dc -A1000 -Glightbrown -Wthinnest -Slightblue
 gmt end show
 </pre></div>
 </div>
@@ -391,8 +391,8 @@ projection type given by <strong>-JX</strong> (including the optional <strong>d<
 <strong>t</strong> or <strong>T</strong>) conflict, GMT will warn the users about it. In
 general, the options provided with <strong>-JX</strong> will prevail.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_linear_cal
-gmt <span class="nb">set</span> FORMAT_DATE_MAP o TIME_WEEK_START Sunday <span class="nv">FORMAT_CLOCK_MAP</span><span class="o">=</span>-hham FORMAT_TIME_PRIMARY_MAP full
-gmt basemap -R2001-9-24T/2001-9-29T/T07:0/T15:0 -JX4i/-2i -Bxa1Kf1kg1d -Bya1Hg1h -BWsNe+glightyellow
+	gmt <span class="nb">set</span> FORMAT_DATE_MAP o TIME_WEEK_START Sunday <span class="nv">FORMAT_CLOCK_MAP</span><span class="o">=</span>-hham FORMAT_TIME_PRIMARY_MAP full
+	gmt basemap -R2001-9-24T/2001-9-29T/T07:0/T15:0 -JX4i/-2i -Bxa1Kf1kg1d -Bya1Hg1h -BWsNe+glightyellow
 gmt end show
 </pre></div>
 </div>
@@ -411,8 +411,8 @@ Hence, to produce a plot in which the <em>x</em>-axis is logarithmic (the
 <em>y</em>-axis remains linear, i.e., a semi-log plot), try (Figure <a class="reference internal" href="#gmt-log"><span class="std std-ref">Logarithmic
 transformation</span></a>)</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_log
-gmt plot -R1/100/0/10 -Jx1.5il/0.15i -Bx2g3 -Bya2f1g2 -BWSne+gbisque -Wthick,blue,- -h sqrt.txt
-gmt plot -Ss0.1i -N -Gred -W -h sqrt10.txt
+	gmt plot -R1/100/0/10 -Jx1.5il/0.15i -Bx2g3 -Bya2f1g2 -BWSne+gbisque -Wthick,blue,- -h sqrt.txt
+	gmt plot -Ss0.1i -N -Gred -W -h sqrt10.txt
 gmt end show
 </pre></div>
 </div>
@@ -437,8 +437,8 @@ case P) followed by the desired exponent, in our case 0.5. Since
 to the linear transformation. Thus our command becomes (Figure <a class="reference internal" href="#gmt-pow"><span class="std std-ref">Power
 transformation</span></a>)</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_pow
-gmt plot -R0/100/0/10 -Jx0.3ip0.5/0.15i -Bxa1p -Bya2f1 -BWSne+givory -Wthick sqrt.txt 
-gmt plot -Sc0.075i -Ggreen -W sqrt10.txt
+	gmt plot -R0/100/0/10 -Jx0.3ip0.5/0.15i -Bxa1p -Bya2f1 -BWSne+givory -Wthick sqrt.txt 
+	gmt plot -Sc0.075i -Ggreen -W sqrt10.txt
 gmt end show
 </pre></div>
 </div>
@@ -485,8 +485,8 @@ polar coordinates <span class="math notranslate nohighlight">\(z(\theta, r) = r^
 <a class="reference internal" href="../grdmath.html"><span class="doc">grdmath</span></a>, a RPN calculator that
 operates on or creates grid files.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_polar
-gmt grdmath -R0/360/2/4 -I6/0.1 X <span class="m">4</span> MUL PI MUL <span class="m">180</span> DIV COS Y <span class="m">2</span> POW <span class="nv">MUL</span> <span class="o">=</span> tt.nc
-gmt grdcontour tt.nc -JP3i -B30 -BNs+ghoneydew -C2 -S4 --FORMAT_GEO_MAP<span class="o">=</span>+ddd 
+	gmt grdmath -R0/360/2/4 -I6/0.1 X <span class="m">4</span> MUL PI MUL <span class="m">180</span> DIV COS Y <span class="m">2</span> POW <span class="nv">MUL</span> <span class="o">=</span> tt.nc
+	gmt grdcontour tt.nc -JP3i -B30 -BNs+ghoneydew -C2 -S4 --FORMAT_GEO_MAP<span class="o">=</span>+ddd 
 gmt end show
 </pre></div>
 </div>
@@ -520,7 +520,7 @@ Figure <a class="reference internal" href="#gmt-polar"><span class="std std-ref"
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 21, 2019.
+        Last updated on Oct 22, 2019.
       </span>
 
     </p>

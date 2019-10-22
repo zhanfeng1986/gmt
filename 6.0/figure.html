@@ -282,11 +282,6 @@ be determined automatically.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p><strong>Note</strong>: Below are some examples of valid syntax for this module.
-The examples that use remote files (file names starting with <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>)
-can be cut and pasted into your terminal for testing.
-Other commands requiring input files are just dummy examples of the types
-of uses that are common but cannot be run verbatim as written.</p>
 <p>To start a new figure in your current modern mode session by the name Regional and
 request we make both a PDF and an EPS file, try:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin
@@ -298,14 +293,14 @@ gmt end show
 <p>To start a new figure GlobalMap that should be returned as a JPEG file with a 1 cm padding
 around the image, try:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin
-gmt figure GlobalMap jpg A1c
+gmt figure GlobalMap jpg A+m1c
 gmt ...
 gmt end show
 </pre></div>
 </div>
 <p>If the same figure were to be called Global Map.jpg you would need quotes:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin
-gmt figure <span class="s1">&#39;Global Map&#39;</span> jpg A1c
+gmt figure <span class="s1">&#39;Global Map&#39;</span> jpg A+m1c
 gmt ...
 gmt end show
 </pre></div>
@@ -374,7 +369,7 @@ you can specify the file name or figure format as - (i.e., just a hyphen).</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 21, 2019.
+        Last updated on Oct 22, 2019.
       </span>
 
     </p>

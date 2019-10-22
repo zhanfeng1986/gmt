@@ -522,8 +522,8 @@ Example <a class="reference internal" href="../gallery/ex01.html#example-01"><sp
 size of the map we request contour labels every 1.5 inches along the
 lines:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_O_1
-gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 
-gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+f8p -Gd1.5i -S10 -T+lLH 
+	gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 
+	gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+f8p -Gd1.5i -S10 -T+lLH 
 gmt end show
 </pre></div>
 </div>
@@ -542,8 +542,8 @@ available in previous GMT versions.</span></p>
 <p>We now exercise the option for specifying exactly how many labels each
 contour line should have:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_O_2
-gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 
-gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+f8p -Gn1/1i -S10 -T+lLH
+	gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 
+	gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+f8p -Gn1/1i -S10 -T+lLH
 gmt end show
 </pre></div>
 </div>
@@ -569,8 +569,8 @@ distance will host the label.</p>
 <span class="s">130     10.5</span>
 <span class="s">EOF</span>
 gmt begin GMT_App_O_3
-gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 
-gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+f8p -Gffix.txt/0.1i -S10 -T+lLH 
+	gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 
+	gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+f8p -Gffix.txt/0.1i -S10 -T+lLH 
 gmt end show
 </pre></div>
 </div>
@@ -590,8 +590,8 @@ closest to the locations given in the file fix.txt in the <strong>-Gf</strong> o
 between the contour lines and a well-placed straight line segment. The
 <strong>-Gl</strong> or <strong>-GL</strong> algorithms work well in those cases:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_O_4
-gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 
-gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+f8p -GLZ-/Z+ -S10 -T+lLH 
+	gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 
+	gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+f8p -GLZ-/Z+ -S10 -T+lLH 
 gmt end show
 </pre></div>
 </div>
@@ -614,8 +614,8 @@ on the command line, or (2) we have another data set or lines whose
 intersections we wish to use, the general crossing algorithm makes more
 sense:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_O_5
-gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 
-gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+f8p -GX@App_O_cross.txt -S10 -T+lLH 
+	gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 
+	gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+f8p -GX@App_O_cross.txt -S10 -T+lLH 
 gmt end show
 </pre></div>
 </div>
@@ -644,9 +644,9 @@ so that the label is more readable. We choose the place the labels every
 1000 km along the line and use that distance as the label. The labels
 are placed normal to the line:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_O_6
-gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 
-gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+f8p -Gl50/10S/160/10S -S10 -T+l 
-gmt plot -SqD1000k:+g+LD+an+p -Wthick @App_O_transect.txt
+	gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 
+	gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+f8p -Gl50/10S/160/10S -S10 -T+l 
+	gmt plot -SqD1000k:+g+LD+an+p -Wthick @App_O_transect.txt
 gmt end show
 </pre></div>
 </div>
@@ -667,9 +667,9 @@ line, use spherical degrees for placement, append the degree symbol as a
 unit for the labels, choose a rounded rectangular text box, and
 inverse-video the label:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_O_7
-gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 
-gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+u<span class="s2">&quot; m&quot;</span>+f8p -Gl50/10S/160/10S -S10 -T+l
-gmt plot -SqD15d:+gblack+fwhite+Ld+o+u@. -Wthick @App_O_transect.txt
+	gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 
+	gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+u<span class="s2">&quot; m&quot;</span>+f8p -Gl50/10S/160/10S -S10 -T+l
+	gmt plot -SqD15d:+gblack+fwhite+Ld+o+u@. -Wthick @App_O_transect.txt
 gmt end show
 </pre></div>
 </div>
@@ -688,10 +688,10 @@ those records whose distances are multiples of 1500 km and create a
 “fixed points” file that can be used to place labels and specify the
 labels. This is done with <strong>awk</strong>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_O_8
-gmt convert -i0,1,4 -Em150 @App_O_transect.txt <span class="p">|</span> <span class="nv">$AWK</span> <span class="s1">&#39;{print $1,$2,int($3)}&#39;</span> &gt; fix2.txt
-gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 
-gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+u<span class="s2">&quot; m&quot;</span>+f8p -Gl50/10S/160/10S -S10 -T+l 
-gmt plot -Sqffix2.txt:+g+an+p+Lf+u<span class="s2">&quot; m&quot;</span>+f8p -Wthick @App_O_transect.txt
+	gmt convert -i0,1,4 -Em150 @App_O_transect.txt <span class="p">|</span> <span class="nv">$AWK</span> <span class="s1">&#39;{print $1,$2,int($3)}&#39;</span> &gt; fix2.txt
+	gmt coast -R50/160/-15/15 -JM5.3i -Gburlywood -Sazure -A500 
+	gmt grdcontour @App_O_geoid.nc -B20f10 -BWSne -C10 -A20+d+u<span class="s2">&quot; m&quot;</span>+f8p -Gl50/10S/160/10S -S10 -T+l 
+	gmt plot -Sqffix2.txt:+g+an+p+Lf+u<span class="s2">&quot; m&quot;</span>+f8p -Wthick @App_O_transect.txt
 gmt end show
 </pre></div>
 </div>
@@ -785,7 +785,7 @@ that New York will experience a large tsunami about 8 hours after the event.</sp
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 21, 2019.
+        Last updated on Oct 22, 2019.
       </span>
 
     </p>
