@@ -240,7 +240,7 @@ All work is performed in a temporary work directory.
 The optional <em>session-prefix</em> assigns a name to the session, and this may be used
 as figure name for single-figure sessions [gmtsession].  Likewise, the optional
 <em>format</em> can be used to override the default graphics format [PDF].</dd>
-<dt><strong>gmt figure</strong> [<em>prefix</em>] [<em>format(s)</em>] [<em>options</em>]</dt>
+<dt><strong>gmt figure</strong> <em>prefix</em> [<em>format(s)</em>] [<em>options</em>]</dt>
 <dd>Specifies the desired name, output format(s) and any custom arguments that should
 be passed to <a class="reference internal" href="psconvert.html"><span class="doc">psconvert</span></a> when producing this figure.  All subsequent plotting
 will be directed to this current figure until another <strong>gmt figure</strong> command is issued
@@ -261,7 +261,7 @@ directory.  The figures are placed in the current directory.</dd>
 <dl class="docutils">
 <dt><strong>--help</strong></dt>
 <dd>List and description of GMT modules.</dd>
-<dt><strong>--new-script</strong>[=*L*]</dt>
+<dt><strong>--new-script</strong>[=<em>L</em>]</dt>
 <dd>Write a GMT modern mode script template to stdout. Optionally append the desired
 scripting language among <em>bash</em>, <em>csh</em>, or <em>batch</em>.  Default is the main shell
 closest to your current shell (e.g., bash for zsh, csh for tcsh).</dd>
@@ -1498,7 +1498,7 @@ GMT documentation site <a class="reference external" href="https://docs.generic-
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 21, 2019.
+        Last updated on Oct 23, 2019.
       </span>
 
     </p>

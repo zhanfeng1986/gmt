@@ -107,36 +107,43 @@
 <li class="toctree-l1"><a class="reference internal" href="users_contrib_scripts.html">Users Script Contributions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="users_contrib_symbols.html">Users Symbol Contributions</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#new-features-in-gmt-5-4">New Features in GMT 5.4</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#new-features-in-gmt-6-0">New Features in GMT 6.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modern-mode-modules">Modern mode modules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#new-modules">New modules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#general-improvements">General improvements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-enhancements">Module enhancements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#new-features-in-gmt-5-4">New Features in GMT 5.4</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">New modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">General improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Module enhancements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#api-changes">API changes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#backwards-compatible-syntax-changes">Backwards-compatible syntax changes</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#new-features-in-gmt-5-3">New Features in GMT 5.3</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2">New modules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">General improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">New modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">General improvements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#the-api">The API</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#new-features-in-gmt-5-2">New Features in GMT 5.2</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id4">New modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">New modules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#new-common-options">New common options</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#new-default-parameters">New default parameters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#updated-common-options">Updated common options</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5">General improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">General improvements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#program-specific-improvements">Program-specific improvements</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#new-features-in-gmt-5">New Features in GMT 5</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#new-programs">New programs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6">New common options</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7">Updated common options</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id8">New default parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id9">General improvements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id10">Program-specific improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">New common options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">Updated common options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">New default parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">General improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">Program-specific improvements</a></li>
 </ul>
 </li>
 </ul>
@@ -240,6 +247,177 @@
             
   <div class="section" id="changelog">
 <span id="id1"></span><h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="new-features-in-gmt-6-0">
+<h2>New Features in GMT 6.0<a class="headerlink" href="#new-features-in-gmt-6-0" title="Permalink to this headline">¶</a></h2>
+<p>GMT 6.0 is a major revision of GMT and its eco-system.  At the top level,
+there are numerous changes:</p>
+<ol class="arabic simple">
+<li>An entirely new and permanent address with a brand new website layout and
+organization: <a class="reference external" href="http://www.generic-mapping-tools.org">http://www.generic-mapping-tools.org</a>.</li>
+<li>A new discussion forum at <a class="reference external" href="http://forum.generic-mapping-tools.org">http://forum.generic-mapping-tools.org</a>.</li>
+<li>A data server in Hawaii (oceania.generic-mapping-tools.org) with plans
+for new mirror servers around the world.  This is where the remote files
+that start with &#64; come from.</li>
+<li>A new way to use GMT (<em>modern</em> mode) that eliminates many of the
+aspects of classic GMT that perplexes users.  In modern mode, PostSCript
+is no longer the default graphics output format and most modules that
+had names starting with <strong>ps</strong> have had that prefix removed.  In addition,
+a few modules have entirely different names in modern mode (<em>psxy</em> is <em>plot</em>,
+<em>psxyz</em> is <em>plot3d</em>, and <em>psscale</em> is <em>colorbar</em>).</li>
+<li>The default mode remains <em>classic</em>, the only mode previously available.  All
+existing classic mode GMT 4 and 5 scripts will run as before.</li>
+</ol>
+<div class="section" id="modern-mode-modules">
+<h3>Modern mode modules<a class="headerlink" href="#modern-mode-modules" title="Permalink to this headline">¶</a></h3>
+<p>GMT modern mode is supported by five new commands:</p>
+<ol class="arabic simple">
+<li><a class="reference internal" href="begin.html"><span class="doc">begin</span></a> starts a new GMT modern mode session.</li>
+<li><a class="reference internal" href="figure.html"><span class="doc">figure</span></a> names a new GMT figure in the current session</li>
+<li><a class="reference internal" href="subplot.html"><span class="doc">subplot</span></a> starts, manages, and ends subplots in a figure.</li>
+<li><a class="reference internal" href="inset.html"><span class="doc">inset</span></a> starts, manages and ends an inset in a figure or subplot.</li>
+<li><a class="reference internal" href="end.html"><span class="doc">end</span></a> ends a GMT modern mode session.</li>
+</ol>
+<p>Here, <strong>gmt begin</strong> and <strong>gmt end</strong> begins and ends a modern mode session, hence
+it is not possible to get entangled in modern mode if you prefer to run classic
+mode scripts.  There are three additional commands that are associated with modern
+mode; the first two also work in classic mode since they are typically not useful in scripts:</p>
+<ol class="arabic simple">
+<li><a class="reference internal" href="docs.html"><span class="doc">docs</span></a> gives browser access to any GMT module documentation.</li>
+<li><a class="reference internal" href="clear.html"><span class="doc">clear</span></a> removes various session files or cached data files.</li>
+<li><a class="reference internal" href="movie.html"><span class="doc">movie</span></a> simplifies the construction of animated sequences.</li>
+</ol>
+<p>The entire cookbook, tutorial and gallery examples all use modern mode. In modern mode,
+the default graphics format is PDF and scripts can open up the plots in the default
+viewer automatically.</p>
+</div>
+<div class="section" id="new-modules">
+<h3>New modules<a class="headerlink" href="#new-modules" title="Permalink to this headline">¶</a></h3>
+<p>Apart from modern mode we have added a few modules that are accessible to all users:</p>
+<ol class="arabic simple">
+<li><a class="reference internal" href="events.html"><span class="doc">events</span></a> makes a snapshot of all time-dependent events.</li>
+<li><a class="reference internal" href="supplements/geodesy/earthtide.html"><span class="doc">earthtide</span></a> (supplement) computes the solid Earth tides.</li>
+</ol>
+</div>
+<div class="section" id="general-improvements">
+<h3>General improvements<a class="headerlink" href="#general-improvements" title="Permalink to this headline">¶</a></h3>
+<p>While our focus has been almost exclusively on GMT modern mode, there is a
+range of new capabilities have been added to all of GMT; here is a
+summary of these changes:</p>
+<ul class="simple">
+<li>The <a class="reference internal" href="gmt.html"><span class="doc">gmt</span></a> driver has several new options to display the latest GMT citation, DOI,
+the current data server, and the ability to create a blank modern mode shell script or
+DOS batch template.</li>
+<li>A new common option <strong>-l</strong> lets some modules (currently, only <a class="reference internal" href="plot.html"><span class="doc">plot</span></a> and <a class="reference internal" href="plot3d.html"><span class="doc">plot3d</span></a>)
+build an automatic legend. Most legends are now perfectly dimensions and aligned using
+the PostScript language.</li>
+<li>We now consider untouched pixels when rendering PostScript to be opaque, hence automatic
+cropping to tightest bounding box will recognize areas painted white as different from opaque.</li>
+<li>We have a much improved scheme for distinguishing between minus-signs and hyphens when typesetting
+text since these are different glyphs in various character sets.</li>
+<li>Modern mode can produce any of several graphics <a class="reference internal" href="begin.html#tbl-formats"><span class="std std-ref">formats</span></a>. While the default
+is PDF, this can be changed via a new GMT defaults <a class="reference internal" href="gmt.conf.html#gmt-graphics-format"><span class="std std-ref">GMT_GRAPHICS_FORMAT</span></a>.
+The conversion from PostScript to the desired format can be modified via another new GMT defaults
+setting <a class="reference internal" href="gmt.conf.html#ps-convert"><span class="std std-ref">PS_CONVERT</span></a>.</li>
+<li>We have relaxed the <em>style</em> syntax for pens so that the :<em>phase</em> part is optional, with a default of 0.</li>
+<li>We have rearranged our supplements a bit: We have split meca to seis and geodesy and moved new module
+<a class="reference internal" href="supplements/geodesy/earthtide.html"><span class="doc">earthtide</span></a> and existing module <a class="reference internal" href="supplements/geodesy/gpsgridder.html"><span class="doc">gpsgridder</span></a> to
+the geodesy supplement.  Also, <a class="reference internal" href="dimfilter.html"><span class="doc">dimfilter</span></a> has moved to the core and we have remove the empty misc supplement.</li>
+<li>In most modules that need to set up an equidistant 1-D array we now use the same machinery to parse
+options and created the arrays through a redesigned <strong>-T</strong> option.  For details on array creation,
+see <cite>Generate 1D Array</cite>.</li>
+<li>We have a new GMT common option <strong>-j</strong> that clarifies how to select flat Earth, great circle,
+and geodesic calculations and thus eliminates awkward, sign-based increments.</li>
+<li>The GMT common option <strong>-r</strong> used to always set pixel-registration for grids but it can now
+take the optional directives <strong>g</strong> or <strong>p</strong> to specify the desired registration.</li>
+<li>We now offer slanted annotations via the <strong>-B</strong> option, using the modifier <strong>+a</strong><em>angle</em>.
+We have added auto-computed annotation and tick intervals for time-axes.  There is also the
+frame specifications <strong>lrbtu</strong> that just draw the corresponding frames without ticking.</li>
+<li>We offer a wide range of new color tables, including the scientific color maps from Fabio Crameri,
+and we now use Google’s <em>turbo</em> as the default GMT color table, and <em>geo</em> for topographic DEMs.</li>
+<li>Modules that read data tables can now be given an ESRI shapefile directly.</li>
+<li>GMT common options <strong>-X</strong> and <strong>-Y</strong> may now be specified using fractions of current plot’s
+dimensions.</li>
+<li>When specifying master CPTs one can add the modifier <strong>+i</strong><em>dz</em> to ensure any automatically computed
+range is rounded into multiples of <em>dz</em>.</li>
+<li>Let common option <strong>-a</strong> with no arguments place add all aspatial items to the input record.</li>
+<li>We have added <em>dashdot</em> as a new shorthand style name.</li>
+<li>Map regions can now be specified via <strong>-R</strong><em>ISOcode</em> using the 2-char ISO country codes, with modifiers
+to round the resulting exact regions into multiples of given increments.  Under modern mode, new shorthand
+options <strong>-Re</strong> and <strong>-Ra</strong> will examine the data files given and determine the exact or approximate region,
+respectively.</li>
+</ul>
+</div>
+<div class="section" id="module-enhancements">
+<h3>Module enhancements<a class="headerlink" href="#module-enhancements" title="Permalink to this headline">¶</a></h3>
+<p>Several modules have obtained new options to extend their capabilities:</p>
+<ul class="simple">
+<li><a class="reference internal" href="grdfilter.html"><span class="doc">grdfilter</span></a> now accepts the <strong>-r</strong> option to set grid node registration.</li>
+<li><a class="reference internal" href="clip.html"><span class="doc">clip</span></a> has a new option <strong>-W</strong><em>pen</em> to draw the clip path as well as
+setting up clipping.</li>
+<li><a class="reference internal" href="plot.html"><span class="doc">plot</span></a> takes a new modifier <strong>+s</strong> to <strong>-Sr</strong> to specify a rectangle via opposite
+diagonal corners.  Users can now also specify a color indirectly via a CPT (i.e., <strong>-C</strong>)
+and a new <strong>-Z</strong><em>value</em> option (instead of directly via <strong>-G</strong>). The wedge symbol (<strong>-Sw</strong>) has been greatly upgraded to
+offer windshield and spider-graph symbols.  There is now also a new QR code symbol
+that will redirect to the GMT homepage.  We also added a <strong>+h</strong> modifier for quoted lines
+when the user wants to hide the line. Finally, symbols <strong>-SE-</strong>, <strong>-SJ-</strong> and <strong>-SW</strong> can
+now all handle geographic units.</li>
+<li><a class="reference internal" href="plot3d.html"><span class="doc">plot3d</span></a> also allows users to specify a color indirectly via a CPT (i.e., <strong>-C</strong>)
+and a new <strong>-Z</strong><em>value</em> option.  The wedge symbol (<strong>-Sw</strong>) has been greatly upgraded to
+offer windshield symbols and spider-graph symbols. There is now also a new QR code symbol
+that will redirect to the GMT homepage.</li>
+<li><a class="reference internal" href="text.html"><span class="doc">text</span></a> can now handle lack of input files when <strong>-F+c+t</strong> is used to give both a string and
+its placement.</li>
+<li>In modern mode, both <a class="reference internal" href="makecpt.html"><span class="doc">makecpt</span></a> and <a class="reference internal" href="grd2cpt.html"><span class="doc">grd2cpt</span></a> require a new option <strong>-H</strong> to actually
+write the resulting CPT to standard output (by default they write a hidden CPT that modern mode
+modules know where to find automatically).  <strong>makecpt</strong> also has a new option <strong>-S</strong> to create a
+symmetric color table given the range in a data file given via <strong>-T</strong>.</li>
+<li><a class="reference internal" href="gmtmath.html"><span class="doc">gmtmath</span></a> has a new operator <strong>PHI</strong> that computes the
+golden ratio.  We now allow <strong>-Cx</strong> and <strong>-Cy</strong> to represent <strong>-C</strong>0 and <strong>-C</strong> 1.</li>
+<li><a class="reference internal" href="grdmath.html"><span class="doc">grdmath</span></a> also has a new operator <strong>PHI</strong> that computes the
+golden ratio, as well as <strong>NODE</strong> and <strong>NODEP</strong> operators, and added more
+OpenMP support for operators <strong>LDISTG</strong>, <strong>PSI</strong>, <strong>TCRIT</strong>, <strong>PLM</strong>, and <strong>PLMg</strong>.</li>
+<li><a class="reference internal" href="rose.html"><span class="doc">rose</span></a> can now take <strong>-JX</strong> instead of <strong>-S</strong> so all plot modules take <strong>-J</strong>.</li>
+<li><a class="reference internal" href="grdedit.html"><span class="doc">grdedit</span></a> can now take <strong>-J</strong> and add meta-data to the grid header.</li>
+<li><a class="reference internal" href="gmt2kml.html"><span class="doc">gmt2kml</span></a> takes new option <strong>-E</strong> to extract altitudes stored in the Extended data property.</li>
+<li><a class="reference internal" href="supplements/seis/polar.html"><span class="doc">polar</span></a> and <a class="reference internal" href="supplements/seis/meca.html"><span class="doc">meca</span></a> can let beachball size scale
+with magnitude.  These and other plotting tools in seis can now accept the 3-D projection setting via <strong>-p</strong>.</li>
+<li>Both <a class="reference internal" href="grdcontour.html"><span class="doc">grdcontour</span></a> and <a class="reference internal" href="contour.html"><span class="doc">contour</span></a> can now accept a list of comma-separated contours instead
+of always creating equidistant lists. Also, if no contours are specified we auto-compute a reasonable
+selection of 10 to 20 contours.  We also added <strong>-Ln</strong>|<strong>N</strong>|<strong>p</strong>|<strong>P</strong> for selecting
+just negative or positive contours.  Finally, we added modifier <strong>+z</strong> to <strong>-Q</strong> to exclude the zero-contour
+entirely.</li>
+<li><a class="reference internal" href="mapproject.html"><span class="doc">mapproject</span></a> has an enhanced option <strong>-W</strong> that can return reference point coordinates.
+Also, either <strong>-J+</strong><em>proj</em> or <strong>-J</strong><em>EPSG</em>:n can now be given.</li>
+<li><a class="reference internal" href="grdproject.html"><span class="doc">grdproject</span></a> also takes <strong>-J</strong>+*proj* or <strong>-J</strong><em>EPSG</em>:n.</li>
+<li><a class="reference internal" href="project.html"><span class="doc">project</span></a> has a new option <strong>-Z</strong> for generating the path of a specified ellipse.</li>
+<li><a class="reference internal" href="dimfilter.html"><span class="doc">dimfilter</span></a> now writes an error analysis template to standard output via the <strong>-L</strong> option.</li>
+<li><a class="reference internal" href="surface.html"><span class="doc">surface</span></a> can now apply a data mask computed from the data distribution directly rather than
+having to make separate calls to <a class="reference internal" href="grdmask.html"><span class="doc">grdmask</span></a> and <a class="reference internal" href="grdmath.html"><span class="doc">grdmath</span></a>.  Also, the <strong>-A</strong> option now
+has a directive <strong>m</strong> to select Flat Earth scaling via the mean latitude.</li>
+<li>The block-modules <a class="reference internal" href="blockmean.html"><span class="doc">blockmean</span></a>, <a class="reference internal" href="blockmedian.html"><span class="doc">blockmedian</span></a>, and <a class="reference internal" href="blockmode.html"><span class="doc">blockmode</span></a> have new options
+<strong>-A</strong> and <strong>-G</strong> which allow them to write one or more grids directly.</li>
+<li><a class="reference internal" href="gmtinfo.html"><span class="doc">gmtinfo</span></a> has a new option <strong>-a</strong> which allows it to report aspatial column names, and
+<strong>-Ib</strong> to output the boundary polygon for the data.</li>
+<li><a class="reference internal" href="supplements/spotter/backtracker.html"><span class="doc">backtracker</span></a> can now do reconstruction given individual hotspot
+drift histories.  We also added <strong>-M</strong> for fractional stage rotations.</li>
+<li><a class="reference internal" href="supplements/spotter/grdrotater.html"><span class="doc">grdrotater</span></a> has an option <strong>-A</strong> to override region of output grid.</li>
+<li><a class="reference internal" href="supplements/spotter/polespotter.html"><span class="doc">polespotter</span></a> has a new option <strong>-Cx</strong><em>file</em>.</li>
+<li><a class="reference internal" href="psconvert.html"><span class="doc">psconvert</span></a> has a new option <strong>-H</strong> for automatic sub-pixel rendering and scaling. Under
+modern mode we also have option <strong>-M</strong> for sandwiching a PostScript plot between two other plots.</li>
+<li>We added modifiers <strong>+a</strong> and <strong>+i</strong> to option <strong>-Z</strong> in <a class="reference internal" href="gmtselect.html"><span class="doc">gmtselect</span></a>.</li>
+<li><a class="reference internal" href="grdcut.html"><span class="doc">grdcut</span></a> has new option <strong>-ZN</strong> to strip off outside rows and cols that are all NaN.</li>
+<li><a class="reference internal" href="grdinfo.html"><span class="doc">grdinfo</span></a> now accepts <strong>-o</strong> when <strong>-Cn</strong> is in effect.</li>
+<li>Enable <a class="reference internal" href="basemap.html"><span class="doc">basemap</span></a> <strong>-L</strong> to do Cartesian projection scales, even vertical.</li>
+<li>Improve the vertical scale bar for <a class="reference internal" href="wiggle.html"><span class="doc">wiggle</span></a> as well.</li>
+<li><a class="reference internal" href="gmtconvert.html"><span class="doc">gmtconvert</span></a> has new option <strong>-W</strong> that attempts to convert trailing text to numbers, if possible.
+Append modifier <strong>+n</strong> to suppress NaN columns.  We also added <strong>-N</strong><em>column</em>[<strong>+a</strong>|<strong>d</strong>] to
+sort a table based on specified <em>column</em>.  Finally, <strong>-EM</strong><em>stride</em> is similar to <strong>-Em</strong> but it will
+always include the last point.</li>
+<li><a class="reference internal" href="grdlandmask.html"><span class="doc">grdlandmask</span></a> <strong>-E</strong> will trace nodes being positioned exactly on polygon border.</li>
+<li><a class="reference internal" href="histogram.html"><span class="doc">histogram</span></a> can now run in reverse cumulative mode via <strong>-Qr</strong>.</li>
+</ul>
+</div>
+</div>
 <div class="section" id="new-features-in-gmt-5-4">
 <h2>New Features in GMT 5.4<a class="headerlink" href="#new-features-in-gmt-5-4" title="Permalink to this headline">¶</a></h2>
 <p>Between 5.3 and 5.4 we continued to work on the underlying API
@@ -250,8 +428,8 @@ our builds to Coverity for similar reasons.  We have also made an effort
 to standardize GMT non-common option usage across the suite.
 Nevertheless, there have been many user-level enhancements as well.
 Here is a summary of these changes in three key areas:</p>
-<div class="section" id="new-modules">
-<h3>New modules<a class="headerlink" href="#new-modules" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id2">
+<h3>New modules<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>We have added a new module to the GMT core called
 <a class="reference internal" href="ternary.html"><span class="doc">ternary</span></a>.
 This module allows for the construction of ternary diagram, currently
@@ -260,8 +438,8 @@ The <em>mgd77</em> supplement has gained a new tool <a class="reference internal
 for creating a valid MGD77-format header from basic metadata and information
 determined from the header-less data file.</p>
 </div>
-<div class="section" id="general-improvements">
-<h3>General improvements<a class="headerlink" href="#general-improvements" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>General improvements<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>A range of new capabilities have been added to all of GMT; here is a
 summary of these changes:</p>
 <ul class="simple">
@@ -332,8 +510,8 @@ will now get the old-style symbol.  The new and superior vector symbols
 will require the use of the new (and standard) syntax.</li>
 </ul>
 </div>
-<div class="section" id="module-enhancements">
-<h3>Module enhancements<a class="headerlink" href="#module-enhancements" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>Module enhancements<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>Several modules have obtained new options to extend their capabilities:</p>
 <ul class="simple">
 <li><a class="reference internal" href="gmt.html"><span class="doc">gmt</span></a> has new session management option that lets you clear various
@@ -448,8 +626,8 @@ needed to support the modules and especially the external interfaces
 we are building toward MATLAB and Python.  Nevertheless, there have
 been many user-level enhancements as well.
 Here is a summary of these changes in three key areas:</p>
-<div class="section" id="id2">
-<h3>New modules<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3>New modules<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>We have added a new module to the GMT core called
 <a class="reference internal" href="solar.html"><span class="doc">solar</span></a>.
 This module plots various day-light terminators and other sunlight parameters.</p>
@@ -466,8 +644,8 @@ to the <em>potential</em> supplement.  This tool is a Green’s function griddin
 that grids vector data assumed to be coupled via an elastic model.  The prime
 usage is for gridding GPS velocity components.</p>
 </div>
-<div class="section" id="id3">
-<h3>General improvements<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h3>General improvements<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>There are many changes to GMT, mostly under the hood, but also changes that
 affect users directly.  We have added four new examples and one new animation
 to highlight recently added capabilities.  There have been many bug fixes
@@ -584,8 +762,8 @@ see the API <a class="reference internal" href="api.html#api"><span class="std s
 only added to the 5.2-series.  All in all, almost 200 new features (a combination
 of new programs, new options, and enhancements) have been implemented.
 Here is a summary of these changes in six key areas:</p>
-<div class="section" id="id4">
-<h3>New modules<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3>New modules<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>There are two new modules in the core system:</p>
 <p><a class="reference internal" href="gmtlogo.html"><span class="doc">gmtlogo</span></a> is modeled after the shell script with the same
 name but is now a regular C module that can be used to add the
@@ -679,8 +857,8 @@ dimensions (requires <strong>-I</strong> to use the increments).  The optional j
 keys specify how the reference point relate to the grid region.</li>
 </ul>
 </div>
-<div class="section" id="id5">
-<h3>General improvements<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h3>General improvements<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p>Several changes have affects across GMT; these are:</p>
 <ul class="simple">
 <li>Added optional multi-threading capabilities to several modules, such as
@@ -973,8 +1151,8 @@ found in the sph supplement.</dd>
 <dd>Evaluate a plate model on a geographic grid.</dd>
 </dl>
 </div>
-<div class="section" id="id6">
-<h3>New common options<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h3>New common options<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p>First we discuss changes that have been
 implemented by a series of new lower-case GMT common options:</p>
 <ul class="simple">
@@ -1006,8 +1184,8 @@ transparency level for that layer. However, as PostScript has no provision for
 transparency you can only see the effect if you convert it to PDF.</li>
 </ul>
 </div>
-<div class="section" id="id7">
-<h3>Updated common options<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id10">
+<h3>Updated common options<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <p>Some of the established GMT common options have seen significant
 improvements; these include:</p>
 <ul class="simple">
@@ -1027,8 +1205,8 @@ projected values, e.g., UTM coordinates while <strong>-Ju</strong> is given.</li
 line arguments, we now also support giving + which in addition will list
 the explanations for all options that are not among the GMT common set.</p>
 </div>
-<div class="section" id="id8">
-<h3>New default parameters<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id11">
+<h3>New default parameters<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <p>Most of the GMT default parameters have changed names in order to
 group parameters into logical groups and to use more consistent naming.
 However, under compatibility mode (see below) the old names are still recognized.
@@ -1073,8 +1251,8 @@ The environment variable <strong>$GMT_USERDIR</strong> is used for this instead.
 gmt.conf file as well. So the environment variable <strong>$GMT_TMPDIR</strong> is used instead.</li>
 </ul>
 </div>
-<div class="section" id="id9">
-<h3>General improvements<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id12">
+<h3>General improvements<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <p>Other wide-ranging changes have been implemented in different
 ways, such as</p>
 <ul class="simple">
@@ -1116,8 +1294,8 @@ limitations on how to visualize this transparency.</li>
 <li>GMT now ships with 36 standard color palette tables (CPT), up from 24.</li>
 </ul>
 </div>
-<div class="section" id="id10">
-<h3>Program-specific improvements<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id13">
+<h3>Program-specific improvements<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <p>Finally, here is a list of numerous enhancements to individual programs:</p>
 <ul class="simple">
 <li><a class="reference internal" href="blockmean.html"><span class="doc">blockmean</span></a> added <strong>-Ep</strong> for error propagation and
@@ -1324,7 +1502,7 @@ simply process their PostScript files via <a class="reference internal" href="ps
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 21, 2019.
+        Last updated on Oct 23, 2019.
       </span>
 
     </p>
