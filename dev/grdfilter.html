@@ -271,6 +271,9 @@ filters. Use any filter code <strong>x</strong> (listed below) followed by the f
 diameter <em>width</em>. This gives an isotropic filter; append /<em>width2</em>
 for a rectangular filter (requires <strong>-Dp</strong> or <strong>-D0</strong>).  By default we
 perform low-pass filtering; append <strong>+h</strong> to select high-pass filtering.
+For isotropic filters, <em>width</em> may be a grid for variable filter width,
+in which case the grid must have the same registration and dimensions as
+the output filtered grid.
 Some filters allow for optional arguments and modifiers.</p>
 <p>Convolution filters (and their codes) are:</p>
 <p>(<strong>b</strong>) Boxcar: All weights are equal.</p>
@@ -488,7 +491,7 @@ of the increments in the input data, filtering will be considerably slower.
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 24, 2019.
+        Last updated on Oct 25, 2019.
       </span>
 
     </p>
