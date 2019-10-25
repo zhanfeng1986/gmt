@@ -209,8 +209,8 @@
   <div class="section" id="sphinterpolate">
 <span id="index-0"></span><h1>sphinterpolate<a class="headerlink" href="#sphinterpolate" title="Permalink to this headline">¶</a></h1>
 <p>Spherical gridding in tension of data on a sphere</p>
-<div class="section" id="id1">
-<h2><a class="reference external" href="#toc1">Synopsis</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <p><strong>gmt sphinterpolate</strong> [ <em>table</em> ] <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>grdfile</em>
 [ <a class="reference internal" href="#i"><span> <strong>-I</strong></span></a></strong><em>increment</em> ]
 [ <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong><em>mode</em>[<em>options</em>] ]
@@ -415,12 +415,10 @@ gmt end
 </pre></div>
 </div>
 <p>To interpolate the points in the file testdata.txt on a global 1x1
-degree grid with no tension, use</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sphinterpolate testdata.txt -Rg -I1 -Gsolution.nc
+degree grid with no tension, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt sphinterpolate testdata.txt -Rg -I1 -Gsolution.nc
 </pre></div>
 </div>
-</div></blockquote>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
@@ -432,8 +430,8 @@ degree grid with no tension, use</p>
 <a class="reference internal" href="surface.html"><span class="doc">surface</span></a>,
 <a class="reference internal" href="triangulate.html"><span class="doc">triangulate</span></a></p>
 </div>
-<div class="section" id="id2">
-<h2><a class="reference external" href="#toc10">References</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p>Renka, R, J., 1997, Algorithm 772: STRIPACK: Delaunay Triangulation and
 Voronoi Diagram on the Surface of a Sphere, <em>AMC Trans. Math. Software</em>,
 <strong>23</strong>(3), 416-434.</p>
@@ -466,7 +464,7 @@ Trans. Math. Software</em>, <strong>23</strong>(3), 435-442.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 24, 2019.
+        Last updated on Oct 25, 2019.
       </span>
 
     </p>

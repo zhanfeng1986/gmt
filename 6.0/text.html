@@ -324,7 +324,7 @@ a line from the original point to the shifted point; append a <em>pen</em>
 to change the attributes for this line.</dd>
 </dl>
 <dl class="docutils" id="f">
-<dt><strong>-F</strong>[<strong>+a</strong>[<em>angle</em>]][<strong>+c</strong>[<em>justify</em>]][<strong>+f</strong>[<em>font</em>]][<strong>+j</strong>[<em>justify</em>]][<strong>+h</strong>|<strong>+l</strong>|<strong>+r</strong>[<em>first</em>] |<strong>+t</strong><em>text</em>|<strong>+w</strong><em>word</em>|<strong>+z</strong>[<em>format</em>]]</dt>
+<dt><strong>-F</strong>[<strong>+a</strong>[<em>angle</em>]][<strong>+c</strong>[<em>justify</em>]][<strong>+f</strong>[<em>font</em>]][<strong>+j</strong>[<em>justify</em>]][<strong>+h</strong>|<strong>+l</strong>|<strong>+r</strong>[<em>first</em>] |<strong>+t</strong><em>text</em>|<strong>+z</strong>[<em>format</em>]]</dt>
 <dd>By default, text will be placed horizontally, using the primary
 annotation font attributes (<a class="reference internal" href="gmt.conf.html#font-annot-primary"><span class="std std-ref">FONT_ANNOT_PRIMARY</span></a>), and centered
 on the data point. Use this option to override these defaults by
@@ -353,7 +353,7 @@ a multisegment input file, <strong>+r</strong> to use the record number (countin
 to a string using the supplied <em>format</em> [use FORMAT_FLOAT_MAP].  Note: If <strong>-Z</strong> is
 in effect then the <em>z</em> value used for formatting is in the 4th, not 3rd column.
 If you only want a specific word from the trailing text and not the whole line,
-use <strong>+w</strong><em>word</em> to indicate which word (0 is the first word) you want.</dd>
+use <strong>-it</strong><em>word</em> to indicate which word (0 is the first word) you want.</dd>
 </dl>
 <dl class="docutils" id="g">
 <dt><strong>-G</strong><em>color</em></dt>
@@ -567,7 +567,7 @@ trailing text.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 24, 2019.
+        Last updated on Oct 25, 2019.
       </span>
 
     </p>

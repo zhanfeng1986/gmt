@@ -408,8 +408,7 @@ gmt end show
 <p>To create a gridded data set from the file seaMARCII_bathy.lon_lat_z
 using a 0.5 min grid, a 5 km search radius, using an octant search with
 100% sector coverage, and set empty nodes to -9999:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt nearneighbor seaMARCII_bathy.lon_lat_z -R242/244/-22/-20 -I0.5m <span class="se">\</span>
-                 -E-9999 -Gbathymetry.nc -S5k -N8+m8
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt nearneighbor seaMARCII_bathy.lon_lat_z -R242/244/-22/-20 -I0.5m -E-9999 -Gbathymetry.nc -S5k -N8+m8
 </pre></div>
 </div>
 <p>To make a global grid file from the data in geoid.xyz using a 1 degree
@@ -455,7 +454,7 @@ at least one value:</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 24, 2019.
+        Last updated on Oct 25, 2019.
       </span>
 
     </p>

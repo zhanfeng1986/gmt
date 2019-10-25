@@ -1346,8 +1346,7 @@ assign it to a variable, try</p>
 first 3 cosine harmonics where we store and repeatedly recall the
 trigonometric argument (2*pi*T/360):</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math -T0/360/1 <span class="m">2</span> PI MUL <span class="m">360</span> DIV T MUL STO@kT COS @kT <span class="m">2</span> MUL COS ADD <span class="se">\</span>
-            @kT <span class="m">3</span> MUL COS <span class="nv">ADD</span> <span class="o">=</span> harmonics.txt
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt math -T0/360/1 <span class="m">2</span> PI MUL <span class="m">360</span> DIV T MUL STO@kT COS @kT <span class="m">2</span> MUL COS ADD @kT <span class="m">3</span> MUL COS <span class="nv">ADD</span> <span class="o">=</span> harmonics.txt
 </pre></div>
 </div>
 </div></blockquote>
@@ -1443,7 +1442,7 @@ Publishing Corp.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 24, 2019.
+        Last updated on Oct 25, 2019.
       </span>
 
     </p>

@@ -479,7 +479,7 @@ Other commands requiring input files are just dummy examples of the types
 of uses that are common but cannot be run verbatim as written.</p>
 <p>To create a grid file from the ASCII data in hawaii_grv.xyz, use</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt xyz2grd hawaii_grv.xyz -D+xdegree+ydegree+zGal+t<span class="s2">&quot;Hawaiian Gravity&quot;</span>+r<span class="s2">&quot;GRS-80 Ellipsoid used&quot;</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt xyz2grd hawaii_grv.xyz -D+xdegree+ydegree+zGal+t<span class="s2">&quot;Hawaiian Gravity&quot;</span>+r<span class="s2">&quot;GRS-80 Ellipsoid used&quot;</span> <span class="se">\</span>
             -Ghawaii_grv_new.nc -R198/208/18/25 -I5m -V
 </pre></div>
 </div>
@@ -552,7 +552,7 @@ that is assigned to each node in a cartesian data set, use</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 24, 2019.
+        Last updated on Oct 25, 2019.
       </span>
 
     </p>
