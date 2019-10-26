@@ -270,7 +270,8 @@ thus plot symbols as events unfold.</p>
 from the data file’s third column (fourth if <strong>-C</strong> is used). Note: Not all the symbols that
 are available in <a class="reference internal" href="psxy.html"><span class="doc">psxy</span></a> can be used here.  At the moment we only support the basic
 symbols and custom symbols; bars, vectors, ellipses, fronts, decorated and quoted lines cannot
-be specified.</dd>
+be specified.  Symbols sizes read from a data file will be assumed to be in the unit controlled
+by <a class="reference internal" href="gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a> unless they have <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> appended.</dd>
 </dl>
 <dl class="docutils" id="t">
 <dt><strong>-T</strong><em>now</em></dt>
@@ -454,6 +455,13 @@ of the three time histories.  By default the symbol size is constant, there is n
 variation, and all symbols are opaque.  If trailing text is plotted (requires <strong>-Et</strong>) then
 only a transparency time-function is used.</p>
 </div>
+<div class="section" id="sorting-the-data">
+<h2>Sorting the data<a class="headerlink" href="#sorting-the-data" title="Permalink to this headline">¶</a></h2>
+<p>While only the events that should be visible will be plotted at the given time set via <strong>-T</strong>,
+the order of plotting is simply given by the order of records in the file.  Thus, if the
+file is <em>not</em> sorted into ascending time then later events might plot <em>beneath</em> earlier events.
+To prevent this, you can sort your file into ascending order via the <a class="reference internal" href="gmtconvert.html"><span class="doc">gmtconvert</span></a> <strong>-N</strong> option.</p>
+</div>
 <div class="section" id="classic-mode-arguments">
 <h2>Classic Mode Arguments<a class="headerlink" href="#classic-mode-arguments" title="Permalink to this headline">¶</a></h2>
 <p>These options are used to manipulate the building of layered GMT PostScript plots in classic mode.
@@ -522,7 +530,7 @@ gmt psevents -Rg -JG200/5/6i -Baf q.txt -SE- -Cq.cpt --TIME_UNIT<span class="o">
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 25, 2019.
+        Last updated on Oct 26, 2019.
       </span>
 
     </p>
