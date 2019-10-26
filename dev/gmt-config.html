@@ -9,7 +9,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>grdtrend &mdash; GMT 6.1.0 documentation</title>
+  <title>gmt-config &mdash; GMT 6.1.0 documentation</title>
   
 
   
@@ -40,8 +40,8 @@
   <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="grdvector" href="grdvector.html" />
-    <link rel="prev" title="grdtrack" href="grdtrack.html" /> 
+    <link rel="next" title="gmt5syntax" href="gmt5syntax.html" />
+    <link rel="prev" title="gmt" href="gmt.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -185,14 +185,14 @@
         
           <li><a href="modules.html">GMT Modules</a> &raquo;</li>
         
-      <li>grdtrend</li>
+      <li>gmt-config</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
             
-              <a href="https://github.com/GenericMappingTools/gmt/edit/6.1/doc/rst/source/grdtrend.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/GenericMappingTools/gmt/edit/6.1/doc/rst/source/gmt-config.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -206,137 +206,81 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="grdtrend">
-<span id="index-0"></span><h1>grdtrend<a class="headerlink" href="#grdtrend" title="Permalink to this headline">¶</a></h1>
-<p>Fit trend surface to grids and compute residuals</p>
+  <div class="section" id="gmt-config">
+<span id="index-0"></span><h1>gmt-config<a class="headerlink" href="#gmt-config" title="Permalink to this headline">¶</a></h1>
+<p>Get information about the gmt installation</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<p><strong>gmt grdtrend</strong> <em>grdfile</em> <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong><em>n_model</em>[<strong>+r</strong>]
-[ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>diff.nc</em> ]
-[ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em> ]
-[ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>trend.nc</em> ] [ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong><em>weight.nc</em> ]
-[ <strong>--PAR</strong>=<em>value</em> ]</p>
+<p><strong>gmt-config</strong> [ <em>options</em> ]</p>
 <p><strong>Note:</strong> No space is allowed between the option flag and the associated arguments.</p>
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
-<p><strong>grdtrend</strong> reads a 2-D grid file and fits a low-order polynomial trend
-to these data by [optionally weighted] least-squares. The trend surface
-is defined by:</p>
-<blockquote>
-<div>m1 + m2*x + m3*y + m4*x*y + m5*x*x + m6*y*y + m7*x*x*x +
-m8*x*x*y + m9*x*y*y + m10*y*y*y.</div></blockquote>
-<p>The user must specify <strong>-N</strong><em>n_model</em>, the number of model parameters
-to use; thus, <strong>-N</strong><em>3</em> fits a bilinear trend, <strong>-N</strong><em>6</em> a quadratic
-surface, and so on. Optionally, append <strong>+r</strong> to the <strong>-N</strong> option to
-perform a robust fit. In this case, the program will iteratively
-reweight the data based on a robust scale estimate, in order to converge
-to a solution insensitive to outliers. This may be handy when separating
-a “regional” field from a “residual” which should have non-zero mean,
-such as a local mountain on a regional surface.</p>
-<p>If data file has values set to NaN, these will be ignored during
-fitting; if output files are written, these will also have NaN in the
-same locations.</p>
+<p><strong>gmt-config</strong> is used by developers who need to know technical information
+about the current GMT installation, such as what include files to supply,
+the path to the library, or if it was built with GDAL support, and more.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><em>grdfile</em></dt>
-<dd>The name of a 2-D binary grid file.</dd>
-</dl>
-<dl class="docutils" id="n">
-<dt><strong>-N</strong><em>n_model</em>[<strong>+r</strong>]</dt>
-<dd><em>n_model</em> sets the number of model parameters to fit.
-Append <strong>+r</strong> for robust fit.</dd>
-</dl>
+<p>None.</p>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
-<dt><strong>-D</strong><em>diff.nc</em></dt>
-<dd>Write the difference (input data - trend) to the file <em>diff.nc</em>.</dd>
+<dt><strong>--help</strong></dt>
+<dd>Display this help message and exit.</dd>
+<dt><strong>--all</strong></dt>
+<dd>Display all options.</dd>
+<dt><strong>--bits</strong></dt>
+<dd>Whether library is build 32-bit or 64-bit.</dd>
+<dt><strong>--cc</strong></dt>
+<dd>The C compiler used.</dd>
+<dt><strong>--cflags</strong></dt>
+<dd>The pre-processor and compiler flags used.</dd>
+<dt><strong>--datadir</strong></dt>
+<dd>GMT’s data directories.</dd>
+<dt><strong>--dataserver</strong></dt>
+<dd>The URL of the remote GMT data server.</dd>
+<dt><strong>--dcw</strong></dt>
+<dd>The location of the DCW database.</dd>
+<dt><strong>--dep-libs</strong></dt>
+<dd>The dependent libraries.</dd>
+<dt><strong>--gshhg</strong></dt>
+<dd>The location of the GSHHG database.</dd>
+<dt><strong>--has-fftw</strong></dt>
+<dd>Whether FFTW is used in build.</dd>
+<dt><strong>--has-gdal</strong></dt>
+<dd>Whether GDAL is used in build.</dd>
+<dt><strong>--has-pcre</strong></dt>
+<dd>Whether PCRE is used in build.</dd>
+<dt><strong>--has-lapack</strong></dt>
+<dd>Whether LAPACK is used in build.</dd>
+<dt><strong>--has-openmp</strong></dt>
+<dd>Whether GMT was built with OpenMP support.</dd>
+<dt><strong>--includedir</strong></dt>
+<dd>The include directory.</dd>
+<dt><strong>--libdir</strong></dt>
+<dd>The library directory.</dd>
+<dt><strong>--libs</strong></dt>
+<dd>The library linking information.</dd>
+<dt><strong>--plugindir</strong></dt>
+<dd>GMT’s plugin directory.</dd>
+<dt><strong>--prefix</strong></dt>
+<dd>The install prefix.</dd>
+<dt><strong>--version</strong></dt>
+<dd>The library version</dd>
 </dl>
-<dl class="docutils">
-<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Specify the region of interest. Using the <strong>-R</strong> option
-will select a subsection of the input grid. If this subsection
-exceeds the boundaries of the grid, only the common region will be extracted.</dd>
-</dl>
-<dl class="docutils" id="t">
-<dt><strong>-T</strong><em>trend.nc</em></dt>
-<dd>Write the fitted trend to the file <em>trend.nc</em>.</dd>
-</dl>
-<dl class="docutils" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
-</dl>
-<dl class="docutils" id="w">
-<dt><strong>-W</strong><em>weight.nc</em>[<strong>+s</strong>]</dt>
-<dd>If <em>weight.nc</em> exists, it will be read and used to solve a weighted
-least-squares problem. [Default: Ordinary least-squares fit]. Append
-<strong>+s</strong> to instead read data uncertainties (one sigma) and create weights
-as 1/sigma^2.  If the robust option has been selected, the weights used
-in the robust fit will be written to <em>weight.nc</em>.</dd>
-</dl>
-<dl class="docutils">
-<dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt>
-<dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
-<dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
-<dt><strong>--PAR</strong>=<em>value</em></dt>
-<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
-</dl>
-</div>
-<div class="section" id="remarks">
-<h2>Remarks<a class="headerlink" href="#remarks" title="Permalink to this headline">¶</a></h2>
-<p>The domain of x and y will be shifted and scaled to [-1, 1] and the
-basis functions are built from Legendre polynomials. These have a
-numerical advantage in the form of the matrix which must be inverted and
-allow more accurate solutions. NOTE: The model parameters listed with
-<strong>-V</strong> are Legendre polynomial coefficients; they are not numerically
-equivalent to the m#s in the equation described above. The description
-above is to allow the user to match <strong>-N</strong> with the order of the
-polynomial surface. See <a class="reference internal" href="grdmath.html"><span class="doc">grdmath</span></a> if you need to evaluate the trend
-using the reported coefficients.</p>
-</div>
-<div class="section" id="grid-file-formats">
-<h2>Grid File Formats<a class="headerlink" href="#grid-file-formats" title="Permalink to this headline">¶</a></h2>
-<p>By default GMT writes out grid as single precision floats in a
-COARDS-complaint netCDF file format. However, GMT is able to produce
-grid files in many other commonly used grid file formats and also
-facilitates so called “packing” of grids, writing out floating point
-data as 1- or 2-byte integers. <a class="reference internal" href="gmt.html#grd-inout-full"><span class="std std-ref">(more …)</span></a></p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p><strong>Note</strong>: Below are some examples of valid syntax for this module.
-The examples that use remote files (file names starting with <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>)
-can be cut and pasted into your terminal for testing.
-Other commands requiring input files are just dummy examples of the types
-of uses that are common but cannot be run verbatim as written.</p>
-<p>To remove a planar trend from the remote grid earth_relief_05m for the region
-around Hawaii and write the result to hawaii_residual.nc:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdtrend @earth_relief_05m -R180/240/10/40 -N3 -Dhawaii_residual.nc
+<p>To Determine the compiler flags that is required for an external to to find the GMT function prototypes, try:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt-config --cflags
 </pre></div>
 </div>
-<p>To do a robust fit of a bicubic surface to hawaii_topo.nc, writing the
-result in hawaii_trend.nc and the weights used in hawaii_weight.nc,
-and reporting the progress:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdtrend hawaii_topo.nc -N10+r -Thawaii_trend.nc -Whawaii_weight.nc -V
-</pre></div>
-</div>
-</div></blockquote>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference internal" href="gmt.html"><span class="doc">gmt</span></a>,
-<a class="reference internal" href="grdfft.html"><span class="doc">grdfft</span></a>,
-<a class="reference internal" href="grdfilter.html"><span class="doc">grdfilter</span></a>,
-<a class="reference internal" href="grdmath.html"><span class="doc">grdmath</span></a></p>
+<p><a class="reference internal" href="gmt.html"><span class="doc">gmt</span></a></p>
 </div>
 </div>
 
@@ -348,10 +292,10 @@ and reporting the progress:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="grdvector.html" class="btn btn-neutral float-right" title="grdvector" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="gmt5syntax.html" class="btn btn-neutral float-right" title="gmt5syntax" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="grdtrack.html" class="btn btn-neutral float-left" title="grdtrack" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="gmt.html" class="btn btn-neutral float-left" title="gmt" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

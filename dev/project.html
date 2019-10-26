@@ -530,7 +530,7 @@ the oblique zero meridian (<em>p</em> = 0 line) through Tahiti, run:</p>
 <p>Suppose that pacific_topo.nc is a grid file of bathymetry, and you want
 to make a file of flowlines in the hotspot reference frame. If you run:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grd2xyz pacific_topo.nc <span class="p">|</span> project -T-75/68 -C0/-90 -Fxyq <span class="p">|</span> xyz2grd -Retc -Ietc -Cflow.nc
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grd2xyz pacific_topo.nc <span class="p">|</span> gmt project -T-75/68 -C0/-90 -Fxyq <span class="p">|</span> gmt xyz2grd -Retc -Ietc -Cflow.nc
 </pre></div>
 </div>
 </div></blockquote>
@@ -583,7 +583,7 @@ This gives coordinates for an oblique small circle.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 25, 2019.
+        Last updated on Oct 26, 2019.
       </span>
 
     </p>

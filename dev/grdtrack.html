@@ -321,32 +321,34 @@ The columns will be <em>lon</em>, <em>lat</em>, <em>dist</em>, <em>azimuth</em>,
 (sampled value for each grid)</dd>
 </dl>
 <dl class="docutils" id="e">
-<dt><strong>-E</strong><em>line</em>[,<em>line</em>,…][<strong>+a</strong><em>az</em>][<strong>+d</strong>][<strong>+i</strong><em>inc</em>[<strong>u</strong>]][<strong>+l</strong><em>length</em>[<strong>u</strong>]][<strong>+n</strong><em>np</em>][<strong>+o</strong><em>az</em>][<strong>+r</strong><em>radius</em>[<strong>u</strong>]</dt>
+<dt><strong>-E</strong><em>line</em>[,<em>line</em>,…][<strong>+a</strong><em>az</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+i</strong><em>inc</em>[<strong>u</strong>]][<strong>+l</strong><em>length</em>[<strong>u</strong>]][<strong>+n</strong><em>np</em>][<strong>+o</strong><em>az</em>][<strong>+r</strong><em>radius</em>[<strong>u</strong>]</dt>
 <dd>Instead of reading input track coordinates, specify profiles via
 coordinates and modifiers. The format of each <em>line</em> is
 <em>start</em>/<em>stop</em>, where <em>start</em> or <em>stop</em> are either <em>lon</em>/<em>lat</em> (<em>x</em>/<em>y</em> for
 Cartesian data) or a 2-character XY key that uses the <a class="reference internal" href="text.html"><span class="doc">text</span></a>-style
 justification format to specify a point on the map as
-[LCR][BMT]. In addition, you can use Z-, Z+ to mean the global
-minimum and maximum locations in the grid (only available if only
-one grid is given). Instead of two coordinates you can specify an
-origin and one of <strong>+a</strong>, <strong>+o</strong>, or <strong>+r</strong>. You may append
-<strong>+i</strong><em>inc</em>[<strong>u</strong>] to set the sampling interval; if not given then we default to half the minimum grid interval.
+[LCR][BMT]. Each line will be a separate segment unless <strong>+c</strong> is used
+which will connect segments with shared joints into a single segment.
+In addition to line coordinates, you can use Z-, Z+ to mean the global
+minimum and maximum locations in the grid (only available if a
+single grid is given via <strong>-G</strong>). You may append
+<strong>+i</strong><em>inc</em>[<strong>u</strong>] to set the sampling interval; if not given then
+we default to half the minimum grid interval.  Instead of two coordinates
+you can specify an origin and one of <strong>+a</strong>, <strong>+o</strong>, or <strong>+r</strong>.
 The <strong>+a</strong> sets the azimuth of a profile of given
 length starting at the given origin, while <strong>+o</strong> centers the profile
 on the origin; both require <strong>+l</strong>. For circular sampling specify
 <strong>+r</strong> to define a circle of given radius centered on the origin;
-this option requires either <strong>+n</strong> or <strong>+i</strong>.  The <strong>+n</strong><em>np</em> sets
+this option requires either <strong>+n</strong> or <strong>+i</strong>.  The <strong>+n</strong><em>np</em> modifier sets
 the desired number of points, while <strong>+l</strong><em>length</em> gives the
 total length of the profile. Append <strong>+d</strong> to output the along-track
 distances after the coordinates.  Note: No track file will be read.
 Also note that only one distance unit can be chosen.  Giving different units
 will result in an error.  If no units are specified we default to
 great circle distances in km (if geographic).  If working with geographic
-data you can prepend - (Flat Earth) or + (Geodesic) to <em>inc</em>, <em>length</em>, or <em>radius</em>
-to change the mode of distance calculation [Great Circle].
+data you can use <strong>-j</strong> to control distance calculation mode [Great Circle].
 Note: If <strong>-C</strong> is set and <em>spacing</em> is given the that sampling scheme
-overrules any modifier in <strong>-E</strong>.</dd>
+overrules any modifier set in <strong>-E</strong>.</dd>
 </dl>
 <dl class="docutils" id="n">
 <dt><strong>-N</strong></dt>
@@ -564,7 +566,7 @@ erecting cross-profiles every 25 km and sampling the grid every 3 km, try</p>
 right corner, using a grid spacing of 1 km on the geodesic, and output distances as well,
 try</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grdtrack -ELB/RT+i1k+d -Gdata.nc -je &gt; profiles.txt
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdtrack -ELB/RT+i1k+d -Gdata.nc -je &gt; profiles.txt
 </pre></div>
 </div>
 </div></blockquote>
@@ -602,7 +604,7 @@ try</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 25, 2019.
+        Last updated on Oct 26, 2019.
       </span>
 
     </p>

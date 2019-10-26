@@ -466,15 +466,13 @@ information in a binary file, and make a grid for the given area and spacing, us
 <p>To draw the optimal Delaunay triangulation network based on the same
 file using a 15-cm-wide Mercator map, use</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt triangulate samples.xyz -M -R-100/-90/30/34 -JM15c <span class="p">|</span> gmt plot <span class="se">\</span>
-    -R-100/-90/30/34 -JM15c -W0.5p -B1 &gt; network.ps
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt triangulate samples.xyz -M -R-100/-90/30/34 -JM15c <span class="p">|</span> gmt plot -R-100/-90/30/34 -JM15c -W0.5p -B1 -pdf network
 </pre></div>
 </div>
 </div></blockquote>
 <p>To instead plot the Voronoi cell outlines, try</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt triangulate samples.xyz -M -Q -R-100/-90/30/34 -JM15c <span class="p">|</span> <span class="se">\</span>
-    gmt plot -R-100/-90/30/34 -JM15c -W0.5p -B1 &gt; cells.ps
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt triangulate samples.xyz -M -Q -R-100/-90/30/34 -JM15c <span class="p">|</span> gmt plot -R-100/-90/30/34 -JM15c -W0.5p -B1 -pdf cells
 </pre></div>
 </div>
 </div></blockquote>
@@ -482,7 +480,7 @@ file using a 15-cm-wide Mercator map, use</p>
 according to their ID, try</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt triangulate samples.xyz -M -Qn -R-100/-90/30/34 -JM15c <span class="p">|</span> <span class="se">\</span>
-    gmt plot -R-100/-90/30/34 -JM15c -W0.5p+cf -L -B1 -Ccolors.cpt -L &gt; polygons.ps
+    gmt plot -R-100/-90/30/34 -JM15c -W0.5p+cf -L -B1 -Ccolors.cpt -L -pdf polygons
 </pre></div>
 </div>
 </div></blockquote>
@@ -549,7 +547,7 @@ algorithms, <em>Photogrammetric Eng. &amp; Remote Sensing</em>, <strong>70</stro
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 25, 2019.
+        Last updated on Oct 26, 2019.
       </span>
 
     </p>

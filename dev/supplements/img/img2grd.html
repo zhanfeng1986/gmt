@@ -401,7 +401,7 @@ in geographic coordinates. To extract data in the region
 <strong>-R</strong>-40/40/-70/-30 from <em>world_grav.img.7.2</em> and reproject to yield
 geographic coordinates, you can try</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>img2grd world_grav.img.16.1 -Gmerc_grav.nc -R-40/40/-70/-30 -V
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt img2grd world_grav.img.16.1 -Gmerc_grav.nc -R-40/40/-70/-30 -V
 </pre></div>
 </div>
 </div></blockquote>
@@ -411,7 +411,7 @@ and the latitude spacing will not equal the longitude spacing. If you
 need an exact match with your <strong>-R</strong> and the same spacing in longitude
 and latitude, use the <strong>-E</strong> option:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>img2grd world_grav.img.16.1 -Gmerc_grav.nc -R-40/40/-70/-30 -E -V
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt img2grd world_grav.img.16.1 -Gmerc_grav.nc -R-40/40/-70/-30 -E -V
 </pre></div>
 </div>
 </div></blockquote>
@@ -443,9 +443,9 @@ ship.lonlatgrav and use it to sample the merc_grav.nc, we can do this:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nb">set</span> PROJ_ELLIPSOID Sphere
 
-gmt mapproject -R-40/40/-70.0004681551/-29.9945810754 -Jm1i -C ship.lonlatgrav <span class="p">|</span>
-          gmt grdtrack -Gmerc_grav.nc <span class="p">|</span> gmt mapproject
-          -R-40/40/-70.0004681551/-29.9945810754 -Jm1i -I -C &gt; ship.lonlatgravsat
+gmt mapproject -R-40/40/-70.0004681551/-29.9945810754 -Jm1i -C ship.lonlatgrav <span class="p">|</span> <span class="se">\</span>
+          gmt grdtrack -Gmerc_grav.nc <span class="p">|</span> <span class="se">\</span>
+          gmt mapproject -R-40/40/-70.0004681551/-29.9945810754 -Jm1i -I -C &gt; ship.lonlatgravsat
 </pre></div>
 </div>
 </div></blockquote>
@@ -464,8 +464,8 @@ steps (in conversion and in sampling).</p>
 systems may not align well. When this happens, we can also use (in fact,
 it may be always better to use)</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grd2xyz merc_grav.nc <span class="p">|</span> gmt mapproject
-    -R-40/40/-70.0004681551/-29.994581075 -Jm1i -I <span class="p">|</span>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grd2xyz merc_grav.nc <span class="p">|</span> <span class="se">\</span>
+    gmt mapproject -R-40/40/-70.0004681551/-29.994581075 -Jm1i -I <span class="p">|</span> <span class="se">\</span>
     gmt surface -R-40/40/-70/70 -I2m -Ggrav.nc
 </pre></div>
 </div>
@@ -546,7 +546,7 @@ eliminate NaNs, and pipe through <a class="reference internal" href="../../mappr
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 25, 2019.
+        Last updated on Oct 26, 2019.
       </span>
 
     </p>

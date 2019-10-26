@@ -268,7 +268,8 @@ thus plot symbols as events unfold.</p>
 from the data file’s third column (fourth if <strong>-C</strong> is used). Note: Not all the symbols that
 are available in <a class="reference internal" href="psxy.html"><span class="doc">psxy</span></a> can be used here.  At the moment we only support the basic
 symbols and custom symbols; bars, vectors, ellipses, fronts, decorated and quoted lines cannot
-be specified.</dd>
+be specified.  Symbols sizes read from a data file will be assumed to be in the unit controlled
+by <a class="reference internal" href="gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a> unless they have <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> appended.</dd>
 </dl>
 <dl class="docutils" id="t">
 <dt><strong>-T</strong><em>now</em></dt>
@@ -342,7 +343,7 @@ or leave blank if lengths can be read from the input file after the <em>time</em
 <dt><strong>-M</strong><strong>i</strong>|<strong>s</strong>|<strong>t</strong>[<em>val1</em>][<strong>+c</strong><em>val2</em>]</dt>
 <dd>Sets the initial <strong>i</strong>ntensity, <strong>s</strong>ize magnification, or <strong>t</strong>ransparency of the symbol during
 the <em>rise</em> interval [1, 1, and 100, respectively].
-Optionally, use <strong>+c</strong> to set the corresponding terminal value during the coda [100].</dd>
+Optionally, use <strong>+c</strong> to set the corresponding terminal value during the coda [0, 0, 100, respectively].</dd>
 </dl>
 <dl class="docutils" id="q">
 <dt><strong>-Q</strong><em>prefix</em></dt>
@@ -506,7 +507,7 @@ gmt end show
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 25, 2019.
+        Last updated on Oct 26, 2019.
       </span>
 
     </p>

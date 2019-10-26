@@ -422,8 +422,7 @@ which you choose to be from 150E to 250E and 10N to 40N, and you want
 the output values every 0.5 degree. Using spherical distance
 calculations, you need:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdfilter @earth_relief_05m -Gfiltered_pacific.nc -Fm600 <span class="se">\</span>
-              -D4 -R150/250/10/40 -I0.5 -V
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdfilter @earth_relief_05m -Gfiltered_pacific.nc -Fm600 -D4 -R150/250/10/40 -I0.5 -V
 </pre></div>
 </div>
 </div></blockquote>
@@ -432,8 +431,7 @@ corresponding low-pass filter using a coarse grid interval as <strong>grdfilter<
 will resample the result to the same resolution as the input grid so we
 can compute the residuals, e.g.,</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdfilter @earth_relief_05m -Gresidual_pacific.nc -Fm600+h <span class="se">\</span>
-              -D4 -R150/250/10/40 -I0.5 -V
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdfilter @earth_relief_05m -Gresidual_pacific.nc -Fm600+h -D4 -R150/250/10/40 -I0.5 -V
 </pre></div>
 </div>
 </div></blockquote>
@@ -491,7 +489,7 @@ of the increments in the input data, filtering will be considerably slower.
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 25, 2019.
+        Last updated on Oct 26, 2019.
       </span>
 
     </p>
