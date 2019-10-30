@@ -222,10 +222,10 @@ Nyquist frequency it breaks down badly.</p>
 <span class="c1"># Note:         Run with any argument to build movie; otherwise 300th frame is plotted only.</span>
 
 <span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>   <span class="c1"># Just make master PostScript frame 300</span>
-        <span class="nv">opt</span><span class="o">=</span><span class="s2">&quot;-M300,ps -Fnone&quot;</span>
+	<span class="nv">opt</span><span class="o">=</span><span class="s2">&quot;-M300,ps -Fnone&quot;</span>
 	<span class="nv">ps</span><span class="o">=</span>anim_06.ps
 <span class="k">else</span>	<span class="c1"># Make movie in MP4 format and a thumbnail animated GIF using every 10th frame</span>
-        <span class="nv">opt</span><span class="o">=</span><span class="s2">&quot;-Fmp4 -A+l+s5&quot;</span>
+	<span class="nv">opt</span><span class="o">=</span><span class="s2">&quot;-Fmp4 -A+l+s5&quot;</span>
 <span class="k">fi</span>
 <span class="nv">rate</span><span class="o">=</span><span class="m">6</span>			<span class="c1"># Frames per seconds</span>
 <span class="nv">frames</span><span class="o">=</span><span class="sb">`</span>gmt math -Q <span class="m">60</span> <span class="nv">$rate</span> <span class="nv">MUL</span> <span class="o">=</span><span class="sb">`</span>
@@ -324,7 +324,7 @@ rm -rf init.sh main.sh pre.sh
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 29, 2019.
+        Last updated on Oct 30, 2019.
       </span>
 
     </p>
