@@ -327,14 +327,14 @@ omitted). If <em>datum</em> is - or not given we assume WGS-84.</dd>
 <dt><strong>-F</strong>[<em>unit</em>]</dt>
 <dd>Force 1:1 scaling, i.e., output (or input, see <strong>-I</strong>) data are in
 actual projected meters. To specify other units, append the desired
-unit (see <a class="reference internal" href="ternary.html#unit-attributes"><span class="std std-ref">Units</span></a>). Without <strong>-F</strong>, the output (or input, see <strong>-I</strong>)
+unit (see <a class="reference internal" href="#units">Units</a>). Without <strong>-F</strong>, the output (or input, see <strong>-I</strong>)
 are in the units specified by <a class="reference internal" href="gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a> (but see
 <strong>-D</strong>).</dd>
 </dl>
 <dl class="docutils" id="g">
 <dt><strong>-G</strong>[<em>lon0</em>/<em>lat0</em>][<strong>+a</strong>][<strong>+i</strong>][<strong>+u</strong><em>unit</em>][<strong>+v</strong>]</dt>
 <dd>Calculate distances along track <em>or</em> to the optional <em>fixed</em> point set
-with <strong>-G</strong><em>lon0</em>/<em>lat0</em>. Append the distance unit with <strong>+u</strong> (see <a class="reference internal" href="ternary.html#unit-attributes"><span class="std std-ref">Units</span></a> for available
+with <strong>-G</strong><em>lon0</em>/<em>lat0</em>. Append the distance unit with <strong>+u</strong> (see <a class="reference internal" href="#units">Units</a> for available
 units and how distances are computed [great circle using authalic radius]), including
 <strong>c</strong> (Cartesian distance using input coordinates) or <strong>C</strong>
 (Cartesian distance using projected coordinates). The <strong>C</strong> unit
@@ -355,7 +355,7 @@ See <a class="reference internal" href="#output-order">Output Order</a> for how 
 <dd>Determine the shortest distance from the input data points to the
 line(s) given in the ASCII multisegment file <em>line.xy</em>. The distance
 and the coordinates of the nearest point will be appended to the
-output as three new columns. Append the distance unit (see <a class="reference internal" href="ternary.html#unit-attributes"><span class="std std-ref">Units</span></a>
+output as three new columns. Append the distance unit (see <a class="reference internal" href="#units">Units</a>
 for available units and how distances are computed [great circle using authalic radius]),
 including <strong>c</strong> (Cartesian distance using input coordinates) or
 <strong>C</strong> (Cartesian distance using projected coordinates). The <strong>C</strong>
@@ -496,7 +496,7 @@ any module-specific option (but not the GMT common options), then exits.</dd>
 </dl>
 </div>
 <div class="section" id="units">
-<span id="unit-attributes"></span><h2>Units<a class="headerlink" href="#units" title="Permalink to this headline">¶</a></h2>
+<h2>Units<a class="headerlink" href="#units" title="Permalink to this headline">¶</a></h2>
 <p>For map distance unit, append <em>unit</em> <strong>d</strong> for arc degree, <strong>m</strong> for arc
 minute, and <strong>s</strong> for arc second, or <strong>e</strong> for meter [Default], <strong>f</strong>
 for foot, <strong>k</strong> for km, <strong>M</strong> for statute mile, <strong>n</strong> for nautical mile,
@@ -687,7 +687,7 @@ North-Holland Publ., ISBN: 0 444 86149 1.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 30, 2019.
+        Last updated on Oct 31, 2019.
       </span>
 
     </p>
