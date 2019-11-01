@@ -284,7 +284,7 @@ exist among the features in <em>file</em>. We consider the cases of exact
 distance between nearest points of two features is less than a
 threshold). We also consider that some features may have been
 reversed. Features are considered approximate matches if their
-minimum distance is less than <em>dmax</em> [0] (see <a class="reference internal" href="ternary.html#unit-attributes"><span class="std std-ref">Units</span></a>) and their
+minimum distance is less than <em>dmax</em> [0] (see <a class="reference internal" href="#units">Units</a>) and their
 closeness (defined as the ratio between the average distance between
 the features divided by their average length) is less than <em>cmax</em>
 [0.01]. For each duplicate found, the output record begins with the
@@ -342,7 +342,7 @@ same segment we skip the second (and further) scenario.</dd>
 simply writes the area to stdout]. For polygons we also compute the
 centroid location while for line data we compute the mid-point
 (half-length) position. Append a distance unit to select the unit
-used (see <a class="reference internal" href="ternary.html#unit-attributes"><span class="std std-ref">Units</span></a>). Note that the area will depend on the current
+used (see <a class="reference internal" href="#units">Units</a>). Note that the area will depend on the current
 setting of <a class="reference internal" href="gmt.conf.html#proj-ellipsoid"><span class="std std-ref">PROJ_ELLIPSOID</span></a>; this should be a
 recent ellipsoid to get accurate results. The centroid is computed
 using the mean of the 3-D Cartesian vectors making up the polygon
@@ -476,7 +476,7 @@ any module-specific option (but not the GMT common options), then exits.</dd>
 </dl>
 </div>
 <div class="section" id="units">
-<span id="unit-attributes"></span><h2>Units<a class="headerlink" href="#units" title="Permalink to this headline">¶</a></h2>
+<h2>Units<a class="headerlink" href="#units" title="Permalink to this headline">¶</a></h2>
 <p>For map distance unit, append <em>unit</em> <strong>d</strong> for arc degree, <strong>m</strong> for arc
 minute, and <strong>s</strong> for arc second, or <strong>e</strong> for meter [Default], <strong>f</strong>
 for foot, <strong>k</strong> for km, <strong>M</strong> for statute mile, <strong>n</strong> for nautical mile,
@@ -599,7 +599,7 @@ two OGR/GMT files.  The solution is to convert them to regular datasets via
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 31, 2019.
+        Last updated on Nov 01, 2019.
       </span>
 
     </p>

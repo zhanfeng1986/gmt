@@ -208,7 +208,7 @@
             
   <div class="section" id="grdmask">
 <span id="index-0"></span><h1>grdmask<a class="headerlink" href="#grdmask" title="Permalink to this headline">¶</a></h1>
-<p>grdmask - Create mask grid from polygons or point coverage</p>
+<p>Create mask grid from polygons or point coverage</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <p><strong>gmt grdmask</strong> <em>pathfiles</em> <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>mask_grd_file</em>
@@ -318,7 +318,7 @@ conjunction with <strong>-S</strong>; they also all optionally accept /<em>out</
 <dd>Set nodes to inside, on edge, or outside depending on their distance
 to the nearest data point. Nodes within <em>radius</em> [0] from the
 nearest data point are considered inside; append a distance unit
-(see <a class="reference internal" href="ternary.html#unit-attributes"><span class="std std-ref">Units</span></a>). If <em>radius</em> is given as <strong>z</strong> then we instead read
+(see <a class="reference internal" href="#units">Units</a>). If <em>radius</em> is given as <strong>z</strong> then we instead read
 individual radii from the 3rd input column.  Unless Cartesian data,
 specify the unit of these radii by appending it after <strong>-Sz</strong>.
 If <strong>-S</strong> is not set then we consider the input data to define
@@ -394,7 +394,7 @@ any module-specific option (but not the GMT common options), then exits.</dd>
 </dl>
 </div>
 <div class="section" id="units">
-<span id="unit-attributes"></span><h2>Units<a class="headerlink" href="#units" title="Permalink to this headline">¶</a></h2>
+<h2>Units<a class="headerlink" href="#units" title="Permalink to this headline">¶</a></h2>
 <p>For map distance unit, append <em>unit</em> <strong>d</strong> for arc degree, <strong>m</strong> for arc
 minute, and <strong>s</strong> for arc second, or <strong>e</strong> for meter [Default], <strong>f</strong>
 for foot, <strong>k</strong> for km, <strong>M</strong> for statute mile, <strong>n</strong> for nautical mile,
@@ -535,7 +535,7 @@ in plates.gmt, based on the attribute POL_ID, do</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 31, 2019.
+        Last updated on Nov 01, 2019.
       </span>
 
     </p>

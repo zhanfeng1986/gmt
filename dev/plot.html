@@ -208,7 +208,7 @@
             
   <div class="section" id="plot">
 <span id="index-0"></span><h1>plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h1>
-<p>Plot lines, polygons, and symbols on maps</p>
+<p>Plot lines, polygons, and symbols in 2-D</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <p><strong>gmt plot</strong> [ <em>table</em> ] <a class="reference internal" href="#j"><span> <strong>-J</strong></span></a></strong><em>parameters</em>
@@ -529,7 +529,7 @@ no arrow heads]. The <em>size</em> is the length of the vector head. Arc width
 is set by <strong>-W</strong>, with vector head outlines defaulting to half of arc width.
 The radius of the arc and its start and stop
 directions (in degrees counter-clockwise from horizontal) must be given
-in columns 3-5. See <a class="reference internal" href="psxy.html#vec-attributes"><span class="std std-ref">Vector Attributes</span></a> for specifying other attributes.</dd>
+in columns 3-5. See <a class="reference internal" href="#vector-attributes">Vector Attributes</a> for specifying other attributes.</dd>
 <dt><strong>-SM</strong></dt>
 <dd>Same as <strong>-Sm</strong> but switches to straight angle symbol if angles subtend
 90 degrees exactly.</dd>
@@ -705,7 +705,7 @@ horizontal) and length must be found in columns 3 and 4, and <em>size</em>,
 if not specified on the command-line, should be  present in column 5.
 The <em>size</em> is the length of the vector head. Vector stem width is set by <strong>-W</strong>,
 with head outline pen width defaulting to half of stem pen width.
-See <a class="reference internal" href="psxy.html#vec-attributes"><span class="std std-ref">Vector Attributes</span></a> for specifying this and other attributes. But also be aware
+See <a class="reference internal" href="#vector-attributes">Vector Attributes</a> for specifying this and other attributes. But also be aware
 that using color via a CPT implies a shift of columns 3 and on to accommodate
 the color fill determined by the z-value in new 3rd column (See <strong>-C</strong> option).</dd>
 <dt><strong>-SV</strong></dt>
@@ -715,7 +715,7 @@ based on the chosen map projection (<strong>-Sv</strong> leaves the directions
 unchanged.) If your <em>length</em> is not in plot units but in arbitrary
 user units (e.g., a rate in mm/yr) then you can use the <strong>-i</strong> option
 to scale the corresponding column via the <strong>+s</strong><em>scale</em> modifier.
-See <a class="reference internal" href="psxy.html#vec-attributes"><span class="std std-ref">Vector Attributes</span></a> for specifying symbol attributes.</dd>
+See <a class="reference internal" href="#vector-attributes">Vector Attributes</a> for specifying symbol attributes.</dd>
 <dt><strong>-Sw</strong></dt>
 <dd>pie <strong>w</strong>edge. Start and stop directions (in degrees
 counter-clockwise from horizontal) for pie slice must be found in
@@ -745,7 +745,7 @@ These spider-web lines are drawn using the current pen unless <strong>+p</strong
 <dt><strong>-S=</strong></dt>
 <dd>geovector. Azimuth (in degrees east from north) and geographical length
 must be found in columns 3 and 4. The <em>size</em> is the length of the
-vector head. Vector width is set by <strong>-W</strong>. See <a class="reference internal" href="psxy.html#vec-attributes"><span class="std std-ref">Vector Attributes</span></a>
+vector head. Vector width is set by <strong>-W</strong>. See <a class="reference internal" href="#vector-attributes">Vector Attributes</a>
 for specifying attributes. Note: Geovector stems are drawn as thin
 filled polygons and hence pen attributes like dashed and dotted are
 not available. For allowable geographical units, see UNITS.</dd>
@@ -858,7 +858,7 @@ indicate plot distance on the map or append map distance units instead (see belo
 use <strong>+vb</strong> and <strong>+ve</strong> to specify separate vector specs at each end [shared specs].
 Because <strong>+v</strong> may take additional modifiers it must necessarily be given
 at the end of the pen specification.
-See the <a class="reference internal" href="psxy.html#vec-attributes"><span class="std std-ref">Vector Attributes</span></a> for more information.</dd>
+See the <a class="reference internal" href="#vector-attributes">Vector Attributes</a> for more information.</dd>
 </dl>
 <p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</p>
 <dl class="docutils">
@@ -933,7 +933,7 @@ any module-specific option (but not the GMT common options), then exits.</dd>
 </dl>
 </div>
 <div class="section" id="units">
-<span id="unit-attributes"></span><h2>Units<a class="headerlink" href="#units" title="Permalink to this headline">¶</a></h2>
+<h2>Units<a class="headerlink" href="#units" title="Permalink to this headline">¶</a></h2>
 <p>For map distance unit, append <em>unit</em> <strong>d</strong> for arc degree, <strong>m</strong> for arc
 minute, and <strong>s</strong> for arc second, or <strong>e</strong> for meter [Default], <strong>f</strong>
 for foot, <strong>k</strong> for km, <strong>M</strong> for statute mile, <strong>n</strong> for nautical mile,
@@ -945,7 +945,7 @@ exact geodesic calculations (slower but more accurate; see
 <a class="reference internal" href="gmt.conf.html#proj-geodesic"><span class="std std-ref">PROJ_GEODESIC</span></a> for method used).</p>
 </div>
 <div class="section" id="vector-attributes">
-<span id="vec-attributes"></span><h2>Vector Attributes<a class="headerlink" href="#vector-attributes" title="Permalink to this headline">¶</a></h2>
+<h2>Vector Attributes<a class="headerlink" href="#vector-attributes" title="Permalink to this headline">¶</a></h2>
 <p>Several modifiers may be appended to vector-producing options for
 specifying the placement of vector heads, their shapes, and the
 justification of the vector. Below, left and right refers to the
@@ -1178,7 +1178,7 @@ doctored polygons may be misrepresented in GMT.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 31, 2019.
+        Last updated on Nov 01, 2019.
       </span>
 
     </p>

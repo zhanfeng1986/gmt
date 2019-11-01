@@ -418,10 +418,10 @@ the symbol when the event starts and then keep the symbol visible on all frames 
 event ends (or never stop plotting them in the infinite length case).  However, to draw
 attention to the arrival of a new event we can temporarily change three aspects of
 the symbol: Its size, color intensity, and transparency.  You can think of these three
-attributes as functions of time.  For some option settings, Figure <a class="reference internal" href="#psevents-size"><span class="std std-ref">Symbol size function</span></a>
+attributes as functions of time.  For some option settings, figure below
 illustrates how the symbol size may vary through the timespan of the movie.</p>
 <div class="figure align-center" id="id2">
-<span id="psevents-size"></span><a class="reference internal image-reference" href="_images/psevents_size.png"><img alt="_images/psevents_size.png" src="_images/psevents_size.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="_images/psevents_size.png"><img alt="_images/psevents_size.png" src="_images/psevents_size.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-text">Implied evolution of one symbol’s size-variation as a function of time
 given the time-knots from <strong>-Es</strong> and the magnifications from <strong>-Ms</strong>.
 Here we temporarily magnify the symbol size five times before decaying
@@ -429,10 +429,10 @@ to the intended size and eventually shrink it further down to a small
 size during the fade and coda phases.</span></p>
 </div>
 <p>Similarly, to draw attention to the newly arrived event you may want to whiten the color
-temporarily; this can be done via the <strong>-Mi</strong> option and Figure <a class="reference internal" href="#psevents-intensity"><span class="std std-ref">Symbol intensity function</span></a>
+temporarily; this can be done via the <strong>-Mi</strong> option and figure below
 illustrates how intensity may vary accordingly.</p>
 <div class="figure align-center" id="id3">
-<span id="psevents-intensity"></span><a class="reference internal image-reference" href="_images/psevents_intensity.png"><img alt="_images/psevents_intensity.png" src="_images/psevents_intensity.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="_images/psevents_intensity.png"><img alt="_images/psevents_intensity.png" src="_images/psevents_intensity.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-text">Implied evolution of one symbol’s color intensity as a function of time
 given the time-knots from <strong>-Es</strong> and the intensities from <strong>-Mi</strong>.  Here we
 seek to whiten the symbol during the event arrival, as well as darken it
@@ -441,10 +441,9 @@ during a permanent code phase.</span></p>
 <p>Finally, for finite events you may wish to either fade them out completely or
 simply fade them to a constant but still visible transparency; this future stage
 is referred to as the coda and levels can be specified via the <strong>-Mt</strong> option.
-Figure <a class="reference internal" href="#psevents-transparency"><span class="std std-ref">Symbol transparency function</span></a>
-illustrates how transparency may vary through time.</p>
+Figure below illustrates how transparency may vary through time.</p>
 <div class="figure align-center" id="id4">
-<span id="psevents-transparency"></span><a class="reference internal image-reference" href="_images/psevents_transparency.png"><img alt="_images/psevents_transparency.png" src="_images/psevents_transparency.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="_images/psevents_transparency.png"><img alt="_images/psevents_transparency.png" src="_images/psevents_transparency.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-text">Here we show how a symbol may go from being invisible to reach full opaqueness
 at the event begin time, then finally fade to a near-invisible stage after reaching
 its length.</span></p>
@@ -454,6 +453,13 @@ and can be selected or ignored as you wish via <strong>-E</strong>.  You can cho
 of the three time histories.  By default the symbol size is constant, there is no intensity
 variation, and all symbols are opaque.  If trailing text is plotted (requires <strong>-Et</strong>) then
 only a transparency time-function is used.</p>
+</div>
+<div class="section" id="sorting-the-data">
+<h2>Sorting the data<a class="headerlink" href="#sorting-the-data" title="Permalink to this headline">¶</a></h2>
+<p>While only the events that should be visible will be plotted at the given time set via <strong>-T</strong>,
+the order of plotting is simply given by the order of records in the file.  Thus, if the
+file is <em>not</em> sorted into ascending time then later events might plot <em>beneath</em> earlier events.
+To prevent this, you can sort your file into ascending order via the <a class="reference internal" href="gmtconvert.html"><span class="doc">gmtconvert</span></a> <strong>-N</strong> option.</p>
 </div>
 <div class="section" id="classic-mode-arguments">
 <h2>Classic Mode Arguments<a class="headerlink" href="#classic-mode-arguments" title="Permalink to this headline">¶</a></h2>
@@ -523,7 +529,7 @@ gmt psevents -Rg -JG200/5/6i -Baf q.txt -SE- -Cq.cpt --TIME_UNIT<span class="o">
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 31, 2019.
+        Last updated on Nov 01, 2019.
       </span>
 
     </p>

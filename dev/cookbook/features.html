@@ -570,33 +570,19 @@ letter, and number or string. <em>Do</em> space between options. Example:</p>
 <div class="section" id="command-line-history">
 <h2>3.4. Command line history<a class="headerlink" href="#command-line-history" title="Permalink to this headline">¶</a></h2>
 <p>GMT programs “remember” the standardized command line options (See
-Chapter <a class="reference internal" href="options.html"><span class="doc">Standardized command line options</span></a>) given during their previous invocations and this
-provides a shorthand notation for complex options. For example, if a
-basemap was created with an oblique Mercator projection, specified as</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-Joc170W/25:30S/33W/56:20N/1:500000
+Chapter <a class="reference internal" href="options.html"><span class="doc">Standardized command line options</span></a>) given during their first invocations in a modern
+mode session, and afterwards we do not need to repeat them any further.
+For example, if a map was created with an Cartesian linear projection,
+then any subsequent <a class="reference internal" href="../plot.html"><span class="doc">plot</span></a> commands to plot symbols on the same map
+do not need to repeat the region and projection information, as shown here:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map
+  gmt basemap -R0/6.5/0/7 -Jx2c -B
+  gmt plot @Table_5_11.txt -Sc0.3c -Gred
+gmt end show
 </pre></div>
 </div>
-</div></blockquote>
-<p>then a subsequent <a class="reference internal" href="../plot.html"><span class="doc">plot</span></a> command to plot
-symbols only needs to state <strong>-J</strong>o in order to activate the same
-projection. In contrast, note that <strong>-J</strong> by itself will pick the most
-recently used projection. Previous commands are maintained in the file <code class="docutils literal notranslate"><span class="pre">gmt.history</span></code>,
-of which there will be one in each directory you run the programs from.
-This is handy if you create separate directories for separate projects
-since chances are that data manipulations and plotting for each project
-will share many of the same options. Note that an option spelled out on
-the command line will always override the previous entry in the <code class="docutils literal notranslate"><span class="pre">gmt.history</span></code> file and, if
-execution is successful, will replace this entry as the previous option
-argument in the <code class="docutils literal notranslate"><span class="pre">gmt.history</span></code> file. If you call several GMT modules piped together
-then GMT cannot guarantee that the <code class="docutils literal notranslate"><span class="pre">gmt.history</span></code> file is processed in the intended
-order from left to right. The only guarantee is that the file will not
-be clobbered since GMT uses advisory file locking. The uncertainty in
-processing order makes the use of shorthands in pipes unreliable. We
-therefore recommend that you only use shorthands in single process
-command lines, and spell out the full command option when using chains
-of commands connected with pipes.  The history can be cleared by running
-<strong>gmt clear history</strong>.</p>
+<p>Thus, the chosen options remain in effect until you provide new option
+arguments on the command line.</p>
 </div>
 <div class="section" id="usage-messages-syntax-and-general-error-messages">
 <h2>3.5. Usage messages, syntax- and general error messages<a class="headerlink" href="#usage-messages-syntax-and-general-error-messages" title="Permalink to this headline">¶</a></h2>
@@ -2926,7 +2912,7 @@ off; see <a class="reference internal" href="../gmt.conf.html#ps-comments"><span
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Oct 31, 2019.
+        Last updated on Nov 01, 2019.
       </span>
 
     </p>
