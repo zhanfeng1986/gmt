@@ -312,7 +312,7 @@ to only use every <em>stride</em> frame, with <em>stride</em> being one of a fix
 <dd>Set the display frame rate in frames per seconds for the final animation [24].</dd>
 </dl>
 <dl class="docutils" id="f">
-<dt><strong>-F</strong><em>format</em> [<strong>+o</strong><em>options</em>]</dt>
+<dt><strong>-F</strong><em>format</em>[<strong>+o</strong><em>options</em>]</dt>
 <dd>Set the format of the final video product.  Repeatable.  Choose either <strong>mp4</strong> (MPEG-4 movie) or
 <strong>webm</strong> (WebM movie).  You may optionally add additional ffmpeg encoding settings for this format
 via the <strong>+o</strong> modifier (in quotes if more than one word). If <strong>none</strong> is chosen then no PNGs will
@@ -341,9 +341,9 @@ result to avoid aliasing [no downsampling].</dd>
 This mechanism is used to add information (typically constant variable assignments) that the <em>mainscript</em>
 and any optional <strong>-S</strong> scripts rely on.</dd>
 </dl>
-<p id="l"><strong>-L</strong><em>labelinfo</em></p>
-<blockquote>
-<div>Automatic labeling of individual frames.  Repeatable up to 32 labels.  Places the chosen label at the frame perimeter:
+<dl class="docutils" id="l">
+<dt><strong>-L</strong><em>labelinfo</em></dt>
+<dd>Automatic labeling of individual frames.  Repeatable up to 32 labels.  Places the chosen label at the frame perimeter:
 <strong>e</strong> selects the elapsed time in seconds as the label; append <strong>+s</strong><em>scale</em> to set the length
 in seconds of each frame [Default is 1/<em>framerate</em>],
 <strong>f</strong> selects the running frame number as the label, <strong>c</strong><em>col</em> uses the value in column
@@ -363,7 +363,8 @@ Append <strong>+o</strong><em>dx</em>[/<em>dy</em>] to offset label in direction
 Append <strong>+p</strong> to draw the outline of the bounding box using selected <em>pen</em> [no outline].
 Append <strong>+t</strong> to provide a <em>format</em> statement to be used with the label item selected [no special formatting].
 If <strong>-Lt</strong> is used then the format statement must contain a %s-like format, else it may have an integer (%d)
-or floating point  (%e, %f, %g) format specification.</div></blockquote>
+or floating point  (%e, %f, %g) format specification.</dd>
+</dl>
 <dl class="docutils" id="m">
 <dt><strong>-M</strong>[<em>frame</em>],[<em>format</em>]</dt>
 <dd>In addition to making the animation sequence, select a single frame for a cover page.  This frame will
@@ -508,43 +509,30 @@ to named files.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p><strong>Note</strong>: Below are some examples of valid syntax for this module.
-The examples that use remote files (file names starting with <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>)
-can be cut and pasted into your terminal for testing.
-Other commands requiring input files are just dummy examples of the types
-of uses that are common but cannot be run verbatim as written.</p>
 <p>To make an animated GIF movie based on the script globe.sh, which simply spins a globe using the
 frame number to serve as the view longitude, using a custom square 600x600 pixel canvas and 360 frames,
-and place a frame counter in the top left corner, try</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt movie globe.sh -Nglobe -T360 -Agif -C6ix6ix100 -Lf
+and place a frame counter in the top left corner, try:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt movie globe.sh -Nglobe -T360 -Agif -C6ix6ix100 -Lf
 </pre></div>
 </div>
-</div></blockquote>
 <p>Here, the globe.sh bash script simply plots a map with <a class="reference internal" href="coast.html"><span class="doc">coast</span></a> but uses the frame number variable
 as the center longitude:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin
    gmt coast -Rg -JG<span class="si">${</span><span class="nv">MOVIE_FRAME</span><span class="si">}</span>/20/<span class="si">${</span><span class="nv">MOVIE_WIDTH</span><span class="si">}</span> -Gmaroon -Sturquoise -Bg -X0 -Y0
 gmt end
 </pre></div>
 </div>
-</div></blockquote>
 <p>As the automatic frame loop is executed the different frames will be produced with different
-longitudes.  The equivalent DOS batch script setup would be</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt movie globe.bat -Nglobe -T360 -Agif -C6ix6ix100 -Lf
+longitudes.  The equivalent DOS batch script setup would be:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt movie globe.bat -Nglobe -T360 -Agif -C6ix6ix100 -Lf
 </pre></div>
 </div>
-</div></blockquote>
-<p>Now, the globe.bat DOS script is simply</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin
+<p>Now, the globe.bat DOS script is simply:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin
    gmt coast -Rg -JG%MOVIE_FRAME%/20/%MOVIE_WIDTH% -Gmaroon -Sturquoise -Bg -X0 -Y0
 gmt end
 </pre></div>
 </div>
-</div></blockquote>
 <p>i.e., the syntax of how variables are used vary according to the scripting language. At the
 end of the execution we find the animated GIF globe.gif and a directory (called globe) that contains all 360 PNG images.
 Note that there is no information in the globe scripts that reflects the name of the plot, the canvas size,
@@ -555,7 +543,7 @@ all available cores.</p>
 </div>
 <div class="section" id="longer-examples">
 <h2>Longer Examples<a class="headerlink" href="#longer-examples" title="Permalink to this headline">¶</a></h2>
-<p>To explore more elaborate movies, see the Animations examples under our Gallery.</p>
+<p>To explore more elaborate movies, see the Animations examples under our <a class="reference internal" href="gallery.html"><span class="doc">Gallery</span></a>.</p>
 </div>
 <div class="section" id="other-movie-formats">
 <h2>Other Movie Formats<a class="headerlink" href="#other-movie-formats" title="Permalink to this headline">¶</a></h2>
@@ -597,7 +585,7 @@ as QuickTime Pro, iMovie, MovieMaker, and similar commercial programs to make a 
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 01, 2019.
+        Last updated on Nov 03, 2019.
       </span>
 
     </p>
