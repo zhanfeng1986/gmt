@@ -1,11 +1,13 @@
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>psconvert &#8212; GMT 5.4.5 documentation</title>
+    <title>psconvert &#8212; GMT 5.4.6_c5d65a4_2019.11.05 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -17,6 +19,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/searchtools.js"></script>
     <script type="text/javascript" src="_static/rtd-sidebar.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -36,9 +39,9 @@
         <li class="right" >
           <a href="pscontour.html" title="pscontour"
              accesskey="P">previous</a> </li>
-  <li><a href="https://www.generic-mapping-tools.org">Project Home</a>  &#187;</li>
+  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 5.4.5 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 5.4.6_c5d65a4_2019.11.05 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="man_pages.html" accesskey="U">Man Pages</a> &#187;</li>
 <li class="right">
@@ -101,19 +104,20 @@ desired output format.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="simple">
-<dt><em>psfiles</em></dt><dd><p>Names of PostScript files to be converted. The output files will
+<dl class="docutils">
+<dt><em>psfiles</em></dt>
+<dd>Names of PostScript files to be converted. The output files will
 have the same name (unless <strong>-F</strong> is used) but with the conventional
 extension name associated to the raster format (e.g., .jpg for the
 jpeg format). Use <strong>-D</strong> to redirect the output to a different
-directory.</p>
-</dd>
+directory.</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl id="a">
-<dt><strong>-A</strong>[<strong>u</strong>][<em>margins</em>][<strong>-</strong>][<strong>+g</strong><em>paint</em>][<strong>+p</strong>[<em>pen</em>]][<strong>+r</strong>][<strong>+s</strong>[<strong>m</strong>]|<strong>S</strong><em>width</em>[<strong>u</strong>]/<em>height</em>[<strong>u</strong>]]</dt><dd><p>Adjust the BoundingBox and HiResBoundingBox to the minimum required
+<dl class="docutils" id="a">
+<dt><strong>-A</strong>[<strong>u</strong>][<em>margins</em>][<strong>-</strong>][<strong>+g</strong><em>paint</em>][<strong>+p</strong>[<em>pen</em>]][<strong>+r</strong>][<strong>+s</strong>[<strong>m</strong>]|<strong>S</strong><em>width</em>[<strong>u</strong>]/<em>height</em>[<strong>u</strong>]]</dt>
+<dd><p class="first">Adjust the BoundingBox and HiResBoundingBox to the minimum required
 by the image content. Append <strong>u</strong> to first remove any GMT-produced
 time-stamps. Optionally, append extra margins to the bounding box.
 Give either one (uniform), two (x and y) or four (individual sides)
@@ -127,7 +131,7 @@ retain the DPI resolution set by <strong>-E</strong>.  Use <strong>-A+sm</strong
 the new width are only imposed if the original figure width exceeds it. Append
 /<em>new_height</em> to also also impose a maximum height in addition to the width.
 Alternatively use <strong>-A+S</strong><em>scale</em> to scale the image by a constant factor.</p>
-<p>Use the <strong>-A+r</strong> to round the HighRes BoundingBox instead of using the <cite>ceil</cite> function.
+<p class="last">Use the <strong>-A+r</strong> to round the HighRes BoundingBox instead of using the <cite>ceil</cite> function.
 This is going against Adobe Law but can be useful when creating very small images
 where the difference of one pixel might matter.
 If <strong>-V</strong> is used we also report the dimensions of the illustration.
@@ -136,30 +140,31 @@ use <strong>-A+p</strong>[<em>pen</em>] to draw the BoundingBox outline (append 
 the default pen of 0.25p,black).</p>
 </dd>
 </dl>
-<dl class="simple" id="c">
-<dt><strong>-C</strong><em>gs_option</em></dt><dd><p>Specify a single, custom option that will be passed on to
-GhostScript as is. Repeat to add several options [none].</p>
-</dd>
+<dl class="docutils" id="c">
+<dt><strong>-C</strong><em>gs_option</em></dt>
+<dd>Specify a single, custom option that will be passed on to
+GhostScript as is. Repeat to add several options [none].</dd>
 </dl>
-<dl class="simple" id="d">
-<dt><strong>-D</strong><em>outdir</em></dt><dd><p>Sets an alternative output directory (which must exist) [Default is
+<dl class="docutils" id="d">
+<dt><strong>-D</strong><em>outdir</em></dt>
+<dd>Sets an alternative output directory (which must exist) [Default is
 the same directory as the PS files]. Use <strong>-D.</strong> to place the output
-in the current directory instead.</p>
-</dd>
+in the current directory instead.</dd>
 </dl>
-<dl class="simple" id="e">
-<dt><strong>-E</strong><em>resolution</em></dt><dd><p>Set raster resolution in dpi [default = 720 for PDF, 300 for others].</p>
-</dd>
+<dl class="docutils" id="e">
+<dt><strong>-E</strong><em>resolution</em></dt>
+<dd>Set raster resolution in dpi [default = 720 for PDF, 300 for others].</dd>
 </dl>
-<dl class="simple" id="f">
-<dt><strong>-F</strong><em>out_name</em></dt><dd><p>Force the output file name. By default output names are constructed
+<dl class="docutils" id="f">
+<dt><strong>-F</strong><em>out_name</em></dt>
+<dd>Force the output file name. By default output names are constructed
 using the input names as base, which are appended with an
 appropriate extension. Use this option to provide a different name,
-but without extension. Extension is still determined automatically.</p>
-</dd>
+but without extension. Extension is still determined automatically.</dd>
 </dl>
-<dl class="simple" id="g">
-<dt><strong>-G</strong><em>ghost_path</em></dt><dd><p>Full path to your GhostScript executable. NOTE: For Unix systems
+<dl class="docutils" id="g">
+<dt><strong>-G</strong><em>ghost_path</em></dt>
+<dd>Full path to your GhostScript executable. NOTE: For Unix systems
 this is generally not necessary. Under Windows, the GhostScript path
 is now fetched from the registry. If this fails you can still add
 the GS path to system’s path or give the full path here. (e.g.,
@@ -167,49 +172,49 @@ the GS path to system’s path or give the full path here. (e.g.,
 of the poor decision of embedding the bits on the gs exe name we
 cannot satisfy both the 32 and 64 bits GhostScript executable names.
 So in case of ‘get from registry’ failure the default name (when no
-<strong>-G</strong> is used) is the one of the 64 bits version, or gswin64c</p>
-</dd>
+<strong>-G</strong> is used) is the one of the 64 bits version, or gswin64c</dd>
 </dl>
-<dl class="simple" id="i">
-<dt><strong>-I</strong></dt><dd><p>Enforce gray-shades by using ICC profiles.  GhostScript versions
+<dl class="docutils" id="i">
+<dt><strong>-I</strong></dt>
+<dd>Enforce gray-shades by using ICC profiles.  GhostScript versions
 &gt;= 9.00 change gray-shades by using ICC profiles.  GhostScript 9.05
 and above provide the ‘-dUseFastColor=true’ option to prevent that
 and that is what <strong>psconvert</strong> does by default, unless option <strong>-I</strong> is
 set.  Note that for GhostScript &gt;= 9.00 and &lt; 9.05 the gray-shade
 shifting is applied to all but PDF format.  We have no solution to
-offer other than upgrade GhostScript.</p>
-</dd>
+offer other than upgrade GhostScript.</dd>
 </dl>
-<dl class="simple" id="l">
-<dt><strong>-L</strong><em>listfile</em></dt><dd><p>The <em>listfile</em> is an ASCII file with the names of the PostScript
-files to be converted.</p>
-</dd>
+<dl class="docutils" id="l">
+<dt><strong>-L</strong><em>listfile</em></dt>
+<dd>The <em>listfile</em> is an ASCII file with the names of the PostScript
+files to be converted.</dd>
 </dl>
-<dl class="simple" id="n">
-<dt><strong>-N</strong></dt><dd><p>This option is obsolete. Use <strong>-S</strong> to print the GhostScript
-command, if applicable. Use <strong>-Te</strong> to save the intermediate EPS file.</p>
-</dd>
+<dl class="docutils" id="n">
+<dt><strong>-N</strong></dt>
+<dd>This option is obsolete. Use <strong>-S</strong> to print the GhostScript
+command, if applicable. Use <strong>-Te</strong> to save the intermediate EPS file.</dd>
 </dl>
-<dl class="simple" id="p">
-<dt><strong>-P</strong></dt><dd><p>Force Portrait mode. All Landscape mode plots will be rotated back
+<dl class="docutils" id="p">
+<dt><strong>-P</strong></dt>
+<dd>Force Portrait mode. All Landscape mode plots will be rotated back
 so that they show unrotated in Portrait mode. This is practical when
 converting to image formats or preparing EPS or PDF plots for
-inclusion in documents.</p>
-</dd>
+inclusion in documents.</dd>
 </dl>
-<dl class="simple" id="q">
-<dt><strong>-Q</strong>[<strong>g</strong>|<strong>t</strong>][1|2|4]</dt><dd><p>Set the anti-aliasing options for <strong>g</strong>raphics or <strong>t</strong>ext.
+<dl class="docutils" id="q">
+<dt><strong>-Q</strong>[<strong>g</strong>|<strong>t</strong>][1|2|4]</dt>
+<dd>Set the anti-aliasing options for <strong>g</strong>raphics or <strong>t</strong>ext.
 Append the size of the subsample box (1, 2, or 4) [4]. Default is no
-anti-aliasing (same as <em>bits</em> = 1).</p>
-</dd>
+anti-aliasing (same as <em>bits</em> = 1).</dd>
 </dl>
-<dl class="simple" id="s">
-<dt><strong>-S</strong></dt><dd><p>Print to standard error the GhostScript command after it has been executed.
-This option also prevent all intermediate files from being removed.</p>
-</dd>
+<dl class="docutils" id="s">
+<dt><strong>-S</strong></dt>
+<dd>Print to standard error the GhostScript command after it has been executed.
+This option also prevent all intermediate files from being removed.</dd>
 </dl>
-<dl class="simple" id="t">
-<dt><strong>-Tb</strong>|<strong>e</strong>|<strong>E</strong>|<strong>f</strong>|<strong>F</strong>|<strong>j</strong>|<strong>g</strong>|<strong>G</strong>|<strong>m</strong>|<strong>s</strong>|<strong>t</strong></dt><dd><p>Sets the output format, where <strong>b</strong> means BMP, <strong>e</strong> means EPS,
+<dl class="docutils" id="t">
+<dt><strong>-Tb</strong>|<strong>e</strong>|<strong>E</strong>|<strong>f</strong>|<strong>F</strong>|<strong>j</strong>|<strong>g</strong>|<strong>G</strong>|<strong>m</strong>|<strong>s</strong>|<strong>t</strong></dt>
+<dd>Sets the output format, where <strong>b</strong> means BMP, <strong>e</strong> means EPS,
 <strong>E</strong> means EPS with PageSize command, <strong>f</strong> means PDF, <strong>F</strong> means
 multi-page PDF, <strong>j</strong> means JPEG, <strong>g</strong> means PNG, <strong>G</strong> means
 transparent PNG (untouched regions are transparent), <strong>m</strong> means
@@ -218,15 +223,15 @@ append <strong>-</strong> in order to get a grayscale image. The EPS format can 
 combined with any of the other formats. For example, <strong>-Tef</strong>
 creates both an EPS and a PDF file. The <strong>-TF</strong> creates a multi-page
 PDF file from the list of input PS or PDF files. It requires the <strong>-F</strong> option.
-See also <strong>NOTES</strong> below.</p>
-</dd>
+See also <strong>NOTES</strong> below.</dd>
 </dl>
-<dl class="simple" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
-</dd>
+<dl class="docutils" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select verbosity level [c].  </dd>
 </dl>
-<dl id="w">
-<dt><strong>-W</strong>[<strong>+g</strong>][<strong>+k</strong>][<strong>+t</strong><em>docname</em>][<strong>+n</strong><em>layername</em>][<strong>+o</strong><em>foldername</em>][<strong>+a</strong><em>altmode</em>[<em>alt</em>]][<strong>+l</strong><em>minLOD/maxLOD</em>][<strong>+f</strong><em>minfade/maxfade</em>][<strong>+u</strong><em>URL</em>]</dt><dd><blockquote>
+<dl class="docutils" id="w">
+<dt><strong>-W</strong>[<strong>+g</strong>][<strong>+k</strong>][<strong>+t</strong><em>docname</em>][<strong>+n</strong><em>layername</em>][<strong>+o</strong><em>foldername</em>][<strong>+a</strong><em>altmode</em>[<em>alt</em>]][<strong>+l</strong><em>minLOD/maxLOD</em>][<strong>+f</strong><em>minfade/maxfade</em>][<strong>+u</strong><em>URL</em>]</dt>
+<dd><blockquote class="first">
 <div><p>Write a ESRI type world file suitable to make (e.g) .tif files be
 recognized as geotiff by software that know how to do it. Be aware,
 however, that different results are obtained depending on the image
@@ -295,7 +300,7 @@ PostScript file, prefixed with %%PROJ.</p>
 <span class="n">adds</span> <span class="n">this</span> <span class="n">comment</span> <span class="n">line</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">%%</span><span class="n">PROJ</span><span class="p">:</span> <span class="n">merc</span> <span class="o">-</span><span class="mf">10.0</span> <span class="o">-</span><span class="mf">4.0</span> <span class="mf">37.0</span> <span class="mf">43.0</span> <span class="o">-</span><span class="mf">1113194.908</span> <span class="o">-</span><span class="mf">445277.963</span>
+<div class="last highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">%%</span><span class="n">PROJ</span><span class="p">:</span> <span class="n">merc</span> <span class="o">-</span><span class="mf">10.0</span> <span class="o">-</span><span class="mf">4.0</span> <span class="mf">37.0</span> <span class="mf">43.0</span> <span class="o">-</span><span class="mf">1113194.908</span> <span class="o">-</span><span class="mf">445277.963</span>
     <span class="mf">4413389.889</span> <span class="mf">5282821.824</span> <span class="o">+</span><span class="n">proj</span><span class="o">=</span><span class="n">merc</span> <span class="o">+</span><span class="n">lon_0</span><span class="o">=</span><span class="mi">0</span> <span class="o">+</span><span class="n">k</span><span class="o">=-</span><span class="mi">1</span> <span class="o">+</span><span class="n">x_0</span><span class="o">=</span><span class="mi">0</span> <span class="o">+</span><span class="n">y_0</span><span class="o">=</span><span class="mi">0</span>
     <span class="o">+</span><span class="n">a</span><span class="o">=</span><span class="mf">6378137.0</span> <span class="o">+</span><span class="n">b</span><span class="o">=</span><span class="mf">6356752.314245</span> <span class="o">+</span><span class="n">ellps</span><span class="o">=</span><span class="n">WGS84</span> <span class="o">+</span><span class="n">datum</span><span class="o">=</span><span class="n">WGS84</span> <span class="o">+</span><span class="n">units</span><span class="o">=</span><span class="n">m</span> <span class="o">+</span><span class="n">no_defs</span>
 
@@ -306,18 +311,18 @@ PostScript file, prefixed with %%PROJ.</p>
 </pre></div>
 </div>
 </dd>
-<dt><strong>-Z</strong></dt><dd><p>Remove the input PostScript file(s) after the conversion.
-The input file(s) will <strong>not</strong> be removed in case of failures.</p>
-</dd>
+<dt><strong>-Z</strong></dt>
+<dd>Remove the input PostScript file(s) after the conversion.
+The input file(s) will <strong>not</strong> be removed in case of failures.</dd>
 </dl>
-<dl class="simple">
-<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
-</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</p>
-</dd>
-<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
-</dd>
+<dl class="docutils">
+<dt><strong>-^</strong> or just <strong>-</strong></dt>
+<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt>
+<dd>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</dd>
+<dt><strong>-?</strong> or no arguments</dt>
+<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
 </dl>
 </div>
 <div class="section" id="notes">
@@ -505,9 +510,9 @@ use it.</p>
         <li class="right" >
           <a href="pscontour.html" title="pscontour"
              >previous</a> </li>
-  <li><a href="https://www.generic-mapping-tools.org">Project Home</a>  &#187;</li>
+  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 5.4.5 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 5.4.6_c5d65a4_2019.11.05 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="man_pages.html" >Man Pages</a> &#187;</li>
 <li class="right">
@@ -525,9 +530,9 @@ use it.</p>
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on Jul 29, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.1.2.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Nov 05, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

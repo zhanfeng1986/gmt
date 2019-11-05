@@ -1,11 +1,13 @@
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>(13) Plotting of vector fields &#8212; GMT 5.4.5 documentation</title>
+    <title>(13) Plotting of vector fields &#8212; GMT 5.4.6_c5d65a4_2019.11.05 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -17,6 +19,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/searchtools.js"></script>
     <script type="text/javascript" src="../../_static/rtd-sidebar.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -36,9 +39,9 @@
         <li class="right" >
           <a href="ex12.html" title="(12) Optimal triangulation of data"
              accesskey="P">previous</a> </li>
-  <li><a href="https://www.generic-mapping-tools.org">Project Home</a>  &#187;</li>
+  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 5.4.5 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 5.4.6_c5d65a4_2019.11.05 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" accesskey="U">The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -70,8 +73,8 @@ plot vector fields of various kinds. GMT provides a way to illustrate
 components of the field (Cartesian or polar components) are stored in
 separate grid files. In this example we use
 <a class="reference internal" href="../grdmath.html"><span class="doc">grdmath</span></a> to generate a surface
-<img class="math" src="../_images/math/b979729c64339b67dc13a80fcfc9d34b86383e54.png" alt="z(x, y) = x \cdot \exp(-x^2 -y^2)"/> and to calculate
-<img class="math" src="../_images/math/d69feb5a1bf066f655f62ab7be440f08d8e97cb8.png" alt="\nabla z"/> by returning the <em>x</em>- and <em>y</em>-derivatives separately.
+<span class="math notranslate nohighlight">\(z(x, y) = x \cdot \exp(-x^2 -y^2)\)</span> and to calculate
+<span class="math notranslate nohighlight">\(\nabla z\)</span> by returning the <em>x</em>- and <em>y</em>-derivatives separately.
 We superpose the gradient vector field and the surface <em>z</em> and also plot
 the components of the gradient in separate windows. A
 <a class="reference internal" href="../pstext.html"><span class="doc">pstext</span></a> call to place a header finishes the plot</p>
@@ -99,7 +102,7 @@ rm -f z.nc dzdx.nc dzdy.nc
 </div>
 <div class="figure align-center" id="id1">
 <a class="reference internal image-reference" href="../_images/example_13.png"><img alt="../_images/example_13.png" src="../_images/example_13.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-text">Display of vector fields in GMT.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Display of vector fields in GMT.</span></p>
 </div>
 </div>
 
@@ -138,9 +141,9 @@ rm -f z.nc dzdx.nc dzdy.nc
         <li class="right" >
           <a href="ex12.html" title="(12) Optimal triangulation of data"
              >previous</a> </li>
-  <li><a href="https://www.generic-mapping-tools.org">Project Home</a>  &#187;</li>
+  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 5.4.5 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 5.4.6_c5d65a4_2019.11.05 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" >The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -158,9 +161,9 @@ rm -f z.nc dzdx.nc dzdy.nc
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on Jul 29, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.1.2.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Nov 05, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

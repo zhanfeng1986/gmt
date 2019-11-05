@@ -1,11 +1,13 @@
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>grd2rgb &#8212; GMT 5.4.5 documentation</title>
+    <title>grd2rgb &#8212; GMT 5.4.6_c5d65a4_2019.11.05 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -17,6 +19,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/searchtools.js"></script>
     <script type="text/javascript" src="_static/rtd-sidebar.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -36,9 +39,9 @@
         <li class="right" >
           <a href="grd2cpt.html" title="grd2cpt"
              accesskey="P">previous</a> </li>
-  <li><a href="https://www.generic-mapping-tools.org">Project Home</a>  &#187;</li>
+  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 5.4.5 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 5.4.6_c5d65a4_2019.11.05 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="man_pages.html" accesskey="U">Man Pages</a> &#187;</li>
 <li class="right">
@@ -91,23 +94,24 @@ via the <strong>-W</strong> option.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="simple">
-<dt><em>infile</em></dt><dd><p>The (1) Sun raster file, (2) 2-D binary grid file, or (3) raw raster file to be converted.</p>
-</dd>
-<dt><strong>-G</strong><em>template</em></dt><dd><p>Provide an output name template for the three output grids. The
+<dl class="docutils">
+<dt><em>infile</em></dt>
+<dd>The (1) Sun raster file, (2) 2-D binary grid file, or (3) raw raster file to be converted.</dd>
+<dt><strong>-G</strong><em>template</em></dt>
+<dd>Provide an output name template for the three output grids. The
 template should be a regular grid file name except it must contain
-the string %c which on output will be replaced by r, g, or b.</p>
-</dd>
+the string %c which on output will be replaced by r, g, or b.</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="simple" id="c">
-<dt><strong>-C</strong><em>cpt</em></dt><dd><p>name of the color palette table (for 2-D binary input grid only).</p>
-</dd>
+<dl class="docutils" id="c">
+<dt><strong>-C</strong><em>cpt</em></dt>
+<dd>name of the color palette table (for 2-D binary input grid only).</dd>
 </dl>
-<dl class="simple" id="i">
-<dt><strong>-I</strong><em>xinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>]]</dt><dd><p><em>x_inc</em> [and optionally <em>y_inc</em>] is the grid spacing. Optionally,
+<dl class="docutils" id="i">
+<dt><strong>-I</strong><em>xinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>]]</dt>
+<dd><em>x_inc</em> [and optionally <em>y_inc</em>] is the grid spacing. Optionally,
 append a suffix modifier. <strong>Geographical (degrees) coordinates</strong>: Append
 <strong>m</strong> to indicate arc minutes or <strong>s</strong> to indicate arc seconds. If one
 of the units <strong>e</strong>, <strong>f</strong>, <strong>k</strong>, <strong>M</strong>, <strong>n</strong> or <strong>u</strong> is appended
@@ -126,42 +130,41 @@ recalculated from the number of nodes and the domain. The resulting
 increment value depends on whether you have selected a
 gridline-registered or pixel-registered grid; see <a class="reference internal" href="GMT_Docs.html#app-file-formats"><span class="std std-ref">GMT File Formats</span></a> for
 details. Note: if <strong>-R</strong><em>grdfile</em> is used then the grid spacing has
-already been initialized; use <strong>-I</strong> to override the values.</p>
-</dd>
+already been initialized; use <strong>-I</strong> to override the values.</dd>
 </dl>
-<dl class="simple" id="l">
-<dt><strong>-L</strong><em>layer</em></dt><dd><p>Output only the specified layer (r, g, or b). [Default outputs all 3 layers].</p>
-</dd>
+<dl class="docutils" id="l">
+<dt><strong>-L</strong><em>layer</em></dt>
+<dd>Output only the specified layer (r, g, or b). [Default outputs all 3 layers].</dd>
 </dl>
-<dl class="simple" id="r">
-<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify the region of interest.  </p>
-</dd>
+<dl class="docutils" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Specify the region of interest.  </dd>
 </dl>
-<dl class="simple" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
-</dd>
+<dl class="docutils" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select verbosity level [c].  </dd>
 </dl>
-<dl class="simple" id="w">
-<dt><strong>-W</strong><em>width</em>/<em>height</em>[/<em>n_bytes</em>]</dt><dd><p>Sets the size of the raw raster file. By default an RGB file (which
+<dl class="docutils" id="w">
+<dt><strong>-W</strong><em>width</em>/<em>height</em>[/<em>n_bytes</em>]</dt>
+<dd>Sets the size of the raw raster file. By default an RGB file (which
 has 3 bytes/pixel) is assumed. For RGBA files use <em>n_bytes</em> = 4.
 Use <strong>-W</strong> for guessing the image size of a RGB raw file, and
 <strong>-W</strong><em>=/=/4</em> if the raw image is of the RGBA type. Notice that
 this might be a bit slow because the guessing algorithm makes uses
-of FFTs.</p>
-</dd>
+of FFTs.</dd>
 </dl>
-<dl class="simple">
-<dt><strong>-r</strong> <a class="reference internal" href="gmt.html#nodereg-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set pixel node registration [gridline].  </p>
-</dd>
+<dl class="docutils">
+<dt><strong>-r</strong> <a class="reference internal" href="gmt.html#nodereg-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Set pixel node registration [gridline].  </dd>
 </dl>
-<dl class="simple">
-<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
-</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</p>
-</dd>
-<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
-</dd>
+<dl class="docutils">
+<dt><strong>-^</strong> or just <strong>-</strong></dt>
+<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt>
+<dd>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</dd>
+<dt><strong>-?</strong> or no arguments</dt>
+<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
 </dl>
 </div>
 <div class="section" id="examples">
@@ -236,9 +239,9 @@ hawaii_grv.nc file, use</p>
         <li class="right" >
           <a href="grd2cpt.html" title="grd2cpt"
              >previous</a> </li>
-  <li><a href="https://www.generic-mapping-tools.org">Project Home</a>  &#187;</li>
+  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 5.4.5 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 5.4.6_c5d65a4_2019.11.05 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="man_pages.html" >Man Pages</a> &#187;</li>
 <li class="right">
@@ -256,9 +259,9 @@ hawaii_grv.nc file, use</p>
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on Jul 29, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.1.2.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Nov 05, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

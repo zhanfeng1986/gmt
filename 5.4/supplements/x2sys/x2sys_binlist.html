@@ -1,11 +1,13 @@
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>x2sys_binlist &#8212; GMT 5.4.5 documentation</title>
+    <title>x2sys_binlist &#8212; GMT 5.4.6_c5d65a4_2019.11.05 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -17,6 +19,7 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../../_static/searchtools.js"></script>
     <script type="text/javascript" src="../../../../_static/rtd-sidebar.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -36,9 +39,9 @@
         <li class="right" >
           <a href="../spotter/rotsmoother.html" title="rotsmoother"
              accesskey="P">previous</a> </li>
-  <li><a href="https://www.generic-mapping-tools.org">Project Home</a>  &#187;</li>
+  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 5.4.5 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 5.4.6_c5d65a4_2019.11.05 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../man_pages.html" accesskey="U">Man Pages</a> &#187;</li>
 <li class="right">
@@ -91,8 +94,9 @@ indexing.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="simple">
-<dt><em>tracks</em></dt><dd><p>Can be one or more ASCII, native binary, or COARDS netCDF 1-D data
+<dl class="docutils">
+<dt><em>tracks</em></dt>
+<dd>Can be one or more ASCII, native binary, or COARDS netCDF 1-D data
 files. To supply the data files via a text file with a list of
 tracks (one per record), specify the name of the track list after a
 leading equal-sign (e.g., =tracks.lis). If the names are missing
@@ -103,45 +107,44 @@ directory and second in all directories listed in
 <strong>$X2SYS_HOME</strong> is not set it will default to
 <strong>$GMT_SHAREDIR</strong>/x2sys]. (Note: MGD77 files will also be looked
 for via <strong>MGD77_HOME</strong>/mgd77_paths.txt and *.gmt files will be
-searched for via <strong>$GMT_SHAREDIR</strong>/mgg/gmtfile_paths).</p>
-</dd>
+searched for via <strong>$GMT_SHAREDIR</strong>/mgg/gmtfile_paths).</dd>
 </dl>
-<dl class="simple">
-<dt><strong>-T</strong><em>TAG</em></dt><dd><p>Specify the x2sys <em>TAG</em> which tracks the attributes of this data type.</p>
-</dd>
+<dl class="docutils">
+<dt><strong>-T</strong><em>TAG</em></dt>
+<dd>Specify the x2sys <em>TAG</em> which tracks the attributes of this data type.</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="simple" id="d">
-<dt><strong>-D</strong></dt><dd><p>Calculate the length of track-line segments per bin [Default skips
+<dl class="docutils" id="d">
+<dt><strong>-D</strong></dt>
+<dd>Calculate the length of track-line segments per bin [Default skips
 this step]. The length fragments are given as the 5th output column
 (after the <em>flags</em>). The length units are obtained via the TAB
-setting (see <a class="reference internal" href="x2sys_init.html"><span class="doc">x2sys_init</span></a>).</p>
-</dd>
+setting (see <a class="reference internal" href="x2sys_init.html"><span class="doc">x2sys_init</span></a>).</dd>
 </dl>
-<dl class="simple" id="e">
-<dt><strong>-E</strong></dt><dd><p>Convert geographic data to a cylindrical equal-area projection prior
+<dl class="docutils" id="e">
+<dt><strong>-E</strong></dt>
+<dd>Convert geographic data to a cylindrical equal-area projection prior
 to binning. Basically, we apply the projection
 <strong>-JY</strong><em>lon0</em>/37:04:17.166076/360, where <em>lon0</em> is the
 mid-longitude of the region. Requires <strong>-D</strong>, geographical data, and
 a global region (e.g., <strong>-Rg</strong> or <strong>-Rd</strong>). This option is useful
 for statistics related to track-line density but should not be used
-when preparing bin-index files for the x2sys track data bases.</p>
-</dd>
+when preparing bin-index files for the x2sys track data bases.</dd>
 </dl>
-<dl class="simple" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
-</dd>
+<dl class="docutils" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select verbosity level [c].  </dd>
 </dl>
-<dl class="simple">
-<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
-</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</p>
-</dd>
-<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
-</dd>
+<dl class="docutils">
+<dt><strong>-^</strong> or just <strong>-</strong></dt>
+<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt>
+<dd>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</dd>
+<dt><strong>-?</strong> or no arguments</dt>
+<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
 </dl>
 </div>
 <div class="section" id="examples">
@@ -222,9 +225,9 @@ calculate track distances, run</p>
         <li class="right" >
           <a href="../spotter/rotsmoother.html" title="rotsmoother"
              >previous</a> </li>
-  <li><a href="https://www.generic-mapping-tools.org">Project Home</a>  &#187;</li>
+  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 5.4.5 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 5.4.6_c5d65a4_2019.11.05 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../man_pages.html" >Man Pages</a> &#187;</li>
 <li class="right">
@@ -242,9 +245,9 @@ calculate track distances, run</p>
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on Jul 29, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.1.2.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Nov 05, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

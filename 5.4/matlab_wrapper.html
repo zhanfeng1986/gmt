@@ -1,11 +1,13 @@
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>1. Introduction &#8212; GMT 5.4.5 documentation</title>
+    <title>1. Introduction &#8212; GMT 5.4.6_c5d65a4_2019.11.05 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -17,6 +19,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/searchtools.js"></script>
     <script type="text/javascript" src="_static/rtd-sidebar.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -36,9 +39,9 @@
         <li class="right" >
           <a href="ml_wrapper.html" title="MATLAB Wrapper"
              accesskey="P">previous</a> </li>
-  <li><a href="https://www.generic-mapping-tools.org">Project Home</a>  &#187;</li>
+  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 5.4.5 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 5.4.6_c5d65a4_2019.11.05 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="ml_wrapper.html" accesskey="U">MATLAB Wrapper</a> &#187;</li>
 <li class="right">
@@ -90,17 +93,17 @@ If you want to (re)build the MEX file yourself, see the <em>compile_mex.bat</em>
 it is a delicate process, with several caveats.  This may change over time as we work with MathWorks to straighten out the
 kinks.  The following works:</p>
 <ol class="arabic simple">
-<li><p>Install the GMT OS X Bundle</p></li>
-<li><p>Run the gmt_prepmex.sh script in the bundle’s share/tools directory.  This will duplicate
-the GMT 5.3 installation into /opt/gmt and re-baptize all the shared libraries.</p></li>
-<li><p>Use gmtswitch to make /opt/gmt the current active GMT version</p></li>
-<li><p>Checkout the gmt-mex project via subversion into some directory, i.e.,
-svn checkout svn://gmtserver.soest.hawaii.edu/gmt-mex gmt-mex</p></li>
-<li><p>In gmt-mex/trunk, run autoconf then configure –enable-matlab (and maybe –enable-debug) is you
-can help debug things.</p></li>
-<li><p>Run make which builds the gmtmex.mexmaci64.  This executable is accessed by the gmt.m script.</p></li>
-<li><p>Set your MATLAB path so these two can be found (or copy them to a suitable directory).</p></li>
-<li><p>Make sure your gmt.conf file has the entry GMT_CUSTOM_LIBS=/opt/gmt/lib/gmt/plugins/supplements.so.</p></li>
+<li>Install the GMT OS X Bundle</li>
+<li>Run the gmt_prepmex.sh script in the bundle’s share/tools directory.  This will duplicate
+the GMT 5.3 installation into /opt/gmt and re-baptize all the shared libraries.</li>
+<li>Use gmtswitch to make /opt/gmt the current active GMT version</li>
+<li>Checkout the gmt-mex project via subversion into some directory, i.e.,
+svn checkout svn://gmtserver.soest.hawaii.edu/gmt-mex gmt-mex</li>
+<li>In gmt-mex/trunk, run autoconf then configure --enable-matlab (and maybe --enable-debug) is you
+can help debug things.</li>
+<li>Run make which builds the gmtmex.mexmaci64.  This executable is accessed by the gmt.m script.</li>
+<li>Set your MATLAB path so these two can be found (or copy them to a suitable directory).</li>
+<li>Make sure your gmt.conf file has the entry GMT_CUSTOM_LIBS=/opt/gmt/lib/gmt/plugins/supplements.so.</li>
 </ol>
 <p>You can also build your own bundle (see CMakeLists.txt in main GMT directory).  The above works
 with UNIX installations from fink or HomeBrew but fails for us if under MacPorts (then, MATLAB
@@ -305,9 +308,9 @@ comment         % Remark (Optional)
         <li class="right" >
           <a href="ml_wrapper.html" title="MATLAB Wrapper"
              >previous</a> </li>
-  <li><a href="https://www.generic-mapping-tools.org">Project Home</a>  &#187;</li>
+  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 5.4.5 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 5.4.6_c5d65a4_2019.11.05 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="ml_wrapper.html" >MATLAB Wrapper</a> &#187;</li>
 <li class="right">
@@ -325,9 +328,9 @@ comment         % Remark (Optional)
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on Jul 29, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.1.2.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Nov 05, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

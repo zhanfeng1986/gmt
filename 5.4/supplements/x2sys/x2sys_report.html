@@ -1,11 +1,13 @@
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>x2sys_report &#8212; GMT 5.4.5 documentation</title>
+    <title>x2sys_report &#8212; GMT 5.4.6_c5d65a4_2019.11.05 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -17,6 +19,7 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../../_static/searchtools.js"></script>
     <script type="text/javascript" src="../../../../_static/rtd-sidebar.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -36,9 +39,9 @@
         <li class="right" >
           <a href="x2sys_put.html" title="x2sys_put"
              accesskey="P">previous</a> </li>
-  <li><a href="https://www.generic-mapping-tools.org">Project Home</a>  &#187;</li>
+  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 5.4.5 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 5.4.6_c5d65a4_2019.11.05 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../man_pages.html" accesskey="U">Man Pages</a> &#187;</li>
 <li class="right">
@@ -86,57 +89,58 @@ available to let you exclude tracks and limit the output.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="simple">
-<dt><em>coedbase.txt</em></dt><dd><p>The name of the input ASCII crossover error data base as produced by
-<a class="reference internal" href="x2sys_cross.html"><span class="doc">x2sys_cross</span></a>. If not given we read standard input instead.</p>
-</dd>
+<dl class="docutils">
+<dt><em>coedbase.txt</em></dt>
+<dd>The name of the input ASCII crossover error data base as produced by
+<a class="reference internal" href="x2sys_cross.html"><span class="doc">x2sys_cross</span></a>. If not given we read standard input instead.</dd>
 </dl>
-<dl class="simple" id="c">
-<dt><strong>-C</strong><em>column</em></dt><dd><p>Specify which data column you want to process. Crossovers related to
-this column name must be present in the crossover data base.</p>
-</dd>
+<dl class="docutils" id="c">
+<dt><strong>-C</strong><em>column</em></dt>
+<dd>Specify which data column you want to process. Crossovers related to
+this column name must be present in the crossover data base.</dd>
 </dl>
-<dl class="simple">
-<dt><strong>-T</strong><em>TAG</em></dt><dd><p>Specify the x2sys <em>TAG</em> which tracks the attributes of this data type.</p>
-</dd>
+<dl class="docutils">
+<dt><strong>-T</strong><em>TAG</em></dt>
+<dd>Specify the x2sys <em>TAG</em> which tracks the attributes of this data type.</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="simple" id="a">
-<dt><strong>-A</strong></dt><dd><p>Eliminate COEs by distributing the COE between the two tracks in
+<dl class="docutils" id="a">
+<dt><strong>-A</strong></dt>
+<dd>Eliminate COEs by distributing the COE between the two tracks in
 proportion to track weight and producing (dist, adjustment) spline
 knots files for each track (for the selected <em>column</em>). Such
 adjustments may be used by <a class="reference internal" href="x2sys_datalist.html"><span class="doc">x2sys_datalist</span></a>. The adjustment files
 are called <em>track.column</em>.adj and are placed in the
 <strong>$X2SYS_HOME</strong>/<em>TAG</em> directory. For background information on how
-these adjustments are designed, see <em>Mittal</em> [1984].</p>
-</dd>
+these adjustments are designed, see <em>Mittal</em> [1984].</dd>
 </dl>
-<dl class="simple" id="i">
-<dt><strong>-I</strong>[<em>list</em>]</dt><dd><p>Name of ASCII file with a list of track names (one per record) that
-should be excluded from consideration [Default includes all tracks].</p>
-</dd>
+<dl class="docutils" id="i">
+<dt><strong>-I</strong>[<em>list</em>]</dt>
+<dd>Name of ASCII file with a list of track names (one per record) that
+should be excluded from consideration [Default includes all tracks].</dd>
 </dl>
-<dl class="simple" id="l">
-<dt><strong>-L</strong>[<em>corrtable</em>]</dt><dd><p>Apply optimal corrections to the chosen observable. Append the
+<dl class="docutils" id="l">
+<dt><strong>-L</strong>[<em>corrtable</em>]</dt>
+<dd>Apply optimal corrections to the chosen observable. Append the
 correction table to use [Default uses the correction table
 <em>TAG</em>_corrections.txt which is expected to reside in the
 <strong>$X2SYS_HOME</strong>/<em>TAG</em> directory]. For the format of this file, see
-<a class="reference internal" href="x2sys_solve.html"><span class="doc">x2sys_solve</span></a>.</p>
-</dd>
+<a class="reference internal" href="x2sys_solve.html"><span class="doc">x2sys_solve</span></a>.</dd>
 </dl>
-<dl class="simple" id="n">
-<dt><strong>-N</strong><em>nx_min</em></dt><dd><p>Only report data from tracks involved in at least <em>nx_min</em> crossovers [all tracks].</p>
-</dd>
+<dl class="docutils" id="n">
+<dt><strong>-N</strong><em>nx_min</em></dt>
+<dd>Only report data from tracks involved in at least <em>nx_min</em> crossovers [all tracks].</dd>
 </dl>
-<dl class="simple" id="q">
-<dt><strong>-Qe</strong>|<strong>i</strong></dt><dd><p>Append <strong>e</strong> for external crossovers or <strong>i</strong> for internal
-crossovers only [Default is external].</p>
-</dd>
+<dl class="docutils" id="q">
+<dt><strong>-Qe</strong>|<strong>i</strong></dt>
+<dd>Append <strong>e</strong> for external crossovers or <strong>i</strong> for internal
+crossovers only [Default is external].</dd>
 </dl>
-<dl class="simple" id="r">
-<dt><strong>-R</strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt><dd><p><em>west</em>, <em>east</em>, <em>south</em>, and <em>north</em> specify the region of interest,
+<dl class="docutils" id="r">
+<dt><strong>-R</strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt>
+<dd><em>west</em>, <em>east</em>, <em>south</em>, and <em>north</em> specify the region of interest,
 and you may specify them in decimal degrees or in
 [±]dd:mm[:ss.xxx][<strong>W</strong>|<strong>E</strong>|<strong>S</strong>|<strong>N</strong>] format
 Append <strong>+r</strong> if lower left
@@ -161,27 +165,26 @@ done only when using the <strong>-Jz</strong> option, not when using only the
 <strong>-p</strong> option. In the latter case a perspective view of the plane is
 plotted, with no third dimension. For Cartesian
 data just give <em>xmin/xmax/ymin/ymax</em>. This option bases the
-statistics on those COE that fall inside the specified domain.</p>
-</dd>
+statistics on those COE that fall inside the specified domain.</dd>
 </dl>
-<dl class="simple" id="s">
-<dt><strong>-S</strong><em>track</em></dt><dd><p>Name of a single track. If given we restrict output to those
+<dl class="docutils" id="s">
+<dt><strong>-S</strong><em>track</em></dt>
+<dd>Name of a single track. If given we restrict output to those
 crossovers involving this track [Default output is crossovers
-involving any track pair].</p>
-</dd>
+involving any track pair].</dd>
 </dl>
-<dl class="simple" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
-</dd>
+<dl class="docutils" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select verbosity level [c].  </dd>
 </dl>
-<dl class="simple">
-<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
-</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</p>
-</dd>
-<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
-</dd>
+<dl class="docutils">
+<dt><strong>-^</strong> or just <strong>-</strong></dt>
+<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt>
+<dd>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</dd>
+<dt><strong>-?</strong> or no arguments</dt>
+<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
 </dl>
 </div>
 <div class="section" id="examples">
@@ -269,9 +272,9 @@ data along a survey network, <em>Geophysics</em>, <strong>49</strong>(4), 467-46
         <li class="right" >
           <a href="x2sys_put.html" title="x2sys_put"
              >previous</a> </li>
-  <li><a href="https://www.generic-mapping-tools.org">Project Home</a>  &#187;</li>
+  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 5.4.5 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 5.4.6_c5d65a4_2019.11.05 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../man_pages.html" >Man Pages</a> &#187;</li>
 <li class="right">
@@ -289,9 +292,9 @@ data along a survey network, <em>Geophysics</em>, <strong>49</strong>(4), 467-46
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on Jul 29, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.1.2.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Nov 05, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

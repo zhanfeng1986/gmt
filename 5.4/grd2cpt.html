@@ -1,11 +1,13 @@
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>grd2cpt &#8212; GMT 5.4.5 documentation</title>
+    <title>grd2cpt &#8212; GMT 5.4.6_c5d65a4_2019.11.05 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -17,6 +19,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/searchtools.js"></script>
     <script type="text/javascript" src="_static/rtd-sidebar.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -36,9 +39,9 @@
         <li class="right" >
           <a href="gmtwhich.html" title="gmtwhich"
              accesskey="P">previous</a> </li>
-  <li><a href="https://www.generic-mapping-tools.org">Project Home</a>  &#187;</li>
+  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 5.4.5 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 5.4.6_c5d65a4_2019.11.05 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="man_pages.html" accesskey="U">Man Pages</a> &#187;</li>
 <li class="right">
@@ -115,140 +118,140 @@ line will be used.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="simple">
-<dt><em>grid</em></dt><dd><p>Names of one or more grid files used to derive the color palette
+<dl class="docutils">
+<dt><em>grid</em></dt>
+<dd>Names of one or more grid files used to derive the color palette
 table. All grids need to have the same size and dimensions. (See
-GRID FILE FORMATS below).</p>
-</dd>
+GRID FILE FORMATS below).</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="simple" id="a">
-<dt><strong>-A</strong>[<strong>+</strong>]<em>transparency</em></dt><dd><p>Sets a constant level of transparency (0-100) for all color slices.
+<dl class="docutils" id="a">
+<dt><strong>-A</strong>[<strong>+</strong>]<em>transparency</em></dt>
+<dd>Sets a constant level of transparency (0-100) for all color slices.
 Prepend <strong>+</strong> to also affect the fore-, back-, and nan-colors
-[Default is no transparency, i.e., 0 (opaque)].</p>
-</dd>
+[Default is no transparency, i.e., 0 (opaque)].</dd>
 </dl>
-<dl class="simple" id="c">
-<dt><strong>-C</strong><em>cpt</em></dt><dd><p>Selects the master color table to use in the interpolation. Choose
+<dl class="docutils" id="c">
+<dt><strong>-C</strong><em>cpt</em></dt>
+<dd>Selects the master color table to use in the interpolation. Choose
 among the built-in tables (type <strong>grd2cpt</strong> to see the list) or give
 the name of an existing CPT [Default gives a rainbow CPT].
 Yet another option is to specify -Ccolor1,color2[,color3,…]
 to build a linear continuous CPT from those colors automatically.
 In this case <em>color</em><strong>n</strong> can be a r/g/b triplet, a color name,
-or an HTML hexadecimal color (e.g. #aabbcc ).</p>
-</dd>
+or an HTML hexadecimal color (e.g. #aabbcc ).</dd>
 </dl>
-<dl class="simple" id="d">
-<dt><strong>-D</strong>[<strong>i</strong>]</dt><dd><p>Select the back- and foreground colors to match the colors for
+<dl class="docutils" id="d">
+<dt><strong>-D</strong>[<strong>i</strong>]</dt>
+<dd>Select the back- and foreground colors to match the colors for
 lowest and highest <em>z</em>-values in the output CPT [Default uses
 the colors specified in the master file, or those defined by the
 parameters <a class="reference internal" href="gmt.conf.html#color-background"><span class="std std-ref">COLOR_BACKGROUND</span></a>, <a class="reference internal" href="gmt.conf.html#color-foreground"><span class="std std-ref">COLOR_FOREGROUND</span></a>, and
 <a class="reference internal" href="gmt.conf.html#color-nan"><span class="std std-ref">COLOR_NAN</span></a>]. Append <strong>i</strong> to match the colors for the lowest and
-highest values in the input (instead of the output) CPT.</p>
-</dd>
+highest values in the input (instead of the output) CPT.</dd>
 </dl>
-<dl class="simple" id="e">
-<dt><strong>-E</strong>[<em>nlevels</em>]</dt><dd><p>Create a linear color table by using the grid z-range as the new
+<dl class="docutils" id="e">
+<dt><strong>-E</strong>[<em>nlevels</em>]</dt>
+<dd>Create a linear color table by using the grid z-range as the new
 limits in the CPT.  Alternatively, append <em>nlevels</em> and we will
-resample the color table into <em>nlevels</em> equidistant slices.</p>
-</dd>
+resample the color table into <em>nlevels</em> equidistant slices.</dd>
 </dl>
-<dl class="simple" id="f">
-<dt><strong>-F</strong>[<strong>R</strong>|<strong>r</strong>|<strong>h</strong>|<strong>c</strong>][<strong>+c</strong>]]</dt><dd><p>Force output CPT to written with r/g/b codes, gray-scale values
+<dl class="docutils" id="f">
+<dt><strong>-F</strong>[<strong>R</strong>|<strong>r</strong>|<strong>h</strong>|<strong>c</strong>][<strong>+c</strong>]]</dt>
+<dd>Force output CPT to written with r/g/b codes, gray-scale values
 or color name (<strong>R</strong>, default) or r/g/b codes only (<strong>r</strong>), or h-s-v
 codes (<strong>h</strong>), or c/m/y/k codes (<strong>c</strong>).  Optionally or alternatively,
-append <strong>+c</strong> to write discrete palettes in categorical format.</p>
-</dd>
+append <strong>+c</strong> to write discrete palettes in categorical format.</dd>
 </dl>
-<dl class="simple" id="g">
-<dt><strong>-G</strong><em>zlo</em>/<em>zhi</em></dt><dd><p>Truncate the incoming CPT so that the lowest and highest z-levels
+<dl class="docutils" id="g">
+<dt><strong>-G</strong><em>zlo</em>/<em>zhi</em></dt>
+<dd>Truncate the incoming CPT so that the lowest and highest z-levels
 are to <em>zlo</em> and <em>zhi</em>.  If one of these equal NaN then
 we leave that end of the CPT alone.  The truncation takes place
-before any resampling. See also <a class="reference internal" href="GMT_Docs.html#manipulating-cpts"><span class="std std-ref">Manipulating CPTs</span></a></p>
-</dd>
+before any resampling. See also <a class="reference internal" href="GMT_Docs.html#manipulating-cpts"><span class="std std-ref">Manipulating CPTs</span></a></dd>
 </dl>
-<dl class="simple" id="i">
-<dt><strong>-I</strong>[<strong>c</strong>][<strong>z</strong>]</dt><dd><p>Append <strong>c</strong> [Default] to reverse the sense of color progression in the master CPT. Also
+<dl class="docutils" id="i">
+<dt><strong>-I</strong>[<strong>c</strong>][<strong>z</strong>]</dt>
+<dd>Append <strong>c</strong> [Default] to reverse the sense of color progression in the master CPT. Also
 exchanges the foreground and background colors, including those
 specified by the parameters <a class="reference internal" href="gmt.conf.html#color-background"><span class="std std-ref">COLOR_BACKGROUND</span></a> and
 <a class="reference internal" href="gmt.conf.html#color-foreground"><span class="std std-ref">COLOR_FOREGROUND</span></a>.
 Append <strong>z</strong> to reverse the sign of z-values in the color table.  Note that
 this change of <em>z</em>-direction happens before <strong>-G</strong> and <strong>-T</strong> values are used
-so the latter much be compatible with the changed <em>z</em>-range. See also <a class="reference internal" href="GMT_Docs.html#manipulating-cpts"><span class="std std-ref">Manipulating CPTs</span></a></p>
-</dd>
+so the latter much be compatible with the changed <em>z</em>-range. See also <a class="reference internal" href="GMT_Docs.html#manipulating-cpts"><span class="std std-ref">Manipulating CPTs</span></a></dd>
 </dl>
-<dl class="simple" id="l">
-<dt><strong>-L</strong><em>minlimit/maxlimit</em></dt><dd><p>Limit range of CPT to <em>minlimit/maxlimit</em>, and don’t count data
-outside this range when estimating CDF(Z). [Default uses min and max of data.]</p>
-</dd>
+<dl class="docutils" id="l">
+<dt><strong>-L</strong><em>minlimit/maxlimit</em></dt>
+<dd>Limit range of CPT to <em>minlimit/maxlimit</em>, and don’t count data
+outside this range when estimating CDF(Z). [Default uses min and max of data.]</dd>
 </dl>
-<dl class="simple" id="m">
-<dt><strong>-M</strong></dt><dd><p>Overrule background, foreground, and NaN colors specified in the
+<dl class="docutils" id="m">
+<dt><strong>-M</strong></dt>
+<dd>Overrule background, foreground, and NaN colors specified in the
 master CPT with the values of the parameters
 <a class="reference internal" href="gmt.conf.html#color-background"><span class="std std-ref">COLOR_BACKGROUND</span></a>, <a class="reference internal" href="gmt.conf.html#color-foreground"><span class="std std-ref">COLOR_FOREGROUND</span></a>,
 and <a class="reference internal" href="gmt.conf.html#color-nan"><span class="std std-ref">COLOR_NAN</span></a>
 specified in the <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> file or on the command line. When
-combined with <strong>-D</strong>, only <a class="reference internal" href="gmt.conf.html#color-nan"><span class="std std-ref">COLOR_NAN</span></a> is considered.</p>
-</dd>
+combined with <strong>-D</strong>, only <a class="reference internal" href="gmt.conf.html#color-nan"><span class="std std-ref">COLOR_NAN</span></a> is considered.</dd>
 </dl>
-<dl class="simple" id="n">
-<dt><strong>-N</strong></dt><dd><p>Do not write out the background, foreground, and NaN-color fields
-[Default will write them].</p>
-</dd>
+<dl class="docutils" id="n">
+<dt><strong>-N</strong></dt>
+<dd>Do not write out the background, foreground, and NaN-color fields
+[Default will write them].</dd>
 </dl>
-<dl class="simple" id="q">
-<dt><strong>-Q</strong>[<strong>i</strong>|<strong>o</strong>]</dt><dd><p>Selects a logarithmic interpolation scheme [Default is linear].
+<dl class="docutils" id="q">
+<dt><strong>-Q</strong>[<strong>i</strong>|<strong>o</strong>]</dt>
+<dd>Selects a logarithmic interpolation scheme [Default is linear].
 <strong>-Qi</strong> expects input z-values to be log10(z), assigns colors, and
 writes out z [Default]. <strong>-Qo</strong> takes log10(z) first, assigns
-colors, and writes out z.</p>
-</dd>
+colors, and writes out z.</dd>
 </dl>
-<dl class="simple" id="r">
-<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Specify the region of interest.  </p>
-</dd>
+<dl class="docutils" id="r">
+<dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Specify the region of interest.  </dd>
 </dl>
-<dl class="simple" id="s">
-<dt><strong>-S</strong><em>zstart/zstop/zinc</em> or <strong>-S</strong><em>n</em></dt><dd><p>Set steps in CPT. Calculate entries in CPT from <em>zstart</em>
+<dl class="docutils" id="s">
+<dt><strong>-S</strong><em>zstart/zstop/zinc</em> or <strong>-S</strong><em>n</em></dt>
+<dd>Set steps in CPT. Calculate entries in CPT from <em>zstart</em>
 to <em>zstop</em> in steps of (<em>zinc</em>). Default chooses arbitrary values by
 a crazy scheme based on equidistant values for a Gaussian CDF.
 Use <strong>-S</strong><em>n</em> to select <em>n</em> points from such a
-cumulative normal distribution [11].</p>
-</dd>
+cumulative normal distribution [11].</dd>
 </dl>
-<dl class="simple" id="t">
-<dt><strong>-T</strong><strong>-</strong>|<strong>+</strong>|<strong>_</strong>|<strong>=</strong></dt><dd><p>Force the color table to be symmetric about zero (from -R to +R).
+<dl class="docutils" id="t">
+<dt><strong>-T</strong><strong>-</strong>|<strong>+</strong>|<strong>_</strong>|<strong>=</strong></dt>
+<dd>Force the color table to be symmetric about zero (from -R to +R).
 Append flag to set the range R: <strong>-</strong> for R =|zmin|, <strong>+</strong> for R =
 |zmax|, <strong>_</strong> for R = min(|zmin|, |zmax|), or <strong>=</strong> for R =
-max(|zmin|, |zmax|).</p>
-</dd>
+max(|zmin|, |zmax|).</dd>
 </dl>
-<dl class="simple" id="v">
-<dt><strong>-V</strong></dt><dd><p>Verbose operation. This will write CDF(Z) estimates to stderr. [Default is silent.]</p>
-</dd>
+<dl class="docutils" id="v">
+<dt><strong>-V</strong></dt>
+<dd>Verbose operation. This will write CDF(Z) estimates to stderr. [Default is silent.]</dd>
 </dl>
-<dl class="simple" id="w">
-<dt><strong>-W</strong></dt><dd><p>Do not interpolate the input color table but pick the output colors
+<dl class="docutils" id="w">
+<dt><strong>-W</strong></dt>
+<dd>Do not interpolate the input color table but pick the output colors
 starting at the beginning of the map. This is particularly useful in
 combination with a categorical color table. Cannot be used in
 combination with <strong>-Z</strong>.  Alternatively, use <strong>-Ww</strong> to produce
-a wrapped (cyclic) color table that endlessly repeats its range.</p>
-</dd>
+a wrapped (cyclic) color table that endlessly repeats its range.</dd>
 </dl>
-<dl class="simple" id="z">
-<dt><strong>-Z</strong></dt><dd><p>Will create a continuous color palette. [Default is discontinuous,
-i.e., constant color intervals]</p>
-</dd>
+<dl class="docutils" id="z">
+<dt><strong>-Z</strong></dt>
+<dd>Will create a continuous color palette. [Default is discontinuous,
+i.e., constant color intervals]</dd>
 </dl>
-<dl class="simple">
-<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
-</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</p>
-</dd>
-<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
-</dd>
+<dl class="docutils">
+<dt><strong>-^</strong> or just <strong>-</strong></dt>
+<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt>
+<dd>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</dd>
+<dt><strong>-?</strong> or no arguments</dt>
+<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
 </dl>
 </div>
 <div class="section" id="grid-file-formats">
@@ -358,9 +361,9 @@ file relief, run</p>
         <li class="right" >
           <a href="gmtwhich.html" title="gmtwhich"
              >previous</a> </li>
-  <li><a href="https://www.generic-mapping-tools.org">Project Home</a>  &#187;</li>
+  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="index.html">GMT 5.4.5 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">GMT 5.4.6_c5d65a4_2019.11.05 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="man_pages.html" >Man Pages</a> &#187;</li>
 <li class="right">
@@ -378,9 +381,9 @@ file relief, run</p>
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on Jul 29, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.1.2.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Nov 05, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

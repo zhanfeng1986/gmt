@@ -1,11 +1,13 @@
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>(25) Global distribution of antipodes &#8212; GMT 5.4.5 documentation</title>
+    <title>(25) Global distribution of antipodes &#8212; GMT 5.4.6_c5d65a4_2019.11.05 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -17,6 +19,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/searchtools.js"></script>
     <script type="text/javascript" src="../../_static/rtd-sidebar.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -36,9 +39,9 @@
         <li class="right" >
           <a href="ex24.html" title="(24) Data selection based on geospatial criteria"
              accesskey="P">previous</a> </li>
-  <li><a href="https://www.generic-mapping-tools.org">Project Home</a>  &#187;</li>
+  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 5.4.5 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 5.4.6_c5d65a4_2019.11.05 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" accesskey="U">The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -64,8 +67,8 @@
   <div class="section" id="global-distribution-of-antipodes">
 <span id="example-25"></span><h1>(25) Global distribution of antipodes<a class="headerlink" href="#global-distribution-of-antipodes" title="Permalink to this headline">¶</a></h1>
 <p>As promised in Example <a class="reference internal" href="ex23.html#example-23"><span class="std std-ref">(23) All great-circle paths lead to Rome</span></a>, we will study
-antipodes. The antipode of a point at <img class="math" src="../_images/math/f69e2ef05fbfe7d314998bc01e853b6ccab8871b.png" alt="(\phi, \lambda)"/> is the
-point at <img class="math" src="../_images/math/ddb2b556fb7b9cded6d539eee1601fc98b53c7ef.png" alt="(-\phi, \lambda + 180)"/>. We seek an answer to the
+antipodes. The antipode of a point at <span class="math notranslate nohighlight">\((\phi, \lambda)\)</span> is the
+point at <span class="math notranslate nohighlight">\((-\phi, \lambda + 180)\)</span>. We seek an answer to the
 question that has plagued so many for so long: Given the distribution of
 land and ocean, how often is the antipode of a point on land also on
 land? And what about marine antipodes? We use <a class="reference internal" href="../grdlandmask.html"><span class="doc">grdlandmask</span></a> and
@@ -77,14 +80,14 @@ first calculate a grid that is +1 when a point and its antipode is on
 land, -1 if both are in the ocean, and 0 elsewhere. We then seek to
 calculate the area distribution of dry antipodes by only pulling out the
 nodes that equal +1. As each point represent an area approximated by
-<img class="math" src="../_images/math/eb10120a452506974d1edfb944dbb2e2cb627a0f.png" alt="\Delta \phi \times \Delta \lambda"/> where the
-<img class="math" src="../_images/math/f427bb05fcc6af66e6e975834417d11a42523ad2.png" alt="\Delta \lambda"/> term’s actual dimension depends on
-<img class="math" src="../_images/math/1065250b0d387245012ab5f984fda0348ebaed85.png" alt="\cos (\phi)"/>, we need to allow for that shrinkage, normalize our
+<span class="math notranslate nohighlight">\(\Delta \phi \times \Delta \lambda\)</span> where the
+<span class="math notranslate nohighlight">\(\Delta \lambda\)</span> term’s actual dimension depends on
+<span class="math notranslate nohighlight">\(\cos (\phi)\)</span>, we need to allow for that shrinkage, normalize our
 sum to that of the whole area of the Earth, and finally convert that
-ratio to percent. Since the <img class="math" src="../_images/math/f427bb05fcc6af66e6e975834417d11a42523ad2.png" alt="\Delta \lambda"/>, <img class="math" src="../_images/math/c3810a02744f1a2291e73866cf8f98afba9e0740.png" alt="\Delta \phi"/>
+ratio to percent. Since the <span class="math notranslate nohighlight">\(\Delta \lambda\)</span>, <span class="math notranslate nohighlight">\(\Delta \phi\)</span>
 terms appear twice in these expressions they cancel out, leaving the
 somewhat intractable expressions below where the sum of
-<img class="math" src="../_images/math/1065250b0d387245012ab5f984fda0348ebaed85.png" alt="\cos (\phi)"/> for all <img class="math" src="../_images/math/fffd2357ee88a9c50ba9e831ed64c39c73d54a07.png" alt="\phi"/> is known to equal <img class="math" src="../_images/math/24f97438c60ed9f51819c7de818eff735706cefc.png" alt="2N_y / \pi"/>:</p>
+<span class="math notranslate nohighlight">\(\cos (\phi)\)</span> for all <span class="math notranslate nohighlight">\(\phi\)</span> is known to equal <span class="math notranslate nohighlight">\(2N_y / \pi\)</span>:</p>
 <p>In the end we obtain a funny-looking map depicting the antipodal
 distribution as well as displaying in legend form the requested
 percentages. Note that the script is
@@ -139,7 +142,7 @@ rm -f *.nc key.* gmt.conf
 </div>
 <div class="figure align-center" id="id1">
 <a class="reference internal image-reference" href="../_images/example_25.png"><img alt="../_images/example_25.png" src="../_images/example_25.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-text">Global distribution of antipodes.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Global distribution of antipodes.</span></p>
 </div>
 </div>
 
@@ -178,9 +181,9 @@ rm -f *.nc key.* gmt.conf
         <li class="right" >
           <a href="ex24.html" title="(24) Data selection based on geospatial criteria"
              >previous</a> </li>
-  <li><a href="https://www.generic-mapping-tools.org">Project Home</a>  &#187;</li>
+  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 5.4.5 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 5.4.6_c5d65a4_2019.11.05 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" >The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -198,9 +201,9 @@ rm -f *.nc key.* gmt.conf
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on Jul 29, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.1.2.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Nov 05, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

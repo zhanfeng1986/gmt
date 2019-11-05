@@ -1,11 +1,13 @@
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>(20) Custom plot symbols &#8212; GMT 5.4.5 documentation</title>
+    <title>(20) Custom plot symbols &#8212; GMT 5.4.6_c5d65a4_2019.11.05 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -17,6 +19,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../_static/searchtools.js"></script>
     <script type="text/javascript" src="../../_static/rtd-sidebar.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -36,9 +39,9 @@
         <li class="right" >
           <a href="ex19.html" title="(19) Color patterns on maps"
              accesskey="P">previous</a> </li>
-  <li><a href="https://www.generic-mapping-tools.org">Project Home</a>  &#187;</li>
+  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 5.4.5 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 5.4.6_c5d65a4_2019.11.05 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" accesskey="U">The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -71,35 +74,35 @@ programs <a class="reference internal" href="../psxy.html"><span class="doc">psx
 that allows for a fair bit of flexibility in designing ones own symbols.
 The following recipe is used when designing a new symbol.</p>
 <ol class="arabic simple">
-<li><p>Use <a class="reference internal" href="../psbasemap.html"><span class="doc">psbasemap</span></a> (or engineering
+<li>Use <a class="reference internal" href="../psbasemap.html"><span class="doc">psbasemap</span></a> (or engineering
 paper!) to set up an empty grid that goes from -0.5 to +0.5 in both
 <em>x</em> and <em>y</em>. Use ruler and compass to draw your new symbol using
 straight lines, arcs of circles, and stand-alone geometrical objects
 (see <a class="reference internal" href="../psxy.html"><span class="doc">psxy</span></a> man page for a full
 description of symbol design). In this Section we will create two new
-symbols: a volcano and a bulls eye.</p></li>
+symbols: a volcano and a bulls eye.</li>
 </ol>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/GMT_volcano.png"><img alt="../_images/GMT_volcano.png" src="../_images/GMT_volcano.png" style="width: 500px;" /></a>
 </div>
 <ol class="arabic">
-<li><p>After designing the symbol we will encode it using a simple set of
+<li><p class="first">After designing the symbol we will encode it using a simple set of
 rules. In our case we describe our volcano and bulls eye using these
 three freeform polygon generators:</p>
-<p><img class="math" src="../_images/math/ed7fb0260e58d3ca5851e823ff991dae4cde5671.png" alt="x_0"/> <img class="math" src="../_images/math/c02d829cecb5c5b40b5a00db3dc936351b671e07.png" alt="y_0"/> <em>r</em> <strong>C</strong> [ <strong>-G</strong><em>fill</em> ] [
-<strong>-W</strong><em>pen</em> ] Draw <img class="math" src="../_images/math/ed7fb0260e58d3ca5851e823ff991dae4cde5671.png" alt="x_0"/> <img class="math" src="../_images/math/c02d829cecb5c5b40b5a00db3dc936351b671e07.png" alt="y_0"/> <strong>M</strong> [ <strong>-G</strong><em>fill</em> ]
-[ <strong>-W</strong><em>pen</em> ] Start new element at <img class="math" src="../_images/math/ed7fb0260e58d3ca5851e823ff991dae4cde5671.png" alt="x_0"/>, <img class="math" src="../_images/math/c02d829cecb5c5b40b5a00db3dc936351b671e07.png" alt="y_0"/></p>
-<p><img class="math" src="../_images/math/5ea99039cd8359fa2e14317dbfae4497ebbc1360.png" alt="x_1"/> <img class="math" src="../_images/math/7a4a430067dab11b32cfcddbd7d7fd6b5f4d3070.png" alt="y_1"/> <strong>D</strong> Draw straight line from current point
-to <img class="math" src="../_images/math/5ea99039cd8359fa2e14317dbfae4497ebbc1360.png" alt="x_1"/>, <img class="math" src="../_images/math/7a4a430067dab11b32cfcddbd7d7fd6b5f4d3070.png" alt="y_1"/> around (<img class="math" src="../_images/math/ed7fb0260e58d3ca5851e823ff991dae4cde5671.png" alt="x_0"/>, <img class="math" src="../_images/math/c02d829cecb5c5b40b5a00db3dc936351b671e07.png" alt="y_0"/>)</p>
-<p><img class="math" src="../_images/math/ed7fb0260e58d3ca5851e823ff991dae4cde5671.png" alt="x_0"/> <img class="math" src="../_images/math/c02d829cecb5c5b40b5a00db3dc936351b671e07.png" alt="y_0"/> <em>r</em> <img class="math" src="../_images/math/fa66a2cbb50c4e1f6299d3e4082f6bf050c8a8d0.png" alt="\alpha_1"/> <img class="math" src="../_images/math/772ce4c56aa5e1a74242d5a68d5d4b5738f16273.png" alt="\alpha_2"/>
+<p><span class="math notranslate nohighlight">\(x_0\)</span> <span class="math notranslate nohighlight">\(y_0\)</span> <em>r</em> <strong>C</strong> [ <strong>-G</strong><em>fill</em> ] [
+<strong>-W</strong><em>pen</em> ] Draw <span class="math notranslate nohighlight">\(x_0\)</span> <span class="math notranslate nohighlight">\(y_0\)</span> <strong>M</strong> [ <strong>-G</strong><em>fill</em> ]
+[ <strong>-W</strong><em>pen</em> ] Start new element at <span class="math notranslate nohighlight">\(x_0\)</span>, <span class="math notranslate nohighlight">\(y_0\)</span></p>
+<p><span class="math notranslate nohighlight">\(x_1\)</span> <span class="math notranslate nohighlight">\(y_1\)</span> <strong>D</strong> Draw straight line from current point
+to <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(y_1\)</span> around (<span class="math notranslate nohighlight">\(x_0\)</span>, <span class="math notranslate nohighlight">\(y_0\)</span>)</p>
+<p><span class="math notranslate nohighlight">\(x_0\)</span> <span class="math notranslate nohighlight">\(y_0\)</span> <em>r</em> <span class="math notranslate nohighlight">\(\alpha_1\)</span> <span class="math notranslate nohighlight">\(\alpha_2\)</span>
 <strong>A</strong> Draw arc segment of radius <em>r</em> from angle
-<img class="math" src="../_images/math/fa66a2cbb50c4e1f6299d3e4082f6bf050c8a8d0.png" alt="\alpha_1"/> to <img class="math" src="../_images/math/772ce4c56aa5e1a74242d5a68d5d4b5738f16273.png" alt="\alpha_2"/></p>
+<span class="math notranslate nohighlight">\(\alpha_1\)</span> to <span class="math notranslate nohighlight">\(\alpha_2\)</span></p>
 <p>We also add a few stand-alone circles (for other symbols, see
 <a class="reference internal" href="../psxy.html"><span class="doc">psxy</span></a> man page):</p>
-<p><img class="math" src="../_images/math/ed7fb0260e58d3ca5851e823ff991dae4cde5671.png" alt="x_0"/> <img class="math" src="../_images/math/c02d829cecb5c5b40b5a00db3dc936351b671e07.png" alt="y_0"/> <em>r</em> <strong>C</strong> [ <strong>-G</strong><em>fill</em> ] [
-<strong>-W</strong><em>pen</em> ] Draw <img class="math" src="../_images/math/ed7fb0260e58d3ca5851e823ff991dae4cde5671.png" alt="x_0"/> <img class="math" src="../_images/math/c02d829cecb5c5b40b5a00db3dc936351b671e07.png" alt="y_0"/> <em>r</em> <strong>c</strong> [
+<p><span class="math notranslate nohighlight">\(x_0\)</span> <span class="math notranslate nohighlight">\(y_0\)</span> <em>r</em> <strong>C</strong> [ <strong>-G</strong><em>fill</em> ] [
+<strong>-W</strong><em>pen</em> ] Draw <span class="math notranslate nohighlight">\(x_0\)</span> <span class="math notranslate nohighlight">\(y_0\)</span> <em>r</em> <strong>c</strong> [
 <strong>-G</strong><em>fill</em> ] [ <strong>-W</strong><em>pen</em> ] Draw single circle of radius
-<em>r</em> around <img class="math" src="../_images/math/ed7fb0260e58d3ca5851e823ff991dae4cde5671.png" alt="x_0"/>, <img class="math" src="../_images/math/c02d829cecb5c5b40b5a00db3dc936351b671e07.png" alt="y_0"/></p>
+<em>r</em> around <span class="math notranslate nohighlight">\(x_0\)</span>, <span class="math notranslate nohighlight">\(y_0\)</span></p>
 <p>The optional <strong>-G</strong> and <strong>-W</strong> can be used to hardwire the color fill
 and pen for segments (use <strong>-</strong> to disallow fill or line for any
 specific feature). By default the segments are painted based on the
@@ -115,8 +118,9 @@ always be at (0,0). This is the point to which the coordinates in
 <p>The values refer to positions and dimensions illustrated in the
 Figure above.</p>
 </li>
-<li><p>Given proper definition files we may now use them with
-<a class="reference internal" href="../psxy.html"><span class="doc">psxy</span></a> or <a class="reference internal" href="../psxyz.html"><span class="doc">psxyz</span></a>.</p></li>
+<li><p class="first">Given proper definition files we may now use them with
+<a class="reference internal" href="../psxy.html"><span class="doc">psxy</span></a> or <a class="reference internal" href="../psxyz.html"><span class="doc">psxyz</span></a>.</p>
+</li>
 </ol>
 <p>We are now ready to give it a try. Based on the hotspot locations in the
 file <code class="docutils literal notranslate"><span class="pre">hotspots.txt</span></code> (with a 3rd column giving the desired symbol sizes in inches) we
@@ -158,7 +162,7 @@ rm -f cities.txt
 </div>
 <div class="figure align-center" id="id1">
 <a class="reference internal image-reference" href="../_images/example_20.png"><img alt="../_images/example_20.png" src="../_images/example_20.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-text">Using custom symbols in GMT.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Using custom symbols in GMT.</span></p>
 </div>
 <p>Given these guidelines you can easily make your own symbols. Symbols
 with more than one color can be obtained by making several symbol
@@ -206,9 +210,9 @@ patterns (Appendix [app:E]). Other approaches are also possible, of course.</p>
         <li class="right" >
           <a href="ex19.html" title="(19) Color patterns on maps"
              >previous</a> </li>
-  <li><a href="https://www.generic-mapping-tools.org">Project Home</a>  &#187;</li>
+  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../index.html">GMT 5.4.5 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GMT 5.4.6_c5d65a4_2019.11.05 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../Gallery.html" >The GMT historical collection</a> &#187;</li>
 <li class="right">
@@ -226,9 +230,9 @@ patterns (Appendix [app:E]). Other approaches are also possible, of course.</p>
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on Jul 29, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.1.2.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Nov 05, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>

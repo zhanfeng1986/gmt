@@ -1,11 +1,13 @@
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>pscoupe &#8212; GMT 5.4.5 documentation</title>
+    <title>pscoupe &#8212; GMT 5.4.6_c5d65a4_2019.11.05 documentation</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
@@ -17,6 +19,7 @@
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../../../../_static/searchtools.js"></script>
     <script type="text/javascript" src="../../../../_static/rtd-sidebar.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -36,9 +39,9 @@
         <li class="right" >
           <a href="../img/img2grd.html" title="img2grd"
              accesskey="P">previous</a> </li>
-  <li><a href="https://www.generic-mapping-tools.org">Project Home</a>  &#187;</li>
+  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 5.4.5 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 5.4.6_c5d65a4_2019.11.05 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../man_pages.html" accesskey="U">Man Pages</a> &#187;</li>
 <li class="right">
@@ -113,18 +116,19 @@ defined in (-u^s, -u, s) system.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="simple">
-<dt><em>table</em></dt><dd><p>One or more ASCII (or binary, see <strong>-bi</strong>[<em>ncols</em>][<em>type</em>]) data
+<dl class="docutils">
+<dt><em>table</em></dt>
+<dd>One or more ASCII (or binary, see <strong>-bi</strong>[<em>ncols</em>][<em>type</em>]) data
 table file(s) holding a number of data columns. If no tables are given
-then we read from standard input.  </p>
-</dd>
+then we read from standard input.  </dd>
 </dl>
-<dl class="simple" id="j">
-<dt><strong>-J</strong><em>parameters</em> <a class="reference internal" href="../../gmt.html#j-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select map projection.  </p>
-</dd>
+<dl class="docutils" id="j">
+<dt><strong>-J</strong><em>parameters</em> <a class="reference internal" href="../../gmt.html#j-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select map projection.  </dd>
 </dl>
-<dl class="simple" id="r">
-<dt><strong>-R</strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt><dd><p><em>west</em>, <em>east</em>, <em>south</em>, and <em>north</em> specify the region of interest,
+<dl class="docutils" id="r">
+<dt><strong>-R</strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</dt>
+<dd><em>west</em>, <em>east</em>, <em>south</em>, and <em>north</em> specify the region of interest,
 and you may specify them in decimal degrees or in
 [±]dd:mm[:ss.xxx][<strong>W</strong>|<strong>E</strong>|<strong>S</strong>|<strong>N</strong>] format
 Append <strong>+r</strong> if lower left
@@ -148,36 +152,38 @@ can be appended to indicate the third dimension. This needs to be
 done only when using the <strong>-Jz</strong> option, not when using only the
 <strong>-p</strong> option. In the latter case a perspective view of the plane is
 plotted, with no third dimension. If frame is defined from cross-section parameters
-(see <strong>-A</strong> this option is not taken into account, but must be present.</p>
-</dd>
+(see <strong>-A</strong> this option is not taken into account, but must be present.</dd>
 </dl>
-<dl id="a">
-<dt><strong>-A</strong></dt><dd><p>selects the cross-section.</p>
-<dl class="simple">
-<dt><strong>-Aa</strong><em>lon1/lat1/lon2/lat2/dip/p_width/dmin/dmax</em>[<strong>f</strong>]</dt><dd><p><em>lon</em> and <em>lat</em> are the longitude and latitude of points 1 and 2
+<dl class="docutils" id="a">
+<dt><strong>-A</strong></dt>
+<dd><p class="first">selects the cross-section.</p>
+<dl class="last docutils">
+<dt><strong>-Aa</strong><em>lon1/lat1/lon2/lat2/dip/p_width/dmin/dmax</em>[<strong>f</strong>]</dt>
+<dd><em>lon</em> and <em>lat</em> are the longitude and latitude of points 1 and 2
 limiting the length of the cross-section. <em>dip</em> is the dip of the plane
 on which the cross-section is made. <em>p_width</em> is the width of the
 cross-section on each side of a vertical plane or above and under an
 oblique plane. <em>dmin</em> and <em>dmax</em> are the distances min and max from
 horizontal plane, along steepest descent direction. Add <strong>f</strong> to get the
-frame from the cross-section parameters.</p>
-</dd>
-<dt><strong>-Ab</strong><em>lon1/lat1/strike/p_length/dip/p_width/dmin/dmax</em>[<strong>f</strong>]</dt><dd><p><em>lon1</em> and <em>lat1</em> are the longitude and latitude of the beginning of the
+frame from the cross-section parameters.</dd>
+<dt><strong>-Ab</strong><em>lon1/lat1/strike/p_length/dip/p_width/dmin/dmax</em>[<strong>f</strong>]</dt>
+<dd><em>lon1</em> and <em>lat1</em> are the longitude and latitude of the beginning of the
 cross-section. <em>strike</em> is the azimuth of the direction of the
 cross-section. <em>p_length</em> is the length along which the cross-section
-is made. The other parameters are the same as for <strong>-Aa</strong> option.</p>
-</dd>
-<dt><strong>-Ac</strong><em>x1/y1/x2/y2/dip/p_width/dmin/dmax</em>[<strong>f</strong>]</dt><dd><p>The same as <strong>-Aa</strong> option with <em>x</em> and <em>y</em> cartesian coordinates.</p>
-</dd>
-<dt><strong>-Ad</strong><em>x1/y1/strike/p_length/dip/p_width/dmin/dmax</em>[<strong>f</strong>]</dt><dd><p>The same as <strong>-Ab</strong> option with <em>x</em> and <em>y</em> cartesian coordinates.</p>
-</dd>
+is made. The other parameters are the same as for <strong>-Aa</strong> option.</dd>
+<dt><strong>-Ac</strong><em>x1/y1/x2/y2/dip/p_width/dmin/dmax</em>[<strong>f</strong>]</dt>
+<dd>The same as <strong>-Aa</strong> option with <em>x</em> and <em>y</em> cartesian coordinates.</dd>
+<dt><strong>-Ad</strong><em>x1/y1/strike/p_length/dip/p_width/dmin/dmax</em>[<strong>f</strong>]</dt>
+<dd>The same as <strong>-Ab</strong> option with <em>x</em> and <em>y</em> cartesian coordinates.</dd>
 </dl>
 </dd>
 </dl>
-<dl id="s">
-<dt><strong>-S</strong></dt><dd><p>selects the meaning of the columns in the data file and the figure to be plotted.</p>
-<dl>
-<dt><strong>-Sa</strong><em>scale[/fontsize[/offset</em>[<strong>u</strong>]]]</dt><dd><p>Focal mechanisms in Aki and Richards convention. <em>scale</em> adjusts the
+<dl class="docutils" id="s">
+<dt><strong>-S</strong></dt>
+<dd><p class="first">selects the meaning of the columns in the data file and the figure to be plotted.</p>
+<dl class="last docutils">
+<dt><strong>-Sa</strong><em>scale[/fontsize[/offset</em>[<strong>u</strong>]]]</dt>
+<dd><p class="first">Focal mechanisms in Aki and Richards convention. <em>scale</em> adjusts the
 scaling of the radius of the “beach ball”, which will be proportional to
 the magnitude. The <em>scale</em> is the size for magnitude = 5 in
 <strong>PROJ_LENGTH_UNIT</strong> (unless <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> is appended
@@ -188,24 +194,25 @@ color or shade of the compressive quadrants can be specified with the
 <strong>-G</strong> option. The color or shade of the extensive quadrants can be
 specified with the <strong>-E</strong> option. Parameters are expected to be in the
 following columns:</p>
-<blockquote>
-<div><dl class="simple">
-<dt><strong>1</strong>,<strong>2</strong>:</dt><dd><p>longitude, latitude of event (<strong>-:</strong> option interchanges order)</p>
-</dd>
-<dt><strong>3</strong>:</dt><dd><p>depth of event in kilometers</p>
-</dd>
-<dt><strong>4</strong>,<strong>5</strong>,<strong>6</strong>:</dt><dd><p>strike, dip and rake</p>
-</dd>
-<dt><strong>7</strong>:</dt><dd><p>magnitude</p>
-</dd>
-<dt><strong>8</strong>,<strong>9</strong>:</dt><dd><p>not used; can be 0 0; allows use of the <a class="reference internal" href="psmeca.html"><span class="doc">psmeca</span></a> file format</p>
-</dd>
-<dt><strong>10</strong>:</dt><dd><p>text string to appear above the beach ball (default) or under (add <strong>u</strong>).</p>
-</dd>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt><strong>1</strong>,<strong>2</strong>:</dt>
+<dd>longitude, latitude of event (<strong>-:</strong> option interchanges order)</dd>
+<dt><strong>3</strong>:</dt>
+<dd>depth of event in kilometers</dd>
+<dt><strong>4</strong>,<strong>5</strong>,<strong>6</strong>:</dt>
+<dd>strike, dip and rake</dd>
+<dt><strong>7</strong>:</dt>
+<dd>magnitude</dd>
+<dt><strong>8</strong>,<strong>9</strong>:</dt>
+<dd>not used; can be 0 0; allows use of the <a class="reference internal" href="psmeca.html"><span class="doc">psmeca</span></a> file format</dd>
+<dt><strong>10</strong>:</dt>
+<dd>text string to appear above the beach ball (default) or under (add <strong>u</strong>).</dd>
 </dl>
 </div></blockquote>
 </dd>
-<dt><strong>-Sc</strong><em>scale</em></dt><dd><p>Focal mechanisms in Harvard CMT convention. <em>scale</em> adjusts the scaling
+<dt><strong>-Sc</strong><em>scale</em></dt>
+<dd><p class="first">Focal mechanisms in Harvard CMT convention. <em>scale</em> adjusts the scaling
 of the radius of the “beach ball”, which will be proportional to the
 magnitude. The <em>scale</em> is the size for magnitude = 5 (that is M0 = 4E+23
 dynes-cm.) in <strong>PROJ_LENGTH_UNIT</strong> (unless <strong>c</strong>, <strong>i</strong>, or
@@ -216,27 +223,28 @@ the circumference. The color or shade of the compressive quadrants can
 be specified with the <strong>-G</strong> option. The color or shade of the extensive
 quadrants can be specified with the <strong>-E</strong> option. Parameters are
 expected to be in the following columns:</p>
-<blockquote>
-<div><dl class="simple">
-<dt><strong>1</strong>,<strong>2</strong>:</dt><dd><p>longitude, latitude of event (<strong>-:</strong> option interchanges order)</p>
-</dd>
-<dt><strong>3</strong>:</dt><dd><p>depth of event in kilometers</p>
-</dd>
-<dt><strong>4</strong>,<strong>5</strong>,<strong>6</strong>:</dt><dd><p>strike, dip, and slip of plane 1</p>
-</dd>
-<dt><strong>7</strong>,<strong>8</strong>,<strong>9</strong>:</dt><dd><p>strike, dip, and slip of plane 2</p>
-</dd>
-<dt><strong>10</strong>,<strong>11</strong>:</dt><dd><p>mantissa and exponent of moment in dyne-cm (if magnitude is uses
-instead of scalar moment, magnitude is in column 10 and 0 must be in column 11)</p>
-</dd>
-<dt><strong>12</strong>,<strong>13</strong>:</dt><dd><p>not used; can be 0 0; allows use of the <a class="reference internal" href="psmeca.html"><span class="doc">psmeca</span></a> file format</p>
-</dd>
-<dt><strong>14</strong>:</dt><dd><p>text string to appear above the beach ball (default) or under (add <strong>u</strong>).</p>
-</dd>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt><strong>1</strong>,<strong>2</strong>:</dt>
+<dd>longitude, latitude of event (<strong>-:</strong> option interchanges order)</dd>
+<dt><strong>3</strong>:</dt>
+<dd>depth of event in kilometers</dd>
+<dt><strong>4</strong>,<strong>5</strong>,<strong>6</strong>:</dt>
+<dd>strike, dip, and slip of plane 1</dd>
+<dt><strong>7</strong>,<strong>8</strong>,<strong>9</strong>:</dt>
+<dd>strike, dip, and slip of plane 2</dd>
+<dt><strong>10</strong>,<strong>11</strong>:</dt>
+<dd>mantissa and exponent of moment in dyne-cm (if magnitude is uses
+instead of scalar moment, magnitude is in column 10 and 0 must be in column 11)</dd>
+<dt><strong>12</strong>,<strong>13</strong>:</dt>
+<dd>not used; can be 0 0; allows use of the <a class="reference internal" href="psmeca.html"><span class="doc">psmeca</span></a> file format</dd>
+<dt><strong>14</strong>:</dt>
+<dd>text string to appear above the beach ball (default) or under (add <strong>u</strong>).</dd>
 </dl>
 </div></blockquote>
 </dd>
-<dt><strong>-Sp</strong><em>scale[/fontsize[/offset</em>[<strong>u</strong>]]]</dt><dd><p>Focal mechanisms given with partial data on both planes. <em>scale</em> adjusts
+<dt><strong>-Sp</strong><em>scale[/fontsize[/offset</em>[<strong>u</strong>]]]</dt>
+<dd><p class="first">Focal mechanisms given with partial data on both planes. <em>scale</em> adjusts
 the scaling of the radius of the “beach ball”, which will be
 proportional to the magnitude. The <em>scale</em> is the size for magnitude = 5
 in <strong>PROJ_LENGTH_UNIT</strong> (unless <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> is
@@ -245,93 +253,95 @@ inches, meters, or points, respectively). The color or shade of the
 compressive quadrants can be specified with the <strong>-G</strong> option. The color
 or shade of the extensive quadrants can be specified with the <strong>-E</strong>
 option. Parameters are expected to be in the following columns:</p>
-<blockquote>
-<div><dl class="simple">
-<dt><strong>1</strong>,<strong>2</strong>:</dt><dd><p>longitude, latitude of event (<strong>-:</strong> option interchanges order)</p>
-</dd>
-<dt><strong>3</strong>:</dt><dd><p>depth</p>
-</dd>
-<dt><strong>4</strong>,<strong>5</strong>:</dt><dd><p>strike, dip of plane 1</p>
-</dd>
-<dt><strong>6</strong>:</dt><dd><p>strike of plane 2</p>
-</dd>
-<dt><strong>7</strong>:</dt><dd><p>must be -1/+1 for a normal/inverse fault</p>
-</dd>
-<dt><strong>8</strong>:</dt><dd><p>magnitude</p>
-</dd>
-<dt><strong>9</strong>,<strong>10</strong>:</dt><dd><p>not used; can be 0 0; allows use of the <a class="reference internal" href="psmeca.html"><span class="doc">psmeca</span></a> file format</p>
-</dd>
-<dt><strong>11</strong>:</dt><dd><p>text string to appear above the beach ball (default) or under (add <strong>u</strong>).</p>
-</dd>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt><strong>1</strong>,<strong>2</strong>:</dt>
+<dd>longitude, latitude of event (<strong>-:</strong> option interchanges order)</dd>
+<dt><strong>3</strong>:</dt>
+<dd>depth</dd>
+<dt><strong>4</strong>,<strong>5</strong>:</dt>
+<dd>strike, dip of plane 1</dd>
+<dt><strong>6</strong>:</dt>
+<dd>strike of plane 2</dd>
+<dt><strong>7</strong>:</dt>
+<dd>must be -1/+1 for a normal/inverse fault</dd>
+<dt><strong>8</strong>:</dt>
+<dd>magnitude</dd>
+<dt><strong>9</strong>,<strong>10</strong>:</dt>
+<dd>not used; can be 0 0; allows use of the <a class="reference internal" href="psmeca.html"><span class="doc">psmeca</span></a> file format</dd>
+<dt><strong>11</strong>:</dt>
+<dd>text string to appear above the beach ball (default) or under (add <strong>u</strong>).</dd>
 </dl>
 </div></blockquote>
 </dd>
-<dt><strong>-Sm|d|z</strong><em>scale[/fontsize[/offset</em>[<strong>u</strong>]]]</dt><dd><p>Seismic moment tensor (Harvard CMT, with zero trace). <em>scale</em> adjusts
+<dt><strong>-Sm|d|z</strong><em>scale[/fontsize[/offset</em>[<strong>u</strong>]]]</dt>
+<dd>Seismic moment tensor (Harvard CMT, with zero trace). <em>scale</em> adjusts
 the scaling of the radius of the “beach ball”, which will be
 proportional to the magnitude. The <em>scale</em> is the size for magnitude = 5
 (that is seismic scalar moment = 4E+23 dynes-cm) in
 <strong>PROJ_LENGTH_UNIT</strong> (unless <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> is appended
 to indicate that the size information is in units of cm, inches, meters,
 or points, respectively). (<strong>-T</strong><em>0</em> option overlays best double
-couple transparently.)</p>
-</dd>
-<dt><strong>-Sd</strong><em>scale[/fontsize[/offset</em>[<strong>u</strong>]]]</dt><dd><p>to plot the only double couple part of moment tensor.</p>
-</dd>
-<dt><strong>-Sz</strong><em>scale[/fontsize[/offset</em>[<strong>u</strong>]]]</dt><dd><p>to plot anisotropic part
+couple transparently.)</dd>
+<dt><strong>-Sd</strong><em>scale[/fontsize[/offset</em>[<strong>u</strong>]]]</dt>
+<dd>to plot the only double couple part of moment tensor.</dd>
+<dt><strong>-Sz</strong><em>scale[/fontsize[/offset</em>[<strong>u</strong>]]]</dt>
+<dd><p class="first">to plot anisotropic part
 of moment tensor (zero trace). The color or shade of the compressive
 quadrants can be specified with the <strong>-G</strong> option. The color or shade of
 the extensive quadrants can be specified with the <strong>-E</strong> option.
 Parameters are expected to be in the following columns:</p>
-<blockquote>
-<div><dl class="simple">
-<dt><strong>1</strong>,<strong>2</strong>:</dt><dd><p>longitude, latitude of event (<strong>-:</strong> option interchanges order)</p>
-</dd>
-<dt><strong>3</strong>:</dt><dd><p>depth of event in kilometers</p>
-</dd>
-<dt><strong>4</strong>,<strong>5</strong>,<strong>6</strong>,<strong>7</strong>,<strong>8</strong>,<strong>9</strong>:</dt><dd><p>mrr, mtt, mff, mrt, mrf, mtf in 10*exponent dynes-cm</p>
-</dd>
-<dt><strong>10</strong>:</dt><dd><p>exponent</p>
-</dd>
-<dt><strong>11</strong>,<strong>12</strong>:</dt><dd><p>Not used; can be 0 0; allows use of the <a class="reference internal" href="psmeca.html"><span class="doc">psmeca</span></a> file format</p>
-</dd>
-<dt><strong>13</strong>:</dt><dd><p>Text string to appear above the beach ball (default) or under (add <strong>u</strong>).</p>
-</dd>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt><strong>1</strong>,<strong>2</strong>:</dt>
+<dd>longitude, latitude of event (<strong>-:</strong> option interchanges order)</dd>
+<dt><strong>3</strong>:</dt>
+<dd>depth of event in kilometers</dd>
+<dt><strong>4</strong>,<strong>5</strong>,<strong>6</strong>,<strong>7</strong>,<strong>8</strong>,<strong>9</strong>:</dt>
+<dd>mrr, mtt, mff, mrt, mrf, mtf in 10*exponent dynes-cm</dd>
+<dt><strong>10</strong>:</dt>
+<dd>exponent</dd>
+<dt><strong>11</strong>,<strong>12</strong>:</dt>
+<dd>Not used; can be 0 0; allows use of the <a class="reference internal" href="psmeca.html"><span class="doc">psmeca</span></a> file format</dd>
+<dt><strong>13</strong>:</dt>
+<dd>Text string to appear above the beach ball (default) or under (add <strong>u</strong>).</dd>
 </dl>
 </div></blockquote>
 </dd>
-<dt><strong>-Sx</strong><em>scale[/fontsize[/offset</em>[<strong>u</strong>]]]</dt><dd><p>Principal axis. <em>scale</em> adjusts the scaling of the radius of the “beach
+<dt><strong>-Sx</strong><em>scale[/fontsize[/offset</em>[<strong>u</strong>]]]</dt>
+<dd>Principal axis. <em>scale</em> adjusts the scaling of the radius of the “beach
 ball”, which will be proportional to the magnitude. The <em>scale</em> is the
 size for magnitude = 5 (that is seismic scalar moment = 4*10e+23
 dynes-cm) in <strong>PROJ_LENGTH_UNIT</strong> (unless <strong>c</strong>, <strong>i</strong>, or
 <strong>p</strong> is appended to indicate that the size information is in units of
 cm, inches, meters, or points, respectively). (<strong>-T0</strong> option overlays
-best double couple transparently.)</p>
-</dd>
-<dt><strong>-Sy</strong><em>scale[/fontsize[/offset</em>[<strong>u</strong>]]]</dt><dd><p>to plot the only double couple part of moment tensor.</p>
-</dd>
-<dt><strong>-St</strong><em>scale[/fontsize[/offset</em>[<strong>u</strong>]]]</dt><dd><p>to plot anisotropic part
+best double couple transparently.)</dd>
+<dt><strong>-Sy</strong><em>scale[/fontsize[/offset</em>[<strong>u</strong>]]]</dt>
+<dd>to plot the only double couple part of moment tensor.</dd>
+<dt><strong>-St</strong><em>scale[/fontsize[/offset</em>[<strong>u</strong>]]]</dt>
+<dd><p class="first">to plot anisotropic part
 of moment tensor (zero trace). The color or shade of the compressive
 quadrants can be specified with the <strong>-G</strong> option. The color or shade of
 the extensive quadrants can be specified with the <strong>-E</strong> option.
 Parameters are expected to be in the following columns:</p>
-<blockquote>
-<div><dl class="simple">
-<dt><strong>1</strong>,<strong>2</strong>:</dt><dd><p>longitude, latitude of event (<strong>-:</strong> option interchanges order)</p>
-</dd>
-<dt><strong>3</strong>:</dt><dd><p>depth of event in kilometers</p>
-</dd>
-<dt><strong>4</strong>,<strong>5</strong>,<strong>6</strong>,<strong>7</strong>,<strong>8</strong>,<strong>9</strong>,<strong>10</strong>,<strong>11</strong>,<strong>12</strong>:</dt><dd><p>value (in 10*exponent dynes-cm), azimuth, plunge of the T, N, and P axes.</p>
-</dd>
-<dt><strong>13</strong>:</dt><dd><p>exponent</p>
-</dd>
-<dt><strong>14</strong>,<strong>15</strong>:</dt><dd><p>longitude, latitude at which to place beach ball. Entries in these
+<blockquote class="last">
+<div><dl class="docutils">
+<dt><strong>1</strong>,<strong>2</strong>:</dt>
+<dd>longitude, latitude of event (<strong>-:</strong> option interchanges order)</dd>
+<dt><strong>3</strong>:</dt>
+<dd>depth of event in kilometers</dd>
+<dt><strong>4</strong>,<strong>5</strong>,<strong>6</strong>,<strong>7</strong>,<strong>8</strong>,<strong>9</strong>,<strong>10</strong>,<strong>11</strong>,<strong>12</strong>:</dt>
+<dd>value (in 10*exponent dynes-cm), azimuth, plunge of the T, N, and P axes.</dd>
+<dt><strong>13</strong>:</dt>
+<dd>exponent</dd>
+<dt><strong>14</strong>,<strong>15</strong>:</dt>
+<dd>longitude, latitude at which to place beach ball. Entries in these
 columns are necessary with the <strong>-C</strong> option. Using 0,0 in columns 9
 and 10 will plot the beach ball at the longitude, latitude given in
 columns 1 and 2. The <strong>-:</strong> option will interchange the order of
-columns (1,2) and (9,10).</p>
-</dd>
-<dt><strong>16</strong>:</dt><dd><p>Text string to appear above the beach ball (optional).</p>
-</dd>
+columns (1,2) and (9,10).</dd>
+<dt><strong>16</strong>:</dt>
+<dd>Text string to appear above the beach ball (optional).</dd>
 </dl>
 </div></blockquote>
 </dd>
@@ -341,18 +351,19 @@ columns (1,2) and (9,10).</p>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
-<dl class="simple" id="b">
-<dt><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> <a class="reference internal" href="../../gmt.html#b-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set map boundary frame and axes attributes.</p>
-</dd>
+<dl class="docutils" id="b">
+<dt><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> <a class="reference internal" href="../../gmt.html#b-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Set map boundary frame and axes attributes.</dd>
 </dl>
-<dl class="simple" id="e">
-<dt><strong>-E</strong><em>color</em></dt><dd><p>Sets color or fill pattern for extensive quadrants [Default is white].</p>
-</dd>
+<dl class="docutils" id="e">
+<dt><strong>-E</strong><em>color</em></dt>
+<dd>Sets color or fill pattern for extensive quadrants [Default is white].</dd>
 </dl>
-<dl id="f">
-<dt><strong>-F</strong><em>mode</em>[<em>args</em>]</dt><dd><p>Sets one or more attributes; repeatable. The various combinations are</p>
-</dd>
-<dt><strong>-Fs</strong><em>symbol[size[/fontsize[/offset</em>[<strong>u</strong>]]]</dt><dd><p>selects a symbol instead of mechanism. Choose from the following:
+<dl class="docutils" id="f">
+<dt><strong>-F</strong><em>mode</em>[<em>args</em>]</dt>
+<dd>Sets one or more attributes; repeatable. The various combinations are</dd>
+<dt><strong>-Fs</strong><em>symbol[size[/fontsize[/offset</em>[<strong>u</strong>]]]</dt>
+<dd><p class="first">selects a symbol instead of mechanism. Choose from the following:
 (<strong>c</strong>) circle, (<strong>d</strong>) diamond, (<strong>i</strong>) itriangle, (<strong>s</strong>) square,
 (<strong>t</strong>) triangle, (<strong>x</strong>) cross. <em>size</em> is the symbol size in
 <strong>PROJ_LENGTH_UNIT</strong> (unless <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> is appended
@@ -360,131 +371,131 @@ to indicate that the size information is in units of cm, inches, meters,
 or points, respectively). If <em>size</em> must be read, it must be in column 4
 and the text string will start in column 5. Parameters are expected to
 be in the following columns:</p>
-<blockquote>
-<div><dl class="simple">
-<dt><strong>1</strong>,<strong>2</strong>:</dt><dd><p>longitude, latitude of event (<strong>-:</strong> option interchanges order)</p>
-</dd>
-<dt><strong>3</strong>:</dt><dd><p>depth of event in kilometers</p>
-</dd>
-<dt><strong>4</strong>:</dt><dd><p>Text string to appear above the beach ball (default) or under (add <strong>u</strong>).</p>
-</dd>
+<blockquote class="last">
+<div><dl class="docutils">
+<dt><strong>1</strong>,<strong>2</strong>:</dt>
+<dd>longitude, latitude of event (<strong>-:</strong> option interchanges order)</dd>
+<dt><strong>3</strong>:</dt>
+<dd>depth of event in kilometers</dd>
+<dt><strong>4</strong>:</dt>
+<dd>Text string to appear above the beach ball (default) or under (add <strong>u</strong>).</dd>
 </dl>
 </div></blockquote>
 </dd>
-<dt><strong>-Fa</strong>[<em>size</em>][/<em>P_symbol</em>[/<em>T_symbol</em>]]</dt><dd><p>Computes and plots P and T axes with symbols. Optionally specify
+<dt><strong>-Fa</strong>[<em>size</em>][/<em>P_symbol</em>[/<em>T_symbol</em>]]</dt>
+<dd>Computes and plots P and T axes with symbols. Optionally specify
 <em>size</em> and (separate) P and T axis symbols from the following:
 (<strong>c</strong>) circle, (<strong>d</strong>) diamond, (<strong>h</strong>) hexagon, (<strong>i</strong>) inverse
 triangle, (<strong>p</strong>) point, (<strong>s</strong>) square, (<strong>t</strong>) triangle, (<strong>x</strong>)
-cross. [Default: 6<strong>p</strong>/<strong>cc</strong>]</p>
-</dd>
-<dt><strong>-Fe</strong><em>color</em></dt><dd><p>Sets the color or fill pattern for the T axis symbol. [Default as set by <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong>]</p>
-</dd>
-<dt><strong>-Fg</strong><em>color</em></dt><dd><p>Sets the color or fill pattern for the P axis symbol. [Default as set by <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong>]</p>
-</dd>
-<dt><strong>-Fp</strong>[<em>pen</em>]</dt><dd><p>Draws the P axis outline using current pen (see <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong>), or sets pen attributes.</p>
-</dd>
-<dt><strong>-Fr</strong>[<em>color</em>]</dt><dd><p>Draw a box behind the label (if any). [Default fill is white]</p>
-</dd>
-<dt><strong>-Ft</strong>[<em>pen</em>]</dt><dd><p>Draws the T axis outline using current pen (see <strong>-W</strong>), or sets pen attributes.</p>
-</dd>
+cross. [Default: 6<strong>p</strong>/<strong>cc</strong>]</dd>
+<dt><strong>-Fe</strong><em>color</em></dt>
+<dd>Sets the color or fill pattern for the T axis symbol. [Default as set by <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong>]</dd>
+<dt><strong>-Fg</strong><em>color</em></dt>
+<dd>Sets the color or fill pattern for the P axis symbol. [Default as set by <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong>]</dd>
+<dt><strong>-Fp</strong>[<em>pen</em>]</dt>
+<dd>Draws the P axis outline using current pen (see <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong>), or sets pen attributes.</dd>
+<dt><strong>-Fr</strong>[<em>color</em>]</dt>
+<dd>Draw a box behind the label (if any). [Default fill is white]</dd>
+<dt><strong>-Ft</strong>[<em>pen</em>]</dt>
+<dd>Draws the T axis outline using current pen (see <strong>-W</strong>), or sets pen attributes.</dd>
 </dl>
-<dl class="simple" id="g">
-<dt><strong>-G</strong><em>color</em></dt><dd><p>Sets color or fill pattern for compressional quadrants [Default is black].</p>
-</dd>
+<dl class="docutils" id="g">
+<dt><strong>-G</strong><em>color</em></dt>
+<dd>Sets color or fill pattern for compressional quadrants [Default is black].</dd>
 </dl>
-<dl class="simple" id="k">
-<dt><strong>-K</strong> <a class="reference internal" href="../../gmt.html#k-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Do not finalize the PostScript plot.</p>
-</dd>
+<dl class="docutils" id="k">
+<dt><strong>-K</strong> <a class="reference internal" href="../../gmt.html#k-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Do not finalize the PostScript plot.</dd>
 </dl>
-<dl class="simple" id="l">
-<dt><strong>-L</strong>[<em>pen</em>]</dt><dd><p>Draws the “beach ball” outline using current pen (see <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong>) or
-sets pen attributes.</p>
-</dd>
+<dl class="docutils" id="l">
+<dt><strong>-L</strong>[<em>pen</em>]</dt>
+<dd>Draws the “beach ball” outline using current pen (see <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong>) or
+sets pen attributes.</dd>
 </dl>
-<dl class="simple" id="m">
-<dt><strong>-M</strong></dt><dd><p>Same size for any magnitude.</p>
-</dd>
+<dl class="docutils" id="m">
+<dt><strong>-M</strong></dt>
+<dd>Same size for any magnitude.</dd>
 </dl>
-<dl class="simple" id="n">
-<dt><strong>-N</strong></dt><dd><p>Does <strong>not</strong> skip symbols that fall outside map border [Default plots points inside border only].</p>
-</dd>
+<dl class="docutils" id="n">
+<dt><strong>-N</strong></dt>
+<dd>Does <strong>not</strong> skip symbols that fall outside map border [Default plots points inside border only].</dd>
 </dl>
-<dl class="simple" id="o">
-<dt><strong>-O</strong> <a class="reference internal" href="../../gmt.html#o-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Append to existing PostScript plot.</p>
-</dd>
+<dl class="docutils" id="o">
+<dt><strong>-O</strong> <a class="reference internal" href="../../gmt.html#o-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Append to existing PostScript plot.</dd>
 </dl>
-<dl class="simple" id="p">
-<dt><strong>-P</strong> <a class="reference internal" href="../../gmt.html#p-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select “Portrait” plot orientation.</p>
-</dd>
+<dl class="docutils" id="p">
+<dt><strong>-P</strong> <a class="reference internal" href="../../gmt.html#p-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select “Portrait” plot orientation.</dd>
 </dl>
-<dl class="simple" id="q">
-<dt><strong>-Q</strong></dt><dd><p>Suppress the production of files with cross-section and mechanism information.</p>
-</dd>
+<dl class="docutils" id="q">
+<dt><strong>-Q</strong></dt>
+<dd>Suppress the production of files with cross-section and mechanism information.</dd>
 </dl>
-<dl class="simple" id="t">
-<dt><strong>-T</strong>[<em>num_of_planes</em>]</dt><dd><p>Plots the nodal planes and outlines the bubble which is transparent.
+<dl class="docutils" id="t">
+<dt><strong>-T</strong>[<em>num_of_planes</em>]</dt>
+<dd>Plots the nodal planes and outlines the bubble which is transparent.
 If <em>num_of_planes</em> is
 <em>0</em>: both nodal planes are plotted;
 <em>1</em>: only the first nodal plane is plotted;
 <em>2</em>: only the second nodal plane is plotted
-[Default: 0].</p>
-</dd>
+[Default: 0].</dd>
 </dl>
-<dl class="simple" id="u">
-<dt><strong>-U</strong>[[<em>just</em>]/<em>dx</em>/<em>dy</em>/][<strong>c</strong>|<em>label</em>] <a class="reference internal" href="../../gmt.html#u-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Draw GMT time stamp logo on plot.</p>
-</dd>
+<dl class="docutils" id="u">
+<dt><strong>-U</strong>[[<em>just</em>]/<em>dx</em>/<em>dy</em>/][<strong>c</strong>|<em>label</em>] <a class="reference internal" href="../../gmt.html#u-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Draw GMT time stamp logo on plot.</dd>
 </dl>
-<dl class="simple" id="v">
-<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select verbosity level [c].  </p>
-</dd>
+<dl class="docutils" id="v">
+<dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select verbosity level [c].  </dd>
 </dl>
-<dl class="simple" id="w">
-<dt><strong>-W</strong>[<strong>-</strong>|<strong>+</strong>][<em>pen</em>][<em>attr</em>] <a class="reference internal" href="../../GMT_Docs.html#wpen-attrib"><span class="std std-ref">(more …)</span></a></dt><dd><p>set pen attributes for text string or default pen attributes for
-fault plane edges. [Defaults: width = default, color = black, style = solid].</p>
-</dd>
+<dl class="docutils" id="w">
+<dt><strong>-W</strong>[<strong>-</strong>|<strong>+</strong>][<em>pen</em>][<em>attr</em>] <a class="reference internal" href="../../GMT_Docs.html#wpen-attrib"><span class="std std-ref">(more …)</span></a></dt>
+<dd>set pen attributes for text string or default pen attributes for
+fault plane edges. [Defaults: width = default, color = black, style = solid].</dd>
 </dl>
 <p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>x-shift</em>[<strong>u</strong>]]</p>
-<dl class="simple">
-<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>y-shift</em>[<strong>u</strong>]] <a class="reference internal" href="../../gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Shift plot origin.</p>
-</dd>
+<dl class="docutils">
+<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>y-shift</em>[<strong>u</strong>]] <a class="reference internal" href="../../gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Shift plot origin.</dd>
 </dl>
-<dl class="simple" id="z">
-<dt><strong>-Z</strong><em>cpt</em></dt><dd><p>Give a CPT and let compressive part color be
-determined by the z-value in the third column.</p>
-</dd>
+<dl class="docutils" id="z">
+<dt><strong>-Z</strong><em>cpt</em></dt>
+<dd>Give a CPT and let compressive part color be
+determined by the z-value in the third column.</dd>
 </dl>
-<dl class="simple">
-<dt><strong>-di</strong><em>nodata</em> <a class="reference internal" href="../../gmt.html#di-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Replace input columns that equal <em>nodata</em> with NaN.  </p>
-</dd>
+<dl class="docutils">
+<dt><strong>-di</strong><em>nodata</em> <a class="reference internal" href="../../gmt.html#di-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Replace input columns that equal <em>nodata</em> with NaN.  </dd>
 </dl>
-<dl class="simple">
-<dt><strong>-e</strong>[<strong>~</strong>]<em>”pattern”</em> <strong>|</strong> <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] <a class="reference internal" href="../../gmt.html#e-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Only accept data records that match the given pattern.  </p>
-</dd>
+<dl class="docutils">
+<dt><strong>-e</strong>[<strong>~</strong>]<em>”pattern”</em> <strong>|</strong> <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] <a class="reference internal" href="../../gmt.html#e-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Only accept data records that match the given pattern.  </dd>
 </dl>
-<dl class="simple">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="../../gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Skip or produce header record(s).  </p>
-</dd>
+<dl class="docutils">
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="../../gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Skip or produce header record(s).  </dd>
 </dl>
-<dl class="simple">
-<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>] <a class="reference internal" href="../../gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Select input columns and transformations (0 is first column).</p>
-</dd>
+<dl class="docutils">
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>] <a class="reference internal" href="../../gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select input columns and transformations (0 is first column).</dd>
 </dl>
-<dl class="simple">
-<dt><strong>-t</strong>[<em>transp</em>] <a class="reference internal" href="../../gmt.html#t-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Set PDF transparency level in percent.</p>
-</dd>
+<dl class="docutils">
+<dt><strong>-t</strong>[<em>transp</em>] <a class="reference internal" href="../../gmt.html#t-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Set PDF transparency level in percent.</dd>
 </dl>
-<dl class="simple">
-<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="../../gmt.html#colon-full"><span class="std std-ref">(more …)</span></a></dt><dd><p>Swap 1st and 2nd column on input and/or output.</p>
-</dd>
+<dl class="docutils">
+<dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="../../gmt.html#colon-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Swap 1st and 2nd column on input and/or output.</dd>
 </dl>
-<dl class="simple">
-<dt><strong>-^</strong> or just <strong>-</strong></dt><dd><p>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</p>
-</dd>
-<dt><strong>-+</strong> or just <strong>+</strong></dt><dd><p>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</p>
-</dd>
-<dt><strong>-?</strong> or no arguments</dt><dd><p>Print a complete usage (help) message, including the explanation of all options, then exits.</p>
-</dd>
+<dl class="docutils">
+<dt><strong>-^</strong> or just <strong>-</strong></dt>
+<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt>
+<dd>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</dd>
+<dt><strong>-?</strong> or no arguments</dt>
+<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
 </dl>
 </div>
 <div class="section" id="see-also">
@@ -563,9 +574,9 @@ Institut de Physique du Globe de Paris, Departement de Sismologie, Paris, France
         <li class="right" >
           <a href="../img/img2grd.html" title="img2grd"
              >previous</a> </li>
-  <li><a href="https://www.generic-mapping-tools.org">Project Home</a>  &#187;</li>
+  <li><a href="/projects/gmt/wiki/Documentation">Project Home</a>  &#187;</li>
   
-        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 5.4.5 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">GMT 5.4.6_c5d65a4_2019.11.05 documentation</a> &#187;</li>
 
           <li class="nav-item nav-item-1"><a href="../../man_pages.html" >Man Pages</a> &#187;</li>
 <li class="right">
@@ -583,9 +594,9 @@ Institut de Physique du Globe de Paris, Departement de Sismologie, Paris, France
       </ul>
     </div>
 <div class="footer">
-    &copy; Copyright 2019, P. Wessel, W. H. F. Smith, R. Scharroo, J. Luis, and F. Wobbe.
-  Last updated on Jul 29, 2019.
-  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.1.2.
+    &copy; Copyright 2019, The GMT Team.
+  Last updated on Nov 05, 2019.
+  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
 </div>
