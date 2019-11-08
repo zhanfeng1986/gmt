@@ -271,21 +271,15 @@ value increases to the right and saturation increases up, so the pure
 color is on the top right.</span></p>
 </div>
 <p>Is chocolate your favorite color, but you do not know the RGB equivalent
-values? Then look them up in Figure <a class="reference internal" href="#rgbchart"><span class="std std-ref">RGB chart</span></a> or type
-<code class="docutils literal notranslate"><span class="pre">man</span> <span class="pre">gmtcolors</span></code> for a full list. It’s 210/105/30. But GMT makes it easy
-on you: you can specify pen, fill, and palette colors by any of the more
-than 500 unique colors found in that file.</p>
+values? Then look them up in <a class="reference internal" href="../gmtcolors.html"><span class="doc">gmtcolors</span></a> for a full list.
+It’s 210/105/30. But GMT makes it easy
+on you: you can specify pen, fill, and palette colors by any of the
+unique colors found in that file.</p>
 <p>Are you very web-savvy and work best with hexadecimal color codes as
 they are used in HTML? Even that is allowed in GMT. Just start with a
 hash mark (<code class="docutils literal notranslate"><span class="pre">#</span></code>) and follow with the 2 hexadecimal characters for red,
 green, and blue. For example, you can use <code class="docutils literal notranslate"><span class="pre">#79ff00</span></code> for chartreuse,
 <code class="docutils literal notranslate"><span class="pre">#D2691E</span></code> for chocolate.</p>
-<div class="figure align-center" id="id2">
-<span id="rgbchart"></span><a class="reference internal image-reference" href="../_images/GMT_RGBchart_a4.png"><img alt="../_images/GMT_RGBchart_a4.png" src="../_images/GMT_RGBchart_a4.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-text">The 663 unique color names that can be used in GMT. Lower, upper, or mixed cases, as well as
-the british spelling of grey are allowed. A4, Letter, and Tabloid sized versions of this RGB chart can be
-found in the GMT documentation directory.</span></p>
-</div>
 </div>
 <div class="section" id="hsv-color-system">
 <h2>13.2. HSV color system<a class="headerlink" href="#hsv-color-system" title="Permalink to this headline">¶</a></h2>
@@ -403,7 +397,7 @@ that <em>v</em> measures distance away from the black point, because
 <em>v</em> is not equal to <span class="math notranslate nohighlight">\(\sqrt{r^2 + g^2 + b^2}/255\)</span>.</p>
 <p>Another representation of the HSV space is the color cone illustrated in
 Figure <a class="reference internal" href="#hsv-cone"><span class="std std-ref">The HSV color space</span></a>.</p>
-<div class="figure align-center" id="id3">
+<div class="figure align-center" id="id2">
 <span id="hsv-cone"></span><a class="reference internal image-reference" href="../_images/hsv-cone.png"><img alt="../_images/hsv-cone.png" src="../_images/hsv-cone.png" style="width: 375.0px; height: 254.0px;" /></a>
 <p class="caption"><span class="caption-text">The HSV color space</span></p>
 </div>
@@ -433,7 +427,7 @@ illustrates two examples: a blue-white-red scale (the palette in
 Chapter <a class="reference internal" href="cpts.html#of-colors-and-color-legends"><span class="std std-ref">Of Colors and Color Legends</span></a>) interpolated in RGB and the palette interpolated in
 HSV. The bottom row of the Figure demonstrates how things can go
 terribly wrong when you do the interpolation in the other system.</p>
-<div class="figure align-center" id="id4">
+<div class="figure align-center" id="id3">
 <span id="color-interpolate"></span><a class="reference internal image-reference" href="../_images/GMT_color_interpolate.png"><img alt="../_images/GMT_color_interpolate.png" src="../_images/GMT_color_interpolate.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">When interpolating colors, the color system matters. The polar palette on the left needs to
 be interpolated in RGB, otherwise hue will change between blue (240) and white (0). The rainbow
@@ -531,7 +525,7 @@ specify the color space of your PostScript file, set
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 07, 2019.
+        Last updated on Nov 08, 2019.
       </span>
 
     </p>
