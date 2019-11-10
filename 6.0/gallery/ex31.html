@@ -109,6 +109,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../changes.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deprecated_defaults.html">Deprecated GMT Defaults Names</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../switching.html">Switching between different GMT versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migrating.html">Migrating from an earlier GMT version</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Classic Mode</span></p>
 <ul>
@@ -217,15 +218,11 @@ includes the following steps:</p>
 <ul class="simple">
 <li>create a <code class="docutils literal notranslate"><span class="pre">PSL_custom_fonts.txt</span></code> file;</li>
 <li>set the GMT parameters <code class="docutils literal notranslate"><span class="pre">MAP_DEGREE_SYMBOL</span></code>, <code class="docutils literal notranslate"><span class="pre">PS_CHAR_ENCODING</span></code>, and <code class="docutils literal notranslate"><span class="pre">FONT</span></code>;</li>
-<li>replace the default Helvetica font in the GMT-PostScript-File with sed;</li>
-<li>create a PostScript-File with outlined fonts (optional);</li>
-<li>convert GMT’s PostScript output to PDF or any image format (optional).</li>
 </ul>
 <p>The script produces the plot in Figure. All
 standard fonts have been substituted by the free OpenType fonts Linux
-Libertine (title) and Linux Biolinum (annotations). Uncomment the
-appropriate lines in the script to make a PostScript-file with
-outlined fonts or to convert to a PDF-file.</p>
+Libertine (title) and Linux Biolinum (annotations).  Remote files with the locations
+and names of the cities are used, with awk providing help in data preparation.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 <span class="c1">#		GMT EXAMPLE 31</span>
 <span class="c1">#</span>
@@ -322,7 +319,7 @@ gmt end show
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 09, 2019.
+        Last updated on Nov 10, 2019.
       </span>
 
     </p>

@@ -109,6 +109,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../changes.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deprecated_defaults.html">Deprecated GMT Defaults Names</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../switching.html">Switching between different GMT versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migrating.html">Migrating from an earlier GMT version</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Classic Mode</span></p>
 <ul>
@@ -215,7 +216,8 @@ We use the coefficients to evaluate the grids and make perspective globes
 of the different resolutions.  The key tool
 used here is <a class="reference internal" href="../sph2grd.html"><span class="doc">sph2grd</span></a>.</p>
 <p>Note that we use a special format in <a class="reference internal" href="../colorbar.html"><span class="doc">colorbar</span></a> so that the
-annotations will include the separators for the thousands.</p>
+annotations will include the separators for the thousands (note: this syntax
+is not supported by all operating systems).</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 <span class="c1">#               GMT EXAMPLE 39</span>
 <span class="c1">#</span>
@@ -275,7 +277,7 @@ gmt end show
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 09, 2019.
+        Last updated on Nov 10, 2019.
       </span>
 
     </p>

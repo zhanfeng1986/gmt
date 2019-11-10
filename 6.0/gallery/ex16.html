@@ -109,6 +109,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../changes.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deprecated_defaults.html">Deprecated GMT Defaults Names</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../switching.html">Switching between different GMT versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migrating.html">Migrating from an earlier GMT version</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Classic Mode</span></p>
 <ul>
@@ -255,7 +256,8 @@ always do the “best” thing but it offers great flexibility through its
 combinations of tools. We illustrate all four solutions using a CPT
 that contains color fills, predefined patterns for interval (900,925)
 and NaN, an image pattern for interval (875,900), and a “skip slice”
-request for interval (700,725).</p>
+request for interval (700,725).  Again, we use :doc:<a href="#id1"><span class="problematic" id="id2">`</span></a>subplot to set up
+and place the four panels, and place the colorbar beneath the subplot.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 <span class="c1">#		GMT EXAMPLE 16</span>
 <span class="c1">#</span>
@@ -283,7 +285,7 @@ gmt end show
 rm -f raws0.nc raws5.nc rawt.nc filtered.nc
 </pre></div>
 </div>
-<div class="figure align-center" id="id1">
+<div class="figure align-center" id="id3">
 <span id="fig-ex16"></span><a class="reference internal image-reference" href="../_images/ex16.png"><img alt="../_images/ex16.png" src="../_images/ex16.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">More ways to grid data</span></p>
 </div>
@@ -312,7 +314,7 @@ rm -f raws0.nc raws5.nc rawt.nc filtered.nc
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 09, 2019.
+        Last updated on Nov 10, 2019.
       </span>
 
     </p>

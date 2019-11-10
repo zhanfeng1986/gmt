@@ -109,6 +109,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../changes.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deprecated_defaults.html">Deprecated GMT Defaults Names</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../switching.html">Switching between different GMT versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migrating.html">Migrating from an earlier GMT version</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Classic Mode</span></p>
 <ul>
@@ -210,7 +211,7 @@
 <span id="example-15"></span><h1>(15) Gridding, contouring, and masking of unconstrained areas<a class="headerlink" href="#gridding-contouring-and-masking-of-unconstrained-areas" title="Permalink to this headline">¶</a></h1>
 <p>This example demonstrates some off the
 different ways one can use to grid data in GMT, and how to deal with
-unconstrained areas. We first convert a large ASCII file to binary with
+unconstrained areas. We first convert a large remote ASCII file to binary with
 <a class="reference internal" href="../gmtconvert.html"><span class="doc">gmtconvert</span></a> since the binary file
 will read and process much faster. Our lower left plot illustrates the
 results of gridding using a nearest neighbor technique
@@ -228,7 +229,8 @@ simply employ <a class="reference internal" href="../coast.html"><span class="do
 land masses to cover up the unwanted contours, and end by plotting a
 star at the deepest point on the map with
 <a class="reference internal" href="../plot.html"><span class="doc">plot</span></a>. This point was extracted from the
-grid files using <a class="reference internal" href="../grdinfo.html"><span class="doc">grdinfo</span></a>.</p>
+grid files using <a class="reference internal" href="../grdinfo.html"><span class="doc">grdinfo</span></a>.  Placement of the four
+panels is simplified via <span class="xref std std-doc">subplot</span>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 <span class="c1">#		GMT EXAMPLE 15</span>
 <span class="c1">#</span>
@@ -292,7 +294,7 @@ rm -f ship.b ship_10m.b ship.nc ship_clipped.nc
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 09, 2019.
+        Last updated on Nov 10, 2019.
       </span>
 
     </p>

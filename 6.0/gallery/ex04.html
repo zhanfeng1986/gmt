@@ -109,6 +109,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../changes.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deprecated_defaults.html">Deprecated GMT Defaults Names</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../switching.html">Switching between different GMT versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migrating.html">Migrating from an earlier GMT version</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Classic Mode</span></p>
 <ul>
@@ -210,8 +211,9 @@
 <span id="example-04"></span><h1>(4) A 3-D perspective mesh plot<a class="headerlink" href="#a-3-d-perspective-mesh-plot" title="Permalink to this headline">¶</a></h1>
 <p>This example will illustrate how to make a fairly complicated composite
 figure. We need a subset of the ETOPO5 bathymetry <a class="footnote-reference" href="#id2" id="id1">[1]</a> and Geosat geoid
-data sets which we will extract from the global data grids using
-<a class="reference internal" href="../grdcut.html"><span class="doc">grdcut</span></a>. We would like to show a
+data sets which we have extracted from the global data grids using
+<a class="reference internal" href="../grdcut.html"><span class="doc">grdcut</span></a> and access those files here as remote files
+on the GMT data server. We would like to show a
 2-layer perspective plot where layer one shows a contour map of the
 marine geoid with the location of the Hawaiian islands superposed, and a
 second layer showing the 3-D mesh plot of the topography. We also add an
@@ -269,7 +271,7 @@ from Example <a class="reference internal" href="ex02.html#example-02"><span cla
 <table class="docutils footnote" frame="void" id="id2" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>These data are available on CD-ROM from NGDC (www.ngdc.noaa.gov).</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>These data are available from NCEI (www.ncei.noaa.gov).</td></tr>
 </tbody>
 </table>
 </div>
@@ -297,7 +299,7 @@ from Example <a class="reference internal" href="ex02.html#example-02"><span cla
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 09, 2019.
+        Last updated on Nov 10, 2019.
       </span>
 
     </p>

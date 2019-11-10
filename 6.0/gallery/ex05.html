@@ -109,6 +109,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../changes.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deprecated_defaults.html">Deprecated GMT Defaults Names</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../switching.html">Switching between different GMT versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migrating.html">Migrating from an earlier GMT version</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Classic Mode</span></p>
 <ul>
@@ -213,14 +214,12 @@ artificial illumination. For this example we will use
 <a class="reference internal" href="../grdmath.html"><span class="doc">grdmath</span></a> to make a grid file that
 contains the surface given by the function
 <span class="math notranslate nohighlight">\(z(x, y) = \cos (2\pi r/8)\cdot e^{-r/10}\)</span>, where
-<span class="math notranslate nohighlight">\(r^2 = (x^2 + y^2)\)</span>. The illumination is obtained by passing two
-grid files to <a class="reference internal" href="../grdview.html"><span class="doc">grdview</span></a>: One with the
-<em>z</em>-values (the surface) and another with intensity values (which should
-be in the 1 range). We use
-<a class="reference internal" href="../grdgradient.html"><span class="doc">grdgradient</span></a> to compute the
-horizontal gradients in the direction of the artificial light source.
-The <code class="docutils literal notranslate"><span class="pre">gray.cpt</span></code> file only has one line that states that all <em>z</em> values should have
-the gray level 128. Thus, variations in shade are entirely due to
+<span class="math notranslate nohighlight">\(r^2 = (x^2 + y^2)\)</span>. The illumination is obtained by passing the
+grid file to <a class="reference internal" href="../grdview.html"><span class="doc">grdview</span></a> and requesting that artificial
+shading be derived from the  horizontal gradients in the direction of
+the artificial light source (set by <strong>-I</strong>).
+The <span class="xref std std-doc">makecpt</span> command creates a simple color scheme for a constant
+gray level of 128. Thus, variations in shade are entirely due to
 variations in gradients, or illuminations. We choose to illuminate from
 the SW and view the surface from SE:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
@@ -244,8 +243,8 @@ gmt end show
 <p>The variations in intensity could be made more dramatic by using
 <a class="reference internal" href="../grdmath.html"><span class="doc">grdmath</span></a> to scale the intensity file
 before running <a class="reference internal" href="../grdview.html"><span class="doc">grdview</span></a>. For very rough
-data sets one may improve the smoothness of the intensities by passing
-the output of <a class="reference internal" href="../grdgradient.html"><span class="doc">grdgradient</span></a> to
+data sets one may improve the smoothness of the intensities by computing
+them first with <a class="reference internal" href="../grdgradient.html"><span class="doc">grdgradient</span></a> and then pass them to
 <a class="reference internal" href="../grdhisteq.html"><span class="doc">grdhisteq</span></a>. The shell-script above
 will result in a plot like the one in Figure.</p>
 <div class="figure align-center" id="id1">
@@ -277,7 +276,7 @@ will result in a plot like the one in Figure.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 09, 2019.
+        Last updated on Nov 10, 2019.
       </span>
 
     </p>
