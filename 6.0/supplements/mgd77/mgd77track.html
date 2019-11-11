@@ -212,7 +212,7 @@
 <p>Plot track-lines of MGD77 cruises</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<p><strong>gmt mgd77track</strong> <em>NGDC-ids</em>
+<p><strong>gmt mgd77track</strong> <em>GEODAS-ids</em>
 <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em>
 <a class="reference internal" href="#j"><span> <strong>-J</strong></span></a></strong><em>parameters</em>
 [ <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong>[<strong>c</strong>][<em>size</em>][<strong>+i</strong><em>spacing</em>] ]
@@ -238,9 +238,8 @@
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
-<p><strong>mgd77track</strong> reads NGDC MGD77 cruises and creates PostScript code
-that will plot one or more ship tracks on a map using the specified
-projection. The PostScript code is written to standard output.</p>
+<p><strong>mgd77track</strong> reads NCEI MGD77 cruises and plots one or more ship tracks
+on a map using the specified projection.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
@@ -248,10 +247,10 @@ projection. The PostScript code is written to standard output.</p>
 <dt><em>NGDC-ids</em></dt>
 <dd><p class="first">Can be one or more of five kinds of specifiers:</p>
 <ol class="arabic simple">
-<li>8-character NGDC IDs, e.g., 01010083, JA010010etc., etc.</li>
+<li>8-character GEODAS IDs, e.g., 01010083, JA010010etc., etc.</li>
 <li>2-character <em>agency</em> codes which will return all cruises from each agency.</li>
 <li>4-character &lt;agency&gt;&lt;vessel&gt; codes, which will return all cruises from those vessels.</li>
-<li>=<em>list</em>, where <em>list</em> is a table with NGDC IDs, one per line.</li>
+<li>=<em>list</em>, where <em>list</em> is a table with GEODAS IDs, one per line.</li>
 <li>If nothing is specified we return all cruises in the data base.</li>
 </ol>
 <p class="last">(See mgd77info <strong>-L</strong> for agency and vessel codes). If no file
@@ -472,7 +471,7 @@ a PDF map, enter the following command:</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 10, 2019.
+        Last updated on Nov 11, 2019.
       </span>
 
     </p>

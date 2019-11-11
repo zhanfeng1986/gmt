@@ -212,7 +212,7 @@
 <p>Along-track quality control of MGD77 cruises</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<p><strong>gmt mgd77sniffer</strong> <em>NGDC-ids</em> [ <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong><em>fieldabbrev</em>,<em>scale</em>,<em>offset</em> ]
+<p><strong>gmt mgd77sniffer</strong> <em>GEODAS-ids</em> [ <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong><em>fieldabbrev</em>,<em>scale</em>,<em>offset</em> ]
 [ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>maxspd</em> ]
 [ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><strong>d</strong>|<strong>e</strong>|<strong>E</strong>|<strong>f</strong>|<strong>l</strong>|<strong>m</strong>|<strong>s</strong>|<strong>v</strong>[<em>r</em>] ]
 [ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong> ]
@@ -254,10 +254,10 @@ option. Grids for comparison with cruise data may be downloaded via the web.</p>
 <dt><em>NGDC-ids</em></dt>
 <dd><p class="first">Can be one or more of five kinds of specifiers:</p>
 <ol class="arabic simple">
-<li>8-character NGDC IDs, e.g., 01010083, JA010010etc., etc.</li>
+<li>8-character GEODAS IDs, e.g., 01010083, JA010010etc., etc.</li>
 <li>2-character <em>agency</em> codes which will return all cruises from each agency.</li>
 <li>4-character &lt;agency&gt;&lt;vessel&gt; codes, which will return all cruises from those vessels.</li>
-<li>=<em>list</em>, where <em>list</em> is a table with NGDC IDs, one per line.</li>
+<li>=<em>list</em>, where <em>list</em> is a table with GEODAS IDs, one per line.</li>
 <li>If nothing is specified we return all cruises in the data base.</li>
 </ol>
 <p class="last">(See mgd77info <strong>-L</strong> for agency and vessel codes). If no file
@@ -304,7 +304,7 @@ command line order.</p>
 divided into (1) a header containing information
 globally applicable to the cruise and (2) individual
 error records summarizing all errors encountered in each cruise
-record. mgd77sniffer writes E77 directly to &lt;ngdc_id.e77&gt; file
+record. mgd77sniffer writes E77 directly to &lt;geodas_id.e77&gt; file
 handle. See <strong>E77 ERROR FORMAT</strong> below for additional details.</p>
 <p><strong>-DE</strong> Same as <strong>-De</strong> but no regression tests will be carried out.</p>
 <p><strong>-Df</strong> output delta Z (change in geophysical field) column and
@@ -632,7 +632,7 @@ supported by GMT.</p>
 <h2>E77 Error Format<a class="headerlink" href="#e77-error-format" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
 <dt><strong>Header</strong></dt>
-<dd><p class="first">Information pertaining to an entire cruise, such as NGDC and survey
+<dd><p class="first">Information pertaining to an entire cruise, such as NCEI and survey
 institution identification codes, cruise examination time, two-way
 travel time corrector information, data precision warnings, as well
 as systematic scales, DC shifts and correlation coefficients from
@@ -778,7 +778,7 @@ Sandwell/Smith 2 min gravity version 11, try</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 10, 2019.
+        Last updated on Nov 11, 2019.
       </span>
 
     </p>

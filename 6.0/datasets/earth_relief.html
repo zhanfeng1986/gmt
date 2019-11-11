@@ -101,7 +101,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../modules.html">GMT Modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cookbook.html">GMT Cookbook</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../datasets.html">Datasets</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="gshhg.html">The GMT High-Resolution Coastline Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gshhg.html">The Global Self-consistent, Hierarchical, High-resolution Geography Database (GSHHG)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dcw.html">The Digital Chart of the World Data (DCW)</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Global Earth Relief Grids</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
@@ -358,7 +358,7 @@ the file sizes of the netCDF-4 compressed short int grids, making the files much
 than their original source files without any loss of precision.  To improve download speed,
 the SRTM tiles are stored as JPEG2000 images on the GMT server due to superior compression,
 but once downloaded to your server directory they are converted to short int compressed netCDF4
-grids. This step uses our GDAL bridge and thus requires that you have built GMT with GDAL support
+grids for easier access. This step uses our GDAL bridge and thus requires that you have built GMT with GDAL support
 <em>and</em> that your GDAL distribution was built with openjpeg support.</p>
 </div>
 <div class="section" id="data-space-concerns">
@@ -367,7 +367,7 @@ grids. This step uses our GDAL bridge and thus requires that you have built GMT 
 <ol class="arabic simple">
 <li>You can set an upper file size limit for download via the GMT default setting
 <a class="reference internal" href="../gmt.conf.html#gmt-data-server-limit"><span class="std std-ref">GMT_DATA_SERVER_LIMIT</span></a>; the default is unlimited.</li>
-<li>You can remove the entire server directory via gmt <a class="reference internal" href="../clear.html"><span class="doc">clear</span></a>.</li>
+<li>You can remove the entire server directory via gmt <a class="reference internal" href="../clear.html"><span class="doc">clear</span></a> data.</li>
 <li>You can be clever and set up a crontab job that deletes data files you have not
 touched in, say, 6 months (or some other interval).</li>
 </ol>
@@ -405,7 +405,7 @@ touched in, say, 6 months (or some other interval).</li>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 10, 2019.
+        Last updated on Nov 11, 2019.
       </span>
 
     </p>

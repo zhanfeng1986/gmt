@@ -212,7 +212,7 @@
 <p>Return paths to MGD77 cruises and directories</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<p><strong>gmt mgd77path</strong> <em>NGDC-ids</em> [ <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong>[<strong>c</strong>] ] [ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong> ]
+<p><strong>gmt mgd77path</strong> <em>GEODAS-ids</em> [ <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong>[<strong>c</strong>] ] [ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong> ]
 [ <a class="reference internal" href="#i"><span> <strong>-I</strong></span></a></strong><em>ignore</em> ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
 [ <strong>--PAR</strong>=<em>value</em> ]</p>
@@ -230,10 +230,10 @@ reshuffling of disks/subdirectories.</p>
 <dt><em>NGDC-ids</em></dt>
 <dd><p class="first">Can be one or more of five kinds of specifiers:</p>
 <ol class="arabic simple">
-<li>8-character NGDC IDs, e.g., 01010083, JA010010etc., etc.</li>
+<li>8-character GEODAS IDs, e.g., 01010083, JA010010etc., etc.</li>
 <li>2-character <em>agency</em> codes which will return all cruises from each agency.</li>
 <li>4-character &lt;agency&gt;&lt;vessel&gt; codes, which will return all cruises from those vessels.</li>
-<li>=<em>list</em>, where <em>list</em> is a table with NGDC IDs, one per line.</li>
+<li>=<em>list</em>, where <em>list</em> is a table with GEODAS IDs, one per line.</li>
 <li>If nothing is specified we return all cruises in the data base.</li>
 </ol>
 <p class="last">(See mgd77info <strong>-L</strong> for agency and vessel codes). If no file
@@ -342,7 +342,7 @@ are MGD77+ version in netCDF, run</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 10, 2019.
+        Last updated on Nov 11, 2019.
       </span>
 
     </p>
