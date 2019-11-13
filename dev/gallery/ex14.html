@@ -109,6 +109,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../changes.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deprecated_defaults.html">Deprecated GMT Defaults Names</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../switching.html">Switching between different GMT versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migrating.html">Migrating from an earlier GMT version</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Classic Mode</span></p>
 <ul>
@@ -134,7 +135,7 @@
             
                 <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
             
-                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+                <li class="toctree-l1"><a href="https://forum.generic-mapping-tools.org/"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
             
                 <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
             
@@ -209,7 +210,8 @@
   <div class="section" id="gridding-of-data-and-trend-surfaces">
 <span id="example-14"></span><h1>(14) Gridding of data and trend surfaces<a class="headerlink" href="#gridding-of-data-and-trend-surfaces" title="Permalink to this headline">¶</a></h1>
 <p>This example shows how one goes from randomly spaced data points to an
-evenly sampled surface. First we plot the distribution and values of our
+evenly sampled surface. We arrange for four panels using the <a class="reference internal" href="../subplot.html"><span class="doc">subplot</span></a>
+command.  First we plot the distribution and values of our
 raw data set (same as in Example <a class="reference internal" href="ex12.html#example-12"><span class="std std-ref">(12) Optimal triangulation of data</span></a>). We choose an equidistant grid and run
 <a class="reference internal" href="../blockmean.html"><span class="doc">blockmean</span></a> which preprocesses the
 data to avoid aliasing. The dashed lines indicate the logical blocks
@@ -295,7 +297,7 @@ rm -f mean.xyz track trend.nc data.nc data.d trend.d
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 12, 2019.
+        Last updated on Nov 13, 2019.
       </span>
 
     </p>

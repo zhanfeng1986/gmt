@@ -109,6 +109,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../changes.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deprecated_defaults.html">Deprecated GMT Defaults Names</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../switching.html">Switching between different GMT versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migrating.html">Migrating from an earlier GMT version</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Classic Mode</span></p>
 <ul>
@@ -134,7 +135,7 @@
             
                 <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
             
-                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+                <li class="toctree-l1"><a href="https://forum.generic-mapping-tools.org/"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
             
                 <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
             
@@ -219,10 +220,10 @@ patterns change at the coastlines. The middle panel demonstrates a
 simple <a class="reference internal" href="../coast.html"><span class="doc">coast</span></a> call where the built-in
 pattern # 86 is drawn at 100 dpi but with the black and white pixels
 replaced with color combinations. At the same time the ocean is filled
-with a repeating image of a circuit board (provides in Sun raster
+with a repeating image of a circuit board (provides in PNG raster
 format). The text GMT in the center is an off-line PostScript file
-that was overlaid using <a class="reference internal" href="../image.html"><span class="doc">image</span></a>. The
-final panel repeats the top panel except that the land and sea images
+that was overlaid using <a class="reference internal" href="../image.html"><span class="doc">image</span></a>. The final panel in the 3 by 1
+<a class="reference internal" href="../subplot.html"><span class="doc">subplot</span></a> sequence repeats the top panel except that the land and sea images
 have changed places.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
 <span class="c1">#		GMT EXAMPLE 19</span>
@@ -293,7 +294,7 @@ rm -f lat.nc lon.nc lat.cpt lon.cpt
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 12, 2019.
+        Last updated on Nov 13, 2019.
       </span>
 
     </p>

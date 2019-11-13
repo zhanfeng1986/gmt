@@ -109,6 +109,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../changes.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../deprecated_defaults.html">Deprecated GMT Defaults Names</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../switching.html">Switching between different GMT versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating.html">Migrating from an earlier GMT version</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Classic Mode</span></p>
 <ul>
@@ -134,7 +135,7 @@
             
                 <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
             
-                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+                <li class="toctree-l1"><a href="https://forum.generic-mapping-tools.org/"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
             
                 <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
             
@@ -211,7 +212,7 @@
 <p>Extract data from MGD77 files</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<p><strong>gmt mgd77list</strong> <em>NGDC-ids</em> <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong><em>columns</em>[,<em>logic</em>][:<em>bittests</em>]
+<p><strong>gmt mgd77list</strong> <em>GEODAS-ids</em> <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong><em>columns</em>[,<em>logic</em>][:<em>bittests</em>]
 [ <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong><strong>c</strong>|<strong>d</strong>|<strong>f</strong>|<strong>m</strong>|<strong>t</strong><em>code</em>[<strong>+f</strong>] ]
 [ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><strong>A</strong>|<strong>a</strong><em>startdate</em> ]
 [ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><strong>B</strong>|<strong>b</strong><em>stopdate</em> ]
@@ -248,7 +249,7 @@ your own custom columns, see <a class="reference internal" href="mgd77manage.htm
 combination of these parameters, any of 8 computed quantities (distance,
 heading, course-change, velocity, Carter correction, Eotvos correction
 and gravity and magnetic global reference fields), calendar sub-units of
-time (year, month, day, hour, min, sec), the NGDC id, and finally a
+time (year, month, day, hour, min, sec), the GEODAS id, and finally a
 preset weight (see <strong>-W</strong>). A sub-section can be specified by passing
 time- or distance-intervals along track or by selecting a geographical
 region. Finally, each output record may be required to pass any number
@@ -261,10 +262,10 @@ are requested then they are separated by segment headers.</p>
 <dt><em>NGDC-ids</em></dt>
 <dd><p class="first">Can be one or more of five kinds of specifiers:</p>
 <ol class="arabic simple">
-<li>8-character NGDC IDs, e.g., 01010083, JA010010etc., etc.</li>
+<li>8-character GEODAS IDs, e.g., 01010083, JA010010etc., etc.</li>
 <li>2-character <em>agency</em> codes which will return all cruises from each agency.</li>
 <li>4-character &lt;agency&gt;&lt;vessel&gt; codes, which will return all cruises from those vessels.</li>
-<li>=<em>list</em>, where <em>list</em> is a table with NGDC IDs, one per line.</li>
+<li>=<em>list</em>, where <em>list</em> is a table with GEODAS IDs, one per line.</li>
 <li>If nothing is specified we return all cruises in the data base.</li>
 </ol>
 <p class="last">(See mgd77info <strong>-L</strong> for agency and vessel codes). If no file
@@ -295,7 +296,7 @@ files (some columns may be NaN) are:</p>
 <dt><strong>id</strong></dt>
 <dd>The survey ID string (leg name).</dd>
 <dt><strong>ngdcid</strong></dt>
-<dd>The 8-character NGDC cruise ID string (usually the file prefix).</dd>
+<dd>The 8-character NGDC (now NCEI) cruise ID string (usually the file prefix).</dd>
 <dt><strong>time</strong></dt>
 <dd>Choose between Absolute calendar time (<strong>atime</strong>, the default) in
 the format dictated by the GMT parameters <a class="reference internal" href="../../gmt.conf.html#format-date-out"><span class="std std-ref">FORMAT_DATE_OUT</span></a> and
@@ -353,7 +354,7 @@ sealevel).</dd>
 <dd>Seismic Shot Point Number string.</dd>
 <dt><strong>nqc</strong></dt>
 <dd>Navigation Quality Code (5 = suspected, by source institution, 6 =
-suspected, by NGDC, 9 = no problems identified).</dd>
+suspected, by NCEI, 9 = no problems identified).</dd>
 </dl>
 <p>In addition, the following derived navigational quantities can be requested:</p>
 <dl class="docutils">
@@ -802,7 +803,7 @@ sin^2(2*lat)]</p>
 needed to carry out corrections. Comment records beginning with # are
 allowed. All correction records are of the form</p>
 <p><em>cruiseID observation correction</em></p>
-<p>where <em>cruiseID</em> is a NGDC prefix, <em>observation</em> is one of the
+<p>where <em>cruiseID</em> is a NCEI prefix, <em>observation</em> is one of the
 abbreviations for geophysical observations listed under <strong>-F</strong> above,
 and <em>correction</em> consists of one or more <em>term</em>s that will be summed
 up and then <strong>subtracted</strong> from the observation before output. Each
@@ -872,7 +873,7 @@ corrected by a strange dependency on ship heading and latitude, and
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 12, 2019.
+        Last updated on Nov 13, 2019.
       </span>
 
     </p>

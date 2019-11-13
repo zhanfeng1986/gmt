@@ -41,7 +41,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Users Script Contributions" href="../users_contrib_scripts.html" />
-    <link rel="prev" title="The GMT High-Resolution Coastline Data" href="gshhg.html" /> 
+    <link rel="prev" title="The Digital Chart of the World Data (DCW)" href="dcw.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -101,7 +101,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../modules.html">GMT Modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cookbook.html">GMT Cookbook</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../datasets.html">Datasets</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="gshhg.html">The GMT High-Resolution Coastline Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gshhg.html">The Global Self-consistent, Hierarchical, High-resolution Geography Database (GSHHG)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dcw.html">The Digital Chart of the World Data (DCW)</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Global Earth Relief Grids</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#technical-information">Technical Information</a></li>
@@ -119,6 +120,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../changes.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deprecated_defaults.html">Deprecated GMT Defaults Names</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../switching.html">Switching between different GMT versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migrating.html">Migrating from an earlier GMT version</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Classic Mode</span></p>
 <ul>
@@ -144,7 +146,7 @@
             
                 <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
             
-                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+                <li class="toctree-l1"><a href="https://forum.generic-mapping-tools.org/"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
             
                 <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
             
@@ -218,6 +220,9 @@
             
   <div class="section" id="global-earth-relief-grids">
 <h1>Global Earth Relief Grids<a class="headerlink" href="#global-earth-relief-grids" title="Permalink to this headline">¶</a></h1>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="../_images/dem.jpg"><img alt="../_images/dem.jpg" src="../_images/dem.jpg" style="width: 709.6px; height: 355.20000000000005px;" /></a>
+</div>
 <p>In addition to the GSHHS coastlines, rivers, and borders data built into some
 modules (<a class="reference internal" href="../coast.html"><span class="doc">coast</span></a>, <a class="reference internal" href="../gmtselect.html"><span class="doc">gmtselect</span></a>, <a class="reference internal" href="../grdlandmask.html"><span class="doc">grdlandmask</span></a>), we offer several
 remote global data grids that you can access via our <em>remote file</em> mechanism.
@@ -353,7 +358,7 @@ the file sizes of the netCDF-4 compressed short int grids, making the files much
 than their original source files without any loss of precision.  To improve download speed,
 the SRTM tiles are stored as JPEG2000 images on the GMT server due to superior compression,
 but once downloaded to your server directory they are converted to short int compressed netCDF4
-grids. This step uses our GDAL bridge and thus requires that you have built GMT with GDAL support
+grids for easier access. This step uses our GDAL bridge and thus requires that you have built GMT with GDAL support
 <em>and</em> that your GDAL distribution was built with openjpeg support.</p>
 </div>
 <div class="section" id="data-space-concerns">
@@ -362,7 +367,7 @@ grids. This step uses our GDAL bridge and thus requires that you have built GMT 
 <ol class="arabic simple">
 <li>You can set an upper file size limit for download via the GMT default setting
 <a class="reference internal" href="../gmt.conf.html#gmt-data-server-limit"><span class="std std-ref">GMT_DATA_SERVER_LIMIT</span></a>; the default is unlimited.</li>
-<li>You can remove the entire server directory via gmt <a class="reference internal" href="../clear.html"><span class="doc">clear</span></a>.</li>
+<li>You can remove the entire server directory via gmt <a class="reference internal" href="../clear.html"><span class="doc">clear</span></a> data.</li>
 <li>You can be clever and set up a crontab job that deletes data files you have not
 touched in, say, 6 months (or some other interval).</li>
 </ol>
@@ -388,7 +393,7 @@ touched in, say, 6 months (or some other interval).</li>
         <a href="../users_contrib_scripts.html" class="btn btn-neutral float-right" title="Users Script Contributions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="gshhg.html" class="btn btn-neutral float-left" title="The GMT High-Resolution Coastline Data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="dcw.html" class="btn btn-neutral float-left" title="The Digital Chart of the World Data (DCW)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -400,7 +405,7 @@ touched in, say, 6 months (or some other interval).</li>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 12, 2019.
+        Last updated on Nov 13, 2019.
       </span>
 
     </p>

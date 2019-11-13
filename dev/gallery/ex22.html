@@ -109,6 +109,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../changes.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deprecated_defaults.html">Deprecated GMT Defaults Names</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../switching.html">Switching between different GMT versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migrating.html">Migrating from an earlier GMT version</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Classic Mode</span></p>
 <ul>
@@ -134,7 +135,7 @@
             
                 <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
             
-                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+                <li class="toctree-l1"><a href="https://forum.generic-mapping-tools.org/"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
             
                 <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
             
@@ -208,14 +209,14 @@
             
   <div class="section" id="world-wide-seismicity-the-last-7-days">
 <span id="example-22"></span><h1>(22) World-wide seismicity the last 7 days<a class="headerlink" href="#world-wide-seismicity-the-last-7-days" title="Permalink to this headline">¶</a></h1>
-<p>The next example uses the command-line tool <strong>wget</strong> to obtain a data
+<p>The next example uses the command-line tool <strong>curl</strong> to obtain a data
 file from a specified URL <a class="footnote-reference" href="#id2" id="id1">[1]</a>. In the example script this line is
 commented out so the example will run even if you do not have <strong>wget</strong>
-(we use the supplied <code class="docutils literal notranslate"><span class="pre">neic_quakes.d</span></code> which normally would be created by <strong>wget</strong>);
-remove the comment to get the actual current seismicity plot using the
+(we use the remote file <code class="docutils literal notranslate"><span class="pre">usgs_quakes_22.txt</span></code> which normally would be created by <strong>curl</strong>);
+remove the comments to get the actual current seismicity plot using the
 live data. The main purpose of this script is not to show how to plot a
 map background and a few circles, but rather demonstrate how a map
-legend may be composed using the new tool
+legend may be composed using the module
 <a class="reference internal" href="../legend.html"><span class="doc">legend</span></a>. Some scripting is used to
 pull out information from the data file that is later used in the
 legend. The legend will normally have the email address of the script
@@ -348,7 +349,7 @@ gmt end show
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 12, 2019.
+        Last updated on Nov 13, 2019.
       </span>
 
     </p>

@@ -109,6 +109,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../changes.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../deprecated_defaults.html">Deprecated GMT Defaults Names</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../switching.html">Switching between different GMT versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../migrating.html">Migrating from an earlier GMT version</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Classic Mode</span></p>
 <ul>
@@ -134,7 +135,7 @@
             
                 <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
             
-                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+                <li class="toctree-l1"><a href="https://forum.generic-mapping-tools.org/"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
             
                 <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
             
@@ -211,7 +212,7 @@
 <p>Create MGD77 headers from A77 files</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<p><strong>gmt mgd77header</strong> <em>NGDC-id.a77</em>
+<p><strong>gmt mgd77header</strong> <em>GEODAS-id.a77</em>
 [ <a class="reference internal" href="#h"><span> <strong>-H</strong></span></a></strong><em>headervalues.txt</em> ]
 [ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong><strong>f</strong>[<em>item</em>]|<strong>r</strong>|<strong>t</strong> ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
@@ -233,10 +234,10 @@ data and read from input are output in either MGD77 format or as a list.</p>
 <dt><em>NGDC-ids</em></dt>
 <dd><p class="first">Can be one or more of five kinds of specifiers:</p>
 <ol class="arabic simple">
-<li>8-character NGDC IDs, e.g., 01010083, JA010010etc., etc.</li>
+<li>8-character GEODAS IDs, e.g., 01010083, JA010010etc., etc.</li>
 <li>2-character <em>agency</em> codes which will return all cruises from each agency.</li>
 <li>4-character &lt;agency&gt;&lt;vessel&gt; codes, which will return all cruises from those vessels.</li>
-<li>=<em>list</em>, where <em>list</em> is a table with NGDC IDs, one per line.</li>
+<li>=<em>list</em>, where <em>list</em> is a table with GEODAS IDs, one per line.</li>
 <li>If nothing is specified we return all cruises in the data base.</li>
 </ol>
 <p class="last">(See mgd77info <strong>-L</strong> for agency and vessel codes). If no file
@@ -421,7 +422,7 @@ any module-specific option (but not the GMT common options), then exits.</dd>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 12, 2019.
+        Last updated on Nov 13, 2019.
       </span>
 
     </p>

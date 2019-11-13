@@ -109,6 +109,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../changes.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deprecated_defaults.html">Deprecated GMT Defaults Names</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../switching.html">Switching between different GMT versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../migrating.html">Migrating from an earlier GMT version</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Classic Mode</span></p>
 <ul>
@@ -134,7 +135,7 @@
             
                 <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
             
-                <li class="toctree-l1"><a href="https://gitter.im/GenericMappingTools/Lobby"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+                <li class="toctree-l1"><a href="https://forum.generic-mapping-tools.org/"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
             
                 <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
             
@@ -213,7 +214,7 @@ three-dimensional symbols, including columnar plots. As a simple
 demonstration, we will convert a gridded netCDF of bathymetry into an
 ASCII <em>xyz</em> table and use the height information to draw a 2-D
 histogram in a 3-D perspective view. We also use the height information
-to set to color of each column via a CPT file.  Our gridded bathymetry file is
+to set to color of each column via a CPT file.  Our gridded bathymetry file is a remote file
 called <code class="docutils literal notranslate"><span class="pre">guinea_bay.nc</span></code> and covers the region from 0 to 5 E and 0 to 5 N. Depth ranges
 from -5000 meter to sea-level. We produce the Figure by running this script:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env bash</span>
@@ -260,7 +261,7 @@ gmt end show
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 12, 2019.
+        Last updated on Nov 13, 2019.
       </span>
 
     </p>
