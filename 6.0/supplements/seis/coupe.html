@@ -216,9 +216,9 @@
 <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em> <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong><em>parameters</em>
 <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>&lt;format&gt;&lt;scale&gt;</em>[<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]
 [ <a class="reference internal" href="#b"><span> <strong>-B</strong></span></a></strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> ]
-[ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong><em>color</em> ]
+[ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong><em>fill</em> ]
 [ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong><em>mode</em>[<em>args</em>] ]
-[ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>color</em> ]
+[ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>fill</em> ]
 [ <a class="reference internal" href="#l"><span> <strong>-L</strong></span></a></strong><em>[pen]</em> ]
 [ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong> ] [ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong> ]
 [ <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong> ]
@@ -508,13 +508,13 @@ Text string to appear above or below the beach ball (optional).</p>
 <dd>Set map boundary frame and axes attributes.</dd>
 </dl>
 <dl class="docutils" id="e">
-<dt><strong>-E</strong><em>color</em></dt>
+<dt><strong>-E</strong><em>fill</em> <a class="reference internal" href="../../cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Sets color or fill pattern for extensive quadrants [Default is white].</dd>
 </dl>
 <dl class="docutils" id="f">
 <dt><strong>-F</strong><em>mode</em>[<em>args</em>]</dt>
 <dd>Sets one or more attributes; repeatable. The various combinations are</dd>
-<dt><strong>-Fs</strong><em>symbol[size][**+f*</em><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</dt>
+<dt><strong>-Fs</strong><em>symbol</em>[<em>size</em>][<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</dt>
 <dd><p class="first">selects a symbol instead of mechanism. Choose from the following:
 (<strong>c</strong>) circle, (<strong>d</strong>) diamond, (<strong>i</strong>) itriangle, (<strong>s</strong>) square,
 (<strong>t</strong>) triangle, (<strong>x</strong>) cross. <em>size</em> is the symbol size in
@@ -540,9 +540,9 @@ be in the following columns:</p>
 (<strong>c</strong>) circle, (<strong>d</strong>) diamond, (<strong>h</strong>) hexagon, (<strong>i</strong>) inverse
 triangle, (<strong>p</strong>) point, (<strong>s</strong>) square, (<strong>t</strong>) triangle, (<strong>x</strong>)
 cross. [Default: 6<strong>p</strong>/<strong>cc</strong>]</dd>
-<dt><strong>-Fe</strong><em>fill</em></dt>
+<dt><strong>-Fe</strong><em>fill</em> <a class="reference internal" href="../../cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Sets the color or fill pattern for the T axis symbol. [Default as set by <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong>]</dd>
-<dt><strong>-Fg</strong><em>fill</em></dt>
+<dt><strong>-Fg</strong><em>fill</em> <a class="reference internal" href="../../cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Sets the color or fill pattern for the P axis symbol. [Default as set by <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong>]</dd>
 <dt><strong>-Fp</strong>[<em>pen</em>]</dt>
 <dd>Draws the P axis outline using current pen (see <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong>), or sets pen attributes.</dd>
@@ -552,7 +552,7 @@ cross. [Default: 6<strong>p</strong>/<strong>cc</strong>]</dd>
 <dd>Draws the T axis outline using current pen (see <strong>-W</strong>), or sets pen attributes.</dd>
 </dl>
 <dl class="docutils" id="g">
-<dt><strong>-G</strong><em>fill</em></dt>
+<dt><strong>-G</strong><em>fill</em> <a class="reference internal" href="../../cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Sets color or fill pattern for compressional quadrants [Default is black].</dd>
 </dl>
 <dl class="docutils" id="l">
@@ -694,7 +694,7 @@ Institut de Physique du Globe de Paris, Departement de Sismologie, Paris, France
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 13, 2019.
+        Last updated on Nov 14, 2019.
       </span>
 
     </p>
