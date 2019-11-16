@@ -216,13 +216,12 @@
 <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em>
 [ <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong><em>parameters</em> ]
 [ <a class="reference internal" href="#b"><span> <strong>-B</strong></span></a></strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> ]
-[ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong><em>color</em> ]
-[ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong><em>color</em> ]
-[ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>color</em> ]
+[ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong><em>fill</em> ]
+[ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>fill</em> ]
 [ <a class="reference internal" href="#k"><span> <strong>-K</strong></span></a></strong> ]
 [ <a class="reference internal" href="#l"><span> <strong>-L</strong></span></a></strong> ]
 [ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong> ] [ <a class="reference internal" href="#o"><span> <strong>-O</strong></span></a></strong> ] [ <a class="reference internal" href="#p"><span> <strong>-P</strong></span></a></strong> ]
-[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>symbol</em>/<em>scale</em>[/<em>args</em> ] ]
+[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>&lt;format&gt;&lt;args&gt;</em>[<strong>+f</strong><em>font</em>] ]
 [ <a class="reference internal" href="#u"><span> <strong>-U</strong></span></a></strong>[<em>stamp</em>] ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
 [ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong><em>pen</em> ]
@@ -294,15 +293,16 @@ done only when using the <strong>-Jz</strong> option, not when using only the
 plotted, with no third dimension.  </dd>
 </dl>
 <p id="s"><strong>-S</strong></p>
-<p>Selects the meaning of the columns in the data file and the figure to be plotted.</p>
+<p>Selects the meaning of the columns in the data file and the figure to be plotted.  In all
+cases, the scales are in data units per length unit and sizes are in length units (default length
+unit is controlled by <a class="reference internal" href="../../gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a> unless <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> is appended).</p>
 <blockquote>
-<div><p><strong>-Se</strong><em>velscale/confidence/fontsize</em>.</p>
+<div><p><strong>-Se</strong><em>velscale/confidence</em>[<strong>+f</strong><em>font</em>]</p>
 <blockquote>
 <div><p>Velocity ellipses in (N,E) convention. <em>velscale</em> sets the scaling of the
-velocity arrows. This scaling gives inches (unless <strong>c</strong>, <strong>i</strong>,
-or <strong>p</strong> is appended). <em>confidence</em> sets the 2-dimensional confidence
-limit for the ellipse, e.g., 0.95 for 95% confidence ellipse. <em>fontsize</em>
-sets the size of the text in points. The ellipse will be filled with the
+velocity arrows. The <em>confidence</em> sets the 2-dimensional confidence
+limit for the ellipse, e.g., 0.95 for 95% confidence ellipse. <em>font</em>
+sets the font and size of the text [9p,Helvetica,black]. The ellipse will be filled with the
 color or shade specified by the <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong> option [default transparent]. The
 arrow and the circumference of the ellipse will be drawn with the pen
 attributes specified by the <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong> option. Parameters are expected to be
@@ -319,10 +319,9 @@ correlation between eastward and northward components
 <strong>8</strong>:
 name of station (optional).</div></blockquote>
 </div></blockquote>
-<p><strong>-Sn</strong><em>barscale.</em></p>
+<p><strong>-Sn</strong><em>barscale</em></p>
 <blockquote>
-<div><p>Anisotropy bars. <em>barscale</em> sets the scaling of the bars. This scaling
-gives inches (unless <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> is appended).
+<div><p>Anisotropy bars. <em>barscale</em> sets the scaling of the bars.
 Parameters are expected to be in the following columns:</p>
 <blockquote>
 <div><strong>1</strong>,<strong>2</strong>:
@@ -330,13 +329,12 @@ longitude, latitude of station (<strong>-:</strong> option interchanges order)
 <strong>3</strong>,<strong>4</strong>:
 eastward, northward components of anisotropy vector (<strong>-:</strong> option interchanges order)</div></blockquote>
 </div></blockquote>
-<p><strong>-Sr</strong><em>velscale/confidence/fontsize</em></p>
+<p><strong>-Sr</strong><em>velscale/confidence</em>[<strong>+f</strong><em>font</em>]</p>
 <blockquote>
 <div><p>Velocity ellipses in rotated convention. <em>velscale</em> sets the scaling of
-the velocity arrows. This scaling gives inches (unless <strong>c</strong>, <strong>i</strong>,
-or <strong>p</strong> is appended). <em>confidence</em> sets the 2-dimensional
+the velocity arrows. The <em>confidence</em> sets the 2-dimensional
 confidence limit for the ellipse, e.g., 0.95 for 95% confidence ellipse.
-<em>fontsize</em> sets the size of the text in points. The ellipse will be
+<em>font</em> sets the font and size of the text [9p,Helvetica,black]. The ellipse will be
 filled with the color or shade specified by the <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong> option [default
 transparent]. The arrow and the circumference of the ellipse will be
 drawn with the pen attributes specified by the <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong> option. Parameters
@@ -353,10 +351,9 @@ counter-clockwise angle, in degrees, from horizontal axis to major axis of ellip
 <strong>8</strong>:
 name of station (optional)</div></blockquote>
 </div></blockquote>
-<p><strong>-Sw</strong><em>wedgescale/wedgemag</em>.</p>
+<p><strong>-Sw</strong><em>wedgescale/wedgemag</em></p>
 <blockquote>
-<div><p>Rotational wedges. <em>wedgescale</em> sets the size of the wedges in inches
-(unless <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> is appended). Values are
+<div><p>Rotational wedges. <em>wedgescale</em> sets the size of the wedges. Values are
 multiplied by <em>wedgemag</em> before plotting. For example, setting
 <em>wedgemag</em> to 1.e7 works well for rotations of the order of 100
 nanoradians/yr. Use <strong>-G</strong> to set the fill color or shade for the wedge,
@@ -372,8 +369,7 @@ rotation uncertainty in radians</div></blockquote>
 </div></blockquote>
 <p><strong>-Sx</strong><em>cross_scale</em></p>
 <blockquote>
-<div><p>gives Strain crosses. <em>cross_scale</em> sets the size of the cross in
-inches (unless <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> is appended). Parameters
+<div><p>gives Strain crosses. <em>cross_scale</em> sets the size of the cross. Parameters
 are expected to be in the following columns:</p>
 <blockquote>
 <div><strong>1</strong>,<strong>2</strong>:
@@ -405,24 +401,14 @@ See <a class="reference internal" href="#vector-attributes">Vector Attributes</a
 <strong>-Sr</strong>) and rotations (<strong>-Sw</strong>). Can be combined with the <em>confidence</em> variable.</dd>
 </dl>
 <dl class="docutils" id="e">
-<dt><strong>-E</strong><em>fill</em></dt>
+<dt><strong>-E</strong><em>fill</em> <a class="reference internal" href="../../cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Sets the color or shade used for filling uncertainty wedges
 (<strong>-Sw</strong>) or velocity error ellipses (<strong>-Se</strong> or <strong>-Sr</strong>). [If
 <strong>-E</strong> is not specified, the uncertainty regions will be transparent.]</dd>
 </dl>
-<dl class="docutils" id="f">
-<dt><strong>-F</strong><em>fill</em></dt>
-<dd>Sets the color or shade used for frame and annotation. [Default is black]</dd>
-</dl>
 <dl class="docutils" id="g">
-<dt><strong>-G</strong><em>fill</em></dt>
-<dd>Specify color (for symbols/polygons) or pattern (for polygons)
-[Default is black]. Optionally, specify
-<strong>-Gp</strong><em>icon_size/pattern</em>, where <em>pattern</em> gives the number of
-the image pattern (1-90) OR the name of a icon-format file.
-<em>icon_size</em> sets the unit size in inches. To invert black and white
-pixels, use <strong>-GP</strong> instead of <strong>-Gp</strong>. See the CookBook for
-information on individual patterns.</dd>
+<dt><strong>-G</strong><em>fill</em> <a class="reference internal" href="../../cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select color or pattern for filling of symbols or polygons [Default is no fill].</dd>
 </dl>
 <dl class="docutils" id="l">
 <dt><strong>-L</strong></dt>
@@ -574,9 +560,8 @@ They are not available when using GMT modern mode.</p>
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>The following should make big red arrows with green ellipses, outlined
 in red. Note that the 39% confidence scaling will give an ellipse which
-fits inside a rectangle of dimension Esig by Nsig.</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psvelo <span class="s">&lt;&lt; END -h2 -R-10/10/-10/10 -W0.25p,red -Ggreen -L -Se0.2/0.39/18 \</span>
+fits inside a rectangle of dimension Esig by Nsig:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psvelo <span class="s">&lt;&lt; END -R-10/10/-10/10 -W0.25p,red -Ggreen -L -Se0.2i/0.39+f18p \</span>
 <span class="s">    -B1g1 -Jx0.4/0.4 -A1c+p3p+e -P -V &gt; test.ps</span>
 <span class="s">#Long. Lat. Evel Nvel Esig Nsig CorEN SITE</span>
 <span class="s">#(deg) (deg) (mm/yr) (mm/yr)</span>
@@ -589,12 +574,10 @@ fits inside a rectangle of dimension Esig by Nsig.</p>
 <span class="s">END</span>
 </pre></div>
 </div>
-</div></blockquote>
 <p>This example should plot some residual rates of rotation in the Western
 Transverse Ranges, California. The wedges will be dark gray, with light
-gray wedges to represent the 2-sigma uncertainties.</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psvelo <span class="s">&lt;&lt; END -Sw0.4/1.e7 -W0.75p -Gdarkgray -Elightgray -h1 -D2 -Jm2.2i \</span>
+gray wedges to represent the 2-sigma uncertainties:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psvelo <span class="s">&lt;&lt; END -Sw0.4i/1.e7 -W0.75p -Gdarkgray -Elightgray -D2 -Jm2.2i \</span>
 <span class="s">    -R240./243./32.5/34.75 -Baf -BWeSn -P &gt; test.ps</span>
 <span class="s">#lon lat spin(rad/yr) spin_sigma (rad/yr)</span>
 <span class="s">241.4806 34.2073 5.65E-08 1.17E-08</span>
@@ -608,7 +591,6 @@ gray wedges to represent the 2-sigma uncertainties.</p>
 <span class="s">END</span>
 </pre></div>
 </div>
-</div></blockquote>
 <p><a class="reference external" href="http://www.geology.wisc.edu/~feigl/">Kurt L. Feigl</a>, Department of Geology and
 Geophysics at University of Wisconsin-Madison, Madison, Wisconsin, USA</p>
 </div>
@@ -641,7 +623,7 @@ Geophysics at University of Wisconsin-Madison, Madison, Wisconsin, USA</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 15, 2019.
+        Last updated on Nov 16, 2019.
       </span>
 
     </p>

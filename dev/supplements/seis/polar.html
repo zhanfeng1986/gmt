@@ -218,9 +218,9 @@
 <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>&lt;symbol&gt;&lt;size&gt;</em>
 [ <a class="reference internal" href="#b"><span> <strong>-B</strong></span></a></strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> ]
 [ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>lon</em>/<em>lat</em>[<strong>+p</strong><em>pen</em>][<strong>+s</strong><em>pointsize</em>] ]
-[ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong><em>color</em> ]
-[ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong><em>color</em> ]
-[ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>color</em> ]
+[ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong><em>fill</em> ]
+[ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong><em>fill</em> ]
+[ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>fill</em> ]
 [ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong> ]
 [ <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong><em>mode</em>[<em>args</em>] ]
 [ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>angle</em>/<em>form</em>/<em>justify</em>/<em>fontsize</em> ]
@@ -341,17 +341,17 @@ the last two columns of the input file.  Optionally set the pen and
 symbol point size.</dd>
 </dl>
 <dl class="docutils" id="e">
-<dt><strong>-E</strong><em>color</em></dt>
+<dt><strong>-E</strong><em>fill</em> <a class="reference internal" href="../../cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Selects filling of symbols for stations in extensive quadrants. Set
-the color [Default is 250]. If <strong>-E</strong><em>color</em> is the same as
-<strong>-F</strong><em>color</em>, use <strong>-Qe</strong> to outline.</dd>
+the color [Default is 250]. If <strong>-E</strong><em>fill</em> is the same as
+<strong>-F</strong><em>fill</em>, use <strong>-Qe</strong> to outline.</dd>
 </dl>
 <dl class="docutils" id="f">
-<dt><strong>-F</strong><em>color</em></dt>
+<dt><strong>-F</strong><em>fill</em> <a class="reference internal" href="../../cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Sets background color of the beach ball. Default is no fill.</dd>
 </dl>
 <dl class="docutils" id="g">
-<dt><strong>-G</strong><em>color</em></dt>
+<dt><strong>-G</strong><em>fill</em> <a class="reference internal" href="../../cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Selects filling of symbols for stations in compressional quadrants.
 Set the color [Default is black].</dd>
 </dl>
@@ -574,7 +574,7 @@ Institut de Physique du Globe de Paris, Departement de Sismologie, Paris, France
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 15, 2019.
+        Last updated on Nov 16, 2019.
       </span>
 
     </p>

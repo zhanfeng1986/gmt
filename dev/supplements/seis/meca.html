@@ -215,7 +215,7 @@
 <p><strong>gmt meca</strong> [ <em>table</em> ] <a class="reference internal" href="#j"><span> <strong>-J</strong></span></a></strong><em>parameters</em> <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em>
 <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>&lt;format&gt;&lt;scale&gt;</em>[<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]
 [ <a class="reference internal" href="#b"><span> <strong>-B</strong></span></a></strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> ]
-[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong>[<em>pen</em>][<strong>+s</strong><em>pointsize</em>] ] [ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>depmin</em>/<em>depmax</em> ]
+[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong>[<em>pen</em>][<strong>+s</strong><em>size</em>] ] [ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>depmin</em>/<em>depmax</em> ]
 [ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong><em>fill</em>]
 [ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong><em>mode</em>[<em>args</em>] ] [ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>fill</em>] [ <a class="reference internal" href="#l"><span> <strong>-L</strong></span></a></strong>[<em>pen</em>] ]
 [ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong> ]
@@ -469,20 +469,20 @@ Text string to appear above or below the beach ball (optional).</p>
 <dd>Set map boundary frame and axes attributes.</dd>
 </dl>
 <dl class="docutils" id="c">
-<dt><strong>-C</strong>[<em>pen</em>][<strong>+s</strong><em>pointsize</em>]</dt>
+<dt><strong>-C</strong>[<em>pen</em>][<strong>+s</strong><em>size</em>]</dt>
 <dd>Offsets focal mechanisms to the longitude, latitude specified in the
 last two columns of the input file before the (optional) text
 string. A small circle is plotted at the initial location and a line
 connects the beachball to the circle. Specify <em>pen</em> and optionally append
-<strong>+s</strong><em>pointsize</em> to change the line style and/or size of the circle.
-[Defaults: <em>pen</em> as given by <strong>-W</strong>; <em>pointsize</em> is 0].</dd>
+<strong>+s</strong><em>size</em> to change the line style and/or size of the circle.
+[Defaults: <em>pen</em> as given by <strong>-W</strong>; <em>size</em> is 0].</dd>
 </dl>
 <dl class="docutils" id="d">
 <dt><strong>-D</strong><em>depmin/depmax</em></dt>
 <dd>Plots events between depmin and depmax.</dd>
 </dl>
 <dl class="docutils" id="e">
-<dt><strong>-E</strong><em>fill</em></dt>
+<dt><strong>-E</strong><em>fill</em> <a class="reference internal" href="../../cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Selects filling of extensive quadrants. Usually white. Set the color
 [Default is white].</dd>
 </dl>
@@ -515,7 +515,7 @@ attributes.</dd>
 sets pen attributes.</dd>
 </dl>
 <dl class="docutils" id="g">
-<dt><strong>-G</strong><em>fill</em></dt>
+<dt><strong>-G</strong><em>fill</em> <a class="reference internal" href="../../cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Selects filling of focal mechanisms. By convention, the
 compressional quadrants of the focal mechanism beach balls are
 shaded. Set the color [Default is black].</dd>
@@ -616,14 +616,12 @@ any module-specific option (but not the GMT common options), then exits.</dd>
 <strong>gmt begin</strong> and <strong>gmt end</strong> commands), we will often present them using the quick
 modern mode <a class="reference internal" href="../../cookbook/one-liner.html"><span class="doc">GMT Modern Mode One-line Commands</span></a> syntax, which simplifies such short scripts.</p>
 <p>The following file should give a normal-faulting CMT mechanism:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt meca -R239/240/34/35.2 -Jm4c -Sc2c -h1 -pdf <span class="nb">test</span> <span class="s">&lt;&lt; END</span>
-<span class="s">#lon lat depth str dip slip st dip slip mant exp plon plat</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt meca -R239/240/34/35.2 -Jm4c -Sc2c -pdf <span class="nb">test</span> <span class="s">&lt;&lt; END</span>
+<span class="s"># lon lat depth str dip slip st dip slip mant exp plon plat</span>
 <span class="s">239.384 34.556 12. 180 18 -88 0 72 -90 5.5 0 0 0</span>
 <span class="s">END</span>
 </pre></div>
 </div>
-</div></blockquote>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
@@ -672,7 +670,7 @@ Institut de Physique du Globe de Paris, Departement de Sismologie, Paris, France
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 15, 2019.
+        Last updated on Nov 16, 2019.
       </span>
 
     </p>
