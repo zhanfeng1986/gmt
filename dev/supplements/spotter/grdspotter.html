@@ -246,7 +246,8 @@ give a Cumulative Volcano Amplitude grid (CVA).</p>
 </dl>
 <dl class="docutils" id="e">
 <dt><strong>-E</strong><em>rotfile</em></dt>
-<dd><p class="first">Give file with rotation parameters. This file must contain one
+<dd><p class="first">Rotations can be specified in one of three ways:
+(1): Give file with rotation parameters. This file must contain one
 record for each rotation; each record must be of the following
 format:</p>
 <p><em>lon lat tstart [tstop] angle</em> [ <em>khat a b c d e f g df</em> ]</p>
@@ -261,12 +262,15 @@ brackets. Here, <strong>C</strong> = (<em>g</em>/<em>khat</em>)*[ <em>a b d; b c
 which shows <strong>C</strong> made up of three row vectors. If the degrees of
 freedom (<em>df</em>) in fitting the rotation is 0 or not given it is set
 to 10000. Blank lines and records whose first column contains # will
-be ignored. You may prepend a leading + to the filename to indicate
+be ignored. You may append <strong>+i</strong> to the filename to indicate
 you wish to invert the rotations.
-Alternatively, give the filename composed of two plate IDs
+(2): Give the filename composed of two plate IDs
 separated by a hyphen (e.g., PAC-MBL) and we will instead extract
 that rotation from the GPlates rotation database. We return an error
-if the rotation cannot be found.</p>
+if the rotation cannot be found.
+(3): Specify <em>lon</em>/<em>lat</em>/<em>angle</em>, i.e., the longitude,
+latitude, and opening angle (all in degrees and separated by /) for
+a single total reconstruction rotation.</p>
 </dd>
 </dl>
 <dl class="docutils" id="g">
@@ -504,7 +508,7 @@ doi:10.1029/2008GC002058.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 17, 2019.
+        Last updated on Nov 18, 2019.
       </span>
 
     </p>
