@@ -122,6 +122,7 @@
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">GMT C API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../debug.html">Debugging GMT</a></li>
 </ul>
 
             
@@ -208,7 +209,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="examining-dems-using-variable-illumination">
-<span id="anim-02"></span><h1>(2) Examining DEMs using variable illumination<a class="headerlink" href="#examining-dems-using-variable-illumination" title="Permalink to this headline">¶</a></h1>
+<span id="anim02"></span><h1>(2) Examining DEMs using variable illumination<a class="headerlink" href="#examining-dems-using-variable-illumination" title="Permalink to this headline">¶</a></h1>
 <p>Our next animation uses a gridded topography for parts of Colorado (US);
 the file is distributed with the tutorial examples. Here, we want to use
 <a class="reference internal" href="../grdimage.html"><span class="doc">grdimage</span></a> to generate a shaded-relief
@@ -226,7 +227,7 @@ gridded data. The red arrow points in the direction of the illumination.</p>
 
 <span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>	<span class="c1"># Just make master PostScript frame 0</span>
 	<span class="nv">opt</span><span class="o">=</span><span class="s2">&quot;-Mps -Fnone&quot;</span>
-	<span class="nv">ps</span><span class="o">=</span>anim_02.ps
+	<span class="nv">ps</span><span class="o">=</span>anim02.ps
 <span class="k">else</span>	<span class="c1"># Make animated GIF</span>
 	<span class="nv">opt</span><span class="o">=</span><span class="s2">&quot;-A+l&quot;</span>
 <span class="k">fi</span>	
@@ -248,7 +249,7 @@ cat <span class="s">&lt;&lt; EOF &gt; main.sh</span>
 <span class="s">gmt end</span>
 <span class="s">EOF</span>
 <span class="c1"># 3. Run the movie</span>
-gmt movie main.sh -C3.5ix4.167ix72 -Nanim_02 -Tangles.txt -Sbpre.sh -D6 -Z <span class="nv">$opt</span>
+gmt movie main.sh -C3.5ix4.167ix72 -Nanim02 -Tangles.txt -Sbpre.sh -D6 -Z <span class="nv">$opt</span>
 rm -rf main.sh pre.sh
 </pre></div>
 </div>
@@ -257,7 +258,7 @@ put together, especially since our vantage point is fixed. In the next
 example we will move the “camera” around and must therefore deal with
 how to frame perspective views.</p>
 <div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/anim_02.gif"><img alt="../_images/anim_02.gif" src="../_images/anim_02.gif" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/anim02.gif"><img alt="../_images/anim02.gif" src="../_images/anim02.gif" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-text">Animation of a DEM using variable illumination.</span></p>
 </div>
 </div>
@@ -285,7 +286,7 @@ how to frame perspective views.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 20, 2019.
+        Last updated on Nov 23, 2019.
       </span>
 
     </p>

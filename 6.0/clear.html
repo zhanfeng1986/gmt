@@ -122,6 +122,7 @@
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">Debugging GMT</a></li>
 </ul>
 
             
@@ -212,7 +213,7 @@
 <p>Delete current default settings, or the cache, data or sessions directories</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<p><strong>gmt clear</strong> <strong>all</strong> | <strong>cache</strong> | <strong>defaults</strong> | <strong>data</strong> | <strong>sessions</strong>
+<p><strong>gmt clear</strong> <strong>all</strong> | <strong>cache</strong> | <strong>data</strong> | <strong>sessions</strong> | <strong>settings</strong>
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]</p>
 <p><strong>Note:</strong> No space is allowed between the option flag and the associated arguments.</p>
 </div>
@@ -227,10 +228,6 @@ directories, and in modern mode their defaults settings (i.e., gmt.conf), or all
 <dt><strong>all</strong></dt>
 <dd>Deletes all the items under the control of the individual targets.</dd>
 </dl>
-<dl class="docutils" id="clear-defaults">
-<dt><strong>defaults</strong></dt>
-<dd>Delete the current defaults (gmt.conf) file used for the current modern session.</dd>
-</dl>
 <dl class="docutils" id="clear-cache">
 <dt><strong>cache</strong></dt>
 <dd>Delete the user’s cache directory and all of its contents.</dd>
@@ -242,6 +239,10 @@ directories, and in modern mode their defaults settings (i.e., gmt.conf), or all
 <dl class="docutils" id="clear-sessions">
 <dt><strong>sessions</strong></dt>
 <dd>Delete the user’s sessions directory.</dd>
+</dl>
+<dl class="docutils" id="clear-settings">
+<dt><strong>settings</strong></dt>
+<dd>Delete the current default settings file (gmt.conf) used for the current modern session.</dd>
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -260,7 +261,7 @@ any module-specific option (but not the GMT common options), then exits.</dd>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>To remove the current default settings in a modern mode session, use:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt clear defaults
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt clear settings
 </pre></div>
 </div>
 <p>To completely wipe your GMT cache directory, try:</p>
@@ -303,7 +304,7 @@ any module-specific option (but not the GMT common options), then exits.</dd>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 20, 2019.
+        Last updated on Nov 23, 2019.
       </span>
 
     </p>

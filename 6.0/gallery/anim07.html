@@ -122,6 +122,7 @@
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">GMT C API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../debug.html">Debugging GMT</a></li>
 </ul>
 
             
@@ -208,7 +209,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="spinning-earth-showing-crustal-ages">
-<span id="anim-07"></span><h1>(7) Spinning Earth showing crustal ages<a class="headerlink" href="#spinning-earth-showing-crustal-ages" title="Permalink to this headline">¶</a></h1>
+<span id="anim07"></span><h1>(7) Spinning Earth showing crustal ages<a class="headerlink" href="#spinning-earth-showing-crustal-ages" title="Permalink to this headline">¶</a></h1>
 <p>It is relatively simple to make a spinning Earth movie
 by using the frame number as view longitude.  Here we
 simulate sunlight to modulate the slopes of the global
@@ -224,7 +225,7 @@ grids from EarthByte.</p>
 
 <span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>   <span class="c1"># Just make master PostScript frame 10</span>
 	<span class="nv">opt</span><span class="o">=</span><span class="s2">&quot;-M10,ps -Fnone&quot;</span>
-	<span class="nv">ps</span><span class="o">=</span>anim_07.ps
+	<span class="nv">ps</span><span class="o">=</span>anim07.ps
 <span class="k">else</span>	<span class="c1"># Make movie in MP4 format and a thumbnail animated GIF using every 10th frame</span>
 	<span class="nv">opt</span><span class="o">=</span><span class="s2">&quot;-Fmp4 -A+l+s5&quot;</span>
 <span class="k">fi</span>
@@ -257,14 +258,14 @@ cat <span class="s">&lt;&lt; EOF &gt; main.sh</span>
 <span class="s">gmt end</span>
 <span class="s">EOF</span>
 <span class="c1"># 3. Run the movie</span>
-gmt movie main.sh -Sbpre.sh -C6ix6ix100 -Tlongitudes.txt -Nanim_07 -H2 -Z <span class="nv">$opt</span>
+gmt movie main.sh -Sbpre.sh -C6ix6ix100 -Tlongitudes.txt -Nanim07 -H2 -Z <span class="nv">$opt</span>
 rm -rf main.sh pre.sh
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../_images/anim_07.png"><img alt="../_images/anim_07.png" src="../_images/anim_07.png" style="width: 0px;" /></a>
+<a class="reference internal image-reference" href="../_images/anim07.png"><img alt="../_images/anim07.png" src="../_images/anim07.png" style="width: 0px;" /></a>
 <div class="figure align-center">
-  <video width="720" height="480" poster="../_images/anim_07.png" controls>
-    <source src="../_static/anim_07.mp4" type="video/mp4">
+  <video width="720" height="480" poster="../_images/anim07.png" controls>
+    <source src="../_static/anim07.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <p class="caption">Spinning Earth showing crustal ages.</p>
@@ -293,7 +294,7 @@ rm -rf main.sh pre.sh
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 20, 2019.
+        Last updated on Nov 23, 2019.
       </span>
 
     </p>
