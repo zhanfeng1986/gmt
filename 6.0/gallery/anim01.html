@@ -231,7 +231,7 @@ we convert them to a single animated GIF file.</p>
 	<span class="nv">ps</span><span class="o">=</span>anim01.ps
 <span class="k">else</span>	<span class="c1"># Make animated GIF</span>
 	<span class="nv">opt</span><span class="o">=</span><span class="s2">&quot;-A+l&quot;</span>
-<span class="k">fi</span>	
+<span class="k">fi</span>
 <span class="c1"># 1. Create files needed in the loop</span>
 cat <span class="s">&lt;&lt; EOF &gt; pre.sh</span>
 <span class="s">gmt math -T0/360/20 T SIND = sin_point.txt</span>
@@ -255,6 +255,7 @@ cat <span class="s">&lt;&lt; EOF &gt; main.sh</span>
 <span class="s">EOF</span>
 <span class="c1"># 3. Run the movie</span>
 gmt movie main.sh -Sbpre.sh -C4ix2ix125 -Tsin_point.txt -Z -Nanim01 -D5 <span class="nv">$opt</span>
+rm -rf main.sh pre.sh
 </pre></div>
 </div>
 <p>Make sure you understand the purpose of all the steps in our script. In
@@ -291,7 +292,7 @@ on a single PostScript plot before running a lengthy animation script.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 23, 2019.
+        Last updated on Nov 24, 2019.
       </span>
 
     </p>
