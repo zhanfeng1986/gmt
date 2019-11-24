@@ -122,6 +122,7 @@
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">GMT C API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../postscriptlight.html">PostScriptLight C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../debug.html">Debugging GMT</a></li>
 </ul>
 
             
@@ -208,7 +209,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="orbiting-a-static-map">
-<span id="anim-03"></span><h1>(3) Orbiting a static map<a class="headerlink" href="#orbiting-a-static-map" title="Permalink to this headline">¶</a></h1>
+<span id="anim03"></span><h1>(3) Orbiting a static map<a class="headerlink" href="#orbiting-a-static-map" title="Permalink to this headline">¶</a></h1>
 <p>Our third animation keeps a fixed gridded data set but moves the camera
 angle around the full 360. We use
 <a class="reference internal" href="../grdview.html"><span class="doc">grdview</span></a> to generate a shaded-relief
@@ -225,7 +226,7 @@ GIF image.</p>
 
 <span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>	<span class="c1"># Just make master PostScript frame 27 (az = 135)</span>
 	<span class="nv">opt</span><span class="o">=</span><span class="s2">&quot;-M27,ps -Fnone&quot;</span>
-	<span class="nv">ps</span><span class="o">=</span>anim_03.ps
+	<span class="nv">ps</span><span class="o">=</span>anim03.ps
 <span class="k">else</span>	<span class="c1"># Make animated GIF, infinitely looping</span>
 	<span class="nv">opt</span><span class="o">=</span><span class="s2">&quot;-A+l&quot;</span>
 <span class="k">fi</span>	
@@ -245,12 +246,12 @@ cat <span class="s">&lt;&lt; EOF &gt; main.sh</span>
 <span class="s">gmt end</span>
 <span class="s">EOF</span>
 <span class="c1"># 3. Run the movie</span>
-gmt movie main.sh -C4ix2.5ix100 -Nanim_03 -Tangles.txt -Sbpre.sh -D10 -Z <span class="nv">$opt</span>
+gmt movie main.sh -C4ix2.5ix100 -Nanim03 -Tangles.txt -Sbpre.sh -D10 -Z <span class="nv">$opt</span>
 rm -rf main.sh pre.sh
 </pre></div>
 </div>
 <div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/anim_03.gif"><img alt="../_images/anim_03.gif" src="../_images/anim_03.gif" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/anim03.gif"><img alt="../_images/anim03.gif" src="../_images/anim03.gif" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-text">Orbiting a static map.</span></p>
 </div>
 </div>
@@ -278,7 +279,7 @@ rm -rf main.sh pre.sh
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 20, 2019.
+        Last updated on Nov 24, 2019.
       </span>
 
     </p>

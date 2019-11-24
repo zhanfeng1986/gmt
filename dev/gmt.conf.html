@@ -122,6 +122,7 @@
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight C API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">Debugging GMT</a></li>
 </ul>
 
             
@@ -1229,9 +1230,12 @@ join which is a miter join that is cut off so kinks are triangular in shape [mit
 </dl>
 <dl class="docutils" id="ps-media">
 <dt><strong>PS_MEDIA</strong></dt>
-<dd><p class="first">Sets the physical format of the current plot paper [a4 (or letter)].
-The following formats (and their widths and heights in points) are
-recognized:</p>
+<dd><p class="first"><em>Classic mode:</em> Sets the physical size of the current plotting paper [a4 or letter].
+<em>Modern mode:</em> If user selects PostScript output then the above applies as well.
+For other graphics formats (PDF and rasters), the media size is determined automatically
+by cropping to fit the plot exactly (but see <a class="reference internal" href="#ps-convert"><span class="std std-ref">PS_CONVERT</span></a>).  However,
+if a specific media size is desired then the <strong>PS_MEDIA</strong> may be specified as well.
+The following formats (and their widths and heights in points) are recognized:</p>
 <p>Media width height</p>
 <ul class="simple">
 <li>A0 2380 3368</li>
@@ -1423,7 +1427,7 @@ correspond to 1800 through 1828. [1950].</dd>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 20, 2019.
+        Last updated on Nov 24, 2019.
       </span>
 
     </p>
