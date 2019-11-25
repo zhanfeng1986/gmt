@@ -220,7 +220,7 @@
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>defaults</strong> lists all the GMT parameter defaults if the option
 <strong>-D</strong> is used. There are three ways to change some of the settings: (1)
-Use the command <a class="reference internal" href="gmtset.html"><span class="doc">gmtset</span></a>, (2) use any text editor to edit the file
+Use the command <a class="reference internal" href="gmtset.html"><span class="doc">gmtset</span></a>, (2) in classic mode you may use any text editor to edit the file
 <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> in your home, ~/.gmt or current directory (if you do not
 have this file, run <a class="reference internal" href="gmtset.html"><span class="doc">gmtset</span></a> <strong>-D</strong> to get one with the system default
 settings), or (3) override any parameter by specifying one
@@ -256,7 +256,8 @@ any module-specific option (but not the GMT common options), then exits.</dd>
 <dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
 </dl>
 <p>Your currently active defaults come from the <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> file in
-the current working directory, if present; else from the
+the current working directory (in classic mode) or in your session directory
+(in modern mode), if present; else from the
 <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> file in your home directory, if present; else from the
 file <strong>~/.gmt/gmt.conf</strong> if present; else from the system defaults
 set at the time GMT was compiled.</p>
@@ -313,7 +314,7 @@ parameters will be used.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 24, 2019.
+        Last updated on Nov 25, 2019.
       </span>
 
     </p>

@@ -258,7 +258,7 @@ the files.</dd>
 <dl class="docutils" id="g">
 <dt><strong>-G</strong>[<strong>c</strong>|<strong>l</strong>|<strong>u</strong>]</dt>
 <dd>If a file argument is a downloadable file (either a complete URL, a &#64;file for
-downloading from the GMT Site Cache, or &#64;earth_relief_*.grd) we will try
+downloading from the GMT data server, or &#64;earth_relief_xxy) we will try
 to download the file if it is not found in your local data or cache dirs.
 By default [<strong>-Gl</strong>] we download to the current directory. Append <strong>c</strong> to place
 in the user cache directory or <strong>u</strong> user data directory instead.</dd>
@@ -281,33 +281,22 @@ any module-specific option (but not the GMT common options), then exits.</dd>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p><strong>Note</strong>: Below are some examples of valid syntax for this module.
-The examples that use remote files (file names starting with <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>)
-can be cut and pasted into your terminal for testing.
-Other commands requiring input files are just dummy examples of the types
-of uses that are common but cannot be run verbatim as written.</p>
-<p>To see the path to the file myjunk.txt, use</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt which myjunk.txt
+<p>To see the path to the file myjunk.txt, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt which myjunk.txt
 </pre></div>
 </div>
-</div></blockquote>
-<p>To download the 10 arc-minute global relief file from the GMT data site, use</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt which -Gu @earth_relief_10m.grd
+<p>To download the 10 arc-minute global relief file from the GMT data server, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt which -Gu @earth_relief_10m
 </pre></div>
 </div>
-</div></blockquote>
 <p>which will print the path (after downloading if not already present).  The file will
-be placed in the user’s GMT_USER_DIR.  To obtain a GMT example or test file from the
-GMT cache site, try</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt which -Gc @hotspots.txt
+be placed in the user’s GMT_USERDIR.  To obtain a GMT example or test file from the
+GMT data server, try:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt which -Gc @hotspots.txt
 </pre></div>
 </div>
-</div></blockquote>
 <p>which will print the path (after downloading if not already present).  The file will
-be placed in the user’s GMT_CACHE_DIR directory.</p>
+be placed in the user’s GMT_CACHEDIR directory.</p>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
@@ -338,7 +327,7 @@ be placed in the user’s GMT_CACHE_DIR directory.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 24, 2019.
+        Last updated on Nov 25, 2019.
       </span>
 
     </p>
