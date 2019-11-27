@@ -249,11 +249,11 @@ a 2-char justification code that refers to the (invisible) map domain rectangle,
 (inches, cm, etc.).  All but <strong>-Dx</strong> requires both <strong>-R</strong> and <strong>-J</strong> to be specified.
 Use <strong>+w</strong><em>width</em> to set the width of the GMT logo in plot coordinates
 (inches, cm, etc.).
-By default, the anchor point on the scale is assumed to be the bottom left corner (BL), but this
+By default, the anchor point on the GMT logo is assumed to be the bottom left corner (BL), but this
 can be changed by appending <strong>+j</strong> followed by a 2-char justification code <em>justify</em> (see <a class="reference internal" href="text.html"><span class="doc">text</span></a>).
 Note: If <strong>-Dj</strong> is used then <em>justify</em> defaults to the same as <em>refpoint</em>,
 if <strong>-DJ</strong> is used then <em>justify</em> defaults to the mirror opposite of <em>refpoint</em>.
-Add <strong>+o</strong> to offset the color scale by <em>dx</em>/<em>dy</em> away from the <em>refpoint</em> point in
+Add <strong>+o</strong> to offset the GMT logo by <em>dx</em>/<em>dy</em> away from the <em>refpoint</em> point in
 the direction implied by <em>justify</em> (or the direction implied by <strong>-Dj</strong> or <strong>-DJ</strong>).</dd>
 </dl>
 <dl class="docutils" id="f">
@@ -277,6 +277,7 @@ indicates the shift relative to the foreground frame
 <dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Specify the region of interest.  </dd>
 </dl>
+<p>For perspective view <strong>-p</strong>, optionally append /<em>zmin</em>/<em>zmax</em>. <a class="reference internal" href="gmt.html#rz-full"><span class="std std-ref">(more …)</span></a>  </p>
 <dl class="docutils" id="s">
 <dt><strong>-S</strong>[<strong>l</strong>|<strong>n</strong>|<strong>u</strong>]</dt>
 <dd>Control what is written beneath the map portion of the logo.
@@ -284,7 +285,6 @@ Append <strong>l</strong> (or skip <strong>-S</strong> entirely) to plot the tex
 beneath the logo.  Append <strong>n</strong> to skip the label placement, and append
 <strong>u</strong> to place the URL to the GMT site instead [plot the label].</dd>
 </dl>
-<p>For perspective view <strong>-p</strong>, optionally append /<em>zmin</em>/<em>zmax</em>. <a class="reference internal" href="gmt.html#rz-full"><span class="std std-ref">(more …)</span></a>  </p>
 <dl class="docutils" id="u">
 <dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>] <a class="reference internal" href="gmt.html#u-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Draw GMT time stamp logo on plot.</dd>
@@ -333,24 +333,15 @@ They are not available when using GMT modern mode.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p><strong>Note</strong>: Below are some examples of valid syntax for this module.
-The examples that use remote files (file names starting with <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>)
-can be cut and pasted into your terminal for testing.
-Other commands requiring input files are just dummy examples of the types
-of uses that are common but cannot be run verbatim as written.</p>
-<p>To plot the GMT logo of a 2 inch width as a stand-alone plot, use</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt logo -P -Dx0/0+w2i &gt; logo.ps
+<p>To plot the GMT logo of a 2 inch width as a stand-alone plot, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt logo -P &gt; logo.ps
 </pre></div>
 </div>
-</div></blockquote>
 <p>To append a GMT logo overlay in the upper right corner of the current map, but
-scaled up to be 3 inches wide and offset by 0.1 inches from the border, try</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt logo -O -K -R -J -DjTR+o0.1i/0.1i+w3i &gt;&gt; bigmap.ps
+scaled up to be 3 inches wide and offset by 0.1 inches from the border, try:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt logo -O -K -R -J -DjTR+o0.1i/0.1i+w3i &gt;&gt; bigmap.ps
 </pre></div>
 </div>
-</div></blockquote>
 </div>
 <div class="section" id="notes">
 <h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
@@ -387,7 +378,7 @@ custom symbols <strong>QR</strong> or <strong>QR_transparent</strong> in <a clas
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 26, 2019.
+        Last updated on Nov 27, 2019.
       </span>
 
     </p>
