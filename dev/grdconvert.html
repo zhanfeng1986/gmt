@@ -230,7 +230,7 @@ be written and to specify scaling, translation, and NaN-value.</p>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
-<dt><em>ingrdfile</em> [=id[<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][<strong>+n</strong><em>invalid</em>]]</dt>
+<dt><em>ingrdfile</em>[=id[<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][<strong>+n</strong><em>invalid</em>]]</dt>
 <dd>The grid file to be read. Append format =<em>id</em> code if not a
 standard COARDS-compliant netCDF grid file. If =<em>id</em> is set (see
 below), you may optionally append any of <strong>+s</strong><em>scale</em>, <strong>+o</strong><em>offset</em>,
@@ -246,7 +246,7 @@ automatically when the file format is not one of those that GMT
 recognize. However, sometimes the guessing may fail, so adding
 <em>id=gd</em> forces a read via GDAL.
 See Section <a class="reference internal" href="cookbook/features.html#grid-file-format"><span class="std std-ref">Grid file format specifications</span></a> of the GMT Technical Reference and Cookbook for more information.</dd>
-<dt><strong>-G</strong><em>outgrdfile</em> [=id[<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][<strong>+n</strong><em>invalid</em>]][<em>:driver</em>[/<em>datatype</em>]]]</dt>
+<dt><strong>-G</strong><em>outgrdfile</em>[=id[<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][<strong>+n</strong><em>invalid</em>]][<em>:driver</em>[/<em>datatype</em>]]]</dt>
 <dd><p class="first">The grid file to be written. Append format =<em>id</em> code if not a
 standard COARDS-compliant netCDF grid file. If =<em>id</em> is set (see
 below), you may optionally append  any of <strong>+s</strong><em>scale</em>,
@@ -532,7 +532,7 @@ image.nc, assuming the range in image.nc is 0-1 and we need 0-255, run</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 26, 2019.
+        Last updated on Nov 27, 2019.
       </span>
 
     </p>

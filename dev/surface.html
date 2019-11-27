@@ -218,6 +218,7 @@
 <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em>
 [ <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong><em>aspect_ratio</em>|<strong>m</strong> ]
 [ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>convergence_limit</em>[%] ]
+[ <a class="reference internal" href="#j"><span> <strong>-J</strong></span></a></strong><em>parameters</em> ]
 [ <a class="reference internal" href="#l"><span> <strong>-L</strong></span></a></strong><strong>l</strong><em>lower</em> ] [ <strong>-Lu</strong><em>upper</em> ]
 [ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong><em>max_radius</em>[<strong>u</strong>] ]
 [ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong><em>max_iterations</em> ]
@@ -324,6 +325,12 @@ from a best-fit (least-squares) plane.].
 This is the final convergence limit at the desired grid spacing; for
 intermediate (coarser) grids the effective convergence limit is divided
 by the grid spacing multiplier.</dd>
+</dl>
+<p id="j"><strong>-J</strong><em>parameters</em></p>
+<dl class="docutils">
+<dt><strong>-J</strong><em>parameters</em> <a class="reference internal" href="gmt.html#j-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select map projection. Select the data map projection. This projection is only used to add a referencing info
+to the grid formats that support it. E.g. netCDF, GeoTIFF, and others supported by GDAL.</dd>
 </dl>
 <dl class="docutils" id="l">
 <dt><strong>-Ll</strong><em>lower</em> and <strong>-Lu</strong><em>upper</em></dt>
@@ -572,7 +579,7 @@ splines in tension, <em>Geophysics</em>, 55, 293-305.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 26, 2019.
+        Last updated on Nov 27, 2019.
       </span>
 
     </p>
