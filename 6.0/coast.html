@@ -339,11 +339,12 @@ river-lakes, repeating the <strong>-C</strong> option as needed.</dd>
 <dt><strong>-D</strong><em>resolution</em>[<strong>+f</strong>]</dt>
 <dd>Selects the resolution of the data set to use ((<strong>f</strong>)ull,
 (<strong>h</strong>)igh, (<strong>i</strong>)ntermediate, (<strong>l</strong>)ow, and (<strong>c</strong>)rude). The
-resolution drops off by 80% between data sets [Default is <strong>l</strong>].
+resolution drops off by 80% between data sets.
 Append <strong>+f</strong> to automatically select a lower resolution should the one
 requested not be available [abort if not found].
 Alternatively, choose (<strong>a</strong>)uto to automatically select the best
-resolution given the chosen map scale.</dd>
+resolution given the chosen map scale. [Default is <strong>l</strong> in classic mode
+and <strong>a</strong> in modern mode].</dd>
 </dl>
 <dl class="docutils" id="e">
 <dt><strong>-E</strong><em>code1,code2,…</em>[<strong>+l</strong>|<strong>L</strong>][<strong>+g</strong><em>fill</em>][<strong>+p</strong><em>pen</em>]</dt>
@@ -603,39 +604,31 @@ scale 0.1 inch/degree, use:</p>
 </pre></div>
 </div>
 <p>To plot Iceland using the lava pattern (# 28) at 100 dots per inch, on a
-Mercator map at scale 1 cm/degree, run</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -RIS+r1 -Jm1c -B -Wthin -Gp28+r100 -pdf iceland
+Mercator map at scale 1 cm/degree, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -RIS+r1 -Jm1c -B -Wthin -Gp28+r100 -pdf iceland
 </pre></div>
 </div>
-</div></blockquote>
 <p>To initiate a clip path for Africa so that the subsequent colorimage of
 gridded topography is only seen over land, using a Mercator map at scale
-0.1 inch/degree, use</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin
+0.1 inch/degree, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin
   gmt coast -R-30/30/-40/40 -Jm0.1i -B -Gc
   gmt grdimage @earth_relief_05m
   gmt coast -Q
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
 <p>To plot Great Britain, Italy, and France in blue with a red outline and
 Spain, Portugal and Greece in yellow (no outline), and pick up the plot
-domain form the extents of these countries, use</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -JM6i -Baf -EGB,IT,FR+gblue+p0.25p,red -EES,PT,GR+gyellow -pdf map
+domain form the extents of these countries, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -JM6i -Baf -EGB,IT,FR+gblue+p0.25p,red -EES,PT,GR+gyellow -pdf map
 </pre></div>
 </div>
-</div></blockquote>
 <p>To extract a high-resolution coastline data table for Iceland to be used
-in your analysis, try</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -RIS -Dh -W -M &gt; iceland.txt
+in your analysis, try:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -RIS -Dh -W -M &gt; iceland.txt
 </pre></div>
 </div>
-</div></blockquote>
 <p><strong>coast</strong> will first look for coastline files in directory
 <strong>$GMT_SHAREDIR</strong>/coast If the desired file is not found, it will look
 for the file <strong>$GMT_SHAREDIR</strong>/coastline.conf. This file may contain
@@ -643,8 +636,8 @@ any number of records that each holds the full pathname of an
 alternative directory. Comment lines (#) and blank lines are allowed.
 The desired file is then sought for in the alternate directories.</p>
 </div>
-<div class="section" id="id1">
-<h2><a class="reference external" href="#toc11">Gshhs Information</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="gshhg-information">
+<h2>GSHHG Information<a class="headerlink" href="#gshhg-information" title="Permalink to this headline">¶</a></h2>
 <p>The coastline database is GSHHG (formerly GSHHS) which is compiled from
 three sources:  World Vector Shorelines (WVS), CIA World Data Bank II
 (WDBII), and Atlas of the Cryosphere (AC, for Antarctica only).
@@ -663,8 +656,7 @@ also limit the highest hierarchical level of polygons to be included (4
 is the maximum). The 4 lower-resolution databases were derived from the
 full resolution database using the Douglas-Peucker line-simplification
 algorithm. The classification of rivers and borders follow that of the
-WDBII. See the GMT Cookbook and Technical Reference Appendix K for
-further details.</p>
+WDBII. See <a class="reference internal" href="datasets/gshhg.html"><span class="doc">The Global Self-consistent, Hierarchical, High-resolution Geography Database (GSHHG)</span></a> for further details.</p>
 </div>
 <div class="section" id="bugs">
 <h2>Bugs<a class="headerlink" href="#bugs" title="Permalink to this headline">¶</a></h2>
@@ -691,8 +683,8 @@ permanent shelf ice. In addition to these time-varying ice-ocean
 boundaries, there are also shelf ice grounding lines where ice goes from
 floating on the sea to sitting on land, and lines delimiting areas of
 rock outcrop. For consistency’s sake, we have used the World Vector
-Shoreline throughout the world, as described in the GMT
-Cookbook Appendix K. Users who need specific boundaries in Antarctica
+Shoreline throughout the world, as described in <a class="reference internal" href="datasets/gshhg.html"><span class="doc">The Global Self-consistent, Hierarchical, High-resolution Geography Database (GSHHG)</span></a>.
+Users who need specific boundaries in Antarctica
 should get the Antarctic Digital Database, prepared by the British
 Antarctic Survey, Scott Polar Research Institute, World Conservation
 Monitoring Centre, under the auspices of the Scientific Committee on
@@ -733,7 +725,7 @@ Institute, Lensfield Road, Cambridge CB2 1ER, United Kingdom.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 27, 2019.
+        Last updated on Nov 28, 2019.
       </span>
 
     </p>
