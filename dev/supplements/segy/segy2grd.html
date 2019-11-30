@@ -270,7 +270,8 @@ AN (Antarctica), AS (Asia), EU (Europe), OC (Oceania),
 NA (North America), or SA (South America).  Use <strong>+r</strong> to modify the bounding box coordinates from the polygon(s):
 Append <em>inc</em>, <em>xinc</em>/<em>yinc</em>, or <em>winc</em>/<em>einc</em>/<em>sinc</em>/<em>ninc</em> to adjust the
 region to be a multiple of these steps [no adjustment]. Alternatively, use <strong>+R</strong> to extend the region
-outward by adding these increments instead [no extension].
+outward by adding these increments instead, or <strong>+e</strong> which is like <strong>+r</strong> but
+it ensures that the bounding box extends by at least 0.25 times the increment [no extension].
 Alternatively for grid creation, give <strong>R</strong><em>code</em><em>lon</em>/<em>lat</em>/<em>nx</em>/<em>ny</em>, where
 <em>code</em> is a 2-character combination of L, C, R (for left, center, or right)
 and T, M, B for top, middle, or bottom. e.g., BL for lower left.  This
@@ -418,7 +419,7 @@ individual samples will be averaged in bins</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 28, 2019.
+        Last updated on Nov 30, 2019.
       </span>
 
     </p>

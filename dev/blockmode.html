@@ -431,32 +431,21 @@ specify more decimals using the <a class="reference internal" href="gmt.conf.htm
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p><strong>Note</strong>: Below are some examples of valid syntax for this module.
-The examples that use remote files (file names starting with <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>)
-can be cut and pasted into your terminal for testing.
-Other commands requiring input files are just dummy examples of the types
-of uses that are common but cannot be run verbatim as written.</p>
 <p>To find 5 by 5 minute block mode from the ASCII data in ship_15.txt
-and output a binary table with double precision triplets, run</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt blockmedian @ship_15.txt -R245/255/20/30 -I5m -bo3d &gt; ship_5x5.b
+and output a binary table with double precision triplets, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt blockmedian @ship_15.txt -R245/255/20/30 -I5m -bo3d &gt; ship_5x5.b
 </pre></div>
 </div>
-</div></blockquote>
 <p>To determine the most frequently occurring values per 2x2 block using histogram binning, with
-data representing integer counts, try</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt blockmode @ship_15.txt -R245/255/20/30 -I2  -r -C -D
+data representing integer counts, try:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt blockmode @ship_15.txt -R245/255/20/30 -I2  -r -C -D
 </pre></div>
 </div>
-</div></blockquote>
 <p>To determine the mode and L1 scale (MAD) on the mode per 10 minute bin and save these to two separate grids
-called field_z.nc and field_s.nc, run</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt blockmode @ship_15.txt -I10m -R-115/-105/20/30 -E -Gfield_%s.nc -Az,s
+called field_z.nc and field_s.nc, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt blockmode @ship_15.txt -I10m -R-115/-105/20/30 -E -Gfield_%s.nc -Az,s
 </pre></div>
 </div>
-</div></blockquote>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
@@ -494,7 +483,7 @@ called field_z.nc and field_s.nc, run</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 28, 2019.
+        Last updated on Nov 30, 2019.
       </span>
 
     </p>

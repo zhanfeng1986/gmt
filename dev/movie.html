@@ -502,7 +502,7 @@ We recommend you make a very short (i.e., <strong>-T</strong>) and small (i.e., 
 long to see the result.  Once things are working you can beef up number of frames and movie quality.</p>
 </div>
 <div class="section" id="color-table-usage">
-<h2>Color table usage<a class="headerlink" href="#color-table-usage" title="Permalink to this headline">¶</a></h2>
+<h2>Color Table Usage<a class="headerlink" href="#color-table-usage" title="Permalink to this headline">¶</a></h2>
 <p>Because <strong>movie</strong> launches individual frame plots as separate sessions running in parallel, we cannot
 utilize the current CPT (i.e., the last CPT created directly by <a class="reference internal" href="makecpt.html"><span class="doc">makecpt</span></a> or <a class="reference internal" href="grd2cpt.html"><span class="doc">grd2cpt</span></a>, or
 indirectly by <a class="reference internal" href="grdimage.html"><span class="doc">grdimage</span></a> or  <a class="reference internal" href="grdview.html"><span class="doc">grdview</span></a>).  Instead, you must create CPTs using explicit
@@ -551,11 +551,24 @@ all available cores.</p>
 <div class="section" id="other-movie-formats">
 <h2>Other Movie Formats<a class="headerlink" href="#other-movie-formats" title="Permalink to this headline">¶</a></h2>
 <p>As configured, <strong>movie</strong> only offers the MP4 and WebM formats for movies.  The conversion is performed by the
-tool ffmpeg (<a class="reference external" href="https://www.ffmpeg.org">https://www.ffmpeg.org</a>), which has more codecs and processing options than there are children in China.
+tool FFmpeg (<a class="reference external" href="https://www.ffmpeg.org">https://www.ffmpeg.org</a>), which has more codecs and processing options than there are children in China.
 If you wish to run ffmpeg with other options, select mp4 and run <strong>movie</strong> with long verbose (<strong>-Vl</strong>).
 At the end it will print the ffmpeg command used.  You can copy, paste, and modify this command to
 select other codecs, bit-rates, and arguments.  You can also use the PNG sequence as input to tools such
 as QuickTime Pro, iMovie, MovieMaker, and similar commercial programs to make a movie that way.</p>
+</div>
+<div class="section" id="manipulating-multiple-movies">
+<h2>Manipulating Multiple Movies<a class="headerlink" href="#manipulating-multiple-movies" title="Permalink to this headline">¶</a></h2>
+<p>If you are making a series of similar movies, you can use ffmpeg to paste and stitch them into a single movie.
+Assume we have four movies called movie_1.mp4, movie_2.mp4, movie_3.mp4, and movie_4.mp4, and you wish to combine
+them into a 2x2 panel showing the four movies simultaneously.  You would first combine movies (1,2) and (3,4)
+horizontally, then combine the two resulting strips vertically:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ffmpeg -i movie_1.mp4 -i movie_2.mp4 -filter_complex <span class="nv">hstack</span><span class="o">=</span><span class="nv">inputs</span><span class="o">=</span><span class="m">2</span> top.mp4
+ffmpeg -i movie_3.mp4 -i movie_4.mp4 -filter_complex <span class="nv">hstack</span><span class="o">=</span><span class="nv">inputs</span><span class="o">=</span><span class="m">2</span> bottom.mp4
+ffmpeg -i top.mp4 -i bottom.mp4 -filter_complex <span class="nv">vstack</span><span class="o">=</span><span class="nv">inputs</span><span class="o">=</span><span class="m">2</span> four_movies.mp4
+</pre></div>
+</div>
+<p>For more information on such manipulations, see the FFmpeg documentation.</p>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
@@ -588,7 +601,7 @@ as QuickTime Pro, iMovie, MovieMaker, and similar commercial programs to make a 
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 28, 2019.
+        Last updated on Nov 30, 2019.
       </span>
 
     </p>

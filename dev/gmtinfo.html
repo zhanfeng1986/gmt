@@ -218,7 +218,7 @@
 [ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong>[<em>dx</em>[/<em>dy</em>]] ]
 [ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong><strong>L</strong>|<strong>l</strong>|<strong>H</strong>|<strong>h</strong>[<em>col</em>] ]
 [ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong>[<strong>i</strong>|<strong>d</strong>|<strong>t</strong>] ]
-[ <a class="reference internal" href="#i"><span> <strong>-I</strong></span></a></strong>[<strong>b</strong>|<strong>e</strong>|<strong>f</strong>|<strong>p</strong>|<strong>s</strong>]<em>dx</em>[/<em>dy</em>[/<em>dz</em>…] ]
+[ <a class="reference internal" href="#i"><span> <strong>-I</strong></span></a></strong>[<strong>b</strong>|<strong>e</strong>|<strong>f</strong>|<strong>p</strong>|<strong>s</strong>]<em>dx</em>[/<em>dy</em>[/<em>dz</em>…][<strong>+e</strong>|<strong>r</strong>|<strong>R</strong>] ]
 [ <a class="reference internal" href="#l"><span> <strong>-L</strong></span></a></strong> ]
 [ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong>[<strong>x</strong>][<strong>y</strong>] ]
 [ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>dz</em>[<strong>+c</strong><em>col</em>] ]
@@ -301,7 +301,7 @@ table organization and thus resets <em>seg_number, start_rec, stop_rec</em> at t
 start of each new table.</dd>
 </dl>
 <dl class="docutils" id="i">
-<dt><strong>-I</strong>[<strong>b</strong>|<strong>e</strong>|<strong>f</strong>|<strong>p</strong>|<strong>s</strong>]<em>dx</em>[/<em>dy</em>[/<em>dz</em>…]</dt>
+<dt><strong>-I</strong>[<strong>b</strong>|<strong>e</strong>|<strong>f</strong>|<strong>p</strong>|<strong>s</strong>]<em>dx</em>[/<em>dy</em>[/<em>dz</em>…][<strong>+e</strong>|<strong>r</strong>|<strong>R</strong>]</dt>
 <dd>Report the min/max of the first <em>n</em> columns to the nearest multiple
 of the provided increments (separate the <em>n</em> increments by slashes),
 and output results in the form <strong>-R</strong><em>w/e/s/n</em> (unless <strong>-C</strong> is
@@ -319,7 +319,12 @@ give grid dimensions for fastest results in programs like surface.
 Use <strong>-Ib</strong> to write the bounding box of the data table or segments (see <strong>-A</strong>)
 as a closed polygon segment. Note: for oblique projections you should
 use the <strong>-Ap</strong> option in <a class="reference internal" href="plot.html"><span class="doc">plot</span></a> to draw the box properly.
-If <strong>-Ie</strong> is given then the exact min/max of the input is given in the <strong>-R</strong> string.</dd>
+If <strong>-Ie</strong> is given then the exact min/max of the input is given in the <strong>-R</strong> string.
+Append <strong>+r</strong> to modify the min/max of the first <em>n</em> columns further:
+Append <em>inc</em>, <em>xinc</em>/<em>yinc</em>, or <em>winc</em>/<em>einc</em>/<em>sinc</em>/<em>ninc</em> to adjust the
+region to be a multiple of these steps [no adjustment]. Alternatively, use <strong>+R</strong> to extend the region
+outward by adding these increments instead, or <strong>+e</strong> which is like <strong>+r</strong> but
+it ensures that the bounding box extends by at least 0.25 times the increment [no extension].</dd>
 </dl>
 <dl class="docutils" id="l">
 <dt><strong>-L</strong></dt>
@@ -497,7 +502,7 @@ the current setting of <a class="reference internal" href="gmt.conf.html#time-un
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 28, 2019.
+        Last updated on Nov 30, 2019.
       </span>
 
     </p>

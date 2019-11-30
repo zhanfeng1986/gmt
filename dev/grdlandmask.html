@@ -283,7 +283,8 @@ AN (Antarctica), AS (Asia), EU (Europe), OC (Oceania),
 NA (North America), or SA (South America).  Use <strong>+r</strong> to modify the bounding box coordinates from the polygon(s):
 Append <em>inc</em>, <em>xinc</em>/<em>yinc</em>, or <em>winc</em>/<em>einc</em>/<em>sinc</em>/<em>ninc</em> to adjust the
 region to be a multiple of these steps [no adjustment]. Alternatively, use <strong>+R</strong> to extend the region
-outward by adding these increments instead [no extension].
+outward by adding these increments instead, or <strong>+e</strong> which is like <strong>+r</strong> but
+it ensures that the bounding box extends by at least 0.25 times the increment [no extension].
 Alternatively for grid creation, give <strong>R</strong><em>code</em><em>lon</em>/<em>lat</em>/<em>nx</em>/<em>ny</em>, where
 <em>code</em> is a 2-character combination of L, C, R (for left, center, or right)
 and T, M, B for top, middle, or bottom. e.g., BL for lower left.  This
@@ -434,8 +435,8 @@ nodes based on the low resolution data:</p>
 </div>
 </div></blockquote>
 </div>
-<div class="section" id="id1">
-<h2><a class="reference external" href="#toc11">Gshhs Information</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="gshhg-information">
+<h2>GSHHG Information<a class="headerlink" href="#gshhg-information" title="Permalink to this headline">¶</a></h2>
 <p>The coastline database is GSHHG (formerly GSHHS) which is compiled from
 three sources:  World Vector Shorelines (WVS), CIA World Data Bank II
 (WDBII), and Atlas of the Cryosphere (AC, for Antarctica only).
@@ -454,8 +455,7 @@ also limit the highest hierarchical level of polygons to be included (4
 is the maximum). The 4 lower-resolution databases were derived from the
 full resolution database using the Douglas-Peucker line-simplification
 algorithm. The classification of rivers and borders follow that of the
-WDBII. See the GMT Cookbook and Technical Reference Appendix K for
-further details.</p>
+WDBII. See <a class="reference internal" href="datasets/gshhg.html"><span class="doc">The Global Self-consistent, Hierarchical, High-resolution Geography Database (GSHHG)</span></a> for further details.</p>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
@@ -488,7 +488,7 @@ further details.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 28, 2019.
+        Last updated on Nov 30, 2019.
       </span>
 
     </p>

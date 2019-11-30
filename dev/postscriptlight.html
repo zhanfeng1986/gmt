@@ -128,13 +128,13 @@
 <li class="toctree-l2"><a class="reference internal" href="#justification">Justification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#initialization">Initialization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#memory-output">Memory Output</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">Changing Settings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">Plotting Lines And Polygons</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">Plotting Symbols</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">Plotting Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#changing-settings">Changing Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plotting-lines-and-polygons">Plotting Lines And Polygons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plotting-symbols">Plotting Symbols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plotting-images">Plotting Images</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#plotting-text">Plotting Text</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#clipping">Clipping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">Miscellaneous Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#miscellaneous-functions">Miscellaneous Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#authors">Authors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#bugs">Bugs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#see-also">See Also</a></li>
@@ -475,8 +475,8 @@ ensure that the object retrieved is duplicated or written or otherwise
 processed before the next call to <strong>PSL_beginplot</strong> or <strong>PSL_endsession</strong>
 either of which will destroy the memory pointed to.</div></blockquote>
 </div>
-<div class="section" id="id1">
-<h2><a class="reference external" href="#toc6">Changing Settings</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="changing-settings">
+<h2>Changing Settings<a class="headerlink" href="#changing-settings" title="Permalink to this headline">¶</a></h2>
 <p>The following functions are used to change various PSL settings and
 affect the current state of parameters such as line and fill attributes.</p>
 <p><strong>long PSL_define_pen</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>char</strong>
@@ -668,8 +668,8 @@ the equivalent of <em>value</em> user units.</div></blockquote>
 the value that corresponds to the font size (in points) given by
 <em>fontsize</em>.</div></blockquote>
 </div>
-<div class="section" id="id2">
-<h2><a class="reference external" href="#toc7">Plotting Lines And Polygons</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="plotting-lines-and-polygons">
+<h2>Plotting Lines And Polygons<a class="headerlink" href="#plotting-lines-and-polygons" title="Permalink to this headline">¶</a></h2>
 <p>Here are functions used to plot lines and closed polygons, which may
 optionally be filled. The attributes used for drawing and filling are
 set prior to calling these functions; see CHANGING SETTINGS above.</p>
@@ -729,8 +729,8 @@ attributes.</div></blockquote>
 <div>Draws a line segment between the two points (plot coordinates) using
 the current pen attributes.</div></blockquote>
 </div>
-<div class="section" id="id3">
-<h2><a class="reference external" href="#toc8">Plotting Symbols</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="plotting-symbols">
+<h2>Plotting Symbols<a class="headerlink" href="#plotting-symbols" title="Permalink to this headline">¶</a></h2>
 <p>Here are functions used to plot various geometric symbols or constructs.</p>
 <p><strong>long PSL_plotaxis</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>double</strong>
 <em>tickval</em>, <strong>char</strong> <em>*label</em>, <strong>double</strong> <em>fontsize</em>, <strong>long</strong> <em>side</em>)</p>
@@ -799,8 +799,8 @@ what kind of vector head will be plotted at the two ends (if selected).
 Finally, <em>trim1</em> and <em>trim2</em> adjust the start and end location of
 the vector.</div></blockquote>
 </div>
-<div class="section" id="id4">
-<h2><a class="reference external" href="#toc9">Plotting Images</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="plotting-images">
+<h2>Plotting Images<a class="headerlink" href="#plotting-images" title="Permalink to this headline">¶</a></h2>
 <p>Here are functions used to read and plot various images.</p>
 <p><strong>long PSL_plotbitimage</strong> (<strong>struct PSL_CTRL</strong> <em>*P</em>, <strong>double</strong> <em>x</em>,
 <strong>double</strong> <em>y</em>, <strong>double</strong> <em>xsize</em>, <strong>double</strong> <em>ysize</em>, <strong>int</strong>
@@ -1058,8 +1058,8 @@ will restore <em>n</em> levels of polygon clipping, PSL_ALL_CLIP_TXT
 will undo all levels of text-based clipping, and PSL_ALL_CLIP_POL
 will undo all levels of polygon-based clipping.</div></blockquote>
 </div>
-<div class="section" id="id5">
-<h2><a class="reference external" href="#toc12">Miscellaneous Functions</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="miscellaneous-functions">
+<h2>Miscellaneous Functions<a class="headerlink" href="#miscellaneous-functions" title="Permalink to this headline">¶</a></h2>
 <p>Here are functions used to issue comments or to pass custom PostScript
 commands directly to the output PostScript file. In C these functions
 are declared as macros and they can accept a variable number of
@@ -1123,7 +1123,7 @@ edition, Addison-Wesley, (ISBN 0-201-18127-4).</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 28, 2019.
+        Last updated on Nov 30, 2019.
       </span>
 
     </p>
