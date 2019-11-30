@@ -218,6 +218,7 @@
 <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em>
 [ <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong><em>aspect_ratio</em>|<strong>m</strong> ]
 [ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>convergence_limit</em>[%] ]
+[ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>breakline_file</em>]
 [ <a class="reference internal" href="#l"><span> <strong>-L</strong></span></a></strong><strong>l</strong><em>lower</em> ] [ <strong>-Lu</strong><em>upper</em> ]
 [ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong><em>max_radius</em>[<strong>u</strong>] ]
 [ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong><em>max_iterations</em> ]
@@ -324,6 +325,13 @@ from a best-fit (least-squares) plane.].
 This is the final convergence limit at the desired grid spacing; for
 intermediate (coarser) grids the effective convergence limit is divided
 by the grid spacing multiplier.</dd>
+</dl>
+<dl class="docutils" id="d">
+<dt><strong>-D</strong><em>breakline</em></dt>
+<dd>Use xyz data in the &lt;breakline&gt; file as a ‘soft breakline’. A ‘soft breakline’
+is a line whose vertices will be used to constrain the nearest grid nodes without
+any further interpolation. A coastline or a lake shore are good examples of
+‘soft breaklines’. Multi-segments files are accepted.</dd>
 </dl>
 <dl class="docutils" id="l">
 <dt><strong>-Ll</strong><em>lower</em> and <strong>-Lu</strong><em>upper</em></dt>
@@ -572,7 +580,7 @@ splines in tension, <em>Geophysics</em>, 55, 293-305.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 28, 2019.
+        Last updated on Nov 30, 2019.
       </span>
 
     </p>

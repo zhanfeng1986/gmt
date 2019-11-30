@@ -309,7 +309,7 @@ indicates the shift relative to the foreground frame
 For 1-bit images you can specify an alternate <em>color</em> for the background (<strong>+b</strong>)
 or the foreground (<strong>+f</strong>) pixels, or give no color to make those pixels
 transparent.  Alternatively, for color images you can select a single <em>color</em>
-that should be made transparent instead.</dd>
+that should be made transparent instead  (<strong>+t</strong>).</dd>
 </dl>
 <dl class="docutils" id="i">
 <dt><strong>-I</strong></dt>
@@ -399,10 +399,10 @@ aspect ratio, use:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt image tiger.eps -Dx2i/1i+jTR+w3i -pdf image
 </pre></div>
 </div>
-<p>To replicate the 1-bit raster image template 1_bit.ras, colorize it
-(brown background and red foreground), and setting each of 5 by 5 tiles
-to be 1 cm wide, use:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt image 1_bit.ras -Gbrown+b -Gred+f -Dx0/0+w1c+n5 -pdf image
+<p>To replicate the 1-bit remote raster image vader1.png, colorize it
+(dark gray background and yellow foreground), and setting each of 6 by 12 tiles
+to be 2.5 cm wide, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt image @vader1.png -Gdarkgray+b -Gyellow+f -Dx0/0+w2.5c+n6/12 -ps image
 </pre></div>
 </div>
 </div>
@@ -439,7 +439,7 @@ to be 1 cm wide, use:</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 28, 2019.
+        Last updated on Nov 30, 2019.
       </span>
 
     </p>
