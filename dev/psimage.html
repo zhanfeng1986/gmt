@@ -311,7 +311,7 @@ indicates the shift relative to the foreground frame
 For 1-bit images you can specify an alternate <em>color</em> for the background (<strong>+b</strong>)
 or the foreground (<strong>+f</strong>) pixels, or give no color to make those pixels
 transparent.  Alternatively, for color images you can select a single <em>color</em>
-that should be made transparent instead.</dd>
+that should be made transparent instead  (<strong>+t</strong>).</dd>
 </dl>
 <dl class="docutils" id="i">
 <dt><strong>-I</strong></dt>
@@ -390,35 +390,32 @@ They are not available when using GMT modern mode.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p><strong>Note</strong>: Below are some examples of valid syntax for this module.
-The examples that use remote files (file names starting with <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>)
-can be cut and pasted into your terminal for testing.
-Other commands requiring input files are just dummy examples of the types
-of uses that are common but cannot be run verbatim as written.</p>
-<p>To plot the image logo.jpg, scaling it be 1 inch wide (height is scaled
-accordingly), and outline with a thin, blue pen, use</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psimage logo.jpg -Dx0/0+w1i -F+pthin,blue &gt; image.ps
+<p>To plot the remote image needle.jpg, scaling it be 7 cm wide (height is scaled
+accordingly), use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psimage @needle.jpg -Dx0/0+w7c &gt; image.ps
 </pre></div>
 </div>
-</div></blockquote>
-<p>To include an Encapsulated PostScript file tiger.eps with its upper
+<p>To plot the same file but reversing the bands, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psimage @needle.jpg+b2,1,0 -Dx0/0+w7c &gt; image.ps
+</pre></div>
+</div>
+<p>To only plot its red band as gray shade, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psimage @needle.jpg+b0 -Dx0/0+w7c &gt; image.ps
+</pre></div>
+</div>
+<p>To include an Encapsulated PostScript file gallo.eps with its upper
 right corner 2 inch to the right and 1 inch up from the current
 location, and have its width scaled to 3 inches, while keeping the
-aspect ratio, use</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psimage tiger.eps -Dx2i/1i+jTR+w3i &gt; image.ps
+aspect ratio, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psimage @gallo.eps -Dx2i/1i+jTR+w3i &gt; image.ps
 </pre></div>
 </div>
-</div></blockquote>
-<p>To replicate the 1-bit raster image template 1_bit.ras, colorize it
-(brown background and red foreground), and setting each of 5 by 5 tiles
-to be 1 cm wide, use</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psimage 1_bit.ras -Gbrown+b -Gred+f -Dx0/0+w1c+n5 &gt; image.ps
+<p>To replicate the 1-bit remote raster image vader1.png, colorize it
+(dark gray background and yellow foreground), and setting each of 6 by 12 tiles
+to be 2.5 cm wide, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt psimage @vader1.png -Gdarkgray+b -Gyellow+f -Dx0/0+w2.5c+n6/12 -P &gt; image.ps
 </pre></div>
 </div>
-</div></blockquote>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
@@ -452,7 +449,7 @@ to be 1 cm wide, use</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 30, 2019.
+        Last updated on Dec 01, 2019.
       </span>
 
     </p>
