@@ -218,7 +218,7 @@
 [ <a class="reference internal" href="#b"><span> <strong>-B</strong></span></a></strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> ]
 [ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>cpt</em> ]
 [ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong>[<strong>j</strong>|<strong>J</strong>]<em>dx</em>[/<em>dy</em>][<strong>+v</strong>[<em>pen</em>]] ]
-[ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong><strong>s</strong>|<strong>t</strong>[<strong>+o</strong>|<strong>O</strong><em>dt</em>][<strong>+r</strong><em>dt</em>][<strong>+p</strong><em>dt</em>][<strong>+d</strong><em>dt</em>][<strong>+f</strong><em>dt</em>] ]
+[ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong><strong>s</strong>|<strong>t</strong>[<strong>+o</strong>|<strong>O</strong><em>dt</em>][<strong>+r</strong><em>dt</em>][<strong>+p</strong><em>dt</em>][<strong>+d</strong><em>dt</em>][<strong>+f</strong><em>dt</em>][<strong>+l</strong><em>dt</em>] ]
 [ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong>[<strong>+a</strong><em>angle</em>][<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+r</strong>[<em>first</em>]|<strong>+z</strong>[<em>format</em>]] ]
 [ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>color</em> ]
 [ <a class="reference internal" href="#k"><span> <strong>-K</strong></span></a></strong> ]
@@ -308,7 +308,7 @@ a line from the original point to the shifted point; append a <em>pen</em>
 to change the attributes for this line.</dd>
 </dl>
 <dl class="docutils" id="e">
-<dt><strong>-Es</strong>|<strong>t</strong>[<strong>+o</strong>|<strong>O</strong><em>dt</em>][<strong>+r</strong><em>dt</em>][<strong>+p</strong><em>dt</em>][<strong>+d</strong><em>dt</em>][<strong>+f</strong><em>dt</em>]</dt>
+<dt><strong>-Es</strong>|<strong>t</strong>[<strong>+o</strong>|<strong>O</strong><em>dt</em>][<strong>+r</strong><em>dt</em>][<strong>+p</strong><em>dt</em>][<strong>+d</strong><em>dt</em>][<strong>+f</strong><em>dt</em>][<strong>+l</strong><em>dt</em>]</dt>
 <dd>Sets the time knots for the <strong>s</strong>ymbol or <strong>t</strong>ext time-functions.  Append
 <strong>+o</strong> to shift the event start and end times by a constant offset (basically shifting
 the event in time by <em>dt</em>; or use <strong>+O</strong> to only shift the start time, effectively shortening
@@ -316,7 +316,8 @@ the duration of the event), <strong>+r</strong> to indicate the
 duration of the rise phase, <strong>+p</strong> to set the duration of the plateau phase, <strong>+d</strong>
 to specify the duration of the decay phase, and <strong>+f</strong> to set the duration of the
 fade phase.  These are all optional [and default to zero], and can be set separately for symbols and texts.
-If neither <strong>s</strong> or <strong>t</strong> is given then we set the time knots for both features.</dd>
+If neither <strong>s</strong> or <strong>t</strong> is given then we set the time knots for both features. Note that <strong>+l</strong> is
+restricted to <em>-Et*</em> and specifies an alternative duration (visibility) of the text [same duration as symbol].</dd>
 </dl>
 <dl class="docutils" id="f">
 <dt><strong>-F</strong>[<strong>+a</strong><em>angle</em>][<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+r</strong>[<em>first</em>] | <strong>+z</strong>[<em>format</em>]]</dt>
@@ -526,7 +527,7 @@ gmt psevents -Rg -JG200/5/6i -Baf q.txt -SE- -Cq.cpt --TIME_UNIT<span class="o">
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Nov 30, 2019.
+        Last updated on Dec 01, 2019.
       </span>
 
     </p>
