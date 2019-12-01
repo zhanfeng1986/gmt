@@ -357,7 +357,7 @@ name, selecting a thick black pen and semi-transparent yellow fill,
 giving a title to the document, and prescribing a particular region
 limit, try</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">gmt2kml</span> <span class="n">mypolygons</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">Gfyellow</span><span class="nd">@50</span> <span class="o">-</span><span class="n">Fp</span> <span class="o">-</span><span class="n">T</span><span class="s2">&quot;My polygons&quot;</span> <span class="o">-</span><span class="n">R30</span><span class="o">/</span><span class="mi">90</span><span class="o">/-</span><span class="mi">20</span><span class="o">/</span><span class="mi">40</span> <span class="o">&gt;</span> <span class="n">mypolygons</span><span class="o">.</span><span class="n">kml</span>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">gmt2kml</span> <span class="n">mypolygons</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">Gfyellow</span><span class="o">@</span><span class="mi">50</span> <span class="o">-</span><span class="n">Fp</span> <span class="o">-</span><span class="n">T</span><span class="s2">&quot;My polygons&quot;</span> <span class="o">-</span><span class="n">R30</span><span class="o">/</span><span class="mi">90</span><span class="o">/-</span><span class="mi">20</span><span class="o">/</span><span class="mi">40</span> <span class="o">&gt;</span> <span class="n">mypolygons</span><span class="o">.</span><span class="n">kml</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -374,8 +374,8 @@ plot them in KML, using red lines at 75% transparency and red labels (no
 transparency), try</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmt</span> <span class="n">grdcontour</span> <span class="n">temp</span><span class="o">.</span><span class="n">nc</span> <span class="o">-</span><span class="n">Jx1id</span> <span class="o">-</span><span class="n">A10</span><span class="o">+</span><span class="n">tlabel</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">C10</span> <span class="o">-</span><span class="n">Dcontours</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">gmt</span> <span class="n">gmt2kml</span>    <span class="n">contours</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">Fl</span> <span class="o">-</span><span class="n">W1p</span><span class="p">,</span><span class="n">red</span><span class="nd">@75</span> <span class="o">-</span><span class="n">K</span> <span class="o">&gt;</span> <span class="n">contours</span><span class="o">.</span><span class="n">kml</span>
-<span class="n">gmt</span> <span class="n">gmt2kml</span>    <span class="o">-</span><span class="n">O</span> <span class="o">-</span><span class="n">N</span><span class="o">+</span> <span class="o">-</span><span class="n">Fs</span> <span class="o">-</span><span class="n">Sn2</span> <span class="o">-</span><span class="n">Gnred</span><span class="nd">@0</span> <span class="n">label</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">I</span><span class="o">-</span> <span class="o">&gt;&gt;</span> <span class="n">contours</span><span class="o">.</span><span class="n">kml</span>
+<span class="n">gmt</span> <span class="n">gmt2kml</span>    <span class="n">contours</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">Fl</span> <span class="o">-</span><span class="n">W1p</span><span class="p">,</span><span class="n">red</span><span class="o">@</span><span class="mi">75</span> <span class="o">-</span><span class="n">K</span> <span class="o">&gt;</span> <span class="n">contours</span><span class="o">.</span><span class="n">kml</span>
+<span class="n">gmt</span> <span class="n">gmt2kml</span>    <span class="o">-</span><span class="n">O</span> <span class="o">-</span><span class="n">N</span><span class="o">+</span> <span class="o">-</span><span class="n">Fs</span> <span class="o">-</span><span class="n">Sn2</span> <span class="o">-</span><span class="n">Gnred</span><span class="o">@</span><span class="mi">0</span> <span class="n">label</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">I</span><span class="o">-</span> <span class="o">&gt;&gt;</span> <span class="n">contours</span><span class="o">.</span><span class="n">kml</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -552,7 +552,7 @@ use it.</p>
     </div>
 <div class="footer">
     &copy; Copyright 2019, The GMT Team.
-  Last updated on Nov 24, 2019.
+  Last updated on Dec 01, 2019.
   Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.8.5.
   <br />Theme based on <a href="http://readthedocs.org/">Read The Docs</a>
 
