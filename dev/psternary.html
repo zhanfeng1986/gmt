@@ -417,7 +417,7 @@ These spider-web lines are drawn using the current pen unless <strong>+p</strong
 be given instead of the two directions. The azimuths will be mapped
 into angles based on the chosen map projection (<strong>-Sw</strong> leaves the
 directions unchanged). Specify <em>size</em> as a geographical diameter.
-For allowable geographical units, see UNITS [Default is k for km]. To instead
+For allowable geographical units, see <a class="reference internal" href="#units">Units</a> [Default is k for km]. To instead
 specify a diameter in plot units, you must append the desired unit.
 Append /<em>inner</em> to select a separate inner diameter [0].
 Append <strong>+a</strong>[<em>dr</em>] to draw the arc line (at inner and outer diameter);
@@ -538,8 +538,8 @@ Optionally, append <strong>t</strong> for a terminal line, <strong>c</strong> fo
 and <strong>I</strong> for plain open tail.
 Further append <strong>l</strong>|<strong>r</strong> to only draw the left or right
 half-sides of this head [both sides].</p>
-<p><strong>+g</strong>-|<em>fill</em> turns off vector head fill (if -) or sets the vector
-head fill [Default fill is used, which may be no fill].</p>
+<p><strong>+g</strong>[fill*] sets the vector head fill [Default fill is used, which may be no fill].
+Turn off vector head fill by not appending a <em>fill</em>.</p>
 <p><strong>+h</strong><em>shape</em> sets the shape of the vector head (range -2/2). Default
 is controlled by <a class="reference internal" href="gmt.conf.html#map-vector-shape"><span class="std std-ref">MAP_VECTOR_SHAPE</span></a> [0].</p>
 <p><strong>+l</strong> draws half-arrows, using only the left side of specified heads [both sides].</p>
@@ -557,8 +557,8 @@ for geovectors specify a length in km.</p>
 <p><strong>+o</strong>[<em>plon</em>/<em>plat</em>] specifies the oblique pole for the great or
 small circles.  Only needed for great circles if <strong>+q</strong> is given. If no
 pole is appended then we default to the north pole.</p>
-<p><strong>+p</strong>[-][<em>pen</em>] sets the vector pen attributes. If <em>pen</em> has a
-leading - then the head outline is not drawn. [Default pen is half the width of stem pen, and
+<p><strong>+p</strong>[<em>pen</em>] sets the vector pen attributes. If no <em>pen</em> is appended
+then the head outline is not drawn. [Default pen is half the width of stem pen, and
 head outline is drawn]</p>
 <p><strong>+q</strong> means the input <em>angle</em>, <em>length</em> data instead represent the <em>start</em> and <em>stop</em>
 opening angles of the arc segment relative to the given point. See <strong>+o</strong> to specify
@@ -650,7 +650,7 @@ specified labeling, tru</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 01, 2019.
+        Last updated on Dec 02, 2019.
       </span>
 
     </p>

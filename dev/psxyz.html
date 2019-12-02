@@ -330,10 +330,10 @@ the symbol parameters (if given).</dd>
 Append <strong>+d</strong> to build symmetrical envelope around y(x) using deviations dy(x) given in extra column 4.
 Append <strong>+D</strong> to build asymmetrical envelope around y(x) using deviations dy1(x) and dy2(x) from extra columns 4-5.
 Append <strong>+b</strong> to build asymmetrical envelope around y(x) using bounds yl(x) and yh(x) from extra columns 4-5.
-Append <strong>+xl</strong>|<strong>r</strong>|<em>x0</em> to connect first and last point to anchor points at either xmin, xmax, or x0, or
-append <strong>+yb</strong>|<strong>t</strong>|<em>y0</em> to connect first and last point to anchor points at either ymin, ymax, or y0.
+Append <strong>+xl</strong>|<strong>r</strong>|<em>x0</em> to connect first and last point to anchor points at either <em>xmin</em>, <em>xmax</em>, or <em>x0</em>, or
+append <strong>+yb</strong>|<strong>t</strong>|<em>y0</em> to connect first and last point to anchor points at either <em>ymin</em>, <em>ymax</em>, or <em>y0</em>.
 Polygon may be painted (<strong>-G</strong>) and optionally outlined by adding <strong>+p</strong><em>pen</em> [no outline].
-All constructed polygons are assumed to have a constant z value.</dd>
+All constructed polygons are assumed to have a constant <em>z</em> value.</dd>
 </dl>
 <dl class="docutils" id="n">
 <dt><strong>-N</strong>[<strong>c</strong>|<strong>r</strong>]</dt>
@@ -411,7 +411,7 @@ which we assume the ellipse axes are given in the same units as <strong>-R</stro
 For degenerate ellipses (circles) with just the diameter given, use <strong>-SE-</strong>.
 The diameter is excepted to be given in column 4.  Alternatively, append
 the desired diameter to <strong>-SE-</strong> and this fixed diameter is used instead.
-For allowable geographical units, see UNITS [Default is k for km].</dd>
+For allowable geographical units, see <a class="reference internal" href="#units">Units</a> [Default is k for km].</dd>
 <dt><strong>-Sf</strong><em>gap</em>[/<em>size</em>][<strong>+l</strong>|<strong>+r</strong>][<strong>+b+c+f+s+t</strong>][<strong>+o</strong><em>offset</em>][<strong>+p</strong>[<em>pen</em>]].</dt>
 <dd>Draw a <strong>f</strong>ront.  Supply distance gap between symbols and symbol size. If <em>gap</em> is
 negative, it is interpreted to mean the number of symbols along the
@@ -450,7 +450,7 @@ The dimension is excepted to be given in column 4.  Alternatively, append
 the dimension diameter to <strong>-SJ-</strong> and this fixed dimension is used instead.
 An exception occurs for a linear projection in
 which we assume the dimensions are given in the same units as <strong>-R</strong>.
-For allowable geographical units, see UNITS [Default is k for km].</dd>
+For allowable geographical units, see <a class="reference internal" href="#units">Units</a> [Default is k for km].</dd>
 <dt><strong>-Sk</strong></dt>
 <dd><strong>k</strong>ustom symbol. Append &lt;name&gt;/<em>size</em>, and we will look for a
 definition file called &lt;name&gt;.def in (1) the current
@@ -681,7 +681,7 @@ These spider-web lines are drawn using the current pen unless <strong>+p</strong
 be given instead of the two directions. The azimuths will be mapped
 into angles based on the chosen map projection (<strong>-Sw</strong> leaves the
 directions unchanged). Specify <em>size</em> as a geographical diameter.
-For allowable geographical units, see UNITS [Default is k for km]. To instead
+For allowable geographical units, see <a class="reference internal" href="#units">Units</a> [Default is k for km]. To instead
 specify a diameter in plot units, you must append the desired unit.
 Append /<em>inner</em> to select a separate inner diameter [0].
 Append <strong>+a</strong>[<em>dr</em>] to draw the arc line (at inner and outer diameter);
@@ -699,7 +699,7 @@ must be found in columns 4 and 5. The <em>size</em> is the length of the
 vector head. Vector width is set by <strong>-W</strong>. See <a class="reference internal" href="#vector-attributes">Vector Attributes</a>
 for specifying attributes. Note: Geovector stems are drawn as thin
 filled polygons and hence pen attributes like dashed and dotted are
-not available. For allowable geographical units, see UNITS.</dd>
+not available. For allowable geographical units, see <a class="reference internal" href="#units">Units</a>.</dd>
 <dt><strong>-S~</strong></dt>
 <dd><p class="first">decorated line, i.e., lines with symbols along them. Append
 [<strong>d</strong>|<strong>D</strong>|<strong>f</strong>|<strong>l</strong>|<strong>L</strong>|<strong>n</strong>|<strong>N</strong>|<strong>s</strong>|<strong>S</strong>|<strong>x</strong>|<strong>X</strong>]<em>info</em>[:<em>symbolinfo</em>].
@@ -901,8 +901,8 @@ Optionally, append <strong>t</strong> for a terminal line, <strong>c</strong> fo
 and <strong>I</strong> for plain open tail.
 Further append <strong>l</strong>|<strong>r</strong> to only draw the left or right
 half-sides of this head [both sides].</p>
-<p><strong>+g</strong>-|<em>fill</em> turns off vector head fill (if -) or sets the vector
-head fill [Default fill is used, which may be no fill].</p>
+<p><strong>+g</strong>[fill*] sets the vector head fill [Default fill is used, which may be no fill].
+Turn off vector head fill by not appending a <em>fill</em>.</p>
 <p><strong>+h</strong><em>shape</em> sets the shape of the vector head (range -2/2). Default
 is controlled by <a class="reference internal" href="gmt.conf.html#map-vector-shape"><span class="std std-ref">MAP_VECTOR_SHAPE</span></a> [0].</p>
 <p><strong>+l</strong> draws half-arrows, using only the left side of specified heads [both sides].</p>
@@ -920,8 +920,8 @@ for geovectors specify a length in km.</p>
 <p><strong>+o</strong>[<em>plon</em>/<em>plat</em>] specifies the oblique pole for the great or
 small circles.  Only needed for great circles if <strong>+q</strong> is given. If no
 pole is appended then we default to the north pole.</p>
-<p><strong>+p</strong>[-][<em>pen</em>] sets the vector pen attributes. If <em>pen</em> has a
-leading - then the head outline is not drawn. [Default pen is half the width of stem pen, and
+<p><strong>+p</strong>[<em>pen</em>] sets the vector pen attributes. If no <em>pen</em> is appended
+then the head outline is not drawn. [Default pen is half the width of stem pen, and
 head outline is drawn]</p>
 <p><strong>+q</strong> means the input <em>angle</em>, <em>length</em> data instead represent the <em>start</em> and <em>stop</em>
 opening angles of the arc segment relative to the given point. See <strong>+o</strong> to specify
@@ -1070,7 +1070,7 @@ original polygon.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 01, 2019.
+        Last updated on Dec 02, 2019.
       </span>
 
     </p>
