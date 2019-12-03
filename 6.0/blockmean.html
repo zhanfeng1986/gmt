@@ -220,8 +220,10 @@
 [ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong> ]
 [ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong>[<strong>+p</strong>|<strong>P</strong>] ]
 [ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong>[<em>grdfile</em>] ]
+[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong>[<strong>m</strong>|<strong>n</strong>|<strong>s</strong>|<strong>w</strong>] ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
 [ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong>[<strong>i</strong>|<strong>o</strong>][<strong>+s</strong>] ]
+[ <strong>-a</strong><a class="reference internal" href="gmt.html#aspatial-full"><span class="std std-ref">flags</span></a> ]
 [ <strong>-b</strong><a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">binary</span></a> ]
 [ <strong>-d</strong><a class="reference internal" href="gmt.html#d-full"><span class="std std-ref">nodata</span></a> ]
 [ <strong>-e</strong><a class="reference internal" href="gmt.html#e-full"><span class="std std-ref">regexp</span></a> ]
@@ -337,6 +339,10 @@ several runs, etc. Use <strong>-W</strong> for weighted i/o, <strong>-Wi</strong
 input only, and <strong>-Wo</strong> for weighted output only. [Default uses
 unweighted i/o]. If your weights are actually uncertainties (one sigma)
 then append <strong>+s</strong> and we compute weight = 1/sigma.</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>-a</strong><em>col</em>=<em>name</em>[<em>…</em>] <a class="reference internal" href="gmt.html#aspatial-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Set aspatial column associations <em>col</em>=<em>name</em>.</dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -466,7 +472,7 @@ called field_z.nc and field_s.nc, run</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 02, 2019.
+        Last updated on Dec 03, 2019.
       </span>
 
     </p>
