@@ -957,8 +957,8 @@ or <strong>-Y</strong> are used without any further arguments, the values from
 the last use of that option in a previous GMT command will be used.
 Note that <strong>-X</strong> and <strong>-Y</strong> can also access the previous plot dimensions
 <em>w</em> and <em>h</em> and construct offsets that involves them.  For instance, to move the origin
-up 2 cm beyond the height of the previous plot, use <strong>-Yh</strong>+2c.
-To move the origin half the width to the right, use <strong>-Xw</strong>/2.</dd>
+up 2 cm beyond the height of the previous plot, use <strong>-Y</strong><em>h</em>+2c.
+To move the origin half the width to the right, use <strong>-X</strong><em>w</em>/2.</dd>
 </dl>
 <dl class="docutils" id="aspatial-full">
 <dt><strong>-a</strong>[<em>col</em>=]<em>name</em>[<em>…</em>]</dt>
@@ -1171,18 +1171,18 @@ calculations is also controlled by method (<a class="reference internal" href="g
 current plot.  Optionally append a text <em>label</em> to describe the entry.
 Several modifiers allow further changes to the legend (to be built
 when <a class="reference internal" href="legend.html"><span class="doc">legend</span></a> is called): Use <strong>+d</strong> to draw a horizontal line before the
-legend entry is placed [no line], use <strong>+f</strong> to set the font used for the legend header [<a class="reference internal" href="gmt.conf.html#font-title"><span class="std std-ref">FONT_TITLE</span></a>],
-use <strong>+g</strong> to add some vertical space [0], use <strong>+h</strong> to add a legend header [no header],
-<strong>+j</strong> to set placement of the legend [TR], use <strong>+l</strong> to set a line text; prepend
-a horizontal justification code <strong>L</strong>, <strong>C</strong>, or <strong>R</strong> [<strong>C</strong>], use <strong>+n</strong> to change the number of columns used to
-set the following legend items [1], use <strong>+s</strong> to override the size of the
+legend entry is placed [no line], <strong>+f</strong> to set the font used for the legend header [<a class="reference internal" href="gmt.conf.html#font-title"><span class="std std-ref">FONT_TITLE</span></a>],
+<strong>+g</strong> to add some vertical space [0], <strong>+h</strong> to add a legend header [no header],
+<strong>+j</strong> to set placement of the legend [TR], <strong>+l</strong> to set a line text; prepend
+a horizontal justification code <strong>L</strong>, <strong>C</strong>, or <strong>R</strong> [<strong>C</strong>], <strong>+n</strong> to change the number of columns used to
+set the following legend items [1], <strong>+s</strong> to override the size of the
 current symbol for the legend or set a length if plotting a line or contour [same as plotted],
-use <strong>+v</strong> to start and <strong>+v</strong><em>pen</em> to stop drawing vertical line from
-previous to current horizontal line [no vertical line], use <strong>+w</strong> to set legend width [auto],
-and use <strong>+x</strong><em>scale</em> to resize all symbol and length sizes in the legend.  Default pen is
+<strong>+v</strong> to start and <strong>+v</strong><em>pen</em> to stop drawing vertical line from
+previous to current horizontal line [no vertical line], <strong>+w</strong> to set legend width [auto],
+and <strong>+x</strong><em>scale</em> to resize all symbol and length sizes in the legend.  Default pen is
 given by <a class="reference internal" href="gmt.conf.html#map-default-pen"><span class="std std-ref">MAP_DEFAULT_PEN</span></a>.  Note that <strong>+h</strong>, <strong>+j</strong>, <strong>+w</strong>, and <strong>+x</strong>
-will only take effect if given on the very first <strong>-l</strong> option for a plot.  The <strong>+n</strong> modifier,
-if used on the first <strong>-l</strong> option, affects the legend width (unless set via <strong>+w</strong>); otherwise it
+will only take effect if appended to the very first <strong>-l</strong> option for a plot.  The <strong>+n</strong> modifier,
+if appended to the first <strong>-l</strong> option, affects the legend width (unless set via <strong>+w</strong>); otherwise it
 just subdivides the available width among the specified columns.
 The automatic legend has a fixed white background with a solid black pen outline and offset 0.2 cm from the map frame.
 The modifiers largely reflect legend codes described in <a class="reference internal" href="legend.html"><span class="doc">legend</span></a>, which provide more details and
@@ -1288,12 +1288,12 @@ to handle (latitude, longitude) files; see also
 </dl>
 <dl class="docutils">
 <dt><strong>-^</strong> or just <strong>-</strong></dt>
-<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
+<dd>Print a short message about the syntax of the command, then exit (NOTE: on Windows just use <strong>-</strong>).</dd>
 <dt><strong>-+</strong> or just <strong>+</strong></dt>
 <dd>Print an extensive usage (help) message, including the explanation of
-any module-specific option (but not the GMT common options), then exits.</dd>
+any module-specific option (but not the GMT common options), then exit.</dd>
 <dt><strong>-?</strong> or no arguments</dt>
-<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
+<dd>Print a complete usage (help) message, including the explanation of all options, then exit.</dd>
 <dt><strong>--PAR</strong>=<em>value</em></dt>
 <dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
 </dl>
@@ -1513,7 +1513,7 @@ GMT documentation site <a class="reference external" href="https://docs.generic-
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 08, 2019.
+        Last updated on Dec 09, 2019.
       </span>
 
     </p>
