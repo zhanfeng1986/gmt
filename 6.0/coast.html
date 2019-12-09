@@ -291,7 +291,7 @@ indicates which point on a rectangular region the <em>lon</em>/<em>lat</em> coor
 refers to, and the grid dimensions <em>nx</em> and <em>ny</em> with grid spacings via
 <strong>-I</strong> is used to create the corresponding region.
 Alternatively, specify the name of an existing grid file and the
-<strong>-R</strong> settings (and grid spacing, if applicable) are copied from
+<strong>-R</strong> settings (and grid spacing and registration, if applicable) are copied from
 the grid. Appending <strong>+u</strong><em>unit</em> expects projected (Cartesian)
 coordinates compatible with chosen <strong>-J</strong> and we inversely project
 to determine actual rectangular geographic region.
@@ -386,7 +386,7 @@ to specify panel parameters for just that panel [Default uses the same panel
 parameters for all selected map features].</dd>
 </dl>
 <dl class="docutils" id="g">
-<dt><strong>-G</strong><em>fill</em>|<strong>c</strong></dt>
+<dt><strong>-G</strong><em>fill</em>|<strong>c</strong> <a class="reference internal" href="cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Select filling or clipping of “dry” areas. Append the shade, color,
 or pattern; or use <strong>-Gc</strong> for clipping [Default is no fill].</dd>
 </dl>
@@ -481,7 +481,7 @@ often as necessary.</p>
 Also supply <strong>-X</strong> and <strong>-Y</strong> settings if you have moved since the clip started.</dd>
 </dl>
 <dl class="docutils" id="s">
-<dt><strong>-S</strong><em>fill</em>|<strong>c</strong></dt>
+<dt><strong>-S</strong><em>fill</em>|<strong>c</strong> <a class="reference internal" href="cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Select filling or clipping of “wet” areas. Append the shade, color,
 or pattern; or use <strong>-Sc</strong> for clipping [Default is no fill].</dd>
 </dl>
@@ -725,7 +725,7 @@ Institute, Lensfield Road, Cambridge CB2 1ER, United Kingdom.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 08, 2019.
+        Last updated on Dec 09, 2019.
       </span>
 
     </p>

@@ -251,7 +251,7 @@ color via <strong>-G</strong>.</p>
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
 <dt><em>mainscript</em></dt>
-<dd>Name of a stand-alone GMT modern script that makes the frame-dependent plot.  The
+<dd>Name of a stand-alone GMT modern mode script that makes the frame-dependent plot.  The
 script may access frame variables, such as frame number and others, and may be
 written using the Bourne shell (.sh), the Bourne again shell (.bash), the csh (.csh)
 or DOS batch language (.bat).  The script language is inferred from the file extension
@@ -259,9 +259,9 @@ and we build hidden movie scripts using the same language.  Parameters that can 
 are discussed below.</dd>
 </dl>
 <dl class="docutils" id="c">
-<dt><strong>-C</strong><em>papersize</em></dt>
+<dt><strong>-C</strong><em>canvassize</em></dt>
 <dd>Specify the canvas size used when composing the movie frames. You can choose from a
-set of known preset formats or you can set a custom layout.  The named 16:9 ratio
+set of preset formats or specify a custom layout.  The named 16:9 ratio
 formats have a canvas dimension of 24 x 13.5 cm <em>or</em> 9.6 x 5.4 inch and are
 (with pixel dimensions given in parenthesis):
 <strong>4320p</strong> (7680 x 4320), <strong>2160p</strong> (3840 x 2160), <strong>1080p</strong> (1920 x 1080), <strong>720p</strong> (1280 x 720),
@@ -274,29 +274,30 @@ and are (with pixel dimensions given in parenthesis):
 Note: Your <a class="reference internal" href="gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a> setting determines if <strong>movie</strong> sets
 you up to work with the SI or US canvas dimensions.  Instead of a named format you can
 request a custom format directly by giving <em>width</em>[<em>unit</em>]x<em>height</em>[<em>unit</em>]x<em>dpu</em>,
-where <em>dpu</em> is the dots-per-unit pixel density.</dd>
+where <em>dpu</em> is the dots-per-unit pixel density (pixel density is set automatically for the named formats).</dd>
 </dl>
 <dl class="docutils" id="n">
 <dt><strong>-N</strong><em>prefix</em></dt>
-<dd>Determines the name of a sub-directory with frame images as well as the final movie file.
+<dd>Determines the name of the final movie file and a sub-directory with frame images (but see <strong>-W</strong>).
 Note: If the subdirectory exist then we exit immediately.  You are therefore required to remove any
 old directory by that name first.  This is done to prevent the accidental loss of valuable data.</dd>
 </dl>
 <dl class="docutils" id="t">
 <dt><strong>-T</strong><em>nframes</em>|<em>timefile</em>[<strong>+p</strong><em>width</em>][<strong>+s</strong><em>first</em>][<strong>+w</strong>]</dt>
 <dd>Either specify how many image frames to make or supply a file with a set of parameters,
-one record per frame (i.e., row).  The values in the columns will be available to the
+one record (i.e., row) per frame.  The values in the columns will be available to the
 <em>mainscript</em> as named variables <strong>MOVIE_COL0</strong>, <strong>MOVIE_COL1</strong>, etc., while any trailing text
-can be accessed via the variable <strong>MOVIE_TEXT</strong>.  Append <strong>+w</strong> to also split the trailing
-string into individual words that can be accessed via <strong>MOVIE_WORD0</strong>, <strong>MOVIE_WORD1</strong>, etc. The number of records equals
-the number of frames. Note that the <em>background</em> script is allowed to create the <em>timefile</em>,
-hence we check of its existence both before and after the background script has run.  Normally,
+can be accessed via the variable <strong>MOVIE_TEXT</strong>.  Append <strong>+w</strong> to split the trailing
+string into individual words that can be accessed via variables <strong>MOVIE_WORD0</strong>, <strong>MOVIE_WORD1</strong>,
+etc. The number of records equals
+the number of frames. Note that the <em>background</em> script is allowed to create <em>timefile</em>,
+hence we check for its existence both before <em>and</em> after the background script has completed.  Normally,
 the frame numbering starts at 0; you can change this by appending a different starting frame
 number via <strong>+s</strong><em>first</em>.  Note: All frames are still included; this modifier only affects
 the numbering of the given frames.  Finally, <strong>+p</strong> can be used to set the tag <em>width</em> of the format
 used in naming frames.  For instance, name_000010.png has a tag width of 6.  By default, this
 is automatically set but if you are splitting large jobs across several computers then you
-will want to have the same tag width for all names [automatic].</dd>
+must use the same tag width for all names.</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
@@ -321,7 +322,7 @@ via the <strong>+o</strong> modifier (in quotes if more than one word). If <stro
 be created at all; this requires <strong>-M</strong>.</dd>
 </dl>
 <dl class="docutils" id="g">
-<dt><strong>-G</strong><em>fill</em></dt>
+<dt><strong>-G</strong><em>fill</em> <a class="reference internal" href="cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Set the canvas color or fill before plotting commences [none].</dd>
 </dl>
 <dl class="docutils" id="h">
@@ -335,7 +336,7 @@ by <em>factor</em>, rasterizes the frame, then downsamples the image by the same
 the <em>factor</em>, the smoother the transitions.  Because processing time increases with <em>factor</em> we suggest you
 try values in the 2-5 range.  Note that images can also suffer from quantizing when the original data have
 much higher resolution than your final frame pixel dimensions.  The <strong>-H</strong> option may then be used to smooth the
-result to avoid aliasing [no downsampling].</dd>
+result to avoid aliasing [no downsampling].  This effect is called <cite>sub-pixel rendering &lt;https://en.wikipedia.org/wiki/Subpixel_rendering&gt;</cite>.</dd>
 </dl>
 <dl class="docutils" id="i">
 <dt><strong>-I</strong><em>includefile</em></dt>
@@ -354,7 +355,6 @@ number <em>col</em> of <em>timefile</em> as label (first column is 0), while <st
 with an absolute time column, then the format of the timestamp will depend on the two default settings
 <a class="reference internal" href="gmt.conf.html#format-date-map"><span class="std std-ref">FORMAT_DATE_MAP</span></a> and <a class="reference internal" href="gmt.conf.html#format-clock-map"><span class="std std-ref">FORMAT_CLOCK_MAP</span></a>.  By default,
 both <em>date</em> and <em>time</em> are displayed (with a space between); set one of the settings to “-” to skip that component.
-The label font is controlled via <a class="reference internal" href="gmt.conf.html#font-tag"><span class="std std-ref">FONT_TAG</span></a>.
 Append <strong>+c</strong><em>dx</em>[/<em>dy</em>] for the clearance between label and bounding box; only
 used if <strong>+g</strong> or <strong>+p</strong> are set.  Append units <strong>c</strong>|<strong>i</strong>|<strong>p</strong> or % of the font size [15%].
 Append <strong>+f</strong> to use a specific <em>font</em> [<a class="reference internal" href="gmt.conf.html#font-tag"><span class="std std-ref">FONT_TAG</span></a>].
@@ -369,7 +369,7 @@ or floating point  (%e, %f, %g) format specification.</dd>
 </dl>
 <dl class="docutils" id="m">
 <dt><strong>-M</strong>[<em>frame</em>],[<em>format</em>]</dt>
-<dd>In addition to making the animation sequence, select a single frame for a cover page.  This frame will
+<dd>In addition to making the animation sequence, select a single master frame [0] for a cover page.  The master frame will
 be written to the current directory with name <em>prefix.format</em>, where <em>format</em> can one of the
 graphics extensions from the allowable graphics <a class="reference internal" href="begin.html#tbl-formats"><span class="std std-ref">formats</span></a> [pdf].</dd>
 </dl>
@@ -401,7 +401,7 @@ positioning (i.e., <strong>-X -Y</strong>) as the main script so that the layers
 <dl class="docutils" id="w">
 <dt><strong>-W</strong><em>workdir</em></dt>
 <dd>By default, all temporary files and frame PNG file are built in the subdirectory <em>prefix</em> set via <strong>-N</strong>.
-You can override that by giving another <em>workdir</em> as a relative or full directory path.</dd>
+You can override that selection by giving another <em>workdir</em> as a relative or full directory path.</dd>
 </dl>
 <dl class="docutils" id="z">
 <dt><strong>-Z</strong></dt>
@@ -413,7 +413,8 @@ the script files, parameter files, and layer PostScript files are all removed (b
 <dd>Limit the number of cores used when making the individual frames.
 By default we try to use all available cores.  Append <em>n</em> to only use <em>n</em> cores
 (if too large it will be truncated to the maximum cores available).  Finally,
-give a negative <em>n</em> to select (all - <em>n</em>) cores (or at least 1 if <em>n</em> equals or exceeds all).</dd>
+give a negative <em>n</em> to select (all - <em>n</em>) cores (or at least 1 if <em>n</em> equals or exceeds all).
+The parallel processing does not depend on OpenMP.</dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-^</strong> or just <strong>-</strong></dt>
@@ -439,12 +440,12 @@ and those that change with the frame number.  The constants are accessible by al
 <strong>MOVIE_NFRAMES</strong>: The total number of frames.
 Also, if <strong>-I</strong> was used then any static parameters listed there will be available to all the scripts as well.
 In addition, the <em>mainscript</em> also has access to parameters that vary with the frame counter:
-<strong>MOVIE_FRAME</strong>: The current frame number (an integer),
+<strong>MOVIE_FRAME</strong>: The current frame number (an integer, e.g., 136),
 <strong>MOVIE_TAG</strong>: The formatted frame number (a string, e.g., 000136), and
 <strong>MOVIE_NAME</strong>: The name prefix for the current frame (i.e., <em>prefix</em>_<strong>MOVIE_TAG</strong>),
 Furthermore, if a <em>timefile</em> was given then variables <strong>MOVIE_COL0</strong>, <strong>MOVIE_COL1</strong>, etc. are
 also set, yielding one variable per column in <em>timefile</em>.  If <em>timefile</em> has trailing text then that text can
-be accessed via the variable <strong>MOVIE_TEXT</strong>, and if word-splitting was requested in <strong>-T</strong> with the <strong>+w</strong> modifier then
+be accessed via the variable <strong>MOVIE_TEXT</strong>, and if word-splitting was requested by <strong>-T+w</strong> then
 the trailing text is also split into individual word parameters <strong>MOVIE_WORD0</strong>, <strong>MOVIE_WORD1</strong>, etc.</p>
 </div>
 <div class="section" id="data-files">
@@ -494,7 +495,7 @@ require the frame number you will need to make a file that you can pass to <stro
 then have all the values you need, per frame (i.e., row), with values across all the columns you need.
 If you need to assign various fixed variables that do not change with time then your <em>mainscript</em>
 will look shorter and cleaner if you offload those assignments to a separate <em>includefile</em> (<strong>-I</strong>).
-To test your movie, start by using options <strong>-Q -M</strong> to ensure your cover page looks correct.
+To test your movie, start by using options <strong>-F</strong>none <strong>-Q -M</strong> to ensure your master frame page looks correct.
 This page shows you one frame of your movie (you can select which frame via the <strong>-M</strong> arguments).  Fix any
 issues with your use of variables and options until this works.  You can then try to remove <strong>-Q</strong>.
 We recommend you make a very short (i.e., <strong>-T</strong>) and small (i.e., <strong>-C</strong>) movie so you don’t have to wait very
@@ -600,7 +601,7 @@ ffmpeg -i top.mp4 -i bottom.mp4 -filter_complex <span class="nv">vstack</span><s
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 08, 2019.
+        Last updated on Dec 09, 2019.
       </span>
 
     </p>

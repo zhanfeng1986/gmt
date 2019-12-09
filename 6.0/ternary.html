@@ -244,7 +244,7 @@
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
-<p>Reads (<em>a</em>,<em>b</em>,<em>c</em>[,<em>z</em>]) records from <em>files</em> [or standard input] and
+<p>Reads (<em>a</em>,<em>b</em>,<em>c</em>[,<em>z</em>]) records from <em>table</em> [or standard input] and
 plots symbols
 at those locations on a ternary diagram. If a symbol is selected and no symbol size
 given, then we will interpret the fourth column of the input data
@@ -415,7 +415,7 @@ These spider-web lines are drawn using the current pen unless <strong>+p</strong
 be given instead of the two directions. The azimuths will be mapped
 into angles based on the chosen map projection (<strong>-Sw</strong> leaves the
 directions unchanged). Specify <em>size</em> as a geographical diameter.
-For allowable geographical units, see <a class="reference internal" href="#units">Units</a> [Default is k for km]. To instead
+For allowable geographical units, see <a href="#id1"><span class="problematic" id="id2">`Units`_</span></a> [Default is k for km]. To instead
 specify a diameter in plot units, you must append the desired unit.
 Append /<em>inner</em> to select a separate inner diameter [0].
 Append <strong>+a</strong>[<em>dr</em>] to draw the arc line (at inner and outer diameter);
@@ -503,83 +503,6 @@ any module-specific option (but not the GMT common options), then exits.</dd>
 <dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
 </dl>
 </div>
-<div class="section" id="units">
-<h2>Units<a class="headerlink" href="#units" title="Permalink to this headline">¶</a></h2>
-<p>For map distance unit, append <em>unit</em> <strong>d</strong> for arc degree, <strong>m</strong> for arc
-minute, and <strong>s</strong> for arc second, or <strong>e</strong> for meter [Default], <strong>f</strong>
-for foot, <strong>k</strong> for km, <strong>M</strong> for statute mile, <strong>n</strong> for nautical mile,
-and <strong>u</strong> for US survey foot. By default we compute such distances using
-a spherical approximation with great circles (<strong>-jg</strong>) using the authalic radius
-(see <a class="reference internal" href="gmt.conf.html#proj-mean-radius"><span class="std std-ref">PROJ_MEAN_RADIUS</span></a>). You can use <strong>-jf</strong> to perform
-“Flat Earth” calculations (quicker but less accurate) or <strong>-je</strong> to perform
-exact geodesic calculations (slower but more accurate; see
-<a class="reference internal" href="gmt.conf.html#proj-geodesic"><span class="std std-ref">PROJ_GEODESIC</span></a> for method used).</p>
-</div>
-<div class="section" id="vector-attributes">
-<h2>Vector Attributes<a class="headerlink" href="#vector-attributes" title="Permalink to this headline">¶</a></h2>
-<p>Several modifiers may be appended to vector-producing options for
-specifying the placement of vector heads, their shapes, and the
-justification of the vector. Below, left and right refers to the
-side of the vector line when viewed from the start point to the
-end point of a segment:</p>
-<blockquote>
-<div><p><strong>+a</strong><em>angle</em> sets the angle of the vector head apex [30].</p>
-<p><strong>+b</strong> places a vector head at the beginning of the vector path [none].
-Optionally, append <strong>t</strong> for a terminal line, <strong>c</strong> for a circle,
-<strong>a</strong> for arrow [Default], <strong>i</strong> for tail, <strong>A</strong> for plain open arrow,
-and <strong>I</strong> for plain open tail.
-Further append <strong>l</strong>|<strong>r</strong> to only draw the left or right
-half-sides of this head [both sides].</p>
-<p><strong>+e</strong> places a vector head at the end of the vector path [none].
-Optionally, append <strong>t</strong> for a terminal line, <strong>c</strong> for a circle,
-<strong>a</strong> for arrow [Default], <strong>i</strong> for tail, <strong>A</strong> for plain open arrow,
-and <strong>I</strong> for plain open tail.
-Further append <strong>l</strong>|<strong>r</strong> to only draw the left or right
-half-sides of this head [both sides].</p>
-<p><strong>+g</strong>[fill*] sets the vector head fill [Default fill is used, which may be no fill].
-Turn off vector head fill by not appending a <em>fill</em>.</p>
-<p><strong>+h</strong><em>shape</em> sets the shape of the vector head (range -2/2). Default
-is controlled by <a class="reference internal" href="gmt.conf.html#map-vector-shape"><span class="std std-ref">MAP_VECTOR_SHAPE</span></a> [0].</p>
-<p><strong>+l</strong> draws half-arrows, using only the left side of specified heads [both sides].</p>
-<p><strong>+m</strong> places a vector head at the mid-point the vector path [none].
-Append <strong>f</strong> or <strong>r</strong> for forward or reverse direction of the vector [forward].
-Optionally, append <strong>t</strong> for a terminal line, <strong>c</strong> for a circle,
-<strong>a</strong> for arrow [Default], <strong>i</strong> for tail, <strong>A</strong> for plain open arrow,
-and <strong>I</strong> for plain open tail. Further append <strong>l</strong>|<strong>r</strong> to only draw the left or right
-half-sides of this head [both sides].  Cannot be combined with <strong>+b</strong> or <strong>+e</strong>.</p>
-<p><strong>+n</strong><em>norm</em> scales down vector attributes (pen thickness, head size)
-with decreasing length, where vector plot lengths shorter than <em>norm</em> will have
-their attributes scaled by length/<em>norm</em> [arrow attributes remains
-invariant to length]. For Cartesian vectors specify a length in plot units, while
-for geovectors specify a length in km.</p>
-<p><strong>+o</strong>[<em>plon</em>/<em>plat</em>] specifies the oblique pole for the great or
-small circles.  Only needed for great circles if <strong>+q</strong> is given. If no
-pole is appended then we default to the north pole.</p>
-<p><strong>+p</strong>[<em>pen</em>] sets the vector pen attributes. If no <em>pen</em> is appended
-then the head outline is not drawn. [Default pen is half the width of stem pen, and
-head outline is drawn]</p>
-<p><strong>+q</strong> means the input <em>angle</em>, <em>length</em> data instead represent the <em>start</em> and <em>stop</em>
-opening angles of the arc segment relative to the given point. See <strong>+o</strong> to specify
-a specific pole for the arc [north pole].</p>
-<p><strong>+r</strong> draws half-arrows, using only the right side of specified heads [both sides].</p>
-<p><strong>+t</strong>[<strong>b</strong>|<strong>e</strong>]<em>trim</em>[<em>unit</em>] will shift the beginning or end point (or both)
-along the vector segment by the given <em>trim</em>; append suitable unit (<strong>c</strong>, <strong>i</strong>, or <strong>p</strong>). If the modifiers
-<strong>b</strong>|<strong>e</strong> are not used then <em>trim</em> may be two values separated by a slash,
-which is used to specify different trims for the beginning and end.  Positive trims
-will shorted the vector while negative trims will lengthen it [no trim].</p>
-</div></blockquote>
-<p>In addition, all but circular vectors may take these modifiers:</p>
-<blockquote>
-<div><p><strong>+j</strong><em>just</em> determines how the input <em>x</em>,<em>y</em> point relates to the
-vector. Choose from <strong>b</strong>eginning [default], <strong>e</strong>nd, or <strong>c</strong>enter.</p>
-<p><strong>+s</strong> means the input <em>angle</em>, <em>length</em> are instead the <em>x</em>, <em>y</em>
-coordinates of the vector end point.</p>
-</div></blockquote>
-<p>Finally, Cartesian vectors may take these modifiers:</p>
-<blockquote>
-<div><strong>+z</strong><em>scale</em>[<em>unit</em>] expects input <em>dx</em>,<em>dy</em> vector components and
-uses the <em>scale</em> to convert to polar coordinates with length in given unit.</div></blockquote>
-</div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p><strong>Note</strong>: Below are some examples of valid syntax for this module.
@@ -632,7 +555,7 @@ specified labeling, try:</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 08, 2019.
+        Last updated on Dec 09, 2019.
       </span>
 
     </p>
