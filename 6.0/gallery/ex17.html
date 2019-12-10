@@ -247,7 +247,7 @@ gmt begin ex17
 	gmt grdimage @india_geoid.nc -I+d -JM6.5i -Cgeoid.cpt
 
 	<span class="c1"># Then use gmt coast to initiate clip path for land</span>
-	gmt coast -R@india_geoid.nc -Dl -Gc
+	gmt coast -R@india_geoid.nc -Dl -G
 
 	<span class="c1"># Now generate topography image w/shading</span>
 	gmt makecpt -C150 -T-10000,10000 -N
@@ -301,7 +301,7 @@ gmt end show
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 09, 2019.
+        Last updated on Dec 10, 2019.
       </span>
 
     </p>

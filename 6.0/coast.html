@@ -217,7 +217,7 @@
 <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em>
 [ <strong>-A</strong><em>min_area</em>[/<em>min_level</em>/<em>max_level</em>][<strong>+a</strong>[<strong>g</strong>|<strong>i</strong>][<strong>s</strong>|<strong>S</strong>]][<strong>+r</strong>|<strong>l</strong>][<strong>+p</strong><em>percent</em>] ]
 [ <a class="reference internal" href="#b"><span> <strong>-B</strong></span></a></strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> ]
-[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong>[<strong>l</strong>|<strong>r</strong>/]<em>fill</em> ]
+[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>fill</em>[<strong>+l</strong>|<strong>+r</strong>] ]
 [ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>resolution</em>[<strong>+f</strong>] ]
 [ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong><em>dcw</em> ]
 [ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong><em>box</em> ]
@@ -329,10 +329,10 @@ GSHHG INFORMATION below for more details.  </dd>
 <dd>Set map boundary frame and axes attributes.</dd>
 </dl>
 <dl class="docutils" id="c">
-<dt><strong>-C</strong>[<strong>l</strong>|<strong>r</strong>/]<em>fill</em> <a class="reference internal" href="cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-C</strong><em>fill</em>[<strong>+l</strong>|<strong>+r</strong>] <a class="reference internal" href="cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Set the shade, color, or pattern for lakes and river-lakes [Default
 is the fill chosen for “wet” areas (<strong>-S</strong>)]. Optionally, specify
-separate fills by prepending <strong>l/</strong> for lakes and <strong>r/</strong> for
+separate fills by appending <strong>+l</strong> for lakes or <strong>+r</strong> for
 river-lakes, repeating the <strong>-C</strong> option as needed.</dd>
 </dl>
 <dl class="docutils" id="d">
@@ -386,9 +386,9 @@ to specify panel parameters for just that panel [Default uses the same panel
 parameters for all selected map features].</dd>
 </dl>
 <dl class="docutils" id="g">
-<dt><strong>-G</strong><em>fill</em>|<strong>c</strong> <a class="reference internal" href="cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-G</strong>[<em>fill</em>] <a class="reference internal" href="cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Select filling or clipping of “dry” areas. Append the shade, color,
-or pattern; or use <strong>-Gc</strong> for clipping [Default is no fill].</dd>
+or pattern; or give no argument for clipping [Default is no fill].</dd>
 </dl>
 <dl class="docutils" id="i">
 <dt><strong>-I</strong><em>river</em>[/<em>pen</em>]</dt>
@@ -481,9 +481,9 @@ often as necessary.</p>
 Also supply <strong>-X</strong> and <strong>-Y</strong> settings if you have moved since the clip started.</dd>
 </dl>
 <dl class="docutils" id="s">
-<dt><strong>-S</strong><em>fill</em>|<strong>c</strong> <a class="reference internal" href="cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-S</strong>[<em>fill</em>] <a class="reference internal" href="cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Select filling or clipping of “wet” areas. Append the shade, color,
-or pattern; or use <strong>-Sc</strong> for clipping [Default is no fill].</dd>
+or pattern; or give no argument for clipping [Default is no fill].</dd>
 </dl>
 <dl class="docutils" id="t">
 <dt><strong>-Td</strong>[<strong>g</strong>|<strong>j</strong>|<strong>J</strong>|<strong>n</strong>|<strong>x</strong>]<em>refpoint</em><strong>+w</strong><em>width</em>[<strong>+f</strong>[<em>level</em>]][<strong>+j</strong><em>justify</em>][<strong>+l</strong><em>w,e,s,n</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</dt>
@@ -612,7 +612,7 @@ Mercator map at scale 1 cm/degree, run:</p>
 gridded topography is only seen over land, using a Mercator map at scale
 0.1 inch/degree, use:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin
-  gmt coast -R-30/30/-40/40 -Jm0.1i -B -Gc
+  gmt coast -R-30/30/-40/40 -Jm0.1i -B -G
   gmt grdimage @earth_relief_05m
   gmt coast -Q
 gmt end show
@@ -725,7 +725,7 @@ Institute, Lensfield Road, Cambridge CB2 1ER, United Kingdom.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 09, 2019.
+        Last updated on Dec 10, 2019.
       </span>
 
     </p>

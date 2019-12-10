@@ -250,7 +250,7 @@ cat <span class="s">&lt;&lt; EOF &gt; main.sh</span>
 <span class="s">	# Plot age grid first using age cpt</span>
 <span class="s">	gmt grdimage @age.3.20.nc -Is.nc -C@crustal_age.cpt -JG\${MOVIE_COL0}/0/6i -X0 -Y0</span>
 <span class="s">	# Clip to expose land areas only</span>
-<span class="s">	gmt coast -Gc</span>
+<span class="s">	gmt coast -G</span>
 <span class="s">	# Overlay relief over land only using dem cpt</span>
 <span class="s">	gmt grdimage @earth_relief_20m -Is.nc -Ct.cpt</span>
 <span class="s">	# Undo clipping and overlay gridlines</span>
@@ -294,7 +294,7 @@ rm -rf main.sh pre.sh
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 09, 2019.
+        Last updated on Dec 10, 2019.
       </span>
 
     </p>
