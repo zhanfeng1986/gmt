@@ -1,5 +1,5 @@
 **-L**\ [**g**\ \|\ **j**\ \|\ **J**\ \|\ **n**\ \|\ **x**]\ *refpoint*\ **+c**\ [*slon*/]\ *slat*\ **+w**\ *length*\ [**e**\ \|\ **f**\ \|\ **k**\ \|\ **M**\ \|\ **n**\ \|\ **u**]\ [\ **+a**\ *align*]\ [**+f**]\ [**+j**\ *justify*]\ [\ **+l**\ [*label*]\ ]\ [**+o**\ *dx*\ [/*dy*]]\ [**+u**][**+v**]
-    Draws a simple map scale centered on the reference point specified
+    Draw a simple map scale centered on the reference point specified
     using one of four coordinate systems:
     (1) Use **-Lg** for map (user) coordinates, (2) use **-Lj** or **-LJ** for setting *refpoint* via
     a 2-char justification code that refers to the (invisible) map domain rectangle,
