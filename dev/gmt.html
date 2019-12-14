@@ -215,7 +215,7 @@
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>GMT is a collection of public-domain Unix tools that allows you to
 manipulate x,y and x,y,z data sets (filtering, trend fitting, gridding,
-projecting, etc.) and produce PostScript illustrations ranging from
+projecting, etc.) and produce illustrations ranging from
 simple x-y plots, via contour maps, to artificially illuminated surfaces
 and 3-D perspective views in black/white or full color. Linear, log10,
 and power scaling is supported in addition to over 30 common map
@@ -256,10 +256,10 @@ as well as the region and projection, then resets to previous stage.</dd>
 <dd>Allows users to create a matrix of panels with automatic labeling and advancement.</dd>
 <dt><strong>gmt end</strong> [<strong>show</strong>]</dt>
 <dd>Terminates a GMT modern mode session and automatically converts the registered
-illustration(s) to the specified formats, then eliminates the temporary work
+illustration(s) to their specified formats, then eliminates the temporary work
 directory.  The figures are placed in the current directory.</dd>
 </dl>
-<p>For information on any module, please use our new mechanism to load module documentation
+<p>For information on any module, load the module documentation
 in your browser via gmt <a class="reference internal" href="docs.html"><span class="doc">docs</span></a>, e.g.:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt docs grdimage
 </pre></div>
@@ -321,7 +321,7 @@ Detailed information about each program can be found in the separate manual page
 <h2>Custom Modules<a class="headerlink" href="#custom-modules" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>gmt</strong> program can also load custom modules from shared libraries
 built as specified in the GMT API documentation.  This way your modules
-can benefit form the GMT infrastructure and extend GMT in specific ways.</p>
+can benefit from the GMT infrastructure and extend GMT in specific ways.</p>
 </div>
 <div class="section" id="the-common-gmt-options">
 <h2>The Common GMT Options<a class="headerlink" href="#the-common-gmt-options" title="Permalink to this headline">¶</a></h2>
@@ -377,10 +377,10 @@ Append <strong>+n</strong> to have no frame and annotations at all [Default is c
 Optionally append <strong>+o</strong><em>plon/plat</em> to draw oblique gridlines about
 specified pole [regular gridlines]. Ignored if gridlines are not
 requested (below) and disallowed for the oblique Mercator projection.
-To add a plot title (<strong>+t</strong><em>title</em>). The Frame setting is optional but
+To add a plot title, append <strong>+t</strong><em>title</em>. The Frame setting is optional but
 can be invoked once to override the above defaults.</p>
 <p>The Axes parameters are specified by</p>
-<p><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>][<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>intervals</em>[<strong>+a</strong><em>angle</em>|<strong>n</strong>|<strong>p</strong>][<strong>+l</strong>|<strong>L</strong><em>label</em>][<strong>+p</strong><em>prefix</em>][<strong>+u</strong><em>unit</em>]</p>
+<p><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>][<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>intervals</em>[<strong>+a</strong><em>angle</em>|<strong>n</strong>|<strong>p</strong>][<strong>+l</strong>|<strong>L</strong><em>label</em>][<strong>+p</strong><em>prefix</em>][<strong>+s</strong>|<strong>S</strong><em>seclabel</em>][<strong>+u</strong><em>unit</em>]</p>
 <p class="last">but you may also split this into two separate invocations for clarity, i.e.,</p>
 </dd>
 </dl>
@@ -395,7 +395,7 @@ If none are given then we default to <strong>xy</strong>.  If you wish to give d
 or labels for the various axes then you must repeat the <strong>B</strong> option for
 each axis (If a 3-D basemap is selected with <strong>-p</strong> and <strong>-Jz</strong>, use <strong>-Bz</strong>
 to give settings for the vertical axis.).  To add a label to an axis,
-just append <strong>+l</strong><em>label</em> (Cartesian projections only). Use <strong>+L</strong> to
+just append <strong>+l</strong><em>label</em> (Cartesian projections only). Use <strong>+L</strong> (or <strong>+S</strong>) to
 force a horizontal label for <em>y</em>-axes (useful for very short labels).
 For Cartesian axes you may specify an alternate via <strong>+s</strong> which is used for
 right or upper axis axis label (with any <strong>+l</strong> label used for left and bottom axes).
@@ -414,13 +414,14 @@ specify annotations normal [Default] and parallel to the axis, respectively.  No
 these defaults can be changed via <a class="reference internal" href="gmt.conf.html#map-annot-ortho"><span class="std std-ref">MAP_ANNOT_ORTHO</span></a>.</p>
 <p>The <em>intervals</em> specification is a concatenated string made up of substrings
 of the form</p>
-<p>[<strong>a</strong>|<strong>f</strong>|<strong>g</strong>]<em>stride</em>[<strong>+</strong>|<strong>-</strong><em>phase</em>][<strong>u</strong>].</p>
+<p>[<strong>a</strong>|<strong>f</strong>|<strong>g</strong>]<em>stride</em>[<em>±phase</em>][<strong>u</strong>].</p>
 <p>The leading <strong>a</strong> is used to specify the annotation and major tick
 spacing [Default], <strong>f</strong> for minor tick spacing, and <strong>g</strong> for
 gridline spacing. <em>stride</em> is the desired stride interval. The
 optional <em>phase</em> shifts the annotation interval by that amount
 (positive or negative). The optional <em>unit</em> indicates the unit of
-the <em>stride</em> and can be any of the ones listed below:</p>
+the <em>stride</em> and are particularly important for time-axes as they
+can be any of the ones listed below:</p>
 <ul class="simple">
 <li><strong>Y</strong> (year, plot with 4 digits)</li>
 <li><strong>y</strong> (year, plot with 2 digits)</li>
@@ -441,11 +442,11 @@ the <em>stride</em> and can be any of the ones listed below:</p>
 <li><strong>S</strong> (second, plot using <a class="reference internal" href="gmt.conf.html#format-clock-map"><span class="std std-ref">FORMAT_CLOCK_MAP</span></a>)</li>
 <li><strong>s</strong> (second, plot with 2 digits).</li>
 </ul>
-<p>Note for geographic axes <strong>m</strong> and <strong>s</strong> instead mean arc minutes and arc seconds.
+<p>For geographic axes <strong>d</strong>, <strong>m</strong> and <strong>s</strong> instead mean arc degrees, minutes and seconds,
+while for Cartesian axes no unit is given.
 All entities that are language-specific are under control
-by <a class="reference internal" href="gmt.conf.html#gmt-language"><span class="std std-ref">GMT_LANGUAGE</span></a>. Alternatively, for linear maps, we can omit <em>stride</em>, thus setting
-<em>xinfo</em>, <em>yinfo</em>, or <em>zinfo</em> to <strong>a</strong> plots annotations at
-automatically determined intervals,</p>
+of <a class="reference internal" href="gmt.conf.html#gmt-language"><span class="std std-ref">GMT_LANGUAGE</span></a>. Alternatively, we can omit <em>stride</em>, thus setting
+<em>xinfo</em>, <em>yinfo</em>, or <em>zinfo</em> to <strong>a</strong> plots annotations at automatically determined intervals,</p>
 <ul class="simple">
 <li><strong>ag</strong> plots both annotations and grid lines with the same spacing,</li>
 <li><strong>afg</strong> adds suitable minor tick intervals,</li>
@@ -480,8 +481,8 @@ be plotted as untransformed units. E.g., if <em>stride</em> = 1 and <em>power</e
 = 0.5 (i.e., sqrt), then equidistant annotations labeled 1-4-9…  will appear.</li>
 </ol>
 <p>Finally, if your axis is in radians you can use multiples or fractions of <strong>pi</strong> to
-set such annotation intervals.  The format is [<em>n</em>]<strong>pi</strong>[<em>m</em>], for an optional
-integer <em>n</em> and optional <em>m</em> fractions 2, 3, or 4.</p>
+set such annotation intervals.  The format is [<em>s</em>]<strong>pi</strong>[<em>f</em>], for an optional
+integer scale <em>s</em> and optional integer fraction <em>f</em>.</p>
 <p>These GMT parameters can affect the appearance of the map boundary:
 <a class="reference internal" href="gmt.conf.html#map-annot-min-angle"><span class="std std-ref">MAP_ANNOT_MIN_ANGLE</span></a>, <a class="reference internal" href="gmt.conf.html#map-annot-min-spacing"><span class="std std-ref">MAP_ANNOT_MIN_SPACING</span></a>,
 <a class="reference internal" href="gmt.conf.html#font-annot-primary"><span class="std std-ref">FONT_ANNOT_PRIMARY</span></a>, <a class="reference internal" href="gmt.conf.html#font-annot-secondary"><span class="std std-ref">FONT_ANNOT_SECONDARY</span></a>,
@@ -568,10 +569,10 @@ can be any value):</p>
 <dl class="docutils">
 <dt><strong>-Jo</strong>[<strong>a</strong>|<strong>A</strong>]<em>lon0/lat0/azimuth/scale</em> or <strong>-JO</strong>[<strong>a</strong>|<strong>A</strong>]<em>lon0/lat0/azimuth/width</em></dt>
 <dd>Set projection center <em>lon0/lat0</em>, <em>azimuth</em> of oblique equator, and <em>scale</em>.</dd>
-<dt><strong>-Jo</strong>[<strong>b</strong>|<strong>B</strong>]<em>lon0/lat0/lon1/lat1/scale</em> or <strong>-JO</strong>[<strong>b</strong>|<strong>B</strong>]<em>lon0/lat0/lon1/lat1/scale</em></dt>
+<dt><strong>-Jo</strong>[<strong>b</strong>|<strong>B</strong>]<em>lon0/lat0/lon1/lat1/scale</em> or <strong>-JO</strong>[<strong>b</strong>|<strong>B</strong>]<em>lon0/lat0/lon1/lat1/width</em></dt>
 <dd>Set projection center <em>lon0/lat0</em>, another point on the oblique
 equator <em>lon1/lat1</em>, and <em>scale</em>.</dd>
-<dt><strong>-Joc</strong>|<strong>C</strong><em>lon0/lat0/lonp/latp/scale</em> or <strong>-JOc</strong>|<strong>C</strong><em>lon0/lat0/lonp/latp/scale</em></dt>
+<dt><strong>-Joc</strong>|<strong>C</strong><em>lon0/lat0/lonp/latp/scale</em> or <strong>-JOc</strong>|<strong>C</strong><em>lon0/lat0/lonp/latp/width</em></dt>
 <dd>Set projection center <em>lon0/lat0</em>, pole of oblique projection
 <em>lonp/latp</em>, and <em>scale</em>.
 Give <em>scale</em> along oblique equator (<strong>1:</strong><em>xxxx</em> or UNIT/degree).
@@ -884,7 +885,7 @@ indicates which point on a rectangular region the <em>x0</em>/<em>y0</em> coordi
 refers to, and the grid dimensions <em>nx</em> and <em>ny</em> with grid spacings via
 <strong>-I</strong> is used to create the corresponding region.
 Alternatively, specify the name of an existing grid file and the
-<strong>-R</strong> settings (and grid spacing, if applicable) are copied from
+<strong>-R</strong> settings (and grid spacing and registration, if applicable) are copied from
 the grid. When <strong>-R</strong> is used without any further arguments, the
 values from the last use of <strong>-R</strong> in a previous GMT command
 will be used.
@@ -1067,14 +1068,14 @@ it with the chosen missing data value <em>nodata</em>.</dd>
 </dl>
 <dl class="docutils" id="e-full">
 <dt><strong>-e</strong>[<strong>~</strong>]<em>”pattern”</em> <strong>|</strong> <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>]</dt>
-<dd>Only accept ASCII data records that contains the specified pattern.
-To reverse the search, i.e., to only accept data record that do <em>not</em>
+<dd>Only accept ASCII data records that contain the specified pattern.
+To reverse the search, i.e., to only accept data records that do <em>not</em>
 contain the specified pattern, use <strong>-e~</strong>. Should your pattern happen
-to start with ~ you need to escape this character with a backslash
+to start with ~ you will need to escape this character with a backslash
 [Default accepts all data records]. For matching data records
-against extended regular expressions enclose the expression in slashes.
+against extended regular expressions, please enclose the expression in slashes.
 Append <strong>i</strong> for case-insensitive matching.
-For a list of such patterns, give <strong>+f</strong><em>file</em> with one pattern per line.
+To supply a list of such patterns, give <strong>+f</strong><em>file</em> with one pattern per line.
 To give a single pattern starting with <strong>+f</strong>, escape it with a backslash.</dd>
 </dl>
 <dl class="docutils" id="f-full">
@@ -1127,7 +1128,8 @@ all criteria must be met instead.</dd>
 header records is <a class="reference internal" href="gmt.conf.html#io-n-header-recs"><span class="std std-ref">IO_N_HEADER_RECS</span></a> [1]. Use <strong>-hi</strong> if only
 the primary input data should have header records [Default will write out header
 records if the input data have them]. Blank lines and lines starting
-with # are always skipped. For output you may request additional headers
+with # are always skipped; to use another leading character for indicating header records,
+please see <a class="reference internal" href="gmt.conf.html#io-header-marker"><span class="std std-ref">IO_HEADER_MARKER</span></a>. For output you may request additional headers
 to be written via the option modifiers, and use <strong>+d</strong> to remove existing
 header records. Append <strong>+c</strong> to issue a header comment with column names to the output [none].
 Append <strong>+r</strong> to add a <em>remark</em> comment to the output [none].
@@ -1225,7 +1227,7 @@ and not the columns in the original record.</dd>
 </dl>
 <dl class="docutils" id="perspective-full">
 <dt><strong>-p</strong>[<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>azim</em>[/<em>elev</em>[/<em>zlevel</em>]][<strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>z0</em>]][<strong>+v</strong><em>x0</em>/<em>y0</em>]</dt>
-<dd>Selects perspective view and sets the azimuth and elevation of the
+<dd>Select perspective view and set the azimuth and elevation of the
 viewpoint [180/90]. When <strong>-p</strong> is used in consort with <strong>-Jz</strong> or
 <strong>-JZ</strong>, a third value can be appended which indicates at which
 z-level all 2D material, like the plot frame, is plotted (in
@@ -1238,7 +1240,8 @@ world coordinate point with <strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>
 project to the center of your page size, or specify the coordinates
 of the projected 2-D view point with <strong>+v</strong><em>x0</em>/<em>y0</em>. When <strong>-p</strong> is
 used without any further arguments, the values from the last use of
-<strong>-p</strong> in a previous GMT command will be used.  Alternatively, you
+<strong>-p</strong> in a previous GMT command will be used (in modern mode this also supplies
+the previous <strong>-Jz</strong> or <strong>-JZ</strong> if doing a 3-D region).  Alternatively, you
 can perform a simple rotation about the z-axis by just giving the
 rotation angle.  Optionally, use <strong>+v</strong> or <strong>+w</strong> to select another
 axis location than the plot origin.</dd>
@@ -1321,7 +1324,7 @@ names.</dd>
 Patterns are specified as <strong>p</strong><em>pattern</em>, where <em>pattern</em>
 set the number of the built-in pattern (1-90) <em>or</em> the name of a
 raster image file. The optional <strong>+r</strong><em>dpi</em> sets the resolution of
-the image [1200]. For 1-bit rasters: use upper case <strong>P</strong>  for inverse
+the image [300]. For 1-bit rasters: use upper case <strong>P</strong>  for inverse
 video, or append <strong>+f</strong><em>color</em> and/or <strong>+b</strong><em>color</em> to specify
 fore- and background colors (no <em>color</em> given means transparency). See
 GMT Cookbook &amp; Technical Reference Appendix E for information on
@@ -1340,7 +1343,7 @@ optional. <em>size</em> is the font size (usually in points) but <strong>c</stro
 Helvetica-Bold or 1). <em>fill</em> specifies the gray shade, color or
 pattern of the text (see <a class="reference internal" href="#specifying-fill">Specifying Fill</a> above). Optionally, you may
 append <strong>=</strong><em>pen</em> to the <em>fill</em> value in order to draw a text
-outline. If you want to avoid that the outline partially obscures the text, append
+outline. If you want to avoid that the outline partially obscures the text,
 append <strong>=~</strong><em>pen</em> instead; in that case only half the linewidth is plotted
 on the outside of the font only.  If an outline is requested, you may optionally
 skip the text <em>fill</em> by setting it to <strong>-</strong>, in which case the full pen width
@@ -1440,7 +1443,7 @@ that GMT and GDAL combined offer. If not, the same suffix can be added to input 
 See <a class="reference internal" href="grdconvert.html"><span class="doc">grdconvert</span></a> and Section <a class="reference internal" href="cookbook/features.html#grid-file-format"><span class="std std-ref">Grid file format specifications</span></a>
 of the GMT Technical Reference and Cookbook for more information.</p>
 <p>When reading a netCDF file that contains multiple grids, GMT will
-read, by default, the first 2-dimensional grid that can find in that
+read, by default, the first 2-dimensional grid that it can find in that
 file. To coax GMT into reading another multi-dimensional variable in
 the grid file, append <strong>?</strong><em>varname</em> to the file name, where <em>varname</em>
 is the name of the variable. Note that you may need to escape the
@@ -1450,7 +1453,7 @@ double quotes. The <strong>?</strong><em>varname</em> suffix can also be used fo
 grids to specify a variable name different from the default: “z”. See
 <a class="reference internal" href="grdconvert.html"><span class="doc">grdconvert</span></a> and Sections <a class="reference internal" href="cookbook/features.html#modifiers-for-cf"><span class="std std-ref">Modifiers for COARDS-compliant netCDF files</span></a> and <a class="reference internal" href="cookbook/features.html#grid-file-format"><span class="std std-ref">Grid file format specifications</span></a>
 of the GMT Technical Reference and Cookbook for more information, particularly on
-how to read splices of 3-, 4-, or 5-dimensional grids.</p>
+how to read slices of 3-, 4-, or 5-dimensional grids.</p>
 </div>
 <div class="section" id="classic-mode-options">
 <h2>Classic Mode Options<a class="headerlink" href="#classic-mode-options" title="Permalink to this headline">¶</a></h2>
@@ -1513,7 +1516,7 @@ GMT documentation site <a class="reference external" href="https://docs.generic-
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 12, 2019.
+        Last updated on Dec 14, 2019.
       </span>
 
     </p>

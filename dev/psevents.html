@@ -214,7 +214,6 @@
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <p><strong>gmt psevents</strong> [ <em>table</em> ] <a class="reference internal" href="#j"><span> <strong>-J</strong></span></a></strong><em>parameters</em> <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>symbol</em>[<em>size</em>[<em>units</em>]]
-[ <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong><em>magnify</em>[<strong>+c</strong><em>magnify2</em>] ]
 [ <a class="reference internal" href="#b"><span> <strong>-B</strong></span></a></strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> ]
 [ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>cpt</em> ]
 [ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong>[<strong>j</strong>|<strong>J</strong>]<em>dx</em>[/<em>dy</em>][<strong>+v</strong>[<em>pen</em>]] ]
@@ -245,12 +244,12 @@
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
-<p>Reads (<em>x</em>, <em>y</em>[, <em>z</em>] [, <em>size</em>], <em>time</em> [, <em>length</em>]) data from files [or standard
+<p>Reads (<em>x</em>, <em>y</em>[, <em>z</em>] [, <em>size</em>], <em>time</em> [, <em>length</em>]) data from <em>table</em> [or standard
 input] and plots how the symbol for each event should look for the specified <em>now</em> time.
 The reason they may differ is that events may have different lengths and we may
 wish to accentuate the symbol attributes in ways to draw attention to an event when
 it first happens and perhaps tone it down after a while to reduce clutter and focus
-on more recent events. This module is typically used in conjunction with movie scripts
+on more recent events. This module is typically used in conjunction with <a class="reference internal" href="movie.html"><span class="doc">movie</span></a>
 where the implicit loop over time is used to call it over a time-sequence and
 thus plot symbols as events unfold.</p>
 </div>
@@ -277,7 +276,7 @@ by <a class="reference internal" href="gmt.conf.html#proj-length-unit"><span cla
 </dl>
 <dl class="docutils" id="t">
 <dt><strong>-T</strong><em>now</em></dt>
-<dd>Sets the current plot time.  If absolute times are used you must also use <strong>-fT</strong>.</dd>
+<dd>Set the current plot time.  If absolute times are used you must also use <strong>-fT</strong>.</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
@@ -298,7 +297,7 @@ then we read from standard input.  </dd>
 </dl>
 <dl class="docutils" id="d">
 <dt><strong>-D</strong>[<strong>j</strong>|<strong>J</strong>]<em>dx</em>[/<em>dy</em>][<strong>+v</strong>[<em>pen</em>]]</dt>
-<dd>Offsets the text from the projected (<em>x</em>,<em>y</em>) point by <em>dx</em>,<em>dy</em>
+<dd>Offset the text from the projected (<em>x</em>,<em>y</em>) point by <em>dx</em>,<em>dy</em>
 [0/0]. If <em>dy</em> is not specified then it is set equal to <em>dx</em>. Use
 <strong>-Dj</strong> to offset the text away from the point instead (i.e., the
 text justification will determine the direction of the shift). Using
@@ -309,7 +308,7 @@ to change the attributes for this line.</dd>
 </dl>
 <dl class="docutils" id="e">
 <dt><strong>-Es</strong>|<strong>t</strong>[<strong>+o</strong>|<strong>O</strong><em>dt</em>][<strong>+r</strong><em>dt</em>][<strong>+p</strong><em>dt</em>][<strong>+d</strong><em>dt</em>][<strong>+f</strong><em>dt</em>][<strong>+l</strong><em>dt</em>]</dt>
-<dd>Sets the time knots for the <strong>s</strong>ymbol or <strong>t</strong>ext time-functions.  Append
+<dd>Set the time knots for the <strong>s</strong>ymbol or <strong>t</strong>ext time-functions.  Append
 <strong>+o</strong> to shift the event start and end times by a constant offset (basically shifting
 the event in time by <em>dt</em>; or use <strong>+O</strong> to only shift the start time, effectively shortening
 the duration of the event), <strong>+r</strong> to indicate the
@@ -317,7 +316,7 @@ duration of the rise phase, <strong>+p</strong> to set the duration of the plate
 to specify the duration of the decay phase, and <strong>+f</strong> to set the duration of the
 fade phase.  These are all optional [and default to zero], and can be set separately for symbols and texts.
 If neither <strong>s</strong> or <strong>t</strong> is given then we set the time knots for both features. Note that <strong>+l</strong> is
-restricted to <em>-Et*</em> and specifies an alternative duration (visibility) of the text [same duration as symbol].</dd>
+restricted to <strong>-Et</strong> and specifies an alternative duration (visibility) of the text [same duration as symbol].</dd>
 </dl>
 <dl class="docutils" id="f">
 <dt><strong>-F</strong>[<strong>+a</strong><em>angle</em>][<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+r</strong>[<em>first</em>] | <strong>+z</strong>[<em>format</em>]]</dt>
@@ -328,7 +327,7 @@ text attributes (font, angle, and justification) directly on the command line. U
 to set the font (size,fontname,color), <strong>+a</strong> to set the angle, and <strong>+j</strong> to set the justification.
 Normally, the text to be plotted is the trailing text.  Instead, use <strong>+r</strong> to use the
 record number (counting up from <em>first</em> [0]) or <strong>+z</strong> to format incoming <em>z</em> values (requires <strong>-C</strong>)
-to a string using the supplied <em>format</em> [use FORMAT_FLOAT_MAP].</dd>
+to a string using the supplied <em>format</em> [use F:ref:<cite>FORMAT_FLOAT_MAP &lt;FORMAT_FLOAT_MAP&gt;</cite>].</dd>
 </dl>
 <dl class="docutils" id="g">
 <dt><strong>-G</strong><em>fill</em> <a class="reference internal" href="cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
@@ -342,18 +341,20 @@ to a string using the supplied <em>format</em> [use FORMAT_FLOAT_MAP].</dd>
 <dt><strong>-L</strong>[<em>length</em>|<strong>t</strong>]</dt>
 <dd>Specify the length (i.e., duration) of the event.  Append a <em>length</em> if all events have the same length,
 append <strong>t</strong> if end-times instead of lengths are given in the file after the <em>time</em> column,
-or leave blank if lengths can be read from the input file after the <em>time</em> column.</dd>
+or leave blank if lengths can be read from the input file after the <em>time</em> column.  If <strong>-L</strong> is not
+given we assume events have an infinite duration.</dd>
 </dl>
 <dl class="docutils" id="m">
 <dt><strong>-M</strong><strong>i</strong>|<strong>s</strong>|<strong>t</strong>[<em>val1</em>][<strong>+c</strong><em>val2</em>]</dt>
-<dd>Sets the initial <strong>i</strong>ntensity, <strong>s</strong>ize magnification, or <strong>t</strong>ransparency of the symbol during
-the <em>rise</em> interval [1, 1, and 100, respectively].
-Optionally, use <strong>+c</strong> to set the corresponding terminal value during the coda [0, 0, 100, respectively].</dd>
+<dd>Modify the initial <strong>i</strong>ntensity, <strong>s</strong>ize magnification, or <strong>t</strong>ransparency of the symbol during
+the <em>rise</em> interval [1, 1, and 100, respectively].  Repeatable for the different attributes.
+Optionally, for finite-duration events you may append <strong>+c</strong> to set the corresponding terminal value
+during the coda [0, 0, 100, respectively].</dd>
 </dl>
 <dl class="docutils" id="q">
 <dt><strong>-Q</strong><em>prefix</em></dt>
-<dd>Save the intermediate event symbols and labels to permanent files instead of removing when done.
-Files will be called <em>prefix</em>_symbols.txt and <em>prefix</em>_labels.txt.</dd>
+<dd>Save the intermediate event symbols and labels to permanent files instead of removing them when done.
+Files will be named <em>prefix</em>_symbols.txt and <em>prefix</em>_labels.txt.</dd>
 </dl>
 <dl class="docutils" id="u">
 <dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>] <a class="reference internal" href="gmt.html#u-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -419,7 +420,7 @@ its length exceeds the temporal extent of the time we are plotting.  In a movie,
 a basic representation of these events as points on a map would be to start plotting
 the symbol when the event starts and then keep the symbol visible on all frames until the
 event ends (or never stop plotting them in the infinite length case).  However, to draw
-attention to the arrival of a new event we can temporarily change three aspects of
+attention to the arrival of a new event we can temporarily change three attributes of
 the symbol: Its size, color intensity, and transparency.  You can think of these three
 attributes as functions of time.  For some option settings, figure below
 illustrates how the symbol size may vary through the timespan of the movie.</p>
@@ -447,8 +448,8 @@ is referred to as the coda and levels can be specified via the <strong>-Mt</stro
 Figure below illustrates how transparency may vary through time.</p>
 <div class="figure align-center" id="id4">
 <a class="reference internal image-reference" href="_images/psevents_transparency.png"><img alt="_images/psevents_transparency.png" src="_images/psevents_transparency.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-text">Here we show how a symbol may go from being invisible to reach full opaqueness
-at the event begin time, then finally fade to a near-invisible stage after reaching
+<p class="caption"><span class="caption-text">Here we show how a symbol may go from being invisible to reaching full opaqueness
+at the event begin time, finally fading to a near-invisible stage after reaching
 its length.</span></p>
 </div>
 <p>While shown in these examples, the rise, plateau, fade, and coda periods are all optional
@@ -527,7 +528,7 @@ gmt psevents -Rg -JG200/5/6i -Baf q.txt -SE- -Cq.cpt --TIME_UNIT<span class="o">
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 12, 2019.
+        Last updated on Dec 14, 2019.
       </span>
 
     </p>

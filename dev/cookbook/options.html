@@ -1071,7 +1071,7 @@ option can also be set by specifying the default <a class="reference internal" h
 <span id="option-y"></span><span id="option-x"></span><h2>4.6. Plot positioning and layout: The <strong>-X</strong> <strong>-Y</strong> options<a class="headerlink" href="#plot-positioning-and-layout-the-x-y-options" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>-X</strong> and <strong>-Y</strong> options shift origin of plot by (<em>xoff</em>,<em>yoff</em>)
 inches (Default is (<a class="reference internal" href="../gmt.conf.html#map-origin-x"><span class="std std-ref">MAP_ORIGIN_X</span></a>, <a class="reference internal" href="../gmt.conf.html#map-origin-y"><span class="std std-ref">MAP_ORIGIN_Y</span></a>) for new
-plots <a class="footnote-reference" href="#id10" id="id6">[15]</a> and (0,0) for overlays (<strong>-O</strong>)). By default, all
+plots <a class="footnote-reference" href="#id10" id="id6">[15]</a> and (0,0) for overlays. By default, all
 translations are relative to the previous origin (see Figure
 <a class="reference internal" href="#xy-options"><span class="std std-ref">Plot positioning</span></a>). Supply
 offset as <strong>c</strong> to center the plot in that direction relative to the
@@ -1079,9 +1079,7 @@ page margin. Absolute translations (i.e., relative to a fixed point
 (0,0) at the lower left corner of the paper) can be achieve by
 prepending “a” to the offsets. Subsequent overlays will be co-registered
 with the previous plot unless the origin is shifted using these options.
-The offsets are measured in the current coordinates system (which can be
-rotated using the initial <strong>-P</strong> option; subsequent <strong>-P</strong> options for
-overlays are ignored).</p>
+The offsets are measured in the current coordinates system.</p>
 <div class="figure align-center" id="id28">
 <span id="xy-options"></span><a class="reference internal image-reference" href="../_images/GMT_-XY.png"><img alt="../_images/GMT_-XY.png" src="../_images/GMT_-XY.png" style="width: 300px;" /></a>
 <p class="caption"><span class="caption-text">Plot origin can be translated freely with -X -Y.</span></p>
@@ -1550,7 +1548,7 @@ context they are considered “other”. Thus, when we refer to
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 12, 2019.
+        Last updated on Dec 14, 2019.
       </span>
 
     </p>
