@@ -481,9 +481,9 @@ run). For each frame there is a separate <em>movie_params_######</em> script tha
 variables (e.g., frame number and anything given via <strong>-T</strong>).  The pre- and post-flight scripts have
 access to the information in <em>movie_init</em> while the frame script in addition has access to the frame-
 specific parameter file.  Using the <strong>-Q</strong> option will just produce these scripts which you can then examine.</p>
-<p>The conversion of PNG frames to an animated GIF (<strong>-F</strong>gif) relies on GraphicsMagick (<a class="reference external" href="http://www.graphicsmagick.org">http://www.graphicsmagick.org</a>).
+<p>The conversion of PNG frames to an animated GIF (<strong>-F</strong>gif) relies on <a class="reference external" href="http://www.graphicsmagick.org/">GraphicsMagick</a>.
 Thus, <strong>gm</strong> must be accessible via your standard search path. Likewise, the conversion of
-PNG frames to an MP4 (<strong>-F</strong>mp4) or WebM (<strong>-F</strong>webm) movie relies on ffmpeg (<a class="reference external" href="https://www.ffmpeg.org">https://www.ffmpeg.org</a>).</p>
+PNG frames to an MP4 (<strong>-F</strong>mp4) or WebM (<strong>-F</strong>webm) movie relies on <a class="reference external" href="https://www.ffmpeg.org/">FFmpeg</a>.</p>
 </div>
 <div class="section" id="hints-for-movie-makers">
 <h2>Hints for Movie Makers<a class="headerlink" href="#hints-for-movie-makers" title="Permalink to this headline">¶</a></h2>
@@ -551,7 +551,7 @@ all available cores.</p>
 <div class="section" id="other-movie-formats">
 <h2>Other Movie Formats<a class="headerlink" href="#other-movie-formats" title="Permalink to this headline">¶</a></h2>
 <p>As configured, <strong>movie</strong> only offers the MP4 and WebM formats for movies.  The conversion is performed by the
-tool FFmpeg (<a class="reference external" href="https://www.ffmpeg.org">https://www.ffmpeg.org</a>), which has more codecs and processing options than there are children in China.
+tool <a class="reference external" href="https://www.ffmpeg.org/">FFmpeg</a>, which has more codecs and processing options than there are children in China.
 If you wish to run ffmpeg with other options, select mp4 and run <strong>movie</strong> with long verbose (<strong>-Vl</strong>).
 At the end it will print the ffmpeg command used.  You can copy, paste, and modify this command to
 select other codecs, bit-rates, and arguments.  You can also use the PNG sequence as input to tools such
@@ -601,7 +601,7 @@ ffmpeg -i top.mp4 -i bottom.mp4 -filter_complex <span class="nv">vstack</span><s
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 14, 2019.
+        Last updated on Dec 15, 2019.
       </span>
 
     </p>

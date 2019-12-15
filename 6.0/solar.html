@@ -216,7 +216,7 @@
 <p><strong>gmt solar</strong>
 [ <a class="reference internal" href="#b"><span> <strong>-B</strong></span></a></strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> ]
 [ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong> ]
-[ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>fill</em>|<strong>c</strong> ]
+[ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong>[<em>fill</em>] ]
 [ <a class="reference internal" href="#i"><span> <strong>-I</strong></span></a></strong>[<em>lon/lat</em>][<strong>+d</strong><em>date</em>][<strong>+z</strong><em>TZ</em>] ]
 [ <a class="reference internal" href="#j"><span> <strong>-J</strong></span></a></strong><em>parameters</em> ]
 [ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong> ]
@@ -260,8 +260,8 @@ and <em>Equation of time</em> in minutes. Note that if no position is provided i
 data after <em>Elevation</em> refers to the point (0,0).</dd>
 </dl>
 <dl class="docutils" id="g">
-<dt><strong>-G</strong><em>fill</em>|<strong>c</strong> <a class="reference internal" href="cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select color or pattern for filling of terminators; or use <strong>-Gc</strong> for clipping [Default is no fill].
+<dt><strong>-G</strong>[<em>fill</em>] <a class="reference internal" href="cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select color or pattern for filling of terminators, or give no argument for clipping [Default is no fill or clipping].
 Deactivate clipping by appending the output of gmt <a class="reference internal" href="clip.html"><span class="doc">clip</span></a> <strong>-C</strong>.</dd>
 </dl>
 <dl class="docutils" id="i">
@@ -358,7 +358,7 @@ gmt end show
 </div></blockquote>
 <p>Set up a clip path overlay based on the day/night terminator:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt solar -Gc -Tc
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt solar -G -Tc
 </pre></div>
 </div>
 </div></blockquote>
@@ -402,7 +402,7 @@ gmt end show
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 14, 2019.
+        Last updated on Dec 15, 2019.
       </span>
 
     </p>
