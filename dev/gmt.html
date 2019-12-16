@@ -1148,6 +1148,7 @@ starting with the first column (0)]. Columns may be repeated.  To each
 column, optionally add any of  the following: <strong>+l</strong> takes <strong>log10</strong> of
 the input values first; <strong>+s</strong><em>scale</em>, subsequently multiplies by a
 given  scale factor [1]; <strong>+o</strong><em>offset</em>, finally adds a given offset [0].
+To read from a given column until the end of the record, leave off <em>stop</em>.
 Normally, any trailing text is read but when <strong>i</strong> is used you must explicitly add
 the column <em>t</em> to retain the text. To only ingest a single word from the
 trailing text, append the word number (first word is 0).  Finally, <strong>-in</strong>
@@ -1217,11 +1218,13 @@ natural boundary conditions].</dd>
 not listed will be skipped. Give columns (or column ranges
 in the format <em>start</em>[:<em>inc</em>]:<em>stop</em>, where <em>inc</em> defaults to 1 if
 not specified) separated by commas.  Columns may be repeated.
+To write from a given column until the end the columns, leave off <em>stop</em>.
 [Default writes all columns in order].
 Normally, any trailing text in the internal records will be written but
 when <strong>-o</strong> is used you must explicitly add the column <em>t</em>. To only output a single word from the
 trailing text, append the word number (first word is 0).  Finally, <strong>-on</strong> will
-simply write the numerical output only and skip any trailing text.  Note: If <strong>-i</strong> is
+simply write the numerical output only and skip any trailing text, while <strong>-ot</strong>
+will only output the trailing text (or selected word).  Note: If <strong>-i</strong> is
 also used then columns given to <strong>-o</strong> correspond to the order <em>after</em> the <strong>-i</strong> selection
 and not the columns in the original record.</dd>
 </dl>
@@ -1516,7 +1519,7 @@ GMT documentation site <a class="reference external" href="https://docs.generic-
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 15, 2019.
+        Last updated on Dec 16, 2019.
       </span>
 
     </p>
