@@ -194,7 +194,7 @@
         
             
             
-              <a href="https://github.com/GenericMappingTools/gmt/edit/6.1/doc/rst/source/basemap.rst" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/GenericMappingTools/gmt/edit/master/doc/rst/source/basemap.rst" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -326,7 +326,7 @@ See <strong>-F</strong> on how to place a panel behind the scale.</dd>
 </dl>
 <dl class="docutils" id="t">
 <dt><strong>-Td</strong>[<strong>g</strong>|<strong>j</strong>|<strong>J</strong>|<strong>n</strong>|<strong>x</strong>]<em>refpoint</em><strong>+w</strong><em>width</em>[<strong>+f</strong>[<em>level</em>]][<strong>+j</strong><em>justify</em>][<strong>+l</strong><em>w,e,s,n</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</dt>
-<dd><strong>-Td</strong> draws a map directional rose on the map at the location defined by
+<dd>Draw a map directional rose on the map at the location defined by
 the reference and anchor points:
 Give the reference point on the map for the rose using one of four coordinate systems:
 (1) Use <strong>g</strong> for map (user) coordinates, (2) use <strong>j</strong> for setting <em>refpoint</em> via
@@ -350,10 +350,8 @@ NNW-SSE, NNE-SSW, and ENE-WSW.
 Label the cardinal points W,E,S,N by adding <strong>+l</strong> and append your own four
 comma-separated strings to override the default.  Skip a specific label by leaving it blank.
 See <a class="reference internal" href="cookbook/features.html#placing-dir-map-roses"><span class="std std-ref">Placing directional map roses</span></a> and <strong>-F</strong> on how to place a panel behind the directional rose.</dd>
-</dl>
-<p><strong>-Tm</strong>[<strong>g</strong>|<strong>j</strong>|<strong>J</strong>|<strong>n</strong>|<strong>x</strong>]<em>refpoint</em><strong>+w</strong><em>width</em>[<strong>+d</strong><em>dec</em>[/<em>dlabel</em>]]][<strong>+i</strong><em>pen</em>][<strong>+j</strong><em>justify</em>][<strong>+l</strong><em>w,e,s,n</em>][<strong>+p</strong><em>pen</em>][<strong>+t</strong><em>ints</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</p>
-<blockquote>
-<div><strong>-Tm</strong> draws a map magnetic rose on the map at the location defined by
+<dt><strong>-Tm</strong>[<strong>g</strong>|<strong>j</strong>|<strong>J</strong>|<strong>n</strong>|<strong>x</strong>]<em>refpoint</em><strong>+w</strong><em>width</em>[<strong>+d</strong><em>dec</em>[/<em>dlabel</em>]]][<strong>+i</strong><em>pen</em>][<strong>+j</strong><em>justify</em>][<strong>+l</strong><em>w,e,s,n</em>][<strong>+p</strong><em>pen</em>][<strong>+t</strong><em>ints</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</dt>
+<dd>Draw a map magnetic rose on the map at the location defined by
 the reference and anchor points:
 Give the reference point on the map for the rose using one of four coordinate systems:
 (1) Use <strong>g</strong> for map (user) coordinates, (2) use <strong>j</strong> for setting <em>refpoint</em> via
@@ -381,7 +379,8 @@ geographic (first three) and magnetic (last three) intervals.
 Label the cardinal points W,E,S,N by adding <strong>+l</strong> and append your own four comma-separated
 strings to override the default.  Skip a specific label by leaving it blank.
 Number GMT default parameters control pens, fonts, and color.
-See <a class="reference internal" href="cookbook/features.html#placing-mag-map-roses"><span class="std std-ref">Placing magnetic map roses</span></a> and <strong>-F</strong> on how to place a panel behind the magnetic rose.</div></blockquote>
+See <a class="reference internal" href="cookbook/features.html#placing-mag-map-roses"><span class="std std-ref">Placing magnetic map roses</span></a> and <strong>-F</strong> on how to place a panel behind the magnetic rose.</dd>
+</dl>
 <dl class="docutils" id="u">
 <dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>] <a class="reference internal" href="gmt.html#u-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Draw GMT time stamp logo on plot.</dd>
@@ -853,7 +852,7 @@ However, it is fairly simple for most applications (see examples).</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 16, 2019.
+        Last updated on Dec 18, 2019.
       </span>
 
     </p>
