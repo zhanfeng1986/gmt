@@ -335,6 +335,7 @@ can benefit from the GMT infrastructure and extend GMT in specific ways.</p>
 <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]]
 <strong>-a</strong><a class="reference internal" href="#aspatial-full"><span class="std std-ref">flags</span></a>
 <strong>-b</strong><a class="reference internal" href="#bi-full"><span class="std std-ref">binary</span></a>
+<strong>-c</strong><a class="reference internal" href="#c-full"><span class="std std-ref">row,col|index</span></a>
 <strong>-d</strong><a class="reference internal" href="#d-full"><span class="std std-ref">nodata</span></a>
 <strong>-e</strong><a class="reference internal" href="#e-full"><span class="std std-ref">regexp</span></a>
 <strong>-f</strong><a class="reference internal" href="#f-full"><span class="std std-ref">flags</span></a>
@@ -342,6 +343,7 @@ can benefit from the GMT infrastructure and extend GMT in specific ways.</p>
 <strong>-h</strong><a class="reference internal" href="#h-full"><span class="std std-ref">headers</span></a>
 <strong>-i</strong><a class="reference internal" href="#icols-full"><span class="std std-ref">flags</span></a>
 <strong>-j</strong><a class="reference internal" href="#j-full"><span class="std std-ref">flags</span></a>
+<strong>-l</strong><a class="reference internal" href="#l-full"><span class="std std-ref">flags</span></a>
 <strong>-n</strong><a class="reference internal" href="#n-full"><span class="std std-ref">flags</span></a>
 <strong>-o</strong><a class="reference internal" href="#ocols-full"><span class="std std-ref">flags</span></a>
 <strong>-p</strong><a class="reference internal" href="#perspective-full"><span class="std std-ref">flags</span></a>
@@ -354,7 +356,7 @@ can benefit from the GMT infrastructure and extend GMT in specific ways.</p>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p>These are all the common GMT options that remain the same for all GMT
-programs. No space between the option flag and the associated arguments.</p>
+modules. No space between the option flag and the associated arguments.</p>
 <dl class="docutils" id="b-full">
 <dt><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em></dt>
 <dd><p class="first">Set map Frame and Axes parameters. The Frame parameters are specified by</p>
@@ -1039,7 +1041,7 @@ implied by the default output of the program. Note: NetCDF file output is
 not supported.</dd>
 </dl>
 <dl class="docutils" id="c-full">
-<dt><strong>-c</strong>[<em>row</em>,<em>col</em> |<em>index</em>]</dt>
+<dt><strong>-c</strong>[<em>row</em>,<em>col</em>|<em>index</em>]</dt>
 <dd>Used to advance to the selected subplot panel.  Only allowed when in
 subplot mode.  Available to all plot modules.  If no arguments are
 given then we advance to the next panel in the selected order. If
@@ -1289,7 +1291,7 @@ compiled with OpenMP support.</dd>
 swapping]. Append <strong>i</strong> to select input only or <strong>o</strong> to select
 output only. [Default affects both]. This option is typically used
 to handle (latitude, longitude) files; see also
-<strong>-i</strong><em>cols</em>[<strong>l</strong>][<strong>s</strong><em>scale</em>][<strong>o</strong><em>offset</em>][,<em>…</em>].</dd>
+<strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]].</dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-^</strong> or just <strong>-</strong></dt>
@@ -1328,8 +1330,8 @@ set the number of the built-in pattern (1-90) <em>or</em> the name of a
 raster image file. The optional <strong>+r</strong><em>dpi</em> sets the resolution of
 the image [300]. For 1-bit rasters: use upper case <strong>P</strong>  for inverse
 video, or append <strong>+f</strong><em>color</em> and/or <strong>+b</strong><em>color</em> to specify
-fore- and background colors (no <em>color</em> given means transparency). See
-GMT Cookbook &amp; Technical Reference Appendix E for information on
+fore- and background colors (no <em>color</em> given means transparency).
+See <a class="reference internal" href="cookbook/predefined_patterns.html"><span class="doc">Predefined Bit and Hachure Patterns in GMT</span></a> for information on
 individual built-in patterns.</dd>
 </dl>
 </div>
@@ -1518,7 +1520,7 @@ GMT documentation site <a class="reference external" href="https://docs.generic-
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 17, 2019.
+        Last updated on Dec 19, 2019.
       </span>
 
     </p>

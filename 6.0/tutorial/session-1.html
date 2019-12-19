@@ -266,8 +266,7 @@ will read hidden data (like coastlines) but most will explicitly need to be give
 <div class="section" id="input-data">
 <h3>Input data<a class="headerlink" href="#input-data" title="Permalink to this headline">¶</a></h3>
 <p>A GMT module may or may not take input files.  Three different
-types of input are recognized (more details can be found in Appendix
-B in the Technical Reference):</p>
+types of input are recognized (more details can be found in <a class="reference internal" href="../cookbook/file_formats.html"><span class="doc">GMT File Formats</span></a>):</p>
 <ol class="arabic">
 <li><p class="first">Data tables.
 These are rectangular tables with a fixed number of columns and
@@ -337,13 +336,11 @@ the relationships shown in Figure <a class="reference internal" href="#gmt-envir
 <em>stdin</em>) or from files, and write their output to the
 terminal (called <em>stdout</em>).  To use files instead one can
 use redirection:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt module input-file &gt; output-file         <span class="c1"># Read a file and redirect output</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt module input-file &gt; output-file         <span class="c1"># Read a file and redirect output</span>
 gmt module &lt; input-file &gt; output-file       <span class="c1"># Redirect input and output</span>
 gmt module input-file &gt;&gt; output-file        <span class="c1"># Append output to existing file</span>
 </pre></div>
 </div>
-</div></blockquote>
 <p>In this example, and in all those to follow, it is assumed that you do not have the shell
 variable <strong>noclobber</strong> set. If you do, it prevents accidental overwriting of existing files.
 That may be a noble cause, but it is extremely annoying. So please, <strong>unset noclobber</strong>.</p>
@@ -352,11 +349,9 @@ That may be a noble cause, but it is extremely annoying. So please, <strong>unse
 <h3>Piping (|)<a class="headerlink" href="#piping" title="Permalink to this headline">¶</a></h3>
 <p>Sometimes we want to use the output from one module as input
 to another module.  This is achieved with <em>pipes</em>:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Someprogram <span class="p">|</span> gmt module1 <span class="p">|</span> gmt module1 &gt; OutputFile <span class="o">(</span>or <span class="p">|</span> lp<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Someprogram <span class="p">|</span> gmt module1 <span class="p">|</span> gmt module1 &gt; OutputFile
 </pre></div>
 </div>
-</div></blockquote>
 </div>
 <div class="section" id="standard-error-stderr">
 <h3>Standard error (<em>stderr</em>)<a class="headerlink" href="#standard-error-stderr" title="Permalink to this headline">¶</a></h3>
@@ -364,19 +359,15 @@ to another module.  This is achieved with <em>pipes</em>:</p>
 These are typically written to a separate data stream called
 <em>stderr</em> and can be redirected separately from the standard
 output (which goes to <em>stdout</em>).  To send the error messages to the same location
-as standard output we use</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>program &gt; errors.log <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+as standard output we use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>program &gt; errors.log <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
 </pre></div>
 </div>
-</div></blockquote>
 <p>When we want to save both program output and error messages to
 separate files we use the following syntax:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt module &gt; output.txt <span class="m">2</span>&gt; errors.log
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt module &gt; output.txt <span class="m">2</span>&gt; errors.log
 </pre></div>
 </div>
-</div></blockquote>
 </div>
 <div class="section" id="file-name-expansion-or-wild-cards">
 <h3>File name expansion or “wild cards”<a class="headerlink" href="#file-name-expansion-or-wild-cards" title="Permalink to this headline">¶</a></h3>
@@ -477,7 +468,7 @@ gmt end show
 <ol class="arabic simple">
 <li>Do not append <strong>l</strong> to the axes lengths.</li>
 <li>Leave the <strong>p</strong> modifier out of the <strong>-B</strong> string.</li>
-<li>Add <strong>g</strong>3 to each side of the slash in <strong>-B</strong>.</li>
+<li>Add <strong>g</strong>3 to <strong>-Bx</strong> and <strong>-By</strong>.</li>
 </ol>
 </div>
 <div class="section" id="mercator-projection">
@@ -506,7 +497,7 @@ to the common switches we may need to use some of several coast-specific options
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><strong>-A</strong></td>
-<td>Exclude small features or those of high hierarchical levels (see Appendix K)</td>
+<td>Exclude small features or those of high hierarchical levels (see <a class="reference internal" href="../datasets/gshhg.html"><span class="doc">The Global Self-consistent, Hierarchical, High-resolution Geography Database (GSHHG)</span></a></td>
 </tr>
 <tr class="row-odd"><td><strong>-D</strong></td>
 <td>Select data resolution (<strong>f</strong>ull, <strong>h</strong>igh, <strong>i</strong>ntermediate, <strong>l</strong>ow, or <strong>c</strong>rude)</td>
@@ -532,7 +523,6 @@ to the common switches we may need to use some of several coast-specific options
 </tbody>
 </table>
 </div></blockquote>
-<p>Main options when making coastline plots or overlays.</p>
 <p>One of <strong>-W</strong>, <strong>-G</strong>, <strong>-S</strong> must be selected.  Our first coastline
 example is from Latin America:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_3
@@ -662,7 +652,7 @@ gmt end show
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 17, 2019.
+        Last updated on Dec 19, 2019.
       </span>
 
     </p>

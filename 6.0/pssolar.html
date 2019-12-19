@@ -222,7 +222,7 @@
 [ <a class="reference internal" href="#k"><span> <strong>-K</strong></span></a></strong> ]
 [ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong> ]
 [ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong> ]
-[ <a class="reference internal" href="#o"><span> <strong>-O</strong></span></a></strong> ] [<a class="reference internal" href="#p"><span> <strong>-P</strong></span></a></strong> ] [ <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong> ]
+[ <a class="reference internal" href="#o"><span> <strong>-O</strong></span></a></strong> ] [<a class="reference internal" href="#p"><span> <strong>-P</strong></span></a></strong> ]
 [ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em> ]
 [ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><strong>dcna</strong>[<strong>+d</strong><em>date</em>][<strong>+z</strong><em>TZ</em>]]
 [ <a class="reference internal" href="#u"><span> <strong>-U</strong></span></a></strong>[<em>stamp</em>] ]
@@ -231,7 +231,6 @@
 [ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] ]
 [ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] ]
 [ <strong>-bo</strong><a class="reference internal" href="gmt.html#bo-full"><span class="std std-ref">binary</span></a> ]
-[ <strong>-h</strong><a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">headers</span></a> ]
 [ <strong>-o</strong><a class="reference internal" href="gmt.html#ocols-full"><span class="std std-ref">flags</span></a> ]
 [ <strong>-p</strong><a class="reference internal" href="gmt.html#perspective-full"><span class="std std-ref">flags</span></a> ]
 [ <strong>-t</strong><a class="reference internal" href="gmt.html#t-full"><span class="std std-ref">transp</span></a> ]
@@ -283,7 +282,7 @@ for this date. If necessary, append time zone via <strong>+z</strong><em>TZ</em>
 <dl class="docutils" id="n">
 <dt><strong>-N</strong></dt>
 <dd>Invert the sense of what is inside and outside the terminator.  Only
-used with clipping (<strong>-Gc</strong>) and cannot be used together with <strong>-B</strong>.</dd>
+used with clipping (<strong>-G</strong>) and cannot be used together with <strong>-B</strong>.</dd>
 </dl>
 <dl class="docutils" id="r">
 <dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -291,10 +290,12 @@ used with clipping (<strong>-Gc</strong>) and cannot be used together with <stro
 </dl>
 <dl class="docutils" id="t">
 <dt><strong>-Tdcna</strong>[<strong>+d</strong><em>date</em>][<strong>+z</strong><em>TZ</em>]</dt>
-<dd>Plot (or dump; see <strong>-M</strong>) one or more terminators defined via the <strong>dcna</strong> flags. Where:
+<dd><p class="first">Plot (or dump; see <strong>-M</strong>) one or more terminators defined via the <strong>dcna</strong> flags. Where:
 <strong>d</strong> means day/night terminator; <strong>c</strong> means civil twilight; <strong>n</strong> means nautical twilight;
 <strong>a</strong> means astronomical twilight.  Add <strong>+d</strong><em>date</em> in ISO format, e.g, <strong>+d</strong><em>2000-04-25T12:15:00</em>
-to know where the day-night was at that date. If necessary, append time zone via <strong>+z</strong><em>TZ</em>.</dd>
+to know where the day-night was at that date. If necessary, append time zone via <strong>+z</strong><em>TZ</em>.</p>
+<p class="last">Refer to <a class="reference external" href="https://en.wikipedia.org/wiki/Twilight">https://en.wikipedia.org/wiki/Twilight</a> for definitions of different twilights.</p>
+</dd>
 </dl>
 <dl class="docutils" id="u">
 <dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>] <a class="reference internal" href="gmt.html#u-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -305,7 +306,7 @@ to know where the day-night was at that date. If necessary, append time zone via
 <dd>Select verbosity level [c].  </dd>
 </dl>
 <dl class="docutils" id="w">
-<dt><strong>-W</strong>[<strong>-</strong>|<strong>+</strong>][<em>pen</em>] <a class="reference internal" href="cookbook/features.html#wpen-attrib"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-W</strong>[<em>pen</em>] <a class="reference internal" href="cookbook/features.html#wpen-attrib"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Set pen attributes for lines or the outline of symbols [Defaults:
 width = default, color = black, style = solid].</dd>
 </dl>
@@ -319,10 +320,6 @@ width = default, color = black, style = solid].</dd>
 <dd>Select native binary output.  </dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Skip or produce header record(s).  </dd>
-</dl>
-<dl class="docutils">
 <dt><strong>-o</strong><em>cols</em>[,…][<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#ocols-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Select output columns (0 is first column; <em>t</em> is trailing text, append <em>word</em> to write one word only).</dd>
 </dl>
@@ -333,6 +330,17 @@ width = default, color = black, style = solid].</dd>
 <dl class="docutils">
 <dt><strong>-t</strong>[<em>transp</em>] <a class="reference internal" href="gmt.html#t-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Set transparency level in percent.</dd>
+</dl>
+<dl class="docutils">
+<dt><strong>-^</strong> or just <strong>-</strong></dt>
+<dd>Print a short message about the syntax of the command, then exits (NOTE: on Windows just use <strong>-</strong>).</dd>
+<dt><strong>-+</strong> or just <strong>+</strong></dt>
+<dd>Print an extensive usage (help) message, including the explanation of
+any module-specific option (but not the GMT common options), then exits.</dd>
+<dt><strong>-?</strong> or no arguments</dt>
+<dd>Print a complete usage (help) message, including the explanation of all options, then exits.</dd>
+<dt><strong>--PAR</strong>=<em>value</em></dt>
+<dd>Temporarily override a GMT default setting; repeatable. See <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> for parameters.</dd>
 </dl>
 </div>
 <div class="section" id="classic-mode-arguments">
@@ -360,25 +368,18 @@ can be cut and pasted into your terminal for testing.
 Other commands requiring input files are just dummy examples of the types
 of uses that are common but cannot be run verbatim as written.</p>
 <p>Print current Sun position and Sunrise, Sunset times at:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pssolar -I-7.93/37.079+d2016-02-04T10:01:00
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pssolar -I-7.93/37.079+d2016-02-04T10:01:00
 </pre></div>
 </div>
-</div></blockquote>
-<p>Plot the day-night and civil twilight</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscoast -Rd -W0.1p -JQ0/14c -Ba -BWSen -Dl -A1000 -P -K &gt; terminator.ps
-
+<p>Plot the day-night and civil twilight:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pscoast -Rd -W0.1p -JQ0/14c -Ba -BWSen -Dl -A1000 -P -K &gt; terminator.ps
 gmt pssolar -R -J -W1p -Tdc -O &gt;&gt; terminator.ps
 </pre></div>
 </div>
-</div></blockquote>
 <p>Set up a clip path overlay based on the day/night terminator:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pssolar -R -J -G -Tc -O -K &gt;&gt; someplot.ps
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt pssolar -R -J -G -Tc -O -K &gt;&gt; someplot.ps
 </pre></div>
 </div>
-</div></blockquote>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
@@ -419,7 +420,7 @@ gmt pssolar -R -J -W1p -Tdc -O &gt;&gt; terminator.ps
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 17, 2019.
+        Last updated on Dec 19, 2019.
       </span>
 
     </p>
