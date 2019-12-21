@@ -251,16 +251,17 @@ clipped. Map colors are specified via a color palette lookup table. Contour over
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils" id="c">
-<dt><strong>-C</strong><em>cpt</em></dt>
-<dd>Name of the color palette table (CPT). Alternatively,
-supply the name of a GMT color master dynamic CPT [turbo] to
+<dt><strong>-C</strong>[<em>cpt</em> |<em>master</em>[<strong>+i</strong><em>zinc</em>] |<em>color1,color2</em>[,<em>color3</em>,…]]</dt>
+<dd>Name of the CPT (for <em>grd_z</em> only). Alternatively,
+supply the name of a GMT color master dynamic CPT [turbo, but geo
+for &#64;earth_relief and srtm for &#64;srtm_relief data] to
 automatically determine a continuous CPT from
-the grid’s z-range.  If the dynamic CPT has a default range then
-that range will be imposed instead.
-Another option is to specify <strong>-C</strong><em>color1</em>,<em>color2</em>[,<em>color3</em>,…]
-to build a linear continuous CPT from those colors automatically, scaled to fit the data range.
-In this case <em>color1</em>, etc., can be a <em>r/g/b</em> triplet, a color name,
-or an HTML hexadecimal color (e.g. #aabbcc ).</dd>
+the grid’s z-range; you may round up/down the z-range by adding <strong>+i</strong><em>zinc</em>.
+Yet another option is to specify <strong>-C</strong><em>color1</em>,<em>color2</em>[,<em>color3</em>,…]
+to build a linear continuous CPT from those colors automatically.
+In this case <em>color1</em> etc can be a r/g/b triplet, a color name,
+or an HTML hexadecimal color (e.g. #aabbcc ).  If no argument is given to <strong>-C</strong>
+then under modern mode we select the current CPT.</dd>
 </dl>
 <dl class="docutils" id="e">
 <dt><strong>-E</strong><em>URL</em></dt>
@@ -389,7 +390,7 @@ supplying a suitable title, and using color masking for unmapped area, try</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 20, 2019.
+        Last updated on Dec 21, 2019.
       </span>
 
     </p>

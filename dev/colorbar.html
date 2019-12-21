@@ -265,9 +265,11 @@ x-axis label will plot beneath a horizontal bar (or vertically to
 the right of a vertical bar), except when using the <strong>+m</strong> modifier of the <strong>-D</strong> option. As an
 option, use the y-axis label to plot the data unit to the right of a
 horizontal bar (and above a vertical bar). If <strong>-B</strong> is omitted, or no annotation intervals are
-provided, the default is to annotate every color level based on the
+provided (classic mode only), the default is to annotate every color level based on the
 numerical entries in the CPT (which may be overridden by ULB
-flags in the CPT). To specify custom text annotations for
+flags in the CPT). The exception to this rule is for CPT files that were scaled to fit the range
+of a grid exactly and thus have arbitrary color levels; these will trigger an automatic <strong>-Baf</strong> setting.
+To specify custom text annotations for
 intervals, you must append ;<em>annotation</em> to each z-slice in the CPT.
 For standard <strong>-B</strong> operations, see below.</dd>
 </dl>
@@ -561,7 +563,7 @@ symbol at the left, unless <strong>+n</strong> was used in which case we center 
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 20, 2019.
+        Last updated on Dec 21, 2019.
       </span>
 
     </p>
