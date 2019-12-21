@@ -215,7 +215,7 @@
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <p><strong>gmt ternary</strong> [ <em>table</em> ]
 [ <strong>-JX</strong><em>width</em>[unit] ]
-[ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>] ]
+[ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>amin/amax/bmin/bmax/cmin/cmax</em> ]
 [ <a class="reference internal" href="#b"><span> <strong>-B</strong></span></a></strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> ]
 [ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>cpt</em> ]
 [ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>fill</em> ]
@@ -228,7 +228,6 @@
 [ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong>[<em>pen</em>][<em>attr</em>] ]
 [ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] ]
 [ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] ]
-[ <strong>-a</strong><a class="reference internal" href="gmt.html#aspatial-full"><span class="std std-ref">flags</span></a> ]
 [ <strong>-bi</strong><a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">binary</span></a> ]
 [ <strong>-di</strong><a class="reference internal" href="gmt.html#di-full"><span class="std std-ref">nodata</span></a> ]
 [ <strong>-e</strong><a class="reference internal" href="gmt.html#e-full"><span class="std std-ref">regexp</span></a> ]
@@ -262,7 +261,7 @@ last column in the input.</p>
 <dt><em>table</em></dt>
 <dd>One or more ASCII (or binary, see <strong>-bi</strong>[<em>ncols</em>][<em>type</em>]) data
 table file(s) holding a number of data columns. If no tables are given
-then we read from standard input. Use <strong>-T</strong> to ignore all input files, including standard input (see below).</dd>
+then we read from standard input.  </dd>
 </dl>
 <dl class="docutils" id="b">
 <dt><strong>-B</strong>[<strong>a</strong>|<strong>b</strong>|<strong>c</strong>]<em>args</em></dt>
@@ -450,10 +449,6 @@ These spider-web lines are drawn using the current pen unless <strong>+p</strong
 <dd>Select native binary format for primary input. [Default is the required number of columns given the chosen settings].</dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-a</strong><em>col</em>=<em>name</em>[<em>…</em>] <a class="reference internal" href="gmt.html#aspatial-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Set aspatial column associations <em>col</em>=<em>name</em>.</dd>
-</dl>
-<dl class="docutils">
 <dt><strong>-di</strong><em>nodata</em> <a class="reference internal" href="gmt.html#di-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Replace input columns that equal <em>nodata</em> with NaN.  </dd>
 </dl>
@@ -503,20 +498,15 @@ any module-specific option (but not the GMT common options), then exits.</dd>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p><strong>Note</strong>: Below are some examples of valid syntax for this module.
-The examples that use remote files (file names starting with <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>)
-can be cut and pasted into your terminal for testing.
-Other commands requiring input files are just dummy examples of the types
-of uses that are common but cannot be run verbatim as written.</p>
-<p>Note: Since many GMT plot examples are very short (i.e., one module call between the
-<strong>gmt begin</strong> and <strong>gmt end</strong> commands), we will often present them using the quick
-modern mode <a class="reference internal" href="cookbook/one-liner.html"><span class="doc">GMT Modern Mode One-line Commands</span></a> syntax, which simplifies such short scripts.</p>
 <p>To plot circles (diameter = 0.1 cm) on a 6-inch-wide ternary diagram at the positions listed
 in the file ternary.txt, with default annotations and gridline spacings, using the
 specified labeling, try:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt ternary ternary.txt -R0/100/0/100/0/100 -JX6i -Xc -Baafg+l<span class="s2">&quot;Water component&quot;</span>+u<span class="s2">&quot; %&quot;</span> <span class="se">\</span>
-    -Bbafg+l<span class="s2">&quot;Air component&quot;</span>+u<span class="s2">&quot; %&quot;</span> -Bcagf+l<span class="s2">&quot;Limestone component&quot;</span>+u<span class="s2">&quot; %&quot;</span> <span class="se">\</span>
-    -B+givory+t<span class="s2">&quot;Example data from MATLAB Central&quot;</span> -Sc0.1c -Ct.cpt -Y2i -LWater/Air/Limestone -pdf map
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map
+gmt makecpt -Cturbo -T0/80/10
+gmt ternary @ternary.txt -R0/100/0/100/0/100 -JX6i -Sc0.1c -C -LWater/Air/Limestone <span class="se">\</span>
+    -Baafg+l<span class="s2">&quot;Water component&quot;</span>+u<span class="s2">&quot; %&quot;</span> -Bbafg+l<span class="s2">&quot;Air component&quot;</span>+u<span class="s2">&quot; %&quot;</span> -Bcagf+l<span class="s2">&quot;Limestone component&quot;</span>+u<span class="s2">&quot; %&quot;</span> <span class="se">\</span>
+    -B+givory+t<span class="s2">&quot;Example data from MATLAB Central&quot;</span>
+gmt end show
 </pre></div>
 </div>
 </div>
@@ -553,7 +543,7 @@ specified labeling, try:</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 20, 2019.
+        Last updated on Dec 21, 2019.
       </span>
 
     </p>
