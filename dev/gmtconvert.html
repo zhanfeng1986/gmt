@@ -218,7 +218,7 @@
 [ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong>[<strong>f</strong>|<strong>l</strong>|<strong>m</strong>|<strong>M</strong><em>stride</em>] ] [ <a class="reference internal" href="#l"><span> <strong>-L</strong></span></a></strong> ]
 [ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong>[<strong>c</strong>|<strong>n</strong>|<strong>r</strong>|<strong>v</strong>][<strong>a</strong>|<strong>f</strong>|<strong>s</strong>|<strong>r</strong>|<em>refpoint</em>] ]
 [ <a class="reference internal" href="#i"><span> <strong>-I</strong></span></a></strong>[<strong>tsr</strong>] ]
-[ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong><em>col</em>[<strong>+a</strong> |<strong>d</strong>] ]
+[ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong><em>col</em>[<strong>+a</strong>|<strong>d</strong>] ]
 [ <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong>[<strong>~</strong>]<em>selection</em>]
 [ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong>[<strong>~</strong>]<em>”search string”</em> | <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] ]
 [ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong>[<strong>h</strong>|<strong>d</strong>] ]
@@ -344,7 +344,7 @@ order of records within each segment [Default].</dd>
 records (requires ASCII data).</dd>
 </dl>
 <dl class="docutils" id="n">
-<dt><strong>-N</strong><em>col</em>[<strong>+a</strong> |<strong>d</strong>]</dt>
+<dt><strong>-N</strong><em>col</em>[<strong>+a</strong>|<strong>d</strong>]</dt>
 <dd>Numerically sort each segment based on values in column <em>col</em>.
 The data records will be sorted such that the chosen column will
 fall into ascending order [<strong>+a</strong>, which is Default].  Append <strong>+d</strong>
@@ -391,13 +391,13 @@ data records.  Use <strong>-Thd</strong> to suppress both types of records.</dd>
 <dd>Select verbosity level [c].  </dd>
 </dl>
 <dl class="docutils" id="w">
-<dt><strong>-W</strong> [<strong>+n</strong>]</dt>
+<dt><strong>-W</strong>[<strong>+n</strong>]</dt>
 <dd>Attempt to convert each word in the trailing text to a number and append
 such values to the numerical output columns.  Text that cannot be converted
 (because they are not numbers) will appear as NaNs.  Use modifier <strong>+n</strong> to
 exclude the columns with NaNs.  Note: These columns are identified based on
 the first input record only.</dd>
-<dt><strong>-Z</strong> [<em>first</em>][/<em>last</em>]</dt>
+<dt><strong>-Z</strong>[<em>first</em>][/<em>last</em>]</dt>
 <dd>Limit output to the specified record range.  If <em>first</em> is not set it defaults
 to record 0 (very first record) and if <em>last</em> is not set then it defaults to the
 very last record.  Only records in the given range will be written out [all].</dd>
@@ -419,7 +419,7 @@ very last record.  Only records in the given range will be written out [all].</d
 <dd>Replace input columns that equal <em>nodata</em> with NaN and do the reverse on output.  </dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-e</strong>[<strong>~</strong>]<em>”pattern”</em> <strong>|</strong> <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] <a class="reference internal" href="gmt.html#e-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-e</strong>[<strong>~</strong>]<em>”pattern”</em> | <strong>-e</strong>[<strong>~</strong>]/<em>regexp</em>/[<strong>i</strong>] <a class="reference internal" href="gmt.html#e-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Only accept data records that match the given pattern.  </dd>
 </dl>
 <dl class="docutils">
@@ -613,7 +613,7 @@ where we reset the origin of the sequential numbering from 0 to 5000, try</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 21, 2019.
+        Last updated on Dec 22, 2019.
       </span>
 
     </p>
