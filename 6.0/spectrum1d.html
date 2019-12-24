@@ -213,9 +213,9 @@
 <p>Compute auto- [and cross-] spectra from one [or two] time series</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<p><strong>gmt spectrum1d</strong> [ <em>table</em> ] <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>segment_size</em>]
+<p><strong>gmt spectrum1d</strong> [ <em>table</em> ] [ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>segment_size</em> ]
 [ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong>[<strong>xycnpago</strong>] ] [ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>dt</em> ] [ <a class="reference internal" href="#l"><span> <strong>-L</strong></span></a></strong>[<strong>h</strong>|<strong>m</strong>] ]
-[ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong>[<em>name_stem</em> ] ] [ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong> ] [ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong> ]
+[ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong>[<em>name_stem</em>] ] [ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong> ] [ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong> ]
 [ <strong>-b</strong><a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">binary</span></a> ]
 [ <strong>-d</strong><a class="reference internal" href="gmt.html#d-full"><span class="std std-ref">nodata</span></a> ]
 [ <strong>-e</strong><a class="reference internal" href="gmt.html#e-full"><span class="std std-ref">regexp</span></a> ]
@@ -269,7 +269,7 @@ be written to <em>stdout</em> (unless disabled via <strong>-T</strong>).</p>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils" id="s">
-<dt><strong>-S</strong><em>segment_size</em>]</dt>
+<dt><strong>-S</strong><em>segment_size</em></dt>
 <dd><em>segment_size</em> is a radix-2 number of samples per window for
 ensemble averaging. The smallest frequency estimated is
 1.0/(<em>segment_size</em> * <em>dt</em>), while the largest is 1.0/(2 *
@@ -520,7 +520,7 @@ periodograms, IEEE Transactions on Audio and Electroacoustics, Vol AU-15, No 2.<
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 23, 2019.
+        Last updated on Dec 24, 2019.
       </span>
 
     </p>

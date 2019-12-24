@@ -219,13 +219,13 @@
 [ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em> ]
 [ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong>[<strong>n</strong>]<em>value</em>[<strong>+f</strong><em>file</em>] ]
 [ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong>[<em>misfitfile</em>] ]
-[ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong>[<strong>d</strong>|<strong>f</strong>]<em>fudge</em>]
+[ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong>[<strong>d</strong>|<strong>f</strong>]<em>fudge</em> ]
 [ <a class="reference internal" href="#l"><span> <strong>-L</strong></span></a></strong> ]
 [ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong><em>nodefile</em> ]
 [ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>nu</em> ]
 [ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>maskgrid</em> ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
-[ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong>[<strong>w</strong>]]
+[ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong>[<strong>w</strong>] ]
 [ <strong>-b</strong><a class="reference internal" href="../../gmt.html#bi-full"><span class="std std-ref">binary</span></a> ]
 [ <strong>-d</strong><a class="reference internal" href="../../gmt.html#d-full"><span class="std std-ref">nodata</span></a> ]
 [ <strong>-e</strong><a class="reference internal" href="../../gmt.html#e-full"><span class="std std-ref">regexp</span></a> ]
@@ -287,7 +287,7 @@ output is produced.  Specify <strong>-Cn</strong><em>value</em> to retain only t
 Note: 1/4 of the total number of data constraints is a good starting point
 for further experiments.</dd>
 </dl>
-<p id="e"><strong>E</strong>[<em>misfitfile</em>]</p>
+<p id="e"><strong>-E</strong>[<em>misfitfile</em>]</p>
 <blockquote>
 <div>Evaluate the spline exactly at the input data locations and report
 statistics of the misfit (mean, standard deviation, and rms) for <em>u</em> and
@@ -296,7 +296,7 @@ write the data table, augmented by two extra columns after each of the
 <em>u</em> and <em>v</em> columns holding the spline estimates and misfits.  If <strong>-W</strong>
 is given we also add two more columns with the chi^2 values.</div></blockquote>
 <dl class="docutils" id="f">
-<dt><a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong>[<strong>d</strong>|<strong>f</strong>]<em>fudge</em></dt>
+<dt><strong>-F</strong>[<strong>d</strong>|<strong>f</strong>]<em>fudge</em></dt>
 <dd>The Green’s functions are proportional to terms like 1/r^2 and log(r)
 and thus blow up for r == 0.  To prevent that we offer two fudging schemes:
 <strong>-Fd</strong><em>del_radius</em> lets you add a constant offset to all radii
@@ -472,7 +472,7 @@ doi:10.1007/978-3-319-21578-5_2.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 23, 2019.
+        Last updated on Dec 24, 2019.
       </span>
 
     </p>
