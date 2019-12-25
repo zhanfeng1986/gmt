@@ -356,7 +356,7 @@ with NaN is unconstrained.</dd>
 <dt><strong>-M</strong><em>max_radius</em>[<strong>u</strong>]</dt>
 <dd>After solving for the surface, apply a mask so that nodes farther
 than <em>max_radius</em> away from a data constraint is set to NaN [no masking].
-Append a distance unit (see <a href="#id1"><span class="problematic" id="id2">`Units`_</span></a>) if needed.
+Append a distance unit (see <a class="reference internal" href="#units">Units</a>) if needed.
 One can also select the nodes to mask by using the <strong>-M</strong><em>n_cells</em><strong>c</strong> form.
 Here <em>n_cells</em> means the number of cells around the node controlled by a data point. As an example
 <strong>-M0c</strong> means that only the cell where point lies is filled, <strong>-M1c</strong> keeps one cell
@@ -475,6 +475,18 @@ precision once GMT operates on the grid or writes out new grids. To
 limit loss of precision when processing data you should always consider
 normalizing the data prior to processing.</p>
 </div>
+<div class="section" id="units">
+<h2>Units<a class="headerlink" href="#units" title="Permalink to this headline">¶</a></h2>
+<p>For map distance unit, append <em>unit</em> <strong>d</strong> for arc degree, <strong>m</strong> for arc
+minute, and <strong>s</strong> for arc second, or <strong>e</strong> for meter [Default], <strong>f</strong>
+for foot, <strong>k</strong> for km, <strong>M</strong> for statute mile, <strong>n</strong> for nautical mile,
+and <strong>u</strong> for US survey foot. By default we compute such distances using
+a spherical approximation with great circles (<strong>-jg</strong>) using the authalic radius
+(see <a class="reference internal" href="gmt.conf.html#proj-mean-radius"><span class="std std-ref">PROJ_MEAN_RADIUS</span></a>). You can use <strong>-jf</strong> to perform
+“Flat Earth” calculations (quicker but less accurate) or <strong>-je</strong> to perform
+exact geodesic calculations (slower but more accurate; see
+<a class="reference internal" href="gmt.conf.html#proj-geodesic"><span class="std std-ref">PROJ_GEODESIC</span></a> for method used).</p>
+</div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p><strong>Note</strong>: Below are some examples of valid syntax for this module.
@@ -587,7 +599,7 @@ splines in tension, <em>Geophysics</em>, 55, 293-305.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 24, 2019.
+        Last updated on Dec 25, 2019.
       </span>
 
     </p>
