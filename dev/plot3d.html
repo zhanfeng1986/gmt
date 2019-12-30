@@ -944,6 +944,14 @@ coordinates of the vector end point.</p>
 <div><strong>+z</strong><em>scale</em>[<em>unit</em>] expects input <em>dx</em>,<em>dy</em> vector components and
 uses the <em>scale</em> to convert to polar coordinates with length in given unit.</div></blockquote>
 </div>
+<div class="section" id="auto-legend-entries">
+<h2>Auto-legend entries<a class="headerlink" href="#auto-legend-entries" title="Permalink to this headline">¶</a></h2>
+<p>This module allows you to use the <strong>-l</strong> option to specify an automatic legend entry.
+This option is available for lines or symbols only.  If there is no size specified
+(which is always true for lines) or if the symbol size is computed from other information
+(which may be true for some symbols deriving size from other input columns), then you need
+to supply a legend size (i.e., length of a line symbol) via the <strong>+s</strong> modifier.</p>
+</div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p><strong>Note</strong>: Below are some examples of valid syntax for this module.
@@ -1055,7 +1063,7 @@ original polygon.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 29, 2019.
+        Last updated on Dec 30, 2020.
       </span>
 
     </p>

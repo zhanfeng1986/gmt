@@ -1149,6 +1149,14 @@ problem by splitting polygons into a west and east polygon or inserting
 artificial helper lines that makes a cut into the pole and back.  Such
 doctored polygons may be misrepresented in GMT.</p>
 </div>
+<div class="section" id="auto-legend-entries">
+<h2>Auto-legend entries<a class="headerlink" href="#auto-legend-entries" title="Permalink to this headline">¶</a></h2>
+<p>This module allows you to use the <strong>-l</strong> option to specify an automatic legend entry.
+This option is available for lines or symbols only.  If there is no size specified
+(which is always true for lines) or if the symbol size is computed from other information
+(which may be true for some symbols deriving size from other input columns), then you need
+to supply a legend size (i.e., length of a line symbol) via the <strong>+s</strong> modifier.</p>
+</div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="gmt.html"><span class="doc">gmt</span></a>, <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a>,
@@ -1180,7 +1188,7 @@ doctored polygons may be misrepresented in GMT.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 29, 2019.
+        Last updated on Dec 30, 2020.
       </span>
 
     </p>
