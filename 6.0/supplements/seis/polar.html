@@ -500,6 +500,18 @@ coordinates of the vector end point.</p>
 <blockquote>
 <div><strong>+z</strong><em>scale</em>[<em>unit</em>] expects input <em>dx</em>,<em>dy</em> vector components and
 uses the <em>scale</em> to convert to polar coordinates with length in given unit.</div></blockquote>
+<p>Note: Vectors were completely redesigned for GMT5 which separated the vector head (a polygon)
+from the vector stem (a line).  In GMT4, the entire vector was a polygon and it could only
+be a straight Cartesian vector. Yes, the old GMT4 vector shape remains accessible if
+you specify a vector (<strong>-Sv</strong>|<strong>V</strong>) using the GMT4 syntax, explained here: <em>size</em>, if present, will
+be interpreted as <em>arrowwidth/headlength/headwidth</em> [Default is 0.075c/0.3c/0.25c (or
+0.03i/0.12i/0.1i)]. By default, arrow attributes remain invariant to the length of the
+arrow. To have the size of the vector scale down with decreasing size, append <strong>n</strong><em>norm</em>,
+where vectors shorter than <em>norm</em> will have their attributes scaled by length/<em>norm</em>.
+To center the vector on the balance point, use <strong>−Svb</strong>; to align point with the vector head,
+use <strong>−Svh</strong>; to align point with the vector tail, use <strong>−Svt</strong> [Default]. To give the
+head point’s coordinates instead of direction and length, use <strong>−Svs</strong>. Upper case
+<strong>B</strong>, <strong>H</strong>, <strong>T</strong>, <strong>S</strong> will draw a double-headed vector [Default is single head].</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
@@ -575,7 +587,7 @@ Institut de Physique du Globe de Paris, Departement de Sismologie, Paris, France
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 31, 2020.
+        Last updated on Jan 01, 2020.
       </span>
 
     </p>

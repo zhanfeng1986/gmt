@@ -214,7 +214,7 @@
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <p><strong>gmt grdinfo</strong> <em>grdfiles</em> [ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong>[<strong>n</strong>|<strong>t</strong>] ]
-[ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong>[<em>xoff</em>[/<em>yoff</em>][<strong>+n</strong>] ]
+[ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong>[<em>xoff</em>[/<em>yoff</em>]][<strong>+i</strong>] ]
 [ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong> ]
 [ <a class="reference internal" href="#i"><span> <strong>-I</strong></span></a></strong>[<em>dx</em>[/<em>dy</em>]|<strong>b</strong>|<strong>i</strong>|<strong>r</strong>] ]
 [ <a class="reference internal" href="#l"><span> <strong>-L</strong></span></a></strong>[<strong>0</strong>|<strong>1</strong>|<strong>2</strong>|<strong>p</strong>|<strong>a</strong>] ] [ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong> ]
@@ -261,7 +261,7 @@ output format is instead <em>NF w e s n z0 z1</em>, where <em>NF</em> is the tot
 number of grids read and <em>w e s n</em> are rounded off (see <strong>-I</strong>).</dd>
 </dl>
 <dl class="docutils" id="d">
-<dt><strong>-D</strong>[<em>xoff</em>[/<em>yoff</em>][<strong>+i</strong>]</dt>
+<dt><strong>-D</strong>[<em>xoff</em>[/<em>yoff</em>]][<strong>+i</strong>]</dt>
 <dd>Divide a single grid’s domain (or the <strong>-R</strong> domain, if no grid given)
 into tiles of size <em>dx</em> times <em>dy</em> (set via <strong>-I</strong>).  You can specify
 overlap between tiles by appending <em>xoff</em>[/<em>yoff</em>].  If the single
@@ -406,7 +406,7 @@ data as 1- or 2-byte integers. <a class="reference internal" href="gmt.html#grd-
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 31, 2020.
+        Last updated on Jan 01, 2020.
       </span>
 
     </p>
