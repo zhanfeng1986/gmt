@@ -216,7 +216,8 @@
 <p><strong>gmt grdblend</strong> [ <em>blendfile</em> | <em>grid1</em> <em>grid2</em> … ] <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>outgrid</em>
 <a class="reference internal" href="#i"><span> <strong>-I</strong></span></a></strong><em>increment</em>
 <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em>
-[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><strong>f</strong>|<strong>l</strong>|<strong>o</strong>|<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>] [ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong><em>nodata</em> ]
+[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><strong>f</strong>|<strong>l</strong>|<strong>o</strong>|<strong>u</strong>[<strong>+n</strong>|<strong>p</strong>] ]
+[ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong><em>nodata</em> ]
 [ <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong> ] [ <a class="reference internal" href="#z"><span> <strong>-Z</strong></span></a></strong><em>scale</em> ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
 [ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong>[<strong>z</strong>] ]
@@ -304,7 +305,7 @@ first be resampled via <a class="reference internal" href="grdsample.html"><span
 netCDF or native binary format will first be reformatted via <a class="reference internal" href="grdconvert.html"><span class="doc">grdconvert</span></a>.</dd>
 </dl>
 <dl class="docutils" id="c">
-<dt><strong>-C</strong><strong>f</strong>|<strong>l</strong>|<strong>o</strong>|<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>]</dt>
+<dt><strong>-C</strong><strong>f</strong>|<strong>l</strong>|<strong>o</strong>|<strong>u</strong>[<strong>+n</strong>|<strong>p</strong>]</dt>
 <dd>Clobber mode: Instead of blending, simply pick the value of one of
 the grids that covers a node. Select from the following modes: <strong>f</strong>
 for the first grid to visit a node; <strong>o</strong> for the last grid to visit
@@ -478,7 +479,7 @@ documentation for how to change system limits.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 31, 2020.
+        Last updated on Jan 01, 2020.
       </span>
 
     </p>

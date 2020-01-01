@@ -347,6 +347,7 @@ can benefit from the GMT infrastructure and extend GMT in specific ways.</p>
 <strong>-n</strong><a class="reference internal" href="#n-full"><span class="std std-ref">flags</span></a>
 <strong>-o</strong><a class="reference internal" href="#ocols-full"><span class="std std-ref">flags</span></a>
 <strong>-p</strong><a class="reference internal" href="#perspective-full"><span class="std std-ref">flags</span></a>
+<strong>-q</strong><a class="reference internal" href="#q-full"><span class="std std-ref">flags</span></a>
 <strong>-r</strong><a class="reference internal" href="#nodereg-full"><span class="std std-ref">reg</span></a>
 <strong>-s</strong><a class="reference internal" href="#s-full"><span class="std std-ref">flags</span></a>
 <strong>-t</strong><a class="reference internal" href="#t-full"><span class="std std-ref">transp</span></a>
@@ -1251,6 +1252,45 @@ can perform a simple rotation about the z-axis by just giving the
 rotation angle.  Optionally, use <strong>+v</strong> or <strong>+w</strong> to select another
 axis location than the plot origin.</dd>
 </dl>
+<dl class="docutils" id="q-full">
+<dt><strong>-q</strong>[<strong>i</strong>|<strong>o</strong>][~]<em>rows</em>[<strong>+c</strong><em>col</em>][<strong>+a</strong>|<strong>f</strong>|<strong>s</strong>]</dt>
+<dd>Select specific data rows to be read (<strong>-qi</strong> [Default]) or written (<strong>-qo</strong>) [all].
+Give individual rows (or row ranges in the format <em>start</em>[:<em>inc</em>]:<em>stop</em>, where
+<em>inc</em> defaults to 1 if not specified) separated by commas [Default reads/writes all rows,
+starting with the first row (0)]. By default (<strong>+a</strong>) we count rows in the data set;
+append <strong>+f</strong> or <strong>+s</strong> to reset the count at the start of each file or segment.
+Alternatively, use <strong>+c</strong><em>col</em> to indicate that the arguments instead
+are min/max <em>data limits</em> for the values in column <em>col</em>.
+Note: Because arguments may contain colons or be negative, your must specify <em>start</em>/<em>stop</em> instead.
+To read (or write) from a given row until the end of the data, leave off <em>stop</em>.
+To reverse the tests, prepend ~ before giving your first range.</dd>
+</dl>
+<dl class="docutils" id="qi-full">
+<dt><strong>-qi</strong>[~]<em>rows</em>[<strong>+c</strong><em>col</em>][<strong>+a</strong>|<strong>f</strong>|<strong>s</strong>]</dt>
+<dd>Select specific data rows to be read durting input [all].
+Give individual rows (or row ranges in the format <em>start</em>[:<em>inc</em>]:<em>stop</em>, where
+<em>inc</em> defaults to 1 if not specified) separated by commas [Default reads all rows,
+starting with the first row (0)]. By default (<strong>+a</strong>) we count rows in the data set;
+append <strong>+f</strong> or <strong>+s</strong> to reset the count at the start of each file or segment.
+Alternatively, use <strong>+c</strong><em>col</em> to indicate that the arguments instead
+are min/max <em>data limits</em> for the values in column <em>col</em>.
+Note: Because data limits may contain colons or be negative, your must specify <em>start</em>/<em>stop</em> instead.
+To read from a given row until the end of the data, leave off <em>stop</em>.
+To reverse the tests, prepend ~ before giving your first range.</dd>
+</dl>
+<dl class="docutils" id="qo-full">
+<dt><strong>-qo</strong>[~]<em>rows</em>[<strong>+c</strong><em>col</em>][<strong>+a</strong>|<strong>f</strong>|<strong>s</strong>]</dt>
+<dd>Select specific data rows to be writing during output [all].
+Give individual rows (or row ranges in the format <em>start</em>[:<em>inc</em>]:<em>stop</em>, where
+<em>inc</em> defaults to 1 if not specified) separated by commas [Default writes all rows,
+starting with the first row (0)]. By default (<strong>+a</strong>) we count rows in the data set;
+append <strong>+f</strong> or <strong>+s</strong> to reset the count at the start of each file or segment.
+Alternatively, use <strong>+c</strong><em>col</em> to indicate that the arguments instead
+are min/max <em>data limits</em> for the values in column <em>col</em>.
+Note: Because data limits may contain colons or be negative, your must specify <em>start</em>/<em>stop</em> instead.
+To write from a given row until the end of the data, leave off <em>stop</em>.
+To reverse the tests, prepend ~ before giving your first range.</dd>
+</dl>
 <dl class="docutils" id="nodereg-full">
 <dt><strong>-r</strong>[<strong>g</strong>|<strong>p</strong>]</dt>
 <dd>Force <strong>g</strong>ridline or <strong>p</strong>ixel node registration [Just <strong>-r</strong> sets pixel registration].
@@ -1521,7 +1561,7 @@ GMT documentation site <a class="reference external" href="https://docs.generic-
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 31, 2020.
+        Last updated on Jan 01, 2020.
       </span>
 
     </p>

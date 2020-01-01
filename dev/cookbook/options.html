@@ -134,14 +134,15 @@
 <li class="toctree-l3"><a class="reference internal" href="#grid-interpolation-parameters-the-n-option">4.16. Grid interpolation parameters: The <strong>-n</strong> option</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#output-columns-selection-the-o-option">4.17. Output columns selection: The <strong>-o</strong> option</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#perspective-view-the-p-option">4.18. Perspective view: The <strong>-p</strong> option</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#grid-registration-the-r-option">4.19. Grid registration: The <strong>-r</strong> option</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#gridline-registration">4.19.1. Gridline registration</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pixel-registration">4.19.2. Pixel registration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-row-selection-the-q-option">4.19. Data row selection: The <strong>-q</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#grid-registration-the-r-option">4.20. Grid registration: The <strong>-r</strong> option</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#gridline-registration">4.20.1. Gridline registration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pixel-registration">4.20.2. Pixel registration</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#nan-record-treatment-the-s-option">4.20. NaN-record treatment: The <strong>-s</strong> option</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#layer-transparency-the-t-option">4.21. Layer transparency: The <strong>-t</strong> option</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#latitude-longitude-or-longitude-latitude-the-option">4.22. Latitude/Longitude or Longitude/Latitude?: The <strong>-:</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nan-record-treatment-the-s-option">4.21. NaN-record treatment: The <strong>-s</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#layer-transparency-the-t-option">4.22. Layer transparency: The <strong>-t</strong> option</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#latitude-longitude-or-longitude-latitude-the-option">4.23. Latitude/Longitude or Longitude/Latitude?: The <strong>-:</strong> option</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="coordinate_transformations.html">5. GMT Coordinate Transformations</a></li>
@@ -350,19 +351,22 @@ importance (some are used a lot more than others).</p>
 <tr class="row-odd"><td><strong>-p</strong></td>
 <td>Control perspective views for plots</td>
 </tr>
-<tr class="row-even"><td><strong>-r</strong></td>
+<tr class="row-even"><td><strong>-q</strong></td>
+<td>Specify which input rows to read or output rows to write</td>
+</tr>
+<tr class="row-odd"><td><strong>-r</strong></td>
 <td>Set grid registration [Default is gridline]</td>
 </tr>
-<tr class="row-odd"><td><strong>-s</strong></td>
+<tr class="row-even"><td><strong>-s</strong></td>
 <td>Control output of records containing one or more NaNs</td>
 </tr>
-<tr class="row-even"><td><strong>-t</strong></td>
+<tr class="row-odd"><td><strong>-t</strong></td>
 <td>Change layer transparency</td>
 </tr>
-<tr class="row-odd"><td><strong>-x</strong></td>
+<tr class="row-even"><td><strong>-x</strong></td>
 <td>Set number of cores to be used in multi-threaded applications</td>
 </tr>
-<tr class="row-even"><td><strong>-:</strong></td>
+<tr class="row-odd"><td><strong>-:</strong></td>
 <td>Assume input geographic data are (<em>lat,lon</em>) and not (<em>lon,lat</em>)</td>
 </tr>
 </tbody>
@@ -1311,18 +1315,18 @@ on columns from the physical record. For instance, to use the 4th,
 7th, and 3rd data column as the required <em>x,y,z</em> to
 <a class="reference internal" href="../blockmean.html"><span class="doc">blockmean</span></a> you would specify
 <strong>-i</strong>3,6,2 (since 0 is the first column). The chosen data columns
-will be used as is. Optionally, you can specify that input columns
+will be used as given. Optionally, you can specify that input columns
 should be transformed according to a linear or logarithmic conversion.
 Do so by appending [<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>] to
 each column (or range of columns). All items are optional: The <strong>+l</strong>
 implies we should first take <span class="math notranslate nohighlight">\(\log_{10}\)</span> of the data [leave as
 is]. Next, we may scale the result by the given <em>scale</em> [1]. Finally, we
 add in the specified <em>offset</em> [0].  If you want the trailing text to remain
-part of your subset logical record then also select the special column
+part of your subset logical record then you must also select the special column
 by requesting column <strong>t</strong>, otherwise we ignore trailing text.  If you only
 want to select one word from the trailing text, then append the word number
 (0 is the first word).  Finally, to use the entire numerical record and
-ignore trailing text, use <strong>-in</strong>.</p>
+ignore all trailing text, use <strong>-in</strong>.</p>
 <div class="figure align-center" id="id30">
 <span id="gmt-record"></span><a class="reference internal image-reference" href="../_images/GMT_record.png"><img alt="../_images/GMT_record.png" src="../_images/GMT_record.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-text">The physical, logical (input) and output record in GMT.  Here, we are
@@ -1400,8 +1404,23 @@ GMT command will be used.  Alternatively, you can perform a simple rotation
 about the z-axis by just giving the rotation angle.  Optionally, use <strong>+v</strong>
 or <strong>+w</strong> to select another axis location than the plot origin.</p>
 </div>
+<div class="section" id="data-row-selection-the-q-option">
+<span id="option-q"></span><h2>4.19. Data row selection: The <strong>-q</strong> option<a class="headerlink" href="#data-row-selection-the-q-option" title="Permalink to this headline">¶</a></h2>
+<p>Similar to how <strong>-i</strong> and <strong>-o</strong> control which data <em>columns</em> to read and write, the <strong>-qi</strong> (or just <strong>-q</strong>)
+and <strong>-qo</strong> options control which data <em>rows</em> to read and write [Default is all]. As for columns, you
+can specify specific rows, a range of rows, or several sets of row ranges. You can also
+invert your selections with a leading ~ and then we select all the rows <em>not</em> specified by
+your ranges.  Normally, the row counter starts at 0 and increases until the end of the
+data set (<strong>+a</strong>).  However, you can append <strong>+f</strong> to reset the counter at the start of each
+table (file) or <strong>+s</strong> to reset the counter at the start of each data segment. Thus, <strong>-q</strong>1<strong>+s</strong>
+will only read the 2nd data record from each of the segments found.  Note that header records do not
+increase the row counters; only data records do.  Instead of rows you may specify data
+<em>limits</em> for a specified column by appending <strong>+c</strong><em>col</em>.  Now, we will only select rows whose
+data for the given column <em>col</em> lie within the range(s) given by your <em>min</em>/<em>max</em> limits.  Also
+note that when <strong>+c</strong> is used the <strong>+a</strong>|<strong>f</strong>|<strong>s</strong> have no effect.</p>
+</div>
 <div class="section" id="grid-registration-the-r-option">
-<span id="option-nodereg"></span><h2>4.19. Grid registration: The <strong>-r</strong> option<a class="headerlink" href="#grid-registration-the-r-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-nodereg"></span><h2>4.20. Grid registration: The <strong>-r</strong> option<a class="headerlink" href="#grid-registration-the-r-option" title="Permalink to this headline">¶</a></h2>
 <p>All 2-D grids in GMT have their nodes
 organized in one of two ways, known as <em>gridline</em>- and <em>pixel</em>-
 registration. The GMT default is gridline registration; programs that
@@ -1413,7 +1432,7 @@ this conversion looses the Nyquist frequency and dampens the other
 high frequencies.  It is best to avoid any registration conversion if you
 can help it.  Planning ahead may be important.</p>
 <div class="section" id="gridline-registration">
-<h3>4.19.1. Gridline registration<a class="headerlink" href="#gridline-registration" title="Permalink to this headline">¶</a></h3>
+<h3>4.20.1. Gridline registration<a class="headerlink" href="#gridline-registration" title="Permalink to this headline">¶</a></h3>
 <p>In this registration, the nodes are centered on the grid line
 intersections and the data points represent the average value in a cell
 of dimensions (<span class="math notranslate nohighlight">\(x_{inc} \cdot y_{inc}\)</span>) centered on each node
@@ -1428,7 +1447,7 @@ ny &amp; =  &amp;       (y_{max} - y_{min}) / y_{inc} + 1
 <p>which for the example in left side of Figure <a class="reference internal" href="#grid-registration"><span class="std std-ref">Gridline registration</span></a> yields nx = ny = 4.</p>
 </div>
 <div class="section" id="pixel-registration">
-<h3>4.19.2. Pixel registration<a class="headerlink" href="#pixel-registration" title="Permalink to this headline">¶</a></h3>
+<h3>4.20.2. Pixel registration<a class="headerlink" href="#pixel-registration" title="Permalink to this headline">¶</a></h3>
 <p>Here, the nodes are centered in the grid cells, i.e., the areas
 between grid lines, and the data points represent the average values
 within each cell (right side of Figure <a class="reference internal" href="#grid-registration"><span class="std std-ref">Grid registration</span></a>). In the case of
@@ -1450,7 +1469,7 @@ gridline-registered grids; here we find nx = ny = 3.</p>
 </div>
 </div>
 <div class="section" id="nan-record-treatment-the-s-option">
-<span id="option-s"></span><h2>4.20. NaN-record treatment: The <strong>-s</strong> option<a class="headerlink" href="#nan-record-treatment-the-s-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-s"></span><h2>4.21. NaN-record treatment: The <strong>-s</strong> option<a class="headerlink" href="#nan-record-treatment-the-s-option" title="Permalink to this headline">¶</a></h2>
 <p>We can use this option to suppress output for records whose <em>z</em>-value
 equals NaN (by default we output all records). Alternatively, append
 <strong>+r</strong> to reverse the suppression, i.e., only output the records whose
@@ -1460,7 +1479,7 @@ supply a comma-separated list of all columns or column ranges to
 consider (before the optional modifiers) for this NaN test.</p>
 </div>
 <div class="section" id="layer-transparency-the-t-option">
-<span id="option-t"></span><h2>4.21. Layer transparency: The <strong>-t</strong> option<a class="headerlink" href="#layer-transparency-the-t-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-t"></span><h2>4.22. Layer transparency: The <strong>-t</strong> option<a class="headerlink" href="#layer-transparency-the-t-option" title="Permalink to this headline">¶</a></h2>
 <p>While the PostScript language does not support transparency, PDF does,
 and via PostScript extensions one can manipulate the transparency
 levels of objects. The <strong>-t</strong> option allows you to change the
@@ -1473,7 +1492,7 @@ on a record-by-record basis if <strong>-t</strong> is given without argument and
 input file supplies variable transparencies as the last numerical column value.</p>
 </div>
 <div class="section" id="latitude-longitude-or-longitude-latitude-the-option">
-<span id="option-colon"></span><h2>4.22. Latitude/Longitude or Longitude/Latitude?: The <strong>-:</strong> option<a class="headerlink" href="#latitude-longitude-or-longitude-latitude-the-option" title="Permalink to this headline">¶</a></h2>
+<span id="option-colon"></span><h2>4.23. Latitude/Longitude or Longitude/Latitude?: The <strong>-:</strong> option<a class="headerlink" href="#latitude-longitude-or-longitude-latitude-the-option" title="Permalink to this headline">¶</a></h2>
 <p>For geographical data, the first column is expected to contain
 longitudes and the second to contain latitudes. To reverse this
 expectation you must apply the <strong>-:</strong> option. Optionally, append <strong>i</strong>
@@ -1548,7 +1567,7 @@ context they are considered “other”. Thus, when we refer to
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Dec 31, 2020.
+        Last updated on Jan 01, 2020.
       </span>
 
     </p>
