@@ -362,7 +362,7 @@ Choose from several types of range determinations:
 to nearest <em>inc</em> (append <strong>+d</strong> to resample to a discrete CPT), <strong>-Sa</strong><em>scl</em> will
 make a symmetric range around the average (i.e., mean)
 and ±<em>scl</em> * <em>sigma</em>, <strong>-Sm</strong><em>scl</em> will make a symmetric range around the median
-and ±<em>scl</em> * <em>L1_scale</em>, <strong>-Sp</strong><em>scl</em> will make symmetric range around mode and
+and ±<em>scl</em> * <em>L1_scale</em>, <strong>-Sp</strong><em>scl</em> will make symmetric range around mode (i.e., LMS; least median of squares) and
 ±<em>scl</em> * <em>LMS_scale</em>, while <strong>-Sq</strong><em>low/high</em> sets the range from <em>low</em> quartile
 to <em>high</em> quartile (in percentages).  We use the last data column for this calculation;
 use <strong>i</strong> if you need to adjust the column orders.</dd>
@@ -618,7 +618,7 @@ directory.</p>
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 01, 2020.
+        Last updated on Jan 02, 2020.
       </span>
 
     </p>

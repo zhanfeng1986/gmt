@@ -234,8 +234,8 @@ various statistics for the (<em>x</em>,<em>y</em>,<em>z</em>) data in the grid f
 The output information contains the minimum/maximum values for <em>x</em>, <em>y</em>,
 and <em>z</em>, where the min/max of <em>z</em> occur, the <em>x</em>- and <em>y</em>-increments,
 and the number of <em>x</em> and <em>y</em> nodes, and [optionally] the mean, standard
-deviation, and/or the median, median absolute deviation of <em>z</em>, and/or
-the mode (LMS), LMS scale of <em>z</em>, and number of nodes set
+deviation, and/or the median, median absolute deviation (MAD) of <em>z</em>, and/or
+the mode (Least Median of Squares; LMS), LMS scale of <em>z</em>, and number of nodes set
 to NaN. We also report if the grid is pixel- or gridline-registered and
 if it is a Cartesian or Geographic data set (based on metadata in the file).</p>
 </div>
@@ -266,7 +266,10 @@ number of grids read and <em>w e s n</em> are rounded off (see <strong>-I</stron
 into tiles of size <em>dx</em> times <em>dy</em> (set via <strong>-I</strong>).  You can specify
 overlap between tiles by appending <em>xoff</em>[/<em>yoff</em>].  If the single
 grid is given you may use the modifier <strong>+i</strong> to ignore tiles that
-have no data within each tile subregion.</dd>
+have no data within each tile subregion.  Default output is text
+region strings.  Use <strong>-C</strong> to instead report four columns with
+<em>xmin xmax ymin ymax</em> per tile, or use <strong>-Ct</strong> to also have the
+region string appended as trailing text.</dd>
 </dl>
 <dl class="docutils" id="f">
 <dt><strong>-F</strong></dt>
@@ -406,7 +409,7 @@ data as 1- or 2-byte integers. <a class="reference internal" href="gmt.html#grd-
         
         &copy; Copyright 2019, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 01, 2020.
+        Last updated on Jan 02, 2020.
       </span>
 
     </p>
