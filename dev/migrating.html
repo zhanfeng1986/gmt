@@ -221,29 +221,29 @@ via this single program, using the syntax <strong>gmt module</strong> [<em>optio
 <ol class="arabic">
 <li><p class="first">If you are building GMT from source (either from a checked-out GitHub repo or
 the source distributed via the tarballs, you can edit a parameter in the file
-cmake/ConfigUser.cmake and set GMT_INSTALL_MODULE_LINKS true.  This will add
-symbolic links called blockmean, pscoast, grdimage, etc., etc. that all point
+<em>cmake/ConfigUser.cmake</em> and set <strong>GMT_INSTALL_MODULE_LINKS</strong> true.  This will add
+symbolic links called <strong>blockmean</strong>, <strong>pscoast</strong>, <strong>grdimage</strong>, etc. that all point
 to the gmt executable.  Your old scripts will now work without the leading gmt
 program for each module command.</p>
 </li>
-<li><p class="first">You can run the script <em>gmt_links.sh</em> which lives in the share/tools directory
-(run gmt --show-sharedir to find the path to share, then look in tools). If
+<li><p class="first">You can run the script <em>gmt_links.sh</em> which lives in the <strong>share/tools</strong> directory
+(run <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--show-sharedir</span></code> to find the path to share, then look in tools). If
 your GMT installation was installed outside your user directory you will need
-to run the script as root.  It will create all the module links as discussed in
-the rebuild section.  You can run the link-building script this way:</p>
+to run the script as root.  It will create all the module links to allow users
+to run modules directly.  You can run the link-building script this way:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">$(</span>gmt --show-sharedir<span class="k">)</span>/tools/gmt_links.sh
 </pre></div>
 </div>
 <p>which will report the status of any existing links.  Add the argument <em>create</em>
 or <em>delete</em> to make actual changes.</p>
 </li>
-<li><p class="first">If your default shell is bash or similar then you can call another share/tools
-script called gmt_functions.sh.  It will instead create bash functions with the
-names of the modules and thus let you run blockmean, etc. without a leading
+<li><p class="first">If your default shell is bash or similar then you can call another <strong>share/tools</strong>
+script called <strong>gmt_functions.sh</strong>.  It will instead create bash functions with the
+names of the modules and thus let you run <strong>blockmean</strong>, etc. without a leading
 gmt invocation.</p>
 </li>
-<li><p class="first">If your default shell is csh or similar then you must instead call gmt_aliases.csh
-which works similarly to the gmt_functions.sh but for csh.  Both of these two
+<li><p class="first">If your default shell is csh or similar then you must instead call <strong>gmt_aliases.csh</strong>
+which works similarly to the <strong>gmt_functions.sh</strong> but for csh.  Both of these two
 solutions can be implemented via your login setup so they are always set once you
 log in to your computer or open a new terminal window.</p>
 </li>
@@ -285,7 +285,7 @@ may wish to take the opportunity and update the syntax when these issues are rep
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 03, 2020.
+        Last updated on Jan 04, 2020.
       </span>
 
     </p>

@@ -214,7 +214,7 @@
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <p><strong>gmt pshistogram</strong> [ <em>table</em> ] <a class="reference internal" href="#j"><span> <strong>-J</strong></span></a></strong><strong>x</strong>|<strong>X</strong><em>parameters</em>
-<a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong>[<em>min/max</em>/]<em>inc</em>[<strong>n</strong>] |<a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>file</em>|<em>list</em>
+<a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong>[<em>min/max</em>/]<em>inc</em>[<strong>+n</strong>] |<a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>file</em>|<em>list</em>
 [ <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong> ]
 [ <a class="reference internal" href="#b"><span> <strong>-B</strong></span></a></strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> ]
 [ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>cpt</em> ]
@@ -260,7 +260,7 @@ range parameters it will plot the histogram. A cumulative histogram may also be 
 <dd><em>xscale[/yscale]</em> (Linear scale(s) in distance unit/data unit).</dd>
 </dl>
 <dl class="docutils" id="t">
-<dt><strong>-T</strong>[<em>min/max</em>/]<em>inc</em>[<strong>n</strong>] |<a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>file</em>|<em>list</em></dt>
+<dt><strong>-T</strong>[<em>min/max</em>/]<em>inc</em>[<strong>+n</strong>] |<strong>-T</strong><em>file</em>|<em>list</em></dt>
 <dd>Make evenly spaced array of bin boundaries from <em>min</em> to <em>max</em> by <em>inc</em>.
 If <em>min/max</em> are not given then we default to the range in <strong>-R</strong>.
 For details on array creation, see <a class="reference internal" href="#generate-1d-array">Generate 1D Array</a>.</dd>
@@ -532,7 +532,7 @@ increments of 100.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 03, 2020.
+        Last updated on Jan 04, 2020.
       </span>
 
     </p>

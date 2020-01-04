@@ -223,6 +223,7 @@
 [ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong>[<strong>x</strong>][<strong>y</strong>] ]
 [ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>dz</em>[<strong>+c</strong><em>col</em>] ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
+[ <strong>-a</strong><a class="reference internal" href="gmt.html#aspatial-full"><span class="std std-ref">flags</span></a> ]
 [ <strong>-bi</strong><a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">binary</span></a> ]
 [ <strong>-di</strong><a class="reference internal" href="gmt.html#di-full"><span class="std std-ref">nodata</span></a> ]
 [ <strong>-e</strong><a class="reference internal" href="gmt.html#e-full"><span class="std std-ref">regexp</span></a> ]
@@ -233,6 +234,7 @@
 [ <strong>-o</strong><a class="reference internal" href="gmt.html#ocols-full"><span class="std std-ref">flags</span></a> ]
 [ <strong>-qi</strong><a class="reference internal" href="gmt.html#qi-full"><span class="std std-ref">flags</span></a> ]
 [ <strong>-r</strong><a class="reference internal" href="gmt.html#nodereg-full"><span class="std std-ref">reg</span></a> ]
+[ <strong>-s</strong><a class="reference internal" href="gmt.html#s-full"><span class="std std-ref">flags</span></a> ]
 [ <strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] ]
 [ <strong>--PAR</strong>=<em>value</em> ]</p>
 <p><strong>Note:</strong> No space is allowed between the option flag and the associated arguments.</p>
@@ -278,7 +280,7 @@ uses &lt;min/max&gt; format]. When used, users may also use <strong>-o</strong> 
 limit which output columns should be reported [all].</dd>
 </dl>
 <dl class="docutils" id="d">
-<dt><strong>-D</strong></dt>
+<dt><strong>-D</strong>[<em>dx</em>[/<em>dy</em>]]</dt>
 <dd>Modifies results obtained by <strong>-I</strong> by shifting the region to better
 align with the center of the data.  Optionally, append granularity
 for this shift [Default performs an exact shift].</dd>
@@ -353,6 +355,10 @@ string <strong>-T</strong><em>zmin/zmax/dz</em>. To use another column, append <
 <dd>Select verbosity level [c].  </dd>
 </dl>
 <dl class="docutils">
+<dt><strong>-a</strong><em>col</em>=<em>name</em>[<em>…</em>] <a class="reference internal" href="gmt.html#aspatial-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Set aspatial column associations <em>col</em>=<em>name</em>.</dd>
+</dl>
+<dl class="docutils">
 <dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Select native binary format for primary input. [Default is 2 input columns].</dd>
 </dl>
@@ -391,6 +397,10 @@ string <strong>-T</strong><em>zmin/zmax/dz</em>. To use another column, append <
 <dl class="docutils">
 <dt><strong>-r</strong>[<strong>g</strong>|<strong>p</strong>] <a class="reference internal" href="gmt.html#nodereg-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Set node registration [gridline].  </dd>
+</dl>
+<dl class="docutils">
+<dt><strong>-s</strong>[<em>cols</em>][<strong>+a</strong>|<strong>+r</strong>] <a class="reference internal" href="gmt.html#s-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Set handling of NaN records.</dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-:</strong>[<strong>i</strong>|<strong>o</strong>] <a class="reference internal" href="gmt.html#colon-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -507,7 +517,7 @@ the current setting of <a class="reference internal" href="gmt.conf.html#time-un
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 03, 2020.
+        Last updated on Jan 04, 2020.
       </span>
 
     </p>
