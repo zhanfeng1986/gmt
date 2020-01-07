@@ -2355,6 +2355,11 @@ as <code class="docutils literal notranslate"><span class="pre">=bs+s0.1+o-3200<
 offset, give filename as <code class="docutils literal notranslate"><span class="pre">=nb+oa</span></code>.</li>
 <li>To read a short integer <em>.bil</em> grid file stored in binary and and force
 the reading via GDAL, add suffix <em>=gd</em> as in <code class="docutils literal notranslate"><span class="pre">n45_e008_1arc_v3.bil=gd</span></code></li>
+<li>To write a lossless, deflate compressed, and tiled GeoTIFF grid (or image) use,
+<code class="docutils literal notranslate"><span class="pre">output.tif=gd:GTiff+cTILED=YES+cCOMPRESS=DEFLATE+cPREDICTOR=3</span></code>
+See also <a class="reference internal" href="#write-grids-images"><span class="std std-ref">Writing grids and images</span></a> as well as available options
+for each output format from the GDAL driver documentation,
+<a class="reference external" href="https://gdal.org/drivers/raster/gtiff.html">for example</a></li>
 </ul>
 <p>Programs that both read and/or write more than one grid file may specify
 different formats and/or scaling for the files involved. The only
@@ -2915,7 +2920,7 @@ off; see <a class="reference internal" href="../gmt.conf.html#ps-comments"><span
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 05, 2020.
+        Last updated on Jan 07, 2020.
       </span>
 
     </p>

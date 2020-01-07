@@ -359,6 +359,10 @@ have their domain shrunk by the same amount.</dd>
 <dd>Skip or produce header record(s).  </dd>
 </dl>
 <dl class="docutils">
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]] <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Select input columns and transformations (0 is first column, <em>t</em> is trailing text, append <em>word</em> to read one word only).</dd>
+</dl>
+<dl class="docutils">
 <dt><strong>-^</strong> or just <strong>-</strong></dt>
 <dd>Print a short message about the syntax of the command, then exit (NOTE: on Windows just use <strong>-</strong>).</dd>
 <dt><strong>-+</strong> or just <strong>+</strong></dt>
@@ -400,47 +404,35 @@ Other commands requiring input files are just dummy examples of the types
 of uses that are common but cannot be run verbatim as written.</p>
 <p>Let us assume the file data.nc covers the area 300/310/10/30. We want to
 change the boundaries from geodetic longitudes to geographic and put a
-new title in the header. We accomplish this by</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdedit data.nc -R-60/-50/10/30 -D+t<span class="s2">&quot;Gravity Anomalies&quot;</span>
+new title in the header. We accomplish this by:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdedit data.nc -R-60/-50/10/30 -D+t<span class="s2">&quot;Gravity Anomalies&quot;</span>
 </pre></div>
 </div>
-</div></blockquote>
 <p>The grid world.nc has the limits 0/360/-72/72. To shift the data so that
-the limits would be -180/180/-72/72, use</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdedit world.nc -R-180/180/-72/72 -S
+the limits would be -180/180/-72/72, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdedit world.nc -R-180/180/-72/72 -S
 </pre></div>
 </div>
-</div></blockquote>
 <p>The file junk.nc was created prior to GMT 3.1 with incompatible
-<strong>-R</strong> and <strong>-I</strong> arguments. To reset the x- and y-increments we run</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdedit junk.nc -A
+<strong>-R</strong> and <strong>-I</strong> arguments. To reset the x- and y-increments we run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdedit junk.nc -A
 </pre></div>
 </div>
-</div></blockquote>
 <p>The file junk.nc was created prior to GMT 4.1.3 and does not contain
 the required information to indicate that the grid is geographic. To add
-this information, run</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdedit junk.nc -fg
+this information, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdedit junk.nc -fg
 </pre></div>
 </div>
-</div></blockquote>
 <p>To rotate the grid oblique.nc 90 degrees counter-clockwise and write out
-the rotated grid to a new file, run</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdedit oblique.nc -El -Goblique_rot.nc
+the rotated grid to a new file, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdedit oblique.nc -El -Goblique_rot.nc
 </pre></div>
 </div>
-</div></blockquote>
-<p>To ensure that the grid depths.nc only has positive longitude values, run</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdedit depths.nc -L+p
+<p>To ensure that the grid depths.nc only has positive longitude values, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdedit depths.nc -L+p
 </pre></div>
 </div>
-</div></blockquote>
 </div>
 <div class="section" id="notes">
 <h2>Notes:<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
@@ -455,7 +447,7 @@ any revised output.</p>
 <p><a class="reference internal" href="gmt.html"><span class="doc">gmt</span></a>,
 <a class="reference internal" href="grd2xyz.html"><span class="doc">grd2xyz</span></a>,
 <a class="reference internal" href="grdfill.html"><span class="doc">grdfill</span></a>,
-<a class="reference internal" href="grdinfo.html"><span class="doc">grdinfo</span></a>
+<a class="reference internal" href="grdinfo.html"><span class="doc">grdinfo</span></a>,
 <a class="reference internal" href="xyz2grd.html"><span class="doc">xyz2grd</span></a></p>
 </div>
 </div>
@@ -483,7 +475,7 @@ any revised output.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 05, 2020.
+        Last updated on Jan 07, 2020.
       </span>
 
     </p>
