@@ -242,8 +242,7 @@
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p>Reads data values from <em>files</em> [or standard input] and
-will plot focal mechanisms on a map.
-Many options are similar to those of <a class="reference internal" href="../../plot.html"><span class="doc">plot</span></a>.</p>
+plots focal mechanisms.</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
@@ -295,24 +294,23 @@ done only when using the <strong>-Jz</strong> option, not when using only the
 <strong>-p</strong> option. In the latter case a perspective view of the plane is
 plotted, with no third dimension.  </dd>
 </dl>
-<p id="s"><strong>-S</strong><em>&lt;format&gt;&lt;scale&gt;</em>[<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</p>
-<blockquote>
-<div>Selects the meaning of the columns in the data file. In order to use
-the same file to plot cross-sections, depth is in third column.
-Nevertheless, it is possible to use “old style” <strong>psvelomeca</strong> input
-files without depth in third column using the <strong>-Fo</strong> option.</div></blockquote>
-<p><strong>-Sa</strong><em>scale</em>[<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</p>
-<blockquote>
-<div><p>Focal mechanisms in Aki and Richards convention. <em>scale</em> adjusts the
-scaling of the radius of the “beach ball”, which will be proportional to
-the magnitude. <em>scale</em> is the size for magnitude = 5. Use the <strong>-T</strong> option to
-render the beach ball transparent by drawing only the nodal planes and
-the circumference. The color or shade of the compressive quadrants can
+<dl class="docutils" id="s">
+<dt><strong>-S</strong><em>&lt;format&gt;&lt;scale&gt;</em>[<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</dt>
+<dd><p class="first">Selects the meaning of the columns in the data file.
+<em>scale</em> adjusts the scaling of the radius of the “beach ball”, which will be proportional to
+the magnitude. <em>scale</em> is the size for magnitude = 5 (i.e. scalar seismic moment M0 = 4.0E23 dynes-cm).
+The color or shade of the compressive quadrants can
 be specified with the <strong>-G</strong> option. The color or shade of the extensive
 quadrants can be specified with the <strong>-E</strong> option. Append <strong>+f</strong><em>font</em>
 to change the font of the text string; append <strong>+j</strong><em>justify</em> to change
 the text location relative to the beachball (default is above the beachball);
-append <strong>+o</strong> to offset the text string by <em>dx/dy</em>.
+append <strong>+o</strong> to offset the text string by <em>dx/dy</em>.</p>
+<p class="last">In order to use the same file to plot cross-sections, depth is in third column.
+Nevertheless, it is possible to use “old style” <strong>psvelomeca</strong> input
+files without depth in third column using the <strong>-Fo</strong> option.</p>
+</dd>
+<dt><strong>-Sa</strong><em>scale</em>[<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</dt>
+<dd><p class="first">Focal mechanisms in Aki and Richards convention.
 Parameters are expected to be in the following columns:</p>
 <p><strong>1</strong>,<strong>2</strong>:
 longitude, latitude of event (<strong>-:</strong> option interchanges order)</p>
@@ -327,21 +325,11 @@ longitude, latitude at which to place beachball if <strong>-C</strong> is used (
 Using 0,0 in columns 8 and 9 will plot the beach ball at the longitude,
 latitude given in columns 1 and 2. The <strong>-:</strong> option will interchange the order of
 columns (1,2) and (8,9).</p>
-<p><strong>10</strong>:
+<p class="last"><strong>10</strong>:
 Text string to appear above or below the beach ball (optional).</p>
-</div></blockquote>
-<p><strong>-Sc</strong><em>scale</em>[<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</p>
-<blockquote>
-<div><p>Focal mechanisms in Global CMT convention. <em>scale</em> adjusts the scaling
-of the radius of the “beach ball”, which will be proportional to the
-magnitude. <em>scale</em> is the size for magnitude = 5 (that is M0 = 4.0E23 dynes-cm).
-Use the <strong>-T</strong> option to render the beach ball transparent by drawing
-only the nodal planes and the circumference. The color or shade of the
-compressive quadrants can be specified with the <strong>-G</strong> option. The color
-or shade of the extensive quadrants can be specified with the <strong>-E</strong> option.
-Append <strong>+f</strong><em>font</em> to change the font of the text string;
-append <strong>+j</strong><em>justify</em> to change the text location relative to the beachball
-(default is above the beachball); append <strong>+o</strong> to offset the text string by <em>dx/dy</em>.
+</dd>
+<dt><strong>-Sc</strong><em>scale</em>[<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</dt>
+<dd><p class="first">Focal mechanisms in Global CMT convention.
 Parameters are expected to be in the following columns:</p>
 <p><strong>1</strong>,<strong>2</strong>:
 longitude, latitude of event (<strong>-:</strong> option interchanges order)</p>
@@ -358,26 +346,16 @@ longitude, latitude at which to place beachball if <strong>-C</strong> is used (
 Using 0,0 in columns 8 and 9 will plot the beach ball at the longitude,
 latitude given in columns 1 and 2. The <strong>-:</strong> option will interchange the order of
 columns (1,2) and (12,13).</p>
-<p><strong>14</strong>:
+<p class="last"><strong>14</strong>:
 Text string to appear above or below the beach ball (optional).</p>
-</div></blockquote>
-<p><strong>-Sm|d|z</strong><em>scale</em>[<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</p>
-<blockquote>
-<div><p>Seismic moment tensor. <em>scale</em> adjusts
-the scaling of the radius of the “beach ball”, which will be
-proportional to the magnitude. <em>scale</em> is the size for magnitude = 5
-(that is scalar seismic moment = 4.0E23 dynes-cm).
-<strong>-T</strong><em>0</em> option overlays best double couple transparently.
+</dd>
+<dt><strong>-Sm|d|z</strong><em>scale</em>[<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</dt>
+<dd><p class="first">Seismic moment tensor.
 <strong>-Sm</strong> plots the full seismic moment tensor.
 <strong>-Sz</strong> plots the deviatoric part of the moment tensor (zero trace).
 <strong>-Sd</strong> plots the closest double couple defined from the moment tensor (zero trace and zero determinant).
 Global CMT moment tensors are deviatoric, so <strong>-Sm</strong> and <strong>-Sz</strong> will produce the same result,
 but <strong>-Sd</strong> will not, unless the input moment tensor is already a double couple.
-The color or shade of the compressive quadrants can be specified with the <strong>-G</strong> option. The color
-or shade of the extensive quadrants can be specified with the <strong>-E</strong> option.
-Append <strong>+f</strong><em>font</em> to change the font of the text string;
-append <strong>+j</strong><em>justify</em> to change the text location relative to the beachball
-(default is above the beachball); append <strong>+o</strong> to offset the text string by <em>dx/dy</em>.
 Parameters are expected to be in the following columns:</p>
 <p><strong>1</strong>,<strong>2</strong>:
 longitude, latitude of event (<strong>-:</strong> option interchanges order)</p>
@@ -392,20 +370,11 @@ longitude, latitude at which to place beachball if <strong>-C</strong> is used (
 Using 0,0 in columns 8 and 9 will plot the beach ball at the longitude,
 latitude given in columns 1 and 2. The <strong>-:</strong> option will interchange the order of
 columns (1,2) and (11,12).</p>
-<p><strong>13</strong>:
+<p class="last"><strong>13</strong>:
 Text string to appear above or below the beach ball (optional).</p>
-</div></blockquote>
-<p><strong>-Sp</strong><em>scale</em>[<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</p>
-<blockquote>
-<div><p>Focal mechanisms given with partial data on both planes. <em>scale</em> adjusts
-the scaling of the radius of the “beach ball”, which will be
-proportional to the magnitude. <em>scale</em> is the size for magnitude = 5
-The color or shade of the compressive quadrants can be specified with the <strong>-G</strong>
-option. The color or shade of the extensive quadrants can be specified
-with the <strong>-E</strong> option.
-Append <strong>+f</strong><em>font</em> to change the font of the text string;
-append <strong>+j</strong><em>justify</em> to change the text location relative to the beachball
-(default is above the beachball); append <strong>+o</strong> to offset the text string by <em>dx/dy</em>.
+</dd>
+<dt><strong>-Sp</strong><em>scale</em>[<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</dt>
+<dd><p class="first">Focal mechanisms given with partial data on both planes.
 Parameters are expected to be in the following columns:</p>
 <p><strong>1</strong>,<strong>2</strong>:
 longitude, latitude of event (<strong>-:</strong> option interchanges order)</p>
@@ -424,24 +393,14 @@ longitude, latitude at which to place beachball if <strong>-C</strong> is used (
 Using 0,0 in columns 8 and 9 will plot the beach ball at the longitude,
 latitude given in columns 1 and 2. The <strong>-:</strong> option will interchange the order of
 columns (1,2) and (9,10).</p>
-<p><strong>11</strong>:
+<p class="last"><strong>11</strong>:
 Text string to appear above or below the beach ball (optional).</p>
-</div></blockquote>
-<p><strong>-Sx|y|t</strong><em>scale</em>[<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</p>
-<blockquote>
-<div><p>Principal axis. <em>scale</em> adjusts the scaling of the radius of the “beach
-ball”, which will be proportional to the magnitude. Scale is the size
-for magnitude = 5 (that is seismic scalar moment = 4*10e+23 dynes-cm)
-in inch (unless <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> is appended). (<strong>-T</strong><em>0</em>
-option overlays best double couple transparently.) Use <strong>-Sx</strong> to plot
-standard Global CMT. Use <strong>-Sy</strong> to plot only the double couple part of
-moment tensor. Use <strong>-St</strong> to plot zero trace moment tensor. The color
-or shade of the compressive quadrants can be specified with the <strong>-G</strong>
-option. The color or shade of the extensive quadrants can be specified
-with the <strong>-E</strong> option.
-Append <strong>+f</strong><em>font</em> to change the font of the text string;
-append <strong>+j</strong><em>justify</em> to change the text location relative to the beachball
-(default is above the beachball); append <strong>+o</strong> to offset the text string by <em>dx/dy</em>.
+</dd>
+<dt><strong>-Sx|y|t</strong><em>scale</em>[<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</dt>
+<dd><p class="first">Principal axis.
+Use <strong>-Sx</strong> to plot full seismic moment tensor.
+Use <strong>-Sy</strong> to plot the closest double couple defined from the moment tensor (zero trace and zero determinant).
+Use <strong>-St</strong> to plot the deviatoric part of the moment tensor (zero trace).
 Parameters are expected to be in the following columns:</p>
 <p><strong>1</strong>,<strong>2</strong>:
 longitude, latitude of event (<strong>-:</strong> option interchanges order)</p>
@@ -456,9 +415,10 @@ longitude, latitude at which to place beachball if <strong>-C</strong> is used (
 Using 0,0 in columns 8 and 9 will plot the beach ball at the longitude,
 latitude given in columns 1 and 2. The <strong>-:</strong> option will interchange the order of
 columns (1,2) and (14,15).</p>
-<p><strong>16</strong>:
+<p class="last"><strong>16</strong>:
 Text string to appear above or below the beach ball (optional).</p>
-</div></blockquote>
+</dd>
+</dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
@@ -481,8 +441,7 @@ connects the beachball to the circle. Specify <em>pen</em> and optionally append
 </dl>
 <dl class="docutils" id="e">
 <dt><strong>-E</strong><em>fill</em> <a class="reference internal" href="../../cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Selects filling of extensive quadrants. Usually white. Set the color
-[Default is white].</dd>
+<dd>Selects filling of extensive quadrants. [Default is white].</dd>
 </dl>
 <dl class="docutils" id="f">
 <dt><strong>-F</strong><em>mode</em>[<em>args</em>]</dt>
@@ -516,7 +475,7 @@ sets pen attributes.</dd>
 <dt><strong>-G</strong><em>fill</em> <a class="reference internal" href="../../cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Selects filling of focal mechanisms. By convention, the
 compressional quadrants of the focal mechanism beach balls are
-shaded. Set the color [Default is black].</dd>
+shaded. [Default is black].</dd>
 </dl>
 <dl class="docutils" id="l">
 <dt><strong>-L</strong>[<em>pen</em>]</dt>
@@ -529,7 +488,7 @@ the default pen set by <strong>-W</strong>.</dd>
 </dl>
 <dl class="docutils" id="n">
 <dt><strong>-N</strong></dt>
-<dd>Does <strong>not</strong> skip symbols that fall outside frame boundary specified
+<dd>Does <strong>NOT</strong> skip symbols that fall outside frame boundary specified
 by <strong>-R</strong> [Default plots symbols inside frame only].</dd>
 </dl>
 <dl class="docutils" id="t">
@@ -539,8 +498,11 @@ If <em>nplane</em> is</p>
 <p><em>0</em>: both nodal planes are plotted;</p>
 <p><em>1</em>: only the first nodal plane is plotted;</p>
 <p><em>2</em>: only the second nodal plane is plotted.</p>
-<p class="last">Append <strong>/</strong><em>pen</em> to set the pen attributes for this feature.
+<p>Append <strong>/</strong><em>pen</em> to set the pen attributes for this feature.
 Default pen is as set by <strong>-W</strong>. [Default: 0].</p>
+<p class="last">For double couple mechanisms, the <strong>-T</strong> option renders the beach ball transparent
+by drawing only the nodal planes and the circumference.
+For non-double couple mechanisms, <strong>-T</strong><em>0</em> option overlays best double couple transparently.</p>
 </dd>
 </dl>
 <dl class="docutils" id="u">
@@ -682,7 +644,7 @@ Institut de Physique du Globe de Paris, Departement de Sismologie, Paris, France
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 09, 2020.
+        Last updated on Jan 10, 2020.
       </span>
 
     </p>
