@@ -343,7 +343,7 @@ can benefit from the GMT infrastructure and extend GMT in specific ways.</p>
 <strong>-g</strong><a class="reference internal" href="#g-full"><span class="std std-ref">gaps</span></a>
 <strong>-h</strong><a class="reference internal" href="#h-full"><span class="std std-ref">headers</span></a>
 <strong>-i</strong><a class="reference internal" href="#icols-full"><span class="std std-ref">flags</span></a>
-<strong>-j</strong><a class="reference internal" href="#j-full"><span class="std std-ref">flags</span></a>
+<strong>-j</strong><a class="reference internal" href="#distcalc-full"><span class="std std-ref">flags</span></a>
 <strong>-l</strong><a class="reference internal" href="#l-full"><span class="std std-ref">flags</span></a>
 <strong>-n</strong><a class="reference internal" href="#n-full"><span class="std std-ref">flags</span></a>
 <strong>-o</strong><a class="reference internal" href="#ocols-full"><span class="std std-ref">flags</span></a>
@@ -1159,12 +1159,12 @@ will simply read the numerical input and skip any trailing text.</dd>
 <dl class="docutils" id="distcalc-full">
 <dt><strong>-je</strong>|<strong>f</strong>|<strong>g</strong></dt>
 <dd>Determine how spherical distances are calculated in modules that support this.
-By default (<strong>-jg</strong>) we perform great circle distance calculations and parameters such
+By default (<strong>-jg</strong>), we perform great circle distance calculations and parameters such
 as distance increments or radii will be compared against calculated great
 circle distances. To simplify and speed up calculations you can select Flat
-Earth mode (<strong>-jf</strong>) which gives an approximate and fast result.  Alternatively,
-you can select ellipsoidal (<strong>-je</strong>) or geodesic mode for the highest precision
-(and slowest calculation time).  All spherical distance calculations depends on
+Earth mode (<strong>-jf</strong>) which gives an approximate but faster result.  Alternatively,
+you can select ellipsoidal (<strong>-je</strong>; or geodesic) mode for the highest precision
+(and slowest calculation time).  All spherical distance calculations depend on
 the current ellipsoid (<a class="reference internal" href="gmt.conf.html#proj-ellipsoid"><span class="std std-ref">PROJ_ELLIPSOID</span></a>), the definition of
 the mean radius (<a class="reference internal" href="gmt.conf.html#proj-mean-radius"><span class="std std-ref">PROJ_MEAN_RADIUS</span></a>), and the specification
 of latitude type (<a class="reference internal" href="gmt.conf.html#proj-aux-latitude"><span class="std std-ref">PROJ_AUX_LATITUDE</span></a>).  Geodesic distance
@@ -1521,7 +1521,7 @@ GMT documentation site <a class="reference external" href="https://docs.generic-
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 10, 2020.
+        Last updated on Jan 11, 2020.
       </span>
 
     </p>
