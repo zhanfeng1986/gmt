@@ -241,24 +241,23 @@ as possible, given the inset size and margins (if selected).</p>
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils" id="d">
 <dt><strong>-D</strong><em>xmin/xmax/ymin/ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>]] | <strong>-D</strong>[<strong>g</strong>|<strong>j</strong>|<strong>J</strong>|<strong>n</strong>|<strong>x</strong>]<em>refpoint</em><strong>+w</strong><em>width</em>[/<em>height</em>][<strong>+j</strong><em>justify</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</dt>
-<dd>Define the map inset rectangle on the map.  Specify the rectangle in one of three ways:
-(a) Give <em>west/east/south/north</em> of geographic rectangle bounded by parallels
+<dd><p class="first">Define the map inset rectangle on the map.  Specify the rectangle in one of three ways:</p>
+<p>(1) Append <strong>g</strong><em>lon</em>/<em>lat</em> for map (user) coordinates, (2)  <strong>j</strong><em>code</em> or <strong>J</strong><em>code</em> for setting
+the <em>refpoint</em> via a 2-char justification code that refers to the (invisible) projected map bounding box,
+(3) <strong>n</strong><em>xn</em>/<em>yn</em> for normalized (0-1) bounding box coordinates, or (4) <strong>x</strong><em>x</em>/<em>y</em> for plot coordinates
+(inches, cm, points, append unit).  All but <strong>x</strong> requires both <strong>-R</strong> and <strong>-J</strong> to be specified.
+You can offset the reference point via <strong>+o</strong><em>dx</em>/<em>dy</em> in the direction implied by <em>code</em> or <strong>+j</strong><em>justify</em>.</p>
+<p class="last">Alternatively, Give <em>west/east/south/north</em> of geographic rectangle bounded by parallels
 and meridians; append <strong>+r</strong> if the coordinates instead are the lower left and
-upper right corners of the desired rectangle. (b) Give <em>xmin/xmax/ymin/ymax</em>
+upper right corners of the desired rectangle. (Or, give <em>xmin/xmax/ymin/ymax</em>
 of bounding rectangle in projected coordinates and optionally append <strong>+u</strong><em>unit</em> [Default coordinate unit is meter (e)].
-(c) Give the reference point on the map for the inset using one of four coordinate systems:
-(1) Use <strong>-Dg</strong> for map (user) coordinates, (2) use <strong>-Dj</strong> or <strong>-DJ</strong> for setting <em>refpoint</em> via
-a 2-char justification code that refers to the (invisible) map domain rectangle,
-(3) use <strong>-Dn</strong> for normalized (0-1) coordinates, or (4) use <strong>-Dx</strong> for plot coordinates
-(inches, cm, etc.).
 Append <strong>+w</strong><em>width</em>[/<em>height</em>] of bounding rectangle or box in plot coordinates (inches, cm, etc.).
 By default, the anchor point on the scale is assumed to be the bottom left corner (BL), but this
 can be changed by appending <strong>+j</strong> followed by a 2-char justification code <em>justify</em> (see <a class="reference internal" href="text.html"><span class="doc">text</span></a>).
 Note: If <strong>-Dj</strong> is used then <em>justify</em> defaults to the same as <em>refpoint</em>,
 if <strong>-DJ</strong> is used then <em>justify</em> defaults to the mirror opposite of <em>refpoint</em>.
-Add <strong>+o</strong> to offset the inset fig by <em>dx</em>/<em>dy</em> away from the <em>refpoint</em> point in
-the direction implied by <em>justify</em> (or the direction implied by <strong>-Dj</strong> or <strong>-DJ</strong>).
-Specify inset box attributes via the <strong>-F</strong> option [outline only].</dd>
+Specify inset box attributes via the <strong>-F</strong> option [outline only].</p>
+</dd>
 </dl>
 </div>
 <div class="section" id="optional-arguments">
@@ -379,7 +378,7 @@ gmt end
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 15, 2020.
+        Last updated on Jan 18, 2020.
       </span>
 
     </p>

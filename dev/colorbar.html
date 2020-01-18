@@ -297,12 +297,13 @@ be set to its default range (if it has one) before plotting.</dd>
 </dl>
 <dl class="docutils" id="d">
 <dt><strong>-D</strong>[<strong>g</strong>|<strong>j</strong>|<strong>J</strong>|<strong>n</strong>|<strong>x</strong>]<em>refpoint</em>[<strong>+w</strong><em>length</em>[/<em>width</em>]][<strong>+e</strong>[<strong>b</strong>|<strong>f</strong>][<em>length</em>]][<strong>+h</strong>|<strong>v</strong>][<strong>+j</strong><em>justify</em>][<strong>+m</strong>[<strong>a</strong>|<strong>c</strong>|<strong>l</strong>|<strong>u</strong>]][<strong>+n</strong>[<em>txt</em>]][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</dt>
-<dd>Defines the reference point on the map for the color scale using one of four coordinate systems:
-(1) Use <strong>-Dg</strong> for map (user) coordinates, (2) use <strong>-Dj</strong> or <strong>-DJ</strong> for setting <em>refpoint</em> via
-a 2-char justification code that refers to the (invisible) map domain rectangle,
-(3) use <strong>-Dn</strong> for normalized (0-1) coordinates, or (4) use <strong>-Dx</strong> for plot coordinates
-(inches, cm, etc.).  All but <strong>-Dx</strong> requires both <strong>-R</strong> and <strong>-J</strong> to be specified.
-For <strong>-Dj</strong> or <strong>-DJ</strong> with codes TC, BC, ML, MR (i.e., centered on one of the map sides) we
+<dd><p class="first">Defines the reference point on the map for the color scale using one of four coordinate systems:</p>
+<p>(1) Append <strong>g</strong><em>lon</em>/<em>lat</em> for map (user) coordinates, (2)  <strong>j</strong><em>code</em> or <strong>J</strong><em>code</em> for setting
+the <em>refpoint</em> via a 2-char justification code that refers to the (invisible) projected map bounding box,
+(3) <strong>n</strong><em>xn</em>/<em>yn</em> for normalized (0-1) bounding box coordinates, or (4) <strong>x</strong><em>x</em>/<em>y</em> for plot coordinates
+(inches, cm, points, append unit).  All but <strong>x</strong> requires both <strong>-R</strong> and <strong>-J</strong> to be specified.
+You can offset the reference point via <strong>+o</strong><em>dx</em>/<em>dy</em> in the direction implied by <em>code</em> or <strong>+j</strong><em>justify</em>.</p>
+<p class="last">For <strong>-Dj</strong> or <strong>-DJ</strong> with codes TC, BC, ML, MR (i.e., centered on one of the map sides) we
 pre-calculate all further settings.  Specifically, the <em>length</em> is set to 80% of the map side,
 horizontal or vertical depends on the side, the offset is MAP_LABEL_OFFSET for <strong>Dj</strong> with an
 extra offset MAP_FRAME_WIDTH for <strong>DJ</strong>, and annotations are placed on the side of the scale facing
@@ -317,12 +318,9 @@ can be changed by appending <strong>+j</strong> followed by a 2-char justificati
 Note: If <strong>-Dj</strong> is used then <em>justify</em> defaults to the same as <em>refpoint</em>,
 if <strong>-DJ</strong> is used then <em>justify</em> defaults to the mirror opposite of <em>refpoint</em>. Consequently,
 <strong>-DJ</strong> is used to place a scale outside the map frame while <strong>-Dj</strong> is used to place it inside the frame.
-Finally, add <strong>+o</strong> to offset the color scale by <em>dx</em>/<em>dy</em> away from the <em>refpoint</em> point in
-the direction implied by <em>justify</em> (or the direction implied by <strong>-Dj</strong> or <strong>-DJ</strong>).
 Add sidebar triangles for back- and/or foreground
 colors with <strong>+e</strong>. Append <strong>f</strong> (foreground) or <strong>b</strong> (background) for only one sidebar triangle [Default
-gives both]. Optionally, append triangle height [Default is half the
-barwidth].
+gives both]. Optionally, append triangle height [Default is half the barwidth].
 Move text to opposite side with <strong>+m</strong>[<strong>a</strong>|<strong>c</strong>|<strong>l</strong>|<strong>u</strong>].
 Horizontal scale bars: Move annotations and labels above the scale bar [Default is below];
 the unit remains on the left.
@@ -333,7 +331,8 @@ unit that will be moved to the opposite side. Append <strong>c</strong> if you w
 vertical label as a column of characters (does not work with special characters).
 Append <strong>+n</strong> to plot a rectangle with the NaN color at
 the start of the bar, append <em>text</em> to change label from NaN.
-If not given, the default argument is JBC (Place color bar centered beneath current plot).</dd>
+If not given, the default argument is JBC (Place color bar centered beneath current plot).</p>
+</dd>
 </dl>
 <dl class="docutils" id="f">
 <dt><strong>-F</strong>[<strong>+c</strong><em>clearances</em>][<strong>+g</strong><em>fill</em>][<strong>+i</strong>[[<em>gap</em>/]<em>pen</em>]][<strong>+p</strong>[<em>pen</em>]][<strong>+r</strong>[<em>radius</em>]][<strong>+s</strong>[[<em>dx</em>/<em>dy</em>/][<em>shade</em>]]]</dt>
@@ -564,7 +563,7 @@ symbol at the left, unless <strong>+n</strong> was used in which case we center 
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 15, 2020.
+        Last updated on Jan 18, 2020.
       </span>
 
     </p>

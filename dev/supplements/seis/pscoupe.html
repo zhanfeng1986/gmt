@@ -247,9 +247,8 @@
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p>Reads data values from <em>files</em> [or standard input] and
-will plot symbols, lines or polygons on
-a cross-section. Focal mechanisms may be specified and require
-additional columns of data.  The name “coupe” comes from the French
+will plot a cross-section of focal mechanisms.
+The name “coupe” comes from the French
 verb “to cut”.  The best translation is a (vertical) cross section.</p>
 <p>Unless <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong> is used, new file is created with the new coordinates
 (<strong>x</strong>, <strong>y</strong>) and the mechanism (from lower focal half-sphere for
@@ -484,18 +483,19 @@ Text string to appear above or below the beach ball (optional).</p>
 <strong>PROJ_LENGTH_UNIT</strong> (unless <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> is appended
 to indicate that the size information is in units of cm, inches, meters,
 or points, respectively). If <em>size</em> must be read, it must be in column 4
-and the text string will start in column 5. Parameters are expected to
-be in the following columns:</p>
-<blockquote class="last">
-<div><dl class="docutils">
+and the text string will start in column 5.</p>
+<p>Append <strong>+f</strong><em>font</em> to change the font of the text string;
+append <strong>+j</strong><em>justify</em> to change the text location relative to the beachball (default is above the beachball);
+append <strong>+o</strong> to offset the text string by <em>dx/dy</em>.</p>
+<p>Parameters are expected to be in the following columns:</p>
+<dl class="last docutils">
 <dt><strong>1</strong>,<strong>2</strong>:</dt>
 <dd>longitude, latitude of event (<strong>-:</strong> option interchanges order)</dd>
 <dt><strong>3</strong>:</dt>
 <dd>depth of event in kilometers</dd>
 <dt><strong>4</strong>:</dt>
-<dd>Text string to appear above the beach ball (default) or under (add <strong>+u</strong>).</dd>
+<dd>Text string to appear near the beach ball</dd>
 </dl>
-</div></blockquote>
 </dd>
 <dt><strong>-Fa</strong>[<em>size</em>[/<em>Psymbol</em>[<em>Tsymbol</em>]]]</dt>
 <dd>Computes and plots P and T axes with symbols. Optionally specify
@@ -558,9 +558,9 @@ For non-double couple mechanisms, <strong>-T</strong><em>0</em> option overlays 
 <dd>Select verbosity level [c].  </dd>
 </dl>
 <dl class="docutils" id="w">
-<dt><strong>-W</strong>[<strong>-</strong>|<strong>+</strong>][<em>pen</em>][<em>attr</em>] <a class="reference internal" href="../../cookbook/features.html#wpen-attrib"><span class="std std-ref">(more …)</span></a></dt>
-<dd>set pen attributes for text string or default pen attributes for
-fault plane edges. [Defaults: width = default, color = black, style = solid].</dd>
+<dt><strong>-W</strong>[<em>pen</em>] <a class="reference internal" href="../../cookbook/features.html#wpen-attrib"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Set pen attributes for text string or default pen attributes for
+fault plane edges. [Defaults: default,black,solid].</dd>
 </dl>
 <p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</p>
 <dl class="docutils">
@@ -681,7 +681,7 @@ Institut de Physique du Globe de Paris, Departement de Sismologie, Paris, France
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 15, 2020.
+        Last updated on Jan 18, 2020.
       </span>
 
     </p>

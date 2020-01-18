@@ -229,7 +229,7 @@
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
-<p>This module plots the GMT logo on a map. By default, the GMT logo is 2 inches wide and 1 inch high and will be
+<p>This module plots the GMT logo on a map. By default, the GMT logo is 144 points (2 inches wide) and 72 points (1 inch) high and will be
 positioned relative to the current plot origin. Use various options to change this and to place a
 transparent or opaque rectangular map panel behind the GMT logo.</p>
 </div>
@@ -318,15 +318,15 @@ any module-specific option (but not the GMT common options), then exit.</dd>
 <p>Note: Since many GMT plot examples are very short (i.e., one module call between the
 <strong>gmt begin</strong> and <strong>gmt end</strong> commands), we will often present them using the quick
 modern mode <a class="reference internal" href="cookbook/one-liner.html"><span class="doc">GMT Modern Mode One-line Commands</span></a> syntax, which simplifies such short scripts.</p>
-<p>To plot the GMT logo of a 2 inch width as a stand-alone pdf plot, use:</p>
+<p>To plot the GMT logo of a 144-point width as a stand-alone pdf plot, use:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt logo -pdf logo
 </pre></div>
 </div>
 <p>To append a GMT logo overlay in the upper right corner of the current map, but
-scaled up to be 3 inches wide and offset by 0.1 inches from the border, try:</p>
+scaled up to be 6 cm wide and offset by 0.25 cm from the border, try:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map
-gmt ...
-gmt logo -DjTR+o0.1i/0.1i+w3i
+gmt ...&lt;plot the map using -R -J&gt;
+gmt logo -DjTR+o0.25c+w6c
 gmt end show
 </pre></div>
 </div>
@@ -366,7 +366,7 @@ custom symbols <strong>QR</strong> or <strong>QR_transparent</strong> in <a clas
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 15, 2020.
+        Last updated on Jan 18, 2020.
       </span>
 
     </p>

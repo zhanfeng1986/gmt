@@ -231,7 +231,7 @@
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
-<p>This module plots the GMT logo on a map. By default, the GMT logo is 2 inches wide and 1 inch high and will be
+<p>This module plots the GMT logo on a map. By default, the GMT logo is 144 points (2 inches wide) and 72 points (1 inch) high and will be
 positioned relative to the current plot origin. Use various options to change this and to place a
 transparent or opaque rectangular map panel behind the GMT logo.</p>
 </div>
@@ -334,13 +334,13 @@ They are not available when using GMT modern mode.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p>To plot the GMT logo of a 2 inch width as a stand-alone plot, use:</p>
+<p>To plot the GMT logo of a 144-point width as a stand-alone plot, use:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt logo -P &gt; logo.ps
 </pre></div>
 </div>
 <p>To append a GMT logo overlay in the upper right corner of the current map, but
-scaled up to be 3 inches wide and offset by 0.1 inches from the border, try:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt logo -O -K -R -J -DjTR+o0.1i/0.1i+w3i &gt;&gt; bigmap.ps
+scaled up to be 6 cm wide and offset by 0.25 cm from the border, try:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt logo -O -K -R -J -DjTR+o0.25c+w6c &gt;&gt; bigmap.ps
 </pre></div>
 </div>
 </div>
@@ -379,7 +379,7 @@ custom symbols <strong>QR</strong> or <strong>QR_transparent</strong> in <a clas
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 15, 2020.
+        Last updated on Jan 18, 2020.
       </span>
 
     </p>
