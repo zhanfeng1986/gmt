@@ -20,7 +20,7 @@ Synopsis
 [ |-G|\ [*color*\ ]\ [**+f**\ \|\ **+n**\ ] ]
 [ |-I|\ *icon* ] [ **-K**]
 [ |-L|\ *col1:name1*,\ *col2:name2*,... ]
-[ |-N|\ [**t**\ \|\ *col* \ \|\ *name\_template*\ \|\ *name*] ]
+[ |-N|\ [**t**\ \|\ *col*\ \|\ *name\_template*\ \|\ *name*] ]
 [ **-O**]
 [ |-Q|\ **a**\ \|\ **i**\ *az* ]
 [ |-Q|\ **s**\ *scale*\ [*unit*\ ] ]
@@ -36,6 +36,7 @@ Synopsis
 [ |SYN_OPT-f| ]
 [ |SYN_OPT-h| ]
 [ |SYN_OPT-i| ]
+[ |SYN_OPT-qi| ]
 [ |SYN_OPT-:| ]
 [ |SYN_OPT--| ]
 [ > *output.kml* ]
@@ -174,7 +175,7 @@ Optional Arguments
 
 .. _-N:
 
-**-N**\ [**t**\ \|\ *col* \ \|\ *name\_template*\ \|\ *name*]
+**-N**\ [**t**\ \|\ *col*\ \|\ *name\_template*\ \|\ *name*]
     By default, if segment headers contain a **-L**"label string" then
     we use that for the name of the KML feature (polygon, line segment
     or set of symbols). Default names for these segments are "Line %d"
@@ -263,9 +264,9 @@ Optional Arguments
     is visible to infinite size. Append **+f**\ *fade\_min/fade\_max* to
     fade in and out over a ramp [abrupt]. Append **+v** to make a
     feature *not* visible when loaded [visible]. Append **+o** to open a
-    folder or document in the sidebar when loaded [closed]. 
+    folder or document in the sidebar when loaded [closed].
 
-.. |Add_-bi| replace:: [Default is 2 or more input columns, depending on settings]. 
+.. |Add_-bi| replace:: [Default is 2 or more input columns, depending on settings].
 .. include:: explain_-bi.rst_
 
 .. |Add_-di| unicode:: 0x20 .. just an invisible code
@@ -284,6 +285,8 @@ Optional Arguments
 .. include:: explain_-h.rst_
 
 .. include:: explain_-icols.rst_
+
+.. include:: explain_-qi.rst_
 
 .. include:: explain_colon.rst_
 
@@ -463,7 +466,7 @@ like local PNG images), you can consolidate these into a single KMZ file
 for saving space and for grouping related files together.  The bash function
 **gmt_build_kmz** in the :doc:`gmt_shell_functions.sh` can be used to
 do this.  You need to source gmt_shell_functions.sh first before you can
-use it. 
+use it.
 
 See Also
 --------

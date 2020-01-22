@@ -27,6 +27,7 @@ Synopsis
 [ |SYN_OPT-h| ]
 [ |SYN_OPT-i| ]
 [ |SYN_OPT-o| ]
+[ |SYN_OPT-q| ]
 [ |SYN_OPT-s| ]
 [ |SYN_OPT--| ]
 *operand* [ *operand* ] **OPERATOR** [ *operand* ] **OPERATOR** ...
@@ -173,6 +174,8 @@ Optional Arguments
 .. include:: explain_-icols.rst_
 
 .. include:: explain_-ocols.rst_
+
+.. include:: explain_-q.rst_
 
 .. include:: explain_-s.rst_
 
@@ -373,7 +376,7 @@ and output arguments.
 +-----------------+--------+--------------------------------------------------------------------------------------------+
 | **LE**          | 2 1    | 1 if A <= B, else 0                                                                        |
 +-----------------+--------+--------------------------------------------------------------------------------------------+
-| **LMSSCL**      | 1 1    | LMS scale estimate (LMS STD) of A                                                          |
+| **LMSSCL**      | 1 1    | LMS (Least Median of Squares) scale estimate (LMS STD) of A                                |
 +-----------------+--------+--------------------------------------------------------------------------------------------+
 | **LMSSCLW**     | 2 1    | Weighted LMS scale estimate (LMS STD) of A for weights in B                                |
 +-----------------+--------+--------------------------------------------------------------------------------------------+

@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------------
  *
- *	Copyright (c) 1991-2019 by the GMT Team (https://www.generic-mapping-tools.org/team.html)
+ *	Copyright (c) 1991-2020 by the GMT Team (https://www.generic-mapping-tools.org/team.html)
  *	See LICENSE.TXT file for copying and redistribution conditions.
  *
  *	This program is free software; you can redistribute it and/or modify
@@ -53,7 +53,7 @@
 #define THIS_MODULE_PURPOSE	"Interpolate using Green's functions for splines in 1-3 dimensions"
 #define THIS_MODULE_KEYS	"<D{,AD(=,ED),ND(,TG(,CD)=f,G?},GDN"
 #define THIS_MODULE_NEEDS	"R"
-#define THIS_MODULE_OPTIONS "-:>Vbdefghiors" GMT_OPT("FH") GMT_ADD_x_OPT
+#define THIS_MODULE_OPTIONS "-:>Vbdefghioqrs" GMT_OPT("FH") GMT_ADD_x_OPT
 
 EXTERN_MSC int gmtlib_cspline (struct GMT_CTRL *GMT, double *x, double *y, uint64_t n, double *c);
 
@@ -226,8 +226,8 @@ GMT_LOCAL int usage (struct GMTAPI_CTRL *API, int level) {
 	GMT_Message (API, GMT_TIME_NONE, "usage: %s [<table>] -G<outfile> [-A<gradientfile>+f<format>] [-C[n]<val>[+f<file>]]\n", name);
 	GMT_Message (API, GMT_TIME_NONE, "\t[-D<mode>] [-E[<misfitfile>] [-I<dx>[/<dy>[/<dz>]] [-L] [-N<nodefile>] [-Q<az>]\n");
 	GMT_Message (API, GMT_TIME_NONE, "\t[-R<xmin>/<xmax[/<ymin>/<ymax>[/<zmin>/<zmax>]]] [-Sc|l|t|r|p|q[<pars>]] [-T<maskgrid>]\n");
-	GMT_Message (API, GMT_TIME_NONE, "\t[%s] [-W[w]] [%s] [%s] [%s]\n\t[%s] [%s]\n\t[%s] [%s] [%s] [%s]%s[%s] [%s]\n\n", GMT_V_OPT,
-		GMT_bi_OPT, GMT_d_OPT, GMT_e_OPT, GMT_g_OPT, GMT_h_OPT, GMT_i_OPT, GMT_o_OPT, GMT_r_OPT, GMT_s_OPT, GMT_x_OPT, GMT_colon_OPT, GMT_PAR_OPT);
+	GMT_Message (API, GMT_TIME_NONE, "\t[%s] [-W[w]] [%s] [%s] [%s]\n\t[%s] [%s]\n\t[%s] [%s]\n\t[%s] [%s] [%s]%s[%s] [%s]\n\n", GMT_V_OPT,
+		GMT_bi_OPT, GMT_d_OPT, GMT_e_OPT, GMT_g_OPT, GMT_h_OPT, GMT_i_OPT, GMT_o_OPT, GMT_q_OPT, GMT_r_OPT, GMT_s_OPT, GMT_x_OPT, GMT_colon_OPT, GMT_PAR_OPT);
 
 	if (level == GMT_SYNOPSIS) return (GMT_MODULE_SYNOPSIS);
 
@@ -296,7 +296,7 @@ GMT_LOCAL int usage (struct GMTAPI_CTRL *API, int level) {
 	GMT_Message (API, GMT_TIME_NONE, "\t   Note this will only have an effect if -C is used.\n");
 	GMT_Option (API, "V,bi");
 	if (gmt_M_showusage (API)) GMT_Message (API, GMT_TIME_NONE, "\t   Default is 2-5 input columns depending on dimensionality (see -D) and weights (see -W).\n");
-	GMT_Option (API, "d,e,g,h,i,o,r,s,x,:,.");
+	GMT_Option (API, "d,e,g,h,i,o,q,r,s,x,:,.");
 
 	return (GMT_MODULE_USAGE);
 }
@@ -624,7 +624,7 @@ GMT_LOCAL int parse (struct GMT_CTRL *GMT, struct GREENSPLINE_CTRL *Ctrl, struct
 		else	/* Read in previous Green's function forces */
 			Ctrl->M.mode = GMT_IN;
 	}
-	
+
 	if (Ctrl->S.mode == WESSEL_BECKER_2008) {	/* Check that nodes is an odd integer */
 		double fn = rint (Ctrl->S.value[3]);
 		int64_t n = lrint (fn);
@@ -1669,7 +1669,7 @@ int GMT_greenspline (void *V_API, int mode, void *args) {
 				}
 				break;
 		}
-		
+	
 		if (GMT->common.b.active[GMT_IN]) GMT->common.b.ncol[GMT_IN]++;	/* Must assume it is just one extra column */
 		gmt_disable_bhi_opts (GMT);	/* Do not want any -b -h -i to affect the reading from -C,-F,-L files */
 		if ((Din = GMT_Read_Data (API, GMT_IS_DATASET, GMT_IS_FILE, GMT_IS_POINT, GMT_READ_NORMAL, NULL, Ctrl->A.file, NULL)) == NULL) {
@@ -2065,13 +2065,13 @@ int GMT_greenspline (void *V_API, int mode, void *args) {
 			}
 		}
 	}
-	
+
 	if (Ctrl->Z.active) dump_system (A, obs, nm, "A Matrix row || obs");	/* Dump the A | b system under debug */
 	if (Ctrl->E.active) {	/* Needed A to evaluate misfit later as predict = A_orig * x */
 		A_orig = gmt_M_memory (GMT, NULL, nm * nm, double);
 		gmt_M_memcpy (A_orig, A, nm * nm, double);
 	}
-	
+
 	if (Ctrl->W.active) {
 		/* Here we have requested an approximate fit instead of an exact interpolation.
 		 * For exact interpolation the weights do not matter, but here they do.  Since
@@ -2082,7 +2082,7 @@ int GMT_greenspline (void *V_API, int mode, void *args) {
 		 * original A and obs vectors so that the continuation of the code can work as is.
 		 * Weighted solution idea credit: Leo Uieda.  Jan 14, 2018.
 		 */
-		
+	
 		double *At = NULL, *AtS = NULL, *S = NULL;	/* Need temporary work space */
 
 		GMT_Report (API, GMT_MSG_LONG_VERBOSE, "Forming weighted normal equations A'SAx = A'Sb -> Nx = r\n");
@@ -2116,7 +2116,7 @@ int GMT_greenspline (void *V_API, int mode, void *args) {
 		A = At;	obs = S;
 		if (Ctrl->Z.active) dump_system (A, obs, nm, "Normal equation N row || r");
 	}
-	
+
 	if (Ctrl->C.active) {		/* Solve using SVD */
 		int error;
 
@@ -2199,25 +2199,25 @@ int GMT_greenspline (void *V_API, int mode, void *args) {
 		}
 	}
 	alpha = obs;	/* Just a different name since the obs vector now holds the alpha factors */
-	
+
 	if (Ctrl->M.active && Ctrl->M.mode == GMT_OUT) {
 		/* EXPERIMENTAL and not completed - need normalization information, trend etc */
 		bool was = GMT->current.setting.io_header[GMT_OUT];	/* Current setting */
 		uint64_t m_dim[GMT_DIM_SIZE] = {1, 1, 0, 1};	/* Do not allocate any rows */
 		char header[GMT_LEN64] = {""};
 		struct GMT_DATASET *M = NULL;
-		
+	
 		if ((M = GMT_Create_Data (API, GMT_IS_DATASET, GMT_IS_NONE, 0, m_dim, NULL, NULL, 0, 0, NULL)) == NULL) {
 			GMT_Report (API, GMT_MSG_NORMAL, "Unable to create a data set for saving misfit estimates\n");
 			Return (API->error);
 		}
 		M->table[0]->segment[0]->n_rows = nm;
 		M->table[0]->segment[0]->data[GMT_X] = alpha;
-		
+	
 		sprintf (header, "N: %" PRIu64 " S: %s G: %s", nm, (Ctrl->C.active) ? "SVD" : "G-J", Ctrl->S.arg);
 		gmt_insert_tableheader (GMT, M->table[0], header);
 		GMT->current.setting.io_header[GMT_OUT] = true;
-		
+	
 		if (GMT_Write_Data (API, GMT_IS_DATASET, GMT_IS_FILE, GMT_IS_NONE, GMT_WRITE_SET, NULL, Ctrl->M.file, M) != GMT_NOERROR) {
 			Return (API->error);
 		}
@@ -2252,7 +2252,7 @@ int GMT_greenspline (void *V_API, int mode, void *args) {
 				chi2 = pow (dev * X[j][dimension], 2.0);
 				chi2_sum += chi2;
 			}
-			
+		
 			/* Use Welford (1962) algorithm to compute mean and variance */
 			m++;
 			value = orig_obs[j] - predicted[j];
@@ -2297,7 +2297,7 @@ int GMT_greenspline (void *V_API, int mode, void *args) {
 		}
 	}
 
-	Rec = gmt_new_record (GMT, NULL, NULL);	
+	Rec = gmt_new_record (GMT, NULL, NULL);
 
 	if (Ctrl->N.file) {	/* Specified nodes only */
 		unsigned int wmode = GMT_ADD_DEFAULT;

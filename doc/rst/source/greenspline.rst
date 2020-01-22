@@ -32,6 +32,7 @@ Synopsis
 [ |SYN_OPT-f| ]
 [ |SYN_OPT-h| ]
 [ |SYN_OPT-o| ]
+[ |SYN_OPT-q| ]
 [ |SYN_OPT-x| ]
 [ |SYN_OPT-:| ]
 [ |SYN_OPT--| ]
@@ -59,7 +60,7 @@ solution yields an exact interpolation of the supplied data points.
 Alternatively, you may choose to perform a singular value decomposition
 (SVD) and eliminate the contribution from the smallest eigenvalues; this
 approach yields an approximate solution. Trends and scales are restored
-when evaluating the output. 
+when evaluating the output.
 
 Required Arguments
 ------------------
@@ -94,7 +95,7 @@ Optional Arguments
     or 3-D data: **3**: records contain **x**, *direction(s)*, *v*
     (*direction(s)* in degrees are measured counter-clockwise from the
     horizontal (and for 3-D the vertical axis). **4**: records contain
-    **x**, **v**. **5**: records contain **x**, **n**, *v*. 
+    **x**, **v**. **5**: records contain **x**, **n**, *v*.
 
 .. _-C:
 
@@ -129,8 +130,7 @@ Optional Arguments
 
 .. _-E:
 
-**E**\ [*misfitfile*]
-
+**-E**\ [*misfitfile*]
     Evaluate the spline exactly at the input data locations and report
     statistics of the misfit (mean, standard deviation, and rms).  Optionally,
     append a filename and we will write the data table, augmented by
@@ -235,7 +235,7 @@ Optional Arguments
 **-T**\ *maskgrid*
     For 2-D interpolation only. Only evaluate the solution at the nodes
     in the *maskgrid* that are not equal to NaN. This option eliminates
-    the need to specify options **-R**, **-I**, and **-r**. 
+    the need to specify options **-R**, **-I**, and **-r**.
 
 .. _-V:
 
@@ -254,7 +254,7 @@ Optional Arguments
 .. |Add_-bi| replace:: [Default is 2-4 input
    columns (**x**,\ *w*); the number depends on the chosen dimension].
 .. include:: explain_-bi.rst_
-    
+   
 .. |Add_-bo| unicode:: 0x20 .. just an invisible code
 .. include:: explain_-bo.rst_
 
@@ -273,6 +273,8 @@ Optional Arguments
 .. include:: explain_-icols.rst_
 
 .. include:: explain_-ocols.rst_
+
+.. include:: explain_-q.rst_
 
 .. |Add_nodereg| unicode:: 0x20 .. just an invisible code
 .. include:: explain_nodereg.rst_
@@ -409,7 +411,7 @@ Considerations
    (such as the natural cubic spline, which sets the curvatures at the ends
    to zero).  In contrast, **greenspline**\ 's 1-D spline, as is explained in
    note 1, does *not* specify boundary conditions at the end of the data domain.
-   
+  
 Tension
 -------
 

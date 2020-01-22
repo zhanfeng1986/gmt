@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------------
  *
- *	Copyright (c) 2009-2019 by the GMT Team (https://www.generic-mapping-tools.org/team.html)
+ *	Copyright (c) 2009-2020 by the GMT Team (https://www.generic-mapping-tools.org/team.html)
  *
  *	This program is free software; you can redistribute it and/or modify
  *	it under the terms of the GNU Lesser General Public License as published by
@@ -211,7 +211,7 @@ enum PSL_enum_txt {PSL_TXT_INIT	= 1,
 
 enum PSL_enum_txtmode {PSL_TXTMODE_HYPHEN	= 0,
 	PSL_TXTMODE_MINUS			= 1};
-	
+
 /* Verbosity levels */
 
 enum PSL_enum_verbose {PSL_MSG_QUIET = 0,	/* No messages whatsoever */

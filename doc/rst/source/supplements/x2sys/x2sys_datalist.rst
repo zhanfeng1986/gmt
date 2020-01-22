@@ -12,7 +12,7 @@ Synopsis
 
 .. include:: ../../common_SYN_OPTs.rst_
 
-**gmt x2sys_datalist** *track(s)* **-T**\ *TAG* 
+**gmt x2sys_datalist** *track(s)* **-T**\ *TAG*
 [ |-A| ]
 [ |-E| ]
 [ |-F|\ *name1*,\ *name2*,... ]
@@ -55,7 +55,7 @@ Optional Arguments
     files for each track and data column are called *track.column*.adj
     and are expected to be in the **$X2SYS_HOME**/*TAG* directory. The
     adjustments are only applied if the corresponding adjust file can be
-    found [No residual adjustments]
+    found [No residual adjustments].
 
 .. _-E:
 

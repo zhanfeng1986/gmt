@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------------
  *
- *	Copyright (c) 1991-2019 by the GMT Team (https://www.generic-mapping-tools.org/team.html)
+ *	Copyright (c) 1991-2020 by the GMT Team (https://www.generic-mapping-tools.org/team.html)
  *	See LICENSE.TXT file for copying and redistribution conditions.
  *
  *	This program is free software; you can redistribute it and/or modify
@@ -222,7 +222,7 @@ int main (int argc, char *argv[]) {
 				char *s = NULL, *txt = NULL, *shell[3] = {"bash", "csh", "batch"}, stamp[GMT_LEN32] = {""};
 				char *comment[3] = {"#", "#", "REM"};
 				char *name = gmt_putusername (NULL);
-				
+			
 				strftime (stamp, GMT_LEN32, "%FT%T", localtime (&right_now));
 				if ((s = strchr (argv[arg_n], '=')) && s[1]) {	/* Gave a specific script language name */
 					if ((strstr (&s[1], shell[0]) || strstr (&s[1], shell[1]) || strstr (&s[1], shell[2]) || strstr (&s[1], "dos")))

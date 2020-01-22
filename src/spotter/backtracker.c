@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------------
  *
- *   Copyright (c) 1999-2019 by the GMT Team (https://www.generic-mapping-tools.org/team.html)
+ *   Copyright (c) 1999-2020 by the GMT Team (https://www.generic-mapping-tools.org/team.html)
  *
  *   This program is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU Lesser General Public License as published by
@@ -78,7 +78,7 @@
 #define THIS_MODULE_PURPOSE	"Generate forward and backward flowlines and hotspot tracks"
 #define THIS_MODULE_KEYS	"<D{,>D},FD("
 #define THIS_MODULE_NEEDS	""
-#define THIS_MODULE_OPTIONS "-:>Vbdefghios"
+#define THIS_MODULE_OPTIONS "-:>Vbdefghioqs"
 
 #define SPOTTER_TOWARDS_PRESENT 0
 #define SPOTTER_TOWARDS_PAST	1
@@ -150,10 +150,10 @@ GMT_LOCAL void *New_Ctrl (struct GMT_CTRL *GMT) {	/* Allocate and initialize a n
 
 GMT_LOCAL void Free_Ctrl (struct GMT_CTRL *GMT, struct BACKTRACKER_CTRL *C) {	/* Deallocate control structure */
 	if (!C) return;
-	gmt_M_str_free (C->E.rot.file);	
-	gmt_M_str_free (C->F.file);	
-	gmt_M_str_free (C->S.file);	
-	gmt_M_free (GMT, C);	
+	gmt_M_str_free (C->E.rot.file);
+	gmt_M_str_free (C->F.file);
+	gmt_M_str_free (C->S.file);
+	gmt_M_free (GMT, C);
 }
 
 GMT_LOCAL int usage (struct GMTAPI_CTRL *API, int level) {
@@ -161,8 +161,8 @@ GMT_LOCAL int usage (struct GMTAPI_CTRL *API, int level) {
 	if (level == GMT_MODULE_PURPOSE) return (GMT_NOERROR);
 	GMT_Message (API, GMT_TIME_NONE, "usage: %s [<table>] %s [-A[<young></old>]] [-Df|b]\n", name, SPOTTER_E_OPT);
 	GMT_Message (API, GMT_TIME_NONE, "\t[-F<driftfile] [-Lf|b<d_km>] [-M[<factor>]] [-N<upper_age>] [-Q<t_fix>] [-S<stem>] [-T<t_zero>]\n");
-	GMT_Message (API, GMT_TIME_NONE, "\t[%s] [-W] [%s] [%s] [%s]\n\t[%s] [%s]\n\t[%s] [%s] [%s] [%s]\n\n",
-		GMT_V_OPT, GMT_b_OPT, GMT_d_OPT, GMT_e_OPT, GMT_h_OPT, GMT_i_OPT, GMT_o_OPT, GMT_s_OPT, GMT_colon_OPT, GMT_PAR_OPT);
+	GMT_Message (API, GMT_TIME_NONE, "\t[%s] [-W] [%s] [%s] [%s]\n\t[%s] [%s]\n\t[%s] [%s] [%s] [%s] [%s]\n\n",
+		GMT_V_OPT, GMT_b_OPT, GMT_d_OPT, GMT_e_OPT, GMT_h_OPT, GMT_i_OPT, GMT_o_OPT, GMT_q_OPT, GMT_s_OPT, GMT_colon_OPT, GMT_PAR_OPT);
 
 	if (level == GMT_SYNOPSIS) return (GMT_MODULE_SYNOPSIS);
 
@@ -197,7 +197,7 @@ GMT_LOCAL int usage (struct GMTAPI_CTRL *API, int level) {
 	GMT_Message (API, GMT_TIME_NONE, "\t   -Wt will output lon,lat,time,az,major,minor.\n");
 	GMT_Message (API, GMT_TIME_NONE, "\t   -Wa will output lon,lat,angle,az,major,minor.\n");
 	GMT_Message (API, GMT_TIME_NONE, "\t   Use -D to specify which direction to rotate [forward in time].\n");
-	GMT_Option (API, "bi3,bo,d,e,h,i,o,s,:,.");
+	GMT_Option (API, "bi3,bo,d,e,h,i,o,q,s,:,.");
 
 	return (GMT_MODULE_USAGE);
 }
@@ -309,12 +309,12 @@ GMT_LOCAL int parse (struct GMT_CTRL *GMT, struct BACKTRACKER_CTRL *Ctrl, struct
 				Ctrl->M.active = true;
 				if (opt->arg[0]) Ctrl->M.value = atof (opt->arg);
 				break;
-				
+			
 			case 'N':	/* Extend oldest stage back to this time [no extension] */
 				Ctrl->N.active = true;
 				Ctrl->N.t_upper = atof (opt->arg);
 				break;
-				
+			
 			case 'Q':	/* Fixed age for all points */
 				Ctrl->Q.active = true;
 				Ctrl->Q.t_fix = atof (opt->arg);
@@ -462,7 +462,7 @@ int GMT_backtracker (void *V_API, int mode, void *args) {
 		}
 		else
 			n_stages = spotter_init (GMT, Ctrl->E.rot.file, &p, Ctrl->L.mode, Ctrl->W.active, Ctrl->E.rot.invert, &Ctrl->N.t_upper);
-			
+		
 		spotter_way = ((Ctrl->L.mode + Ctrl->D.mode) == 1) ? SPOTTER_FWD : SPOTTER_BACK;
 		GMT_Report (API, GMT_MSG_LONG_VERBOSE, "Loaded rotations in order for %slines; calling spotter_track with direction %swards\n", emode[mode], fmode[(spotter_way+1)/2]);
 
@@ -609,7 +609,7 @@ int GMT_backtracker (void *V_API, int mode, void *args) {
 				 * both the drift and the rotation and is used to PREDICT positions along trails based on hotspot location */
 				t = (Ctrl->A.mode) ? t_low : 0.0;
 				t_end = (Ctrl->A.mode) ? t_high : age;
-				
+			
 				while (t <= t_end) {
 					/* Determine location along the drift curve for this time */
 					gmt_intpol (GMT, H->data[GMT_Z], H->data[GMT_X], H->n_rows, 1, &t, &hlon, GMT->current.setting.interpolant);
@@ -650,7 +650,7 @@ int GMT_backtracker (void *V_API, int mode, void *args) {
 						Return (GMT_RUNTIME_ERROR);
 					}
 					out[GMT_X] = lon * R2D;
-					out[GMT_Y] = lat * R2D;	
+					out[GMT_Y] = lat * R2D;
 					if (Ctrl->F.active && Ctrl->D.mode == SPOTTER_TOWARDS_PRESENT && Ctrl->L.mode == SPOTTER_TRAILLINE) {	/* Must account for hotspot drift, use interpolation for given age */
 						out[GMT_X] -= (hlon - H->data[GMT_X][0]);
 						out[GMT_Y] -= (hlat - H->data[GMT_Y][0]);

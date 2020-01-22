@@ -30,6 +30,7 @@ Synopsis
 [ |SYN_OPT-h| ]
 [ |SYN_OPT-i| ]
 [ |SYN_OPT-o| ]
+[ |SYN_OPT-q| ]
 [ |SYN_OPT-:| ]
 [ |SYN_OPT--| ]
 
@@ -104,7 +105,7 @@ Optional Arguments
 .. _-M:
 
 **-M**\ [*fact*]
-    Scale opening angles by *fact* on output [0.5]. 
+    Scale opening angles by *fact* on output [0.5].
     Typically used to get half-rates needed for flowlines.
 
 .. _-N:
@@ -167,6 +168,7 @@ Optional Arguments
 
 .. include:: ../../explain_-icols.rst_
 .. include:: ../../explain_-ocols.rst_
+.. include:: ../../explain_-q.rst_
 .. include:: ../../explain_colon.rst_
 .. include:: ../../explain_help.rst_
 

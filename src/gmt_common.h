@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------------
  *
- *	Copyright (c) 1991-2019 by the GMT Team (https://www.generic-mapping-tools.org/team.html)
+ *	Copyright (c) 1991-2020 by the GMT Team (https://www.generic-mapping-tools.org/team.html)
  *	See LICENSE.TXT file for copying and redistribution conditions.
  *
  *	This program is free software; you can redistribute it and/or modify
@@ -227,6 +227,14 @@ struct GMT_COMMON {
 		bool do_z_rotation;	/* true if rotating plot about a vertical axis */
 		double z_rotation;	/* Rotation of <angle> about vertical axis */
 	} p;
+	struct q {	/* -q[i|o]<rows>,...[+c<col>][+a|f|s] */
+		bool active[2];
+		bool inverse[2];
+		char string[2][GMT_LEN64];
+		unsigned int col;	/* When +c<col> sets a specific data column */
+		unsigned int mode;	/* 1 for in row-range check, 2 for in time check, 3 for out-row check, 4 for out-time check */
+		uint64_t *rec;		/* POinter to the relevant record counter (dataset, table, segment) */
+	} q;
 	struct s {	/* -s[r] */
 		bool active;
 		char string[GMT_LEN64];

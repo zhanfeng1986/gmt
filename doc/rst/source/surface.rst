@@ -18,7 +18,7 @@ Synopsis
 [ |-A|\ *aspect_ratio*\ \|\ **m** ]
 [ |-C|\ *convergence_limit*\ [%] ]
 [ |-J|\ *parameters* ]
-[ |-D|\ *breakline_file*]
+[ |-D|\ *breakline_file*\ [**+z**\ [*level*]] ]
 [ |-L|\ **l**\ *lower* ] [ **-Lu**\ *upper* ]
 [ |-M|\ *max_radius*\ [**u**] ]
 [ |-N|\ *max_iterations* ]
@@ -34,6 +34,7 @@ Synopsis
 [ |SYN_OPT-f| ]
 [ |SYN_OPT-h| ]
 [ |SYN_OPT-i| ]
+[ |SYN_OPT-qi| ]
 [ |SYN_OPT-r| ]
 [ |SYN_OPT-:| ]
 [ |SYN_OPT--| ]
@@ -73,7 +74,7 @@ Required Arguments
 
 **-G**\ *outputfile.nc*
     Output file name. Output is a binary 2-D *.nc* file. Note that the
-    smallest grid dimension must be at least 4. 
+    smallest grid dimension must be at least 4.
 
 .. _-I:
 
@@ -123,11 +124,13 @@ Optional Arguments
 
 .. _-D:
 
-**-D**\ *breakline*\
-    Use xyz data in the <breakline> file as a 'soft breakline'. A 'soft breakline'
+**-D**\ *breakline*\ [**+z**\ [*level*]]
+    Use xyz data in the *breakline* file as a 'soft breakline'. A 'soft breakline'
     is a line whose vertices will be used to constrain the nearest grid nodes without
     any further interpolation. A coastline or a lake shore are good examples of
-    'soft breaklines'. Multi-segments files are accepted.
+    'soft breaklines'. Multi-segments files are accepted.  If your lines do not have
+    *z*-values or you wish to override those with a constant z-value, then append
+    **+z**\ *level* to the filename. If no value is given then we default to 0.
 
 .. _-L:
 
@@ -193,12 +196,12 @@ Optional Arguments
     to set interior tension, and **-Tb**\ *tension_factor* to set
     boundary tension. If you do not prepend **i** or **b**, both will be
     set to the same value. [Default = 0 for both gives minimum curvature
-    solution.] 
+    solution.]
 
 .. _-V:
 
-.. |Add_-V| replace:: 
-    **-V3** will report the convergence after each iteration; 
+.. |Add_-V| replace::
+    **-V3** will report the convergence after each iteration;
     **-V** will report only after each regional grid is converged.
 .. include:: explain_-V.rst_
 
@@ -212,11 +215,11 @@ Optional Arguments
     convergence, and will reach a solution more rapidly but may become
     unstable. If you use a large value for this factor, it is a good
     idea to monitor each iteration with the **-Vl** option. [Default =
-    1.4 converges quickly and is almost always stable.] 
+    1.4 converges quickly and is almost always stable.]
 
 .. include:: explain_-aspatial.rst_
 
-.. |Add_-bi| replace:: [Default is 3 input columns]. 
+.. |Add_-bi| replace:: [Default is 3 input columns].
 .. include:: explain_-bi.rst_
 
 .. |Add_-di| unicode:: 0x20 .. just an invisible code
@@ -230,8 +233,10 @@ Optional Arguments
 
 .. |Add_-h| replace:: Not used with binary data.
 .. include:: explain_-h.rst_
-    
+   
 .. include:: explain_-icols.rst_
+
+.. include:: explain_-qi.rst_
 
 .. |Add_nodereg| unicode:: 0x20 .. just an invisible code
 .. include:: explain_nodereg.rst_
@@ -241,6 +246,8 @@ Optional Arguments
 .. include:: explain_help.rst_
 
 .. include:: explain_float.rst_
+
+.. include:: explain_distunits.rst_
 
 
 Examples

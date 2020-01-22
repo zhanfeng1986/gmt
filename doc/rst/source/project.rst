@@ -29,6 +29,7 @@ Synopsis
 [ |SYN_OPT-h| ]
 [ |SYN_OPT-i| ]
 [ |SYN_OPT-o| ]
+[ |SYN_OPT-q| ]
 [ |SYN_OPT-s| ]
 [ |SYN_OPT-:| ]
 [ |SYN_OPT--| ]
@@ -102,7 +103,7 @@ back-azimuths or azimuths are better done using :doc:`mapproject` as
 
 **project** is CASE SENSITIVE. Use UPPER CASE for all one-letter
 designators which begin optional arguments. Use lower case for the
-xyzpqrs letters in **F**\ *flags*. 
+xyzpqrs letters in **F**\ *flags*.
 
 Required Arguments
 ------------------
@@ -187,7 +188,7 @@ Optional Arguments
 
 **-T**\ *px*/*py*
     *px/py* sets the position of the rotation pole of the projection.
-    (Definition 3). 
+    (Definition 3).
 
 .. _-V:
 
@@ -198,9 +199,9 @@ Optional Arguments
 
 **-W**\ *w\_min*/*w\_max*
     Width controls. Project only those points whose *q* coordinate is
-    within *w\_min* < *q* < *w\_max*. 
+    within *w\_min* < *q* < *w\_max*.
 
-**-Z**\ *major*/*minor*/*azimuth*\ [**+e**\ ] ]
+**-Z**\ *major*/*minor*/*azimuth*\ [**+e**\ ]
     Used in conjunction with **-C** (sets its center) and **-G** (sets the
     distance increment) to create the coordinates of an ellipse
     with *major* and *minor* axes given in km (unless **-N** is given) and the *azimuth* of the
@@ -209,10 +210,10 @@ Optional Arguments
     uses the given increment and closes the ellipse].
 
 
-.. |Add_-bi| replace:: [Default is 2 input columns]. 
+.. |Add_-bi| replace:: [Default is 2 input columns].
 .. include:: explain_-bi.rst_
 
-.. |Add_-bo| replace:: [Default is given by **-F** or **-G**]. 
+.. |Add_-bo| replace:: [Default is given by **-F** or **-G**].
 .. include:: explain_-bo.rst_
 
 .. |Add_-d| unicode:: 0x20 .. just an invisible code
@@ -233,6 +234,8 @@ Optional Arguments
 .. include:: explain_-icols.rst_
 
 .. include:: explain_-ocols.rst_
+
+.. include:: explain_-q.rst_
 
 .. include:: explain_-s.rst_
 

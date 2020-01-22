@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------------
  *
- *	Copyright (c) 1991-2019 by the GMT Team (https://www.generic-mapping-tools.org/team.html)
+ *	Copyright (c) 1991-2020 by the GMT Team (https://www.generic-mapping-tools.org/team.html)
  *	See LICENSE.TXT file for copying and redistribution conditions.
  *
  *	This program is free software; you can redistribute it and/or modify
@@ -26,7 +26,7 @@
  * References:	Julius S. Bendat & Allan G. Piersol,
  *    	"Random Data", 2nd revised edition, 566pp.,
  *    	1986, John Wiley & Sons, New York. [ B&P below]
- * 
+ *
  *    	Peter D. Welch, "The use of Fast Fourier
  *    	Transform for the estimation of power spectra:
  *    	a method based on time averaging over short,
@@ -43,7 +43,7 @@
 #define THIS_MODULE_PURPOSE	"Compute auto- [and cross-] spectra from one [or two] time series"
 #define THIS_MODULE_KEYS	"<D{,>D},T-)"
 #define THIS_MODULE_NEEDS	""
-#define THIS_MODULE_OPTIONS "-Vbdefghis"
+#define THIS_MODULE_OPTIONS "-Vbdefghiqs"
 
 #define SPECTRUM1D_N_OUTPUT_CHOICES 8
 
@@ -183,7 +183,7 @@ GMT_LOCAL int compute_spectra (struct GMT_CTRL *GMT, struct SPECTRUM1D_INFO *C, 
 	double dw, spec_scale, x_varp, y_varp = 1.0, one_on_nw, co_quad;
 	double xreal, ximag, yreal, yimag, xpower, ypower, co_spec, quad_spec;
 	char format[GMT_BUFSIZ];
-	
+
 	/* Scale factor for spectral estimates should be 1/4 of amount given in
 		Bendat & Piersol eqn 11-102 because I compute 2 * fft in my
 		one-sided code below.  However, tests show that I need 1/8 of
@@ -388,7 +388,7 @@ GMT_LOCAL int write_output_separate (struct GMT_CTRL *GMT, struct SPECTRUM1D_INF
 			We don't know the correct error estimate and it is not
 			in Bendat and Piersol, or Priestly, or any standard text.
 			Smith needs to derive this, and should make a note to
-			check the expression given by Marcia Maia et al in Geophys. 
+			check the expression given by Marcia Maia et al in Geophys.
 			J. Int, 100, 337-348, 1990, equation 10, page 341.
 			Meanwhile we will default to use the expression related to
 			that for the gain spectrum:
@@ -487,7 +487,7 @@ GMT_LOCAL void assign_output_spectrum1d (struct GMT_CTRL *GMT, struct SPECTRUM1D
 					We don't know the correct error estimate and it is not
 					in Bendat and Piersol, or Priestly, or any standard text.
 					Smith needs to derive this, and should make a note to
-					check the expression given by Marcia Maia et al in Geophys. 
+					check the expression given by Marcia Maia et al in Geophys.
 					J. Int, 100, 337-348, 1990, equation 10, page 341.
 					Meanwhile we will default to use the expression related to
 					that for the gain spectrum: */
@@ -505,7 +505,7 @@ GMT_LOCAL void assign_output_spectrum1d (struct GMT_CTRL *GMT, struct SPECTRUM1D
 			}
 		}
 	}
-	
+
 	gmt_M_free (GMT, f_or_w);
 }
 
@@ -516,9 +516,9 @@ GMT_LOCAL void free_space_spectrum1d (struct GMT_CTRL *GMT, struct SPECTRUM1D_IN
 
 GMT_LOCAL void *New_Ctrl (struct GMT_CTRL *GMT) {	/* Allocate and initialize a new control structure */
 	struct SPECTRUM1D_CTRL *C;
-	
+
 	C = gmt_M_memory (GMT, NULL, 1, struct SPECTRUM1D_CTRL);
-	
+
 	/* Initialize values whose defaults are not 0/false/NULL */
 	C->D.inc = 1.0;
 	C->C.col[0] = 'x';
@@ -535,16 +535,16 @@ GMT_LOCAL void *New_Ctrl (struct GMT_CTRL *GMT) {	/* Allocate and initialize a n
 
 GMT_LOCAL void Free_Ctrl (struct GMT_CTRL *GMT, struct SPECTRUM1D_CTRL *C) {	/* Deallocate control structure */
 	if (!C) return;
-	gmt_M_str_free (C->N.name);	
-	gmt_M_free (GMT, C);	
+	gmt_M_str_free (C->N.name);
+	gmt_M_free (GMT, C);
 }
 
 GMT_LOCAL int usage (struct GMTAPI_CTRL *API, int level) {
 	const char *name = gmt_show_name_and_purpose (API, THIS_MODULE_LIB, THIS_MODULE_CLASSIC_NAME, THIS_MODULE_PURPOSE);
 	if (level == GMT_MODULE_PURPOSE) return (GMT_NOERROR);
 	GMT_Message (API, GMT_TIME_NONE, "usage: %s [<table>] -S<segment_size> [-C[<xycnpago>]] [-D<dt>] [-L[m|h]] [-N[<name_stem>]] [-T]\n", name);
-	GMT_Message (API, GMT_TIME_NONE, "\t[%s] [-W] [%s] [%s] [%s] [%s]\n\t[%s]\n\t[%s] [%s]\n\t[%s] [%s]\n\n",
-		GMT_V_OPT, GMT_b_OPT, GMT_d_OPT, GMT_e_OPT, GMT_f_OPT, GMT_g_OPT, GMT_h_OPT, GMT_i_OPT, GMT_s_OPT, GMT_PAR_OPT);
+	GMT_Message (API, GMT_TIME_NONE, "\t[%s] [-W] [%s] [%s] [%s] [%s]\n\t[%s]\n\t[%s] [%s]\n\t[%s] [%s] [%s]\n\n",
+		GMT_V_OPT, GMT_b_OPT, GMT_d_OPT, GMT_e_OPT, GMT_f_OPT, GMT_g_OPT, GMT_h_OPT, GMT_i_OPT, GMT_qi_OPT, GMT_s_OPT, GMT_PAR_OPT);
 
 	if (level == GMT_SYNOPSIS) return (GMT_MODULE_SYNOPSIS);
 
@@ -566,8 +566,8 @@ GMT_LOCAL int usage (struct GMTAPI_CTRL *API, int level) {
 	GMT_Message (API, GMT_TIME_NONE, "\t-T Disable writing the single output to stdout.\n");
 	GMT_Option (API, "V");
 	GMT_Message (API, GMT_TIME_NONE, "\t-W Write Wavelength of spectral estimate in col 1 [Default = frequency].\n");
-	GMT_Option (API, "bi2,bo,d,e,f,g,h,i,s,.");
-	
+	GMT_Option (API, "bi2,bo,d,e,f,g,h,i,qi,s,.");
+
 	return (GMT_MODULE_USAGE);
 }
 
@@ -684,7 +684,7 @@ GMT_LOCAL int parse (struct GMT_CTRL *GMT, struct SPECTRUM1D_CTRL *Ctrl, struct 
 int GMT_spectrum1d (void *V_API, int mode, void *args) {
 	int error = 0;
 	unsigned int k, n_outputs;
-	
+
 	uint64_t tbl, seg, n_cols_tot = 0;
 
 	double *y = NULL;	/* Used for cross-spectra only */
@@ -716,7 +716,7 @@ int GMT_spectrum1d (void *V_API, int mode, void *args) {
 
 	GMT_Report (API, GMT_MSG_LONG_VERBOSE, "Processing input table data\n");
 	gmt_M_memset (&C, 1, struct SPECTRUM1D_INFO);
-	
+
 	C.dt = Ctrl->D.inc;
 	C.y_given = Ctrl->C.active;
 	C.window = Ctrl->S.size;
@@ -780,9 +780,9 @@ int GMT_spectrum1d (void *V_API, int mode, void *args) {
 			}
 		}
 	}
-	
+
 	free_space_spectrum1d (GMT, &C);
-	
+
 	if (!Ctrl->T.active && GMT_Write_Data (API, GMT_IS_DATASET, GMT_IS_FILE, GMT_IS_NONE, 0, NULL, Ctrl->Out.file, Dout) != GMT_NOERROR) {
 		Return (API->error);
 	}

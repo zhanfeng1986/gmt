@@ -1,6 +1,6 @@
 /*-----------------------------------------------------------------
  *
- *      Copyright (c) 1999-2019 by the GMT Team (https://www.generic-mapping-tools.org/team.html)
+ *      Copyright (c) 1999-2020 by the GMT Team (https://www.generic-mapping-tools.org/team.html)
  *      See LICENSE.TXT file for copying and redistribution conditions.
  *
  *      This program is free software; you can redistribute it and/or modify
@@ -69,10 +69,6 @@ struct X2SYS_INIT_CTRL {
 		double inc[2];
 		char *string;
 	} I;
-	struct m {	/* -m */
-		bool active;
-		char *string;
-	} m;
 	struct N {	/* -N */
 		bool active[2];
 		char *string[2];
@@ -99,7 +95,6 @@ GMT_LOCAL void Free_Ctrl (struct GMT_CTRL *GMT, struct X2SYS_INIT_CTRL *C) {	/* 
 	gmt_M_str_free (C->E.string);
 	gmt_M_str_free (C->G.string);
 	gmt_M_str_free (C->I.string);
-	gmt_M_str_free (C->m.string);
 	gmt_M_str_free (C->N.string[0]);
 	gmt_M_str_free (C->N.string[1]);
 	gmt_M_str_free (C->W.string[0]);
@@ -116,7 +111,7 @@ GMT_LOCAL int usage (struct GMTAPI_CTRL *API, int level) {
 	const char *name = gmt_show_name_and_purpose (API, THIS_MODULE_LIB, THIS_MODULE_CLASSIC_NAME, THIS_MODULE_PURPOSE);
 	if (level == GMT_MODULE_PURPOSE) return (GMT_NOERROR);
 	GMT_Message (API, GMT_TIME_NONE, "usage: %s <TAG> [-D<deffile>] [-E<suffix>] [-F] [-G[d|g]] [-I[<binsize>]]\n", name);
-	GMT_Message (API, GMT_TIME_NONE, "\t[-N[d|s][c|e|f|k|M|n]]] [%s] [%s] [-Wt|d|n<gap>]\n\t[-m] [%s]] [%s]\n\n", GMT_Rgeo_OPT, GMT_V_OPT, GMT_j_OPT, GMT_PAR_OPT);
+	GMT_Message (API, GMT_TIME_NONE, "\t[-N[d|s][c|e|f|k|M|n]]] [%s] [%s] [-Wt|d|n<gap>]\n\t[%s]] [%s]\n\n", GMT_Rgeo_OPT, GMT_V_OPT, GMT_j_OPT, GMT_PAR_OPT);
 	GMT_Message (API, GMT_TIME_NONE, "\t<TAG> is the unique system identifier.  Files created will be placed in the directory %s/<TAG>.\n", par);
 	GMT_Message (API, GMT_TIME_NONE, "\t   Note: The environmental parameter %s must be defined.\n\n", par);
 
@@ -148,7 +143,7 @@ GMT_LOCAL int usage (struct GMTAPI_CTRL *API, int level) {
 	GMT_Message (API, GMT_TIME_NONE, "\t   -Wt sets maximum time gap (in user units) [Default is infinite].\n");
 	GMT_Message (API, GMT_TIME_NONE, "\t   -Wd sets maximum distance gap (in user units) [Default is infinite].\n");
 	GMT_Option (API, "j,m,.");
-	
+
 	return (GMT_MODULE_USAGE);
 }
 
@@ -177,7 +172,7 @@ GMT_LOCAL int parse (struct GMT_CTRL *GMT, struct X2SYS_INIT_CTRL *Ctrl, struct 
 				break;
 
 			/* Processes program-specific parameters */
-			
+		
 			case 'C':	/* Distance calculation flag */
 				if (gmt_M_compat_check (API->GMT, 6)) {
 					GMT_Report (API, GMT_MSG_COMPAT, "The -C option is deprecated; use the GMT common option -j<mode> instead\n");
@@ -221,10 +216,6 @@ GMT_LOCAL int parse (struct GMT_CTRL *GMT, struct X2SYS_INIT_CTRL *Ctrl, struct 
 					n_errors++;
 				}
 				Ctrl->I.string = strdup (opt->arg);
-				break;
-			case 'm':
-				Ctrl->m.active = true;
-				Ctrl->m.string = strdup (opt->arg);
 				break;
 			case 'N':	/* Distance and speed unit selection */
 				switch (opt->arg[0]) {
@@ -335,9 +326,9 @@ int GMT_x2sys_init (void *V_API, int mode, void *args) {
 	}
 	for (d_start = (int)strlen (Ctrl->D.file)-1; d_start >= 0 && Ctrl->D.file[d_start] != '/'; d_start--);	/* Find pos of last slash */
 	d_start++;		/* Find start of file name */
-	
+
 	/* Determine the TAG directory */
-	
+
 	x2sys_set_home (GMT);
 	x2sys_path (GMT, Ctrl->In.TAG, path);
 	if (x2sys_access (GMT, Ctrl->In.TAG, R_OK)) {	/* No such dir */
@@ -352,7 +343,7 @@ int GMT_x2sys_init (void *V_API, int mode, void *args) {
 		fclose (fp_def);	/* Close local def file */
 		Return (GMT_RUNTIME_ERROR);
 	}
-	
+
 	/* Initialize the system TAG files in X2SYS_HOME/TAG */
 
 	sprintf (tag_file,   "%s/%s.tag",       Ctrl->In.TAG, Ctrl->In.TAG);
@@ -370,7 +361,7 @@ int GMT_x2sys_init (void *V_API, int mode, void *args) {
 			else
 				GMT_Report (API, GMT_MSG_VERBOSE, "Removed file %s\n", path);
 		}
-		else 
+		else
 			n_found++;
 	}
 	if (!x2sys_access (GMT, def_file, R_OK)) {
@@ -382,7 +373,7 @@ int GMT_x2sys_init (void *V_API, int mode, void *args) {
 			else
 				GMT_Report (API, GMT_MSG_VERBOSE, "Removed file %s\n", path);
 		}
-		else 
+		else
 			n_found++;
 	}
 	if (!x2sys_access (GMT, track_file, R_OK)) {
@@ -394,7 +385,7 @@ int GMT_x2sys_init (void *V_API, int mode, void *args) {
 			else
 				GMT_Report (API, GMT_MSG_VERBOSE, "Removed file %s\n", path);
 		}
-		else 
+		else
 			n_found++;
 	}
 	if (!x2sys_access (GMT, path_file, R_OK)) {
@@ -406,7 +397,7 @@ int GMT_x2sys_init (void *V_API, int mode, void *args) {
 			else
 				GMT_Report (API, GMT_MSG_VERBOSE, "Removed file %s\n", path);
 		}
-		else 
+		else
 			n_found++;
 	}
 	if (!x2sys_access (GMT, bin_file, R_OK)) {
@@ -418,7 +409,7 @@ int GMT_x2sys_init (void *V_API, int mode, void *args) {
 			else
 				GMT_Report (API, GMT_MSG_VERBOSE, "Removed file %s\n", path);
 		}
-		else 
+		else
 			n_found++;
 	}
 	if (n_found) {
@@ -446,7 +437,6 @@ int GMT_x2sys_init (void *V_API, int mode, void *args) {
 	else if (Ctrl->C.active) fprintf (fp, " -j%s", Ctrl->C.string);
 	if (Ctrl->E.active) fprintf (fp, " -E%s", Ctrl->E.string);
 	if (Ctrl->G.active) fprintf (fp, " -G%s", Ctrl->G.string);
-	if (Ctrl->m.active) fprintf (fp, " -m%s", Ctrl->m.string);
 	if (Ctrl->N.active[0]) fprintf (fp, " -N%s", Ctrl->N.string[0]);
 	if (Ctrl->N.active[1]) fprintf (fp, " -N%s", Ctrl->N.string[1]);
 	if (Ctrl->W.active[0]) fprintf (fp, " -W%s", Ctrl->W.string[0]);
@@ -476,7 +466,7 @@ int GMT_x2sys_init (void *V_API, int mode, void *args) {
 		Return (GMT_ERROR_ON_FOPEN);
 	}
 	fprintf (fp,"# %s\n", Ctrl->In.TAG);	/* Write header record to empty track file */
-	
+
 	x2sys_err_fail (GMT, x2sys_fclose (GMT, track_file, fp), track_file);
 
 	/* Initialize the system's index data base  */
@@ -499,7 +489,7 @@ int GMT_x2sys_init (void *V_API, int mode, void *args) {
 	fprintf (fp, "# The current directory is always searched first.\n");
 	fprintf (fp, "# Add full paths to search additional directories\n");
 	x2sys_err_fail (GMT, x2sys_fclose (GMT, path_file, fp), path_file);
-	
+
 	GMT_Report (API, GMT_MSG_LONG_VERBOSE, "completed successfully\n");
 
 	gmt_M_free (GMT, X2SYS_HOME);

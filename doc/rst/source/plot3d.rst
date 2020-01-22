@@ -19,10 +19,10 @@ Synopsis
 [ |-C|\ *cpt* ]
 [ |-D|\ *dx*/*dy*\ [/*dz*] ]
 [ |-G|\ *fill* ]
-[ |-I|\ [*intens*] ] 
-[ |-L|\ [**+b**\ \|\ **d**\ \|\ **D**][**+xl**\ \|\ **r**\ \|\ *x0*][**+yl**\ \|\ **r**\ \|\ *y0*][**+p**\ *pen*] ] 
+[ |-I|\ [*intens*] ]
+[ |-L|\ [**+b**\ \|\ **d**\ \|\ **D**][**+xl**\ \|\ **r**\ \|\ *x0*][**+yl**\ \|\ **r**\ \|\ *y0*][**+p**\ *pen*] ]
 [ |-N| ]
-[ |-Q| ] 
+[ |-Q| ]
 [ |-S|\ [*symbol*][\ *size*\ [**unit**]][/*size_y*] ]
 [ |SYN_OPT-U| ]
 [ |SYN_OPT-V| ]
@@ -30,7 +30,7 @@ Synopsis
 [ |SYN_OPT-X| ]
 [ |SYN_OPT-Y| ]
 [ |-Z|\ [**l**\ \|\ **f**]\ *value* ]
-[ |SYN_OPT-a| ] 
+[ |SYN_OPT-a| ]
 [ |SYN_OPT-bi| ]
 [ |SYN_OPT-di| ]
 [ |SYN_OPT-e| ]
@@ -39,11 +39,14 @@ Synopsis
 [ |SYN_OPT-h| ]
 [ |SYN_OPT-i| ]
 [ |SYN_OPT-p| ]
+[ |SYN_OPT-qi| ]
 [ |SYN_OPT-t| ]
 [ |SYN_OPT-:| ]
 [ |SYN_OPT--| ]
 
 .. include:: plot3d_common.rst_
+
+.. include:: auto_legend_info.rst_
 
 Examples
 --------

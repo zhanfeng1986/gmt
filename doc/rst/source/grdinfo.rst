@@ -13,7 +13,7 @@ Synopsis
 .. include:: common_SYN_OPTs.rst_
 
 **gmt grdinfo** *grdfiles* [ |-C|\ [**n**\ \|\ **t**\] ]
-[ |-D|\ [*xoff*\ [/*yoff*][**+n**] ]
+[ |-D|\ [*xoff*\ [/*yoff*]][**+i**] ]
 [ |-F| ]
 [ |-I|\ [*dx*\ [/*dy*]\|\ **b**\ \|\ **i**\ \|\ **r**\ ] ]
 [ |-L|\ [**0**\ \|\ **1**\ \|\ **2**\ \|\ **p**\ \|\ **a**] ] [ |-M| ]
@@ -35,10 +35,10 @@ various statistics for the (*x*,\ *y*,\ *z*) data in the grid file(s).
 The output information contains the minimum/maximum values for *x*, *y*,
 and *z*, where the min/max of *z* occur, the *x*- and *y*-increments,
 and the number of *x* and *y* nodes, and [optionally] the mean, standard
-deviation, and/or the median, median absolute deviation of *z*, and/or
-the mode (LMS), LMS scale of *z*, and number of nodes set
+deviation, and/or the median, median absolute deviation (MAD) of *z*, and/or
+the mode (Least Median of Squares; LMS), LMS scale of *z*, and number of nodes set
 to NaN. We also report if the grid is pixel- or gridline-registered and
-if it is a Cartesian or Geographic data set (based on metadata in the file). 
+if it is a Cartesian or Geographic data set (based on metadata in the file).
 
 Required Arguments
 ------------------
@@ -64,12 +64,15 @@ Optional Arguments
 
 .. _-D:
 
-**-D**\ [*xoff*\ [/*yoff*][**+i**]
+**-D**\ [*xoff*\ [/*yoff*]][**+i**]
     Divide a single grid's domain (or the **-R** domain, if no grid given)
     into tiles of size *dx* times *dy* (set via **-I**).  You can specify
     overlap between tiles by appending *xoff*\ [/*yoff*].  If the single
     grid is given you may use the modifier **+i** to ignore tiles that
-    have no data within each tile subregion.
+    have no data within each tile subregion.  Default output is text
+    region strings.  Use **-C** to instead report four columns with
+    *xmin xmax ymin ymax* per tile, or use **-Ct** to also have the
+    region string appended as trailing text.
 
 .. _-F:
 
@@ -88,7 +91,8 @@ Optional Arguments
     then we return the actual grid region instead).  If no
     argument is given then we report the grid increment in the form
     **-I**\ *xinc*\ [/*yinc*\ ]. If **-Ib** is given we write each grid's
-    bounding box polygon instead.
+    bounding box polygon instead.  Finally, if **-D** is in effect then
+    *dx* and *dy* are the dimensions of the desired tiles.
 
 .. _-L:
 
@@ -114,7 +118,7 @@ Optional Arguments
 
 **-M**
     Find and report the location of min/max z-values, and count and
-    report the number of nodes set to NaN, if any. 
+    report the number of nodes set to NaN, if any.
 
 .. _-R:
 
@@ -125,7 +129,7 @@ Optional Arguments
 
 .. _-T:
 
-|-T|\ [*dz*]\ [**+a**\ [*alpha*]]\ [**+s**]
+**-T**\ [*dz*]\ [**+a**\ [*alpha*]]\ [**+s**]
     Determine min and max z-value.  If *dz* is provided then we first round these
     values off to multiples of *dz*. To exclude the two tails of the distribution
     when determining the min and max you can add **+a** to set the *alpha*

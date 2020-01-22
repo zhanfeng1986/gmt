@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------------
  *
- *	Copyright (c) 1991-2019 by the GMT Team (https://www.generic-mapping-tools.org/team.html)
+ *	Copyright (c) 1991-2020 by the GMT Team (https://www.generic-mapping-tools.org/team.html)
  *	See LICENSE.TXT file for copying and redistribution conditions.
  *
  *	This program is free software; you can redistribute it and/or modify
@@ -1131,6 +1131,40 @@ GMT_LOCAL int map_jump_x (struct GMT_CTRL *GMT, double x0, double y0, double x1,
 	return (0);
 }
 
+GMT_LOCAL int map_jump_xy (struct GMT_CTRL *GMT, double x0, double y0, double x1, double y1) {
+	/* true if x- or y-distance between points exceeds 1/2 map width at this y value or map height */
+	double dx, dy, map_half_width, map_half_height;
+
+	if (!(gmt_M_is_cylindrical (GMT) || gmt_M_is_perspective (GMT) || gmt_M_is_misc (GMT))) return (0);	/* Only projections with periodic boundaries may apply */
+
+	if (gmt_M_is_cartesian (GMT, GMT_IN) || fabs (GMT->common.R.wesn[XLO] - GMT->common.R.wesn[XHI]) < 90.0) return (0);
+
+	map_half_width = MAX (gmt_half_map_width (GMT, y0), gmt_half_map_width (GMT, y1));
+	if (fabs (map_half_width) < GMT_CONV4_LIMIT) return (0);	/* Very close to a pole for some projections */
+	map_half_height = 0.5 * GMT->current.map.height;	/* We assume this is constant */
+
+	dx = x1 - x0;
+	if (fabs (dx) > map_half_width) {	/* Possible jump; let's see how far apart those longitudes really are */
+		/* This test on longitudes was added to deal with issue #672, also see test/psxy/nojump.sh */
+		double last_lon, this_lon, dummy, dlon;
+		double half_lon_range = (GMT->common.R.oblique) ? 180.0 : 0.5 * (GMT->common.R.wesn[XHI] - GMT->common.R.wesn[XLO]);
+		gmt_xy_to_geo (GMT, &last_lon, &dummy, x0, y0);
+		gmt_xy_to_geo (GMT, &this_lon, &dummy, x1, y1);
+		gmt_M_set_delta_lon (last_lon, this_lon, dlon);	/* Beware of jumps due to sign differences */
+		if (fabs (dlon) < half_lon_range) /* Not going the long way so we judge this to be no jump */
+			return (0);
+		/* Jump it is */
+		if (dx > map_half_width)	return (-1);	/* Cross left/west boundary */
+		if (dx < (-map_half_width)) return (1);	/* Cross right/east boundary */
+	}
+	else if (fabs ((dy = y1 - y0)) > map_half_height) {	/* Possible jump for TM or UTM */
+		/* Jump it is */
+		if (dy > map_half_height)	return (-2);	/* Cross bottom/south boundary */
+		if (dy < (-map_half_height)) return (2);	/* Cross top/north boundary */
+	}
+	return (0);	/* No jump */
+}
+
 GMT_LOCAL int map_jump_not (struct GMT_CTRL *GMT, double x0, double y0, double x1, double y1) {
 #if 0
 	double dx, map_half_size;
@@ -1768,7 +1802,7 @@ uint64_t map_wesn_clip (struct GMT_CTRL *GMT, double *lon, double *lat, uint64_t
 			gmt_M_memcpy (ytmp[out], ytmp[in], m, double);
 			continue;
 		}
-#if 0	
+#if 0
 /* This caused lots of issues with various map types so replaced by the check about
  * that uses the mid-longitude as center and does a +/- 180 test from that.
  * P. Wessel, Dec 1 2016 */
@@ -2172,7 +2206,7 @@ GMT_LOCAL void map_setxy (struct GMT_CTRL *GMT, double xmin, double xmax, double
 	unsigned int no_scaling = P->no_scaling;
 	bool update_parameters = false;
 	double fw, fh, fx, fy, w, h;
-	
+
 	/* Set up the original min/max values, the rectangular map dimensionsm and the projection offset */
 	GMT->current.proj.rect_m[XLO] = xmin;	GMT->current.proj.rect_m[XHI] = xmax;	/* This is in original meters */
 	GMT->current.proj.rect_m[YLO] = ymin;	GMT->current.proj.rect_m[YHI] = ymax;
@@ -2183,7 +2217,7 @@ GMT_LOCAL void map_setxy (struct GMT_CTRL *GMT, double xmin, double xmax, double
 	GMT->current.proj.origin[GMT_Y] = -ymin * GMT->current.proj.scale[GMT_Y];
 
 	if (!strncmp (GMT->init.module_name, "inset", 5U))
-		no_scaling = 1;	/* Dont scale yet if we are calling inset begin (inset end would come here too but not affected since no mapping done by that module) */
+		no_scaling = 1;	/* Don't scale yet if we are calling inset begin (inset end would come here too but not affected since no mapping done by that module) */
 
 	w = GMT->current.proj.rect[XHI];	h = GMT->current.proj.rect[YHI];
 
@@ -5046,7 +5080,7 @@ GMT_LOCAL void gmtmap_genper_search (struct GMT_CTRL *GMT, double *west, double 
 	 * clip path and search along it, getting lon,lat along the way, and find the extreme values to use. Before this
 	 * function was added, we ended up in the gmt_wesn_search function which would fail along the horizon in many
 	 * cases.  P. Wessel, July 20, 2019. */
-	
+
 	np = (GMT->current.proj.polar && (GMT->common.R.wesn[YLO] <= -90.0 || GMT->common.R.wesn[YHI] >= 90.0)) ? GMT->current.map.n_lon_nodes + 2: 2 * (GMT->current.map.n_lon_nodes + 1);
 	work_x = gmt_M_memory (GMT, NULL, np, double);
 	work_y = gmt_M_memory (GMT, NULL, np, double);
@@ -5166,6 +5200,25 @@ GMT_LOCAL void map_get_crossings_x (struct GMT_CTRL *GMT, double *xc, double *yc
 	yc[0] = yc[1] = (ya > yb) ? yb + dyb : yb - dyb;
 	xc[0] = gmtmap_left_boundary (GMT, yc[0]);
 	xc[1] = gmtmap_right_boundary (GMT, yc[0]);
+}
+
+/*! . */
+GMT_LOCAL void map_get_crossings_y (struct GMT_CTRL *GMT, double *xc, double *yc, double x0, double y0, double x1, double y1) {
+	/* Finds crossings for wrap-arounds in y, assuming rectangular domain */
+	double xa, xb, ya, yb, c;
+
+	xa = x0;	xb = x1;
+	ya = y0;	yb = y1;
+	if (ya > yb) {	/* Make A the minimum y point */
+		gmt_M_double_swap (xa, xb);
+		gmt_M_double_swap (ya, yb);
+	}
+
+	yb -= GMT->current.map.height;	/* Now below the y = 0 line */
+	c = (doubleAlmostEqualZero (ya, yb)) ? 0.0 : (xa - xb) / (ya - yb);
+	xc[0] = xc[1] = xa - c * ya;
+	yc[0] = 0.0;
+	yc[1] = GMT->current.map.height;
 }
 
 /*! . */
@@ -6596,7 +6649,7 @@ void gmt_auto_frame_interval (struct GMT_CTRL *GMT, unsigned int axis, unsigned 
 			gmtlib_date_C_format (GMT, GMT->current.setting.format_date_map, &GMT->current.plot.calclock.date, 2);
 			sprintf (par, " --FORMAT_DATE_MAP=\"o yyyy\"");
 		}
-		
+	
 		interval = (unit == 'Y' || unit == 'O' || unit == 'D');
 	}
 	while (i < n && maj[i] < d) i++;	/* Wind up to largest reasonable interval */
@@ -6606,7 +6659,7 @@ void gmt_auto_frame_interval (struct GMT_CTRL *GMT, unsigned int axis, unsigned 
 		if (unit == 'H' && d == 24.0) d = 1.0, f /= 24.0, unit = 'D';
 		sunit[0] = unit;	/* Since we need a string in strcat */
 	}
-	
+
 	/* Set annotation/major tick interval */
 	T = &A->item[item];
 	if (T->active && T->interval == 0.0) {
@@ -7238,7 +7291,7 @@ uint64_t *gmtlib_split_line (struct GMT_CTRL *GMT, double **xx, double **yy, uin
 	 * add_crossings is true if we need to find the crossings; false means
 	 * they are already part of the line. */
 
-	uint64_t i, j, k, n, n_seg, *split = NULL, *pos = NULL;
+	uint64_t i, j, jc, k, n, n_seg, *split = NULL, *pos = NULL;
 	size_t n_alloc = 0;
  	int l_or_r;
  	char *way = NULL;
@@ -7249,14 +7302,14 @@ uint64_t *gmtlib_split_line (struct GMT_CTRL *GMT, double **xx, double **yy, uin
 	xin = *xx;	yin = *yy;
 	gmt_set_meminc (GMT, GMT_SMALL_CHUNK);
 	for (n_seg = 0, i = 1; i < *nn; i++) {
-		if ((l_or_r = map_jump_x (GMT, xin[i], yin[i], xin[i-1], yin[i-1]))) {
+		if ((l_or_r = map_jump_xy (GMT, xin[i], yin[i], xin[i-1], yin[i-1]))) {
 			if (n_seg == n_alloc) {
 				pos = gmt_M_malloc (GMT, pos, n_seg, &n_alloc, uint64_t);
 				n_alloc = n_seg;
 				way = gmt_M_malloc (GMT, way, n_seg, &n_alloc, char);
 			}
 			pos[n_seg] = i;		/* 2nd of the two points that generate the jump */
-			way[n_seg] = (char)l_or_r;	/* Which way we jump : +1 is right to left, -1 is left to right */
+			way[n_seg] = (char)l_or_r;	/* Which way we jump : +1 is right to left, -1 is left to right, +2 is top to bottom, -2 is bottom to top */
 			n_seg++;
 		}
 	}
@@ -7271,21 +7324,33 @@ uint64_t *gmtlib_split_line (struct GMT_CTRL *GMT, double **xx, double **yy, uin
 	n_alloc = 0;
 	gmt_M_malloc2 (GMT, x, y, n, &n_alloc, double);
 	split = gmt_M_memory (GMT, NULL, n_seg+2, uint64_t);
-	split[0] = n_seg;
+	split[0] = n_seg;	/* Number of segments we will need */
 
 	x[0] = xin[0];	y[0] = yin[0];
 	for (i = j = 1, k = 0; i < *nn; i++, j++) {
 		if (k < n_seg && i == pos[k]) {	/* At jump point */
 			if (add_crossings) {	/* Find and insert the crossings */
-				map_get_crossings_x (GMT, xc, yc, xin[i], yin[i], xin[i-1], yin[i-1]);
-				if (way[k] == 1) {	/* Add right border point first */
-					gmt_M_double_swap (xc[0], xc[1]);
-					gmt_M_double_swap (yc[0], yc[1]);
+				if (way[k] == -2 || way[k] == +2) {	/* Jump in y for TM */
+					map_get_crossings_y (GMT, xc, yc, xin[i], yin[i], xin[i-1], yin[i-1]);
+					if (way[k] == -2) {	/* Add top border point first */
+						gmt_M_double_swap (xc[0], xc[1]);
+						gmt_M_double_swap (yc[0], yc[1]);
+					}
+				}
+				else {	/* Jump in x */
+					map_get_crossings_x (GMT, xc, yc, xin[i], yin[i], xin[i-1], yin[i-1]);
+					if (way[k] == 1) {	/* Add right border point first */
+						gmt_M_double_swap (xc[0], xc[1]);
+						gmt_M_double_swap (yc[0], yc[1]);
+					}
 				}
 				x[j] = xc[0];	y[j++] = yc[0];	/* End of one segment */
+				jc = j;		/* Node of first point in next segment */
 				x[j] = xc[1];	y[j++] = yc[1];	/* Start of another */
 			}
-			split[++k] = j;		/* Node of first point in new segment */
+			else
+				jc = j;
+			split[++k] = jc;		/* Node of first point in new segment */
 		}
 		/* Then copy the regular points */
 		x[j] = xin[i];	y[j] = yin[i];
@@ -7906,7 +7971,7 @@ int gmt_grd_project (struct GMT_CTRL *GMT, struct GMT_GRID *I, struct GMT_GRID *
 	}
 
 	/* PART 2: Create weighted average of interpolated and observed points */
-	
+
 /* Open MP does not work yet */
 
 /* The OpenMP loop below fails and yields nodes still set to NaN.  I cannot see any errors but obviously
@@ -7914,7 +7979,7 @@ int gmt_grd_project (struct GMT_CTRL *GMT, struct GMT_GRID *I, struct GMT_GRID *
 
 //#ifdef _OPENMP
 //#pragma omp parallel for private(row_out,y_proj,col_out,ij_out,x_proj,z_int,inv_nz) shared(O,GMT,y_out_proj,x_out_proj,inverse,x_out,y_out,I,nz)
-//#endif 
+//#endif
 	for (row_out = 0; row_out < (int)O->header->n_rows; row_out++) {	/* Loop over the output grid row coordinates */
 		if (gmt_M_is_rect_graticule (GMT)) y_proj = y_out_proj[row_out];
 		gmt_M_col_loop (GMT, O, row_out, col_out, ij_out) {	/* Loop over the output grid col coordinates */
@@ -8118,7 +8183,7 @@ int gmt_img_project (struct GMT_CTRL *GMT, struct GMT_IMAGE *I, struct GMT_IMAGE
 
 //#ifdef _OPENMP
 //#pragma omp parallel for private(row_out,y_proj,col_out,ij_out,x_proj,z_int,inv_nz,b) shared(O,GMT,y_out_proj,x_out_proj,inverse,x_out,y_out,I,nz,z_int_bg,nb)
-//#endif 
+//#endif
 	for (row_out = 0; row_out < (int)O->header->n_rows; row_out++) {	/* Loop over the output grid row coordinates */
 		if (gmt_M_is_rect_graticule (GMT)) y_proj = y_out_proj[row_out];
 		gmt_M_col_loop (GMT, O, row_out, col_out, ij_out) {	/* Loop over the output grid col coordinates */
@@ -8802,7 +8867,7 @@ double gmt_line_length (struct GMT_CTRL *GMT, double x[], double y[], uint64_t n
 		}
 	}
 	if (project) cum_dist *= GMT->session.u2u[GMT_INCH][GMT->current.setting.proj_length_unit];
-	
+
 	return (cum_dist);
 }
 
@@ -9016,9 +9081,9 @@ int gmt_proj_setup (struct GMT_CTRL *GMT, double wesn[]) {
 	 * to/from may call this function only, while all the plotting program need to have more
 	 * things initialized and they will call gmt_map_setup instead, which starts by calling
 	 * gmt_proj_setup first. */
-	
+
 	bool search = false;
-	
+
 	if (wesn[XHI] == wesn[XLO] && wesn[YHI] == wesn[YLO]) Return (GMT_MAP_NO_REGION);	/* Since -R may not be involved if there are grids */
 
 	if (!GMT->common.J.active) {
@@ -9224,7 +9289,7 @@ int gmt_proj_setup (struct GMT_CTRL *GMT, double wesn[]) {
 		Return(GMT_MAP_NO_PROJECTION);
 
 	GMT->current.proj.search = search;
-	
+
 	GMT->current.proj.i_scale[GMT_X] = (GMT->current.proj.scale[GMT_X] != 0.0) ? 1.0 / GMT->current.proj.scale[GMT_X] : 1.0;
 	GMT->current.proj.i_scale[GMT_Y] = (GMT->current.proj.scale[GMT_Y] != 0.0) ? 1.0 / GMT->current.proj.scale[GMT_Y] : 1.0;
 	GMT->current.proj.i_scale[GMT_Z] = (GMT->current.proj.scale[GMT_Z] != 0.0) ? 1.0 / GMT->current.proj.scale[GMT_Z] : 1.0;
@@ -9238,7 +9303,7 @@ int gmt_proj_setup (struct GMT_CTRL *GMT, double wesn[]) {
 		if (GMT->current.proj.central_meridian < GMT->common.R.wesn[XLO] && (GMT->current.proj.central_meridian + 360.0) <= GMT->common.R.wesn[XHI]) GMT->current.proj.central_meridian += 360.0;
 		if (GMT->current.proj.central_meridian > GMT->common.R.wesn[XHI] && (GMT->current.proj.central_meridian - 360.0) >= GMT->common.R.wesn[XLO]) GMT->current.proj.central_meridian -= 360.0;
 	}
-	
+
 	if (!GMT->current.map.n_lon_nodes) GMT->current.map.n_lon_nodes = urint (GMT->current.map.width / GMT->current.setting.map_line_step);
 	if (!GMT->current.map.n_lat_nodes) GMT->current.map.n_lat_nodes = urint (GMT->current.map.height / GMT->current.setting.map_line_step);
 
@@ -9256,7 +9321,7 @@ int gmt_map_setup (struct GMT_CTRL *GMT, double wesn[]) {
 	if ((i = gmt_proj_setup (GMT, wesn)) != GMT_NOERROR) Return (i);
 
 	search = GMT->current.proj.search;
-	
+
 	/* If intervals are not set specifically, round them to some "nice" values
 	 * Remember whether frame items in both directions were automatically set */
 	for (i = 0; i < 6; i++)
@@ -9341,7 +9406,7 @@ unsigned int gmt_init_distaz (struct GMT_CTRL *GMT, char unit, unsigned int mode
 			GMT_Report (GMT->parent, GMT_MSG_VERBOSE, "Your distance mode (%s) differs from your -j option (%s) which takes precedence.\n", kind[mode], kind[GMT->common.j.active]);
 		mode = GMT->common.j.mode;	/* Override with what -j said */
 	}
-	
+
 	switch (unit) {
 			/* First the three arc angular distance units */
 
@@ -9392,7 +9457,7 @@ unsigned int gmt_init_distaz (struct GMT_CTRL *GMT, char unit, unsigned int mode
 			proj_type = GMT_CARTESIAN;
 			if (GMT->common.n.periodic[GMT_X] || GMT->common.n.periodic[GMT_Y])
 				map_set_distaz (GMT, GMT_CARTESIAN_DIST_PERIODIC, type, "");
-			else	
+			else
 				map_set_distaz (GMT, GMT_CARTESIAN_DIST, type, "");
 			break;
 		case 'C':	/* Cartesian distances (in PROJ_LENGTH_UNIT) after first projecting input coordinates with -J */

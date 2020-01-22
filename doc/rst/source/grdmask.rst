@@ -27,6 +27,7 @@ Synopsis
 [ |SYN_OPT-i| ]
 [ |SYN_OPT-j| ]
 [ |SYN_OPT-n| ]
+[ |SYN_OPT-qi| ]
 [ |SYN_OPT-r| ]
 [ |SYN_OPT-x| ]
 [ |SYN_OPT-:| ]
@@ -58,7 +59,7 @@ Required Arguments
 
 .. _-G:
 
-**-G**\ *mask_grd_file*]
+**-G**\ *mask_grd_file*
     Name of resulting output mask grid file. (See GRID FILE FORMATS below).
 
 .. _-I:
@@ -144,6 +145,8 @@ Optional Arguments
 .. include:: explain_-h.rst_
 
 .. include:: explain_-icols.rst_
+
+.. include:: explain_-qi.rst_
 
 .. include:: explain_distcalc.rst_
 

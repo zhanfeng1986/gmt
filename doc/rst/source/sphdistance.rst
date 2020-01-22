@@ -27,6 +27,7 @@ Synopsis
 [ |SYN_OPT-h| ]
 [ |SYN_OPT-i| ]
 [ |SYN_OPT-j| ]
+[ |SYN_OPT-qi| ]
 [ |SYN_OPT-r| ]
 [ |SYN_OPT-:| ]
 [ |SYN_OPT--| ]
@@ -134,6 +135,8 @@ Optional Arguments
 
 .. include:: explain_-icols.rst_
 
+.. include:: explain_-qi.rst_
+
 .. include:: explain_distcalc.rst_
 
 .. |Add_nodereg| unicode:: 0x20 .. just an invisible code
@@ -154,7 +157,7 @@ remote file hotspots.txt and then contour them on a sphere with a 200 km interva
 and annotations every 1000 km, try::
 
     gmt begin map
-      gmt sphtriangulate @hotspots.txt -Qv -D > t.txt 
+      gmt sphtriangulate @hotspots.txt -Qv -D > t.txt
       gmt sphdistance -Rg -I1 -Qt.txt -Gt.nc -Lk
       gmt grdcontour t.nc -JG-140/30/7i -C200 -A1000 -Bafg
     gmt end show

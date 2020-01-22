@@ -27,6 +27,7 @@ Synopsis
 [ |SYN_OPT-i| ]
 [ |SYN_OPT-j| ]
 [ |SYN_OPT-o| ]
+[ |SYN_OPT-q| ]
 [ |SYN_OPT-:| ]
 [ |SYN_OPT--| ]
 
@@ -81,7 +82,7 @@ Required Arguments
 
     (**u**) Upper: Return maximum of all values.
 
-    (**U**) Upper: Return maximum or all negative values only.
+    (**U**) Upper: Return maximum of all negative values only.
 
     Upper case type **B**, **C**, **G**, **M**, **P**, **F** will use
     robust filter versions: i.e., replace outliers (2.5 L1 scale off
@@ -173,6 +174,8 @@ Optional Arguments
 .. include:: explain_distcalc.rst_
 
 .. include:: explain_-ocols.rst_
+
+.. include:: explain_-q.rst_
 
 .. include:: explain_colon.rst_
 

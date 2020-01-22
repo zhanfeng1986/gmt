@@ -41,6 +41,7 @@ Synopsis
 [ |SYN_OPT-i| ]
 [ |SYN_OPT-l| ]
 [ |SYN_OPT-p| ]
+[ |SYN_OPT-qi| ]
 [ |SYN_OPT-t| ]
 [ |SYN_OPT-:| ]
 [ |SYN_OPT--| ]
@@ -116,6 +117,8 @@ to cm given the scale 3.60, try
     gmt plot -R20/40/-20/0 -JM6i -Sv0.15i+e+z3.6c -Gred -W0.25p -Baf data.txt -pdf map
 
 .. include:: plot_notes.rst_
+
+.. include:: auto_legend_info.rst_
 
 See Also
 --------

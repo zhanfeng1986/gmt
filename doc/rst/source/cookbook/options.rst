@@ -53,6 +53,8 @@ importance (some are used a lot more than others).
 +----------+--------------------------------------------------------------------+
 | **-p**   | Control perspective views for plots                                |
 +----------+--------------------------------------------------------------------+
+| **-q**   | Specify which input rows to read or output rows to write           |
++----------+--------------------------------------------------------------------+
 | **-r**   | Set grid registration [Default is gridline]                        |
 +----------+--------------------------------------------------------------------+
 | **-s**   | Control output of records containing one or more NaNs              |
@@ -1023,6 +1025,72 @@ slightly different meaning. Now, the *n_recs* argument is taken to mean
 how many *bytes* should be skipped (on input) or padded with the space
 character (on output).
 
+.. _option_-i:
+
+Input columns selection: The **-i** option
+------------------------------------------
+
+The **-i**\ *columns* option allows you to specify which
+input file physical data columns to use and in what order. By default, GMT will
+read all the data columns in the file, starting with the first column
+(0). Using **-i** modifies that process and reads in a logical record based
+on columns from the physical record. For instance, to use the 4th,
+7th, and 3rd data column as the required *x,y,z* to
+:doc:`/blockmean` you would specify
+**-i**\ 3,6,2 (since 0 is the first column). The chosen data columns
+will be used as given. Optionally, you can specify that input columns
+should be transformed according to a linear or logarithmic conversion.
+Do so by appending [**+l**][\ **+s**\ *scale*][\ **+o**\ *offset*] to
+each column (or range of columns). All items are optional: The **+l**
+implies we should first take :math:`\log_{10}` of the data [leave as
+is]. Next, we may scale the result by the given *scale* [1]. Finally, we
+add in the specified *offset* [0].  If you want the trailing text to remain
+part of your subset logical record then you must also select the special column
+by requesting column **t**, otherwise we ignore trailing text.  If you only
+want to select one word from the trailing text, then append the word number
+(0 is the first word).  Finally, to use the entire numerical record and
+ignore all trailing text, use **-in**.
+
+.. _gmt_record:
+
+.. figure:: /_images/GMT_record.png
+   :width: 600 px
+   :align: center
+
+   The physical, logical (input) and output record in GMT.  Here, we are
+   reading a file with 5 numerical columns plus some free-form text at the
+   end.  Our module (here :doc:`/plot`) will be used to plot circles at the
+   given locations but we want to assign color based on the ``depth`` column
+   (which we need to convert from meters to km) and symbol size based on the
+   ``mag`` column (but we want to scale the magnitude by 0.01 to get suitable symbol sizes).
+   We use **-i** to pull in the desired columns in the required order and apply
+   the scaling, resulting in a logical input record with 4 columns.  The **-f** option
+   can be used to specify column types in the logical record if it is not clear
+   from the data themselves (such as when reading a binary file).  Finally, if
+   a module needs to write out only a portion of the current logical record then
+   you may use the corresponding **-o** option to select desired columns, including
+   the trailing text column **t**.  If you only want to output one word from the
+   trailing text, then append the word number (0 is the first word).  Note that
+   these column numbers now refer to the logical record, not the physical, since
+   after reading the data there is no physical record, only the logical record in memory.
+
+. _option_-j:
+
+Spherical distance calculations: The **-j** option
+--------------------------------------------------
+
+    GMT has different ways to compute distances on planetary bodies.
+    By default (**-jg**) we perform great circle distance calculations, and parameters such
+    as distance increments or radii will be compared against calculated great
+    circle distances. To simplify and speed up calculations you can select Flat
+    Earth mode (**-jf**) instead, which gives an approximate but faster result.  Alternatively,
+    you can select ellipsoidal (**-je**; i.e., geodesic) mode for the highest precision
+    (and slowest calculation time).  All spherical distance calculations depend on
+    the current ellipsoid (:ref:`PROJ_ELLIPSOID <PROJ_ELLIPSOID>`), the definition of
+    the mean radius (:ref:`PROJ_MEAN_RADIUS <PROJ_MEAN_RADIUS>`), and the specification
+    of latitude type (:ref:`PROJ_AUX_LATITUDE <PROJ_AUX_LATITUDE>`).  Geodesic distance
+    calculations is also controlled by method (:ref:`PROJ_GEODESIC <PROJ_GEODESIC>`).
+
 .. _option_-l:
 
 Setting automatic legend entries: The **-l** option
@@ -1058,55 +1126,6 @@ look for the automatically generated on in the session directory.
 
    Each of the two :doc:`/plot` commands use **-l** to add a symbol to the
    auto legend; the first also sets a legend header of given size and draws a horizontal line.
-
-.. _option_-i:
-
-Input columns selection: The **-i** option
-------------------------------------------
-
-The **-i**\ *columns* option allows you to specify which
-input file physical data columns to use and in what order. By default, GMT will
-read all the data columns in the file, starting with the first column
-(0). Using **-i** modifies that process and reads in a logical record based
-on columns from the physical record. For instance, to use the 4th,
-7th, and 3rd data column as the required *x,y,z* to
-:doc:`/blockmean` you would specify
-**-i**\ 3,6,2 (since 0 is the first column). The chosen data columns
-will be used as is. Optionally, you can specify that input columns
-should be transformed according to a linear or logarithmic conversion.
-Do so by appending [**+l**][\ **+s**\ *scale*][\ **+o**\ *offset*] to
-each column (or range of columns). All items are optional: The **+l**
-implies we should first take :math:`\log_{10}` of the data [leave as
-is]. Next, we may scale the result by the given *scale* [1]. Finally, we
-add in the specified *offset* [0].  If you want the trailing text to remain
-part of your subset logical record then also select the special column
-by requesting column **t**, otherwise we ignore trailing text.  If you only
-want to select one word from the trailing text, then append the word number
-(0 is the first word).  Finally, to use the entire numerical record and
-ignore trailing text, use **-in**.
-
-.. _gmt_record:
-
-.. figure:: /_images/GMT_record.png
-   :width: 600 px
-   :align: center
-
-   The physical, logical (input) and output record in GMT.  Here, we are
-   reading a file with 5 numerical columns plus some free-form text at the
-   end.  Our module (here :doc:`/plot`) will be used to plot circles at the
-   given locations but we want to assign color based on the ``depth`` column
-   (which we need to convert from meters to km) and symbol size based on the
-   ``mag`` column (but we want to scale the magnitude by 0.01 to get suitable symbol sizes).
-   We use **-i** to pull in the desired columns in the required order and apply
-   the scaling, resulting in a logical input record with 4 columns.  The **-f** option
-   can be used to specify column types in the logical record if it is not clear
-   from the data themselves (such as when reading a binary file).  Finally, if
-   a module needs to write out only a portion of the current logical record then
-   you may use the corresponding **-o** option to select desired columns, including
-   the trailing text column **t**.  If you only want to output one word from the
-   trailing text, then append the word number (0 is the first word).  Note that
-   these column numbers now refer to the logical record, not the physical, since
-   after reading the data there is no physical record, only the logical record in memory.
 
 .. _option_-n:
 
@@ -1173,6 +1192,24 @@ arguments, the values from the last use of **-p** in a previous
 GMT command will be used.  Alternatively, you can perform a simple rotation
 about the z-axis by just giving the rotation angle.  Optionally, use **+v**
 or **+w** to select another axis location than the plot origin.
+
+.. _option_-q:
+
+Data row selection: The **-q** option
+-------------------------------------
+
+Similar to how **-i** and **-o** control which data *columns* to read and write, the **-qi** (or just **-q**)
+and **-qo** options control which data *rows* to read and write [Default is all]. As for columns, you
+can specify specific rows, a range of rows, or several sets of row ranges. You can also
+invert your selections with a leading ~ and then we select all the rows *not* specified by
+your ranges.  Normally, the row counter starts at 0 and increases until the end of the
+data set (**+a**).  However, you can append **+f** to reset the counter at the start of each
+table (file) or **+s** to reset the counter at the start of each data segment. Thus, **-q**\ 1\ **+s**
+will only read the 2nd data record from each of the segments found.  Note that header records do not
+increase the row counters; only data records do.  Instead of rows you may specify data
+*limits* for a specified column by appending **+c**\ *col*.  Now, we will only select rows whose
+data for the given column *col* lie within the range(s) given by your *min*/*max* limits.  Also
+note that when **+c** is used the **+a**\ \|\ **f**\ \|\ **s** have no effect.
 
 .. _option_nodereg:
 

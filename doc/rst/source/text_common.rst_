@@ -12,7 +12,8 @@ resets the font to the starting font, @- toggles subscripts on/off, @+
 toggles superscript on/off, @# toggles small caps on/off, @;\ *color*;
 changes the font color (@;; resets it), @:\ *size*: changes the font
 size (@:: resets it), and @\_ toggles underline on/off. @@ prints the @
-sign. @e, @o, @a, @E, @O, @A give the accented Scandinavian characters.
+sign while @. prints the degree symbol. @a, @c, @e, @i, @n, @o, @s, @u, @A, @C, @E, @N, @O, and @U
+give various accented European characters, as indicated in Table :ref:`escape <tbl-shorthand>`.
 Composite characters (overstrike) may be indicated with the
 @!<char1><char2> sequence, which will print the two characters on top of
 each other. To learn the octal codes for symbols not available on the
@@ -130,12 +131,12 @@ Optional Arguments
 
 .. _-G:
 
-**-G**\ *color*
+**-G**\ [*fill*][**+n**]
     Sets the shade or color used for filling the text box [Default is no
-    fill]. Alternatively, use **-Gc** to plot the text and then use the
+    fill]. Alternatively, give no *fill* to plot text and then use the
     text dimensions (and **-C**) to build clip paths and turn clipping on.
     This clipping can then be turned off later with :doc:`clip` **-C**.
-    To **not** plot the text but activate clipping, use **-GC** instead.
+    To **not** plot the text but activate clipping, use **-G+n** instead.
 
 .. _-L:
 
@@ -221,6 +222,8 @@ Optional Arguments
 
 .. |Add_perspective| replace:: (Not implemented for paragraph mode). 
 .. include:: explain_perspective.rst_
+
+.. include:: explain_-qi.rst_
 
 .. include:: explain_-t.rst_
 If no transparency is appended then we will read it from the last column per data record instead.
