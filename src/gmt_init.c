@@ -397,6 +397,7 @@ GMT_LOCAL struct GMT_KEYWORD_DICTIONARY gmt_common_kw[] = {
 	{   0, 'x', "cores",         "",        "",                                         "",        					""},
 	{   0, '\0', "",             "",        "",                                         "",        					""}	/* End of list marked with empty code and strings */
 };
+#endif
 
 /* Local variables to gmt_init.c */
 
@@ -693,6 +694,8 @@ GMT_LOCAL void gmtinit_kw_replace (struct GMTAPI_CTRL *API, struct GMT_KEYWORD_D
 		GMT_Destroy_Cmd (API, &cmd);	/* Free string */
 	}
 }
+
+#endif
 
 GMT_LOCAL int get_psl_encoding (const char *encoding) {
 	/* Return the specified encoding ID */
