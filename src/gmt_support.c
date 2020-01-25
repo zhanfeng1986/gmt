@@ -7204,7 +7204,7 @@ void gmtlib_make_continuous_colorlist (struct GMT_CTRL *GMT, struct GMT_PALETTE 
 
 /*! . */
 unsigned int gmt_validate_cpt_parameters (struct GMT_CTRL *GMT, struct GMT_PALETTE *P, char *file, bool *interpolate, bool *force_continuous) {
-	if (P->mode & GMT_CPT_COLORLIST && !P->categorical && !(*interpolate)) {	/* Color list with -T/min/max should be seen as continuous */
+	if (P->mode & GMT_CPT_COLORLIST && !P->categorical && !(*interpolate) && P->n_colors > 1) {	/* Color list with -T/min/max should be seen as continuous */
 		*force_continuous = true, P->mode |= GMT_CPT_CONTINUOUS;
 		gmtlib_make_continuous_colorlist (GMT, P);
 	}
@@ -15265,6 +15265,10 @@ struct GMT_REFPOINT * gmt_get_refpoint (struct GMT_CTRL *GMT, char *arg_in, char
 			if (mode == GMT_REFPOINT_NOTSET && strlen (arg) == 2 && strchr ("LMRBCT", toupper(arg[GMT_X])) && strchr ("LMRBCT", toupper(arg[GMT_Y]))) {	/* Apparently a 2-char justification code */
 				mode = GMT_REFPOINT_JUST;
 				GMT_Report (GMT->parent, GMT_MSG_VERBOSE, "Your -%c option was interpreted to mean -%c%c\n", option, option, kind[mode]);
+			}
+			else if (n == 0) {	/* Got no reference point, default to x0/0 */
+				strcpy (txt_x, "0");	strcpy (txt_y, "0");
+				mode = GMT_REFPOINT_PLOT;
 			}
 			else if ((n2 = sscanf (&arg[k], "%[^/]/%s", txt_x, txt_y)) < 2) {
 				arg[n] = '+';	/* Restore modifiers */
