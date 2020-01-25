@@ -1127,23 +1127,24 @@ produce a line break. Issue an additional <strong>-ga</strong> to indicate that
 all criteria must be met instead.</dd>
 </dl>
 <dl class="docutils" id="h-full">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>]</dt>
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>]</dt>
 <dd>Primary input file(s) has header record(s). If used, the default number of
-header records is <a class="reference internal" href="gmt.conf.html#io-n-header-recs"><span class="std std-ref">IO_N_HEADER_RECS</span></a> [1]. Use <strong>-hi</strong> if only
+header records is <a class="reference internal" href="gmt.conf.html#io-n-header-recs"><span class="std std-ref">IO_N_HEADER_RECS</span></a> [0]. Use <strong>-hi</strong> if only
 the primary input data should have header records [Default will write out header
 records if the input data have them]. Blank lines and lines starting
 with # are always skipped; to use another leading character for indicating header records,
 please see <a class="reference internal" href="gmt.conf.html#io-header-marker"><span class="std std-ref">IO_HEADER_MARKER</span></a>. For output you may request additional headers
 to be written via the option modifiers, and use <strong>+d</strong> to remove existing
 header records. Append <strong>+c</strong> to issue a header comment with column names to the output [none].
+Append <strong>+m</strong> to add a new segment header with a <em>segheader</em> to the output after the header block [none].
 Append <strong>+r</strong> to add a <em>remark</em> comment to the output [none].
 Append <strong>+t</strong> to add a <em>title</em> comment to the output [none].
-These optional strings may contain n to indicate line-breaks).
+These optional <em>remark</em> and <em>title</em> strings may contain n to indicate line-breaks).
 If used with native binary data we interpret <em>n</em> to instead mean the
 number of bytes to skip on input or pad on output.</dd>
 </dl>
 <dl class="docutils" id="icols-full">
-<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]]</dt>
+<dt><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<strong>t</strong>[<em>word</em>]]</dt>
 <dd>Select specific data columns for primary input, in arbitrary order. Columns
 not listed will be skipped. Give individual columns (or column ranges
 in the format <em>start</em>[:<em>inc</em>]:<em>stop</em>, where <em>inc</em> defaults to 1 if
@@ -1153,8 +1154,8 @@ column, optionally add any of  the following: <strong>+l</strong> takes <strong>
 the input values first; <strong>+s</strong><em>scale</em>, subsequently multiplies by a
 given  scale factor [1]; <strong>+o</strong><em>offset</em>, finally adds a given offset [0].
 To read from a given column until the end of the record, leave off <em>stop</em>.
-Normally, any trailing text is read but when <strong>i</strong> is used you must explicitly add
-the column <em>t</em> to retain the text. To only ingest a single word from the
+Normally, any trailing text is read but when <strong>-i</strong> is used you must explicitly add
+the column <strong>t</strong> to retain the text. To only ingest a single word from the
 trailing text, append the word number (first word is 0).  Finally, <strong>-in</strong>
 will simply read the numerical input and skip any trailing text.</dd>
 </dl>
@@ -1217,7 +1218,7 @@ of 0.5, using geographic (if grid is known to be geographic) or
 natural boundary conditions].</dd>
 </dl>
 <dl class="docutils" id="ocols-full">
-<dt><strong>-o</strong><em>cols</em>[,…][<em>t</em>[<em>word</em>]]</dt>
+<dt><strong>-o</strong><em>cols</em>[,…][,<strong>t</strong>[<em>word</em>]]</dt>
 <dd>Select specific data columns for primary output, in arbitrary order. Columns
 not listed will be skipped. Give columns (or column ranges
 in the format <em>start</em>[:<em>inc</em>]:<em>stop</em>, where <em>inc</em> defaults to 1 if
@@ -1225,7 +1226,7 @@ not specified) separated by commas.  Columns may be repeated.
 To write from a given column until the end the columns, leave off <em>stop</em>.
 [Default writes all columns in order].
 Normally, any trailing text in the internal records will be written but
-when <strong>-o</strong> is used you must explicitly add the column <em>t</em>. To only output a single word from the
+when <strong>-o</strong> is used you must explicitly add the column <strong>t</strong>. To only output a single word from the
 trailing text, append the word number (first word is 0).  Finally, <strong>-on</strong> will
 simply write the numerical output only and skip any trailing text, while <strong>-ot</strong>
 will only output the trailing text (or selected word).  Note: If <strong>-i</strong> is
@@ -1519,8 +1520,8 @@ multi-layer plots.</dd>
 <dl class="docutils" id="p-full">
 <dt><strong>-P</strong></dt>
 <dd>Select “Portrait” plot orientation [Default is “Landscape”; see
-<a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> or <a class="reference internal" href="gmtset.html"><span class="doc">gmtset</span></a> to change the <strong>PS_PAGE_ORIENTATION</strong>
-parameter, or supply <strong>-</strong><strong>-PS_PAGE_ORIENTATION=</strong><em>orientation</em> on the
+<a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> or <a class="reference internal" href="gmtset.html"><span class="doc">gmtset</span></a> to change the <a class="reference internal" href="gmt.conf.html#ps-page-orientation"><span class="std std-ref">PS_PAGE_ORIENTATION</span></a>
+parameter, or supply <strong>--PS_PAGE_ORIENTATION=</strong><em>orientation</em> on the
 command line].</dd>
 </dl>
 </div>
@@ -1562,7 +1563,7 @@ GMT documentation site <a class="reference external" href="https://docs.generic-
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 18, 2020.
+        Last updated on Jan 25, 2020.
       </span>
 
     </p>
