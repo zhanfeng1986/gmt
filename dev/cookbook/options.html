@@ -1080,17 +1080,23 @@ option can also be set by specifying the default <a class="reference internal" h
 </div>
 <div class="section" id="plot-positioning-and-layout-the-x-y-options">
 <span id="option-y"></span><span id="option-x"></span><h2>4.6. Plot positioning and layout: The <strong>-X</strong> <strong>-Y</strong> options<a class="headerlink" href="#plot-positioning-and-layout-the-x-y-options" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>-X</strong> and <strong>-Y</strong> options shift origin of plot by (<em>xoff</em>,<em>yoff</em>)
-inches (Default is (<a class="reference internal" href="../gmt.conf.html#map-origin-x"><span class="std std-ref">MAP_ORIGIN_X</span></a>, <a class="reference internal" href="../gmt.conf.html#map-origin-y"><span class="std std-ref">MAP_ORIGIN_Y</span></a>) for new
-plots <a class="footnote-reference" href="#id12" id="id6">[15]</a> and (0,0) for overlays. By default, all
-translations are relative to the previous origin (see Figure
-<a class="reference internal" href="#xy-options"><span class="std std-ref">Plot positioning</span></a>). Supply
-offset as <strong>c</strong> to center the plot in that direction relative to the
-page margin. Absolute translations (i.e., relative to a fixed point
-(0,0) at the lower left corner of the paper) can be achieve by
-prepending “a” to the offsets. Subsequent overlays will be co-registered
-with the previous plot unless the origin is shifted using these options.
-The offsets are measured in the current coordinates system.</p>
+<p>The <strong>-X</strong> and <strong>-Y</strong> options shift plot origin relative to the current origin by
+(<em>xshift</em>,<em>yshift</em>); optionally append the length unit
+(<strong>c</strong>, <strong>i</strong>, or <strong>p</strong>). Default is (<a class="reference internal" href="../gmt.conf.html#map-origin-x"><span class="std std-ref">MAP_ORIGIN_X</span></a>,
+<a class="reference internal" href="../gmt.conf.html#map-origin-y"><span class="std std-ref">MAP_ORIGIN_Y</span></a>) for new plots <a class="footnote-reference" href="#id12" id="id6">[15]</a>. Subsequent overlays will
+be co-registered with the previous plot unless the origin is shifted using
+these options.  You can prepend <strong>a</strong> to shift the origin
+back to the original position after the plot module completes, prepend <strong>c</strong> to
+center the plot on the center of the paper (optionally add a shift),
+prepend <strong>f</strong> to shift the origin relative to the fixed lower left
+corner of the page, or prepend <strong>r</strong> [Default] to move the origin
+relative to its current location.  When <strong>-X</strong>
+or <strong>-Y</strong> are used without any further arguments, the values from
+the last use of that option in a previous GMT command will be used.
+Note that <strong>-X</strong> and <strong>-Y</strong> can also access the previous plot bounding box dimensions
+<em>w</em> and <em>h</em> and construct offsets that involves them.  For instance, to move the origin
+up 2 cm beyond the height of the previous plot, use <strong>-Y</strong><em>h</em>+2c.
+To move the origin half the width to the right, use <strong>-X</strong><em>w</em>/2.</p>
 <div class="figure align-center" id="id30">
 <span id="xy-options"></span><a class="reference internal image-reference" href="../_images/GMT_-XY.png"><img alt="../_images/GMT_-XY.png" src="../_images/GMT_-XY.png" style="width: 300px;" /></a>
 <p class="caption"><span class="caption-text">Plot origin can be translated freely with -X -Y.</span></p>
@@ -1164,7 +1170,7 @@ double-precision float). In addition, use <strong>x</strong> to skip <em>n</em> 
 anywhere in the record. For a mixed-type data record you can concatenate
 several [<em>n</em>]<strong>t</strong> combinations, separated by commas. You may append
 <strong>w</strong> to any of the items to force byte-swapping. Alternatively, append
-<strong>+L</strong>|<strong>B</strong> to indicate that the entire data file should be
+<strong>+l</strong>|<strong>b</strong> to indicate that the entire data file should be
 read or written as little- or big-endian, respectively. Here, <em>n</em> is the
 number of each item in your binary file. Note that <em>n</em> may be larger
 than <em>m</em>, the number of columns that the GMT program requires to do
@@ -1212,9 +1218,17 @@ or output should be affected, use <strong>-di</strong> or <strong>-do</strong>, 
 <span id="option-e"></span><h2>4.11. Data record pattern matching: The <strong>-e</strong> option<a class="headerlink" href="#data-record-pattern-matching-the-e-option" title="Permalink to this headline">¶</a></h2>
 <p>Modules that read ASCII tables will normally process all the data records
 that are read.  The <strong>-e</strong> option offers a built-in pattern scanner that
-will only pass records that match the given patterns or regular expressions.
+will only pass records that match the given <em>pattern</em> or regular expressions.
 The test can also be inverted to only pass data records that <em>do not</em> match
-the pattern.  The test is <em>not</em> applied to header or segment headers.</p>
+the pattern.  The test is <em>not</em> applied to header or segment headers.
+To reverse the search, i.e., to only accept data records that do <em>not</em>
+contain the specified pattern, use <strong>-e~</strong>. Should your pattern happen
+to start with ~ you will need to escape this character with a backslash
+[Default accepts all data records]. For matching data records
+against extended <a class="reference external" href="https://en.wikipedia.org/wiki/Regular_expression">Regular Expressions</a>,
+please enclose the expression in slashes. Append <strong>i</strong> for case-insensitive matching.
+To supply a list of such patterns, give <strong>+f</strong><em>file</em> with one pattern per line.
+To give a single pattern starting with <strong>+f</strong>, escape it with a backslash.</p>
 </div>
 <div class="section" id="data-type-selection-the-f-option">
 <span id="option-f"></span><h2>4.12. Data type selection: The <strong>-f</strong> option<a class="headerlink" href="#data-type-selection-the-f-option" title="Permalink to this headline">¶</a></h2>
@@ -1226,11 +1240,12 @@ column (or range of columns) separated by commas. Each string starts
 with the column number (0 is first column) followed by either <strong>x</strong>
 (longitude), <strong>y</strong> (latitude), <strong>T</strong> (absolute calendar time) or <strong>t</strong>
 (relative time). If several consecutive columns have the same format you
-may specify a range of columns rather than a single column, i.e., 0–4
-for the first 5 columns. For example, if our input file has geographic
+may specify a range of columns rather than a single column. Column ranges
+must be given in the format <em>start</em>[:<em>inc</em>]:<em>stop</em>, where <em>inc</em> defaults
+to 1 if not specified).  For example, if our input file has geographic
 coordinates (latitude, longitude) with absolute calendar coordinates in
-the columns 3 and 4, we would specify
-<strong>fi</strong>0<strong>y</strong>,1<strong>x</strong>,3–4<strong>T</strong>. All other columns are assumed to
+the columns 3 and 4, we would specify <strong>fi</strong>0<strong>y</strong>,1<strong>x</strong>,3:4<strong>T</strong>.
+All other columns are assumed to
 have the default, floating point format and need not be set
 individually. The shorthand <strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<strong>g</strong>
 means <strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]0x,1y (i.e., geographic
@@ -1278,8 +1293,9 @@ column value.</p>
 lets GMT know that input file(s) have <em>n_recs</em> header records [0]. If
 there are more than one header record you must specify the number after
 the <strong>-h</strong> option, e.g., <strong>-h</strong>4. Note that blank lines and records
-that start with the character # are automatically considered header
-records and skipped. Thus, <em>n_recs</em> refers to general text lines that
+that start with the character # are <em>automatically</em> considered header
+records and skipped, hence <strong>-h</strong> is not needed to skip such records.
+Thus, <em>n_recs</em> refers to general text lines that
 do <em>not</em> start with # and thus must specifically be skipped in order for
 the programs to function properly. The default number of such header
 records if <strong>-h</strong> is used is one of the many parameters in the <a class="reference internal" href="../gmt.conf.html"><span class="doc">gmt.conf</span></a> file
@@ -1428,12 +1444,11 @@ select perspective view with the <strong>-p</strong> option by setting the azimu
 and elevation of the viewpoint [Default is 180/90]. When <strong>-p</strong> is used
 in consort with <strong>-Jz</strong> or <strong>-JZ</strong>, a third value can be appended which
 indicates at which <em>z</em>-level all 2-D material, like the plot frame, is
-plotted (in perspective) [Default is at the bottom of the z-axis]. For
-frames used for animation, you may want to append <strong>+</strong> to fix the
-center of your data domain (or specify a particular world coordinate
-point with <strong>+w</strong><em>lon0/lat</em>[<em>z</em>]) which will project to the center
-of your page size (or you may specify the coordinates of the <em>projected</em>
-view point with <strong>+v</strong><em>x0/y0</em>. When <strong>-p</strong> is used without any further
+plotted (in perspective) [Default is at the bottom of the z-axis].
+For frames used for animation, we fix the center of your data domain.
+Specify another center using a particular world coordinate point with <strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>z0</em>],
+which will project to the center of your page size, or specify the coordinates of
+the projected 2-D view point with <strong>+v</strong><em>x0/y0</em>. When <strong>-p</strong> is used without any further
 arguments, the values from the last use of <strong>-p</strong> in a previous
 GMT command will be used.  Alternatively, you can perform a simple rotation
 about the z-axis by just giving the rotation angle.  Optionally, use <strong>+v</strong>
@@ -1612,7 +1627,7 @@ context they are considered “other”. Thus, when we refer to
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 25, 2020.
+        Last updated on Jan 27, 2020.
       </span>
 
     </p>

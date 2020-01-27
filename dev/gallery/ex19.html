@@ -238,7 +238,7 @@ gmt begin ex19
 	gmt grdmath <span class="nv">X</span> <span class="o">=</span> lon.nc
 	gmt makecpt -Cwhite,blue -T0/1 -N -H &gt; lat.cpt
 	gmt makecpt -Crainbow -T-180/180 -H &gt; lon.cpt
-	gmt subplot begin 3x1 -Fs6.5i/0 -M0 -Bbltr -Rd -JI0/6.5i
+	gmt subplot begin 3x1 -Fs16c/0 -M0 -Bbltr -Rd -JI0/16c
 		<span class="c1">#   First make a worldmap with graded blue oceans and rainbow continents</span>
 		gmt grdimage lat.nc -Clat.cpt -nl -c0,0
 		gmt coast -Dc -A5000 -G
@@ -252,7 +252,7 @@ gmt begin ex19
 		gmt coast -Dc -A5000 -Gp86+fred+byellow+r100 -Sp@circuit.png+r100 -c1,0
 		<span class="nb">echo</span> <span class="s2">&quot;0 30 SILLY USES OF&quot;</span> <span class="p">|</span> gmt text -F+f32p,Helvetica-Bold,lightgreen<span class="o">=</span>thinner
 		<span class="nb">echo</span> <span class="s2">&quot;0 -30 COLOR PATTERNS&quot;</span> <span class="p">|</span> gmt text -F+f32p,Helvetica-Bold,magenta<span class="o">=</span>thinner
-		gmt image -DjCM+w3i @GMT_covertext.eps
+		gmt image -DjCM+w7.5c @GMT_covertext.eps
 		<span class="c1">#   Finally repeat 1st plot but exchange the colors</span>
 		gmt grdimage lon.nc -Clon.cpt -nl -c2,0
 		gmt coast -Dc -A5000 -G
@@ -296,7 +296,7 @@ rm -f lat.nc lon.nc lat.cpt lon.cpt
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 25, 2020.
+        Last updated on Jan 27, 2020.
       </span>
 
     </p>

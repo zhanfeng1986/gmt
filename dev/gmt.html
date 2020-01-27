@@ -992,8 +992,8 @@ respectively; type will be set automatically. Finally, you <em>must</em>
 append <strong>+g</strong><em>geometry</em>, where <em>geometry</em> is either POINT, LINE,
 or POLY. Optionally, prepend <strong>M</strong> for multi-versions of these
 geometries. To force the clipping of features crossing the Dateline,
-use upper-case <strong>+G</strong> instead. See GMT Appendix Q for details of the
-OGR/GMT file format.</dd>
+use upper-case <strong>+G</strong> instead. See <a class="reference internal" href="cookbook/ogrgmt_format.html"><span class="doc">The GMT Vector Data Format for OGR Compatibility</span></a>
+for details of the OGR/GMT file format.</dd>
 </dl>
 <dl class="docutils" id="bi-full">
 <dt><strong>-bi</strong>[<em>ncols</em>][<em>type</em>][<strong>w</strong>][<strong>+l</strong>|<strong>b</strong>]</dt>
@@ -1067,7 +1067,7 @@ this value as a missing data item and substitute the value NaN.</dd>
 </dl>
 <dl class="docutils" id="do-full">
 <dt><strong>-do</strong><em>nodata</em></dt>
-<dd>Examine all output columns and if any item equals NAN we substitute
+<dd>Examine all output columns and if any item equals NaN we substitute
 it with the chosen missing data value <em>nodata</em>.</dd>
 </dl>
 <dl class="docutils" id="e-full">
@@ -1127,13 +1127,15 @@ produce a line break. Issue an additional <strong>-ga</strong> to indicate that
 all criteria must be met instead.</dd>
 </dl>
 <dl class="docutils" id="h-full">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>]</dt>
-<dd>Primary input file(s) has header record(s). If used, the default number of
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>]</dt>
+<dd>Primary input file(s) has <em>n</em> extra header record(s). If used, the default number of
 header records is <a class="reference internal" href="gmt.conf.html#io-n-header-recs"><span class="std std-ref">IO_N_HEADER_RECS</span></a> [0]. Use <strong>-hi</strong> if only
 the primary input data should have header records [Default will write out header
 records if the input data have them]. Blank lines and lines starting
 with # are always skipped; to use another leading character for indicating header records,
-please see <a class="reference internal" href="gmt.conf.html#io-header-marker"><span class="std std-ref">IO_HEADER_MARKER</span></a>. For output you may request additional headers
+please see <a class="reference internal" href="gmt.conf.html#io-header-marker"><span class="std std-ref">IO_HEADER_MARKER</span></a>. Note that with <strong>-h</strong> in effect
+the first <em>n</em> records are taken verbatim as headers and not skipped even if any is starting with #.
+For output you may request additional headers
 to be written via the option modifiers, and use <strong>+d</strong> to remove existing
 header records. Append <strong>+c</strong> to issue a header comment with column names to the output [none].
 Append <strong>+m</strong> to add a new segment header with a <em>segheader</em> to the output after the header block [none].
@@ -1269,7 +1271,7 @@ To reverse the tests, prepend ~ before giving your first range.</dd>
 </dl>
 <dl class="docutils" id="qi-full">
 <dt><strong>-qi</strong>[~]<em>rows</em>[<strong>+c</strong><em>col</em>][<strong>+a</strong>|<strong>f</strong>|<strong>s</strong>]</dt>
-<dd>Select specific data rows to be read durting input [all].
+<dd>Select specific data rows to be read during input [all].
 Give individual rows (or row ranges in the format <em>start</em>[:<em>inc</em>]:<em>stop</em>, where
 <em>inc</em> defaults to 1 if not specified) separated by commas [Default reads all rows,
 starting with the first row (0)]. By default (<strong>+a</strong>) we count rows in the data set;
@@ -1563,7 +1565,7 @@ GMT documentation site <a class="reference external" href="https://docs.generic-
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 25, 2020.
+        Last updated on Jan 27, 2020.
       </span>
 
     </p>

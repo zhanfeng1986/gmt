@@ -250,7 +250,7 @@ gmt begin ex21
 	<span class="nv">R</span><span class="o">=</span><span class="s2">&quot;-R</span><span class="si">${</span><span class="nv">wesn</span><span class="p">[0]</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">wesn</span><span class="p">[1]</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">wesn</span><span class="p">[2]</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">wesn</span><span class="p">[3]</span><span class="si">}</span><span class="s2">&quot;</span>
 
 	<span class="c1"># Lay down the basemap:</span>
-	gmt basemap <span class="nv">$R</span> -JX9i/6i -Bsx1Y -Bpxa3Of1o -Bpy50+p<span class="s2">&quot;</span>$<span class="s2"> &quot;</span> <span class="se">\</span>
+	gmt basemap <span class="nv">$R</span> -JX22c/15c -Bsx1Y -Bpxa3Of1o -Bpy50+p<span class="s2">&quot;</span>$<span class="s2"> &quot;</span> <span class="se">\</span>
 		-BWSen+t<span class="s2">&quot;RedHat (RHT) Stock Price Trend since IPO&quot;</span>+glightgreen
 
 	<span class="c1"># Plot main window with open price as red line over yellow envelope of low/highs</span>
@@ -269,7 +269,7 @@ gmt begin ex21
 	<span class="nb">echo</span> <span class="s2">&quot;01-Jan-02	25&quot;</span> &gt;&gt; RHAT.pw
 	gmt plot RHAT.pw -Wthick,-
 	gmt <span class="nb">set</span> FORMAT_DATE_IN yyyy-mm-dd
-	<span class="nb">echo</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">wesn</span><span class="p">[0]</span><span class="si">}</span><span class="s2"> 25 PW buy&quot;</span> <span class="p">|</span> gmt text -D1.5i/0.05i -N -F+f12p,Bookman-Demi+jLB
+	<span class="nb">echo</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">wesn</span><span class="p">[0]</span><span class="si">}</span><span class="s2"> 25 PW buy&quot;</span> <span class="p">|</span> gmt text -D4c/0.1c -N -F+f12p,Bookman-Demi+jLB
 	gmt <span class="nb">set</span> FORMAT_DATE_IN dd-o-yy
 
 	<span class="c1"># Draw P Wessel&#39;s sales price as line and label it.</span>
@@ -280,14 +280,14 @@ gmt begin ex21
 	<span class="nb">echo</span> <span class="s2">&quot;01-Jan-08	23.8852&quot;</span> &gt;&gt; RHAT.pw
 	gmt plot RHAT.pw -Wthick,-
 	gmt <span class="nb">set</span> FORMAT_DATE_IN yyyy-mm-dd
-	<span class="nb">echo</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">wesn</span><span class="p">[1]</span><span class="si">}</span><span class="s2"> 23.8852 PW sell&quot;</span> <span class="p">|</span> gmt text -Dj0.8i/0.05i -N -F+f12p,Bookman-Demi+jRB
+	<span class="nb">echo</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">wesn</span><span class="p">[1]</span><span class="si">}</span><span class="s2"> 23.8852 PW sell&quot;</span> <span class="p">|</span> gmt text -Dj1.6c/0.1c -N -F+f12p,Bookman-Demi+jRB
 	gmt <span class="nb">set</span> FORMAT_DATE_IN dd-o-yy
 
 	<span class="c1"># Get smaller region for inset for trend since 2004</span>
 	<span class="nv">R</span><span class="o">=</span><span class="s2">&quot;-R2004T/</span><span class="si">${</span><span class="nv">wesn</span><span class="p">[1]</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">wesn</span><span class="p">[2]</span><span class="si">}</span><span class="s2">/40&quot;</span>
 
 	<span class="c1"># Lay down the basemap, using Finnish annotations and place the inset in the upper right</span>
-	gmt basemap --GMT_LANGUAGE<span class="o">=</span><span class="k">fi</span> <span class="nv">$R</span> -JX6i/3i -Bpxa3Of3o -Bpy10+p<span class="s2">&quot;</span>$<span class="s2"> &quot;</span> -BESw+glightblue -Bsx1Y -X3i -Y3i
+	gmt basemap --GMT_LANGUAGE<span class="o">=</span><span class="k">fi</span> <span class="nv">$R</span> -JX15c/7c -Bpxa3Of3o -Bpy10+p<span class="s2">&quot;</span>$<span class="s2"> &quot;</span> -BESw+glightblue -Bsx1Y -X7c -Y8c
 
 	<span class="c1"># Again, plot close price as red line over yellow envelope of low/highs</span>
 	gmt plot -Gyellow RHAT.env
@@ -338,7 +338,7 @@ Internet bubble…</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 25, 2020.
+        Last updated on Jan 27, 2020.
       </span>
 
     </p>

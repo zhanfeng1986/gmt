@@ -269,7 +269,7 @@ and place the four panels, and place the colorbar beneath the subplot.</p>
 <span class="c1">#</span>
 gmt begin ex16
 	gmt <span class="nb">set</span> FONT_ANNOT_PRIMARY 9p FONT_TITLE 18p,Times-Roman
-	gmt subplot begin 2x2 -M0.05i -Fs3.25i/0 -R0/6.5/-0.2/6.5 -Jx1i -SCb -SRl+t -Bwesn -Y2i -T<span class="s2">&quot;Gridding of Data&quot;</span>
+	gmt subplot begin 2x2 -M0.1c -Fs8c/0 -R0/6.5/-0.2/6.5 -Jx1c -SCb -SRl+t -Bwesn -T<span class="s2">&quot;Gridding of Data&quot;</span>
 		gmt contour @Table_5_11.txt -C@ex_16.cpt -I -B+t<span class="s2">&quot;contour (triangulate)&quot;</span> -c0,0
 		<span class="c1">#</span>
 		gmt surface @Table_5_11.txt -R0/6.5/-0.2/6.5 -I0.2 -Graws0.nc
@@ -282,7 +282,7 @@ gmt begin ex16
 		gmt grdfilter rawt.nc -Gfiltered.nc -D0 -Fc1
 		gmt grdview filtered.nc -C@ex_16.cpt -Qs -B+t<span class="s2">&quot;triangulate @~\256@~ grdfilter&quot;</span> -c1,1
 	gmt subplot end
-	gmt colorbar -DJBC+w5i/0.25i+h -C@ex_16.cpt
+	gmt colorbar -DJBC -C@ex_16.cpt
 gmt end show
 rm -f raws0.nc raws5.nc rawt.nc filtered.nc
 </pre></div>
@@ -316,7 +316,7 @@ rm -f raws0.nc raws5.nc rawt.nc filtered.nc
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 25, 2020.
+        Last updated on Jan 27, 2020.
       </span>
 
     </p>

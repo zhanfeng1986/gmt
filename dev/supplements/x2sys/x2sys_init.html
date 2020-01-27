@@ -403,7 +403,7 @@ integers (-32768,+32767), <strong>i</strong> for signed 4-byte integers
 (-2,147,483,648,+2,147,483,647), <strong>f</strong> for 4-byte floating points and
 <strong>d</strong> for 8-byte double precision floating points. For netCDF, simply
 use <strong>d</strong> as netCDF will automatically handle type-conversions during reading.</p>
-<p><em>NaN</em> is Y if certain values (e.g, -9999) are to be replaced by NAN, and N otherwise.</p>
+<p><em>NaN</em> is Y if certain values (e.g, -9999) are to be replaced by NaN, and N otherwise.</p>
 <p><em>NaN-proxy</em> is that special value (e.g., -9999).</p>
 <p><em>scale</em> is used to multiply the data after reading.</p>
 <p><em>offset</em> is used to add to the scaled data.</p>
@@ -758,7 +758,7 @@ different line.fmt file:</p>
 </tr>
 </tbody>
 </table>
-<p class="last">Note we use no scaling or NAN proxies since those issues are usually
+<p class="last">Note we use no scaling or NaN proxies since those issues are usually
 handled internally in the netCDF format description.</p>
 </dd>
 </dl>
@@ -805,7 +805,7 @@ However, old .def files are still being read.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 25, 2020.
+        Last updated on Jan 27, 2020.
       </span>
 
     </p>

@@ -246,10 +246,10 @@ gmt begin ex28
 	gmt coast -R@Kilauea.utm.nc -Ju5Q/1:160000 -Df+ -Slightblue -W0.5p -B5mg5m -BNE <span class="se">\</span>
 		--FONT_ANNOT_PRIMARY<span class="o">=</span>12p --FORMAT_GEO_MAP<span class="o">=</span>ddd:mmF
 	<span class="nb">echo</span> <span class="m">155</span>:16:20W <span class="m">19</span>:26:20N KILAUEA <span class="p">|</span> gmt text -F+f12p,Helvetica-Bold+jCB
-	gmt basemap --FONT_ANNOT_PRIMARY<span class="o">=</span>9p -LjRB+c19:23N+f+w5k+l1:160,000+u+o0.2i --FONT_LABEL<span class="o">=</span>10p
+	gmt basemap --FONT_ANNOT_PRIMARY<span class="o">=</span>9p -LjRB+c19:23N+f+w5k+l1:160,000+u+o0.5c --FONT_LABEL<span class="o">=</span>10p
 	<span class="c1"># Annotate in km but append ,000m to annotations to get customized meter labels</span>
 	gmt basemap -R@Kilauea.utm.nc+Uk -Jx1:160 -B5g5+u<span class="s2">&quot;@:8:000m@::&quot;</span> -BWSne --FONT_ANNOT_PRIMARY<span class="o">=</span>10p <span class="se">\</span>
-		--MAP_GRID_CROSS_SIZE_PRIMARY<span class="o">=</span><span class="m">0</span>.1i --FONT_LABEL<span class="o">=</span>10p
+		--MAP_GRID_CROSS_SIZE_PRIMARY<span class="o">=</span><span class="m">0</span>.25c --FONT_LABEL<span class="o">=</span>10p
 gmt end show
 </pre></div>
 </div>
@@ -282,7 +282,7 @@ gmt end show
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 25, 2020.
+        Last updated on Jan 27, 2020.
       </span>
 
     </p>

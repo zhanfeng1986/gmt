@@ -272,14 +272,14 @@ gmt begin ex25
 	gmt makecpt -Cblue,gray,red -T-1.5/1.5/1 -N
 	<span class="c1"># Create the final plot and overlay coastlines</span>
 	gmt <span class="nb">set</span> FONT_ANNOT_PRIMARY +10p FORMAT_GEO_MAP dddF
-	gmt grdimage key.nc -JKs180/9i -Bx60 -By30 -BWsNE+t<span class="s2">&quot;Antipodal comparisons&quot;</span> -Y1.2i -nn
+	gmt grdimage key.nc -JKs180/22c -Bx60 -By30 -BWsNE+t<span class="s2">&quot;Antipodal comparisons&quot;</span> -nn
 	gmt coast -Wthinnest -Dc -A500
 	<span class="c1"># Place an explanatory legend below</span>
-	gmt legend -DJBC+w6i -Y-0.2i -F+pthick <span class="s">&lt;&lt;- END</span>
+	gmt legend -DJBC+w15c -Y-0.5c -F+pthick <span class="s">&lt;&lt;- END</span>
 <span class="s">	N 3</span>
-<span class="s">	S 0.15i s 0.2i red  0.25p 0.3i Terrestrial Antipodes [$land %]</span>
-<span class="s">	S 0.15i s 0.2i blue 0.25p 0.3i Oceanic Antipodes [$ocean %]</span>
-<span class="s">	S 0.15i s 0.2i gray 0.25p 0.3i Mixed Antipodes [$mixed %]</span>
+<span class="s">	S 0.4c s 0.5c red  0.25p 0.75c Terrestrial Antipodes [$land %]</span>
+<span class="s">	S 0.4c s 0.5c blue 0.25p 0.75c Oceanic Antipodes [$ocean %]</span>
+<span class="s">	S 0.4c s 0.5c gray 0.25p 0.75c Mixed Antipodes [$mixed %]</span>
 <span class="s">	END</span>
 	rm -f *.nc key.*
 gmt end show
@@ -314,7 +314,7 @@ gmt end show
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 25, 2020.
+        Last updated on Jan 27, 2020.
       </span>
 
     </p>

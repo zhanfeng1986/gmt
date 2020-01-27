@@ -230,7 +230,7 @@ gmt begin ex33
 	<span class="c1"># Extract a subset of ETOPO1m for the East Pacific Rise</span>
 	<span class="c1"># gmt grdcut etopo1m_grd.nc -R118W/107W/49S/42S -Gspac_33.nc</span>
 	gmt makecpt -Crainbow -T-5000/-2000
-	gmt grdimage @spac_33.nc -I+a15+ne0.75 -JM6i -B -Xc --FORMAT_GEO_MAP<span class="o">=</span>dddF
+	gmt grdimage @spac_33.nc -I+a15+ne0.75 -JM15c -B --FORMAT_GEO_MAP<span class="o">=</span>dddF
 	<span class="c1"># Select two points along the ridge</span>
 	cat <span class="s">&lt;&lt;- EOF &gt; ridge.txt</span>
 <span class="s">	-111.6	-43.0</span>
@@ -238,7 +238,7 @@ gmt begin ex33
 <span class="s">	EOF</span>
 	<span class="c1"># Plot ridge segment and end points</span>
 	gmt plot -R@spac_33.nc -W2p,blue ridge.txt
-	gmt plot -Sc0.1i -Gblue ridge.txt
+	gmt plot -Sc0.25c -Gblue ridge.txt
 	<span class="c1"># Generate cross-profiles 400 km long, spaced 10 km, samped every 2km</span>
 	<span class="c1"># and stack these using the median, write stacked profile</span>
 	gmt grdtrack ridge.txt -G@spac_33.nc -C400k/2k/10k+v -Sm+sstack.txt &gt; table.txt
@@ -247,9 +247,9 @@ gmt begin ex33
 	gmt convert stack.txt -o0,5 &gt; env.txt
 	gmt convert stack.txt -o0,6 -I -T &gt;&gt; env.txt
 	gmt plot -R-200/200/-3500/-2000 -Bxafg1000+l<span class="s2">&quot;Distance from ridge (km)&quot;</span> -Byaf+l<span class="s2">&quot;Depth (m)&quot;</span> -BWSne <span class="se">\</span>
-		-JX6i/3i -Glightgray env.txt -Y6.5i
+		-JX15c/7.5c -Glightgray env.txt -Yh+3c
 	gmt plot -W3p stack.txt
-	<span class="nb">echo</span> <span class="s2">&quot;0 -2000 MEDIAN STACKED PROFILE&quot;</span> <span class="p">|</span> gmt text -Gwhite -F+jTC+f14p -Dj0.1i
+	<span class="nb">echo</span> <span class="s2">&quot;0 -2000 MEDIAN STACKED PROFILE&quot;</span> <span class="p">|</span> gmt text -Gwhite -F+jTC+f14p -Dj8p
 	<span class="c1"># cleanup</span>
 	rm -f ridge.txt table.txt env.txt stack.txt
 gmt end show
@@ -284,7 +284,7 @@ gmt end show
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 25, 2020.
+        Last updated on Jan 27, 2020.
       </span>
 
     </p>

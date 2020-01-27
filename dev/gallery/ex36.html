@@ -230,13 +230,13 @@ with <a class="reference internal" href="../greenspline.html"><span class="doc">
 <span class="c1">#</span>
 gmt begin ex36
 	<span class="c1"># Interpolate data of Mars radius from Mariner9 and Viking Orbiter spacecrafts</span>
-	gmt subplot begin 3x1 -Fs5.5i/0 -JH0/5.5i -Rg -M0
+	gmt subplot begin 3x1 -Fs14c/0 -JH0/14c -Rg -M0
 		gmt makecpt -Crainbow -T-7000/15000
 		<span class="c1"># Piecewise linear interpolation; no tension</span>
 		gmt sphinterpolate @mars370d.txt -Rg -I1 -Q0 -Gtt.nc
 		gmt grdimage tt.nc -Bag -c0
 
-		gmt plot @mars370d.txt -Sc0.05i -G0 -B30g30 -c1
+		gmt plot @mars370d.txt -Sc0.1c -G0 -B30g30 -c1
 
 		<span class="c1"># Smoothing</span>
 		gmt sphinterpolate @mars370d.txt -Rg -I1 -Q3 -Gtt.nc
@@ -276,7 +276,7 @@ gmt end show
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 25, 2020.
+        Last updated on Jan 27, 2020.
       </span>
 
     </p>
