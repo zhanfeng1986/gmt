@@ -132,7 +132,7 @@ data), the boundary coordinates may take on several different formats:
 Geographic coordinates:
     These are longitudes and latitudes and may be given in decimal
     degrees (e.g., -123.45417) or in the
-    [±]\ *ddd*\ [:*mm*\ [:*ss*\ [*.xxx*]]][\ **W**\ \|\ **E**\ \|\ **S**\ \|\ **N**]
+    [±]\ *ddd*\ [:*mm*\ [:*ss*\ [*.xxx*]]][**W**\|\ **E**\|\ **S**\|\ **N**]
     format (e.g., 123:27:15W). Note that **-Rg** and **-Rd** are
     shorthands for "global domain" **-R**\ *0*/*360*/*-90*/*90* and
     **-R**\ *-180*/*180*/*-90*/*90*, respectively.
@@ -203,7 +203,7 @@ Relative time coordinates:
 Radians:
     For angular regions (and increments) specified in radians you may use a set of
     forms indicating multiples or fractions of :math:`\pi`.  Valid forms are
-    [±][\ *s*\ ]pi[*f*\ ], where *s* and *f* are any integer or floating point numbers,
+    [±][*s*]pi[*f*], where *s* and *f* are any integer or floating point numbers,
     e.g., -2pi/2pi3 goes from -360 to 120 degrees (but in radians).  When GMT parses one
     of these forms we alert the labeling machinery to look for certain combinations of pi,
     limited to *n*\ pi, 1.5pi, and fractions 3/4, 2/3, 1/2, 1/3, and 1/4 pi.  When an
@@ -214,7 +214,7 @@ Other coordinates:
     These are simply any coordinates that are not related to geographic
     or calendar time or relative time and are expected to be simple
     floating point values such as
-    [±]\ *xxx.xxx*\ [**E**\ \|\ **e**\ \|\ **D**\ \|\ **d**\ [±]\ *xx*\ ],
+    [±]\ *xxx.xxx*\ [**E**\|\ **e**\|\ **D**\|\ **d**\ [±]\ *xx*],
     i.e., regular or exponential notations, with the enhancement to understand
     FORTRAN double precision output which may use **D** instead of **E** for
     exponents. These values are simply converted as they are to internal
@@ -313,11 +313,11 @@ will appear centered above the plot frame.
 
 The Axes settings are specified by
 
--  **-B**\ [**p**\|\ **s**][**x**\|\ **y**\|\ **z**]\ *intervals*\ [**+a**\ *angle*\ \|\ **n**\ \|\ **p**\ ][\ **+l**\ *label*][**+p**\ *prefix*][**+u**\ *unit*]
+-  **-B**\ [**p**\|\ **s**][**x**\|\ **y**\|\ **z**]\ *intervals*\ [**+a**\ *angle*\|\ **n**\|\ **p**][**+l**\ *label*][**+p**\ *prefix*][**+u**\ *unit*]
 
 but you may also split this into two separate invocations for clarity, i.e.,
 
--   **-B**\ [**p**\|\ **s**][**x**\|\ **y**\|\ **z**][**+a**\ *angle*\ \|\ **n**\ \|\ **p**\ ][**+l**\ \|\ **L**\ *label*][**+p**\ *prefix*][**+s**\ \|\ **S**\ *seclabel*][**+u**\ *unit*]
+-   **-B**\ [**p**\|\ **s**][**x**\|\ **y**\|\ **z**][**+a**\ *angle*\|\ **n**\|\ **p**][**+l**\|\ **L**\ *label*][**+p**\ *prefix*][**+s**\|\ **S**\ *seclabel*][**+u**\ *unit*]
 -   **-B**\ [**p**\|\ **s**][**x**\|\ **y**\|\ **z**]\ *intervals*
 
     The first optional flag following **-B** selects **p** (rimary) [Default] or
@@ -505,7 +505,7 @@ each annotation (see Figure :ref:`Axis label <axis_label_basemap>`).
 
    Linear Cartesian projection axis.  Long tick-marks accompany
    annotations, shorter ticks indicate frame interval. The axis label is
-   optional. For this example we used ``-R0/12/0/0.95 -JX3i/0.3i -Ba4f2g1+lFrequency+u" %" -BS``
+   optional. For this example we used ``-R0/12/0/0.95 -JX7.5c/0.75c -Ba4f2g1+lFrequency+u" %" -BS``
 
 There are occasions when the length of the annotations are such that placing them
 horizontally (which is the default) may lead to overprinting or too few annotations.
@@ -554,7 +554,7 @@ specific to log axes (see Figure :ref:`Logarithmic projection axis
    frame, and grid intervals.  (top) Here, we have chosen to annotate the actual
    values.  Interval = 1 means every whole power of 10, 2 means 1, 2, 5 times
    powers of 10, and 3 means every 0.1 times powers of 10.  We used
-   -R1/1000/0/1 -JX3il/0.25i -Ba1f2g3. (middle) Here, we have chosen to
+   -R1/1000/0/1 -JX7.5cl/0.6c -Ba1f2g3. (middle) Here, we have chosen to
    annotate :math:`\log_{10}` of the actual values, with -Ba1f2g3l.
    (bottom) We annotate every power of 10 using :math:`\log_{10}` of the actual
    values as exponents, with -Ba1f2g3p.
@@ -865,7 +865,7 @@ entries of **D**, **G**, **L**, **T**, **W**, or **Z** to have values
 stored as options in segment headers be used as the source for the name
 aspatial field. Finally, for output you must append
 +\ **g**\ *geometry*, where *geometry* can be any of
-[**M**]\ **POINT**\ \|\ **LINE**\ \|\ **POLY**; the
+[**M**]\ **POINT**\|\ **LINE**\|\ **POLY**; the
 **M** represent the multi-versions of these three geometries. Use
 upper-case +\ **G** to signal that you want to split any line or polygon
 features that straddle the Dateline.
@@ -895,7 +895,7 @@ double-precision float). In addition, use **x** to skip *n* bytes
 anywhere in the record. For a mixed-type data record you can concatenate
 several [*n*]\ **t** combinations, separated by commas. You may append
 **w** to any of the items to force byte-swapping. Alternatively, append
-**+L**\ \|\ **B** to indicate that the entire data file should be
+**+l**\|\ **b** to indicate that the entire data file should be
 read or written as little- or big-endian, respectively. Here, *n* is the
 number of each item in your binary file. Note that *n* may be larger
 than *m*, the number of columns that the GMT program requires to do
@@ -987,8 +987,8 @@ coordinates (latitude, longitude) with absolute calendar coordinates in
 the columns 3 and 4, we would specify **fi**\ 0\ **y**,1\ **x**,3:4\ **T**.
 All other columns are assumed to
 have the default, floating point format and need not be set
-individually. The shorthand **-f**\ [**i**\ \|\ **o**]\ **g**
-means **-f**\ [**i**\ \|\ **o**]0x,1y (i.e., geographic
+individually. The shorthand **-f**\ [**i**\|\ **o**]\ **g**
+means **-f**\ [**i**\|\ **o**]0x,1y (i.e., geographic
 coordinates). A special use of **-f** is to select **-fp**\ [*unit*],
 which *requires* **-J** and lets you use *projected* map coordinates
 (e.g., UTM meters) as data input. Such coordinates are automatically
@@ -1035,12 +1035,13 @@ column value.
 Header data records: The **-h** option
 --------------------------------------
 
-The **-h**\ [**i**\ \|\ **o**][*n*][\ **+c**][\ **+d**][\ **+m**\ *segheader*][\ **+r**\ *remark*][\ **+t**\ *title*] option
+The **-h**\ [**i**\|\ **o**][*n*][**+c**][**+d**][**+m**\ *segheader*][**+r**\ *remark*][**+t**\ *title*] option
 lets GMT know that input file(s) have *n_recs* header records [0]. If
 there are more than one header record you must specify the number after
 the **-h** option, e.g., **-h**\ 4. Note that blank lines and records
-that start with the character # are automatically considered header
-records and skipped. Thus, *n_recs* refers to general text lines that
+that start with the character # are *automatically* considered header
+records and skipped, hence **-h** is not needed to skip such records.
+Thus, *n_recs* refers to general text lines that
 do *not* start with # and thus must specifically be skipped in order for
 the programs to function properly. The default number of such header
 records if **-h** is used is one of the many parameters in the :doc:`/gmt.conf` file
@@ -1074,7 +1075,7 @@ on columns from the physical record. For instance, to use the 4th,
 **-i**\ 3,6,2 (since 0 is the first column). The chosen data columns
 will be used as given. Optionally, you can specify that input columns
 should be transformed according to a linear or logarithmic conversion.
-Do so by appending [**+l**][\ **+s**\ *scale*][\ **+o**\ *offset*] to
+Do so by appending [**+l**][**+s**\ *scale*][**+o**\ *offset*] to
 each column (or range of columns). All items are optional: The **+l**
 implies we should first take :math:`\log_{10}` of the data [leave as
 is]. Next, we may scale the result by the given *scale* [1]. Finally, we
@@ -1108,7 +1109,7 @@ ignore all trailing text, use **-in**.
    these column numbers now refer to the logical record, not the physical, since
    after reading the data there is no physical record, only the logical record in memory.
 
-.. _option_-j:
+.. _option_-j_distcalc:
 
 Spherical distance calculations: The **-j** option
 --------------------------------------------------
@@ -1216,12 +1217,11 @@ select perspective view with the **-p** option by setting the azimuth
 and elevation of the viewpoint [Default is 180/90]. When **-p** is used
 in consort with **-Jz** or **-JZ**, a third value can be appended which
 indicates at which *z*-level all 2-D material, like the plot frame, is
-plotted (in perspective) [Default is at the bottom of the z-axis]. For
-frames used for animation, you may want to append **+** to fix the
-center of your data domain (or specify a particular world coordinate
-point with **+w**\ *lon0/lat*\ [*z*\ ]) which will project to the center
-of your page size (or you may specify the coordinates of the *projected*
-view point with **+v**\ *x0/y0*. When **-p** is used without any further
+plotted (in perspective) [Default is at the bottom of the z-axis].
+For frames used for animation, we fix the center of your data domain.
+Specify another center using a particular world coordinate point with **+w**\ *lon0*/\ *lat0*\ [/*z0*],
+which will project to the center of your page size, or specify the coordinates of
+the projected 2-D view point with **+v**\ *x0/y0*. When **-p** is used without any further
 arguments, the values from the last use of **-p** in a previous
 GMT command will be used.  Alternatively, you can perform a simple rotation
 about the z-axis by just giving the rotation angle.  Optionally, use **+v**
@@ -1243,7 +1243,7 @@ will only read the 2nd data record from each of the segments found.  Note that h
 increase the row counters; only data records do.  Instead of rows you may specify data
 *limits* for a specified column by appending **+c**\ *col*.  Now, we will only select rows whose
 data for the given column *col* lie within the range(s) given by your *min*/*max* limits.  Also
-note that when **+c** is used the **+a**\ \|\ **f**\ \|\ **s** have no effect.
+note that when **+c** is used the **+a**\|\ **f**\|\ **s** have no effect.
 
 .. _option_nodereg:
 
@@ -1341,7 +1341,7 @@ section :ref:`-Gfill_attrib`).  Finally, the modules
 on a record-by-record basis if **-t** is given without argument and the
 input file supplies variable transparencies as the last numerical column value.
 
-.. _option_-x:
+.. _option_-x_core:
 
 Selecting number of CPU cores: The **-x** option
 ------------------------------------------------

@@ -19,7 +19,7 @@ Synopsis
 [ |-E|\ *f107file* ]
 [ |-F|\ *flags* ]
 [ |-G| ]
-[ |-S|\ **c**\ \|\ **l**\ *low/high* ]
+[ |-S|\ **c**\|\ **l**\ *low/high* ]
 [ |SYN_OPT-V| ]
 [ |SYN_OPT-b| ]
 [ |SYN_OPT-f| ]
@@ -203,7 +203,7 @@ Optional Arguments
 
 .. |Add_-V| unicode:: 0x20 .. just an invisible code
 .. include:: ../../explain_-V.rst_
-   
+
 .. |Add_-bi| replace:: [Default is 4 input columns unless **-A** is used].
 .. include:: ../../explain_-bi.rst_
 
