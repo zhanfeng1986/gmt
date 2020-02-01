@@ -313,7 +313,7 @@ specifying additional attributes.</dd>
 <dd>Sets scale for vector plot length in data units per plot distance measurement
 unit [1]. Append <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> to indicate the measurement
 unit (cm, inch, or point); if no unit is given we use the default value that
-is controlled by <a class="reference internal" href="gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a>. Alternatively,
+is controlled by <a class="reference internal" href="gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>. Alternatively,
 use <strong>-Sl</strong><em>length</em>[<em>unit</em>] to set a fixed plot length for all vectors.  Vectors given
 via plot unit scaling will plot as straight vectors and their lengths are not
 affected by map projection and coordinate locations.
@@ -323,7 +323,7 @@ which are projected to plot dimensions.  These are geo-vectors that follow
 great circle paths and their lengths are affected by the map projection and their
 coordinates.  Finally, use <strong>-Si</strong> if it is simpler to give the reciprocal scale in
 measurement unit per data unit or km per data unit.  To report the minimum, maximum,
-and mean scaled vector length, use <strong>-Vl</strong>.</dd>
+and mean scaled vector length, use <strong>-Vi</strong>.</dd>
 </dl>
 <dl class="docutils" id="t">
 <dt><strong>-T</strong></dt>
@@ -338,7 +338,7 @@ one of both directions (e.g., positive down).</dd>
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dd>Select verbosity level [w].  </dd>
 </dl>
 <dl class="docutils" id="w">
 <dt><strong>-W</strong><em>pen</em></dt>
@@ -385,10 +385,10 @@ minute, and <strong>s</strong> for arc second, or <strong>e</strong> for meter [
 for foot, <strong>k</strong> for km, <strong>M</strong> for statute mile, <strong>n</strong> for nautical mile,
 and <strong>u</strong> for US survey foot. By default we compute such distances using
 a spherical approximation with great circles (<strong>-jg</strong>) using the authalic radius
-(see <a class="reference internal" href="gmt.conf.html#proj-mean-radius"><span class="std std-ref">PROJ_MEAN_RADIUS</span></a>). You can use <strong>-jf</strong> to perform
+(see <a class="reference internal" href="gmt.conf.html#term-proj-mean-radius"><span class="xref std std-term">PROJ_MEAN_RADIUS</span></a>). You can use <strong>-jf</strong> to perform
 “Flat Earth” calculations (quicker but less accurate) or <strong>-je</strong> to perform
 exact geodesic calculations (slower but more accurate; see
-<a class="reference internal" href="gmt.conf.html#proj-geodesic"><span class="std std-ref">PROJ_GEODESIC</span></a> for method used).</p>
+<a class="reference internal" href="gmt.conf.html#term-proj-geodesic"><span class="xref std std-term">PROJ_GEODESIC</span></a> for method used).</p>
 </div>
 <div class="section" id="grid-file-formats">
 <h2>Grid File Formats<a class="headerlink" href="#grid-file-formats" title="Permalink to this headline">¶</a></h2>
@@ -419,10 +419,10 @@ Optionally, append <strong>t</strong> for a terminal line, <strong>c</strong> fo
 and <strong>I</strong> for plain open tail.
 Further append <strong>l</strong>|<strong>r</strong> to only draw the left or right
 half-sides of this head [both sides].</p>
-<p><strong>+g</strong>[fill*] sets the vector head fill [Default fill is used, which may be no fill].
+<p><strong>+g</strong>[<em>fill</em>] sets the vector head fill [Default fill is used, which may be no fill].
 Turn off vector head fill by not appending a <em>fill</em>.</p>
 <p><strong>+h</strong><em>shape</em> sets the shape of the vector head (range -2/2). Default
-is controlled by <a class="reference internal" href="gmt.conf.html#map-vector-shape"><span class="std std-ref">MAP_VECTOR_SHAPE</span></a> [0].</p>
+is controlled by <a class="reference internal" href="gmt.conf.html#term-map-vector-shape"><span class="xref std std-term">MAP_VECTOR_SHAPE</span></a> [0].</p>
 <p><strong>+l</strong> draws half-arrows, using only the left side of specified heads [both sides].</p>
 <p><strong>+m</strong> places a vector head at the mid-point the vector path [none].
 Append <strong>f</strong> or <strong>r</strong> for forward or reverse direction of the vector [forward].
@@ -553,7 +553,7 @@ larger grid increment and use these grids instead of the originals.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

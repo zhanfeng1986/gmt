@@ -92,9 +92,41 @@
             
             
               <p class="caption"><span class="caption-text">Getting started</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example Gallery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">GMT Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorial.html">GMT Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Session One</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tutorial-setup">Tutorial setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-gmt-environment-what-happens-when-you-run-gmt">The GMT environment: What happens when you run GMT ?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#input-data">Input data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#job-control">Job Control</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#output-data">Output data</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#the-unix-environment-entry-level-knowledge">The UNIX Environment: Entry Level Knowledge</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#redirection">Redirection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#piping">Piping (|)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#standard-error-stderr">Standard error (<em>stderr</em>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#file-name-expansion-or-wild-cards">File name expansion or “wild cards”</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#laboratory-exercises">Laboratory Exercises</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#linear-projection">Linear projection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#logarithmic-projection">Logarithmic projection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mercator-projection">Mercator projection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#albers-projection">Albers projection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#orthographic-projection">Orthographic projection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eckert-iv-and-vi-projection">Eckert IV and VI projection</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="session-2.html">Session Two</a></li>
+<li class="toctree-l2"><a class="reference internal" href="session-3.html">Session Three</a></li>
+<li class="toctree-l2"><a class="reference internal" href="session-4.html">Session Four</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -540,7 +572,7 @@ gmt end show
 <ol class="arabic simple">
 <li>Add the <strong>-V</strong> option.</li>
 <li>Try <strong>-R</strong>270/290/0/20 instead.  What happens to the annotations?</li>
-<li>Edit your gmt.conf file, change <a class="reference internal" href="../gmt.conf.html#format-geo-map"><span class="std std-ref">FORMAT_GEO_MAP</span></a>
+<li>Edit your gmt.conf file, change <a class="reference internal" href="../gmt.conf.html#term-format-geo-map"><span class="xref std std-term">FORMAT_GEO_MAP</span></a>
 to another setting (see the <a class="reference internal" href="../gmt.conf.html"><span class="doc">gmt.conf</span></a> documentation), and plot again.</li>
 <li>Pick another region and change land color.</li>
 <li>Pick a region that includes the north or south poles.</li>
@@ -570,7 +602,7 @@ gmt end show
 </div>
 <p>Exercises:</p>
 <ol class="arabic simple">
-<li>Change the parameter <a class="reference internal" href="../gmt.conf.html#map-grid-cross-size-primary"><span class="std std-ref">MAP_GRID_CROSS_SIZE_PRIMARY</span></a> to make grid crosses instead of gridlines.</li>
+<li>Change the parameter <a class="reference internal" href="../gmt.conf.html#term-map-grid-cross-size-primary"><span class="xref std std-term">MAP_GRID_CROSS_SIZE_PRIMARY</span></a> to make grid crosses instead of gridlines.</li>
 <li>Change <strong>-R</strong> to a rectangular box specification instead of
 minimum and maximum values.</li>
 </ol>
@@ -653,7 +685,7 @@ gmt end show
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

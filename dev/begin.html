@@ -230,7 +230,7 @@ simultaneously without having destructive interference in updating the history o
 options.
 In addition to <em>prefix</em> and <em>formats</em>, you can supply a comma-separated series of
 <a class="reference internal" href="psconvert.html"><span class="doc">psconvert</span></a> <em>options</em> (without their leading hyphens) that will override the default settings provided via
-<a class="reference internal" href="gmt.conf.html#ps-convert"><span class="std std-ref">PS_CONVERT</span></a> [<strong>A</strong>]. The only other available options control the verbosity.</p>
+<a class="reference internal" href="gmt.conf.html#term-ps-convert"><span class="xref std std-term">PS_CONVERT</span></a> [<strong>A</strong>]. The only other available options control the verbosity.</p>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
@@ -246,7 +246,7 @@ prefix in single or double quotes.</dd>
 <dt><em>formats</em></dt>
 <dd>Give one or more comma-separated graphics extensions from the list of allowable
 <a class="reference internal" href="#tbl-formats"><span class="std std-ref">graphics formats</span></a>
-(default format is configurable via setting <a class="reference internal" href="gmt.conf.html#gmt-graphics-format"><span class="std std-ref">GMT_GRAPHICS_FORMAT</span></a> [pdf]).</dd>
+(default format is configurable via setting <a class="reference internal" href="gmt.conf.html#term-gmt-graphics-format"><span class="xref std std-term">GMT_GRAPHICS_FORMAT</span></a> [pdf]).</dd>
 </dl>
 <dl class="docutils" id="begin-options">
 <dt><em>options</em></dt>
@@ -259,7 +259,7 @@ See the <a class="reference internal" href="psconvert.html"><span class="doc">ps
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dd>Select verbosity level [w].  </dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-^</strong> or just <strong>-</strong></dt>
@@ -328,7 +328,7 @@ are produced then we do not need to give any further arguments:</p>
 </pre></div>
 </div>
 <p>Should we give such a command and still produce a plot then it will automatically
-be called gmtsession.pdf (assuming <a class="reference internal" href="gmt.conf.html#gmt-graphics-format"><span class="std std-ref">GMT_GRAPHICS_FORMAT</span></a> is pdf).</p>
+be called gmtsession.pdf (assuming <a class="reference internal" href="gmt.conf.html#term-gmt-graphics-format"><span class="xref std std-term">GMT_GRAPHICS_FORMAT</span></a> is pdf).</p>
 <p>To set up proceedings for a jpg figure with 0.5c white margin, we would run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin <span class="s1">&#39;My Figure4&#39;</span> jpg A+m0.5c
 </pre></div>
@@ -339,7 +339,7 @@ be called gmtsession.pdf (assuming <a class="reference internal" href="gmt.conf.
 <p>If the user selects <strong>ps</strong> as one of the formats, then please be aware that
 it is recommended you first set the desired paper size.  With <strong>ps</strong>, GMT needs to
 work with a fixed paper size since, unlike the <strong>eps</strong> format, there will be
-no cropping to BoundingBox.  If no paper size is specified via <a class="reference internal" href="gmt.conf.html#ps-media"><span class="std std-ref">PS_MEDIA</span></a>
+no cropping to BoundingBox.  If no paper size is specified via <a class="reference internal" href="gmt.conf.html#term-ps-media"><span class="xref std std-term">PS_MEDIA</span></a>
 then GMT will default to A4 and issue a warning; GMT is unable to determine if that
 size is adequate for your plot but if the canvas width exceeds A4 paper width we will
 switch page orientation to landscape. For all other formats the final dimension will
@@ -401,7 +401,7 @@ then you can add this command to the top of your script to make the issue go awa
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

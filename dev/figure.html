@@ -229,7 +229,7 @@ different figures but the optional arguments (<em>formats</em> and <em>options</
 be given the first time you specify a new figure.
 In addition to <em>prefix</em> and <em>formats</em>, you can supply a comma-separated series of
 <a class="reference internal" href="psconvert.html"><span class="doc">psconvert</span></a> <em>options</em> that will override the default settings provided via
-<a class="reference internal" href="gmt.conf.html#ps-convert"><span class="std std-ref">PS_CONVERT</span></a> [<strong>A</strong>]. The only other available options control the verbosity.
+<a class="reference internal" href="gmt.conf.html#term-ps-convert"><span class="xref std std-term">PS_CONVERT</span></a> [<strong>A</strong>]. The only other available options control the verbosity.
 Each figure maintains its own history and settings, so
 memory of region and projection settings only apply on a per figure basis.</p>
 </div>
@@ -260,7 +260,7 @@ See the <a class="reference internal" href="psconvert.html"><span class="doc">ps
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dd>Select verbosity level [w].  </dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-^</strong> or just <strong>-</strong></dt>
@@ -277,7 +277,7 @@ any module-specific option (but not the GMT common options), then exits.</dd>
 <p>If the user selects <strong>ps</strong> as one of the formats, then please be aware that
 it is recommended you first set the desired paper size.  With <strong>ps</strong>, GMT needs to
 work with a fixed paper size since, unlike the <strong>eps</strong> format, there will be
-no cropping to BoundingBox.  If no paper size is specified via <a class="reference internal" href="gmt.conf.html#ps-media"><span class="std std-ref">PS_MEDIA</span></a>
+no cropping to BoundingBox.  If no paper size is specified via <a class="reference internal" href="gmt.conf.html#term-ps-media"><span class="xref std std-term">PS_MEDIA</span></a>
 then GMT will default to A4 and issue a warning; GMT is unable to determine if that
 size is adequate for your plot but if the canvas width exceeds A4 paper width we will
 switch page orientation to landscape. For all other formats the final dimension will
@@ -372,7 +372,7 @@ you can specify the file name or figure format as - (i.e., just a hyphen).</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

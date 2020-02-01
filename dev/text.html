@@ -259,7 +259,7 @@ Composite characters (overstrike) may be indicated with the
 each other. To learn the octal codes for symbols not available on the
 keyboard and some accented European characters, see Section <a class="reference internal" href="cookbook/features.html#char-esc-seq"><span class="std std-ref">Character escape sequences</span></a> and
 Appendix <a class="reference internal" href="cookbook/octal_codes.html#chart-octal-codes-for-chars"><span class="std std-ref">Chart of Octal Codes for Characters</span></a> in the GMT Technical Reference and Cookbook. Note that
-<a class="reference internal" href="gmt.conf.html#ps-char-encoding"><span class="std std-ref">PS_CHAR_ENCODING</span></a> must be set to an extended character set in your
+<a class="reference internal" href="gmt.conf.html#term-ps-char-encoding"><span class="xref std std-term">PS_CHAR_ENCODING</span></a> must be set to an extended character set in your
 <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> file in order to use the accented characters. Using the
 <strong>-G</strong> or <strong>-W</strong> options, a rectangle underlying the text may be plotted
 (does not work for strings with sub/super scripts, symbols, or composite
@@ -311,7 +311,7 @@ current projection.</dd>
 <dd>Adjust the clearance between the text and the surrounding box [15%].
 Only used if <strong>-W</strong> or <strong>-G</strong> are specified. Append the unit you
 want (<strong>c</strong>m, <strong>i</strong>nch, or <strong>p</strong>oint; if not given we consult
-<a class="reference internal" href="gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a>) or % for a percentage of the font size.
+<a class="reference internal" href="gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>) or % for a percentage of the font size.
 Optionally, use modifier <strong>+t</strong> to set the shape of the textbox when using <strong>-G</strong> and/or <strong>-W</strong>.
 Append lower case <strong>o</strong> to get a straight rectangle [Default].
 Append upper case <strong>O</strong> to get a rounded rectangle. In paragraph
@@ -332,7 +332,7 @@ to change the attributes for this line.</dd>
 <dl class="docutils" id="f">
 <dt><strong>-F</strong>[<strong>+a</strong>[<em>angle</em>]][<strong>+c</strong>[<em>justify</em>]][<strong>+f</strong>[<em>font</em>]][<strong>+j</strong>[<em>justify</em>]][<strong>+h</strong>|<strong>+l</strong>|<strong>+r</strong>[<em>first</em>] |<strong>+t</strong><em>text</em>|<strong>+z</strong>[<em>format</em>]]</dt>
 <dd>By default, text will be placed horizontally, using the primary
-annotation font attributes (<a class="reference internal" href="gmt.conf.html#font-annot-primary"><span class="std std-ref">FONT_ANNOT_PRIMARY</span></a>), and centered
+annotation font attributes (<a class="reference internal" href="gmt.conf.html#term-font-annot-primary"><span class="xref std std-term">FONT_ANNOT_PRIMARY</span></a>), and centered
 on the data point. Use this option to override these defaults by
 specifying up to three text attributes (font, angle, and
 justification) directly on the command line. Use <strong>+f</strong> to set the
@@ -407,7 +407,7 @@ leaves all text as is].</dd>
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dd>Select verbosity level [w].  </dd>
 </dl>
 <dl class="docutils" id="w">
 <dt><strong>-W</strong><em>pen</em></dt>
@@ -426,7 +426,7 @@ the 3rd column, and <strong>-N</strong> is implicitly set. (Not implemented for
 paragraph mode).</dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-a</strong><em>col</em>=<em>name</em>[<em>…</em>] <a class="reference internal" href="gmt.html#aspatial-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-a</strong>[<em>col</em>=]<em>name</em>[,<em>…</em>] <a class="reference internal" href="gmt.html#aspatial-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Set aspatial column associations <em>col</em>=<em>name</em>.</dd>
 </dl>
 <dl class="docutils">
@@ -438,7 +438,7 @@ paragraph mode).</dd>
 <dd>Specify data types of input and/or output columns.  </dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Skip or produce header record(s).  </dd>
 </dl>
 <dl class="docutils" id="i">
@@ -577,7 +577,7 @@ trailing text.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

@@ -406,7 +406,7 @@ right or upper axis axis label (with any <strong>+l</strong> label used for left
 If the axis annotation should have a leading text prefix (e.g., dollar sign for those
 plots of your net worth) you can append <strong>+p</strong><em>prefix</em>. For geographic maps
 the addition of degree symbols, etc. is automatic (and controlled by the GMT
-default setting <a class="reference internal" href="gmt.conf.html#format-geo-map"><span class="std std-ref">FORMAT_GEO_MAP</span></a>). However, for other plots you can add
+default setting <a class="reference internal" href="gmt.conf.html#term-format-geo-map"><span class="xref std std-term">FORMAT_GEO_MAP</span></a>). However, for other plots you can add
 specific units by adding <strong>+u</strong><em>unit</em>.  If any of these text strings contain
 spaces or special characters you will need to enclose them in quotes.
 Cartesian x-axes also allow for the optional <strong>+a</strong><em>angle</em>, which
@@ -415,7 +415,7 @@ and must be in the -90 &lt;= <em>angle</em> &lt;= 90 range only.  Also, <strong>
 for normal (i.e., <strong>+a</strong>90) and <strong>+ap</strong> for parallel (i.e., <strong>+a</strong>0) annotations
 [Default].  For the y-axis, arbitrary angles are not allowed but <strong>+an</strong> and <strong>+ap</strong>
 specify annotations normal [Default] and parallel to the axis, respectively.  Note that
-these defaults can be changed via <a class="reference internal" href="gmt.conf.html#map-annot-ortho"><span class="std std-ref">MAP_ANNOT_ORTHO</span></a>.</p>
+these defaults can be changed via <a class="reference internal" href="gmt.conf.html#term-map-annot-ortho"><span class="xref std std-term">MAP_ANNOT_ORTHO</span></a>.</p>
 <p>The <em>intervals</em> specification is a concatenated string made up of substrings
 of the form</p>
 <p>[<strong>a</strong>|<strong>f</strong>|<strong>g</strong>]<em>stride</em>[<em>±phase</em>][<strong>u</strong>].</p>
@@ -429,27 +429,27 @@ can be any of the ones listed below:</p>
 <ul class="simple">
 <li><strong>Y</strong> (year, plot with 4 digits)</li>
 <li><strong>y</strong> (year, plot with 2 digits)</li>
-<li><strong>O</strong> (month, plot using <a class="reference internal" href="gmt.conf.html#format-date-map"><span class="std std-ref">FORMAT_DATE_MAP</span></a>)</li>
+<li><strong>O</strong> (month, plot using <a class="reference internal" href="gmt.conf.html#term-format-date-map"><span class="xref std std-term">FORMAT_DATE_MAP</span></a>)</li>
 <li><strong>o</strong> (month, plot with 2 digits)</li>
-<li><strong>U</strong> (ISO week, plot using <a class="reference internal" href="gmt.conf.html#format-date-map"><span class="std std-ref">FORMAT_DATE_MAP</span></a>)</li>
+<li><strong>U</strong> (ISO week, plot using <a class="reference internal" href="gmt.conf.html#term-format-date-map"><span class="xref std std-term">FORMAT_DATE_MAP</span></a>)</li>
 <li><strong>u</strong> (ISO week, plot using 2 digits)</li>
-<li><strong>r</strong> (Gregorian week, 7-day stride from start of week <a class="reference internal" href="gmt.conf.html#time-week-start"><span class="std std-ref">TIME_WEEK_START</span></a>)</li>
+<li><strong>r</strong> (Gregorian week, 7-day stride from start of week <a class="reference internal" href="gmt.conf.html#term-time-week-start"><span class="xref std std-term">TIME_WEEK_START</span></a>)</li>
 <li><strong>K</strong> (ISO weekday, plot name of weekdays in selected language)</li>
-<li><strong>k</strong> (weekday, plot number of day in the week (1–7) (see <a class="reference internal" href="gmt.conf.html#time-week-start"><span class="std std-ref">TIME_WEEK_START</span></a>))</li>
-<li><strong>D</strong> (date, plot using <a class="reference internal" href="gmt.conf.html#format-date-map"><span class="std std-ref">FORMAT_DATE_MAP</span></a>)</li>
-<li><strong>d</strong> (day, plot day of month 0-31 or year 1-366, via <a class="reference internal" href="gmt.conf.html#format-date-map"><span class="std std-ref">FORMAT_DATE_MAP</span></a>)</li>
-<li><strong>R</strong> (day, same as <strong>d</strong>, aligned with <a class="reference internal" href="gmt.conf.html#time-week-start"><span class="std std-ref">TIME_WEEK_START</span></a>)</li>
-<li><strong>H</strong> (hour, plot using <a class="reference internal" href="gmt.conf.html#format-clock-map"><span class="std std-ref">FORMAT_CLOCK_MAP</span></a>)</li>
+<li><strong>k</strong> (weekday, plot number of day in the week (1–7) (see <a class="reference internal" href="gmt.conf.html#term-time-week-start"><span class="xref std std-term">TIME_WEEK_START</span></a>))</li>
+<li><strong>D</strong> (date, plot using <a class="reference internal" href="gmt.conf.html#term-format-date-map"><span class="xref std std-term">FORMAT_DATE_MAP</span></a>)</li>
+<li><strong>d</strong> (day, plot day of month 0-31 or year 1-366, via <a class="reference internal" href="gmt.conf.html#term-format-date-map"><span class="xref std std-term">FORMAT_DATE_MAP</span></a>)</li>
+<li><strong>R</strong> (day, same as <strong>d</strong>, aligned with <a class="reference internal" href="gmt.conf.html#term-time-week-start"><span class="xref std std-term">TIME_WEEK_START</span></a>)</li>
+<li><strong>H</strong> (hour, plot using <a class="reference internal" href="gmt.conf.html#term-format-clock-map"><span class="xref std std-term">FORMAT_CLOCK_MAP</span></a>)</li>
 <li><strong>h</strong> (hour, plot with 2 digits)</li>
-<li><strong>M</strong> (minute, plot using <a class="reference internal" href="gmt.conf.html#format-clock-map"><span class="std std-ref">FORMAT_CLOCK_MAP</span></a>)</li>
+<li><strong>M</strong> (minute, plot using <a class="reference internal" href="gmt.conf.html#term-format-clock-map"><span class="xref std std-term">FORMAT_CLOCK_MAP</span></a>)</li>
 <li><strong>m</strong> (minute, plot with 2 digits)</li>
-<li><strong>S</strong> (second, plot using <a class="reference internal" href="gmt.conf.html#format-clock-map"><span class="std std-ref">FORMAT_CLOCK_MAP</span></a>)</li>
+<li><strong>S</strong> (second, plot using <a class="reference internal" href="gmt.conf.html#term-format-clock-map"><span class="xref std std-term">FORMAT_CLOCK_MAP</span></a>)</li>
 <li><strong>s</strong> (second, plot with 2 digits).</li>
 </ul>
 <p>For geographic axes <strong>d</strong>, <strong>m</strong> and <strong>s</strong> instead mean arc degrees, minutes and seconds,
 while for Cartesian axes no unit is given.
 All entities that are language-specific are under control
-of <a class="reference internal" href="gmt.conf.html#gmt-language"><span class="std std-ref">GMT_LANGUAGE</span></a>. Alternatively, we can omit <em>stride</em>, thus setting
+of <a class="reference internal" href="gmt.conf.html#term-gmt-language"><span class="xref std std-term">GMT_LANGUAGE</span></a>. Alternatively, we can omit <em>stride</em>, thus setting
 <em>xinfo</em>, <em>yinfo</em>, or <em>zinfo</em> to <strong>a</strong> plots annotations at automatically determined intervals,</p>
 <ul class="simple">
 <li><strong>ag</strong> plots both annotations and grid lines with the same spacing,</li>
@@ -488,21 +488,21 @@ be plotted as untransformed units. E.g., if <em>stride</em> = 1 and <em>power</e
 set such annotation intervals.  The format is [<em>s</em>]<strong>pi</strong>[<em>f</em>], for an optional
 integer scale <em>s</em> and optional integer fraction <em>f</em>.</p>
 <p>These GMT parameters can affect the appearance of the map boundary:
-<a class="reference internal" href="gmt.conf.html#map-annot-min-angle"><span class="std std-ref">MAP_ANNOT_MIN_ANGLE</span></a>, <a class="reference internal" href="gmt.conf.html#map-annot-min-spacing"><span class="std std-ref">MAP_ANNOT_MIN_SPACING</span></a>,
-<a class="reference internal" href="gmt.conf.html#font-annot-primary"><span class="std std-ref">FONT_ANNOT_PRIMARY</span></a>, <a class="reference internal" href="gmt.conf.html#font-annot-secondary"><span class="std std-ref">FONT_ANNOT_SECONDARY</span></a>,
-<a class="reference internal" href="gmt.conf.html#map-annot-offset-primary"><span class="std std-ref">MAP_ANNOT_OFFSET_PRIMARY</span></a>,
-<a class="reference internal" href="gmt.conf.html#map-annot-offset-secondary"><span class="std std-ref">MAP_ANNOT_OFFSET_SECONDARY</span></a>,
-<a class="reference internal" href="gmt.conf.html#map-annot-ortho"><span class="std std-ref">MAP_ANNOT_ORTHO</span></a>, <a class="reference internal" href="gmt.conf.html#map-frame-axes"><span class="std std-ref">MAP_FRAME_AXES</span></a>, <a class="reference internal" href="gmt.conf.html#map-default-pen"><span class="std std-ref">MAP_DEFAULT_PEN</span></a>,
-<a class="reference internal" href="gmt.conf.html#map-frame-type"><span class="std std-ref">MAP_FRAME_TYPE</span></a>, <a class="reference internal" href="gmt.conf.html#format-geo-map"><span class="std std-ref">FORMAT_GEO_MAP</span></a>, <a class="reference internal" href="gmt.conf.html#map-frame-pen"><span class="std std-ref">MAP_FRAME_PEN</span></a>,
-<a class="reference internal" href="gmt.conf.html#map-frame-width"><span class="std std-ref">MAP_FRAME_WIDTH</span></a>, <a class="reference internal" href="gmt.conf.html#map-grid-cross-size-primary"><span class="std std-ref">MAP_GRID_CROSS_SIZE_PRIMARY</span></a>,
-<a class="reference internal" href="gmt.conf.html#map-grid-pen-primary"><span class="std std-ref">MAP_GRID_PEN_PRIMARY</span></a>, <a class="reference internal" href="gmt.conf.html#map-grid-cross-size-secondary"><span class="std std-ref">MAP_GRID_CROSS_SIZE_SECONDARY</span></a>,
-<a class="reference internal" href="gmt.conf.html#map-grid-pen-secondary"><span class="std std-ref">MAP_GRID_PEN_SECONDARY</span></a>, <a class="reference internal" href="gmt.conf.html#font-title"><span class="std std-ref">FONT_TITLE</span></a>, <a class="reference internal" href="gmt.conf.html#font-label"><span class="std std-ref">FONT_LABEL</span></a>,
-<a class="reference internal" href="gmt.conf.html#map-line-step"><span class="std std-ref">MAP_LINE_STEP</span></a>, <a class="reference internal" href="gmt.conf.html#map-annot-oblique"><span class="std std-ref">MAP_ANNOT_OBLIQUE</span></a>,
-<a class="reference internal" href="gmt.conf.html#format-clock-map"><span class="std std-ref">FORMAT_CLOCK_MAP</span></a>, <a class="reference internal" href="gmt.conf.html#format-date-map"><span class="std std-ref">FORMAT_DATE_MAP</span></a>,
-<a class="reference internal" href="gmt.conf.html#format-time-primary-map"><span class="std std-ref">FORMAT_TIME_PRIMARY_MAP</span></a>, <a class="reference internal" href="gmt.conf.html#format-time-secondary-map"><span class="std std-ref">FORMAT_TIME_SECONDARY_MAP</span></a>,
-<a class="reference internal" href="gmt.conf.html#gmt-language"><span class="std std-ref">GMT_LANGUAGE</span></a>, <a class="reference internal" href="gmt.conf.html#time-week-start"><span class="std std-ref">TIME_WEEK_START</span></a>,
-<a class="reference internal" href="gmt.conf.html#map-tick-length-primary"><span class="std std-ref">MAP_TICK_LENGTH_PRIMARY</span></a>,
-and <a class="reference internal" href="gmt.conf.html#map-tick-pen-primary"><span class="std std-ref">MAP_TICK_PEN_PRIMARY</span></a>; see the <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> man page for details.</p>
+<a class="reference internal" href="gmt.conf.html#term-map-annot-min-angle"><span class="xref std std-term">MAP_ANNOT_MIN_ANGLE</span></a>, <a class="reference internal" href="gmt.conf.html#term-map-annot-min-spacing"><span class="xref std std-term">MAP_ANNOT_MIN_SPACING</span></a>,
+<a class="reference internal" href="gmt.conf.html#term-font-annot-primary"><span class="xref std std-term">FONT_ANNOT_PRIMARY</span></a>, <a class="reference internal" href="gmt.conf.html#term-font-annot-secondary"><span class="xref std std-term">FONT_ANNOT_SECONDARY</span></a>,
+<a class="reference internal" href="gmt.conf.html#term-map-annot-offset-primary"><span class="xref std std-term">MAP_ANNOT_OFFSET_PRIMARY</span></a>,
+<a class="reference internal" href="gmt.conf.html#term-map-annot-offset-secondary"><span class="xref std std-term">MAP_ANNOT_OFFSET_SECONDARY</span></a>,
+<a class="reference internal" href="gmt.conf.html#term-map-annot-ortho"><span class="xref std std-term">MAP_ANNOT_ORTHO</span></a>, <a class="reference internal" href="gmt.conf.html#term-map-frame-axes"><span class="xref std std-term">MAP_FRAME_AXES</span></a>, <a class="reference internal" href="gmt.conf.html#term-map-default-pen"><span class="xref std std-term">MAP_DEFAULT_PEN</span></a>,
+<a class="reference internal" href="gmt.conf.html#term-map-frame-type"><span class="xref std std-term">MAP_FRAME_TYPE</span></a>, <a class="reference internal" href="gmt.conf.html#term-format-geo-map"><span class="xref std std-term">FORMAT_GEO_MAP</span></a>, <a class="reference internal" href="gmt.conf.html#term-map-frame-pen"><span class="xref std std-term">MAP_FRAME_PEN</span></a>,
+<a class="reference internal" href="gmt.conf.html#term-map-frame-width"><span class="xref std std-term">MAP_FRAME_WIDTH</span></a>, <a class="reference internal" href="gmt.conf.html#term-map-grid-cross-size-primary"><span class="xref std std-term">MAP_GRID_CROSS_SIZE_PRIMARY</span></a>,
+<a class="reference internal" href="gmt.conf.html#term-map-grid-pen-primary"><span class="xref std std-term">MAP_GRID_PEN_PRIMARY</span></a>, <a class="reference internal" href="gmt.conf.html#term-map-grid-cross-size-secondary"><span class="xref std std-term">MAP_GRID_CROSS_SIZE_SECONDARY</span></a>,
+<a class="reference internal" href="gmt.conf.html#term-map-grid-pen-secondary"><span class="xref std std-term">MAP_GRID_PEN_SECONDARY</span></a>, <a class="reference internal" href="gmt.conf.html#term-font-title"><span class="xref std std-term">FONT_TITLE</span></a>, <a class="reference internal" href="gmt.conf.html#term-font-label"><span class="xref std std-term">FONT_LABEL</span></a>,
+<a class="reference internal" href="gmt.conf.html#term-map-line-step"><span class="xref std std-term">MAP_LINE_STEP</span></a>, <a class="reference internal" href="gmt.conf.html#term-map-annot-oblique"><span class="xref std std-term">MAP_ANNOT_OBLIQUE</span></a>,
+<a class="reference internal" href="gmt.conf.html#term-format-clock-map"><span class="xref std std-term">FORMAT_CLOCK_MAP</span></a>, <a class="reference internal" href="gmt.conf.html#term-format-date-map"><span class="xref std std-term">FORMAT_DATE_MAP</span></a>,
+<a class="reference internal" href="gmt.conf.html#term-format-time-primary-map"><span class="xref std std-term">FORMAT_TIME_PRIMARY_MAP</span></a>, <a class="reference internal" href="gmt.conf.html#term-format-time-secondary-map"><span class="xref std std-term">FORMAT_TIME_SECONDARY_MAP</span></a>,
+<a class="reference internal" href="gmt.conf.html#term-gmt-language"><span class="xref std std-term">GMT_LANGUAGE</span></a>, <a class="reference internal" href="gmt.conf.html#term-time-week-start"><span class="xref std std-term">TIME_WEEK_START</span></a>,
+<a class="reference internal" href="gmt.conf.html#term-map-tick-length-primary"><span class="xref std std-term">MAP_TICK_LENGTH_PRIMARY</span></a>,
+and <a class="reference internal" href="gmt.conf.html#term-map-tick-pen-primary"><span class="xref std std-term">MAP_TICK_PEN_PRIMARY</span></a>; see the <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> man page for details.</p>
 </li>
 </ul>
 <p id="j-full"><strong>-J</strong><em>parameters</em></p>
@@ -511,7 +511,7 @@ projection. If the character is upper case then the argument(s) supplied
 as scale(s) is interpreted to be the map width (or axis lengths), else
 the scale argument(s) is the map scale (see its definition for each
 projection). UNIT is cm, inch, or point, depending on the
-<a class="reference internal" href="gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a> setting in <strong>gmt.conf</strong>, but this can be
+<a class="reference internal" href="gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a> setting in <strong>gmt.conf</strong>, but this can be
 overridden on the command line by appending <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> to
 the <em>scale</em> or <em>width</em> values. Append <strong>+dh</strong>, <strong>+du</strong>, or <strong>+dl</strong> to the
 given <em>width</em> if you instead want to set map height, the maximum (upper)
@@ -523,9 +523,9 @@ The ellipsoid used in the map projections is user-definable by editing
 the <strong>gmt.conf</strong> file in your home directory. 73 commonly used
 ellipsoids and spheroids are currently supported, and users may also
 specify their own custom ellipsoid parameters [Default is WGS-84].
-Several GMT parameters can affect the projection: <a class="reference internal" href="gmt.conf.html#proj-ellipsoid"><span class="std std-ref">PROJ_ELLIPSOID</span></a>,
-<a class="reference internal" href="gmt.conf.html#gmt-interpolant"><span class="std std-ref">GMT_INTERPOLANT</span></a>, <a class="reference internal" href="gmt.conf.html#proj-scale-factor"><span class="std std-ref">PROJ_SCALE_FACTOR</span></a>, and
-<a class="reference internal" href="gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a>; see the <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> man page for details.
+Several GMT parameters can affect the projection: <a class="reference internal" href="gmt.conf.html#term-proj-ellipsoid"><span class="xref std std-term">PROJ_ELLIPSOID</span></a>,
+<a class="reference internal" href="gmt.conf.html#term-gmt-interpolant"><span class="xref std std-term">GMT_INTERPOLANT</span></a>, <a class="reference internal" href="gmt.conf.html#term-proj-scale-factor"><span class="xref std std-term">PROJ_SCALE_FACTOR</span></a>, and
+<a class="reference internal" href="gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>; see the <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> man page for details.
 Choose one of the following projections (The <strong>E</strong> or <strong>C</strong> after
 projection names stands for Equal-Area and Conformal, respectively):</p>
 <blockquote>
@@ -819,7 +819,7 @@ following:</p>
 <dt><strong>p</strong><em>power</em></dt>
 <dd>Raise values to <em>power</em> before scaling.</dd>
 <dt><strong>t</strong></dt>
-<dd>Input coordinates are time relative to <a class="reference internal" href="gmt.conf.html#time-epoch"><span class="std std-ref">TIME_EPOCH</span></a>.</dd>
+<dd>Input coordinates are time relative to <a class="reference internal" href="gmt.conf.html#term-time-epoch"><span class="xref std std-term">TIME_EPOCH</span></a>.</dd>
 <dt><strong>T</strong></dt>
 <dd>Input coordinates are absolute time.</dd>
 </dl>
@@ -894,8 +894,8 @@ the grid. When <strong>-R</strong> is used without any further arguments, the
 values from the last use of <strong>-R</strong> in a previous GMT command
 will be used.
 For calendar time coordinates you may either give (a) relative time
-(relative to the selected <a class="reference internal" href="gmt.conf.html#time-epoch"><span class="std std-ref">TIME_EPOCH</span></a> and in the selected
-<a class="reference internal" href="gmt.conf.html#time-unit"><span class="std std-ref">TIME_UNIT</span></a>; append <strong>t</strong> to <strong>-JX</strong>|<strong>x</strong>), or (b) absolute
+(relative to the selected <a class="reference internal" href="gmt.conf.html#term-time-epoch"><span class="xref std std-term">TIME_EPOCH</span></a> and in the selected
+<a class="reference internal" href="gmt.conf.html#term-time-unit"><span class="xref std std-term">TIME_UNIT</span></a>; append <strong>t</strong> to <strong>-JX</strong>|<strong>x</strong>), or (b) absolute
 time of the form [<em>date</em>]<strong>T</strong>[<em>clock</em>] (append <strong>T</strong> to
 <strong>-JX</strong>|<strong>x</strong>). At least one of <em>date</em> and <em>clock</em> must be
 present; the <strong>T</strong> is always required. The <em>date</em> string must be of
@@ -929,22 +929,23 @@ should fall on the page relative to lower left corner of the plot.
 For example, +jBL+o0/0 will align the lower left corner of the time
 stamp with the bottom left corner of the plot [BL]. Optionally, append a
 <em>label</em>, or give <strong>+c</strong> which will plot the command string. The GMT
-parameters <a class="reference internal" href="gmt.conf.html#map-logo"><span class="std std-ref">MAP_LOGO</span></a>, <a class="reference internal" href="gmt.conf.html#map-logo-pos"><span class="std std-ref">MAP_LOGO_POS</span></a>,
-<a class="reference internal" href="gmt.conf.html#font-logo"><span class="std std-ref">FONT_LOGO</span></a> and <a class="reference internal" href="gmt.conf.html#format-time-stamp"><span class="std std-ref">FORMAT_TIME_STAMP</span></a>
+parameters <a class="reference internal" href="gmt.conf.html#term-map-logo"><span class="xref std std-term">MAP_LOGO</span></a>, <a class="reference internal" href="gmt.conf.html#term-map-logo-pos"><span class="xref std std-term">MAP_LOGO_POS</span></a>,
+<a class="reference internal" href="gmt.conf.html#term-font-logo"><span class="xref std std-term">FONT_LOGO</span></a> and <a class="reference internal" href="gmt.conf.html#term-format-time-stamp"><span class="xref std std-term">FORMAT_TIME_STAMP</span></a>
 can affect the appearance; see the <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> man page for details.
 The time string will be in the locale set by the environment variable
 <strong>TZ</strong> (generally local time).</dd>
 </dl>
 <dl class="docutils" id="v-full">
 <dt><strong>-V</strong>[<em>level</em>]</dt>
-<dd>Select verbose mode, which will send progress reports to <em>stderr</em>.
-Choose among 6 levels of verbosity; each level adds more messages:
-<strong>q</strong> - Complete silence, not even fatal error messages are produced.
-<strong>n</strong> - Normal verbosity: produce only fatal error messages.
-<strong>c</strong> - Produce also compatibility warnings (same as when <strong>-V</strong> is omitted).
-<strong>v</strong> - Produce also warnings and progress messages (same as <strong>-V</strong> only).
-<strong>l</strong> - Produce also detailed progress messages.
-<strong>d</strong> - Produce also debugging messages.</dd>
+<dd>Select verbose mode, which modulates the messages written to <em>stderr</em>.
+Choose among 7 levels of verbosity; each level adds more messages:
+<strong>q</strong> - Quiet, not even fatal error messages are produced.
+<strong>e</strong> - Error messages only.
+<strong>w</strong> - Warnings [Default].
+<strong>t</strong> - Timings (report runtimes for time-intensive algorithms).
+<strong>i</strong> - Informational messages (same as <strong>-V</strong> only).
+<strong>c</strong> - Compatibility warnings.
+<strong>d</strong> - Debugging messages.</dd>
 </dl>
 <p id="xy-full"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</p>
 <dl class="docutils">
@@ -966,7 +967,7 @@ up 2 cm beyond the height of the previous plot, use <strong>-Y</strong><em>h</em
 To move the origin half the width to the right, use <strong>-X</strong><em>w</em>/2.</dd>
 </dl>
 <dl class="docutils" id="aspatial-full">
-<dt><strong>-a</strong>[<em>col</em>=]<em>name</em>[<em>…</em>]</dt>
+<dt><strong>-a</strong>[<em>col</em>=]<em>name</em>[,<em>…</em>]</dt>
 <dd>Control how aspatial data are handled in GMT during input and output.
 <em>Reading OGR/GMT-formatted files</em>: To assign certain aspatial data
 items to GMT data columns, give one or more comma-separated
@@ -1091,7 +1092,7 @@ columns (or column ranges) separated by commas, or use <strong>-f</strong>
 multiple times (column ranges must be given
 in the format <em>start</em>[:<em>inc</em>]:<em>stop</em>, where <em>inc</em> defaults to 1 if
 not specified).  Append <strong>T</strong> (absolute calendar time), <strong>t</strong>
-(relative time in chosen <a class="reference internal" href="gmt.conf.html#time-unit"><span class="std std-ref">TIME_UNIT</span></a> since <a class="reference internal" href="gmt.conf.html#time-epoch"><span class="std std-ref">TIME_EPOCH</span></a>),
+(relative time in chosen <a class="reference internal" href="gmt.conf.html#term-time-unit"><span class="xref std std-term">TIME_UNIT</span></a> since <a class="reference internal" href="gmt.conf.html#term-time-epoch"><span class="xref std std-term">TIME_EPOCH</span></a>),
 <strong>x</strong> (longitude), <strong>y</strong> (latitude), <strong>p</strong>[<em>unit</em>] (projected
 x,y map coordinates in given unit [meter]) or <strong>f</strong> (floating point)
 to each column or column range item. Shorthands
@@ -1120,20 +1121,20 @@ difference must exceed <em>gap</em>. For geographic data
 mile, or s<strong>u</strong>rvey foot. For projected data
 (<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>), choose from <strong>i</strong>nch,
 <strong>c</strong>entimeter, or <strong>p</strong>oint [Default unit set by
-<a class="reference internal" href="gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a>]. Note: For <strong>x</strong>|<strong>y</strong>|<strong>z</strong> with
-time data the unit is instead controlled by <a class="reference internal" href="gmt.conf.html#time-unit"><span class="std std-ref">TIME_UNIT</span></a>. Repeat
+<a class="reference internal" href="gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>]. Note: For <strong>x</strong>|<strong>y</strong>|<strong>z</strong> with
+time data the unit is instead controlled by <a class="reference internal" href="gmt.conf.html#term-time-unit"><span class="xref std std-term">TIME_UNIT</span></a>. Repeat
 the option to specify multiple criteria, of which any can be met to
 produce a line break. Issue an additional <strong>-ga</strong> to indicate that
 all criteria must be met instead.</dd>
 </dl>
 <dl class="docutils" id="h-full">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>]</dt>
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>]</dt>
 <dd>Primary input file(s) has <em>n</em> extra header record(s). If used, the default number of
-header records is <a class="reference internal" href="gmt.conf.html#io-n-header-recs"><span class="std std-ref">IO_N_HEADER_RECS</span></a> [0]. Use <strong>-hi</strong> if only
+header records is <a class="reference internal" href="gmt.conf.html#term-io-n-header-recs"><span class="xref std std-term">IO_N_HEADER_RECS</span></a> [0]. Use <strong>-hi</strong> if only
 the primary input data should have header records [Default will write out header
 records if the input data have them]. Blank lines and lines starting
 with # are always skipped; to use another leading character for indicating header records,
-please see <a class="reference internal" href="gmt.conf.html#io-header-marker"><span class="std std-ref">IO_HEADER_MARKER</span></a>. Note that with <strong>-h</strong> in effect
+please see <a class="reference internal" href="gmt.conf.html#term-io-header-marker"><span class="xref std std-term">IO_HEADER_MARKER</span></a>. Note that with <strong>-h</strong> in effect
 the first <em>n</em> records are taken verbatim as headers and not skipped even if any is starting with #.
 For output you may request additional headers
 to be written via the option modifiers, and use <strong>+d</strong> to remove existing
@@ -1170,10 +1171,10 @@ circle distances. To simplify and speed up calculations you can select Flat
 Earth mode (<strong>-jf</strong>) which gives an approximate but faster result.  Alternatively,
 you can select ellipsoidal (<strong>-je</strong>; or geodesic) mode for the highest precision
 (and slowest calculation time).  All spherical distance calculations depend on
-the current ellipsoid (<a class="reference internal" href="gmt.conf.html#proj-ellipsoid"><span class="std std-ref">PROJ_ELLIPSOID</span></a>), the definition of
-the mean radius (<a class="reference internal" href="gmt.conf.html#proj-mean-radius"><span class="std std-ref">PROJ_MEAN_RADIUS</span></a>), and the specification
-of latitude type (<a class="reference internal" href="gmt.conf.html#proj-aux-latitude"><span class="std std-ref">PROJ_AUX_LATITUDE</span></a>).  Geodesic distance
-calculations is also controlled by method (<a class="reference internal" href="gmt.conf.html#proj-geodesic"><span class="std std-ref">PROJ_GEODESIC</span></a>).</dd>
+the current ellipsoid (<a class="reference internal" href="gmt.conf.html#term-proj-ellipsoid"><span class="xref std std-term">PROJ_ELLIPSOID</span></a>), the definition of
+the mean radius (<a class="reference internal" href="gmt.conf.html#term-proj-mean-radius"><span class="xref std std-term">PROJ_MEAN_RADIUS</span></a>), and the specification
+of latitude type (<a class="reference internal" href="gmt.conf.html#term-proj-aux-latitude"><span class="xref std std-term">PROJ_AUX_LATITUDE</span></a>).  Geodesic distance
+calculations is also controlled by method (<a class="reference internal" href="gmt.conf.html#term-proj-geodesic"><span class="xref std std-term">PROJ_GEODESIC</span></a>).</dd>
 </dl>
 <dl class="docutils" id="l-full">
 <dt><strong>-l</strong>[<em>label</em>][<strong>+d</strong><em>pen</em>][<strong>+f</strong><em>font</em>][<strong>+g</strong><em>gap</em>][<strong>+h</strong><em>header</em>][<strong>+j</strong><em>just</em>][<strong>+l</strong>[<em>code</em>/]<em>txt</em>][<strong>+n</strong><em>cols</em>][<strong>+s</strong><em>size</em>][<strong>+v</strong>[<em>pen</em>]][<strong>+w</strong><em>width</em>][<strong>+x</strong><em>scale</em>]</dt>
@@ -1181,7 +1182,7 @@ calculations is also controlled by method (<a class="reference internal" href="g
 current plot.  Optionally append a text <em>label</em> to describe the entry.
 Several modifiers allow further changes to the legend (to be built
 when <a class="reference internal" href="legend.html"><span class="doc">legend</span></a> is called): Use <strong>+d</strong> to draw a horizontal line before the
-legend entry is placed [no line], <strong>+f</strong> to set the font used for the legend header [<a class="reference internal" href="gmt.conf.html#font-title"><span class="std std-ref">FONT_TITLE</span></a>],
+legend entry is placed [no line], <strong>+f</strong> to set the font used for the legend header [<a class="reference internal" href="gmt.conf.html#term-font-title"><span class="xref std std-term">FONT_TITLE</span></a>],
 <strong>+g</strong> to add some vertical space [0], <strong>+h</strong> to add a legend header [no header],
 <strong>+j</strong> to set placement of the legend [TR], <strong>+l</strong> to set a line text; prepend
 a horizontal justification code <strong>L</strong>, <strong>C</strong>, or <strong>R</strong> [<strong>C</strong>], <strong>+n</strong> to change the number of columns used to
@@ -1190,7 +1191,7 @@ current symbol for the legend or set a length if plotting a line or contour [sam
 <strong>+v</strong> to start and <strong>+v</strong><em>pen</em> to stop drawing vertical line from
 previous to current horizontal line [no vertical line], <strong>+w</strong> to set legend width [auto],
 and <strong>+x</strong><em>scale</em> to resize all symbol and length sizes in the legend.  Default pen is
-given by <a class="reference internal" href="gmt.conf.html#map-default-pen"><span class="std std-ref">MAP_DEFAULT_PEN</span></a>.  Note that <strong>+h</strong>, <strong>+j</strong>, <strong>+w</strong>, and <strong>+x</strong>
+given by <a class="reference internal" href="gmt.conf.html#term-map-default-pen"><span class="xref std std-term">MAP_DEFAULT_PEN</span></a>.  Note that <strong>+h</strong>, <strong>+j</strong>, <strong>+w</strong>, and <strong>+x</strong>
 will only take effect if appended to the very first <strong>-l</strong> option for a plot.  The <strong>+n</strong> modifier,
 if appended to the first <strong>-l</strong> option, affects the legend width (unless set via <strong>+w</strong>); otherwise it
 just subdivides the available width among the specified columns.
@@ -1303,7 +1304,7 @@ If no <strong>-r</strong> is given then gridline registration is selected.
 of the GMT Technical Reference and Cookbook.)</dd>
 </dl>
 <dl class="docutils" id="s-full">
-<dt><strong>-s</strong>[<em>cols</em>][<strong>+a</strong>|<strong>+r</strong>]</dt>
+<dt><strong>-s</strong>[<em>cols</em>][<strong>+a</strong>|<strong>r</strong>]</dt>
 <dd>Suppress output for records whose <em>z</em>-value equals NaN [Default
 outputs all records]. Append <strong>+a</strong> to skip records where at least
 one field equal NaN, or append <strong>+r</strong> to reverse the suppression, i.e.,
@@ -1466,14 +1467,14 @@ Reference <a class="reference internal" href="cookbook/features.html#wpen-attrib
 <h2>ASCII Format Precision<a class="headerlink" href="#ascii-format-precision" title="Permalink to this headline">¶</a></h2>
 <p>The ASCII output formats of numerical data are controlled by parameters
 in your <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> file. Longitude and latitude are formatted
-according to <a class="reference internal" href="gmt.conf.html#format-geo-out"><span class="std std-ref">FORMAT_GEO_OUT</span></a>, absolute time is
-under the control of <a class="reference internal" href="gmt.conf.html#format-date-out"><span class="std std-ref">FORMAT_DATE_OUT</span></a> and
-<a class="reference internal" href="gmt.conf.html#format-clock-out"><span class="std std-ref">FORMAT_CLOCK_OUT</span></a>, whereas general floating point values are formatted
-according to <a class="reference internal" href="gmt.conf.html#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a>. Be aware that the format in effect
+according to <a class="reference internal" href="gmt.conf.html#term-format-geo-out"><span class="xref std std-term">FORMAT_GEO_OUT</span></a>, absolute time is
+under the control of <a class="reference internal" href="gmt.conf.html#term-format-date-out"><span class="xref std std-term">FORMAT_DATE_OUT</span></a> and
+<a class="reference internal" href="gmt.conf.html#term-format-clock-out"><span class="xref std std-term">FORMAT_CLOCK_OUT</span></a>, whereas general floating point values are formatted
+according to <a class="reference internal" href="gmt.conf.html#term-format-float-out"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a>. Be aware that the format in effect
 can lead to loss of precision in ASCII output, which can lead to various
 problems downstream. If you find the output is not written with enough
 precision, consider switching to binary output (<strong>-bo</strong> if available) or
-specify more decimals using the <a class="reference internal" href="gmt.conf.html#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a> setting.</p>
+specify more decimals using the <a class="reference internal" href="gmt.conf.html#term-format-float-out"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a> setting.</p>
 </div>
 <div class="section" id="grid-file-formats">
 <span id="grd-inout-full"></span><h2>Grid File Formats<a class="headerlink" href="#grid-file-formats" title="Permalink to this headline">¶</a></h2>
@@ -1522,7 +1523,7 @@ multi-layer plots.</dd>
 <dl class="docutils" id="p-full">
 <dt><strong>-P</strong></dt>
 <dd>Select “Portrait” plot orientation [Default is “Landscape”; see
-<a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> or <a class="reference internal" href="gmtset.html"><span class="doc">gmtset</span></a> to change the <a class="reference internal" href="gmt.conf.html#ps-page-orientation"><span class="std std-ref">PS_PAGE_ORIENTATION</span></a>
+<a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> or <a class="reference internal" href="gmtset.html"><span class="doc">gmtset</span></a> to change the <a class="reference internal" href="gmt.conf.html#term-ps-page-orientation"><span class="xref std std-term">PS_PAGE_ORIENTATION</span></a>
 parameter, or supply <strong>--PS_PAGE_ORIENTATION=</strong><em>orientation</em> on the
 command line].</dd>
 </dl>
@@ -1532,7 +1533,7 @@ command line].</dd>
 <p>Look up the individual man pages for more details and full syntax. Run
 <code class="docutils literal notranslate"><span class="pre">gmt</span> <span class="pre">--help</span></code> to list all GMT programs and to show all installation
 directories. For an explanation of the various GMT settings in this
-man page (like <a class="reference internal" href="gmt.conf.html#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a>), see the man page of the GMT
+man page (like <a class="reference internal" href="gmt.conf.html#term-format-float-out"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a>), see the man page of the GMT
 configuration file <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a>. Information is also available on the
 GMT documentation site <a class="reference external" href="https://docs.generic-mapping-tools.org/">https://docs.generic-mapping-tools.org/</a></p>
 </div>
@@ -1565,7 +1566,7 @@ GMT documentation site <a class="reference external" href="https://docs.generic-
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

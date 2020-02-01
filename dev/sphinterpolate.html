@@ -265,7 +265,7 @@ of the units <strong>e</strong>, <strong>f</strong>, <strong>k</strong>, <strong
 instead, the increment is assumed to be given in meter, foot, km, Mile,
 nautical mile or US survey foot, respectively, and will be converted to
 the equivalent degrees longitude at the middle latitude of the region
-(the conversion depends on <a class="reference internal" href="gmt.conf.html#proj-ellipsoid"><span class="std std-ref">PROJ_ELLIPSOID</span></a>). If <em>y_inc</em> is given
+(the conversion depends on <a class="reference internal" href="gmt.conf.html#term-proj-ellipsoid"><span class="xref std std-term">PROJ_ELLIPSOID</span></a>). If <em>y_inc</em> is given
 but set to 0 it will be reset equal to <em>x_inc</em>; otherwise it will be
 converted to degrees latitude. <strong>All coordinates</strong>: If <strong>+e</strong> is appended
 then the corresponding max <em>x</em> (<em>east</em>) or <em>y</em> (<em>north</em>) may be slightly
@@ -348,7 +348,7 @@ plotted, with no third dimension.  </dd>
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dd>Select verbosity level [w].  </dd>
 </dl>
 <dl class="docutils" id="z">
 <dt><strong>-Z</strong></dt>
@@ -368,7 +368,7 @@ scaling].</dd>
 <dd>Only accept data records that match the given pattern.  </dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Skip or produce header record(s).  </dd>
 </dl>
 <dl class="docutils">
@@ -399,14 +399,14 @@ any module-specific option (but not the GMT common options), then exit.</dd>
 <h2>ASCII Format Precision<a class="headerlink" href="#ascii-format-precision" title="Permalink to this headline">¶</a></h2>
 <p>The ASCII output formats of numerical data are controlled by parameters
 in your <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> file. Longitude and latitude are formatted
-according to <a class="reference internal" href="gmt.conf.html#format-geo-out"><span class="std std-ref">FORMAT_GEO_OUT</span></a>, absolute time is
-under the control of <a class="reference internal" href="gmt.conf.html#format-date-out"><span class="std std-ref">FORMAT_DATE_OUT</span></a> and
-<a class="reference internal" href="gmt.conf.html#format-clock-out"><span class="std std-ref">FORMAT_CLOCK_OUT</span></a>, whereas general floating point values are formatted
-according to <a class="reference internal" href="gmt.conf.html#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a>. Be aware that the format in effect
+according to <a class="reference internal" href="gmt.conf.html#term-format-geo-out"><span class="xref std std-term">FORMAT_GEO_OUT</span></a>, absolute time is
+under the control of <a class="reference internal" href="gmt.conf.html#term-format-date-out"><span class="xref std std-term">FORMAT_DATE_OUT</span></a> and
+<a class="reference internal" href="gmt.conf.html#term-format-clock-out"><span class="xref std std-term">FORMAT_CLOCK_OUT</span></a>, whereas general floating point values are formatted
+according to <a class="reference internal" href="gmt.conf.html#term-format-float-out"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a>. Be aware that the format in effect
 can lead to loss of precision in ASCII output, which can lead to various
 problems downstream. If you find the output is not written with enough
 precision, consider switching to binary output (<strong>-bo</strong> if available) or
-specify more decimals using the <a class="reference internal" href="gmt.conf.html#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a> setting.</p>
+specify more decimals using the <a class="reference internal" href="gmt.conf.html#term-format-float-out"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a> setting.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
@@ -473,7 +473,7 @@ Trans. Math. Software</em>, <strong>23</strong>(3), 435-442.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

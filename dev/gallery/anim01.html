@@ -246,7 +246,7 @@ cat <span class="s">&lt;&lt; EOF &gt; pre.sh</span>
 cat <span class="s">&lt;&lt; EOF &gt; main.sh</span>
 <span class="s">gmt begin</span>
 <span class="s">#	Plot smooth blue curve and dark red dots at all angle steps so far</span>
-<span class="s">	last=\`gmt math -Q \${MOVIE_FRAME} 10 MUL =\`</span>
+<span class="s">	last=\$(gmt math -Q \${MOVIE_FRAME} 10 MUL =)</span>
 <span class="s">	gmt convert sin_curve.txt -Z0:\${last} | gmt plot -W1p,blue -R0/360/-1.2/1.6 -JX3.5i/1.65i -X0.35i -Y0.25i</span>
 <span class="s">	gmt convert sin_point.txt -Z0:\${MOVIE_FRAME} | gmt plot -Sc0.1i -Gdarkred</span>
 <span class="s">#	Plot bright red dot at current angle and annotate</span>
@@ -293,7 +293,7 @@ on a single PostScript plot before running a lengthy animation script.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

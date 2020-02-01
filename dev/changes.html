@@ -318,9 +318,9 @@ cropping to tightest bounding box will recognize areas painted white as differen
 <li>We have a much improved scheme for distinguishing between minus-signs and hyphens when typesetting
 text since these are different glyphs in various character sets.</li>
 <li>Modern mode can produce any of several graphics <a class="reference internal" href="begin.html#tbl-formats"><span class="std std-ref">formats</span></a>. While the default
-is PDF, this can be changed via a new GMT defaults <a class="reference internal" href="gmt.conf.html#gmt-graphics-format"><span class="std std-ref">GMT_GRAPHICS_FORMAT</span></a>.
+is PDF, this can be changed via a new GMT defaults <a class="reference internal" href="gmt.conf.html#term-gmt-graphics-format"><span class="xref std std-term">GMT_GRAPHICS_FORMAT</span></a>.
 The conversion from PostScript to the desired format can be modified via another new GMT defaults
-setting <a class="reference internal" href="gmt.conf.html#ps-convert"><span class="std std-ref">PS_CONVERT</span></a>.</li>
+setting <a class="reference internal" href="gmt.conf.html#term-ps-convert"><span class="xref std std-term">PS_CONVERT</span></a>.</li>
 <li>We have relaxed the <em>style</em> syntax for pens so that the :<em>phase</em> part is optional, with a default of 0.</li>
 <li>We have rearranged our supplements a bit: We have split meca to seis and geodesy and moved new module
 <a class="reference internal" href="supplements/geodesy/earthtide.html"><span class="doc">earthtide</span></a> and existing module <a class="reference internal" href="supplements/geodesy/gpsgridder.html"><span class="doc">gpsgridder</span></a> to
@@ -452,7 +452,7 @@ specified pattern or regular expression.</li>
 <li>All modules can now read data via external URL addresses.  This works
 by using libcurl to access an external file and save it to the users’
 GMT cache directory.  This directory can be specified via a new GMT
-defaults called <a class="reference internal" href="gmt.conf.html#dir-cache"><span class="std std-ref">DIR_CACHE</span></a> (and defaults to
+defaults called <a class="reference internal" href="gmt.conf.html#term-dir-cache"><span class="xref std std-term">DIR_CACHE</span></a> (and defaults to
 the sub-directory cache under the <strong>$GMT_USERDIR</strong> directory [~/.gmt]).
 Subsequent use of the same URL will be read from the cache (except
 if explicitly removed by the user).  An exception is CGI Get Commands
@@ -500,7 +500,7 @@ e.g., -i0,2,2,4, which is useful when a column is needed as a coordinate
 <em>and</em> for symbol color or size.</li>
 <li>The vector specifications now take one more modifier: <strong>+h</strong><em>shape</em>
 allows vectors to quickly set the head shape normally specified via
-<a class="reference internal" href="gmt.conf.html#map-vector-shape"><span class="std std-ref">MAP_VECTOR_SHAPE</span></a>.  This is particularly useful
+<a class="reference internal" href="gmt.conf.html#term-map-vector-shape"><span class="xref std std-term">MAP_VECTOR_SHAPE</span></a>.  This is particularly useful
 when the symbol types are given via the input file.</li>
 <li>The custom symbol macro language has been strengthened and now allows all
 angular quantities to be variables (i.e., provided from your data file as
@@ -524,7 +524,7 @@ files and cache directories via the new commands
 <li><a class="reference internal" href="gmtinfo.html"><span class="doc">gmtinfo</span></a> adds option <strong>-F</strong> for reporting the number of tables,
 segments, records, headers, etc.</li>
 <li><a class="reference internal" href="gmtmath.html"><span class="doc">gmtmath</span></a> will convert all plot dimensions given on the command line
-to the prevailing length unit set via <a class="reference internal" href="gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a>.
+to the prevailing length unit set via <a class="reference internal" href="gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>.
 This allows you to combine measurements like 12c, 4i, and 72p. The module
 also has a new <strong>SORT</strong> operator for sorting columns and <strong>RMSW</strong> for weighted
 root-mean-square.</li>
@@ -829,21 +829,21 @@ This list will grow longer with time.</li>
 <p>There have been a few changes to the GMT Defaults parameters.  All changes
 are backwards compatible:</p>
 <ul class="simple">
-<li><strong>FORMAT_FLOAT_MAP</strong> now allows the use %’g to get comma-separated groupings
+<li><a class="reference internal" href="gmt.conf.html#term-format-float-map"><span class="xref std std-term">FORMAT_FLOAT_MAP</span></a> now allows the use %’g to get comma-separated groupings
 when integer values are plotted.</li>
-<li><strong>FORMAT_FLOAT_OUT</strong> can now accept a space-separated list of formats
+<li><a class="reference internal" href="gmt.conf.html#term-format-float-out"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a> can now accept a space-separated list of formats
 as shorthand for first few columns.  On output it will show the formats
 in effect for multiple columns.</li>
-<li><strong>GMT_LANGUAGE</strong> has replaced the old parameter <strong>TIME_LANGUAGE</strong>.
+<li><a class="reference internal" href="gmt.conf.html#term-gmt-language"><span class="xref std std-term">GMT_LANGUAGE</span></a> has replaced the old parameter <strong>TIME_LANGUAGE</strong>.
 Related to this, the files share/time/*.d have been moved and renamed to
 share/localization/*.txt and now include a new section
 or cardinal points letter codes.</li>
-<li><strong>IO_SEGMENT_BINARY</strong> is a new parameter that controls how binary records
+<li><a class="reference internal" href="gmt.conf.html#term-io-segment-binary"><span class="xref std std-term">IO_SEGMENT_BINARY</span></a> is a new parameter that controls how binary records
 with just NaNs should or should not be interpreted as segment headers.</li>
-<li><strong>PROJ_GEODESIC</strong> was added to control which geodesic calculation should be
+<li><a class="reference internal" href="gmt.conf.html#term-proj-geodesic"><span class="xref std std-term">PROJ_GEODESIC</span></a> was added to control which geodesic calculation should be
 used.  Choose among Vincenty [Default], Andoyer (fast approximate geodesics),
 and Rudoe (from GMT4).</li>
-<li><strong>TIME_REPORT</strong> now has defaults for absolute or elapsed time stamps.</li>
+<li><a class="reference internal" href="gmt.conf.html#term-time-report"><span class="xref std std-term">TIME_REPORT</span></a> now has defaults for absolute or elapsed time stamps.</li>
 </ul>
 </div>
 <div class="section" id="updated-common-options">
@@ -1219,29 +1219,29 @@ New capabilities have been implemented by introducing new GMT default settings:<
 Digital Charts of the World database (for country coloring or selections).</li>
 <li><a class="reference internal" href="gmt.conf.html#dir-parameters"><span class="std std-ref">DIR_GSHHG</span></a> specifies where to look for the required
 Global Self-consistent Hierarchical High-resolution Geography database.</li>
-<li><a class="reference internal" href="gmt.conf.html#gmt-compatibility"><span class="std std-ref">GMT_COMPATIBILITY</span></a> can be set to 4 to allow
+<li><a class="reference internal" href="gmt.conf.html#term-gmt-compatibility"><span class="xref std std-term">GMT_COMPATIBILITY</span></a> can be set to 4 to allow
 backwards compatibility with GMT 4 command-line syntax or 5 to impose
 strict GMT5 syntax checking.</li>
-<li><a class="reference internal" href="gmt.conf.html#io-nc4-chunk-size"><span class="std std-ref">IO_NC4_CHUNK_SIZE</span></a> is used to set the default
+<li><a class="reference internal" href="gmt.conf.html#term-io-nc4-chunk-size"><span class="xref std std-term">IO_NC4_CHUNK_SIZE</span></a> is used to set the default
 chunk size for the <strong>lat</strong> and <strong>lon</strong> dimension of the <strong>z</strong> variable of
 netCDF version 4 files.</li>
-<li><a class="reference internal" href="gmt.conf.html#io-nc4-deflation-level"><span class="std std-ref">IO_NC4_DEFLATION_LEVEL</span></a> is used to set
+<li><a class="reference internal" href="gmt.conf.html#term-io-nc4-deflation-level"><span class="xref std std-term">IO_NC4_DEFLATION_LEVEL</span></a> is used to set
 the compression level for netCDF4 files upon output.</li>
-<li><a class="reference internal" href="gmt.conf.html#io-segment-marker"><span class="std std-ref">IO_SEGMENT_MARKER</span></a> can be used to change the
+<li><a class="reference internal" href="gmt.conf.html#term-io-segment-marker"><span class="xref std std-term">IO_SEGMENT_MARKER</span></a> can be used to change the
 character that GMT uses to identify new segment header records [&gt;].</li>
-<li><a class="reference internal" href="gmt.conf.html#map-annot-ortho"><span class="std std-ref">MAP_ANNOT_ORTHO</span></a> controls whether axes annotations
+<li><a class="reference internal" href="gmt.conf.html#term-map-annot-ortho"><span class="xref std std-term">MAP_ANNOT_ORTHO</span></a> controls whether axes annotations
 for Cartesian plots are horizontal or orthogonal to the individual axes.</li>
-<li><a class="reference internal" href="gmt.conf.html#gmt-fft"><span class="std std-ref">GMT_FFT</span></a> controls which algorithms to use for Fourier
+<li><a class="reference internal" href="gmt.conf.html#term-gmt-fft"><span class="xref std std-term">GMT_FFT</span></a> controls which algorithms to use for Fourier
 transforms.</li>
-<li><a class="reference internal" href="gmt.conf.html#gmt-triangulate"><span class="std std-ref">GMT_TRIANGULATE</span></a> controls which algorithm to use
+<li><a class="reference internal" href="gmt.conf.html#term-gmt-triangulate"><span class="xref std std-term">GMT_TRIANGULATE</span></a> controls which algorithm to use
 for Delaunay triangulation.</li>
 <li>Great circle distance approximations can now be fine-tuned via new GMT default parameters
-<a class="reference internal" href="gmt.conf.html#proj-mean-radius"><span class="std std-ref">PROJ_MEAN_RADIUS</span></a> and <a class="reference internal" href="gmt.conf.html#proj-aux-latitude"><span class="std std-ref">PROJ_AUX_LATITUDE</span></a>.
+<a class="reference internal" href="gmt.conf.html#term-proj-mean-radius"><span class="xref std std-term">PROJ_MEAN_RADIUS</span></a> and <a class="reference internal" href="gmt.conf.html#term-proj-aux-latitude"><span class="xref std std-term">PROJ_AUX_LATITUDE</span></a>.
 Geodesics are now even more accurate by using the Vincenty [1975] algorithm instead of
 Rudoe’s method.</li>
-<li><a class="reference internal" href="gmt.conf.html#gmt-extrapolate-val"><span class="std std-ref">GMT_EXTRAPOLATE_VAL</span></a> controls what splines should do if
+<li><a class="reference internal" href="gmt.conf.html#term-gmt-extrapolate-val"><span class="xref std std-term">GMT_EXTRAPOLATE_VAL</span></a> controls what splines should do if
 requested to extrapolate beyond the given data domain.</li>
-<li><a class="reference internal" href="gmt.conf.html#ps-transparency"><span class="std std-ref">PS_TRANSPARENCY</span></a> allows users to modify how transparency will be
+<li><a class="reference internal" href="gmt.conf.html#term-ps-transparency"><span class="xref std std-term">PS_TRANSPARENCY</span></a> allows users to modify how transparency will be
 processed when converted to PDF [Normal].</li>
 </ul>
 <p>A few parameters have been introduced in GMT 5 in the past and have been removed again.
@@ -1290,7 +1290,7 @@ the surrounding grid values.</li>
 <li>All text can now optionally be filled with patterns and/or drawn with
 outline pens. In the past, only <a class="reference internal" href="text.html"><span class="doc">text</span></a> could plot outline fonts via
 <strong>-S</strong><em>pen</em>. Now, any text can be an outline text by manipulating
-the corresponding FONT defaults (e.g., <a class="reference internal" href="gmt.conf.html#font-title"><span class="std std-ref">FONT_TITLE</span></a>).</li>
+the corresponding FONT defaults (e.g., <a class="reference internal" href="gmt.conf.html#term-font-title"><span class="xref std std-term">FONT_TITLE</span></a>).</li>
 <li>All color or fill specifications may append &#64;<em>transparency</em> to
 change the PDF transparency level for that item. See <strong>-t</strong> for
 limitations on how to visualize this transparency.</li>
@@ -1505,7 +1505,7 @@ simply process their PostScript files via <a class="reference internal" href="ps
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

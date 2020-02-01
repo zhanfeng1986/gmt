@@ -380,7 +380,7 @@ as <em>azimuth + 180</em>.  Ignored if range is given as -90/90 or 0/180.</dd>
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dd>Select verbosity level [w].  </dd>
 </dl>
 <dl class="docutils" id="w">
 <dt><strong>-W</strong><em>pen</em></dt>
@@ -416,7 +416,7 @@ scaling].</dd>
 <dd>Only accept data records that match the given pattern.  </dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Skip or produce header record(s).  </dd>
 </dl>
 <dl class="docutils">
@@ -468,10 +468,10 @@ Optionally, append <strong>t</strong> for a terminal line, <strong>c</strong> fo
 and <strong>I</strong> for plain open tail.
 Further append <strong>l</strong>|<strong>r</strong> to only draw the left or right
 half-sides of this head [both sides].</p>
-<p><strong>+g</strong>[fill*] sets the vector head fill [Default fill is used, which may be no fill].
+<p><strong>+g</strong>[<em>fill</em>] sets the vector head fill [Default fill is used, which may be no fill].
 Turn off vector head fill by not appending a <em>fill</em>.</p>
 <p><strong>+h</strong><em>shape</em> sets the shape of the vector head (range -2/2). Default
-is controlled by <a class="reference internal" href="gmt.conf.html#map-vector-shape"><span class="std std-ref">MAP_VECTOR_SHAPE</span></a> [0].</p>
+is controlled by <a class="reference internal" href="gmt.conf.html#term-map-vector-shape"><span class="xref std std-term">MAP_VECTOR_SHAPE</span></a> [0].</p>
 <p><strong>+l</strong> draws half-arrows, using only the left side of specified heads [both sides].</p>
 <p><strong>+m</strong> places a vector head at the mid-point the vector path [none].
 Append <strong>f</strong> or <strong>r</strong> for forward or reverse direction of the vector [forward].
@@ -619,7 +619,7 @@ must run the module with <strong>-I</strong> to find max length in binned data s
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

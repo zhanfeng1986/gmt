@@ -290,10 +290,10 @@ Use <strong>+j</strong>|<strong>J</strong><em>refpoint</em> to specify where the
 Note: <strong>+j</strong> sets the justification of the tag to <em>refpoint</em> (suitable for interior tags)
 while <strong>+J</strong> instead selects the mirror opposite (suitable for exterior tags).
 Append <strong>+c</strong><em>dx</em>[/<em>dy</em>] to set the clearance between the tag and a surrounding text box
-requested via <strong>+g</strong> or <strong>+p</strong> [3p/3p, i.e., 15% of the <a class="reference internal" href="gmt.conf.html#font-tag"><span class="std std-ref">FONT_TAG size</span></a> dimension].
+requested via <strong>+g</strong> or <strong>+p</strong> [3p/3p, i.e., 15% of the <a class="reference internal" href="gmt.conf.html#term-font-tag"><span class="xref std std-term">FONT_TAG</span></a> size dimension].
 Append <strong>+g</strong><em>fill</em> to paint the tag’s text box with <em>fill</em> [no painting].
 Append <strong>+o</strong><em>dx</em>[/<em>dy</em>] to offset the tag’s reference point in the direction implied
-by the justification [4p/4p, i.e., 20% of the <a class="reference internal" href="gmt.conf.html#font-tag"><span class="std std-ref">FONT_TAG size</span></a>].
+by the justification [4p/4p, i.e., 20% of the <a class="reference internal" href="gmt.conf.html#term-font-tag"><span class="xref std std-term">FONT_TAG</span></a> size].
 Append <strong>+p</strong><em>pen</em> to draw the outline of the tag’s text box using selected <em>pen</em> [no outline].
 Append <strong>+r</strong> to typeset your tag numbers using lowercase Roman numerals;
 use <strong>+R</strong> for uppercase Roman numerals [Arabic numerals].
@@ -351,11 +351,11 @@ Append <strong>+w</strong> to draw horizontal and vertical lines between interio
 <dl class="docutils" id="t">
 <dt><strong>-T</strong><em>heading</em></dt>
 <dd>While individual subplots can have titles (see <strong>-S</strong> or <strong>-B</strong>), the entire figure may also have a
-overarching <em>heading</em> [no heading]. Font is determined by setting <a class="reference internal" href="gmt.conf.html#font-heading"><span class="std std-ref">FONT_HEADING</span></a>.</dd>
+overarching <em>heading</em> [no heading]. Font is determined by setting <a class="reference internal" href="gmt.conf.html#term-font-heading"><span class="xref std std-term">FONT_HEADING</span></a>.</dd>
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dd>Select verbosity level [w].  </dd>
 </dl>
 <p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</p>
 <dl class="docutils">
@@ -409,7 +409,7 @@ clearances set by <strong>-C</strong> during <strong>subplot begin</strong>.</dd
 </dl>
 <dl class="docutils" id="subplot-set-v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dd>Select verbosity level [w].  </dd>
 </dl>
 <p>Any number of plotting command can now take place and all output will be directed to the
 selected subplot.  There are a few other rules that need to be followed:
@@ -433,7 +433,7 @@ the current plot location to where it was prior to the subplot.</p>
 <h2>Optional Arguments<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils" id="subplot-end-v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dd>Select verbosity level [w].  </dd>
 </dl>
 </div>
 <div class="section" id="examples">
@@ -493,7 +493,7 @@ gmt end show
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

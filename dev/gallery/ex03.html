@@ -257,15 +257,15 @@ gmt begin ex03
 	gmt <span class="nb">set</span> GMT_FFT kiss
 	<span class="c1"># First, we use &quot;gmt fitcircle&quot; to find the parameters of a great circle</span>
 	<span class="c1"># most closely fitting the x,y points in &quot;sat_03.txt&quot;:</span>
-	<span class="nv">cpos</span><span class="o">=</span><span class="sb">`</span>gmt fitcircle @sat_03.txt -L2 -Fm --IO_COL_SEPARATOR<span class="o">=</span>/<span class="sb">`</span>
-	<span class="nv">ppos</span><span class="o">=</span><span class="sb">`</span>gmt fitcircle @sat_03.txt -L2 -Fn --IO_COL_SEPARATOR<span class="o">=</span>/<span class="sb">`</span>
+	<span class="nv">cpos</span><span class="o">=</span><span class="k">$(</span>gmt fitcircle @sat_03.txt -L2 -Fm --IO_COL_SEPARATOR<span class="o">=</span>/<span class="k">)</span>
+	<span class="nv">ppos</span><span class="o">=</span><span class="k">$(</span>gmt fitcircle @sat_03.txt -L2 -Fn --IO_COL_SEPARATOR<span class="o">=</span>/<span class="k">)</span>
 	<span class="c1"># Now we use &quot;gmt project&quot; to project the data in both sat_03.txt and ship_03.txt</span>
 	<span class="c1"># into data.pg, where g is the same and p is the oblique longitude around</span>
 	<span class="c1"># the great circle.  We use -Q to get the p distance in kilometers, and -S</span>
 	<span class="c1"># to sort the output into increasing p values.</span>
 	gmt project  @sat_03.txt -C<span class="nv">$cpos</span> -T<span class="nv">$ppos</span> -S -Fpz -Q &gt; sat.pg
 	gmt project @ship_03.txt -C<span class="nv">$cpos</span> -T<span class="nv">$ppos</span> -S -Fpz -Q &gt; ship.pg
-	<span class="nv">bounds</span><span class="o">=</span><span class="sb">`</span>gmt info ship.pg sat.pg -I1 -Af -L -C -i0  --IO_COL_SEPARATOR<span class="o">=</span>/<span class="sb">`</span>
+	<span class="nv">bounds</span><span class="o">=</span><span class="k">$(</span>gmt info ship.pg sat.pg -I1 -Af -L -C -i0  --IO_COL_SEPARATOR<span class="o">=</span>/<span class="k">)</span>
 	<span class="c1"># Now we can use $bounds in gmt math to make a sampling points file for gmt sample1d:</span>
 	gmt math -T<span class="nv">$bounds</span>/1 -N1/0 <span class="nv">T</span> <span class="o">=</span> samp.x
 	<span class="c1"># Now we can resample the gmt projected satellite data:</span>
@@ -324,7 +324,7 @@ improves dramatically for wavelengths &gt; 20 km.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

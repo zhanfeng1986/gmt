@@ -259,7 +259,7 @@ of the units <strong>e</strong>, <strong>f</strong>, <strong>k</strong>, <strong
 instead, the increment is assumed to be given in meter, foot, km, Mile,
 nautical mile or US survey foot, respectively, and will be converted to
 the equivalent degrees longitude at the middle latitude of the region
-(the conversion depends on <a class="reference internal" href="gmt.conf.html#proj-ellipsoid"><span class="std std-ref">PROJ_ELLIPSOID</span></a>). If <em>y_inc</em> is given
+(the conversion depends on <a class="reference internal" href="gmt.conf.html#term-proj-ellipsoid"><span class="xref std std-term">PROJ_ELLIPSOID</span></a>). If <em>y_inc</em> is given
 but set to 0 it will be reset equal to <em>x_inc</em>; otherwise it will be
 converted to degrees latitude. <strong>All coordinates</strong>: If <strong>+e</strong> is appended
 then the corresponding max <em>x</em> (<em>east</em>) or <em>y</em> (<em>north</em>) may be slightly
@@ -330,7 +330,7 @@ Requires that the output grid file is a native format (i.e., not netCDF).</dd>
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dd>Select verbosity level [w].  </dd>
 </dl>
 <dl class="docutils" id="w">
 <dt><strong>-W</strong>[<strong>z</strong>]</dt>
@@ -395,7 +395,7 @@ data or grid (if any) or on the <strong>-f</strong> or <strong>-R</strong> optio
 both <strong>-f0x</strong> <strong>-f1t</strong> and <strong>-R</strong>90w/90e/0t/3t will result in a
 longitude/time grid. When the x, y, or z coordinate is time, it will be
 stored in the grid as relative time since epoch as specified by
-<a class="reference internal" href="gmt.conf.html#time-unit"><span class="std std-ref">TIME_UNIT</span></a> and <a class="reference internal" href="gmt.conf.html#time-epoch"><span class="std std-ref">TIME_EPOCH</span></a> in the
+<a class="reference internal" href="gmt.conf.html#term-time-unit"><span class="xref std std-term">TIME_UNIT</span></a> and <a class="reference internal" href="gmt.conf.html#term-time-epoch"><span class="xref std std-term">TIME_EPOCH</span></a> in the
 <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> file or on the
 command line. In addition, the <strong>unit</strong> attribute of the time variable
 will indicate both this unit and epoch.</p>
@@ -480,7 +480,7 @@ documentation for how to change system limits.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

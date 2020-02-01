@@ -209,13 +209,14 @@
             
   <div class="section" id="common-options-classic-mode">
 <h1>Common Options (Classic Mode)<a class="headerlink" href="#common-options-classic-mode" title="Permalink to this headline">¶</a></h1>
-<table border="1" class="docutils">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col width="48%" />
-<col width="52%" />
+<col width="50%" />
+<col width="50%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head" colspan="2"><strong>STANDARDIZED COMMAND LINE OPTIONS</strong></th>
+<tr class="row-odd"><th class="head">STANDARDIZED COMMAND LINE OPTIONS</th>
+<th class="head">&#160;</th>
 </tr>
 </thead>
 <tbody valign="top">
@@ -234,8 +235,8 @@
 <tr class="row-even"><td><strong>-P</strong></td>
 <td>Select Portrait orientation <a class="reference internal" href="gmt.html#p-full"><span class="std std-ref">(…)</span></a></td>
 </tr>
-<tr class="row-odd"><td><strong>-R</strong><em>west/east/south/north</em>[<em>/zmin/zmax</em>][<strong>+r</strong>]</td>
-<td>Specify Region of interest <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(…)</span></a></td>
+<tr class="row-odd"><td><strong>-R</strong><em>west/east/south/north</em>[<em>/zmin/zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>]</td>
+<td>Specify region of interest <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(…)</span></a></td>
 </tr>
 <tr class="row-even"><td><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>]</td>
 <td>Plot time-stamp on plot <a class="reference internal" href="gmt.html#u-full"><span class="std std-ref">(…)</span></a></td>
@@ -243,13 +244,13 @@
 <tr class="row-odd"><td><strong>-V</strong>[<em>verbosity</em>]</td>
 <td>Run in verbose mode <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(…)</span></a></td>
 </tr>
-<tr class="row-even"><td><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>]<em>off</em>[<strong>u</strong>]</td>
+<tr class="row-even"><td><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>]<em>xshift</em>[<strong>u</strong>]</td>
 <td>Shift plot origin in <em>x</em>-direction <a class="reference internal" href="gmt.html#xy-full"><span class="std std-ref">(…)</span></a></td>
 </tr>
-<tr class="row-odd"><td><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>]<em>off</em>[<strong>u</strong>]</td>
+<tr class="row-odd"><td><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>]<em>yshift</em>[<strong>u</strong>]</td>
 <td>Shift plot origin in <em>y</em>-direction <a class="reference internal" href="gmt.html#xy-full"><span class="std std-ref">(…)</span></a></td>
 </tr>
-<tr class="row-even"><td><strong>-a</strong><em>col</em>=<em>name</em>,…</td>
+<tr class="row-even"><td><strong>-a</strong>[<em>col</em>=]<em>name</em>[,<em>…</em>]</td>
 <td>Associates aspatial data with columns <a class="reference internal" href="gmt.html#aspatial-full"><span class="std std-ref">(…)</span></a></td>
 </tr>
 <tr class="row-odd"><td><strong>-bi</strong>[<em>ncols</em>][<em>type</em>][<strong>w</strong>][<strong>+l</strong>|<strong>b</strong>]</td>
@@ -267,26 +268,25 @@
 <tr class="row-odd"><td><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em></td>
 <td>Set formatting of ASCII input or output <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(…)</span></a></td>
 </tr>
-<tr class="row-even"><td><strong>-g</strong>[<strong>+</strong>]<strong>x</strong>|<strong>X</strong>|<strong>y</strong>|<strong>Y</strong>|<strong>d</strong>|<strong>D</strong><em>gap</em>[<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>]</td>
+<tr class="row-even"><td><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>]</td>
 <td>Segment data by detecting gaps <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(…)</span></a></td>
 </tr>
-<tr class="row-odd"><td><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n_headers</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+r</strong><em>title</em>]</td>
+<tr class="row-odd"><td><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>]</td>
 <td>ASCII [<em>I</em>|<em>O</em>] tables have header record[s] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(…)</span></a></td>
 </tr>
-<tr class="row-even"><td><strong>-i</strong><em>columns</em></td>
+<tr class="row-even"><td><strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<strong>t</strong>[<em>word</em>]]</td>
 <td>Selection of input columns <a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">(…)</span></a></td>
 </tr>
 <tr class="row-odd"><td><strong>-je</strong>|<strong>f</strong>|<strong>g</strong></td>
 <td>Mode of spherical distance calculation <a class="reference internal" href="gmt.html#distcalc-full"><span class="std std-ref">(…)</span></a></td>
 </tr>
-<tr class="row-even"><td><strong>-n</strong>[<em>type</em>][<strong>+a</strong>][<strong>+b</strong><em>BC</em>][<strong>+c</strong>][<strong>+t</strong><em>threshold</em>]</td>
+<tr class="row-even"><td><strong>-n</strong>[<strong>b</strong>|<strong>c</strong>|<strong>l</strong>|<strong>n</strong>][<strong>+a</strong>][<strong>+b</strong><em>BC</em>][<strong>+c</strong>][<strong>+t</strong><em>threshold</em>]</td>
 <td>Set grid interpolation mode <a class="reference internal" href="gmt.html#n-full"><span class="std std-ref">(…)</span></a></td>
 </tr>
-<tr class="row-odd"><td><strong>-o</strong><em>columns</em></td>
+<tr class="row-odd"><td><strong>-o</strong><em>cols</em>[,…][,<strong>t</strong>[<em>word</em>]]</td>
 <td>Selection of output columns <a class="reference internal" href="gmt.html#ocols-full"><span class="std std-ref">(…)</span></a></td>
 </tr>
-<tr class="row-even"><td><strong>-p</strong>[<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>azim</em>[/<em>elev</em>[/<em>zlevel</em>]]
-[<strong>+w</strong><em>lon0/lat0</em>[/<em>z0</em>]][<strong>+v</strong><em>x0/y0</em>]</td>
+<tr class="row-even"><td><strong>-p</strong>[<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>azim</em>[/<em>elev</em>[/<em>zlevel</em>]][<strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>z0</em>]][<strong>+v</strong><em>x0</em>/<em>y0</em>]</td>
 <td>Control 3-D perspective view <a class="reference internal" href="gmt.html#perspective-full"><span class="std std-ref">(…)</span></a></td>
 </tr>
 <tr class="row-odd"><td><strong>-q</strong>[<strong>i</strong>|<strong>o</strong>][~]<em>rows</em>[<strong>+c</strong><em>col</em>][<strong>+a</strong>|<strong>f</strong>|<strong>s</strong>]</td>
@@ -295,7 +295,7 @@
 <tr class="row-even"><td><strong>-r</strong>[<strong>g</strong>|<strong>p</strong>]</td>
 <td>Sets grid registration <a class="reference internal" href="gmt.html#nodereg-full"><span class="std std-ref">(…)</span></a></td>
 </tr>
-<tr class="row-odd"><td><strong>-s</strong>[<em>cols</em>][<strong>+a</strong>|<strong>+r</strong>]</td>
+<tr class="row-odd"><td><strong>-s</strong>[<em>cols</em>][<strong>+a</strong>|<strong>r</strong>]</td>
 <td>Control treatment of NaN records <a class="reference internal" href="gmt.html#s-full"><span class="std std-ref">(…)</span></a></td>
 </tr>
 <tr class="row-even"><td><strong>-t</strong><em>transparency</em></td>
@@ -334,7 +334,7 @@
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

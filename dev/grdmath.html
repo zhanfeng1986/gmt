@@ -299,7 +299,7 @@ of the units <strong>e</strong>, <strong>f</strong>, <strong>k</strong>, <strong
 instead, the increment is assumed to be given in meter, foot, km, Mile,
 nautical mile or US survey foot, respectively, and will be converted to
 the equivalent degrees longitude at the middle latitude of the region
-(the conversion depends on <a class="reference internal" href="gmt.conf.html#proj-ellipsoid"><span class="std std-ref">PROJ_ELLIPSOID</span></a>). If <em>y_inc</em> is given
+(the conversion depends on <a class="reference internal" href="gmt.conf.html#term-proj-ellipsoid"><span class="xref std std-term">PROJ_ELLIPSOID</span></a>). If <em>y_inc</em> is given
 but set to 0 it will be reset equal to <em>x_inc</em>; otherwise it will be
 converted to degrees latitude. <strong>All coordinates</strong>: If <strong>+e</strong> is appended
 then the corresponding max <em>x</em> (<em>east</em>) or <em>y</em> (<em>north</em>) may be slightly
@@ -340,7 +340,7 @@ LMSSCL, MAX, MEAN, MEDIAN, MIN, MODE, MUL, RMS, STD, SUB, VAR or XOR.</dd>
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dd>Select verbosity level [w].  </dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -357,11 +357,11 @@ only applies to the data files needed by operators <strong>LDIST</strong>,
 <dd>Specify data types of input and/or output columns.  </dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>] <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>]  <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Determine data gaps and line breaks.  </dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Skip or produce header record(s).  </dd>
 </dl>
 <dl class="docutils">
@@ -1368,7 +1368,7 @@ Similarly, the <strong>SAZ</strong> and <strong>SBAZ</strong> operators calculat
 azimuth and back-azimuths in degrees, respectively. The operators
 <strong>LDIST</strong> and <strong>PDIST</strong> compute spherical distances in km if <strong>-fg</strong> is
 set or implied, else they return Cartesian distances. Note: If the current
-<a class="reference internal" href="gmt.conf.html#proj-ellipsoid"><span class="std std-ref">PROJ_ELLIPSOID</span></a> is ellipsoidal then
+<a class="reference internal" href="gmt.conf.html#term-proj-ellipsoid"><span class="xref std std-term">PROJ_ELLIPSOID</span></a> is ellipsoidal then
 geodesics are used in calculations of distances, which can be slow.
 You can trade speed with accuracy by changing the algorithm used to
 compute the geodesic (see <a class="reference internal" href="gmt.conf.html#projection-parameters"><span class="std std-ref">PROJ_GEODESIC</span></a>).</p>
@@ -1429,7 +1429,7 @@ list of such operators is: <strong>LDIST</strong>, <strong>LDIST2</strong>, <str
 <strong>SAZ</strong>, <strong>SBAZ</strong>, <strong>SDIST</strong>, <strong>YLM</strong>, and <strong>grd_YLMg</strong>.</p>
 </li>
 <li><p class="first">Operators <strong>DEG2KM</strong> and <strong>KM2DEG</strong> are only exact when a spherical Earth
-is selected with <a class="reference internal" href="gmt.conf.html#proj-ellipsoid"><span class="std std-ref">PROJ_ELLIPSOID</span></a>.</p>
+is selected with <a class="reference internal" href="gmt.conf.html#term-proj-ellipsoid"><span class="xref std std-term">PROJ_ELLIPSOID</span></a>.</p>
 </li>
 <li><p class="first">The color-triplet conversion functions (<strong>RGB2HSV</strong>, etc.) includes not
 only r,g,b and h,s,v triplet conversions, but also l,a,b (CIE L a b ) and
@@ -1464,7 +1464,7 @@ data or grid (if any) or on the <strong>-f</strong> or <strong>-R</strong> optio
 both <strong>-f0x</strong> <strong>-f1t</strong> and <strong>-R</strong>90w/90e/0t/3t will result in a
 longitude/time grid. When the x, y, or z coordinate is time, it will be
 stored in the grid as relative time since epoch as specified by
-<a class="reference internal" href="gmt.conf.html#time-unit"><span class="std std-ref">TIME_UNIT</span></a> and <a class="reference internal" href="gmt.conf.html#time-epoch"><span class="std std-ref">TIME_EPOCH</span></a> in the
+<a class="reference internal" href="gmt.conf.html#term-time-unit"><span class="xref std std-term">TIME_UNIT</span></a> and <a class="reference internal" href="gmt.conf.html#term-time-epoch"><span class="xref std std-term">TIME_EPOCH</span></a> in the
 <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> file or on the
 command line. In addition, the <strong>unit</strong> attribute of the time variable
 will indicate both this unit and epoch.</p>
@@ -1657,7 +1657,7 @@ Publishing Corp.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

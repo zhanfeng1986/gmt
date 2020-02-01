@@ -299,7 +299,7 @@ segment headers and let any values thus found over-ride the command line setting
 <dl class="docutils" id="l">
 <dt><strong>-L</strong><em>a</em>/<em>b</em>/<em>c</em></dt>
 <dd>Set the labels for the three diagram vertices [none].  These are placed a
-distance of 3 times the <a class="reference internal" href="gmt.conf.html#map-label-offset"><span class="std std-ref">MAP_LABEL_OFFSET</span></a>
+distance of 3 times the <a class="reference internal" href="gmt.conf.html#term-map-label-offset"><span class="xref std std-term">MAP_LABEL_OFFSET</span></a>
 setting from their respective corners.</dd>
 </dl>
 <dl class="docutils" id="m">
@@ -327,8 +327,8 @@ the input data; this cannot be used in conjunction with binary input.
 Optionally, append <strong>c</strong>, <strong>i</strong>, or
 <strong>p</strong> to indicate that the size information in the input data is in
 units of cm, inch, or point, respectively [Default is
-<a class="reference internal" href="gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a>]. Note: if you provide <em>both</em> size and symbol via the
-input file you must use <a class="reference internal" href="gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a> to indicate the unit
+<a class="reference internal" href="gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>]. Note: if you provide <em>both</em> size and symbol via the
+input file you must use <a class="reference internal" href="gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a> to indicate the unit
 used for the symbol size or append the units to the sizes in the file.
 If symbol sizes are expected via the third data column then you may convert
 those values to suitable symbol sizes via the <strong>-i</strong> mechanism.</p>
@@ -388,7 +388,7 @@ may add their own custom *.def files; see CUSTOM SYMBOLS below.</dd>
 append <strong>+t</strong><em>string</em> after the size. Note that the size is only approximate;
 no individual scaling is done for different characters. Remember to
 escape special characters like *. Optionally, you may append <strong>+f</strong><em>font</em>
-to select a particular font [Default is <a class="reference internal" href="gmt.conf.html#font-annot-primary"><span class="std std-ref">FONT_ANNOT_PRIMARY</span></a>] and
+to select a particular font [Default is <a class="reference internal" href="gmt.conf.html#term-font-annot-primary"><span class="xref std std-term">FONT_ANNOT_PRIMARY</span></a>] and
 <strong>+j</strong><em>justify</em> to change justification [CM].</dd>
 <dt><strong>-Sn</strong></dt>
 <dd>pe<strong>n</strong>tagon. <em>size</em> is diameter of circumscribing circle.</dd>
@@ -437,7 +437,7 @@ These spider-web lines are drawn using the current pen unless <strong>+p</strong
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dd>Select verbosity level [w].  </dd>
 </dl>
 <dl class="docutils" id="w">
 <dt><strong>-W</strong>[<em>pen</em>][<em>attr</em>] <a class="reference internal" href="cookbook/features.html#wpen-attrib"><span class="std std-ref">(more …)</span></a></dt>
@@ -465,11 +465,11 @@ These spider-web lines are drawn using the current pen unless <strong>+p</strong
 <dd>Specify data types of input and/or output columns.  </dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>] <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>]  <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Determine data gaps and line breaks. The <strong>-g</strong> option is ignored if <strong>-S</strong> is set.</dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Skip or produce header record(s).  </dd>
 </dl>
 <dl class="docutils">
@@ -571,7 +571,7 @@ gmt psternary @ternary.txt -R0/100/0/100/0/100 -JX6i -P -Sc0.1c -Ct.cpt -LWater/
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

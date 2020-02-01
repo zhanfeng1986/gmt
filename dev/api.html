@@ -2344,8 +2344,8 @@ progress reports, etc., and are sent to standard error.</p>
 <blockquote id="tbl-verbosity">
 <div><table border="1" class="docutils">
 <colgroup>
-<col width="31%" />
-<col width="69%" />
+<col width="37%" />
+<col width="63%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">constant</th>
@@ -2354,21 +2354,24 @@ progress reports, etc., and are sent to standard error.</p>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>GMT_MSG_QUIET</td>
-<td>No messages whatsoever</td>
+<td>Quiet; no messages whatsoever</td>
 </tr>
-<tr class="row-odd"><td>GMT_MSG_NORMAL</td>
-<td>Default output, e.g., warnings and errors only</td>
+<tr class="row-odd"><td>GMT_MSG_ERROR</td>
+<td>Error messages only</td>
 </tr>
-<tr class="row-even"><td>GMT_MSG_COMPAT</td>
+<tr class="row-even"><td>GMT_MSG_WARNING</td>
+<td>Warnings</td>
+</tr>
+<tr class="row-odd"><td>GMT_MSG_TICTOC</td>
+<td>Time usage for slow algorithms</td>
+</tr>
+<tr class="row-even"><td>GMT_MSG_INFORMATION</td>
+<td>Informational messages</td>
+</tr>
+<tr class="row-odd"><td>GMT_MSG_COMPAT</td>
 <td>Compatibility warnings</td>
 </tr>
-<tr class="row-odd"><td>GMT_MSG_VERBOSE</td>
-<td>Verbose level</td>
-</tr>
-<tr class="row-even"><td>GMT_MSG_LONG_VERBOSE</td>
-<td>Longer verbose</td>
-</tr>
-<tr class="row-odd"><td>GMT_MSG_DEBUG</td>
+<tr class="row-even"><td>GMT_MSG_DEBUG</td>
 <td>Debug messages for developers mostly</td>
 </tr>
 </tbody>
@@ -2885,7 +2888,7 @@ obtain the two coordinates in decimal degrees by calling</p>
 </div></blockquote>
 <p>Your program can now check that <code class="docutils literal notranslate"><span class="pre">n</span></code> equals 2 and then use the values
 in <code class="docutils literal notranslate"><span class="pre">pairs</span></code> separately. Note: Dimensions given with units of inches, cm, or points
-are converted to the current default unit set via <a class="reference internal" href="gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a>,
+are converted to the current default unit set via <a class="reference internal" href="gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>,
 while distances given in km, nautical miles, miles, feet, or
 survey feet are returned in meters. Arc lengths in minutes and seconds
 are returned in decimal degrees, and date/time values are returned in
@@ -2900,7 +2903,7 @@ API or GMT default settings you can do so via</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>where <code class="docutils literal notranslate"><span class="pre">keyword</span></code> is one such keyword (e.g., <a class="reference internal" href="gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a>) and
+<p>where <code class="docutils literal notranslate"><span class="pre">keyword</span></code> is one such keyword (e.g., <a class="reference internal" href="gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>) and
 <code class="docutils literal notranslate"><span class="pre">value</span></code> must be a character string long enough to hold the answer.  In
 addition to the long list of GMT defaults you can also inquire about the
 API parameters <code class="docutils literal notranslate"><span class="pre">API_PAD</span></code> (the current pad setting), <code class="docutils literal notranslate"><span class="pre">API_IMAGE_LAYOUT</span></code> (the
@@ -2920,7 +2923,7 @@ GMT default settings programmatically you would use</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>where as before <code class="docutils literal notranslate"><span class="pre">keyword</span></code> is one such keyword (e.g., <a class="reference internal" href="gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a>) and
+<p>where as before <code class="docutils literal notranslate"><span class="pre">keyword</span></code> is one such keyword (e.g., <a class="reference internal" href="gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>) and
 <code class="docutils literal notranslate"><span class="pre">value</span></code> must be a character string with the new setting.
 Note that all settings must be passed as text strings even if many are
 inherently integers or floats.</p>
@@ -4097,7 +4100,7 @@ own threads.</td></tr>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

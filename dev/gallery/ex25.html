@@ -261,13 +261,13 @@ gmt begin ex25
 	gmt grdmath -Rg -I<span class="si">${</span><span class="nv">D</span><span class="si">}</span>m -r Y COSD <span class="m">60</span> <span class="nv">$D</span> DIV <span class="m">360</span> MUL DUP MUL PI DIV DIV <span class="m">100</span> <span class="nv">MUL</span> <span class="o">=</span> scale.nc
 	gmt grdmath key.nc -1 EQ <span class="m">0</span> NAN scale.nc <span class="nv">MUL</span> <span class="o">=</span> tmp.nc
 	gmt grd2xyz tmp.nc -s -ZTLf &gt; key.b
-	<span class="nv">ocean</span><span class="o">=</span><span class="sb">`</span>gmt math -bi1f -Ca -S key.b SUM UPPER <span class="nv">RINT</span> <span class="o">=</span><span class="sb">`</span>
+	<span class="nv">ocean</span><span class="o">=</span><span class="k">$(</span>gmt math -bi1f -Ca -S key.b SUM UPPER <span class="nv">RINT</span> <span class="o">=</span><span class="k">)</span>
 	gmt grdmath key.nc <span class="m">1</span> EQ <span class="m">0</span> NAN scale.nc <span class="nv">MUL</span> <span class="o">=</span> tmp.nc
 	gmt grd2xyz tmp.nc -s -ZTLf &gt; key.b
-	<span class="nv">land</span><span class="o">=</span><span class="sb">`</span>gmt math -bi1f -Ca -S key.b SUM UPPER <span class="nv">RINT</span> <span class="o">=</span><span class="sb">`</span>
+	<span class="nv">land</span><span class="o">=</span><span class="k">$(</span>gmt math -bi1f -Ca -S key.b SUM UPPER <span class="nv">RINT</span> <span class="o">=</span><span class="k">)</span>
 	gmt grdmath key.nc <span class="m">0</span> EQ <span class="m">0</span> NAN scale.nc <span class="nv">MUL</span> <span class="o">=</span> tmp.nc
 	gmt grd2xyz tmp.nc -s -ZTLf &gt; key.b
-	<span class="nv">mixed</span><span class="o">=</span><span class="sb">`</span>gmt math -bi1f -Ca -S key.b SUM UPPER <span class="nv">RINT</span> <span class="o">=</span><span class="sb">`</span>
+	<span class="nv">mixed</span><span class="o">=</span><span class="k">$(</span>gmt math -bi1f -Ca -S key.b SUM UPPER <span class="nv">RINT</span> <span class="o">=</span><span class="k">)</span>
 	<span class="c1"># Generate corresponding color table</span>
 	gmt makecpt -Cblue,gray,red -T-1.5/1.5/1 -N
 	<span class="c1"># Create the final plot and overlay coastlines</span>
@@ -314,7 +314,7 @@ gmt end show
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

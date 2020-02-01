@@ -299,7 +299,7 @@ plotted, with no third dimension.  </dd>
 <p id="s"><strong>-S</strong></p>
 <p>Selects the meaning of the columns in the data file and the figure to be plotted.  In all
 cases, the scales are in data units per length unit and sizes are in length units (default length
-unit is controlled by <a class="reference internal" href="../../gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a> unless <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> is appended).</p>
+unit is controlled by <a class="reference internal" href="../../gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a> unless <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> is appended).</p>
 <blockquote>
 <div><p><strong>-Se</strong><em>velscale/confidence</em>[<strong>+f</strong><em>font</em>]</p>
 <blockquote>
@@ -430,7 +430,7 @@ specified by <strong>-R</strong>. [Default plots symbols inside frame only].</dd
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dd>Select verbosity level [w].  </dd>
 </dl>
 <dl class="docutils" id="w">
 <dt><strong>-W</strong></dt>
@@ -451,7 +451,7 @@ fault plane edges. [Defaults: width = default, color = black, style = solid].</d
 <dd>Only accept data records that match the given pattern.  </dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>] <a class="reference internal" href="../../gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>] <a class="reference internal" href="../../gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Skip or produce header record(s).  </dd>
 </dl>
 <dl class="docutils">
@@ -503,10 +503,10 @@ Optionally, append <strong>t</strong> for a terminal line, <strong>c</strong> fo
 and <strong>I</strong> for plain open tail.
 Further append <strong>l</strong>|<strong>r</strong> to only draw the left or right
 half-sides of this head [both sides].</p>
-<p><strong>+g</strong>[fill*] sets the vector head fill [Default fill is used, which may be no fill].
+<p><strong>+g</strong>[<em>fill</em>] sets the vector head fill [Default fill is used, which may be no fill].
 Turn off vector head fill by not appending a <em>fill</em>.</p>
 <p><strong>+h</strong><em>shape</em> sets the shape of the vector head (range -2/2). Default
-is controlled by <a class="reference internal" href="../../gmt.conf.html#map-vector-shape"><span class="std std-ref">MAP_VECTOR_SHAPE</span></a> [0].</p>
+is controlled by <a class="reference internal" href="../../gmt.conf.html#term-map-vector-shape"><span class="xref std std-term">MAP_VECTOR_SHAPE</span></a> [0].</p>
 <p><strong>+l</strong> draws half-arrows, using only the left side of specified heads [both sides].</p>
 <p><strong>+m</strong> places a vector head at the mid-point the vector path [none].
 Append <strong>f</strong> or <strong>r</strong> for forward or reverse direction of the vector [forward].
@@ -643,7 +643,7 @@ Geophysics at University of Wisconsin-Madison, Madison, Wisconsin, USA</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

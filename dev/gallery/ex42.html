@@ -231,27 +231,27 @@ gmt begin ex42
 	gmt makecpt -Cearth -T-7000/4000
 	gmt grdimage @BEDMAP_elevation.nc -Jx1:60000000 -Q
 	gmt coast -R-180/180/-90/-60 -Js0/-90/-71/1:60000000 -Bafg -Di -W0.25p
-	gmt colorbar -DJRM+w2.5i/0.2i+o0.5i/0+mc -F+p+i -Bxa1000+lELEVATION -By+lm
+	gmt colorbar -DJRM+w6.5c/0.5c+o1.5c/0+mc -F+p+i -Bxa1000+lELEVATION -By+lm
 	<span class="c1"># GSHHG</span>
-	gmt coast -Glightblue -Sroyalblue2 -X2i -Y4.75i
+	gmt coast -Glightblue -Sroyalblue2 -X5c -Y12c
 	gmt coast -Glightbrown -A+ag -Bafg
-	gmt legend -DjLM+w1.7i+jRM+o0.5i/0 -F+p+i <span class="s">&lt;&lt;- EOF</span>
+	gmt legend -DjLM+w4c+jRM+o1c/0 -F+p+i <span class="s">&lt;&lt;- EOF</span>
 <span class="s">	H 18p,Times-Roman Legend</span>
-<span class="s">	D 0.1i 1p</span>
-<span class="s">	S 0.15i s 0.2i blue  0.25p 0.3i Ocean</span>
-<span class="s">	S 0.15i s 0.2i lightblue  0.25p 0.3i Ice front</span>
-<span class="s">	S 0.15i s 0.2i lightbrown  0.25p 0.3i Grounding line</span>
+<span class="s">	D 0.25c 1p</span>
+<span class="s">	S 0.4c s 0.5c blue       0.25p 0.75c Ocean</span>
+<span class="s">	S 0.4c s 0.5c lightblue  0.25p 0.75c Ice front</span>
+<span class="s">	S 0.4c s 0.5c lightbrown 0.25p 0.75c Grounding line</span>
 <span class="s">	EOF</span>
 	<span class="c1"># Fancy line</span>
-	gmt plot -R0/7.5/0/10 -Jx1i -B0 -W2p -X-2.5i -Y-5.25i <span class="s">&lt;&lt;- EOF</span>
-<span class="s">	0	5.55</span>
-<span class="s">	2.5	5.55</span>
-<span class="s">	5.0	4.55</span>
-<span class="s">	7.5	4.55</span>
+	gmt plot -R0/19/0/25 -Jx1c -B0 -W2p -X-6c -Y-13.5c <span class="s">&lt;&lt;- EOF</span>
+<span class="s">	0	14</span>
+<span class="s">	6.5	14</span>
+<span class="s">	13	11.5</span>
+<span class="s">	19	11.5</span>
 <span class="s">	EOF</span>
-	gmt text -F+f18p+jBL -Dj0.1i/0 <span class="s">&lt;&lt;- EOF</span>
-<span class="s">	0 5.2 BEDMAP</span>
-<span class="s">	0 9.65 GSHHG</span>
+	gmt text -F+f18p+jBL -Dj8p/0 <span class="s">&lt;&lt;- EOF</span>
+<span class="s">	0 13 BEDMAP</span>
+<span class="s">	0 24 GSHHG</span>
 <span class="s">	EOF</span>
 gmt end show
 </pre></div>
@@ -285,7 +285,7 @@ gmt end show
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

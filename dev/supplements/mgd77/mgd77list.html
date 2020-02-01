@@ -287,7 +287,7 @@ not set it will default to <strong>$GMT_SHAREDIR</strong>/mgd77].</p>
 parameter abbreviations given in the desired output order. Any
 parameters given in UPPER case must not be NaN in a record for
 output to occur. Unless specified separately, the output format (if
-ASCII) is controlled by the GMT parameter <a class="reference internal" href="../../gmt.conf.html#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a>.
+ASCII) is controlled by the GMT parameter <a class="reference internal" href="../../gmt.conf.html#term-format-float-out"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a>.
 The available column abbreviations for information stored in the
 files (some columns may be NaN) are:</p>
 <dl class="docutils">
@@ -301,18 +301,18 @@ files (some columns may be NaN) are:</p>
 <dd>The 8-character NGDC (now NCEI) cruise ID string (usually the file prefix).</dd>
 <dt><strong>time</strong></dt>
 <dd>Choose between Absolute calendar time (<strong>atime</strong>, the default) in
-the format dictated by the GMT parameters <a class="reference internal" href="../../gmt.conf.html#format-date-out"><span class="std std-ref">FORMAT_DATE_OUT</span></a> and
-<a class="reference internal" href="../../gmt.conf.html#format-clock-out"><span class="std std-ref">FORMAT_CLOCK_OUT</span></a>, Relative time (<strong>rtime</strong>) in the format
-dictated by the GMT parameters <a class="reference internal" href="../../gmt.conf.html#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a> and
-<a class="reference internal" href="../../gmt.conf.html#time-system"><span class="std std-ref">TIME_SYSTEM</span></a> (or <a class="reference internal" href="../../gmt.conf.html#time-epoch"><span class="std std-ref">TIME_EPOCH</span></a> and <a class="reference internal" href="../../gmt.conf.html#time-unit"><span class="std std-ref">TIME_UNIT</span></a>)), or
+the format dictated by the GMT parameters <a class="reference internal" href="../../gmt.conf.html#term-format-date-out"><span class="xref std std-term">FORMAT_DATE_OUT</span></a> and
+<a class="reference internal" href="../../gmt.conf.html#term-format-clock-out"><span class="xref std std-term">FORMAT_CLOCK_OUT</span></a>, Relative time (<strong>rtime</strong>) in the format
+dictated by the GMT parameters <a class="reference internal" href="../../gmt.conf.html#term-format-float-out"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a> and
+<a class="reference internal" href="../../gmt.conf.html#term-time-system"><span class="xref std std-term">TIME_SYSTEM</span></a> (or <a class="reference internal" href="../../gmt.conf.html#term-time-epoch"><span class="xref std std-term">TIME_EPOCH</span></a> and <a class="reference internal" href="../../gmt.conf.html#term-time-unit"><span class="xref std std-term">TIME_UNIT</span></a>)), or
 Fractional year (<strong>ytime</strong>) in the format dictated by
-<a class="reference internal" href="../../gmt.conf.html#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a>.</dd>
+<a class="reference internal" href="../../gmt.conf.html#term-format-float-out"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a>.</dd>
 <dt><strong>lon</strong></dt>
 <dd>Longitude in the format dictated by the GMT parameter
-<a class="reference internal" href="../../gmt.conf.html#format-geo-out"><span class="std std-ref">FORMAT_GEO_OUT</span></a>.</dd>
+<a class="reference internal" href="../../gmt.conf.html#term-format-geo-out"><span class="xref std std-term">FORMAT_GEO_OUT</span></a>.</dd>
 <dt><strong>lat</strong></dt>
 <dd>Longitude in the format dictated by the GMT parameter
-<a class="reference internal" href="../../gmt.conf.html#format-geo-out"><span class="std std-ref">FORMAT_GEO_OUT</span></a>.</dd>
+<a class="reference internal" href="../../gmt.conf.html#term-format-geo-out"><span class="xref std std-term">FORMAT_GEO_OUT</span></a>.</dd>
 <dt><strong>twt</strong></dt>
 <dd>Two-Way Travel time (in s).</dd>
 <dt><strong>depth</strong></dt>
@@ -676,7 +676,7 @@ the : (colon) modifier to OPT(F).</dd>
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dd>Select verbosity level [w].  </dd>
 </dl>
 <dl class="docutils" id="w">
 <dt><strong>-W</strong><em>weight</em></dt>
@@ -700,7 +700,7 @@ binary output columns it will be stored as Unix-time (seconds since
 time will require you to use <strong>-</strong><strong>-TIME_SYSTEM=1</strong>.</dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>] <a class="reference internal" href="../../gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>] <a class="reference internal" href="../../gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Skip or produce header record(s).  </dd>
 </dl>
 <dl class="docutils">
@@ -876,7 +876,7 @@ corrected by a strange dependency on ship heading and latitude, and
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

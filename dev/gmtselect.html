@@ -292,7 +292,7 @@ influence. Distances are Cartesian and in user units; specify
 <strong>-fg</strong> to indicate spherical distances and append a distance unit
 (see <a class="reference internal" href="#units">Units</a>). Alternatively, if <strong>-R</strong> and <strong>-J</strong> are used then
 geographic coordinates are projected to map coordinates (in cm,
-inch, or points, as determined by <a class="reference internal" href="gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a>) before
+inch, or points, as determined by <a class="reference internal" href="gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>) before
 Cartesian distances are compared to <em>dist</em>.</dd>
 </dl>
 <dl class="docutils" id="d">
@@ -354,7 +354,7 @@ distance value. Distances are Cartesian and in user units; specify
 <strong>-fg</strong> to indicate spherical distances append a distance unit (see
 <a class="reference internal" href="#units">Units</a>). Alternatively, if <strong>-R</strong> and <strong>-J</strong> are used then geographic
 coordinates are projected to map coordinates (in cm, inch, m, or
-points, as determined by <a class="reference internal" href="gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a>) before Cartesian
+points, as determined by <a class="reference internal" href="gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>) before Cartesian
 distances are compared to <em>dist</em>. Append <strong>+p</strong> to ensure only points
 whose orthogonal projections onto the nearest line-segment fall
 within the segments endpoints [Default considers points “beyond” the
@@ -376,7 +376,7 @@ features. Specify if records should be skipped (s) or kept (k) using
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dd>Select verbosity level [w].  </dd>
 </dl>
 <dl class="docutils" id="z">
 <dt><strong>-Z</strong><em>min</em>[/<em>max</em>][<strong>+a</strong>][<strong>+c</strong><em>col</em>][<strong>+i</strong>]</dt>
@@ -416,11 +416,11 @@ then it is automatically incremented for each new <strong>-Z</strong> option, st
 <dd>Specify data types of input and/or output columns.  </dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>] <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>]  <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Determine data gaps and line breaks.  </dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Skip or produce header record(s).  </dd>
 </dl>
 <dl class="docutils">
@@ -436,7 +436,7 @@ then it is automatically incremented for each new <strong>-Z</strong> option, st
 <dd>Select input or output rows or data range(s) [all].</dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-s</strong>[<em>cols</em>][<strong>+a</strong>|<strong>+r</strong>] <a class="reference internal" href="gmt.html#s-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-s</strong>[<em>cols</em>][<strong>+a</strong>|<strong>r</strong>] <a class="reference internal" href="gmt.html#s-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Set handling of NaN records.</dd>
 </dl>
 <dl class="docutils">
@@ -462,23 +462,23 @@ minute, and <strong>s</strong> for arc second, or <strong>e</strong> for meter [
 for foot, <strong>k</strong> for km, <strong>M</strong> for statute mile, <strong>n</strong> for nautical mile,
 and <strong>u</strong> for US survey foot. By default we compute such distances using
 a spherical approximation with great circles (<strong>-jg</strong>) using the authalic radius
-(see <a class="reference internal" href="gmt.conf.html#proj-mean-radius"><span class="std std-ref">PROJ_MEAN_RADIUS</span></a>). You can use <strong>-jf</strong> to perform
+(see <a class="reference internal" href="gmt.conf.html#term-proj-mean-radius"><span class="xref std std-term">PROJ_MEAN_RADIUS</span></a>). You can use <strong>-jf</strong> to perform
 “Flat Earth” calculations (quicker but less accurate) or <strong>-je</strong> to perform
 exact geodesic calculations (slower but more accurate; see
-<a class="reference internal" href="gmt.conf.html#proj-geodesic"><span class="std std-ref">PROJ_GEODESIC</span></a> for method used).</p>
+<a class="reference internal" href="gmt.conf.html#term-proj-geodesic"><span class="xref std std-term">PROJ_GEODESIC</span></a> for method used).</p>
 </div>
 <div class="section" id="ascii-format-precision">
 <h2>ASCII Format Precision<a class="headerlink" href="#ascii-format-precision" title="Permalink to this headline">¶</a></h2>
 <p>The ASCII output formats of numerical data are controlled by parameters
 in your <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> file. Longitude and latitude are formatted
-according to <a class="reference internal" href="gmt.conf.html#format-geo-out"><span class="std std-ref">FORMAT_GEO_OUT</span></a>, absolute time is
-under the control of <a class="reference internal" href="gmt.conf.html#format-date-out"><span class="std std-ref">FORMAT_DATE_OUT</span></a> and
-<a class="reference internal" href="gmt.conf.html#format-clock-out"><span class="std std-ref">FORMAT_CLOCK_OUT</span></a>, whereas general floating point values are formatted
-according to <a class="reference internal" href="gmt.conf.html#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a>. Be aware that the format in effect
+according to <a class="reference internal" href="gmt.conf.html#term-format-geo-out"><span class="xref std std-term">FORMAT_GEO_OUT</span></a>, absolute time is
+under the control of <a class="reference internal" href="gmt.conf.html#term-format-date-out"><span class="xref std std-term">FORMAT_DATE_OUT</span></a> and
+<a class="reference internal" href="gmt.conf.html#term-format-clock-out"><span class="xref std std-term">FORMAT_CLOCK_OUT</span></a>, whereas general floating point values are formatted
+according to <a class="reference internal" href="gmt.conf.html#term-format-float-out"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a>. Be aware that the format in effect
 can lead to loss of precision in ASCII output, which can lead to various
 problems downstream. If you find the output is not written with enough
 precision, consider switching to binary output (<strong>-bo</strong> if available) or
-specify more decimals using the <a class="reference internal" href="gmt.conf.html#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a> setting.</p>
+specify more decimals using the <a class="reference internal" href="gmt.conf.html#term-format-float-out"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a> setting.</p>
 <p>This note applies to ASCII output only in combination with binary or
 netCDF input or the <strong>-:</strong> option. See also the note below.</p>
 </div>
@@ -486,7 +486,7 @@ netCDF input or the <strong>-:</strong> option. See also the note below.</p>
 <h2>Note On Processing ASCII Input Records<a class="headerlink" href="#note-on-processing-ascii-input-records" title="Permalink to this headline">¶</a></h2>
 <p>Unless you are using the <strong>-:</strong> option, selected ASCII input records are
 copied verbatim to output. That means that options like <strong>-foT</strong> and
-settings like <a class="reference internal" href="gmt.conf.html#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a> and <a class="reference internal" href="gmt.conf.html#format-geo-out"><span class="std std-ref">FORMAT_GEO_OUT</span></a> will not
+settings like <a class="reference internal" href="gmt.conf.html#term-format-float-out"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a> and <a class="reference internal" href="gmt.conf.html#term-format-geo-out"><span class="xref std std-term">FORMAT_GEO_OUT</span></a> will not
 have any effect on the output. On the other hand, it allows selecting
 records with diverse content, including character strings, quoted or
 not, comments, and other non-numerical content.</p>
@@ -497,7 +497,7 @@ not, comments, and other non-numerical content.</p>
 and in user units; use <strong>-fg</strong> to imply spherical distances in km and
 geographical (lon, lat) coordinates. Alternatively, specify <strong>-R</strong> and
 <strong>-J</strong> to measure projected Cartesian distances in map units (cm, inch,
-or points, as determined by <a class="reference internal" href="gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a>).</p>
+or points, as determined by <a class="reference internal" href="gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>).</p>
 <p>This program has evolved over the years. Originally, the <strong>-R</strong> and
 <strong>-J</strong> were mandatory in order to handle geographic data, but now there
 is full support for spherical calculations. Thus, <strong>-J</strong> should only be
@@ -643,7 +643,7 @@ we employ a full spherical ray-shooting method to determine a points status.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

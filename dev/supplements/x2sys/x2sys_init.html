@@ -344,7 +344,7 @@ statistics on those COE that fall inside the specified domain.</dd>
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dd>Select verbosity level [w].  </dd>
 <dt><strong>-Wt</strong>|<strong>d</strong><em>gap</em></dt>
 <dd>Give <strong>t</strong> or <strong>d</strong> and append the corresponding maximum time gap
 (in user units; this is typically seconds [Infinity]), or distance
@@ -394,7 +394,7 @@ attributes:</p>
 use the special names <em>lon</em> (or <em>x</em> if Cartesian) and <em>lat</em> (or <em>y</em>) for
 the two required coordinate columns, <em>time</em> when optional absolute time data
 are present, and <em>rtime</em> when relative time data are given (make sure the
-GMT defaults <strong>TIME_UNIT</strong> and <strong>TIME_EPOCH</strong> are set properly). Regardless
+GMT defaults <a class="reference internal" href="../../gmt.conf.html#term-time-unit"><span class="xref std std-term">TIME_UNIT</span></a> and <a class="reference internal" href="../../gmt.conf.html#term-time-epoch"><span class="xref std std-term">TIME_EPOCH</span></a> are set properly). Regardless
 of input time flavor, we will write absolute time on output.</p>
 <p><em>type</em> is always <strong>a</strong> for ASCII representations of numbers, whereas for
 binary files you may choose among <strong>c</strong> for signed 1-byte character
@@ -409,9 +409,9 @@ use <strong>d</strong> as netCDF will automatically handle type-conversions duri
 <p><em>offset</em> is used to add to the scaled data.</p>
 <p><em>oformat</em> is a C-style format string used to print values from this column.</p>
 <p>If you give - as the <em>oformat</em> then GMT’s formatting machinery
-will be used instead (i.e., <a class="reference internal" href="../../gmt.conf.html#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a>,
-<a class="reference internal" href="../../gmt.conf.html#format-geo-map"><span class="std std-ref">FORMAT_GEO_MAP</span></a>, <a class="reference internal" href="../../gmt.conf.html#format-date-map"><span class="std std-ref">FORMAT_DATE_MAP</span></a>,
-<a class="reference internal" href="../../gmt.conf.html#format-clock-map"><span class="std std-ref">FORMAT_CLOCK_MAP</span></a>).
+will be used instead (i.e., <a class="reference internal" href="../../gmt.conf.html#term-format-float-out"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a>,
+<a class="reference internal" href="../../gmt.conf.html#term-format-geo-map"><span class="xref std std-term">FORMAT_GEO_MAP</span></a>, <a class="reference internal" href="../../gmt.conf.html#term-format-date-map"><span class="xref std std-term">FORMAT_DATE_MAP</span></a>,
+<a class="reference internal" href="../../gmt.conf.html#term-format-clock-map"><span class="xref std std-term">FORMAT_CLOCK_MAP</span></a>).
 Some file formats already have definition files premade. These include
 mgd77 (for plain ASCII MGD77 data files), mgd77+ (for enhanced MGD77+
 netCDF files), gmt (for old mgg supplement binary files), xy (for plain
@@ -805,7 +805,7 @@ However, old .def files are still being read.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

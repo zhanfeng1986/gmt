@@ -246,7 +246,7 @@ gmt begin ex31
 <span class="s">	LinLibertineOB</span>
 <span class="s">	EOF</span>
 
-	<span class="nv">capitals</span><span class="o">=</span><span class="sb">`</span>gmt which -G @europe-capitals-ru.csv<span class="sb">`</span>
+	<span class="nv">capitals</span><span class="o">=</span><span class="k">$(</span>gmt which -G @europe-capitals-ru.csv<span class="k">)</span>
 	<span class="c1"># common settings</span>
 	gmt <span class="nb">set</span> FORMAT_GEO_MAP ddd:mm:ssF MAP_DEGREE_SYMBOL colon MAP_TITLE_OFFSET 20p <span class="se">\</span>
 		MAP_GRID_CROSS_SIZE_PRIMARY <span class="m">0</span>.4c PS_LINE_JOIN round PS_CHAR_ENCODING ISO-8859-5 <span class="se">\</span>
@@ -321,7 +321,7 @@ gmt end show
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

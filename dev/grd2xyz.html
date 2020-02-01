@@ -233,7 +233,7 @@
 <p><strong>grd2xyz</strong> reads one or more binary 2-D grid files and writes out
 xyz-triplets in ASCII [or binary] format to standard output. Modify the
 precision of the ASCII output format by editing the
-<a class="reference internal" href="gmt.conf.html#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a> parameter in your <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> file or use
+<a class="reference internal" href="gmt.conf.html#term-format-float-out"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a> parameter in your <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> file or use
 <strong>-</strong><strong>-D_FORMAT</strong>=<em>format</em> on the command line, or choose binary
 output using single or double precision storage. As an option you may
 output z-values without the (x,y) coordinates; see <strong>-Z</strong> below.</p>
@@ -264,7 +264,7 @@ boundaries of the grid, only the common region will be output.</dd>
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dd>Select verbosity level [w].  </dd>
 </dl>
 <dl class="docutils" id="w">
 <dt><strong>-W</strong>[<strong>a</strong>|<em>weight</em>]</dt>
@@ -329,7 +329,7 @@ is selected. [Default is no header].</dd>
 <dd>Select output rows or data range(s) [all].</dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-s</strong>[<em>cols</em>][<strong>+a</strong>|<strong>+r</strong>] <a class="reference internal" href="gmt.html#s-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-s</strong>[<em>cols</em>][<strong>+a</strong>|<strong>r</strong>] <a class="reference internal" href="gmt.html#s-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Set handling of NaN records.</dd>
 </dl>
 <dl class="docutils">
@@ -348,14 +348,14 @@ any module-specific option (but not the GMT common options), then exit.</dd>
 <h2>ASCII Format Precision<a class="headerlink" href="#ascii-format-precision" title="Permalink to this headline">¶</a></h2>
 <p>The ASCII output formats of numerical data are controlled by parameters
 in your <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> file. Longitude and latitude are formatted
-according to <a class="reference internal" href="gmt.conf.html#format-geo-out"><span class="std std-ref">FORMAT_GEO_OUT</span></a>, absolute time is
-under the control of <a class="reference internal" href="gmt.conf.html#format-date-out"><span class="std std-ref">FORMAT_DATE_OUT</span></a> and
-<a class="reference internal" href="gmt.conf.html#format-clock-out"><span class="std std-ref">FORMAT_CLOCK_OUT</span></a>, whereas general floating point values are formatted
-according to <a class="reference internal" href="gmt.conf.html#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a>. Be aware that the format in effect
+according to <a class="reference internal" href="gmt.conf.html#term-format-geo-out"><span class="xref std std-term">FORMAT_GEO_OUT</span></a>, absolute time is
+under the control of <a class="reference internal" href="gmt.conf.html#term-format-date-out"><span class="xref std std-term">FORMAT_DATE_OUT</span></a> and
+<a class="reference internal" href="gmt.conf.html#term-format-clock-out"><span class="xref std std-term">FORMAT_CLOCK_OUT</span></a>, whereas general floating point values are formatted
+according to <a class="reference internal" href="gmt.conf.html#term-format-float-out"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a>. Be aware that the format in effect
 can lead to loss of precision in ASCII output, which can lead to various
 problems downstream. If you find the output is not written with enough
 precision, consider switching to binary output (<strong>-bo</strong> if available) or
-specify more decimals using the <a class="reference internal" href="gmt.conf.html#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a> setting.</p>
+specify more decimals using the <a class="reference internal" href="gmt.conf.html#term-format-float-out"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a> setting.</p>
 </div>
 <div class="section" id="grid-file-formats">
 <h2>Grid File Formats<a class="headerlink" href="#grid-file-formats" title="Permalink to this headline">¶</a></h2>
@@ -371,7 +371,7 @@ data as 1- or 2-byte integers. <a class="reference internal" href="gmt.html#grd-
 be recognized as such. The variable’s <strong>unit</strong> attribute is parsed to
 determine the unit and epoch of the time coordinate in the grid. Values
 are then converted to the internal time system specified by
-<a class="reference internal" href="gmt.conf.html#time-unit"><span class="std std-ref">TIME_UNIT</span></a> and <a class="reference internal" href="gmt.conf.html#time-epoch"><span class="std std-ref">TIME_EPOCH</span></a> in the
+<a class="reference internal" href="gmt.conf.html#term-time-unit"><span class="xref std std-term">TIME_UNIT</span></a> and <a class="reference internal" href="gmt.conf.html#term-time-epoch"><span class="xref std std-term">TIME_EPOCH</span></a> in the
 <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> file or on the
 command line. The default output is relative time in that time system,
 or absolute time when using the option <strong>-f0T</strong>, <strong>-f1T</strong>, or <strong>-f2T</strong>
@@ -420,7 +420,7 @@ the remote file &#64;AFR.nc file, using scanline orientation, run:</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

@@ -260,7 +260,7 @@ For details on array creation, see <cite>Generate 1D Array</cite>.</dd>
 <dd>Choose from <strong>l</strong> (Linear), <strong>a</strong> (Akima spline), <strong>c</strong> (natural
 cubic spline), and <strong>n</strong> (no interpolation: nearest point) [Default
 is <strong>-Fa</strong>]. You may change the default interpolant; see
-<a class="reference internal" href="gmt.conf.html#gmt-interpolant"><span class="std std-ref">GMT_INTERPOLANT</span></a> in your <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> file.
+<a class="reference internal" href="gmt.conf.html#term-gmt-interpolant"><span class="xref std std-term">GMT_INTERPOLANT</span></a> in your <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> file.
 You may optionally evaluate the first or second derivative of the spline
 by appending <strong>+1</strong> or <strong>+2</strong>, respectively.</dd>
 </dl>
@@ -272,7 +272,7 @@ boundaries of the grid, only the common region will be output.</dd>
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dd>Select verbosity level [w].  </dd>
 </dl>
 <dl class="docutils" id="z">
 <dt><strong>-Zi</strong><em>levels</em>|<strong>o</strong></dt>
@@ -302,7 +302,7 @@ any module-specific option (but not the GMT common options), then exit.</dd>
 be recognized as such. The variable’s <strong>unit</strong> attribute is parsed to
 determine the unit and epoch of the time coordinate in the grid. Values
 are then converted to the internal time system specified by
-<a class="reference internal" href="gmt.conf.html#time-unit"><span class="std std-ref">TIME_UNIT</span></a> and <a class="reference internal" href="gmt.conf.html#time-epoch"><span class="std std-ref">TIME_EPOCH</span></a> in the
+<a class="reference internal" href="gmt.conf.html#term-time-unit"><span class="xref std std-term">TIME_UNIT</span></a> and <a class="reference internal" href="gmt.conf.html#term-time-epoch"><span class="xref std std-term">TIME_EPOCH</span></a> in the
 <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> file or on the
 command line. The default output is relative time in that time system,
 or absolute time when using the option <strong>-f0T</strong>, <strong>-f1T</strong>, or <strong>-f2T</strong>
@@ -371,7 +371,7 @@ using a linear spline, try</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

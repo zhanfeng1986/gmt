@@ -311,7 +311,7 @@ identified as azimuth will first be converted to map angle
 map projection (or simply via 90-azimuth for Cartesian plots).
 We ensure the angles fall in the 0-360 range and any macro test can rely on this range.</p>
 <p><strong>l</strong> Length, i.e., an additional length scale (in cm, inch, or point as
-per <a class="reference internal" href="../gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a>) in addition to the given symbol size.</p>
+per <a class="reference internal" href="../gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>) in addition to the given symbol size.</p>
 <p><strong>o</strong> Other, i.e., a numerical quantity to be passed to the custom symbol unchanged.</p>
 <p><strong>r</strong> rotation angles (positive counter-clockwise from horizontal).
 We ensure the angles fall in the 0-360 range and any macro test can rely on this range.</p>
@@ -528,10 +528,10 @@ The string itself, if obtained from the symbol definition file,
 may contain special codes that will be expanded given information from the current record.  You
 can embed the codes %X or %Y to add the current longitude (or x) and latitude (or y) in
 your label string. You may also use $n (<em>n</em> is 1, 2, etc.) to embed a numerical symbol variable as text.
-It will be formatted according to <a class="reference internal" href="../gmt.conf.html#format-float-map"><span class="std std-ref">FORMAT_FLOAT_MAP</span></a>,
-unless you append the modifiers <strong>+X</strong> (format as longitude via <a class="reference internal" href="../gmt.conf.html#format-geo-map"><span class="std std-ref">FORMAT_GEO_MAP</span></a>),
-<strong>+Y</strong> (format as latitude via <a class="reference internal" href="../gmt.conf.html#format-geo-map"><span class="std std-ref">FORMAT_GEO_MAP</span></a>), or <strong>+T</strong> (format as calendar time via
-<a class="reference internal" href="../gmt.conf.html#format-date-map"><span class="std std-ref">FORMAT_DATE_MAP</span></a> and <a class="reference internal" href="../gmt.conf.html#format-clock-map"><span class="std std-ref">FORMAT_CLOCK_MAP</span></a>.</p>
+It will be formatted according to <a class="reference internal" href="../gmt.conf.html#term-format-float-map"><span class="xref std std-term">FORMAT_FLOAT_MAP</span></a>,
+unless you append the modifiers <strong>+X</strong> (format as longitude via <a class="reference internal" href="../gmt.conf.html#term-format-geo-map"><span class="xref std std-term">FORMAT_GEO_MAP</span></a>),
+<strong>+Y</strong> (format as latitude via <a class="reference internal" href="../gmt.conf.html#term-format-geo-map"><span class="xref std std-term">FORMAT_GEO_MAP</span></a>), or <strong>+T</strong> (format as calendar time via
+<a class="reference internal" href="../gmt.conf.html#term-format-date-map"><span class="xref std std-term">FORMAT_DATE_MAP</span></a> and <a class="reference internal" href="../gmt.conf.html#term-format-clock-map"><span class="xref std std-term">FORMAT_CLOCK_MAP</span></a>.</p>
 </div>
 <div class="section" id="text-alignment-and-font-attributes">
 <h3>17.2.7. Text alignment and font attributes<a class="headerlink" href="#text-alignment-and-font-attributes" title="Permalink to this headline">¶</a></h3>
@@ -713,7 +713,7 @@ levels deep), e.g.,</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

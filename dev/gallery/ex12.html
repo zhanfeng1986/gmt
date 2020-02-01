@@ -232,7 +232,7 @@ image the data. We use the CPT <code class="docutils literal notranslate"><span 
 gmt begin ex12
 	<span class="c1"># Contour the data and draw triangles using dashed pen; use &quot;gmt gmtinfo&quot; and &quot;gmt makecpt&quot; to make a</span>
 	<span class="c1"># color palette (.cpt) file</span>
-	<span class="nv">T</span><span class="o">=</span><span class="sb">`</span>gmt info -T25+c2 @Table_5_11.txt<span class="sb">`</span>
+	<span class="nv">T</span><span class="o">=</span><span class="k">$(</span>gmt info -T25+c2 @Table_5_11.txt<span class="k">)</span>
 	gmt makecpt -Cjet <span class="nv">$T</span>
 	gmt subplot begin 2x2 -M0.1c -Fs8c/0 -SCb -SRl -R0/6.5/-0.2/6.5 -JX8c -BWSne -T<span class="s2">&quot;Delaunay Triangulation&quot;</span>
 	<span class="c1"># First draw network and label the nodes</span>
@@ -282,7 +282,7 @@ rm -f net.xy
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

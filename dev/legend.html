@@ -312,7 +312,7 @@ indicates the shift relative to the foreground frame
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dd>Select verbosity level [w].  </dd>
 </dl>
 <p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</p>
 <dl class="docutils">
@@ -493,7 +493,9 @@ If no horizontal line is desired simply give - as <em>pen</em> to <strong>D</str
 <h2>Defaults<a class="headerlink" href="#defaults" title="Permalink to this headline">¶</a></h2>
 <p>When attributes are not provided, or extended symbol information (for symbols taking more than just an overall size) are
 not given as comma-separated quantities, we will provide the following defaults:</p>
-<p>Front: Front symbol is left-side (here, that means upper side) box, with dimensions 30% of the given symbol size.</p>
+<p>Front: The <em>size</em> argument is <em>length</em>[/<em>gap</em>[<em>ticklength</em>]]. Front symbol is left-side (here, that means upper side) box,
+with <em>ticklength</em> set 30% of the given symbol <em>length (if not specified separately), and *gap</em> defaulting to -1 (one
+entered front symbol) if not specified.  Modifiers to the symbol argument can be provided.</p>
 <p>Vector: Head size is 30% of given symbol size.</p>
 <p>Ellipse: Minor axis is 65% of major axis (the symbol size), with an azimuth of 0 degrees.</p>
 <p>Rectangle: Height is 65% of width (the symbol size).</p>
@@ -621,7 +623,7 @@ directly.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

@@ -286,7 +286,7 @@ a line to be labeled. The codes are:</p>
 <strong>d</strong><em>dist</em>[<strong>c</strong>|<strong>i</strong>|<strong>p</strong>][/<em>frac</em>].
 Place labels according to the distance measured along the projected
 line on the map. Append the unit you want to measure distances in
-[Default is taken from <a class="reference internal" href="../gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a>]. Starting at the
+[Default is taken from <a class="reference internal" href="../gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>]. Starting at the
 beginning of a line, place labels every <em>dist</em> increment of distance
 along the line. To ensure that closed lines whose total length is
 less than <em>dist</em> get annotated, we may append <em>frac</em> which will
@@ -312,7 +312,7 @@ whose first two columns hold the coordinates of points along the
 lines at which locations the labels should be placed. Labels will
 only be placed if the coordinates match the line coordinates to
 within a distance of <em>slop</em> (append unit or we use
-<a class="reference internal" href="../gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a>). The default <em>slop</em> is zero, meaning only
+<a class="reference internal" href="../gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>). The default <em>slop</em> is zero, meaning only
 exact coordinate matches will do.</dd>
 <dt><strong>l</strong>:</dt>
 <dd>Full syntax is <strong>l</strong><em>line1</em>[,<em>line2</em>[, …]]. One or more
@@ -415,11 +415,11 @@ placement algorithms above.</dd>
 <dt><strong>+f</strong>:</dt>
 <dd>Specifies the desired label font, including size or color. See
 <a class="reference internal" href="../text.html"><span class="doc">text</span></a> for font names or numbers.
-The default font is given by <a class="reference internal" href="../gmt.conf.html#font-annot-primary"><span class="std std-ref">FONT_ANNOT_PRIMARY</span></a>.</dd>
+The default font is given by <a class="reference internal" href="../gmt.conf.html#term-font-annot-primary"><span class="xref std std-term">FONT_ANNOT_PRIMARY</span></a>.</dd>
 <dt><strong>+g</strong>:</dt>
 <dd>Selects opaque rather than the default transparent text boxes. You
 may optionally append the color you want to fill the label boxes;
-the default is the same as <a class="reference internal" href="../gmt.conf.html#ps-page-color"><span class="std std-ref">PS_PAGE_COLOR</span></a>.</dd>
+the default is the same as <a class="reference internal" href="../gmt.conf.html#term-ps-page-color"><span class="xref std std-term">PS_PAGE_COLOR</span></a>.</dd>
 <dt><strong>+j</strong>:</dt>
 <dd>Selects the justification of the label relative to the placement
 points determined above. Normally this is center/mid justified
@@ -483,8 +483,8 @@ the first word following the segment marker [&gt;].</dd>
 <dt><strong>+Ld</strong>:</dt>
 <dd>Take the Cartesian plot distances along the line as the label;
 append <strong>c</strong>|<strong>i</strong>|<strong>p</strong> as the unit [Default is
-<a class="reference internal" href="../gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a>]. The label will be formatted according
-to the <a class="reference internal" href="../gmt.conf.html#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a> string, <em>unless</em> label placement
+<a class="reference internal" href="../gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>]. The label will be formatted according
+to the <a class="reference internal" href="../gmt.conf.html#term-format-float-out"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a> string, <em>unless</em> label placement
 was determined from map distances along the segment lines, in
 which case we determine the appropriate format from the distance
 value itself.</dd>
@@ -720,7 +720,7 @@ gmt grdgradient @App_O_topo5.nc -Nt1 -A45 -Gtopo5_int.nc
 gmt <span class="nb">set</span> FORMAT_GEO_MAP ddd:mm:ssF FONT_ANNOT_PRIMARY +9p FONT_TITLE 22p
 gmt project -E-74/41 -C-17/28 -G10 -Q &gt; great_NY_Canaries.txt
 gmt project -E-74/41 -C2.33/48.87 -G100 -Q &gt; great_NY_Paris.txt
-<span class="nv">km</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> -17 <span class="m">28</span> <span class="p">|</span> gmt mapproject -G-74/41+uk -fg --FORMAT_FLOAT_OUT<span class="o">=</span>%.0f -o2<span class="sb">`</span>
+<span class="nv">km</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> -17 <span class="m">28</span> <span class="p">|</span> gmt mapproject -G-74/41+uk -fg --FORMAT_FLOAT_OUT<span class="o">=</span>%.0f -o2<span class="k">)</span>
 gmt makecpt -Clightred,lightyellow,lightgreen -T0,3,6,100 -N
 gmt grdimage @App_O_ttt.nc -Itopo5_int.nc -C <span class="nv">$R</span> -JM5.3i -nc+t1
 gmt grdcontour @App_O_ttt.nc -C0.5 -A1+u<span class="s2">&quot; hour&quot;</span>+v+f8p,Bookman-Demi <span class="se">\</span>
@@ -788,7 +788,7 @@ that New York will experience a large tsunami about 8 hours after the event.</sp
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

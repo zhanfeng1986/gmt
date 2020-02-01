@@ -248,7 +248,7 @@ gmt begin ex24
 <span class="s">	180	0</span>
 <span class="s">	180	-90</span>
 <span class="s">	END</span>
-	<span class="nv">R</span><span class="o">=</span><span class="sb">`</span>gmt info -I10 @oz_quakes_24.txt<span class="sb">`</span>
+	<span class="nv">R</span><span class="o">=</span><span class="k">$(</span>gmt info -I10 @oz_quakes_24.txt<span class="k">)</span>
 	gmt coast <span class="nv">$R</span> -JM22c -Gtan -Sdarkblue -Wthin,white -Dl -A500 -Ba20f10g10 -BWeSn
 	gmt plot @oz_quakes_24.txt -Sc0.1c -Gred
 	gmt <span class="k">select</span> @oz_quakes_24.txt -Ldateline.txt+d1000k -Nk/s -Cpoint.txt+d3000k -fg -Il <span class="se">\</span>
@@ -290,7 +290,7 @@ gmt end show
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

@@ -447,9 +447,9 @@ images (e.g., <strong>-I</strong> option in <a class="reference internal" href="
 the intensity is non-zero, the color is either lightened or darkened
 depending on the illumination. The color is first converted to HSV (if
 necessary) and then darkened by moving (<em>sv</em>) toward
-(<a class="reference internal" href="../gmt.conf.html#color-hsv-min-s"><span class="std std-ref">COLOR_HSV_MIN_S</span></a>, <a class="reference internal" href="../gmt.conf.html#color-hsv-min-v"><span class="std std-ref">COLOR_HSV_MIN_V</span></a>)
+(<a class="reference internal" href="../gmt.conf.html#term-color-hsv-min-s"><span class="xref std std-term">COLOR_HSV_MIN_S</span></a>, <a class="reference internal" href="../gmt.conf.html#term-color-hsv-min-v"><span class="xref std std-term">COLOR_HSV_MIN_V</span></a>)
 if the intensity is negative, or lightened by sliding (<em>sv</em>) toward
-(<a class="reference internal" href="../gmt.conf.html#color-hsv-max-s"><span class="std std-ref">COLOR_HSV_MAX_S</span></a>, <a class="reference internal" href="../gmt.conf.html#color-hsv-max-v"><span class="std std-ref">COLOR_HSV_MAX_V</span></a>)
+(<a class="reference internal" href="../gmt.conf.html#term-color-hsv-max-s"><span class="xref std std-term">COLOR_HSV_MAX_S</span></a>, <a class="reference internal" href="../gmt.conf.html#term-color-hsv-max-v"><span class="xref std std-term">COLOR_HSV_MAX_V</span></a>)
 if the illumination is positive. The extremes of the <em>s</em> and <em>v</em> are defined in the
 <a class="reference internal" href="../gmt.conf.html"><span class="doc">gmt.conf</span></a> file and are usually chosen so the corresponding points are nearly black
 (<em>s = 1</em>, <em>v = 0</em>) and white (<em>s = 0</em>, <em>v = 1</em>).
@@ -501,7 +501,7 @@ thesis, for example, it might be worth trying to save and print all your
 color plots using the CMYK system. Letting GMT do the conversion to
 CMYK may avoid some nasty surprises when it comes down to printing. To
 specify the color space of your PostScript file, set
-<a class="reference internal" href="../gmt.conf.html#ps-color-model"><span class="std std-ref">PS_COLOR_MODEL</span></a> in the <a class="reference internal" href="../gmt.conf.html"><span class="doc">gmt.conf</span></a> file to RGB, HSV, or CMYK.</p>
+<a class="reference internal" href="../gmt.conf.html#term-ps-color-model"><span class="xref std std-term">PS_COLOR_MODEL</span></a> in the <a class="reference internal" href="../gmt.conf.html"><span class="doc">gmt.conf</span></a> file to RGB, HSV, or CMYK.</p>
 </div>
 </div>
 
@@ -528,7 +528,7 @@ specify the color space of your PostScript file, set
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

@@ -247,17 +247,17 @@ gmt begin ex22
 	<span class="c1"># curl -s $URL &gt; usgs_quakes_22.txt</span>
 
 	<span class="c1"># Count the number of events (to be used in title later. one less due to header)</span>
-	<span class="nv">file</span><span class="o">=</span><span class="sb">`</span>gmt which @usgs_quakes_22.txt -G<span class="sb">`</span>
-	<span class="nv">n</span><span class="o">=</span><span class="sb">`</span>gmt info <span class="nv">$file</span> -h1 -Fi -o2<span class="sb">`</span>
+	<span class="nv">file</span><span class="o">=</span><span class="k">$(</span>gmt which @usgs_quakes_22.txt -G<span class="k">)</span>
+	<span class="nv">n</span><span class="o">=</span><span class="k">$(</span>gmt info <span class="nv">$file</span> -h1 -Fi -o2<span class="k">)</span>
 
 	<span class="c1"># Pull out the first and last timestamp to use in legend title</span>
-	<span class="nv">first</span><span class="o">=</span><span class="sb">`</span>gmt info -h1 -f0T -i0 <span class="nv">$file</span> -C --TIME_UNIT<span class="o">=</span>d -I1 -o0 --FORMAT_CLOCK_OUT<span class="o">=</span>-<span class="sb">`</span>
-	<span class="nv">last</span><span class="o">=</span><span class="sb">`</span>gmt info -h1 -f0T -i0 <span class="nv">$file</span> -C --TIME_UNIT<span class="o">=</span>d -I1 -o1 --FORMAT_CLOCK_OUT<span class="o">=</span>-<span class="sb">`</span>
+	<span class="nv">first</span><span class="o">=</span><span class="k">$(</span>gmt info -h1 -f0T -i0 <span class="nv">$file</span> -C --TIME_UNIT<span class="o">=</span>d -I1 -o0 --FORMAT_CLOCK_OUT<span class="o">=</span>-<span class="k">)</span>
+	<span class="nv">last</span><span class="o">=</span><span class="k">$(</span>gmt info -h1 -f0T -i0 <span class="nv">$file</span> -C --TIME_UNIT<span class="o">=</span>d -I1 -o1 --FORMAT_CLOCK_OUT<span class="o">=</span>-<span class="k">)</span>
 
 	<span class="c1"># Assign a string that contains the current user @ the current computer node.</span>
 	<span class="c1"># Note that two @@ is needed to print a single @ in gmt text:</span>
 
-	<span class="c1">#set me = &quot;$user@@`hostname`&quot;</span>
+	<span class="c1">#set me = &quot;$user@@$(hostname)&quot;</span>
 	<span class="nv">me</span><span class="o">=</span><span class="s2">&quot;GMT guru @@ GMTbox&quot;</span>
 
 	<span class="c1"># Create standard seismicity color table</span>
@@ -351,7 +351,7 @@ gmt end show
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

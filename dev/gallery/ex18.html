@@ -271,8 +271,8 @@ gmt begin ex18
 		gmt grdmath pratt.txt POINT <span class="nv">SDIST</span> <span class="o">=</span> mask.nc -fg
 		gmt grdclip mask.nc -Sa200/NaN -Sb200/1 -Gmask.nc
 		gmt grdmath @AK_gulf_grav.nc mask.nc <span class="nv">MUL</span> <span class="o">=</span> tmp.nc
-		<span class="nv">area</span><span class="o">=</span><span class="sb">`</span>gmt grdvolume tmp.nc -C50 -Sk -o1<span class="sb">`</span>
-		<span class="nv">volume</span><span class="o">=</span><span class="sb">`</span>gmt grdvolume tmp.nc -C50 -Sk -o2<span class="sb">`</span>
+		<span class="nv">area</span><span class="o">=</span><span class="k">$(</span>gmt grdvolume tmp.nc -C50 -Sk -o1<span class="k">)</span>
+		<span class="nv">volume</span><span class="o">=</span><span class="k">$(</span>gmt grdvolume tmp.nc -C50 -Sk -o2<span class="k">)</span>
 		gmt text -M -Gwhite -Wthin -Dj0.7c -F+f14p,Helvetica-Bold+jLB -C8p <span class="s">&lt;&lt;- END</span>
 <span class="s">		&gt; -149 52.5 14p 6.6c j</span>
 <span class="s">		Volumes: $volume mGal\264km@+2@+</span>
@@ -319,7 +319,7 @@ rm -f sm_*.txt tmp.nc mask.nc pratt.txt center*
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

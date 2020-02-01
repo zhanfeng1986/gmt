@@ -310,12 +310,12 @@ projected units to be added (or subtracted when <strong>-I</strong> is set) to
 (from) the projected coordinates, such as false eastings and
 northings for particular projection zones [0/0]. The unit used for
 the offsets is the plot distance unit in effect (see
-<a class="reference internal" href="gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a>) unless <strong>-F</strong> is used, in which case the
+<a class="reference internal" href="gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>) unless <strong>-F</strong> is used, in which case the
 offsets are in meters.</dd>
 </dl>
 <dl class="docutils" id="d">
 <dt><strong>-Dc</strong>|<strong>i</strong>|<strong>p</strong></dt>
-<dd>Temporarily override <a class="reference internal" href="gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a> and use <strong>c</strong> (cm),
+<dd>Temporarily override <a class="reference internal" href="gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a> and use <strong>c</strong> (cm),
 <strong>i</strong> (inch), or <strong>p</strong> (points) instead. Cannot be used with <strong>-F</strong>.</dd>
 </dl>
 <dl class="docutils" id="e">
@@ -332,7 +332,7 @@ omitted). If <em>datum</em> is - or not given we assume WGS-84.</dd>
 <dd>Force 1:1 scaling, i.e., output (or input, see <strong>-I</strong>) data are in
 actual projected meters. To specify other units, append the desired
 unit (see <a class="reference internal" href="#units">Units</a>). Without <strong>-F</strong>, the output (or input, see <strong>-I</strong>)
-are in the units specified by <a class="reference internal" href="gmt.conf.html#proj-length-unit"><span class="std std-ref">PROJ_LENGTH_UNIT</span></a> (but see
+are in the units specified by <a class="reference internal" href="gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a> (but see
 <strong>-D</strong>).</dd>
 </dl>
 <dl class="docutils" id="g">
@@ -371,7 +371,7 @@ See <a class="reference internal" href="#output-order">Output Order</a> for how 
 <dl class="docutils" id="n">
 <dt><strong>-N</strong>[<strong>a</strong>|<strong>c</strong>|<strong>g</strong>|<strong>m</strong>]</dt>
 <dd>Convert from geodetic latitudes (using the current ellipsoid; see
-<a class="reference internal" href="gmt.conf.html#proj-ellipsoid"><span class="std std-ref">PROJ_ELLIPSOID</span></a>) to one of four different auxiliary latitudes
+<a class="reference internal" href="gmt.conf.html#term-proj-ellipsoid"><span class="xref std std-term">PROJ_ELLIPSOID</span></a>) to one of four different auxiliary latitudes
 (longitudes are unaffected). Choose from <strong>a</strong>uthalic,
 <strong>c</strong>onformal, <strong>g</strong>eocentric, and <strong>m</strong>eridional latitudes
 [geocentric]. Use <strong>-I</strong> to convert from auxiliary latitudes to
@@ -399,11 +399,11 @@ omitted). If <em>datum</em> is - or not given we assume WGS-84. <strong>-T</stro
 be used in conjunction with <strong>-R</strong> <strong>-J</strong> to change the datum before
 coordinate projection (add <strong>-I</strong> to apply the datum conversion
 after the inverse projection). Make sure that the
-<a class="reference internal" href="gmt.conf.html#proj-ellipsoid"><span class="std std-ref">PROJ_ELLIPSOID</span></a> setting is correct for your case.</dd>
+<a class="reference internal" href="gmt.conf.html#term-proj-ellipsoid"><span class="xref std std-term">PROJ_ELLIPSOID</span></a> setting is correct for your case.</dd>
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [c].  </dd>
+<dd>Select verbosity level [w].  </dd>
 </dl>
 <dl class="docutils" id="w">
 <dt><strong>-W</strong>[<strong>g</strong>|<strong>h</strong>|<strong>j</strong>|<strong>n</strong>|<strong>w</strong>|<strong>x</strong>]</dt>
@@ -422,13 +422,13 @@ where a plot point is given directly [Default returns the width and height of th
 Append a constant speed unit; if missing we expect to read
 a variable speed from column 3.  The speed is expected to be
 in the distance units set via <strong>-G</strong> per time unit controlled
-by <a class="reference internal" href="gmt.conf.html#time-unit"><span class="std std-ref">TIME_UNIT</span></a> [m/s].  Append <strong>+i</strong> to output
+by <a class="reference internal" href="gmt.conf.html#term-time-unit"><span class="xref std std-term">TIME_UNIT</span></a> [m/s].  Append <strong>+i</strong> to output
 <em>incremental</em> travel times between successive points, <strong>+a</strong>
 to obtain <em>accumulated</em> travel times, or both to get both kinds
 of time information.  Use <strong>+f</strong> to format the accumulated
 (elapsed) travel time according to the ISO 8601 convention.
 As for the number of decimals used to represent seconds we
-consult the <a class="reference internal" href="gmt.conf.html#format-clock-out"><span class="std std-ref">FORMAT_CLOCK_OUT</span></a>
+consult the <a class="reference internal" href="gmt.conf.html#term-format-clock-out"><span class="xref std std-term">FORMAT_CLOCK_OUT</span></a>
 setting. Finally, append <strong>+t</strong><em>epoch</em> to report absolute
 times (ETA) for successive points. Finally, because of the
 need for incremental distances the <strong>-G</strong> option with the
@@ -456,11 +456,11 @@ See <a class="reference internal" href="#output-order">Output Order</a> for how 
 <dd>Specify data types of input and/or output columns.  </dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>] <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>]  <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Determine data gaps and line breaks.  </dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Skip or produce header record(s).  </dd>
 </dl>
 <dl class="docutils">
@@ -484,7 +484,7 @@ See <a class="reference internal" href="#output-order">Output Order</a> for how 
 <dd>Select input or output rows or data range(s) [all].</dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-s</strong>[<em>cols</em>][<strong>+a</strong>|<strong>+r</strong>] <a class="reference internal" href="gmt.html#s-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-s</strong>[<em>cols</em>][<strong>+a</strong>|<strong>r</strong>] <a class="reference internal" href="gmt.html#s-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Set handling of NaN records.</dd>
 </dl>
 <dl class="docutils">
@@ -510,23 +510,23 @@ minute, and <strong>s</strong> for arc second, or <strong>e</strong> for meter [
 for foot, <strong>k</strong> for km, <strong>M</strong> for statute mile, <strong>n</strong> for nautical mile,
 and <strong>u</strong> for US survey foot. By default we compute such distances using
 a spherical approximation with great circles (<strong>-jg</strong>) using the authalic radius
-(see <a class="reference internal" href="gmt.conf.html#proj-mean-radius"><span class="std std-ref">PROJ_MEAN_RADIUS</span></a>). You can use <strong>-jf</strong> to perform
+(see <a class="reference internal" href="gmt.conf.html#term-proj-mean-radius"><span class="xref std std-term">PROJ_MEAN_RADIUS</span></a>). You can use <strong>-jf</strong> to perform
 “Flat Earth” calculations (quicker but less accurate) or <strong>-je</strong> to perform
 exact geodesic calculations (slower but more accurate; see
-<a class="reference internal" href="gmt.conf.html#proj-geodesic"><span class="std std-ref">PROJ_GEODESIC</span></a> for method used).</p>
+<a class="reference internal" href="gmt.conf.html#term-proj-geodesic"><span class="xref std std-term">PROJ_GEODESIC</span></a> for method used).</p>
 </div>
 <div class="section" id="ascii-format-precision">
 <h2>ASCII Format Precision<a class="headerlink" href="#ascii-format-precision" title="Permalink to this headline">¶</a></h2>
 <p>The ASCII output formats of numerical data are controlled by parameters
 in your <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> file. Longitude and latitude are formatted
-according to <a class="reference internal" href="gmt.conf.html#format-geo-out"><span class="std std-ref">FORMAT_GEO_OUT</span></a>, absolute time is
-under the control of <a class="reference internal" href="gmt.conf.html#format-date-out"><span class="std std-ref">FORMAT_DATE_OUT</span></a> and
-<a class="reference internal" href="gmt.conf.html#format-clock-out"><span class="std std-ref">FORMAT_CLOCK_OUT</span></a>, whereas general floating point values are formatted
-according to <a class="reference internal" href="gmt.conf.html#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a>. Be aware that the format in effect
+according to <a class="reference internal" href="gmt.conf.html#term-format-geo-out"><span class="xref std std-term">FORMAT_GEO_OUT</span></a>, absolute time is
+under the control of <a class="reference internal" href="gmt.conf.html#term-format-date-out"><span class="xref std std-term">FORMAT_DATE_OUT</span></a> and
+<a class="reference internal" href="gmt.conf.html#term-format-clock-out"><span class="xref std std-term">FORMAT_CLOCK_OUT</span></a>, whereas general floating point values are formatted
+according to <a class="reference internal" href="gmt.conf.html#term-format-float-out"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a>. Be aware that the format in effect
 can lead to loss of precision in ASCII output, which can lead to various
 problems downstream. If you find the output is not written with enough
 precision, consider switching to binary output (<strong>-bo</strong> if available) or
-specify more decimals using the <a class="reference internal" href="gmt.conf.html#format-float-out"><span class="std std-ref">FORMAT_FLOAT_OUT</span></a> setting.</p>
+specify more decimals using the <a class="reference internal" href="gmt.conf.html#term-format-float-out"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a> setting.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
@@ -582,8 +582,8 @@ assuming a fixed speed of 12 knots.  We do this with</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>where <a class="reference internal" href="gmt.conf.html#time-unit"><span class="std std-ref">TIME_UNIT</span></a> is set to hour so that the speed is
-measured in nm (set by <strong>-G</strong>) per hour (set by <a class="reference internal" href="gmt.conf.html#time-unit"><span class="std std-ref">TIME_UNIT</span></a>).
+<p>where <a class="reference internal" href="gmt.conf.html#term-time-unit"><span class="xref std std-term">TIME_UNIT</span></a> is set to hour so that the speed is
+measured in nm (set by <strong>-G</strong>) per hour (set by <a class="reference internal" href="gmt.conf.html#term-time-unit"><span class="xref std std-term">TIME_UNIT</span></a>).
 Elapsed times will be reported in hours (unless <strong>+f</strong> is added to <strong>-Z</strong>
 for ISO elapsed time).</p>
 <p>To determine the geographic coordinates of the mid-point of this transverse Mercator map, try</p>
@@ -592,7 +592,7 @@ for ISO elapsed time).</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>where <a class="reference internal" href="gmt.conf.html#time-unit"><span class="std std-ref">TIME_UNIT</span></a> is set to hour so that the speed is</p>
+<p>where <a class="reference internal" href="gmt.conf.html#term-time-unit"><span class="xref std std-term">TIME_UNIT</span></a> is set to hour so that the speed is</p>
 </div>
 <div class="section" id="restrictions">
 <h2>Restrictions<a class="headerlink" href="#restrictions" title="Permalink to this headline">¶</a></h2>
@@ -620,7 +620,7 @@ from the central meridian, and (3) same for Cassini
 <h2>Ellipsoids And Spheroids<a class="headerlink" href="#ellipsoids-and-spheroids" title="Permalink to this headline">¶</a></h2>
 <p>GMT will use ellipsoidal formulae if they are implemented and the
 user have selected an ellipsoid as the reference shape (see
-<a class="reference internal" href="gmt.conf.html#proj-ellipsoid"><span class="std std-ref">PROJ_ELLIPSOID</span></a>). The user needs to be aware of a
+<a class="reference internal" href="gmt.conf.html#term-proj-ellipsoid"><span class="xref std std-term">PROJ_ELLIPSOID</span></a>). The user needs to be aware of a
 few potential pitfalls: (1) For some projections, such as Transverse
 Mercator, Albers, and Lambert’s conformal conic we use the ellipsoidal
 expressions when the areas mapped are small, and switch to the spherical
@@ -644,7 +644,7 @@ same parameters as Clarke 1866, but with f = 1/294.97861076. Also, be
 aware that older data may be referenced to different datums, and unless
 you know which datum was used and convert all data to a common datum you
 may experience mismatches of tens to hundreds of meters. (3) Finally, be
-aware that <a class="reference internal" href="gmt.conf.html#proj-scale-factor"><span class="std std-ref">PROJ_SCALE_FACTOR</span></a> have certain default values for some
+aware that <a class="reference internal" href="gmt.conf.html#term-proj-scale-factor"><span class="xref std std-term">PROJ_SCALE_FACTOR</span></a> have certain default values for some
 projections so you may have to override the setting in order to match
 results produced with other settings.</p>
 </div>
@@ -695,7 +695,7 @@ North-Holland Publ., ISBN: 0 444 86149 1.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

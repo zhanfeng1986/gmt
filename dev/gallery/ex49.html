@@ -239,10 +239,10 @@ gmt begin ex49
 	<span class="c1"># Image depths with color-coded age contours</span>
 	gmt makecpt -Cabyss -T-7000/0 -H &gt; z.cpt
 	gmt makecpt -Chot -T0/100/10 -H &gt; t.cpt
-	gmt grdimage @depth_pixel.nc -JM6i -Cz.cpt -B -BWSne -X1.5i --FORMAT_GEO_MAP<span class="o">=</span>dddF
+	gmt grdimage @depth_pixel.nc -JM15c -Cz.cpt -B -BWSne --FORMAT_GEO_MAP<span class="o">=</span>dddF
 	gmt plot -W1p @ridge_49.txt
 	gmt grdcontour age_pixel.nc -A+f14p -Ct.cpt -Wa0.1p+c -GL30W/22S/5E/13S
-	gmt colorbar -Cz.cpt -DjTR+w2i/0.15i+h+o0.3i/0.15i -Baf+u<span class="s2">&quot; km&quot;</span> -W0.001 -F+p1p+gbeige
+	gmt colorbar -Cz.cpt -DjTR+w5c/0.4c+h+o0.75c/0.4c -Baf+u<span class="s2">&quot; km&quot;</span> -W0.001 -F+p1p+gbeige
 	<span class="c1"># Obtain depth, age pairs by dumping grids and pasting results</span>
 	gmt grd2xyz age_pixel.nc -bof &gt; age.bin
 	gmt grd2xyz @depth_pixel.nc -bof &gt; depth.bin
@@ -250,7 +250,7 @@ gmt begin ex49
 	<span class="c1"># Create and map density grid of (age,depth) distribution</span>
 	gmt xyz2grd -R0/100/-6500/0 -I0.25/25 -r depth-age.bin -bi3f -An -Gdensity.nc
 	<span class="c1"># WHy do we need the -R below? otherwise it fails to work</span>
-	gmt grdimage density.nc -R0/100/-6500/0 -JX6i/4i -Q -Y4.8i -Ct.cpt
+	gmt grdimage density.nc -R0/100/-6500/0 -JX15c/10c -Q -Y12c -Ct.cpt
 	<span class="c1"># Obtain modal depths every ~5 Myr</span>
 	gmt blockmode -R0/100/-10000/0 -I5/10000 -r -E depth-age.bin -bi3f -o0,2,3 &gt; modal.txt
 	<span class="c1"># Compute Parsons &amp; Sclater [1977] depth-age curve</span>
@@ -268,16 +268,16 @@ gmt begin ex49
 	gmt plot ss.txt -W1p
 	gmt plot -Ss0.4c -Gblue modal.txt -Ey+p1p,blue
 	gmt plot -Ss0.1c -Gwhite modal.txt
-	gmt basemap -R0/100/0/6.5 -JX6i/-4i -Bxaf+u<span class="s2">&quot; Myr&quot;</span> -Byaf+u<span class="s2">&quot; km&quot;</span> -BWsNe
-	gmt legend -DjRT+w2.5i+o0.1i -F+p1p+gbeige+s <span class="s">&lt;&lt;- EOF</span>
-<span class="s">	S 0.2i - 0.35i - 4p,green 0.5i Parsons &amp; Sclater (1977)</span>
-<span class="s">	S 0.2i - 0.35i - 4p,white 0.5i Stein &amp; Stein (1992)</span>
-<span class="s">	S 0.2i s 0.15i blue - 0.5i Modal depth estimates</span>
+	gmt basemap -R0/100/0/6.5 -JX15c/-10c -Bxaf+u<span class="s2">&quot; Myr&quot;</span> -Byaf+u<span class="s2">&quot; km&quot;</span> -BWsNe
+	gmt legend -DjRT+w6.5c+o0.25c -F+p1p+gbeige+s <span class="s">&lt;&lt;- EOF</span>
+<span class="s">	S 0.5c - 0.9c - 4p,green 1c Parsons &amp; Sclater (1977)</span>
+<span class="s">	S 0.5c - 0.9c - 4p,white 1c Stein &amp; Stein (1992)</span>
+<span class="s">	S 0.5c s 0.4c blue - 1c Modal depth estimates</span>
 <span class="s">	EOF</span>
-	gmt legend -DjRT+w2.5i+o0.1i <span class="s">&lt;&lt;- EOF</span>
-<span class="s">	S 0.2i - 0.35i - 1p 0.3i</span>
-<span class="s">	S 0.2i - 0.35i - 1p 0.3i</span>
-<span class="s">	S 0.2i s 0.1c white - 0.3i</span>
+	gmt legend -DjRT+w6.5c+o0.25c <span class="s">&lt;&lt;- EOF</span>
+<span class="s">	S 0.5c - 0.9c - 1p 0.75c</span>
+<span class="s">	S 0.5c - 0.9c - 1p 0.75c</span>
+<span class="s">	S 0.5c s 0.1c white - 0.75c</span>
 <span class="s">	EOF</span>
 	rm -f age_pixel.nc age.bin depth.bin depth-age.bin density.nc modal.txt ps.txt ss.txt z.cpt t.cpt
 gmt end show
@@ -312,7 +312,7 @@ gmt end show
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

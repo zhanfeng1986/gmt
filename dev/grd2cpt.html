@@ -257,14 +257,14 @@ standard GMT offerings, visit <a class="reference external" href="http://soliton
 <a class="reference external" href="http://www.fabiocrameri.ch/colourmaps.php">Scientific Colour-Maps</a>.</p>
 <p>If the master CPT includes B, F, and N entries, these will be
 copied into the new master file. If not, the parameters
-<a class="reference internal" href="gmt.conf.html#color-background"><span class="std std-ref">COLOR_BACKGROUND</span></a>, <a class="reference internal" href="gmt.conf.html#color-foreground"><span class="std std-ref">COLOR_FOREGROUND</span></a>,
-and <a class="reference internal" href="gmt.conf.html#color-nan"><span class="std std-ref">COLOR_NAN</span></a> from
+<a class="reference internal" href="gmt.conf.html#term-color-background"><span class="xref std std-term">COLOR_BACKGROUND</span></a>, <a class="reference internal" href="gmt.conf.html#term-color-foreground"><span class="xref std std-term">COLOR_FOREGROUND</span></a>,
+and <a class="reference internal" href="gmt.conf.html#term-color-nan"><span class="xref std std-term">COLOR_NAN</span></a> from
 the <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> file or the command line will be used. This default
 behavior can be overruled using the options <strong>-D</strong>, <strong>-M</strong> or <strong>-N</strong>.</p>
 <p>The color model (RGB, HSV or CMYK) of the palette created by <a class="reference internal" href="makecpt.html"><span class="doc">makecpt</span></a>
 will be the same as specified in the header of the master CPT. When
-there is no <a class="reference internal" href="gmt.conf.html#color-model"><span class="std std-ref">COLOR_MODEL</span></a> entry in the master CPT, the
-<a class="reference internal" href="gmt.conf.html#color-model"><span class="std std-ref">COLOR_MODEL</span></a> specified in the <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> file or on the command
+there is no <a class="reference internal" href="gmt.conf.html#term-color-model"><span class="xref std std-term">COLOR_MODEL</span></a> entry in the master CPT, the
+<a class="reference internal" href="gmt.conf.html#term-color-model"><span class="xref std std-term">COLOR_MODEL</span></a> specified in the <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> file or on the command
 line will be used.</p>
 </div>
 <div class="section" id="required-arguments">
@@ -302,8 +302,8 @@ or an HTML hexadecimal color (e.g. #aabbcc).</dd>
 <dd>Select the back- and foreground colors to match the colors for
 lowest and highest <em>z</em>-values in the output CPT [Default uses
 the colors specified in the master file, or those defined by the
-parameters <a class="reference internal" href="gmt.conf.html#color-background"><span class="std std-ref">COLOR_BACKGROUND</span></a>, <a class="reference internal" href="gmt.conf.html#color-foreground"><span class="std std-ref">COLOR_FOREGROUND</span></a>, and
-<a class="reference internal" href="gmt.conf.html#color-nan"><span class="std std-ref">COLOR_NAN</span></a>]. Append <strong>i</strong> to match the colors for the lowest and
+parameters <a class="reference internal" href="gmt.conf.html#term-color-background"><span class="xref std std-term">COLOR_BACKGROUND</span></a>, <a class="reference internal" href="gmt.conf.html#term-color-foreground"><span class="xref std std-term">COLOR_FOREGROUND</span></a>, and
+<a class="reference internal" href="gmt.conf.html#term-color-nan"><span class="xref std std-term">COLOR_NAN</span></a>]. Append <strong>i</strong> to match the colors for the lowest and
 highest values in the input (instead of the output) CPT.</dd>
 </dl>
 <dl class="docutils" id="e">
@@ -336,8 +336,8 @@ animations via <a class="reference internal" href="movie.html"><span class="doc"
 <dt><strong>-I</strong>[<strong>c</strong>][<strong>z</strong>]</dt>
 <dd>Append <strong>c</strong> [Default] to reverse the sense of color progression in the master CPT. Also
 exchanges the foreground and background colors, including those
-specified by the parameters <a class="reference internal" href="gmt.conf.html#color-background"><span class="std std-ref">COLOR_BACKGROUND</span></a> and
-<a class="reference internal" href="gmt.conf.html#color-foreground"><span class="std std-ref">COLOR_FOREGROUND</span></a>.
+specified by the parameters <a class="reference internal" href="gmt.conf.html#term-color-background"><span class="xref std std-term">COLOR_BACKGROUND</span></a> and
+<a class="reference internal" href="gmt.conf.html#term-color-foreground"><span class="xref std std-term">COLOR_FOREGROUND</span></a>.
 Append <strong>z</strong> to reverse the sign of z-values in the color table.  Note that
 this change of <em>z</em>-direction happens before <strong>-G</strong> and <strong>-S</strong> values are used
 so the latter much be compatible with the changed <em>z</em>-range. See also <a class="reference internal" href="cookbook/features.html#manipulating-cpts"><span class="std std-ref">Manipulating CPTs</span></a></dd>
@@ -351,10 +351,10 @@ outside this range when estimating CDF(Z). [Default uses min and max of data.]</
 <dt><strong>-M</strong></dt>
 <dd>Overrule background, foreground, and NaN colors specified in the
 master CPT with the values of the parameters
-<a class="reference internal" href="gmt.conf.html#color-background"><span class="std std-ref">COLOR_BACKGROUND</span></a>, <a class="reference internal" href="gmt.conf.html#color-foreground"><span class="std std-ref">COLOR_FOREGROUND</span></a>,
-and <a class="reference internal" href="gmt.conf.html#color-nan"><span class="std std-ref">COLOR_NAN</span></a>
+<a class="reference internal" href="gmt.conf.html#term-color-background"><span class="xref std std-term">COLOR_BACKGROUND</span></a>, <a class="reference internal" href="gmt.conf.html#term-color-foreground"><span class="xref std std-term">COLOR_FOREGROUND</span></a>,
+and <a class="reference internal" href="gmt.conf.html#term-color-nan"><span class="xref std std-term">COLOR_NAN</span></a>
 specified in the <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> file or on the command line. When
-combined with <strong>-D</strong>, only <a class="reference internal" href="gmt.conf.html#color-nan"><span class="std std-ref">COLOR_NAN</span></a> is considered.</dd>
+combined with <strong>-D</strong>, only <a class="reference internal" href="gmt.conf.html#term-color-nan"><span class="xref std std-term">COLOR_NAN</span></a> is considered.</dd>
 </dl>
 <dl class="docutils" id="n">
 <dt><strong>-N</strong></dt>
@@ -549,7 +549,7 @@ CPTs.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>

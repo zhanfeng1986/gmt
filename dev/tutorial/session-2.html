@@ -92,9 +92,23 @@
             
             
               <p class="caption"><span class="caption-text">Getting started</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../gallery.html">Example Gallery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">GMT Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorial.html">GMT Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="session-1.html">Session One</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Session Two</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#general-information">General Information</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#more-exercises">More exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#plotting-text-strings">Plotting text strings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="session-3.html">Session Three</a></li>
+<li class="toctree-l2"><a class="reference internal" href="session-4.html">Session Four</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Reference documentation</span></p>
 <ul>
@@ -619,7 +633,7 @@ This color table was generated as part of the script (below).</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_9
 	gmt makecpt -Cred,green,blue -T0,100,300,10000
 	gmt coast -R130/150/35/50 -JM6i -B -Ggray
-	gmt plot @tut_quakes.ngdc -Wfaint -i4,3,5,6+s0.1 -h3 -Scc -C -Vl
+	gmt plot @tut_quakes.ngdc -Wfaint -i4,3,5,6+s0.1 -h3 -Scc -C
 gmt end show
 </pre></div>
 </div>
@@ -749,7 +763,7 @@ fonts. The escape sequences that are recognized by GMT are given below:</p>
 used anywhere in GMT, including in arguments to the <strong>-B</strong> option.
 A chart of octal codes can be found in Appendix F in the GMT
 Technical Reference.  For accented European characters you must
-set <a class="reference internal" href="../gmt.conf.html#ps-char-encoding"><span class="std std-ref">PS_CHAR_ENCODING</span></a> to ISOLatin1 in your <a class="reference internal" href="../gmt.conf.html"><span class="doc">gmt.conf</span></a> file.</p>
+set <a class="reference internal" href="../gmt.conf.html#term-ps-char-encoding"><span class="xref std std-term">PS_CHAR_ENCODING</span></a> to ISOLatin1 in your <a class="reference internal" href="../gmt.conf.html"><span class="doc">gmt.conf</span></a> file.</p>
 <p>We will demonstrate <a class="reference internal" href="../text.html"><span class="doc">text</span></a> with the following script:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_10
 	gmt text -R0/7/0/5 -Jx1i -B -F+f30p,Times-Roman,DarkOrange+jBL <span class="s">&lt;&lt; EOF</span>
@@ -853,7 +867,7 @@ Your plot should look like <a class="reference internal" href="#gmt-tut-10"><spa
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Jan 27, 2020.
+        Last updated on Feb 01, 2020.
       </span>
 
     </p>
