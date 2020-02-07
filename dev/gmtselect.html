@@ -215,15 +215,15 @@
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <p><strong>gmt select</strong> [ <em>table</em> ]
-[ <strong>-A</strong><em>min_area</em>[/<em>min_level</em>/<em>max_level</em>][<strong>+a</strong>[<strong>g</strong>|<strong>i</strong>][<strong>s</strong>|<strong>S</strong>]][<strong>+r</strong>|<strong>l</strong>][<strong>+p</strong><em>percent</em>] ]
-[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>pointfile</em><strong>+d</strong><em>dist</em>[<em>unit</em>] ]
+[ <strong>-A</strong><em>min_area</em>[/<em>min_level</em>/<em>max_level</em>][<strong>+a</strong>[<strong>g</strong>|<strong>i</strong>][<strong>s</strong>|<strong>S</strong>]][<strong>+l</strong>|<strong>r</strong>][<strong>+p</strong><em>percent</em>] ]
+[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>pointfile</em><strong>+d</strong><em>dist</em> ]
 [ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>resolution</em>[<strong>+f</strong>] ]
 [ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong>[<strong>fn</strong>] ]
 [ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong><em>polygonfile</em> ]
 [ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>gridmask</em> ]
 [ <a class="reference internal" href="#i"><span> <strong>-I</strong></span></a></strong>[<strong>cfglrsz</strong>] ]
 [ <a class="reference internal" href="#j"><span> <strong>-J</strong></span></a></strong><em>parameters</em> ]
-[ <a class="reference internal" href="#l"><span> <strong>-L</strong></span></a></strong><em>linefile</em><strong>+d</strong><em>dist</em>[<em>unit</em>][<strong>+p</strong>] ]
+[ <a class="reference internal" href="#l"><span> <strong>-L</strong></span></a></strong><em>linefile</em><strong>+d</strong><em>dist</em>[<strong>+p</strong>] ]
 [ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong><em>maskvalues</em> ]
 [ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em> ]
 [ <a class="reference internal" href="#z"><span> <strong>-Z</strong></span></a></strong><em>min</em>[/<em>max</em>][<strong>+a</strong>][<strong>+c</strong><em>col</em>][<strong>+i</strong>] ]
@@ -266,7 +266,7 @@ table file(s) holding a number of data columns. If no tables are given
 then we read from standard input.  </dd>
 </dl>
 <dl class="docutils" id="a">
-<dt><strong>-A</strong><em>min_area</em>[/<em>min_level</em>/<em>max_level</em>][<strong>+a</strong>[<strong>g</strong>|<strong>i</strong>][<strong>s</strong>|<strong>S</strong>]][<strong>+r</strong>|<strong>l</strong>][<strong>+p</strong><em>percent</em>]</dt>
+<dt><strong>-A</strong><em>min_area</em>[/<em>min_level</em>/<em>max_level</em>][<strong>+a</strong>[<strong>g</strong>|<strong>i</strong>][<strong>s</strong>|<strong>S</strong>]][<strong>+l</strong>|<strong>r</strong>][<strong>+p</strong><em>percent</em>]</dt>
 <dd>Features with an area smaller than <em>min_area</em> in km^2 or of
 hierarchical level that is lower than <em>min_level</em> or higher than
 <em>max_level</em> will not be plotted [Default is 0/0/4 (all features)].
@@ -284,7 +284,7 @@ can add <strong>S</strong> to instead skip all features <em>north</em> of 60S.  
 GSHHG INFORMATION below for more details. Ignored unless <strong>-N</strong> is set.</dd>
 </dl>
 <dl class="docutils" id="c">
-<dt><strong>-C</strong><em>pointfile</em><strong>+d</strong><em>dist</em>[<em>unit</em>]</dt>
+<dt><strong>-C</strong><em>pointfile</em><strong>+d</strong><em>dist</em></dt>
 <dd>Pass all records whose location is within <em>dist</em> of any of the
 points in the ASCII file <em>pointfile</em>. If <em>dist</em> is zero then the 3rd
 column of <em>pointfile</em> must have each point’s individual radius of
@@ -345,7 +345,7 @@ Nodes that are outside are either NaN or zero.</dd>
 <dd>Select map projection.  </dd>
 </dl>
 <dl class="docutils" id="l">
-<dt><strong>-L</strong><em>linefile</em><strong>+d</strong><em>dist</em>[<em>unit</em>][<strong>+p</strong>]</dt>
+<dt><strong>-L</strong><em>linefile</em><strong>+d</strong><em>dist</em>[<strong>+p</strong>]</dt>
 <dd>Pass all records whose location is within <em>dist</em> of any of the line
 segments in the ASCII multiple-segment file <em>linefile</em>. If <em>dist</em> is
 zero then we will scan each sub-header in the <em>linefile</em> for an
@@ -376,7 +376,7 @@ features. Specify if records should be skipped (s) or kept (k) using
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [w].  </dd>
+<dd>Select verbosity level [<strong>w</strong>].  </dd>
 </dl>
 <dl class="docutils" id="z">
 <dt><strong>-Z</strong><em>min</em>[/<em>max</em>][<strong>+a</strong>][<strong>+c</strong><em>col</em>][<strong>+i</strong>]</dt>
@@ -416,7 +416,7 @@ then it is automatically incremented for each new <strong>-Z</strong> option, st
 <dd>Specify data types of input and/or output columns.  </dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>]  <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>+n</strong>|<strong>p</strong>]  <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Determine data gaps and line breaks.  </dd>
 </dl>
 <dl class="docutils">
@@ -643,7 +643,7 @@ we employ a full spherical ray-shooting method to determine a points status.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 01, 2020.
+        Last updated on Feb 07, 2020.
       </span>
 
     </p>

@@ -214,13 +214,13 @@
 <p>Plot event symbols and labels for a moment in time</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<p><strong>gmt psevents</strong> [ <em>table</em> ] <a class="reference internal" href="#j"><span> <strong>-J</strong></span></a></strong><em>parameters</em> <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>symbol</em>[<em>size</em>[<em>unit</em>]]
+<p><strong>gmt psevents</strong> [ <em>table</em> ] <a class="reference internal" href="#j"><span> <strong>-J</strong></span></a></strong><em>parameters</em> <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>symbol</em>[<em>size</em>]
 <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>now</em>
 [ <a class="reference internal" href="#b"><span> <strong>-B</strong></span></a></strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> ]
 [ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>cpt</em> ]
 [ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong>[<strong>j</strong>|<strong>J</strong>]<em>dx</em>[/<em>dy</em>][<strong>+v</strong>[<em>pen</em>]] ]
 [ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong><strong>s</strong>|<strong>t</strong>[<strong>+o</strong>|<strong>O</strong><em>dt</em>][<strong>+r</strong><em>dt</em>][<strong>+p</strong><em>dt</em>][<strong>+d</strong><em>dt</em>][<strong>+f</strong><em>dt</em>][<strong>+l</strong><em>dt</em>] ]
-[ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong>[<strong>+a</strong><em>angle</em>][<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+r</strong>[<em>first</em>]|<strong>+z</strong>[<em>format</em>]] ]
+[ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong>[<strong>+a</strong><em>angle</em>][<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+r</strong>[<em>first</em>]|<strong>z</strong>[<em>format</em>]] ]
 [ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>color</em> ]
 [ <a class="reference internal" href="#k"><span> <strong>-K</strong></span></a></strong> ]
 [ <a class="reference internal" href="#l"><span> <strong>-L</strong></span></a></strong>[<em>length</em>|<strong>t</strong>] ]
@@ -230,8 +230,8 @@
 [ <a class="reference internal" href="#u"><span> <strong>-U</strong></span></a></strong>[<em>stamp</em>] ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
 [ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong><em>pen</em> ]
-[ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] ]
-[ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] ]
+[ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>] ]
+[ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>] ]
 [ <strong>-bi</strong><a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">binary</span></a> ]
 [ <strong>-di</strong><a class="reference internal" href="gmt.html#di-full"><span class="std std-ref">nodata</span></a> ]
 [ <strong>-e</strong><a class="reference internal" href="gmt.html#e-full"><span class="std std-ref">regexp</span></a> ]
@@ -267,7 +267,7 @@ thus plot symbols as events unfold.</p>
 </dl>
 <p>For perspective view <strong>-p</strong>, optionally append /<em>zmin</em>/<em>zmax</em>. <a class="reference internal" href="gmt.html#rz-full"><span class="std std-ref">(more …)</span></a>  </p>
 <dl class="docutils" id="s">
-<dt><strong>-S</strong><em>symbol</em>[<em>size</em>[<em>unit</em>]]</dt>
+<dt><strong>-S</strong><em>symbol</em>[<em>size</em>]</dt>
 <dd>Specify the symbol to use for the event.  Optionally, append symbol <em>size</em> with unit from
 (<strong>c</strong>|<strong>i</strong>|<strong>p</strong>).  If no <em>size</em> is given then we read an event-specific size
 from the data file’s third column (fourth if <strong>-C</strong> is used). Note: Not all the symbols that
@@ -321,7 +321,7 @@ If neither <strong>s</strong> or <strong>t</strong> is given then we set the tim
 restricted to <strong>-Et</strong> and specifies an alternative duration (visibility) of the text [same duration as symbol].</dd>
 </dl>
 <dl class="docutils" id="f">
-<dt><strong>-F</strong>[<strong>+a</strong><em>angle</em>][<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+r</strong>[<em>first</em>]|<strong>+z</strong>[<em>format</em>]]</dt>
+<dt><strong>-F</strong>[<strong>+a</strong><em>angle</em>][<strong>+f</strong><em>font</em>][<strong>+j</strong><em>justify</em>][<strong>+r</strong>[<em>first</em>]|<strong>z</strong>[<em>format</em>]]</dt>
 <dd>By default, event label text will be placed horizontally, using the primary
 annotation font attributes (<a class="reference internal" href="gmt.conf.html#term-font-annot-primary"><span class="xref std std-term">FONT_ANNOT_PRIMARY</span></a>), and centered
 on the data point. Use this option to override these defaults by specifying up to three
@@ -364,7 +364,7 @@ Files will be named <em>prefix</em>_symbols.txt and <em>prefix</em>_labels.txt.<
 </dl>
 <dl class="docutils" id="id1">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [w].  </dd>
+<dd>Select verbosity level [<strong>w</strong>].  </dd>
 </dl>
 <dl class="docutils" id="w">
 <dt><strong>-W</strong><em>pen</em></dt>
@@ -534,7 +534,7 @@ gmt psevents -Rg -JG200/5/6i -Baf q.txt -SE- -Cq.cpt --TIME_UNIT<span class="o">
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 01, 2020.
+        Last updated on Feb 07, 2020.
       </span>
 
     </p>

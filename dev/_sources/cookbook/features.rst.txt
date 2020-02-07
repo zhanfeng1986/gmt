@@ -17,6 +17,26 @@ indicate the units of your arguments by appending the unit character, as
 discussed below. This will aid you in debugging, let others understand your
 scripts, and remove any uncertainty as to what unit you thought you wanted.
 
+Dimension units
+~~~~~~~~~~~~~~~
+
+GMT programs accept plot dimensional quantities (widths, offsets, etc.) in
+**c**\ m, **i**\ nch, or **p**\ oint (1/72 of an inch) [8]_. There are
+two ways to ensure that GMT understands which unit you intend to use:
+
+#. Append the desired unit to the dimension you supply. This way is
+   explicit and clearly communicates what you intend, e.g.,
+   **-JM**\ 10\ **c** means the map width being passed to the **-JM** switch
+   is 10 cm, and modifier **+o**\ 24p means we are offsetting a feature
+   by 24 points from its initial location.
+
+#. Set the parameter :term:`PROJ_LENGTH_UNIT` to the desired unit. Then,
+   all dimensions without explicit units will be interpreted accordingly.
+
+The latter method is less robust as other users may have a different
+default unit set and then your script may not work as intended. For portability,
+we therefore recommend you always append the desired unit explicitly.
+
 Distance units
 ~~~~~~~~~~~~~~
 
@@ -35,7 +55,7 @@ Distance units
 | **m**   | Minute of arc     |         |                  |
 +---------+-------------------+---------+------------------+
 
-For Cartesian data and scaling the data units do not normally matter
+For Cartesian data the data units do not normally matter
 (they could be kg or Lumens for all we know) and are never entered.
 Geographic data are different, as distances can be specified in a variety
 of ways. GMT programs that accept actual Earth length scales like
@@ -123,25 +143,6 @@ setting :term:`PROJ_GEODESIC` which defaults to
 *Vincenty* but may also be set to *Rudoe* for old GMT4-style calculations
 or *Andoyer* for an approximate geodesic (within a few tens of meters)
 that is much faster to compute.
-
-Length units
-~~~~~~~~~~~~
-
-GMT programs can accept dimensional quantities and plot lengths in
-**c**\ m, **i**\ nch, or **p**\ oint (1/72 of an inch) [8]_. There are
-two ways to ensure that GMT understands which unit you intend to use:
-
-#. Append the desired unit to the dimension you supply. This way is
-   explicit and clearly communicates what you intend, e.g.,
-   **-X**\ 4\ **c** means the length being passed to the **-X** switch
-   is 4 cm.
-
-#. Set the parameter :term:`PROJ_LENGTH_UNIT` to the desired unit. Then,
-   all dimensions without explicit unit will be interpreted accordingly.
-
-The latter method is less secure as other users may have a different
-unit set and your script may not work as intended. We therefore
-recommend you always supply the desired unit explicitly.
 
 GMT defaults
 ------------
@@ -713,13 +714,13 @@ Given as modifiers to a pen specification, one or more modifiers may be appended
 specification. The line attribute modifiers are:
 
 
-* **+o**\ *offset*\ [**u**]
+* **+o**\ *offset*
     Lines are normally drawn from the beginning to the end point. You can modify this behavior
     by requesting a gap between these terminal points and the start and end of the
     visible line.  Do this by specifying the desired offset between the terminal point and the
     start of the visible line.  Unless you are giving distances in Cartesian data units,
     please append the distance unit, **u**.  Depending on your desired effect, you can append
-    plot distance units (i.e., **c**\ m, **i**\ nch, **p**\ oint; Section `Length units`_)) or map distance units,
+    plot distance units (i.e., **c**\ m, **i**\ nch, **p**\ oint; Section `Dimension units`_)) or map distance units,
     such as **k**\ m, **d**\ egrees, and many other standard distance units listed in
     Section `GMT units`_.  If only one offset is given then it applies equally to both ends of
     the line.  Give two slash-separated distances to indicate different offsets at the
@@ -1607,7 +1608,7 @@ addition to the the required *refpoint* and anchor arguments specifying where th
 are both required and optional modifiers.  These are given via these modules' **-L** option.
 Here is a list of the attributes that is under your control:
 
-#. Scale bar length.  Required modifier is given with **+w**\ *length*\ [*unit*], where
+#. Scale bar length.  Required modifier is given with **+w**\ *length*, where
    *unit* is one of the recognized distance units.  An example might be **+w**\ 250n for
    a bar representing 250 nautical miles at the map scale origin.
 
@@ -1881,7 +1882,7 @@ projections you may wish to specify the domain using the lower-left and upper-ri
 instead (similar to how the **-R** option works), by adding **+r**\ .  Some optional modifiers are available:
 
 #. Set inset size.  If you specified a reference point then you must also specify the inset dimensions with the
-   **+w**\ *width*\ [*unit*][/*height*\ [*unit*]], where *height* defaults to *width* if not given.
+   **+w**\ *width*\ [/*height*], where *height* defaults to *width* if not given.
    Append the unit of the dimensions, which may be distance units such as km, feet, etc., and
    the map projection will be used to determine inset dimensions on the map.  For instance,
    **+w**\ 300k/200k is a 300x200 km region (which depends on the projection) while **+w**\ 5c
@@ -2495,14 +2496,14 @@ Directory parameters
 --------------------
 
 GMT versions prior to GMT 5 relied solely on several environment variables
-($GMT_SHAREDIR, $GMT_DATADIR, $GMT_USERDIR, and $GMT_TMPDIR), pointing
+(**$GMT_SHAREDIR**, **$GMT_DATADIR**, **$GMT_USERDIR**, and **$GMT_TMPDIR**), pointing
 to folders with data files and program settings. Beginning with version
 5, some of these locations are now (also or exclusively) configurable
 with the :doc:`/gmtset` utility.
 When an environment variable has an equivalent parameter in the :doc:`/gmt.conf` file,
 then the parameter setting will take precedence over the environment variable.
 
-Variable $GMT_SHAREDIR
+Variable **$GMT_SHAREDIR**
     was sometimes required in previous GMT versions to locate the GMT
     share directory where all run-time support files such as coastlines,
     custom symbols, PostScript macros, color tables, and much more reside.
@@ -2510,7 +2511,7 @@ Variable $GMT_SHAREDIR
     guess of the location of its share folder. Setting this variable is
     usually not required and recommended only under special circumstances.
 
-Variable $GMT_DATADIR and parameter DIR_DATA
+Variable **$GMT_DATADIR** and parameter :term:`DIR_DATA`
     may point to one or more directories where large and/or widely used
     data files can be placed. All GMT programs look in these directories
     when a file is specified on the command line and it is not present in
@@ -2521,32 +2522,33 @@ Variable $GMT_DATADIR and parameter DIR_DATA
     name that ends in a trailing slash (/) will be searched recursively
     (not under Windows).
 
-Variable $GMT_USERDIR
+Variable **$GMT_USERDIR**
     may point to a directory where the user places custom configuration
     files (e.g., an alternate ``coastline.conf`` file, preferred default
     settings in ``gmt.conf``, custom symbols and color palettes, math
     macros for :doc:`/gmtmath` and :doc:`/grdmath`, and shorthands for
-    gridfile extensions via ``gmt.io``). When $GMT_USERDIR is not defined,
-    then the default value $HOME/.gmt will be assumed. Users may also place their own
+    gridfile extensions via ``gmt.io``). When **$GMT_USERDIR** is not defined,
+    then the default value **$HOME**/.gmt will be assumed. Users may also place their own
     data files in this directory as GMT programs will search for files
-    given on the command line in both DIR_DATA and $GMT_USERDIR.
+    given on the command line in both :term:`DIR_DATA` and **$GMT_USERDIR**.
 
-Variable $GMT_CACHEDIR
+Variable **$GMT_CACHEDIR**
     may point to a directory where the user places cached data files
-    downloaded from the GMT data server. When $GMT_CACHEDIR is not defined,
-    then the default value $HOME/.gmt/cache will be assumed. The cache
+    downloaded from the GMT data server. When **$GMT_CACHEDIR** is not defined,
+    then the default value **$HOME**/.gmt/cache will be assumed. The cache
     directory can be emptied by running gmt **gmt clear cache**.
 
-Variable $GMT_TMPDIR
+Variable **$GMT_TMPDIR**
     may indicate the location, where GMT will write its state parameters
-    via the two files ``gmt.history`` and ``gmt.conf``. If $GMT_TMPDIR is not
-    set, these files are written to the current directory.
+    via the two files ``gmt.history`` and ``gmt.conf``. If **$GMT_TMPDIR** is not
+    set, these files are written to GMT session directory [for modern mode] or
+    the current directory [for classic mode].
 
-Parameter DIR_DCW
+Parameter :term:`DIR_DCW`
     specifies where to look for the optional Digital Charts of the World
     database (for country coloring or selections).
 
-Parameter DIR_GSHHG
+Parameter :term:`DIR_GSHHG`
     specifies where to look for the required
     Global Self-consistent Hierarchical High-resolution Geography database.
 

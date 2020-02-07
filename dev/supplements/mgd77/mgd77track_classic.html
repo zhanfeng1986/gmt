@@ -228,14 +228,14 @@
 [ <a class="reference internal" href="#l"><span> <strong>-L</strong></span></a></strong><em>trackticks</em> ]
 [ <strong>-o</strong><a class="reference internal" href="../../gmt.html#ocols-full"><span class="std std-ref">flags</span></a> ]
 [ <strong>-p</strong><a class="reference internal" href="../../gmt.html#perspective-full"><span class="std std-ref">flags</span></a> ]
-[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><strong>a</strong><em>startdist</em>[<strong>u</strong>] ]
-[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><strong>b</strong><em>stopdist</em>[<strong>u</strong>] ]
+[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><strong>a</strong><em>startdist</em> ]
+[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><strong>b</strong><em>stopdist</em> ]
 [ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><strong>T</strong>|<strong>t</strong>|<strong>d</strong><em>ms</em>,<em>mc</em>,<em>mfs</em>,<em>mf</em>,<em>mfc</em> ]
 [ <a class="reference internal" href="#u"><span> <strong>-U</strong></span></a></strong>[<em>stamp</em>] ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
 [ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong>[<em>pen</em>] ]
-[ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] ]
-[ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] ]
+[ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>] ]
+[ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>] ]
 [ <strong>-p</strong><a class="reference internal" href="../../gmt.html#perspective-full"><span class="std std-ref">flags</span></a> ]
 [ <strong>-t</strong><a class="reference internal" href="../../gmt.html#t-full"><span class="std std-ref">transp</span></a> ]
 [ <strong>--PAR</strong>=<em>value</em> ]</p>
@@ -367,11 +367,11 @@ one format. [Default ignores none].</dd>
 the modifiers <strong>d</strong> (days) and <strong>n</strong> (nautical miles).</dd>
 </dl>
 <dl class="docutils" id="s">
-<dt><strong>-Sa</strong><em>startdist</em>[<strong>u</strong>]</dt>
+<dt><strong>-Sa</strong><em>startdist</em></dt>
 <dd>Do not plot data that are less than <em>startdist</em> meter along track
 from port of departure. Append <strong>k</strong> for km, <strong>m</strong> for miles, or
 <strong>n</strong> for nautical miles [Default is 0 meters].</dd>
-<dt><strong>-Sb</strong><em>stopdist</em>[<strong>u</strong>]</dt>
+<dt><strong>-Sb</strong><em>stopdist</em></dt>
 <dd>Do not plot data that are more than <em>stopdist</em> meter along track
 from port of departure. Append <strong>k</strong> for km, <strong>m</strong> for miles, or
 <strong>n</strong> for nautical miles [Default is end of track].</dd>
@@ -394,14 +394,14 @@ can specify the 5 comma-separated attributes <em>markersize</em>,
 <dd>Append <em>pen</em> used for the trackline. [Defaults:
 width = default, color = black, style = solid].</dd>
 </dl>
-<p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</p>
+<p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>]</p>
 <dl class="docutils">
-<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="../../gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>] <a class="reference internal" href="../../gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Shift plot origin.</dd>
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [w].  </dd>
+<dd>Select verbosity level [<strong>w</strong>].  </dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-p</strong>[<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>azim</em>[/<em>elev</em>[/<em>zlevel</em>]][<strong>+w</strong><em>lon0</em>/<em>lat0</em>[/<em>z0</em>]][<strong>+v</strong><em>x0</em>/<em>y0</em>] <a class="reference internal" href="../../gmt.html#perspective-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -491,7 +491,7 @@ plot to the default printer, enter the following command:</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 01, 2020.
+        Last updated on Feb 07, 2020.
       </span>
 
     </p>

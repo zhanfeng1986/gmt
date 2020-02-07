@@ -215,7 +215,7 @@
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <p><strong>gmt psternary</strong> [ <em>table</em> ]
-[ <strong>-JX</strong><em>width</em>[unit] ]
+[ <strong>-JX</strong><em>width</em> ]
 [ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>amin/amax/bmin/bmax/cmin/cmax</em> ]
 [ <a class="reference internal" href="#b"><span> <strong>-B</strong></span></a></strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> ]
 [ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>cpt</em> ]
@@ -225,12 +225,12 @@
 [ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong> ]
 [ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong> ]
 [ <a class="reference internal" href="#o"><span> <strong>-O</strong></span></a></strong> ] [ <a class="reference internal" href="#p"><span> <strong>-P</strong></span></a></strong> ]
-[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong>[<em>symbol</em>][<em>size</em>[<strong>u</strong>] ]
+[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong>[<em>symbol</em>][<em>size</em>] ]
 [ <a class="reference internal" href="#u"><span> <strong>-U</strong></span></a></strong>[<em>stamp</em>] ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
 [ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong>[<em>pen</em>][<em>attr</em>] ]
-[ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] ]
-[ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] ]
+[ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>] ]
+[ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>] ]
 [ <strong>-bi</strong><a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">binary</span></a> ]
 [ <strong>-di</strong><a class="reference internal" href="gmt.html#di-full"><span class="std std-ref">nodata</span></a> ]
 [ <strong>-e</strong><a class="reference internal" href="gmt.html#e-full"><span class="std std-ref">regexp</span></a> ]
@@ -293,7 +293,7 @@ Note that we will search for <strong>-G</strong> and <strong>-W</strong> strings
 segment headers and let any values thus found over-ride the command line settings.</dd>
 </dl>
 <dl class="docutils" id="j">
-<dt><strong>-JX</strong><em>width</em>[<em>unit</em>]</dt>
+<dt><strong>-JX</strong><em>width</em></dt>
 <dd>The only valid projection is linear plot with specified ternary width.</dd>
 </dl>
 <dl class="docutils" id="l">
@@ -318,7 +318,7 @@ whose coordinates are strictly inside the map border only].</dd>
 <dd>Give the min and max limits for each of the three axis <strong>a</strong>, <strong>b</strong>, and <strong>c</strong>.</dd>
 </dl>
 <dl class="docutils" id="s">
-<dt><strong>-S</strong>[<em>symbol</em>][<em>size</em>[<strong>u</strong>]]</dt>
+<dt><strong>-S</strong>[<em>symbol</em>][<em>size</em>]</dt>
 <dd><p class="first">Plot individual symbols.
 If present, <em>size</em> is symbol size in the unit set in
 <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> (unless <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> is appended). If the symbol
@@ -437,15 +437,15 @@ These spider-web lines are drawn using the current pen unless <strong>+p</strong
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [w].  </dd>
+<dd>Select verbosity level [<strong>w</strong>].  </dd>
 </dl>
 <dl class="docutils" id="w">
 <dt><strong>-W</strong>[<em>pen</em>][<em>attr</em>] <a class="reference internal" href="cookbook/features.html#wpen-attrib"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Set pen attributes for the outline of symbols.</dd>
 </dl>
-<p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</p>
+<p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>]</p>
 <dl class="docutils">
-<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>] <a class="reference internal" href="gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Shift plot origin.</dd>
 </dl>
 <dl class="docutils">
@@ -465,7 +465,7 @@ These spider-web lines are drawn using the current pen unless <strong>+p</strong
 <dd>Specify data types of input and/or output columns.  </dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>]  <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>+n</strong>|<strong>p</strong>]  <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Determine data gaps and line breaks. The <strong>-g</strong> option is ignored if <strong>-S</strong> is set.</dd>
 </dl>
 <dl class="docutils">
@@ -571,7 +571,7 @@ gmt psternary @ternary.txt -R0/100/0/100/0/100 -JX6i -P -Sc0.1c -Ct.cpt -LWater/
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 01, 2020.
+        Last updated on Feb 07, 2020.
       </span>
 
     </p>

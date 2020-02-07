@@ -234,11 +234,10 @@ lines, symbols, and text on maps.  We will build on the skills
 we acquired while familiarizing ourselves with the various
 GMT map projections as well as how to select a data domain
 and boundary annotations.</p>
-<blockquote>
-<div><table border="1" class="docutils">
+<table border="1" class="docutils">
 <colgroup>
-<col width="16%" />
-<col width="84%" />
+<col width="26%" />
+<col width="74%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Program</th>
@@ -246,8 +245,8 @@ and boundary annotations.</p>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>&#160;</td>
-<td><strong>BASEMAPS</strong></td>
+<tr class="row-even"><td><strong>BASEMAPS</strong></td>
+<td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>basemap</td>
 <td>Create an empty basemap frame with optional scale</td>
@@ -258,8 +257,8 @@ and boundary annotations.</p>
 <tr class="row-odd"><td>legend</td>
 <td>Create legend overlay</td>
 </tr>
-<tr class="row-even"><td>&#160;</td>
-<td><strong>POINTS AND LINES</strong></td>
+<tr class="row-even"><td><strong>POINTS AND LINES</strong></td>
+<td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>wiggle</td>
 <td>Draw spatial time-series along their (<em>x,y</em>)-tracks</td>
@@ -270,8 +269,8 @@ and boundary annotations.</p>
 <tr class="row-odd"><td>plot3d</td>
 <td>Plot symbols, polygons, and lines in 3-D</td>
 </tr>
-<tr class="row-even"><td>&#160;</td>
-<td><strong>HISTOGRAMS</strong></td>
+<tr class="row-even"><td><strong>HISTOGRAMS</strong></td>
+<td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>histogram</td>
 <td>Plot a rectangular histogram</td>
@@ -279,8 +278,8 @@ and boundary annotations.</p>
 <tr class="row-even"><td>rose</td>
 <td>Plot a polar histogram(sector/rose diagram)</td>
 </tr>
-<tr class="row-odd"><td>&#160;</td>
-<td><strong>CONTOURS</strong></td>
+<tr class="row-odd"><td><strong>CONTOURS</strong></td>
+<td>&#160;</td>
 </tr>
 <tr class="row-even"><td>grdcontour</td>
 <td>Contouring of grids</td>
@@ -288,8 +287,8 @@ and boundary annotations.</p>
 <tr class="row-odd"><td>contour</td>
 <td>Direct contouring/imaging of (<em>x,y,z</em>) data by optimal triangulation</td>
 </tr>
-<tr class="row-even"><td>&#160;</td>
-<td><strong>SURFACES</strong></td>
+<tr class="row-even"><td><strong>SURFACES</strong></td>
+<td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>grdimage</td>
 <td>Project and plot grids or images</td>
@@ -300,8 +299,8 @@ and boundary annotations.</p>
 <tr class="row-odd"><td>grdview</td>
 <td>3-D perspective imaging of grids</td>
 </tr>
-<tr class="row-even"><td>&#160;</td>
-<td><strong>UTILITIES</strong></td>
+<tr class="row-even"><td><strong>UTILITIES</strong></td>
+<td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>clip</td>
 <td>Use polygon files to initiate custom clipping paths</td>
@@ -320,18 +319,16 @@ and boundary annotations.</p>
 </tr>
 </tbody>
 </table>
-</div></blockquote>
 <p>Plotting lines and symbols, <a class="reference internal" href="../plot.html"><span class="doc">plot</span></a> is one of the most frequently
 used modules in GMT.  In addition to the common command line switches
 it has numerous specific options, and expects different file formats
 depending on what action has been selected.  These circumstances make
 <a class="reference internal" href="../plot.html"><span class="doc">plot</span></a> harder to master than most GMT tools.  The table below
 shows a abbreviated list of the options:</p>
-<blockquote>
-<div><table border="1" class="docutils">
+<table border="1" class="docutils">
 <colgroup>
-<col width="53%" />
-<col width="47%" />
+<col width="51%" />
+<col width="49%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Option</th>
@@ -365,7 +362,6 @@ shows a abbreviated list of the options:</p>
 </tr>
 </tbody>
 </table>
-</div></blockquote>
 <p>The symbols can either be transparent (using <strong>-W</strong> only, not <strong>-G</strong>)
 or solid (<strong>-G</strong>, with optional outline using <strong>-W</strong>).  The <strong>-S</strong>
 option takes the code for the desired symbol and optional size information.
@@ -390,8 +386,8 @@ us are shown in the table below:</p>
 <tr class="row-odd"><td><strong>-Sa</strong><em>size</em></td>
 <td>st<strong>a</strong>r; <em>size</em> is radius of circumscribing circle</td>
 </tr>
-<tr class="row-even"><td><strong>-Sb</strong><em>size</em>[/<em>base</em>][<strong>u</strong>]</td>
-<td><strong>b</strong>ar; <em>size</em> is bar width, append <strong>u</strong> if <em>size</em> is in <em>x</em>-units</td>
+<tr class="row-even"><td><strong>-Sb</strong><em>size</em>[/<em>base</em>][<em>unit</em>]</td>
+<td><strong>b</strong>ar; <em>size</em> is bar width, set <em>unit</em> be <strong>u</strong> if <em>size</em> is in <em>x</em>-units</td>
 </tr>
 <tr class="row-odd"><td>&#160;</td>
 <td>Bar extends from <em>base</em> [0] to the <em>y</em>-value</td>
@@ -656,8 +652,7 @@ sizes are interpreted to be in cm.  Your plot should look like <a class="referen
 <p>In many situations we need to annotate plots or maps with text strings;
 in GMT this is done using <a class="reference internal" href="../text.html"><span class="doc">text</span></a>.  Apart from the common
 switches, there are 9 options that are particularly useful.</p>
-<blockquote>
-<div><table border="1" class="docutils">
+<table border="1" class="docutils">
 <colgroup>
 <col width="27%" />
 <col width="73%" />
@@ -697,7 +692,6 @@ switches, there are 9 options that are particularly useful.</p>
 </tr>
 </tbody>
 </table>
-</div></blockquote>
 <p>The input data to <a class="reference internal" href="../text.html"><span class="doc">text</span></a> is expected to contain the following
 information:</p>
 <blockquote>
@@ -714,11 +708,10 @@ the relevant two-character codes used for justification.</p>
 <p>The text string can be one or several words and may include octal codes for
 special characters and escape-sequences used to select subscripts or symbol
 fonts. The escape sequences that are recognized by GMT are given below:</p>
-<blockquote>
-<div><table border="1" class="docutils">
+<table border="1" class="docutils">
 <colgroup>
-<col width="21%" />
-<col width="79%" />
+<col width="23%" />
+<col width="78%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Code</th>
@@ -758,7 +751,6 @@ fonts. The escape sequences that are recognized by GMT are given below:</p>
 </tr>
 </tbody>
 </table>
-</div></blockquote>
 <p>Note that these escape sequences (as well as octal codes) can be
 used anywhere in GMT, including in arguments to the <strong>-B</strong> option.
 A chart of octal codes can be found in Appendix F in the GMT
@@ -786,10 +778,10 @@ Your plot should look like <a class="reference internal" href="#gmt-tut-10"><spa
 </div>
 <table border="1" class="docutils">
 <colgroup>
-<col width="21%" />
-<col width="29%" />
-<col width="21%" />
-<col width="29%" />
+<col width="22%" />
+<col width="35%" />
+<col width="17%" />
+<col width="26%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Code</th>
@@ -839,7 +831,7 @@ Your plot should look like <a class="reference internal" href="#gmt-tut-10"><spa
 <p>Exercises:</p>
 <ol class="arabic simple">
 <li>At <em>y = 5</em>, add the sentence <span class="math notranslate nohighlight">\(z^2 = x^2 + y^2\)</span>.</li>
-<li>At <em>y = 6</em>, add the sentence “It is 32º today”.</li>
+<li>At <em>y = 6</em>, add the sentence “It is 32° today”.</li>
 </ol>
 </div>
 </div>
@@ -867,7 +859,7 @@ Your plot should look like <a class="reference internal" href="#gmt-tut-10"><spa
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 01, 2020.
+        Last updated on Feb 07, 2020.
       </span>
 
     </p>

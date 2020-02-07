@@ -221,12 +221,12 @@
 [ <a class="reference internal" href="#i"><span> <strong>-I</strong></span></a></strong>[<strong>x</strong>]<em>dx</em>[/<em>dy</em>] ]
 [ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong> ] [ <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong><em>parameters</em> ]
 [ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em> ]
-[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong>[<strong>i</strong>|<strong>l</strong>]<em>scale</em>[<em>unit</em>] ]
+[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong>[<strong>i</strong>|<strong>l</strong>]<em>scale</em> ]
 [ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong> ]
 [ <a class="reference internal" href="#u"><span> <strong>-U</strong></span></a></strong>[<em>stamp</em>] ]
 [ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong><em>pen</em> ]
-[ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] ]
-[ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] ]
+[ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>] ]
+[ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>] ]
 [ <a class="reference internal" href="#z"><span> <strong>-Z</strong></span></a></strong> ]
 [ <strong>-f</strong><a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">flags</span></a> ]
 [ <strong>-p</strong><a class="reference internal" href="gmt.html#perspective-full"><span class="std std-ref">flags</span></a> ]
@@ -309,12 +309,12 @@ specifying additional attributes.</dd>
 <dd>Specify the region of interest. Specify a subset of the grid.</dd>
 </dl>
 <dl class="docutils" id="s">
-<dt><strong>-S</strong>[<strong>i</strong>|<strong>l</strong>]<em>scale</em>[<em>unit</em>]</dt>
+<dt><strong>-S</strong>[<strong>i</strong>|<strong>l</strong>]<em>scale</em></dt>
 <dd>Sets scale for vector plot length in data units per plot distance measurement
 unit [1]. Append <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> to indicate the measurement
 unit (cm, inch, or point); if no unit is given we use the default value that
 is controlled by <a class="reference internal" href="gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>. Alternatively,
-use <strong>-Sl</strong><em>length</em>[<em>unit</em>] to set a fixed plot length for all vectors.  Vectors given
+use <strong>-Sl</strong><em>length</em> to set a fixed plot length for all vectors.  Vectors given
 via plot unit scaling will plot as straight vectors and their lengths are not
 affected by map projection and coordinate locations.
 For geographic data you may alternatively give <em>scale</em> in data units per
@@ -338,16 +338,16 @@ one of both directions (e.g., positive down).</dd>
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [w].  </dd>
+<dd>Select verbosity level [<strong>w</strong>].  </dd>
 </dl>
 <dl class="docutils" id="w">
 <dt><strong>-W</strong><em>pen</em></dt>
 <dd>Set pen attributes used for vector outlines [Default: width =
 default, color = black, style = solid].</dd>
 </dl>
-<p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</p>
+<p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>]</p>
 <dl class="docutils">
-<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>] <a class="reference internal" href="gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Shift plot origin.</dd>
 </dl>
 <dl class="docutils" id="z">
@@ -445,7 +445,7 @@ head outline is drawn]</p>
 opening angles of the arc segment relative to the given point. See <strong>+o</strong> to specify
 a specific pole for the arc [north pole].</p>
 <p><strong>+r</strong> draws half-arrows, using only the right side of specified heads [both sides].</p>
-<p><strong>+t</strong>[<strong>b</strong>|<strong>e</strong>]<em>trim</em>[<em>unit</em>] will shift the beginning or end point (or both)
+<p><strong>+t</strong>[<strong>b</strong>|<strong>e</strong>]<em>trim</em> will shift the beginning or end point (or both)
 along the vector segment by the given <em>trim</em>; append suitable unit (<strong>c</strong>, <strong>i</strong>, or <strong>p</strong>). If the modifiers
 <strong>b</strong>|<strong>e</strong> are not used then <em>trim</em> may be two values separated by a slash,
 which is used to specify different trims for the beginning and end.  Positive trims
@@ -460,7 +460,7 @@ coordinates of the vector end point.</p>
 </div></blockquote>
 <p>Finally, Cartesian vectors may take these modifiers:</p>
 <blockquote>
-<div><strong>+z</strong><em>scale</em>[<em>unit</em>] expects input <em>dx</em>,<em>dy</em> vector components and
+<div><strong>+z</strong><em>scale</em> expects input <em>dx</em>,<em>dy</em> vector components and
 uses the <em>scale</em> to convert to polar coordinates with length in given unit.</div></blockquote>
 <p>Note: Vectors were completely redesigned for GMT5 which separated the vector head (a polygon)
 from the vector stem (a line).  In GMT4, the entire vector was a polygon and it could only
@@ -539,7 +539,7 @@ larger grid increment and use these grids instead of the originals.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 01, 2020.
+        Last updated on Feb 07, 2020.
       </span>
 
     </p>

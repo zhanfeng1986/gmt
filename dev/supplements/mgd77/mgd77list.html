@@ -226,8 +226,8 @@
 [ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong><strong>d</strong>|<strong>s</strong><em>unit</em> ]
 [ <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong><strong>a</strong>|<strong>c</strong>|<strong>v</strong><em>min</em>/<em>max</em> ]
 [ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em> ]
-[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><strong>a</strong><em>startdist</em>[unit] ]
-[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><strong>b</strong><em>stopdist</em>[unit] ]
+[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><strong>a</strong><em>startdist</em> ]
+[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><strong>b</strong><em>stopdist</em> ]
 [ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong>[<strong>m</strong>|<strong>e</strong>] ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
 [ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong><em>weight</em> ]
@@ -533,7 +533,7 @@ leading sensor (1 or 2; it may also be undefined). Select from</p>
 <p><strong>-Am4</strong> returns the difference between <strong>mgfx</strong> and <strong>igrf</strong>, where
 <strong>x</strong> is the sensor (<strong>2</strong> or <strong>1</strong>) <em>not</em> indicated by the
 <strong>msens</strong> data field (defaults to <strong>2</strong> if unspecified).</p>
-<p class="last"><strong>-Amc</strong><em>offset</em>[<em>unit</em>] applies a correction to compensate
+<p class="last"><strong>-Amc</strong><em>offset</em> applies a correction to compensate
 for the fact that the magnetic field was not acquired at the same
 position as the ship’s position [i.e., the navigation]. This is
 accomplished by re-interpolating the total magnetic field to what it
@@ -585,8 +585,6 @@ repeated to ignore more than one format. [Default ignores none].</dd>
 available. Append the correction table to use [Default uses the
 correction table mgd77_corrections.txt in the <strong>$MGD77_HOME</strong>
 directory]. For the format of this file, see CORRECTIONS below.</dd>
-<dt><strong>-n</strong></dt>
-<dd>Issue a segment header record with cruise ID for each cruise.</dd>
 </dl>
 <dl class="docutils" id="n">
 <dt><strong>-Nd</strong>|<strong>s</strong><em>unit</em></dt>
@@ -650,12 +648,12 @@ done only when using the <strong>-Jz</strong> option, not when using only the
 plotted, with no third dimension.  </dd>
 </dl>
 <dl class="docutils" id="s">
-<dt><strong>-Sa</strong><em>startdist</em>[unit]</dt>
+<dt><strong>-Sa</strong><em>startdist</em></dt>
 <dd>Do not list data that are less than <em>startdist</em> meter along track
 from port of departure. Append <strong>e</strong> for meter, <strong>f</strong> for feet,
 <strong>k</strong> for km, <strong>m</strong> for miles, <strong>n</strong> for nautical miles, or <strong>u</strong>
 for survey feet [Default is 0e (meters)].</dd>
-<dt><strong>-Sb</strong><em>stopdist</em>[unit]</dt>
+<dt><strong>-Sb</strong><em>stopdist</em></dt>
 <dd>Do not list data that are <em>stopdist</em> or more meters along track from
 port of departure. Append <strong>e</strong> for meter, <strong>f</strong> for feet, <strong>k</strong> for
 km, <strong>m</strong> for miles, <strong>n</strong> for nautical miles, or <strong>u</strong> for survey
@@ -676,7 +674,7 @@ the : (colon) modifier to OPT(F).</dd>
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [w].  </dd>
+<dd>Select verbosity level [<strong>w</strong>].  </dd>
 </dl>
 <dl class="docutils" id="w">
 <dt><strong>-W</strong><em>weight</em></dt>
@@ -876,7 +874,7 @@ corrected by a strange dependency on ship heading and latitude, and
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 01, 2020.
+        Last updated on Feb 07, 2020.
       </span>
 
     </p>

@@ -289,14 +289,15 @@ output is produced.  Specify <strong>-Cn</strong><em>value</em> to retain only t
 Note: 1/4 of the total number of data constraints is a good starting point
 for further experiments.</dd>
 </dl>
-<p id="e"><strong>-E</strong>[<em>misfitfile</em>]</p>
-<blockquote>
-<div>Evaluate the spline exactly at the input data locations and report
+<dl class="docutils" id="e">
+<dt><strong>-E</strong>[<em>misfitfile</em>]</dt>
+<dd>Evaluate the spline exactly at the input data locations and report
 statistics of the misfit (mean, standard deviation, and rms) for <em>u</em> and
 <em>v</em> separately and combined.  Optionally, append a filename and we will
 write the data table, augmented by two extra columns after each of the
 <em>u</em> and <em>v</em> columns holding the spline estimates and misfits.  If <strong>-W</strong>
-is given we also add two more columns with the chi^2 values.</div></blockquote>
+is given we also add two more columns with the chi^2 values.</dd>
+</dl>
 <dl class="docutils" id="f">
 <dt><strong>-F</strong>[<strong>d</strong>|<strong>f</strong>]<em>fudge</em></dt>
 <dd>The Green’s functions are proportional to terms like 1/r^2 and log(r)
@@ -307,7 +308,7 @@ and must be specified in the user units.  Alternatively, use
 of the shortest inter-point distance and <em>factor</em> [0.01].</dd>
 </dl>
 <dl class="docutils" id="i">
-<dt><strong>-I</strong><em>xinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>]]</dt>
+<dt><strong>-I</strong><em>xinc</em>[<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<strong>+e</strong>|<strong>n</strong>]]</dt>
 <dd><em>x_inc</em> [and optionally <em>y_inc</em>] is the grid spacing. Optionally,
 append a suffix modifier. <strong>Geographical (degrees) coordinates</strong>: Append
 <strong>m</strong> to indicate arc minutes or <strong>s</strong> to indicate arc seconds. If one
@@ -371,7 +372,7 @@ a weighted least squares fit.  Note that <strong>-W</strong> only has an effect 
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [w].  </dd>
+<dd>Select verbosity level [<strong>w</strong>].  </dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-d</strong>[<strong>i</strong>|<strong>o</strong>]<em>nodata</em> <a class="reference internal" href="../../gmt.html#d-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -478,7 +479,7 @@ doi:10.1007/978-3-319-21578-5_2.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 01, 2020.
+        Last updated on Feb 07, 2020.
       </span>
 
     </p>

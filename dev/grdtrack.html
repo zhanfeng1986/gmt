@@ -216,11 +216,11 @@
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <p><strong>gmt grdtrack</strong> [ <em>xyfile</em> ] <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>grd1</em> <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>grd2</em> …
 [ <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong><strong>f</strong>|<strong>p</strong>|<strong>m</strong>|<strong>r</strong>|<strong>R</strong>[<strong>+l</strong>] ]
-[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>length</em>[<strong>u</strong>]/<em>ds</em>[<em>/spacing</em>][<strong>+a</strong>][<strong>l</strong>|<strong>r</strong>][<strong>+v</strong>] ] [<a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>dfile</em> ]
+[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>length</em>/<em>ds</em>[<em>/spacing</em>][<strong>+a</strong>][<strong>l</strong>|<strong>r</strong>][<strong>+v</strong>] ] [<a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>dfile</em> ]
 [ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong><em>line</em> ]
 [ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong> ]
 [ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em> ]
-[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>method</em>/<em>modifiers</em> ] [ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong>[<em>radius</em>[<strong>u</strong>]][<strong>+e</strong>|<strong>p</strong>]]
+[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>method</em>/<em>modifiers</em> ] [ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong>[<em>radius</em>][<strong>+e</strong>|<strong>p</strong>]]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ] [ <a class="reference internal" href="#z"><span> <strong>-Z</strong></span></a></strong> ]
 [ <strong>-b</strong><a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">binary</span></a> ]
 [ <strong>-d</strong><a class="reference internal" href="gmt.html#d-full"><span class="std std-ref">nodata</span></a> ]
@@ -296,7 +296,7 @@ given spacing to fit the track length exactly. Finally, append
 (loxodromes) instead of great circles. Ignored unless <strong>-C</strong> is used.</dd>
 </dl>
 <dl class="docutils" id="c">
-<dt><strong>-C</strong><em>length</em>[<strong>u</strong>]/<em>ds</em>[<em>/spacing</em>][<strong>+a</strong>][<strong>l</strong>|<strong>r</strong>][<strong>+v</strong>]</dt>
+<dt><strong>-C</strong><em>length</em>/<em>ds</em>[<em>/spacing</em>][<strong>+a</strong>][<strong>l</strong>|<strong>r</strong>][<strong>+v</strong>]</dt>
 <dd>Use input line segments to create an equidistant and (optionally)
 equally-spaced set of crossing profiles along which we sample the
 grid(s) [Default simply samples the grid(s) at the input locations].
@@ -325,7 +325,7 @@ The columns will be <em>lon</em>, <em>lat</em>, <em>dist</em>, <em>azimuth</em>,
 (sampled value for each grid)</dd>
 </dl>
 <dl class="docutils" id="e">
-<dt><strong>-E</strong><em>line</em>[,<em>line</em>,…][<strong>+a</strong><em>az</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+i</strong><em>inc</em>[<strong>u</strong>]][<strong>+l</strong><em>length</em>[<strong>u</strong>]][<strong>+n</strong><em>np</em>][<strong>+o</strong><em>az</em>][<strong>+r</strong><em>radius</em>[<strong>u</strong>]</dt>
+<dt><strong>-E</strong><em>line</em>[,<em>line</em>,…][<strong>+a</strong><em>az</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+i</strong><em>inc</em>][<strong>+l</strong><em>length</em>][<strong>+n</strong><em>np</em>][<strong>+o</strong><em>az</em>][<strong>+r</strong><em>radius</em></dt>
 <dd>Instead of reading input track coordinates, specify profiles via
 coordinates and modifiers. The format of each <em>line</em> is
 <em>start</em>/<em>stop</em>, where <em>start</em> or <em>stop</em> are either <em>lon</em>/<em>lat</em> (<em>x</em>/<em>y</em> for
@@ -336,7 +336,7 @@ which will connect segments with shared joints into a single segment.
 In addition to line coordinates, you can use Z-, Z+ to mean the global
 minimum and maximum locations in the grid (only available if a
 single grid is given via <strong>-G</strong>). You may append
-<strong>+i</strong><em>inc</em>[<strong>u</strong>] to set the sampling interval; if not given then
+<strong>+i</strong><em>inc</em> to set the sampling interval; if not given then
 we default to half the minimum grid interval.  Instead of two coordinates
 you can specify an origin and one of <strong>+a</strong>, <strong>+o</strong>, or <strong>+r</strong>.
 The <strong>+a</strong> sets the azimuth of a profile of given
@@ -392,20 +392,20 @@ When more than one grid is sampled this sequence of 1-3 columns is
 repeated for each grid.</dd>
 </dl>
 <dl class="docutils" id="t">
-<dt><strong>-T</strong>[<em>radius</em>[<strong>u</strong>]][<strong>+e</strong>|<strong>p</strong>]</dt>
+<dt><strong>-T</strong>[<em>radius</em>][<strong>+e</strong>|<strong>p</strong>]</dt>
 <dd>To be used with normal grid sampling, and limited to a single, non-IMG grid.
 If the nearest node to the input point is NaN, search outwards until we find
 the nearest non-NaN node and report that value instead.  Optionally specify
 a search radius which limits the consideration to points within this distance
 from the input point.  To report the location of the nearest node and its
 distance from the input point, append <strong>+e</strong>. The default unit for geographic
-grid distances is spherical degrees.  Use <em>radius</em>[<strong>u</strong>] to change the unit
+grid distances is spherical degrees.  Use <em>radius</em> to change the unit
 and give <em>radius</em> = 0 if you do not want to limit the radius search.
 To instead replace the input point with the coordinates of the nearest node, append <strong>+p</strong>.</dd>
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [w].  </dd>
+<dd>Select verbosity level [<strong>w</strong>].  </dd>
 </dl>
 <dl class="docutils" id="z">
 <dt><strong>-Z</strong></dt>
@@ -435,7 +435,7 @@ input/output. [Default is (longitude,latitude)].</dd>
 <dd>Specify data types of input and/or output columns.  </dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>]  <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>+n</strong>|<strong>p</strong>]  <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Determine data gaps and line breaks.  </dd>
 </dl>
 <dl class="docutils">
@@ -612,7 +612,7 @@ try</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 01, 2020.
+        Last updated on Feb 07, 2020.
       </span>
 
     </p>

@@ -213,11 +213,10 @@
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p>The following is a list of the parameters that are user-definable in
-GMT. The parameter names are always given in UPPER CASE. The
+GMT. The parameter names are always given in <strong>UPPER CASE</strong>. The
 parameter values are case-insensitive unless otherwise noted. The system
-defaults are given in brackets [ for SI (and US) ]. Those marked <strong>*</strong>
-can be set on the command line as well (the corresponding option is
-given in parentheses). Note that default distances and lengths below are
+defaults are given in brackets [ for SI (or US) ].
+Note that default distances and lengths below are
 given in both cm or inch; the chosen default depends on your choice of
 default unit (see <a class="reference internal" href="#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>). You can explicitly specify
 the unit used for distances and lengths by appending <strong>c</strong> (cm), <strong>i</strong>
@@ -295,20 +294,18 @@ color table entry) [white].</dd>
 By default, color interpolation takes place directly on the RGB
 values which can produce some unexpected hues, whereas interpolation
 directly on the HSV values better preserves those hues. The choices
-are: <strong>none</strong> (default: use whatever the COLOR_MODEL setting in the
+are: <strong>none</strong> (default: use whatever the <strong>COLOR_MODEL</strong> setting in the
 CPT demands), <strong>rgb</strong> (force interpolation in RGB),
 <strong>hsv</strong> (force interpolation in HSV), <strong>cmyk</strong> (assumes colors are
 in CMYK but interpolates in RGB).</dd>
 <dt id="term-color-nan"><strong>COLOR_NAN</strong></dt>
-<dd>Color used for the non-defined areas of images (i.e., where z == NaN) [127.5].</dd>
+<dd>Color used for the non-defined areas of images (i.e., where z = NaN) [127.5].</dd>
 </dl>
 <dl class="glossary docutils">
 <dt id="term-dir-cache"><strong>DIR_CACHE</strong></dt>
-<dd>Cache directory where we save files downloaded when using external URL addresses, the
-files called <strong>&#64;earth_relief_</strong><em>res</em><strong>.grd</strong> or other remote filenames starting
-in &#64; (e.g., &#64;hotspots.txt) [~/.gmt].</dd>
+<dd>Cache directory where we save remote filenames starting in <strong>&#64;</strong> (e.g., &#64;hotspots.txt) [~/.gmt/cache].</dd>
 <dt id="term-dir-data"><strong>DIR_DATA</strong></dt>
-<dd>Session data dir. Overrides the value of the environment variable <strong>$GMT_DATADIR</strong>
+<dd>Session data directory. Overrides the value of the environment variable <strong>$GMT_DATADIR</strong>
 (see <a class="reference internal" href="cookbook/features.html#directory-parameters"><span class="std std-ref">Directory parameters</span></a> in the CookBook).</dd>
 <dt id="term-dir-dcw"><strong>DIR_DCW</strong></dt>
 <dd>Path to optional Digital Chart of the World polygon files.</dd>
@@ -424,17 +421,18 @@ the writing of geographical coordinates in data fields. The template
 is in general of the form [±]D or [±]ddd[:mm[:ss]][.xxx][F].
 By default, longitudes will be reported in the range [-180,180]. The
 various terms have the following purpose:</p>
-<p>+D Output longitude in the range [0,360]</p>
-<p>-D Output longitude in the range [-360,0]</p>
-<p>D Use <a class="reference internal" href="#term-format-float-out"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a> for floating point degrees.</p>
-<p>ddd Fixed format integer degrees</p>
-<p>: delimiter used</p>
-<p>mm Fixed format integer arc minutes</p>
-<p>ss Fixed format integer arc seconds</p>
-<p>.xxx Floating fraction of previous integer field, fixed width.</p>
-<p>F Encode sign using WESN suffix</p>
-<p>G Same as F but with a leading space before suffix</p>
-<p class="last">The default is D.</p>
+<ul class="last simple">
+<li><strong>D</strong>: Use <a class="reference internal" href="#term-format-float-out"><span class="xref std std-term">FORMAT_FLOAT_OUT</span></a> for floating point degrees [default].</li>
+<li><strong>+D</strong>: Output longitude in the range [0,360]</li>
+<li><strong>-D</strong>: Output longitude in the range [-360,0]</li>
+<li><strong>ddd</strong>: Fixed format integer degrees</li>
+<li><strong>:</strong>: delimiter used</li>
+<li><strong>mm</strong>: Fixed format integer arc minutes</li>
+<li><strong>ss</strong>: Fixed format integer arc seconds</li>
+<li><strong>.xxx</strong>: Floating fraction of previous integer field, fixed width.</li>
+<li><strong>F</strong>: Encode sign using WESN suffix</li>
+<li><strong>G</strong>: Same as <strong>F</strong> but with a leading space before suffix</li>
+</ul>
 </dd>
 <dt id="term-format-float-map"><strong>FORMAT_FLOAT_MAP</strong></dt>
 <dd>Format (C language printf syntax) to be used when plotting double
@@ -519,8 +517,8 @@ FFT [auto].
 FFTW can “learn” how to optimally compute Fourier transforms on the
 current hardware and OS by computing several FFTs and measuring
 their execution time. This so gained “Wisdom” will be stored in and
-reloaded from the file fftw_wisdom_&lt;hostname&gt; in $GMT_USERDIR or, if
-$GMT_USERDIR is not writable, in the current directory. To use this
+reloaded from the file fftw_wisdom_&lt;hostname&gt; in <strong>$GMT_USERDIR</strong> or, if
+<strong>$GMT_USERDIR</strong> is not writable, in the current directory. To use this
 feature append <em>planner_flag</em>, which can be one of <em>measure</em>,
 <em>patient</em>, and <em>exhaustive</em>; see FFTW reference for details. The
 default FFTW planner flag is <em>estimate</em>, i.e., pick a (probably
@@ -542,36 +540,41 @@ interpolations in various programs [akima].</dd>
 <dt id="term-gmt-language"><strong>GMT_LANGUAGE</strong></dt>
 <dd><p class="first">Language to use when plotting calendar and map items such as months and
 days, map annotations and cardinal points. Select from:</p>
-<ul class="simple">
-<li>CN1 Simplified Chinese</li>
-<li>CN2 Traditional Chinese</li>
-<li>DE German</li>
-<li>DK Danish</li>
-<li>EH Basque</li>
-<li>ES Spanish</li>
-<li>FI Finnish</li>
-<li>FR French</li>
-<li>GR Greek</li>
-<li>HI Hawaiian</li>
-<li>HU Hungarian</li>
-<li>IE Irish</li>
-<li>IL Hebrew</li>
-<li>IS Icelandic</li>
-<li>IT Italian</li>
-<li>JP Japanese</li>
-<li>KR Korean</li>
-<li>NL Dutch</li>
-<li>NO Norwegian</li>
-<li>PL Polish</li>
-<li>PT Portuguese</li>
-<li>RU Russian</li>
-<li>SE Swedish</li>
-<li>SG Scottish Gaelic</li>
-<li>TO Tongan</li>
-<li>TR Turkish</li>
-<li>UK British English</li>
-<li>US US English</li>
+<table class="hlist"><tr><td><ul class="simple">
+<li><em>CN1</em>: Simplified Chinese</li>
+<li><em>CN2</em>: Traditional Chinese</li>
+<li><em>DE</em>: German</li>
+<li><em>DK</em>: Danish</li>
+<li><em>EH</em>: Basque</li>
+<li><em>ES</em>: Spanish</li>
+<li><em>FI</em>: Finnish</li>
+<li><em>FR</em>: French</li>
+<li><em>GR</em>: Greek</li>
+<li><em>HI</em>: Hawaiian</li>
 </ul>
+</td><td><ul class="simple">
+<li><em>HU</em>: Hungarian</li>
+<li><em>IE</em>: Irish</li>
+<li><em>IL</em>: Hebrew</li>
+<li><em>IS</em>: Icelandic</li>
+<li><em>IT</em>: Italian</li>
+<li><em>JP</em>: Japanese</li>
+<li><em>KR</em>: Korean</li>
+<li><em>NL</em>: Dutch</li>
+<li><em>NO</em>: Norwegian</li>
+</ul>
+</td><td><ul class="simple">
+<li><em>PL</em>: Polish</li>
+<li><em>PT</em>: Portuguese</li>
+<li><em>RU</em>: Russian</li>
+<li><em>SE</em>: Swedish</li>
+<li><em>SG</em>: Scottish Gaelic</li>
+<li><em>TO</em>: Tongan</li>
+<li><em>TR</em>: Turkish</li>
+<li><em>UK</em>: British English</li>
+<li><em>US</em>: US English</li>
+</ul>
+</td></tr></table>
 <p class="last">If your language is not supported, please examine the
 <strong>$GMT_SHAREDIR</strong>/localization/gmt_us.locale file and make a similar file. Please
 submit it to the GMT Developers for official inclusion. Custom
@@ -757,8 +760,8 @@ geotiffs), chose <strong>inside</strong>.  Finally, for Cartesian plots you can
 also choose <strong>graph</strong>, which adds a vector to the end of each axis.
 This works best when you reduce the number of axes plotted to one
 per dimension.  By default, the vector tip extends the length of each
-axis by 7.5%. Alternatively, append ,<em>length</em>[<strong>u</strong>], where <strong>u</strong>
-can be % (then <em>length</em> is the alternate extension in percent) or one
+axis by 7.5%. Alternatively, append ,<em>length</em>, where the optional <em>unit</em>
+may be % (then <em>length</em> is the alternate extension in percent) or one
 of <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> (then <em>length</em> is the absolute extension
 of the axis to the start of the vector base instead).  The vector stem
 is set to match <a class="reference internal" href="#term-map-frame-width"><span class="xref std std-term">MAP_FRAME_WIDTH</span></a>, while the vector
@@ -795,8 +798,8 @@ line-segments when drawing arcuate lines [0.75p]</dd>
 plotted at the lower left corner of the plot [false].</dd>
 <dt id="term-map-logo-pos"><strong>MAP_LOGO_POS</strong></dt>
 <dd>(<strong>-U</strong>) Sets the justification and the position of the
-logo/timestamp box relative to the current plots lower left corner
-of the plot [+jBL+o-54p/-54p].</dd>
+logo/timestamp box relative to the current plot’s lower left corner
+(i.e., map origin) [BL/-54p/-54p].</dd>
 <dt id="term-map-origin-x"><strong>MAP_ORIGIN_X</strong></dt>
 <dd>(<strong>-X</strong>) Sets the x-coordinate of the origin on the paper for a
 new plot [72p]. For an overlay, the default offset is 0.</dd>
@@ -858,83 +861,84 @@ chosen auxiliary latitude before doing the distance calculation. See
 also <a class="reference internal" href="#term-proj-mean-radius"><span class="xref std std-term">PROJ_MEAN_RADIUS</span></a>.</dd>
 <dt id="term-proj-ellipsoid"><strong>PROJ_ELLIPSOID</strong></dt>
 <dd><p class="first">The (case sensitive) name of the ellipsoid used for the map projections [WGS-84]. Choose among:</p>
-<blockquote>
-<div><em>Airy</em>: Applies to Great Britain (1830)
-<em>Airy-Ireland</em>: Applies to Ireland in 1965 (1830)
-<em>Andrae</em>: Applies to Denmark and Iceland (1876)
-<em>APL4.9</em>: Appl. Physics (1965)
-<em>ATS77</em>: Average Terrestrial System, Canada Maritime provinces (1977)
-<em>Australian</em>: Applies to Australia (1965)
-<em>Bessel</em>: Applies to Central Europe, Chile, Indonesia (1841)
-<em>Bessel-Namibia</em>: Same as Bessel-Schwazeck (1841)
-<em>Bessel-NGO1948</em>: Modified Bessel for NGO 1948 (1841)
-<em>Bessel-Schwazeck</em>: Applies to Namibia (1841)
-<em>Clarke-1858</em>: Clarke’s early ellipsoid (1858)
-<em>Clarke-1866</em>: Applies to North America, the Philippines (1866)
-<em>Clarke-1866-Michigan</em>: Modified Clarke-1866 for Michigan (1866)
-<em>Clarke-1880</em>: Applies to most of Africa, France (1880)
-<em>Clarke-1880-Arc1950</em>: Modified Clarke-1880 for Arc 1950 (1880)
-<em>Clarke-1880-IGN</em>: Modified Clarke-1880 for IGN (1880)
-<em>Clarke-1880-Jamaica</em>: Modified Clarke-1880 for Jamaica (1880)
-<em>Clarke-1880-Merchich</em>: Modified Clarke-1880 for Merchich (1880)
-<em>Clarke-1880-Palestine</em>: Modified Clarke-1880 for Palestine (1880)
-<em>CPM</em>: Comm. des Poids et Mesures, France (1799)
-<em>Delambre</em>: Applies to Belgium (1810)
-<em>Engelis</em>: Goddard Earth Models (1985)
-<em>Everest-1830</em>: India, Burma, Pakistan, Afghanistan, Thailand (1830)
-<em>Everest-1830-Kalianpur</em>: Modified Everest for Kalianpur (1956) (1830)
-<em>Everest-1830-Kertau</em>: Modified Everest for Kertau, Malaysia &amp; Singapore (1830)
-<em>Everest-1830-Pakistan</em>: Modified Everest for Pakistan (1830)
-<em>Everest-1830-Timbalai</em>: Modified Everest for Timbalai, Sabah Sarawak (1830)
-<em>Fischer-1960</em>: Used by NASA for Mercury program (1960)
-<em>Fischer-1960-SouthAsia</em>: Same as Modified-Fischer-1960 (1960)
-<em>Fischer-1968</em>: Used by NASA for Mercury program (1968)
-<em>FlatEarth</em>: As Sphere, but implies fast “Flat Earth” distance calculations (1984)
-<em>GRS-67</em>: International Geodetic Reference System (1967)
-<em>GRS-80</em>: International Geodetic Reference System (1980)
-<em>Hayford-1909</em>: Same as the International 1924 (1909)
-<em>Helmert-1906</em>: Applies to Egypt (1906)
-<em>Hough</em>: Applies to the Marshall Islands (1960)
-<em>Hughes-1980</em>: Hughes Aircraft Company for DMSP SSM/I grid products (1980)
-<em>IAG-75</em>: International Association of Geodesy (1975)
-<em>Indonesian</em>: Applies to Indonesia (1974)
-<em>International-1924</em>: Worldwide use (1924)
-<em>International-1967</em>: Worldwide use (1967)
-<em>Kaula</em>: From satellite tracking (1961)
-<em>Krassovsky</em>: Used in the (now former) Soviet Union (1940)
-<em>Lerch</em>: For geoid modeling (1979)
-<em>Maupertius</em>: Really old ellipsoid used in France (1738)
-<em>Mercury-1960</em>: Same as Fischer-1960 (1960)
-<em>MERIT-83</em>: United States Naval Observatory (1983)
-<em>Modified-Airy</em>: Same as Airy-Ireland (1830)
-<em>Modified-Fischer-1960</em>: Applies to Singapore (1960)
-<em>Modified-Mercury-1968</em>: Same as Fischer-1968 (1968)
-<em>NWL-10D</em>: Naval Weapons Lab (Same as WGS-72) (1972)
-<em>NWL-9D</em>: Naval Weapons Lab (Same as WGS-66) (1966)
-<em>OSU86F</em>: Ohio State University (1986)
-<em>OSU91A</em>: Ohio State University (1991)
-<em>Plessis</em>: Old ellipsoid used in France (1817)
-<em>SGS-85</em>: Soviet Geodetic System (1985)
-<em>South-American</em>: Applies to South America (1969)
-<em>Sphere</em>: The mean radius in WGS-84 (for spherical/plate tectonics applications) (1984)
-<em>Struve</em>: Friedrich Georg Wilhelm Struve (1860)
-<em>TOPEX</em>: Used commonly for altimetry (1990)
-<em>Walbeck</em>: First least squares solution by Finnish astronomer (1819)
-<em>War-Office</em>: Developed by G. T. McCaw (1926)
-<em>WGS-60</em>: World Geodetic System (1960)
-<em>WGS-66</em>: World Geodetic System (1966)
-<em>WGS-72</em>: World Geodetic System (1972)
-<em>WGS-84</em>: World Geodetic System [Default] (1984)
-<em>Web-Mercator</em>: Spherical Mercator with WGS-84 radius (1984)
-<em>Moon</em>: Moon (IAU2000) (2000)
-<em>Mercury</em>: Mercury (IAU2000) (2000)
-<em>Venus</em>: Venus (IAU2000) (2000)
-<em>Mars</em>: Mars (IAU2000) (2000)
-<em>Jupiter</em>: Jupiter (IAU2000) (2000)
-<em>Saturn</em>: Saturn (IAU2000) (2000)
-<em>Uranus</em>: Uranus (IAU2000) (2000)
-<em>Neptune</em>: Neptune (IAU2000) (2000)
-<em>Pluto</em>: Pluto (IAU2000) (2000)</div></blockquote>
+<ul class="simple">
+<li><em>Airy</em>: Applies to Great Britain (1830)</li>
+<li><em>Airy-Ireland</em>: Applies to Ireland in 1965 (1830)</li>
+<li><em>Andrae</em>: Applies to Denmark and Iceland (1876)</li>
+<li><em>APL4.9</em>: Appl. Physics (1965)</li>
+<li><em>ATS77</em>: Average Terrestrial System, Canada Maritime provinces (1977)</li>
+<li><em>Australian</em>: Applies to Australia (1965)</li>
+<li><em>Bessel</em>: Applies to Central Europe, Chile, Indonesia (1841)</li>
+<li><em>Bessel-Namibia</em>: Same as Bessel-Schwazeck (1841)</li>
+<li><em>Bessel-NGO1948</em>: Modified Bessel for NGO 1948 (1841)</li>
+<li><em>Bessel-Schwazeck</em>: Applies to Namibia (1841)</li>
+<li><em>Clarke-1858</em>: Clarke’s early ellipsoid (1858)</li>
+<li><em>Clarke-1866</em>: Applies to North America, the Philippines (1866)</li>
+<li><em>Clarke-1866-Michigan</em>: Modified Clarke-1866 for Michigan (1866)</li>
+<li><em>Clarke-1880</em>: Applies to most of Africa, France (1880)</li>
+<li><em>Clarke-1880-Arc1950</em>: Modified Clarke-1880 for Arc 1950 (1880)</li>
+<li><em>Clarke-1880-IGN</em>: Modified Clarke-1880 for IGN (1880)</li>
+<li><em>Clarke-1880-Jamaica</em>: Modified Clarke-1880 for Jamaica (1880)</li>
+<li><em>Clarke-1880-Merchich</em>: Modified Clarke-1880 for Merchich (1880)</li>
+<li><em>Clarke-1880-Palestine</em>: Modified Clarke-1880 for Palestine (1880)</li>
+<li><em>CPM</em>: Comm. des Poids et Mesures, France (1799)</li>
+<li><em>Delambre</em>: Applies to Belgium (1810)</li>
+<li><em>Engelis</em>: Goddard Earth Models (1985)</li>
+<li><em>Everest-1830</em>: India, Burma, Pakistan, Afghanistan, Thailand (1830)</li>
+<li><em>Everest-1830-Kalianpur</em>: Modified Everest for Kalianpur (1956) (1830)</li>
+<li><em>Everest-1830-Kertau</em>: Modified Everest for Kertau, Malaysia &amp; Singapore (1830)</li>
+<li><em>Everest-1830-Pakistan</em>: Modified Everest for Pakistan (1830)</li>
+<li><em>Everest-1830-Timbalai</em>: Modified Everest for Timbalai, Sabah Sarawak (1830)</li>
+<li><em>Fischer-1960</em>: Used by NASA for Mercury program (1960)</li>
+<li><em>Fischer-1960-SouthAsia</em>: Same as Modified-Fischer-1960 (1960)</li>
+<li><em>Fischer-1968</em>: Used by NASA for Mercury program (1968)</li>
+<li><em>FlatEarth</em>: As Sphere, but implies fast “Flat Earth” distance calculations (1984)</li>
+<li><em>GRS-67</em>: International Geodetic Reference System (1967)</li>
+<li><em>GRS-80</em>: International Geodetic Reference System (1980)</li>
+<li><em>Hayford-1909</em>: Same as the International 1924 (1909)</li>
+<li><em>Helmert-1906</em>: Applies to Egypt (1906)</li>
+<li><em>Hough</em>: Applies to the Marshall Islands (1960)</li>
+<li><em>Hughes-1980</em>: Hughes Aircraft Company for DMSP SSM/I grid products (1980)</li>
+<li><em>IAG-75</em>: International Association of Geodesy (1975)</li>
+<li><em>Indonesian</em>: Applies to Indonesia (1974)</li>
+<li><em>International-1924</em>: Worldwide use (1924)</li>
+<li><em>International-1967</em>: Worldwide use (1967)</li>
+<li><em>Kaula</em>: From satellite tracking (1961)</li>
+<li><em>Krassovsky</em>: Used in the (now former) Soviet Union (1940)</li>
+<li><em>Lerch</em>: For geoid modeling (1979)</li>
+<li><em>Maupertius</em>: Really old ellipsoid used in France (1738)</li>
+<li><em>Mercury-1960</em>: Same as Fischer-1960 (1960)</li>
+<li><em>MERIT-83</em>: United States Naval Observatory (1983)</li>
+<li><em>Modified-Airy</em>: Same as Airy-Ireland (1830)</li>
+<li><em>Modified-Fischer-1960</em>: Applies to Singapore (1960)</li>
+<li><em>Modified-Mercury-1968</em>: Same as Fischer-1968 (1968)</li>
+<li><em>NWL-10D</em>: Naval Weapons Lab (Same as WGS-72) (1972)</li>
+<li><em>NWL-9D</em>: Naval Weapons Lab (Same as WGS-66) (1966)</li>
+<li><em>OSU86F</em>: Ohio State University (1986)</li>
+<li><em>OSU91A</em>: Ohio State University (1991)</li>
+<li><em>Plessis</em>: Old ellipsoid used in France (1817)</li>
+<li><em>SGS-85</em>: Soviet Geodetic System (1985)</li>
+<li><em>South-American</em>: Applies to South America (1969)</li>
+<li><em>Sphere</em>: The mean radius in WGS-84 (for spherical/plate tectonics applications) (1984)</li>
+<li><em>Struve</em>: Friedrich Georg Wilhelm Struve (1860)</li>
+<li><em>TOPEX</em>: Used commonly for altimetry (1990)</li>
+<li><em>Walbeck</em>: First least squares solution by Finnish astronomer (1819)</li>
+<li><em>War-Office</em>: Developed by G. T. McCaw (1926)</li>
+<li><em>WGS-60</em>: World Geodetic System (1960)</li>
+<li><em>WGS-66</em>: World Geodetic System (1966)</li>
+<li><em>WGS-72</em>: World Geodetic System (1972)</li>
+<li><em>WGS-84</em>: World Geodetic System [Default] (1984)</li>
+<li><em>Web-Mercator</em>: Spherical Mercator with WGS-84 radius (1984)</li>
+<li><em>Moon</em>: Moon (IAU2000) (2000)</li>
+<li><em>Mercury</em>: Mercury (IAU2000) (2000)</li>
+<li><em>Venus</em>: Venus (IAU2000) (2000)</li>
+<li><em>Mars</em>: Mars (IAU2000) (2000)</li>
+<li><em>Jupiter</em>: Jupiter (IAU2000) (2000)</li>
+<li><em>Saturn</em>: Saturn (IAU2000) (2000)</li>
+<li><em>Uranus</em>: Uranus (IAU2000) (2000)</li>
+<li><em>Neptune</em>: Neptune (IAU2000) (2000)</li>
+<li><em>Pluto</em>: Pluto (IAU2000) (2000)</li>
+</ul>
 <p>Note that for some global projections, GMT may use a spherical
 approximation of the ellipsoid chosen, setting the flattening to
 zero, and using a mean radius. A warning will be given when this
@@ -1030,40 +1034,146 @@ For other graphics formats (PDF and rasters), the media size is determined autom
 by cropping to fit the plot exactly (but see <a class="reference internal" href="#term-ps-convert"><span class="xref std std-term">PS_CONVERT</span></a>).  However,
 if a specific media size is desired then the <a class="reference internal" href="#term-ps-media"><span class="xref std std-term">PS_MEDIA</span></a> may be specified as well.
 The following formats (and their widths and heights in points) are recognized:</p>
-<p>Media width height</p>
-<ul class="simple">
-<li>A0 2380 3368</li>
-<li>A1 1684 2380</li>
-<li>A2 1190 1684</li>
-<li>A3 842 1190</li>
-<li>A4 595 842</li>
-<li>A5 421 595</li>
-<li>A6 297 421</li>
-<li>A7 210 297</li>
-<li>A8 148 210</li>
-<li>A9 105 148</li>
-<li>A10 74 105</li>
-<li>B0 2836 4008</li>
-<li>B1 2004 2836</li>
-<li>B2 1418 2004</li>
-<li>B3 1002 1418</li>
-<li>B4 709 1002</li>
-<li>B5 501 709</li>
-<li>archA 648 864</li>
-<li>archB 864 1296</li>
-<li>archC 1296 1728</li>
-<li>archD 1728 2592</li>
-<li>archE 2592 3456</li>
-<li>flsa 612 936</li>
-<li>halfletter 396 612</li>
-<li>statement 396 612</li>
-<li>note 540 720</li>
-<li>letter 612 792</li>
-<li>legal 612 1008</li>
-<li>11x17 792 1224</li>
-<li>tabloid 792 1224</li>
-<li>ledger 1224 792</li>
-</ul>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="20%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Media</th>
+<th class="head">width</th>
+<th class="head">height</th>
+<th class="head">Media</th>
+<th class="head">width</th>
+<th class="head">height</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>A0</td>
+<td>2380</td>
+<td>3368</td>
+<td>archA</td>
+<td>648</td>
+<td>864</td>
+</tr>
+<tr class="row-odd"><td>A1</td>
+<td>1684</td>
+<td>2380</td>
+<td>archB</td>
+<td>864</td>
+<td>1296</td>
+</tr>
+<tr class="row-even"><td>A2</td>
+<td>1190</td>
+<td>1684</td>
+<td>archC</td>
+<td>1296</td>
+<td>1728</td>
+</tr>
+<tr class="row-odd"><td>A3</td>
+<td>842</td>
+<td>1190</td>
+<td>archD</td>
+<td>1728</td>
+<td>2592</td>
+</tr>
+<tr class="row-even"><td>A4</td>
+<td>595</td>
+<td>842</td>
+<td>archE</td>
+<td>2592</td>
+<td>3456</td>
+</tr>
+<tr class="row-odd"><td>A5</td>
+<td>421</td>
+<td>595</td>
+<td>flsa</td>
+<td>612</td>
+<td>936</td>
+</tr>
+<tr class="row-even"><td>A6</td>
+<td>297</td>
+<td>421</td>
+<td>halfletter</td>
+<td>396</td>
+<td>612</td>
+</tr>
+<tr class="row-odd"><td>A7</td>
+<td>210</td>
+<td>297</td>
+<td>statement</td>
+<td>396</td>
+<td>612</td>
+</tr>
+<tr class="row-even"><td>A8</td>
+<td>148</td>
+<td>210</td>
+<td>note</td>
+<td>540</td>
+<td>720</td>
+</tr>
+<tr class="row-odd"><td>A9</td>
+<td>105</td>
+<td>148</td>
+<td>letter</td>
+<td>612</td>
+<td>792</td>
+</tr>
+<tr class="row-even"><td>A10</td>
+<td>74</td>
+<td>105</td>
+<td>legal</td>
+<td>612</td>
+<td>1008</td>
+</tr>
+<tr class="row-odd"><td>B0</td>
+<td>2836</td>
+<td>4008</td>
+<td>11x17</td>
+<td>792</td>
+<td>1224</td>
+</tr>
+<tr class="row-even"><td>B1</td>
+<td>2004</td>
+<td>2836</td>
+<td>tabloid</td>
+<td>792</td>
+<td>1224</td>
+</tr>
+<tr class="row-odd"><td>B2</td>
+<td>1418</td>
+<td>2004</td>
+<td>ledger</td>
+<td>1224</td>
+<td>792</td>
+</tr>
+<tr class="row-even"><td>B3</td>
+<td>1002</td>
+<td>1418</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>B4</td>
+<td>709</td>
+<td>1002</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>B5</td>
+<td>501</td>
+<td>709</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
 <p class="last">For a completely custom format (e.g., for large format plotters) you
 may also specify WxH, where W and H are in points unless you append
 a unit to each dimension (<strong>c</strong>, <strong>i</strong>, <strong>m</strong> or <strong>p</strong> [Default]).
@@ -1113,13 +1223,13 @@ the annotation centered on the partial interval [0.5].</dd>
 <dt id="term-time-is-interval"><strong>TIME_IS_INTERVAL</strong></dt>
 <dd>Used when input calendar data should be truncated and adjusted to
 the middle of the relevant interval. In the following discussion,
-the unit <strong>u</strong> can be one of these time units: (<strong>y</strong> year, <strong>o</strong>
+the unit <em>unit</em> can be one of these time units: (<strong>y</strong> year, <strong>o</strong>
 month, <strong>u</strong> ISO week, <strong>d</strong> day, <strong>h</strong> hour, <strong>m</strong> minute, and
 <strong>s</strong> second). <strong>TIME_IS_INTERVAL</strong> can have any of the following
 three values: (1) OFF [Default]. No adjustment, time is decoded as
-given. (2) +<em>n</em><strong>u</strong>. Activate interval adjustment for input by
+given. (2) +<em>n</em><em>unit</em>. Activate interval adjustment for input by
 truncate to previous whole number of <em>n</em> units and then center time
-on the following interval. (3) -<em>n</em><strong>u</strong>. Same, but center time on
+on the following interval. (3) -<em>n</em><em>unit</em>. Same, but center time on
 the previous interval. For example, with <strong>TIME_IS_INTERVAL</strong> =
 +1o, an input data string like 1999-12 will be interpreted to mean
 1999-12-15T12:00:00.0 (exactly middle of December), while if
@@ -1135,13 +1245,58 @@ reports.  Choose among <strong>clock</strong> (absolute time stamp),
 specifying which time epoch the relative time refers to and what the
 units are. Choose from one of the preset systems below (epoch and
 units are indicated):</p>
-<p>JD -4713-11-25T12:00:00 d (Julian Date)</p>
-<p>MJD 1858-11-17T00:00:00 d (Modified Julian Date)</p>
-<p>J2000 2000-01-01T12:00:00 d (Astronomical time)</p>
-<p>S1985 1985-01-01T00:00:00 s (Altimetric time)</p>
-<p>UNIX 1970-01-01T00:00:00 s (UNIX time)</p>
-<p>RD0001 0001-01-01T00:00:00 s</p>
-<p>RATA 0000-12-31T00:00:00 d</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="33%" />
+<col width="17%" />
+<col width="32%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">TIME_SYSTEM</th>
+<th class="head">TIME_EPOCH</th>
+<th class="head">TIME_UNIT</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>JD</td>
+<td>-4713-11-25T12:00:00</td>
+<td>d</td>
+<td>Julian Date</td>
+</tr>
+<tr class="row-odd"><td>MJD</td>
+<td>1858-11-17T00:00:00</td>
+<td>d</td>
+<td>Modified Julian Date</td>
+</tr>
+<tr class="row-even"><td>J2000</td>
+<td>2000-01-01T12:00:00</td>
+<td>d</td>
+<td>Astronomical time</td>
+</tr>
+<tr class="row-odd"><td>S1985</td>
+<td>1985-01-01T00:00:00</td>
+<td>s</td>
+<td>Altimetric time</td>
+</tr>
+<tr class="row-even"><td>UNIX</td>
+<td>1970-01-01T00:00:00</td>
+<td>s</td>
+<td>UNIX time</td>
+</tr>
+<tr class="row-odd"><td>RD0001</td>
+<td>0001-01-01T00:00:00</td>
+<td>s</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>RATA</td>
+<td>0000-12-31T00:00:00</td>
+<td>d</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
 <p class="last">This parameter is not stored in the <strong>gmt.conf</strong> file but is
 translated to the respective values of <a class="reference internal" href="#term-time-epoch"><span class="xref std std-term">TIME_EPOCH</span></a> and
 <a class="reference internal" href="#term-time-unit"><span class="xref std std-term">TIME_UNIT</span></a>.</p>
@@ -1195,7 +1350,7 @@ correspond to 1800 through 1828. [1950].</dd>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 01, 2020.
+        Last updated on Feb 07, 2020.
       </span>
 
     </p>

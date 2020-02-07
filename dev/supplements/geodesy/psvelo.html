@@ -227,8 +227,8 @@
 [ <a class="reference internal" href="#u"><span> <strong>-U</strong></span></a></strong>[<em>stamp</em>] ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
 [ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong><em>pen</em> ]
-[ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] ]
-[ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] ]
+[ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>] ]
+[ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>] ]
 [ <strong>-di</strong><a class="reference internal" href="../../gmt.html#di-full"><span class="std std-ref">nodata</span></a> ]
 [ <strong>-e</strong><a class="reference internal" href="../../gmt.html#e-full"><span class="std std-ref">regexp</span></a> ]
 [ <strong>-h</strong><a class="reference internal" href="../../gmt.html#h-full"><span class="std std-ref">headers</span></a> ]
@@ -296,12 +296,12 @@ done only when using the <strong>-Jz</strong> option, not when using only the
 <strong>-p</strong> option. In the latter case a perspective view of the plane is
 plotted, with no third dimension.  </dd>
 </dl>
-<p id="s"><strong>-S</strong></p>
-<p>Selects the meaning of the columns in the data file and the figure to be plotted.  In all
+<dl class="docutils" id="s">
+<dt><strong>-S</strong></dt>
+<dd><p class="first">Selects the meaning of the columns in the data file and the figure to be plotted.  In all
 cases, the scales are in data units per length unit and sizes are in length units (default length
 unit is controlled by <a class="reference internal" href="../../gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a> unless <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> is appended).</p>
-<blockquote>
-<div><p><strong>-Se</strong><em>velscale/confidence</em>[<strong>+f</strong><em>font</em>]</p>
+<p><strong>-Se</strong><em>velscale/confidence</em>[<strong>+f</strong><em>font</em>]</p>
 <blockquote>
 <div><p>Velocity ellipses in (N,E) convention. <em>velscale</em> sets the scaling of the
 velocity arrows. The <em>confidence</em> sets the 2-dimensional confidence
@@ -372,7 +372,7 @@ rotation in radians
 rotation uncertainty in radians</div></blockquote>
 </div></blockquote>
 <p><strong>-Sx</strong><em>cross_scale</em></p>
-<blockquote>
+<blockquote class="last">
 <div><p>gives Strain crosses. <em>cross_scale</em> sets the size of the cross. Parameters
 are expected to be in the following columns:</p>
 <blockquote>
@@ -386,7 +386,8 @@ eps2, the most compressional eigenvalue of strain tensor, with extension taken p
 <strong>5</strong>:
 azimuth of eps2 in degrees CW from North.</div></blockquote>
 </div></blockquote>
-</div></blockquote>
+</dd>
+</dl>
 </div>
 <div class="section" id="optional-arguments">
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
@@ -430,16 +431,16 @@ specified by <strong>-R</strong>. [Default plots symbols inside frame only].</dd
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [w].  </dd>
+<dd>Select verbosity level [<strong>w</strong>].  </dd>
 </dl>
 <dl class="docutils" id="w">
 <dt><strong>-W</strong></dt>
 <dd>Set pen attributes for velocity arrows, ellipse circumference and
 fault plane edges. [Defaults: width = default, color = black, style = solid].</dd>
 </dl>
-<p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</p>
+<p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>]</p>
 <dl class="docutils">
-<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="../../gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>] <a class="reference internal" href="../../gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Shift plot origin.</dd>
 </dl>
 <dl class="docutils">
@@ -529,7 +530,7 @@ head outline is drawn]</p>
 opening angles of the arc segment relative to the given point. See <strong>+o</strong> to specify
 a specific pole for the arc [north pole].</p>
 <p><strong>+r</strong> draws half-arrows, using only the right side of specified heads [both sides].</p>
-<p><strong>+t</strong>[<strong>b</strong>|<strong>e</strong>]<em>trim</em>[<em>unit</em>] will shift the beginning or end point (or both)
+<p><strong>+t</strong>[<strong>b</strong>|<strong>e</strong>]<em>trim</em> will shift the beginning or end point (or both)
 along the vector segment by the given <em>trim</em>; append suitable unit (<strong>c</strong>, <strong>i</strong>, or <strong>p</strong>). If the modifiers
 <strong>b</strong>|<strong>e</strong> are not used then <em>trim</em> may be two values separated by a slash,
 which is used to specify different trims for the beginning and end.  Positive trims
@@ -544,7 +545,7 @@ coordinates of the vector end point.</p>
 </div></blockquote>
 <p>Finally, Cartesian vectors may take these modifiers:</p>
 <blockquote>
-<div><strong>+z</strong><em>scale</em>[<em>unit</em>] expects input <em>dx</em>,<em>dy</em> vector components and
+<div><strong>+z</strong><em>scale</em> expects input <em>dx</em>,<em>dy</em> vector components and
 uses the <em>scale</em> to convert to polar coordinates with length in given unit.</div></blockquote>
 <p>Note: Vectors were completely redesigned for GMT5 which separated the vector head (a polygon)
 from the vector stem (a line).  In GMT4, the entire vector was a polygon and it could only
@@ -643,7 +644,7 @@ Geophysics at University of Wisconsin-Madison, Madison, Wisconsin, USA</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 01, 2020.
+        Last updated on Feb 07, 2020.
       </span>
 
     </p>

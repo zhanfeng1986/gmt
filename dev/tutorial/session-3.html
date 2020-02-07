@@ -234,11 +234,9 @@ sets; we will discuss two such modules later this session.  The
 data sets needed for this tutorial are obtained via the Internet
 as they are needed.  Here, we will use <a class="reference internal" href="../grdcut.html"><span class="doc">grdcut</span></a> to obtain
 and extract a GMT-ready grid that we will next use for contouring:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcut @earth_relief_05m -R-66/-60/30/35 -Gtut_bathy.nc -V
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcut @earth_relief_05m -R-66/-60/30/35 -Gtut_bathy.nc -V
 </pre></div>
 </div>
-</div></blockquote>
 <p>Here we use the file extension .nc instead of the generic .grd
 to indicate that this is a netCDF file. It is good form, but not essential,
 to use .nc for netCDF grids. Using that extension will help
@@ -249,11 +247,9 @@ Learn about other programs that read netCDF files at the
 You can also obtain tut_bathy.nc from the GMT cache server as we are doing below.
 Feel free to open it in any other program and compare results with GMT.</p>
 <p>We first use the GMT module <a class="reference internal" href="../grdinfo.html"><span class="doc">grdinfo</span></a> to see what’s in this file:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdinfo @tut_bathy.nc
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdinfo @tut_bathy.nc
 </pre></div>
 </div>
-</div></blockquote>
 <p>The file contains bathymetry for the Bermuda region and has depth
 values from -5475 to -89 meters.  We want to make a contour map of
 this data; this is a job for <a class="reference internal" href="../grdcontour.html"><span class="doc">grdcontour</span></a>.  As with previous
@@ -315,7 +311,7 @@ useful options:</p>
 </div></blockquote>
 <p>We will first make a plain contour map using 1 km as annotation
 interval and 250 m as contour interval.  We choose a 7-inch-wide
-Mercator plot and annotate the borders every 2º:</p>
+Mercator plot and annotate the borders every 2°:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_11
 	gmt grdcontour @tut_bathy.nc -JM6i -C250 -A1000 -B
 gmt end show
@@ -353,8 +349,7 @@ GMT supports three different approaches to gridding; here, we
 will briefly discuss the two most common techniques.</p>
 <p>All GMT gridding modules have in common the requirement that the
 user must specify the grid domain and output filename:</p>
-<blockquote>
-<div><table border="1" class="docutils">
+<table border="1" class="docutils">
 <colgroup>
 <col width="30%" />
 <col width="70%" />
@@ -376,7 +371,6 @@ user must specify the grid domain and output filename:</p>
 </tr>
 </tbody>
 </table>
-</div></blockquote>
 <div class="section" id="nearest-neighbor-gridding">
 <h3>Nearest neighbor gridding<a class="headerlink" href="#nearest-neighbor-gridding" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-center" id="id2">
@@ -395,11 +389,10 @@ value.  The nodal value is computed as a weighted average of the nearest
 data point per sector inside the search radius, with each point weighted
 according to its distance from the node.
 The most important switches are listed below.</p>
-<blockquote>
-<div><table border="1" class="docutils">
+<table border="1" class="docutils">
 <colgroup>
-<col width="25%" />
-<col width="75%" />
+<col width="17%" />
+<col width="83%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Option</th>
@@ -407,8 +400,8 @@ The most important switches are listed below.</p>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td><strong>-S</strong><em>radius</em>[<strong>u</strong>]</td>
-<td>Sets search radius.  Append <strong>u</strong> for radius in that unit [Default is <em>x</em>-units]</td>
+<tr class="row-even"><td><strong>-S</strong><em>radius</em></td>
+<td>Sets search radius.  Append <em>unit</em> for radius in that unit [Default is <em>x</em>-units]</td>
 </tr>
 <tr class="row-odd"><td><strong>-E</strong><em>empty</em></td>
 <td>Assign this value to unconstrained nodes [Default is NaN]</td>
@@ -421,16 +414,13 @@ The most important switches are listed below.</p>
 </tr>
 </tbody>
 </table>
-</div></blockquote>
 <p>We will grid the data in the file tut_ship.xyz which contains
 ship observations of bathymetry off Baja California.  We obtain the
 file via the cache server as before.
-We desire to make a 5’ by 5’ grid.  Running gmt info on &#64;tut_ship.xyz yields</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tut_ship.xyz: <span class="nv">N</span> <span class="o">=</span> <span class="m">82970</span>     &lt;<span class="m">245</span>/254.705&gt;   &lt;<span class="m">20</span>/29.99131&gt;   &lt;-7708/-9&gt;
+We desire to make a 5’ by 5’ grid.  Running gmt info on &#64;tut_ship.xyz yields:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tut_ship.xyz: <span class="nv">N</span> <span class="o">=</span> <span class="m">82970</span>     &lt;<span class="m">245</span>/254.705&gt;   &lt;<span class="m">20</span>/29.99131&gt;   &lt;-7708/-9&gt;
 </pre></div>
 </div>
-</div></blockquote>
 <p>so we choose the region accordingly, and get a view of the contour map using</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_12
 	gmt nearneighbor -R245/255/20/30 -I5m -S40k -Gship.nc @tut_ship.xyz
@@ -469,11 +459,10 @@ in cross-section).  The theory behind all this is quite involved
 and we do not have the time to explain it all here, please see
 <em>Smith and Wessel</em> [1990] for details.  Some of the most important
 switches for this module are indicated below.</p>
-<blockquote>
-<div><table border="1" class="docutils">
+<table border="1" class="docutils">
 <colgroup>
-<col width="24%" />
-<col width="76%" />
+<col width="23%" />
+<col width="77%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Option</th>
@@ -492,7 +481,6 @@ switches for this module are indicated below.</p>
 </tr>
 </tbody>
 </table>
-</div></blockquote>
 </div>
 </div>
 <div class="section" id="preprocessing">
@@ -508,11 +496,10 @@ most smooth data (such as potential fields) and medians (or modes)
 for rough, non-Gaussian data (such as topography).  In addition
 to the required <strong>-R</strong> and <strong>-I</strong> switches, these preprocessors
 all take the same options shown below:</p>
-<blockquote>
-<div><table border="1" class="docutils">
+<table border="1" class="docutils">
 <colgroup>
-<col width="29%" />
-<col width="71%" />
+<col width="28%" />
+<col width="72%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Option</th>
@@ -528,19 +515,14 @@ all take the same options shown below:</p>
 </tr>
 </tbody>
 </table>
-</div></blockquote>
 <p>With respect to our ship data we preprocess it using the median method:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt blockmedian -R245/255/20/30 -I5m -V @tut_ship.xyz &gt; ship_5m.xyz
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt blockmedian -R245/255/20/30 -I5m -V @tut_ship.xyz &gt; ship_5m.xyz
 </pre></div>
 </div>
-</div></blockquote>
 <p>The output data can now be used with surface:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt surface ship_5m.xyz -R245/255/20/30 -I5m -Gship.nc -V
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt surface ship_5m.xyz -R245/255/20/30 -I5m -Gship.nc -V
 </pre></div>
 </div>
-</div></blockquote>
 <p>If you rerun <a class="reference internal" href="../grdcontour.html"><span class="doc">grdcontour</span></a> on the new grid file (try it!)
 you will notice a big difference compared to the grid made by
 <a class="reference internal" href="../nearneighbor.html"><span class="doc">nearneighbor</span></a>: since surface is a global method
@@ -603,7 +585,7 @@ gmt end show
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 01, 2020.
+        Last updated on Feb 07, 2020.
       </span>
 
     </p>

@@ -218,7 +218,7 @@
 <a class="reference internal" href="#i"><span> <strong>-I</strong></span></a></strong><em>increment</em>
 <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong><em>sectors</em>[<strong>+m</strong><em>min_sectors</em>]
 <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em>
-<a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>search_radius</em>[<em>unit</em>]
+<a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>search_radius</em>
 [ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong><em>empty</em> ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
 [ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong> ]
@@ -254,7 +254,7 @@ supplied].</p>
 <dd>Give the name of the output grid file.</dd>
 </dl>
 <dl class="docutils" id="i">
-<dt><strong>-I</strong><em>xinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>]]</dt>
+<dt><strong>-I</strong><em>xinc</em>[<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<strong>+e</strong>|<strong>n</strong>]]</dt>
 <dd><em>x_inc</em> [and optionally <em>y_inc</em>] is the grid spacing. Optionally,
 append a suffix modifier. <strong>Geographical (degrees) coordinates</strong>: Append
 <strong>m</strong> to indicate arc minutes or <strong>s</strong> to indicate arc seconds. If one
@@ -293,7 +293,7 @@ more distant points are ignored.</dd>
 <dd>Specify the region of interest.  </dd>
 </dl>
 <dl class="docutils" id="s">
-<dt><strong>-S</strong><em>search_radius</em>[<em>unit</em>]</dt>
+<dt><strong>-S</strong><em>search_radius</em></dt>
 <dd>Sets the <em>search_radius</em> that determines which data points are
 considered close to a node. Append the distance unit (see <a class="reference internal" href="#units">Units</a>).</dd>
 </dl>
@@ -312,7 +312,7 @@ no file is specified, <strong>nearneighbor</strong> will read from standard inpu
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [w].  </dd>
+<dd>Select verbosity level [<strong>w</strong>].  </dd>
 </dl>
 <dl class="docutils" id="w">
 <dt><strong>-W</strong></dt>
@@ -462,7 +462,7 @@ at least one value:</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 01, 2020.
+        Last updated on Feb 07, 2020.
       </span>
 
     </p>

@@ -225,8 +225,8 @@
 [ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>mag_rose</em> ]
 [ <a class="reference internal" href="#u"><span> <strong>-U</strong></span></a></strong>[<em>stamp</em>] ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
-[ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] ]
-[ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] ]
+[ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>] ]
+[ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>] ]
 [ <strong>-f</strong><a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">flags</span></a> ]
 [ <strong>-p</strong><a class="reference internal" href="gmt.html#perspective-full"><span class="std std-ref">flags</span></a> ]
 [ <strong>-t</strong><a class="reference internal" href="gmt.html#t-full"><span class="std std-ref">transp</span></a> ]
@@ -387,11 +387,11 @@ See <a class="reference internal" href="cookbook/features.html#placing-mag-map-r
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [w].  </dd>
+<dd>Select verbosity level [<strong>w</strong>].  </dd>
 </dl>
-<p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</p>
+<p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>]</p>
 <dl class="docutils">
-<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>] <a class="reference internal" href="gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Shift plot origin.</dd>
 </dl>
 <dl class="docutils">
@@ -433,11 +433,11 @@ of upper case letters to specify map width instead of map scale.</p>
 <div class="section" id="linear-x-y-plot">
 <h3>Linear x-y plot<a class="headerlink" href="#linear-x-y-plot" title="Permalink to this headline">¶</a></h3>
 <p>To make a linear x/y frame with all axes, but with only left and bottom
-axes annotated, using xscale = yscale = 1.0, ticking every 1 unit and
+axes annotated, using xscale = yscale = 1cm per unit, ticking every 1 unit and
 annotating every 2, and using xlabel = “Distance” and ylabel = “No of samples”, use</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin linear
-  gmt basemap -R0/9/0/5 -Jx1 -Bf1a2 -Bx+lDistance -By+l<span class="s2">&quot;No of samples&quot;</span> -BWeSn
+  gmt basemap -R0/9/0/5 -Jx1c -Bf1a2 -Bx+lDistance -By+l<span class="s2">&quot;No of samples&quot;</span> -BWeSn
 gmt end show
 </pre></div>
 </div>
@@ -446,7 +446,7 @@ gmt end show
 format.  We repeat the same example using the one-liner format and then only show this
 format for the remaining examples:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt basemap -R0/9/0/5 -Jx1 -Bf1a2 -Bx+lDistance -By+l<span class="s2">&quot;No of samples&quot;</span> -BWeSn -pdf linear
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt basemap -R0/9/0/5 -Jx1c -Bf1a2 -Bx+lDistance -By+l<span class="s2">&quot;No of samples&quot;</span> -BWeSn -pdf linear
 </pre></div>
 </div>
 </div></blockquote>
@@ -465,10 +465,10 @@ annotated every power of 10 but has tick-marks every 0.1, run</p>
 <div class="section" id="power-axes">
 <h3>Power axes<a class="headerlink" href="#power-axes" title="Permalink to this headline">¶</a></h3>
 <p>To design an axis system to be used for a depth-sqrt(age) plot with
-depth positive down, ticked and annotated every 500m, and ages annotated
-at 1 my, 4 my, 9 my etc, use</p>
+depth positive down, ticked and annotated every 500m, and ages (in millions of years) annotated
+at 1 My, 4 My, 9 My etc., use</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt basemap -R0/100/0/5000 -Jx1p0.5/-0.001 -Bx1p+l<span class="s2">&quot;Crustal age&quot;</span> -By500+lDepth -pdf power
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt basemap -R0/100/0/5000 -Jx1cp0.5/-0.001c -Bx1p+l<span class="s2">&quot;Crustal age&quot;</span> -By500+lDepth -pdf power
 </pre></div>
 </div>
 </div></blockquote>
@@ -852,7 +852,7 @@ However, it is fairly simple for most applications (see examples).</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 01, 2020.
+        Last updated on Feb 07, 2020.
       </span>
 
     </p>

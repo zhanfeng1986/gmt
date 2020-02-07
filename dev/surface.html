@@ -222,7 +222,7 @@
 [ <a class="reference internal" href="#j"><span> <strong>-J</strong></span></a></strong><em>parameters</em> ]
 [ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>breakline_file</em>[<strong>+z</strong>[<em>level</em>]] ]
 [ <a class="reference internal" href="#l"><span> <strong>-L</strong></span></a></strong><strong>l</strong><em>lower</em> ] [ <strong>-Lu</strong><em>upper</em> ]
-[ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong><em>max_radius</em>[<strong>u</strong>] ]
+[ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong><em>max_radius</em> ]
 [ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong><em>max_iterations</em> ]
 [ <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong> ]
 [ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>search_radius</em>[<strong>m</strong>|<strong>s</strong>] ]
@@ -274,7 +274,7 @@ boundary conditions in the longitude direction.</p>
 smallest grid dimension must be at least 4.</dd>
 </dl>
 <dl class="docutils" id="i">
-<dt><strong>-I</strong><em>xinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>]]</dt>
+<dt><strong>-I</strong><em>xinc</em>[<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<strong>+e</strong>|<strong>n</strong>]]</dt>
 <dd><em>x_inc</em> [and optionally <em>y_inc</em>] is the grid spacing. Optionally,
 append a suffix modifier. <strong>Geographical (degrees) coordinates</strong>: Append
 <strong>m</strong> to indicate arc minutes or <strong>s</strong> to indicate arc seconds. If one
@@ -357,7 +357,7 @@ contain NaNs. In the presence of NaNs, the limit of a node masked
 with NaN is unconstrained.</dd>
 </dl>
 <dl class="docutils" id="m">
-<dt><strong>-M</strong><em>max_radius</em>[<strong>u</strong>]</dt>
+<dt><strong>-M</strong><em>max_radius</em></dt>
 <dd>After solving for the surface, apply a mask so that nodes farther
 than <em>max_radius</em> away from a data constraint is set to NaN [no masking].
 Append a distance unit (see <a class="reference internal" href="#units">Units</a>) if needed.
@@ -406,7 +406,7 @@ solution.]</dd>
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [w]. <strong>-V3</strong> will report the convergence after each iteration;
+<dd>Select verbosity level [<strong>w</strong>]. <strong>-V3</strong> will report the convergence after each iteration;
 <strong>-V</strong> will report only after each regional grid is converged.</dd>
 </dl>
 <dl class="docutils" id="z">
@@ -607,7 +607,7 @@ splines in tension, <em>Geophysics</em>, 55, 293-305.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 01, 2020.
+        Last updated on Feb 07, 2020.
       </span>
 
     </p>

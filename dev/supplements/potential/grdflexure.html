@@ -214,16 +214,18 @@
 <p>Compute flexural deformation of 3-D surfaces for various rheologies</p>
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<p><strong>gmt grdflexure</strong> <em>topogrd</em> <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>rm</em>/<em>rl</em>[/<em>ri</em>]/<em>rw</em> <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong><em>Te</em>[<strong>u</strong>] <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>outgrid</em>
+<p><strong>gmt grdflexure</strong> <em>topogrd</em> <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>rm</em>/<em>rl</em>[/<em>ri</em>]/<em>rw</em> <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong><em>Te</em> <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>outgrid</em>
 [ <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong><em>Nx</em>/<em>Ny</em>/<em>Nxy</em> ]
 [ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><strong>p</strong><em>poisson</em> ] [ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><strong>y</strong><em>Young</em> ]
 [ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong><em>nu_a</em>[/<em>h_a</em>/<em>nu_m</em>] ]
 [ <a class="reference internal" href="#l"><span> <strong>-L</strong></span></a></strong><em>list</em> ]
-[ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong>[<strong>f</strong>|<strong>q</strong>|<strong>s</strong>|<em>nx</em>/<em>ny</em>][<strong>+a</strong>|<strong>d</strong>|<strong>h</strong>|<strong>l</strong>][<strong>+e</strong>|<strong>n</strong>|<strong>m</strong>][<strong>+t</strong><em>width</em>][<strong>+w</strong>[<em>suffix</em>]][<strong>+z</strong>[<strong>p</strong>]]
-[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>beta</em> ] [ <strong>-T</strong><em>t0</em>[<strong>u</strong>][/<em>t1</em>[<strong>u</strong>]/<em>dt</em>[<strong>u</strong>]|<em>file</em>] |<em>n</em>][<strong>+l</strong>] ]
+[ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong><strong>*tm*
+[ |-N|[**a</strong>|<strong>f</strong>|<strong>m</strong>|<strong>r</strong>|<strong>s</strong>|<em>nx/ny</em>][<strong>+a</strong>|<strong>d</strong>|<strong>h</strong>|<strong>l</strong>][<strong>+e</strong>|<strong>n</strong>|<strong>m</strong>][<strong>+t</strong><em>width</em>][<strong>+v</strong>][<strong>+w</strong>[<em>suffix</em>]][<strong>+z</strong>[<strong>p</strong>]] ]
+[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>beta</em> ]
+[ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>t0</em>[/<em>t1</em>/<em>dt</em>]|<em>file</em>[<strong>+l</strong>] ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
-[ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong><em>wd</em>]
-[ <a class="reference internal" href="#z"><span> <strong>-Z</strong></span></a></strong><em>zm</em>]
+[ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong><em>wd</em>][<strong>k</strong>]
+[ <a class="reference internal" href="#z"><span> <strong>-Z</strong></span></a></strong><em>zm</em>][<strong>k</strong>]
 [ <strong>-f</strong><a class="reference internal" href="../../gmt.html#f-full"><span class="std std-ref">flags</span></a> ]
 [ <strong>--PAR</strong>=<em>value</em> ]</p>
 <p><strong>Note:</strong> No space is allowed between the option flag and the associated arguments.</p>
@@ -300,7 +302,7 @@ the asthenosphere. Give viscosities in Pa*s. If used, give the
 thickness of the asthenosphere in meter; append <strong>k</strong> for km.</dd>
 </dl>
 <dl class="docutils" id="n">
-<dt><strong>-N</strong>[<strong>a</strong>|<strong>f</strong>|<strong>m</strong>|<strong>r</strong>|<strong>s</strong>|<em>nx/ny</em>][<strong>+a</strong>|[<strong>+d</strong>|<strong>h</strong>|<strong>l</strong>][<strong>+e</strong>|<strong>n</strong>|<strong>m</strong>][<strong>+t</strong><em>width</em>][<strong>+v</strong>][<strong>+w</strong>[<em>suffix</em>]][<strong>+z</strong>[<strong>p</strong>]]</dt>
+<dt><strong>-N</strong>[<strong>a</strong>|<strong>f</strong>|<strong>m</strong>|<strong>r</strong>|<strong>s</strong>|<em>nx/ny</em>][<strong>+a</strong>|<strong>d</strong>|<strong>h</strong>|<strong>l</strong>][<strong>+e</strong>|<strong>n</strong>|<strong>m</strong>][<strong>+t</strong><em>width</em>][<strong>+v</strong>][<strong>+w</strong>[<em>suffix</em>]][<strong>+z</strong>[<strong>p</strong>]]</dt>
 <dd><p class="first">Choose or inquire about suitable grid dimensions for FFT and set
 optional parameters. Control the FFT dimension:</p>
 <blockquote>
@@ -355,7 +357,7 @@ to the text file <em>list</em>. Requires <strong>-T</strong>.</dd>
 <dt><strong>-M</strong><em>tm</em></dt>
 <dd>Specify a viscoelastic model in conjunction with an elastic plate
 thickness specified via <strong>-E</strong>.  Append the Maxwell time <em>tm</em> for the
-viscoelastic model (in ).</dd>
+viscoelastic model (in years); add <strong>k</strong> for kyr and <strong>M</strong> for Myr.</dd>
 </dl>
 <dl class="docutils" id="s">
 <dt><strong>-S</strong><em>beta</em></dt>
@@ -364,28 +366,28 @@ filled with material of density <em>ri</em> while 0 means it is only filled with
 material of density <em>rw</em> (i.e., just water) [1].</dd>
 </dl>
 <dl class="docutils" id="t">
-<dt><strong>-T</strong><em>t0</em>[<strong>u</strong>][/<em>t1</em>[<strong>u</strong>]/<em>dt</em>[<strong>u</strong>]|<em>file</em>]|<em>n</em>][<strong>+l</strong>]</dt>
+<dt><strong>-T</strong><em>t0</em>[/<em>t1</em>/<em>dt</em>]|<em>file</em>[<strong>+l</strong>]</dt>
 <dd>Specify <em>t0</em>, <em>t1</em>, and time increment (<em>dt</em>) for sequence of calculations
 [Default is one step, with no time dependency].  For a single specific time, just
-give start time <em>t0</em>. The unit is years; append <strong>k</strong> for kyr and <strong>M</strong> for Myr.
+give start time <em>t0</em>. Default <em>unit</em> is years; append <strong>k</strong> for kyr and <strong>M</strong> for Myr.
 For a logarithmic time scale, append <strong>+l</strong> and specify <em>n</em> steps instead of <em>dt</em>.
 Alternatively, give a <em>file</em> with the desired times in the first column (these times
 may have individual units appended, otherwise we assume year).
 We then write a separate model grid file for each given time step.</dd>
 </dl>
 <dl class="docutils" id="w">
-<dt><strong>-W</strong><em>wd</em></dt>
+<dt><strong>-W</strong><em>wd</em>[<strong>k</strong>]</dt>
 <dd>Set reference depth to the undeformed flexed surface in m [0].  Append <strong>k</strong> to indicate
 km.</dd>
 </dl>
 <dl class="docutils" id="z">
-<dt><strong>-Z</strong><em>zm</em></dt>
+<dt><strong>-Z</strong><em>zm</em>[<strong>k</strong>]</dt>
 <dd>Specify reference depth to flexed surface (e.g., Moho) in m; append <strong>k</strong> for km.
 Must be positive. [0].</dd>
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [w].  </dd>
+<dd>Select verbosity level [<strong>w</strong>].  </dd>
 <dt><strong>-f</strong><a class="reference internal" href="../../gmt.html#f-full"><span class="std std-ref">flags</span></a></dt>
 <dd>Geographic grids (dimensions of longitude, latitude) will be converted to
 meters via a “Flat Earth” approximation using the current ellipsoid parameters.</dd>
@@ -495,7 +497,7 @@ of Hawaii plume flux, <em>Geophys. J. Int., 204(2)</em>, 932-947,
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 01, 2020.
+        Last updated on Feb 07, 2020.
       </span>
 
     </p>

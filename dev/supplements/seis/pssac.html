@@ -227,13 +227,13 @@
 [ <a class="reference internal" href="#o"><span> <strong>-O</strong></span></a></strong> ]
 [ <a class="reference internal" href="#p"><span> <strong>-P</strong></span></a></strong> ]
 [ <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong> ]
-[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong>[<strong>i</strong>]<em>scale</em>[<em>unit</em>] ]
+[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong>[<strong>i</strong>]<em>scale</em> ]
 [ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong>[<strong>+t</strong><em>n</em>][<strong>+r</strong><em>reduce_vel</em>][<strong>+s</strong><em>shift</em>] ]
 [ <a class="reference internal" href="#u"><span> <strong>-U</strong></span></a></strong>[<em>stamp</em>] ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
 [ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong><em>pen</em> ]
-[ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] ]
-[ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] ]
+[ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>] ]
+[ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>] ]
 [ <strong>-h</strong><a class="reference internal" href="../../gmt.html#h-full"><span class="std std-ref">headers</span></a> ]
 [ <strong>-p</strong><a class="reference internal" href="../../gmt.html#perspective-full"><span class="std std-ref">flags</span></a> ]
 [ <strong>-t</strong><a class="reference internal" href="../../gmt.html#t-full"><span class="std std-ref">transp</span></a> ]
@@ -384,11 +384,11 @@ The scaling factor is defined as <code class="docutils literal notranslate"><spa
 <dd>Plot traces vertically.</dd>
 </dl>
 <dl class="docutils" id="s">
-<dt><strong>-S</strong>[<strong>i</strong>]<em>scale</em>[<em>unit</em>]</dt>
+<dt><strong>-S</strong>[<strong>i</strong>]<em>scale</em></dt>
 <dd>Sets time scale in seconds per <em>unit</em> while plotting on geographic plots.
 Append <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> to indicate cm, inch or points as the unit.
 Use <a class="reference internal" href="../../gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a> if <em>unit</em> is omitted.
-Use <strong>-Si</strong><em>scale</em>[<em>unit</em>] to give the reciprocal scale,
+Use <strong>-Si</strong><em>scale</em> to give the reciprocal scale,
 i.e. cm per second or inch per second.</dd>
 </dl>
 <dl class="docutils" id="t">
@@ -407,16 +407,16 @@ i.e. cm per second or inch per second.</dd>
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [w].  </dd>
+<dd>Select verbosity level [<strong>w</strong>].  </dd>
 </dl>
 <dl class="docutils" id="w">
 <dt><strong>-W</strong><em>pen</em></dt>
 <dd>Set pen attributes for all traces unless overruled by <em>pen</em> specified in <em>saclist</em>.
 [Defaults: width = default, color = black, style = solid].</dd>
 </dl>
-<p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</p>
+<p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>]</p>
 <dl class="docutils">
-<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="../../gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>] <a class="reference internal" href="../../gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Shift plot origin.</dd>
 </dl>
 <dl class="docutils">
@@ -520,7 +520,7 @@ University of Science and Technology of China, Hefei, Anhui, China</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 01, 2020.
+        Last updated on Feb 07, 2020.
       </span>
 
     </p>

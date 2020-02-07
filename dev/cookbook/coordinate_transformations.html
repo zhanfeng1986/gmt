@@ -282,7 +282,7 @@ desired plot size (or scale), the chosen <em>(x,y)</em> domain, and the
 nature of <em>f</em> itself.</p>
 <p>Two subsets of linear will be discussed separately; these are a polar
 (cylindrical) projection and a linear projection applied to geographic
-coordinates (with a 360º periodicity in the <em>x</em>-coordinate). We
+coordinates (with a 360° periodicity in the <em>x</em>-coordinate). We
 will show examples of all of these projections using dummy data sets
 created with <a class="reference internal" href="../gmtmath.html"><span class="doc">gmtmath</span></a>, a “Reverse
 Polish Notation” (RPN) calculator that operates on or creates table data:</p>
@@ -350,13 +350,13 @@ do this, simply specify the length to be recomputed as 0.</p>
 <p>While the Cartesian linear projection is primarily designed for regular
 floating point <em>x</em>,<em>y</em> data, it is sometimes necessary to plot
 geographical data in a linear projection. This poses a problem since
-longitudes have a 360º periodicity. GMT therefore needs to be informed
+longitudes have a 360° periodicity. GMT therefore needs to be informed
 that it has been given geographical coordinates even though a linear
 transformation has been chosen. We do so by adding a <strong>g</strong> (for
 geographical) or <strong>d</strong> (for degrees) directly after <strong>-R</strong> or by
 appending a <strong>g</strong> or <strong>d</strong> to the end of the <strong>-Jx</strong> (or <strong>-JX</strong>)
 option. As an example, we want to plot a crude world map centered on
-125ºE. Our command will be</p>
+125°E. Our command will be</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_linear_d
 	gmt <span class="nb">set</span> MAP_GRID_CROSS_SIZE_PRIMARY <span class="m">0</span>.1i MAP_FRAME_TYPE FANCY FORMAT_GEO_MAP ddd:mm:ssF
 	gmt coast -Rg-55/305/-90/90 -Jx0.04c -Bagf -BWSen -Dc -A1000 -Glightbrown -Wthinnest -Slightblue
@@ -457,7 +457,7 @@ gmt end show
 radius <em>r</em>) to positions on a plot. Now <span class="math notranslate nohighlight">\(x' = f(\theta,r)\)</span>
 and <span class="math notranslate nohighlight">\(y' = g(\theta,r)\)</span>, hence it is similar to a regular map
 projection because <em>x</em> and <em>y</em> are coupled and <em>x</em>
-(i.e., <span class="math notranslate nohighlight">\(\theta\)</span>) has a 360º periodicity. With input and output
+(i.e., <span class="math notranslate nohighlight">\(\theta\)</span>) has a 360° periodicity. With input and output
 points both in the plane it is a <strong>two-dimensional</strong> projection. The
 transformation comes in two flavors:</p>
 <ol class="arabic simple">
@@ -479,9 +479,9 @@ the angular offset [whose default value is zero]. Then,
 <li>Optionally, insert <strong>a</strong> after <strong>p| P</strong> to indicate CW
 azimuths rather than CCW directions</li>
 <li>Optionally, append /<em>origin</em> in degrees to indicate an angular offset [0]</li>
-<li>Optionally, append <strong>r</strong> to reverse the radial direction (here,
+<li>Optionally, append <strong>+r</strong> to reverse the radial direction (here,
 <em>south</em> and <em>north</em> must be elevations in 0–90 range).</li>
-<li>Optionally, append <strong>z</strong> to annotate depths rather than radius.</li>
+<li>Optionally, append <strong>+z</strong> to annotate depths rather than radius.</li>
 </ul>
 <p>As an example of this projection we will create a gridded data set in
 polar coordinates <span class="math notranslate nohighlight">\(z(\theta, r) = r^2 \cdot \cos{4\theta}\)</span> using
@@ -523,7 +523,7 @@ Figure <a class="reference internal" href="#gmt-polar"><span class="std std-ref"
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 01, 2020.
+        Last updated on Feb 07, 2020.
       </span>
 
     </p>

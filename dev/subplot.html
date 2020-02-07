@@ -221,7 +221,7 @@ plotting is done via the <strong>set</strong> directive.  The subplot process is
 <p><strong>gmt subplot begin</strong> <em>nrows</em><strong>x</strong><em>ncols</em>
 <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong>[<strong>f</strong>|<strong>s</strong>]<em>width</em>/<em>height</em>[<strong>+f</strong><em>wfracs</em>/<em>hfracs</em>][<strong>+c</strong><em>dx/dy</em>][<strong>+g</strong><em>fill</em>][<strong>+p</strong><em>pen</em>][<strong>+w</strong><em>pen</em>]
 [ <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong><em>autolabel</em> ]
-[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong>[<em>side</em>]/<em>clearance</em>[<strong>u</strong>]]
+[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong>[<em>side</em>]/<em>clearance</em>]
 [ <a class="reference internal" href="#b"><span> <strong>-B</strong></span></a></strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> ]
 [ <a class="reference internal" href="#j"><span> <strong>-J</strong></span></a></strong><em>parameters</em> ]
 [ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong><em>margins</em> ]
@@ -229,8 +229,8 @@ plotting is done via the <strong>set</strong> directive.  The subplot process is
 [ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>layout</em> ]
 [ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>title</em> ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
-[ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]] ]
-[ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] ]
+[ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>] ]
+[ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>] ]
 [ <strong>--PAR</strong>=<em>value</em> ]</p>
 <p><strong>Note:</strong> No space is allowed between the option flag and the associated arguments.</p>
 </div>
@@ -304,7 +304,7 @@ Append <strong>+v</strong> to increase tag numbers vertically down columns [hori
 <dd>Set map boundary frame and axes attributes.</dd>
 </dl>
 <dl class="docutils" id="c">
-<dt><strong>-C</strong>[<em>side</em>]/<em>clearance</em>[<strong>u</strong>]</dt>
+<dt><strong>-C</strong>[<em>side</em>]/<em>clearance</em></dt>
 <dd>Reserve a space of dimension <em>clearance</em> between the margin and the subplot on the specified
 side, using <em>side</em> values from <strong>w</strong>, <strong>e</strong>, <strong>s</strong>, or <strong>n</strong>, or <strong>x</strong> for both <strong>w</strong> and <strong>e</strong>
 or <strong>y</strong> for both <strong>s</strong> and <strong>n</strong>.  No <em>side</em> means all sides. The option is repeatable to set aside space
@@ -355,11 +355,11 @@ overarching <em>heading</em> [no heading]. Font is determined by setting <a clas
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [w].  </dd>
+<dd>Select verbosity level [<strong>w</strong>].  </dd>
 </dl>
-<p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</p>
+<p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>]</p>
 <dl class="docutils">
-<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]] <a class="reference internal" href="gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>] <a class="reference internal" href="gmt.html#xy-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Shift plot origin.</dd>
 </dl>
 <dl class="docutils">
@@ -376,7 +376,7 @@ any module-specific option (but not the GMT common options), then exit.</dd>
 </div>
 <div class="section" id="synopsis-set-mode">
 <h2>Synopsis (set mode)<a class="headerlink" href="#synopsis-set-mode" title="Permalink to this headline">¶</a></h2>
-<p><strong>gmt subplot set</strong> [ <em>row,col</em>|<em>index</em> ] [ <strong>-A</strong><em>fixedlabel</em>] [ <strong>-C</strong><em>side</em>/<em>clearance</em>[<strong>u</strong>] ] [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]</p>
+<p><strong>gmt subplot set</strong> [ <em>row,col</em>|<em>index</em> ] [ <strong>-A</strong><em>fixedlabel</em>] [ <strong>-C</strong><em>side</em>/<em>clearance</em> ] [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]</p>
 <p>Before you start plotting you must first select the active subplot.
 Note: If any <strong>-J</strong> option is passed with <strong>?</strong> as scale or width when plotting subplots,
 then the dimensions of the map are automatically determined by the subplot size and your region.
@@ -400,7 +400,7 @@ Placement, justification, etc. are all inherited from how <strong>-A</strong> wa
 initial <strong>subplot begin</strong> command.</dd>
 </dl>
 <dl class="docutils" id="subplot-set-c2">
-<dt><strong>-C</strong><em>side</em>/<em>clearance</em>[<strong>u</strong>]</dt>
+<dt><strong>-C</strong><em>side</em>/<em>clearance</em></dt>
 <dd>Reserve a space of dimension <em>clearance</em> between the margin and the subplot on the specified
 side, using <em>side</em> values from <strong>w</strong>, <strong>e</strong>, <strong>s</strong>, or <strong>n</strong>.  The option is repeatable to set aside space
 on more than one side.  Such space will be left untouched by the main map plotting but can
@@ -409,7 +409,7 @@ clearances set by <strong>-C</strong> during <strong>subplot begin</strong>.</dd
 </dl>
 <dl class="docutils" id="subplot-set-v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [w].  </dd>
+<dd>Select verbosity level [<strong>w</strong>].  </dd>
 </dl>
 <p>Any number of plotting command can now take place and all output will be directed to the
 selected subplot.  There are a few other rules that need to be followed:
@@ -433,7 +433,7 @@ the current plot location to where it was prior to the subplot.</p>
 <h2>Optional Arguments<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils" id="subplot-end-v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [w].  </dd>
+<dd>Select verbosity level [<strong>w</strong>].  </dd>
 </dl>
 </div>
 <div class="section" id="examples">
@@ -493,7 +493,7 @@ gmt end show
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 01, 2020.
+        Last updated on Feb 07, 2020.
       </span>
 
     </p>

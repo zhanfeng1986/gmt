@@ -216,7 +216,7 @@
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <p><strong>gmt project</strong> [ <em>table</em> ] <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>cx</em>/<em>cy</em> [ <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong><em>azimuth</em> ]
 [ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong><em>bx</em>/<em>by</em> ] [ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong><em>flags</em> ]
-[ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>dist</em>[/<em>colat</em>][<strong>+h</strong>] ]
+[ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>dist</em>[/<em>colat</em>][<strong>+c</strong>|<strong>h</strong>] ]
 [ <a class="reference internal" href="#l"><span> <strong>-L</strong></span></a></strong>[<strong>w</strong>|<em>l_min</em>/<em>l_max</em>] ]
 [ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong> ] [ <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong> ] [ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong> ]
 [ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>px</em>/<em>py</em> ]
@@ -332,11 +332,13 @@ of the order of <strong>z</strong> in <em>flags</em>). Note: If <strong>-G</stro
 output order is hardwired to be <strong>rsp</strong> and <strong>-F</strong> is not allowed.</dd>
 </dl>
 <dl class="docutils" id="g">
-<dt><strong>-G</strong><em>dist</em>[/<em>colat</em>][<strong>+h</strong>]</dt>
+<dt><strong>-G</strong><em>dist</em>[/<em>colat</em>][<strong>+c</strong>|<strong>h</strong>]</dt>
 <dd>Generate mode. No input is read. Create (<em>r</em>, <em>s</em>, <em>p</em>) output
 points every <em>dist</em> units of <em>p</em>. See <strong>-Q</strong> option. Alternatively,
 append <strong>/</strong><em>colat</em> for a small circle instead [Default is a
-colatitude of 90, i.e., a great circle]. Use <strong>-C</strong> and <strong>-E</strong> to
+colatitude of 90, i.e., a great circle]. If setting a pole with <strong>-T</strong>
+and you want the small circle to go through <em>cx</em>/<em>cy</em>, append <strong>+c</strong> to
+compute the required colatitude. Use <strong>-C</strong> and <strong>-E</strong> to
 generate a circle that goes through the center and end point. Note,
 in this case the center and end point cannot be farther apart than
 2*|<em>colat</em>|. Finally, if you append <strong>+h</strong> the we will report
@@ -372,7 +374,7 @@ random data into a sequential profile.</dd>
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [w].  </dd>
+<dd>Select verbosity level [<strong>w</strong>].  </dd>
 </dl>
 <dl class="docutils" id="w">
 <dt><strong>-W</strong><em>w_min</em>/<em>w_max</em></dt>
@@ -407,7 +409,7 @@ uses the given increment and closes the ellipse].</dd>
 <dd>Specify data types of input and/or output columns.  </dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>]  <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>+n</strong>|<strong>p</strong>]  <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Determine data gaps and line breaks.  </dd>
 </dl>
 <dl class="docutils">
@@ -591,7 +593,7 @@ This gives coordinates for an oblique small circle.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 01, 2020.
+        Last updated on Feb 07, 2020.
       </span>
 
     </p>

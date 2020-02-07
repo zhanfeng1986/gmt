@@ -217,7 +217,7 @@
 <p><strong>gmt x2sys_solve</strong> <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>column</em> <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>TAG</em> <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong><strong>c</strong>|<strong>d</strong>|<strong>g</strong>|<strong>h</strong>|<strong>s</strong>|<strong>y</strong>|<strong>z</strong>
 [ <em>COE_list.txt</em> ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
-[ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong><strong>[u]</strong> ]
+[ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong>[<strong>+u</strong>] ]
 [ <strong>-bi</strong><a class="reference internal" href="../../gmt.html#bi-full"><span class="std std-ref">binary</span></a> ]
 [ <strong>-di</strong><a class="reference internal" href="../../gmt.html#di-full"><span class="std std-ref">nodata</span></a> ]
 [ <strong>-x</strong>[[-]<em>n</em>] ]
@@ -282,13 +282,13 @@ correction); <em>z</em> is the data value at the crossover; records must contain
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [w].  </dd>
+<dd>Select verbosity level [<strong>w</strong>].  </dd>
 </dl>
 <dl class="docutils" id="w">
-<dt><strong>-W</strong></dt>
+<dt><strong>-W</strong>[<strong>+u</strong>]</dt>
 <dd>Means that each input records has an extra column just before the ID columns
 with the composite weight for each crossover record. These are used to obtain a
-weighted least squares solution [no weights]. Append <strong>u</strong> to report
+weighted least squares solution [no weights]. Append <strong>+u</strong> to report
 unweighted mean/std [Default, report weighted stats].</dd>
 </dl>
 <dl class="docutils">
@@ -406,7 +406,7 @@ gmt x2sys_solve depth_coe.txt -V -TMGD77 -Cdepth -Es &gt; coe_table.txt
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 01, 2020.
+        Last updated on Feb 07, 2020.
       </span>
 
     </p>

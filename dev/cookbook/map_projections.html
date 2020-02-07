@@ -335,8 +335,8 @@ that way. E.g., you can say 0.5c which means 0.5 cm/degree or 1:200000
 which means 1 unit on the map equals 200,000 units along the standard
 parallels. The projection center defines the origin of the rectangular
 map coordinates. As an example we will make a map of the region near
-Taiwan. We choose the center of the projection to be at 125ºE/20ºN and
-25ºN and 45ºN as our two standard parallels. We desire a map that is 12
+Taiwan. We choose the center of the projection to be at 125°E/20°N and
+25°N and 45°N as our two standard parallels. We desire a map that is 12
 cm wide. The complete command needed to generate the map below is
 therefore given by:</p>
 <blockquote>
@@ -393,7 +393,7 @@ same information as for the Albers projection, i.e.,</p>
 <li>Map scale in plot-untes/degree or 1:xxxxx notation (<strong>-Jl</strong>), or map width (<strong>-JL</strong>).</li>
 </ul>
 <p>The Lambert conformal projection has been used for basemaps for all the
-48 contiguous States with the two fixed standard parallels 33ºN and 45ºN.
+48 contiguous States with the two fixed standard parallels 33°N and 45°N.
 We will generate a map of the continental USA using these parameters.
 Note that with all the projections you have the option of selecting a
 rectangular border rather than one defined by meridians and parallels.
@@ -410,9 +410,9 @@ gmt coast -R-130/-70/24/52 -Jl-100/35/33/45/1:50000000 -Bag -Dl -N1/thick,red -N
 <p class="caption"><span class="caption-text">Lambert conformal conic map projection.</span></p>
 </div>
 <p>The choice for projection center does not affect the projection but it
-indicates which meridian (here 100ºW) will be vertical on the map. The
+indicates which meridian (here 100°W) will be vertical on the map. The
 standard parallels were originally selected by Adams to provide a
-maximum scale error between latitudes 30.5ºN and 47.5ºN of 0.5–1%. Some
+maximum scale error between latitudes 30.5°N and 47.5°N of 0.5–1%. Some
 areas, like Florida, experience scale errors of up to 2.5%.</p>
 </div>
 <div class="section" id="american-polyconic-projection-jpoly-jpoly">
@@ -433,7 +433,7 @@ parallel is true to scale as well, but the meridians are not as they get
 further away from the central meridian. As a consequence, no parallel is
 standard because conformity is lost with the lengthening of the meridians.</p>
 <p>Below we reproduce the illustration by <em>Snyder</em> [1987], with a gridline
-every 10 and annotations only every 30º in longitude:</p>
+every 10 and annotations only every 30° in longitude:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -R-180/-20/0/90 -JPoly/10c -Bx30g10 -By10g10 -Dc -A1000 -Glightgray -Wthinnest -pdf GMT_polyconic
 </pre></div>
@@ -475,7 +475,7 @@ way is that for this and many other projections, lines of equal
 longitude and latitude are not straight lines and are thus poor choices
 for map boundaries. Instead we require that the map boundaries be
 rectangular by defining the corners of a rectangular map boundary. Using
-0ºE/40ºS (lower left) and 60ºE/10ºS (upper right) as our corners we try</p>
+0°E/40°S (lower left) and 60°E/10°S (upper right) as our corners we try</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nb">set</span> FORMAT_GEO_MAP ddd:mm:ssF MAP_GRID_CROSS_SIZE_PRIMARY <span class="m">0</span>
 gmt coast -R0/-40/60/-10+r -JA30/-30/12c -Bag -Dl -A500 -Gp10+r300 -Wthinnest -pdf GMT_lambert_az_rect
@@ -576,7 +576,7 @@ gmt coast -R-25/59/70/72+r -JS10/90/11c -B20g -Dl -A250 -Gdarkbrown -Wthinnest -
 <p>In terms of usage this projection is identical to the Lambert azimuthal
 equal-area projection. Thus, one can make both rectangular and
 hemispheric maps. Our example shows Australia using a projection pole at
-130ºE/30ºS. The command used was</p>
+130°E/30°S. The command used was</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nb">set</span> MAP_ANNOT_OBLIQUE <span class="m">0</span>
 gmt coast -R100/-42/160/-8+r -JS130/-30/12c -Bag -Dl -A500 -Ggreen -Slightblue -Wthinnest -pdf GMT_stereographic_general
@@ -599,7 +599,7 @@ flexible, and thus requires many input variables. Those are listed and
 explained below, with the values used in
 Figure <a class="reference internal" href="#gmt-perspective"><span class="std std-ref">Perspective projection</span></a> between brackets.</p>
 <ul class="simple">
-<li>Longitude and latitude of the projection center (4ºE/52ºN).</li>
+<li>Longitude and latitude of the projection center (4°E/52°N).</li>
 <li>Altitude of the viewer above sea level in kilometers (230 km). If
 this value is less than 10, it is assumed to be the distance of the
 viewer from the center of the earth in earth radii. If an “r” is
@@ -608,14 +608,14 @@ kilometers.</li>
 <li>Azimuth in degrees (90, due east). This is the direction in which you
 are looking, measured clockwise from north.</li>
 <li>Tilt in degrees (60). This is the viewing angle relative to zenith.
-So a tilt of 0º is looking straight down, 60º is looking from 30º above
+So a tilt of 0° is looking straight down, 60° is looking from 30° above
 the horizon.</li>
 <li>Twist in degrees (180). This is the boresight rotation (clockwise) of
-the image. The twist of 180º in the example mimics the fact that the
+the image. The twist of 180° in the example mimics the fact that the
 Space Shuttle flies upside down.</li>
 <li>Width and height of the viewpoint in degrees (60). This number
 depends on whether you are looking with the naked eye (in which case
-you view is about 60º wide), or with binoculars, for example.</li>
+you view is about 60° wide), or with binoculars, for example.</li>
 <li>Scale as 1:xxxxx or as radius/latitude where radius is distance on
 map in plot-units from projection center to a particular
 oblique latitude (<strong>-Jg</strong>), or map width (<strong>-JG</strong>) (e.g., 12 cm).</li>
@@ -654,7 +654,7 @@ to the edge (&lt;= 90, default is 90).</li>
 map in plot-units from projection center to a particular
 oblique latitude (<strong>-Jg</strong>), or map width (<strong>-JG</strong>).</li>
 </ul>
-<p>Our example of a perspective view centered on 75ºW/40ºN can therefore be
+<p>Our example of a perspective view centered on 75°W/40°N can therefore be
 generated by the following <a class="reference internal" href="../coast.html"><span class="doc">coast</span></a> command:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -Rg -JG-75/41/12c -Bg -Dc -A5000 -Gpink -Sthistle -pdf GMT_orthographic
@@ -684,9 +684,9 @@ to the edge (&lt;= 180, default is 180).</li>
 map in plot-units from projection center to a particular
 oblique latitude (<strong>-Je</strong>), or map width (<strong>-JE</strong>).</li>
 </ul>
-<p>Our example of a global view centered on 100ºW/40ºN can therefore be
+<p>Our example of a global view centered on 100°W/40°N can therefore be
 generated by the following <a class="reference internal" href="../coast.html"><span class="doc">coast</span></a>
-command. Note that the antipodal point is 180º away from the center, but
+command. Note that the antipodal point is 180° away from the center, but
 in this projection this point plots as the entire map perimeter:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -Rg -JE-100/40/12c -Bg -Dc -A10000 -Glightgray -Wthinnest -pdf GMT_az_equidistant
@@ -719,7 +719,7 @@ map in plot-units from projection center to a particular
 oblique latitude (<strong>-Jf</strong>), or map width (<strong>-JF</strong>).</li>
 </ul>
 <p>Using a horizon of 60, our example of this projection centered on
-120ºW/35ºN can therefore be generated by the following <a class="reference internal" href="../coast.html"><span class="doc">coast</span></a> command:</p>
+120°W/35°N can therefore be generated by the following <a class="reference internal" href="../coast.html"><span class="doc">coast</span></a> command:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -Rg -JF-120/35/60/12c -B30g15 -Dc -A10000 -Gtan -Scyan -Wthinnest -pdf GMT_gnomonic
 </pre></div>
@@ -793,8 +793,8 @@ Greenwich would specify the region with <strong>-R</strong>-180/180/-70/70.</p>
 <p>The transverse Mercator was invented by Lambert in 1772. In this
 projection the cylinder touches a meridian along which there is no
 distortion. The distortion increases away from the central meridian and
-goes to infinity at 90º from center. The central meridian, each meridian
-90º away from the center, and equator are straight lines; other parallels
+goes to infinity at 90° from center. The central meridian, each meridian
+90° away from the center, and equator are straight lines; other parallels
 and meridians are complex curves. The projection is defined by
 specifying:</p>
 <ul class="simple">
@@ -806,7 +806,7 @@ width (<strong>-JT</strong>).</li>
 <p>The optional latitude of origin defaults to Equator if not specified.
 Although defaulting to 1, you can change the map scale factor via the
 <a class="reference internal" href="../gmt.conf.html#term-proj-scale-factor"><span class="xref std std-term">PROJ_SCALE_FACTOR</span></a> parameter. Our example shows a transverse
-Mercator map of south-east Europe and the Middle East with 35ºE as the
+Mercator map of south-east Europe and the Middle East with 35°E as the
 central meridian:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -R20/30/50/45+r -Jt35/0.5c -Bag -Dl -A250 -Glightbrown -Wthinnest -Sseashell -pdf GMT_transverse_merc
@@ -818,7 +818,7 @@ central meridian:</p>
 <p class="caption"><span class="caption-text">Rectangular Transverse Mercator map.</span></p>
 </div>
 <p>The transverse Mercator can also be used to generate a global map - the
-equivalent of the 360º Mercator map. Using the command</p>
+equivalent of the 360° Mercator map. Using the command</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -R0/360/-80/80 -JT330/-45/10c -Ba30g -BWSne -Dc -A2000 -Slightblue -G0 -pdf GMT_TM
 </pre></div>
@@ -826,7 +826,7 @@ equivalent of the 360º Mercator map. Using the command</p>
 </div></blockquote>
 <p>we made the map illustrated in Figure <a class="reference internal" href="#gmt-tm"><span class="std std-ref">Global transverse Mercator</span></a>. Note that
 when a world map is given (indicated by <strong>-R</strong><em>0/360/s/n</em>), the
-arguments are interpreted to mean oblique degrees, i.e., the 360º range
+arguments are interpreted to mean oblique degrees, i.e., the 360° range
 is understood to mean the extent of the plot along the central meridian,
 while the “south” and “north” values represent how far from the central
 longitude we want the plot to extend. These values correspond to
@@ -842,7 +842,7 @@ than 90.</p>
 <p>A particular subset of the transverse Mercator is the Universal
 Transverse Mercator (UTM) which was adopted by the US Army for
 large-scale military maps. Here, the globe is divided into 60 zones
-between 84ºS and 84ºN, most of which are 6 wide. Each of these UTM zones
+between 84°S and 84°N, most of which are 6 wide. Each of these UTM zones
 have their unique central meridian. Furthermore, each zone is divided
 into latitude bands but these are not needed to specify the projection
 for most cases. See Figure <a class="reference internal" href="#gmt-utm-zones"><span class="std std-ref">Universal Transverse Mercator</span></a> for all zone designations.</p>
@@ -950,14 +950,14 @@ analysis that led to the development of the ellipsoidal formulae. The
 projection is neither conformal nor equal-area, and behaves as a
 compromise between the two end-members. The distortion is zero along the
 central meridian. It is best suited for mapping regions of north-south
-extent. The central meridian, each meridian 90º away, and equator are
+extent. The central meridian, each meridian 90° away, and equator are
 straight lines; all other meridians and parallels are complex curves.
 The requirements to define this projection are:</p>
 <ul class="simple">
 <li>Longitude and latitude of central point.</li>
 <li>Scale in plot-units/degree or as 1:xxxxx (<strong>-Jc</strong>), or map width (<strong>-JC</strong>).</li>
 </ul>
-<p>A detailed map of the island of Sardinia centered on the 8º45’E meridian
+<p>A detailed map of the island of Sardinia centered on the 8°45’E meridian
 using the Cassini projection can be obtained by running the command:</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -R7:30/38:30/10:30/41:30+r -JC8.75/40/6c -Bafg -LjBR+c40+w100+f+o0.4c/0.5c -Gspringgreen -Dh -Sazure -Wthinnest -Ia/thinner --FONT_LABEL<span class="o">=</span>12p -pdf GMT_cassini
@@ -1012,22 +1012,22 @@ Table <a class="reference internal" href="#tbl-jq"><span class="std std-ref">JQ<
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>Grafarend and Niermann, minimum linear distortion</td>
-<td>61.7º</td>
+<td>61.7°</td>
 </tr>
 <tr class="row-odd"><td>Ronald Miller Equirectangular</td>
-<td>50.5º</td>
+<td>50.5°</td>
 </tr>
 <tr class="row-even"><td>Ronald Miller, minimum continental distortion</td>
-<td>43.5º</td>
+<td>43.5°</td>
 </tr>
 <tr class="row-odd"><td>Grafarend and Niermann</td>
-<td>42º</td>
+<td>42°</td>
 </tr>
 <tr class="row-even"><td>Ronald Miller, minimum overall distortion</td>
-<td>37.5º</td>
+<td>37.5°</td>
 </tr>
 <tr class="row-odd"><td>Plate Carrée, Simple Cylindrical, Plain/Plane</td>
-<td>0º</td>
+<td>0°</td>
 </tr>
 </tbody>
 </table>
@@ -1058,29 +1058,29 @@ that result in known (or named) projections. These are listed in Table <a class=
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>Balthasart</td>
-<td>50º</td>
+<td>50°</td>
 </tr>
 <tr class="row-odd"><td>Gall</td>
-<td>45º</td>
+<td>45°</td>
 </tr>
 <tr class="row-even"><td>Hobo-Dyer</td>
-<td>37º30’ (= 37.5º)</td>
+<td>37°30’ (= 37.5°)</td>
 </tr>
 <tr class="row-odd"><td>Trystan Edwards</td>
-<td>37º24’ (= 37.4º)</td>
+<td>37°24’ (= 37.4°)</td>
 </tr>
 <tr class="row-even"><td>Caster</td>
-<td>37º04’ (= 37.0666º)</td>
+<td>37°04’ (= 37.0666°)</td>
 </tr>
 <tr class="row-odd"><td>Behrman</td>
-<td>30º</td>
+<td>30°</td>
 </tr>
 <tr class="row-even"><td>Lambert</td>
-<td>0º</td>
+<td>0°</td>
 </tr>
 </tbody>
 </table>
-<p>For instance, a world map centered on the 35ºE meridian using the Behrman
+<p>For instance, a world map centered on the 35°E meridian using the Behrman
 projection (Figure <a class="reference internal" href="#gmt-general-cyl"><span class="std std-ref">Behrman cylindrical projection</span></a>)
 can be obtained by running the command:</p>
 <blockquote>
@@ -1109,7 +1109,7 @@ this projection. Specify the projection by:</p>
 <li>Optionally, the central meridian (default is the middle of your map).</li>
 <li>Scale in plot-units/degree or as 1:xxxxx (<strong>-Jj</strong>), or map width (<strong>-JJ</strong>).</li>
 </ul>
-<p>For instance, a world map centered on the 90ºE meridian at a map scale of
+<p>For instance, a world map centered on the 90°E meridian at a map scale of
 1:400,000,000 (Figure <a class="reference internal" href="#gmt-miller"><span class="std std-ref">Miller projection</span></a>) can be obtained as
 follows:</p>
 <blockquote>
@@ -1154,24 +1154,24 @@ cartographer or publication that popularized the projection
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>Miller’s modified Gall</td>
-<td>66.159467º</td>
+<td>66.159467°</td>
 </tr>
 <tr class="row-odd"><td>Kamenetskiy’s First</td>
-<td>55º</td>
+<td>55°</td>
 </tr>
 <tr class="row-even"><td>Gall’s stereographic</td>
-<td>45º</td>
+<td>45°</td>
 </tr>
 <tr class="row-odd"><td>Bolshoi Sovietskii Atlas Mira or Kamenetskiy’s Second</td>
-<td>30º</td>
+<td>30°</td>
 </tr>
 <tr class="row-even"><td>Braun’s cylindrical</td>
-<td>0º</td>
+<td>0°</td>
 </tr>
 </tbody>
 </table>
 <p>A map of the world, centered on the Greenwich meridian, using the Gall’s
-stereographic projection (standard parallel is 45º,
+stereographic projection (standard parallel is 45°,
 Figure <a class="reference internal" href="#gmt-gall-stereo"><span class="std std-ref">Gall’s stereographic projection</span></a>),
 is obtained as follows:</p>
 <blockquote>
@@ -1309,7 +1309,7 @@ enter</p>
 Max Eckert-Greiffendorff in 1906, are pseudo-cylindrical equal-area
 projections. Central meridian and all parallels are straight lines;
 other meridians are equally spaced elliptical arcs (IV) or sinusoids
-(VI). The scale is true along latitudes 40º30’ (IV) and 49º16’ (VI). Their
+(VI). The scale is true along latitudes 40°30’ (IV) and 49°16’ (VI). Their
 main use is in thematic world maps. To select Eckert IV you must use
 <strong>-JKf</strong> (<strong>f</strong> for “four”) while Eckert VI is selected with <strong>-JKs</strong>
 (<strong>s</strong> for “six”). If no modifier is given it defaults to Eckert VI. In
@@ -1361,8 +1361,8 @@ parallels (and central meridian). To use it, you need to select:</p>
 </div>
 <p>To reduce distortion of shape the interrupted sinusoidal projection was
 introduced in 1927. Here, three symmetrical segments are used to cover
-the entire world. Traditionally, the interruptions are at 160ºW, 20ºW, and
-60ºE. To make the interrupted map we must call
+the entire world. Traditionally, the interruptions are at 160°W, 20°W, and
+60°E. To make the interrupted map we must call
 <a class="reference internal" href="../coast.html"><span class="doc">coast</span></a> for each segment and superpose
 the results. To produce an interrupted world map (with the traditional
 boundaries just mentioned) that is 14.4 cm wide we use the scale
@@ -1458,7 +1458,7 @@ file.</td></tr>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 01, 2020.
+        Last updated on Feb 07, 2020.
       </span>
 
     </p>

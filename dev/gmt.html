@@ -332,8 +332,8 @@ can benefit from the GMT infrastructure and extend GMT in specific ways.</p>
 <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>]
 <a class="reference internal" href="#u"><span> <strong>-U</strong></span></a></strong>[<em>stamp</em>]
 <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>]
-<a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]
-<a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]]
+<a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>]
+<a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>]
 <strong>-a</strong><a class="reference internal" href="#aspatial-full"><span class="std std-ref">flags</span></a>
 <strong>-b</strong><a class="reference internal" href="#bi-full"><span class="std std-ref">binary</span></a>
 <strong>-c</strong><a class="reference internal" href="#c-full"><span class="std std-ref">row,col|index</span></a>
@@ -384,12 +384,12 @@ requested (below) and disallowed for the oblique Mercator projection.
 To add a plot title, append <strong>+t</strong><em>title</em>. The Frame setting is optional but
 can be invoked once to override the above defaults.</p>
 <p>The Axes parameters are specified by</p>
-<p><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>][<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>intervals</em>[<strong>+a</strong><em>angle</em>|<strong>n</strong>|<strong>p</strong>][<strong>+l</strong>|<strong>L</strong><em>label</em>][<strong>+p</strong><em>prefix</em>][<strong>+s</strong>|<strong>S</strong><em>seclabel</em>][<strong>+u</strong><em>unit</em>]</p>
+<p><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>][<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>intervals</em>[<strong>+a</strong><em>angle</em>|<strong>n</strong>|<strong>p</strong>][<strong>+f</strong>][<strong>+l</strong>|<strong>L</strong><em>label</em>][<strong>+p</strong><em>prefix</em>][<strong>+s</strong>|<strong>S</strong><em>seclabel</em>][<strong>+u</strong><em>unit</em>]</p>
 <p class="last">but you may also split this into two separate invocations for clarity, i.e.,</p>
 </dd>
 </dl>
 <ul>
-<li><p class="first"><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>][<strong>x</strong>|<strong>y</strong>|<strong>z</strong>][<strong>+a</strong><em>angle</em>|<strong>n</strong>|<strong>p</strong>][<strong>+l</strong>|<strong>L</strong><em>label</em>][<strong>+p</strong><em>prefix</em>][<strong>+s</strong>|<strong>S</strong><em>seclabel</em>][<strong>+u</strong><em>unit</em>]</p>
+<li><p class="first"><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>][<strong>x</strong>|<strong>y</strong>|<strong>z</strong>][<strong>+a</strong><em>angle</em>|<strong>n</strong>|<strong>p</strong>][<strong>+f</strong>][<strong>+l</strong>|<strong>L</strong><em>label</em>][<strong>+p</strong><em>prefix</em>][<strong>+s</strong>|<strong>S</strong><em>seclabel</em>][<strong>+u</strong><em>unit</em>]</p>
 </li>
 <li><p class="first"><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>][<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>intervals</em></p>
 <p>The first optional flag following <strong>-B</strong> selects <strong>p</strong> (rimary) [Default] or
@@ -415,10 +415,11 @@ and must be in the -90 &lt;= <em>angle</em> &lt;= 90 range only.  Also, <strong>
 for normal (i.e., <strong>+a</strong>90) and <strong>+ap</strong> for parallel (i.e., <strong>+a</strong>0) annotations
 [Default].  For the y-axis, arbitrary angles are not allowed but <strong>+an</strong> and <strong>+ap</strong>
 specify annotations normal [Default] and parallel to the axis, respectively.  Note that
-these defaults can be changed via <a class="reference internal" href="gmt.conf.html#term-map-annot-ortho"><span class="xref std std-term">MAP_ANNOT_ORTHO</span></a>.</p>
+these defaults can be changed via <a class="reference internal" href="gmt.conf.html#term-map-annot-ortho"><span class="xref std std-term">MAP_ANNOT_ORTHO</span></a>. Geographic axes can
+take <strong>+f</strong> which will give fancy annotations with W|E|S|N suffices encoding the sign.</p>
 <p>The <em>intervals</em> specification is a concatenated string made up of substrings
 of the form</p>
-<p>[<strong>a</strong>|<strong>f</strong>|<strong>g</strong>]<em>stride</em>[<em>±phase</em>][<strong>u</strong>].</p>
+<p>[<strong>a</strong>|<strong>f</strong>|<strong>g</strong>]<em>stride</em>[<em>±phase</em>][<em>unit</em>].</p>
 <p>The leading <strong>a</strong> is used to specify the annotation and major tick
 spacing [Default], <strong>f</strong> for minor tick spacing, and <strong>g</strong> for
 gridline spacing. <em>stride</em> is the desired stride interval. The
@@ -667,7 +668,7 @@ meridian (<strong>1:</strong><em>xxxx</em> or UNIT/degree).</dd>
 </dl>
 <p><strong>AZIMUTHAL PROJECTIONS:</strong></p>
 <p>Except for polar aspects, <strong>-R</strong>w/e/s/n will be reset to <strong>-Rg</strong>.
-Use <strong>-R</strong>&lt;…&gt;<strong>r</strong> for smaller regions.</p>
+Use <strong>-R</strong>&lt;…&gt;<strong>+r</strong> for smaller regions.</p>
 </div></blockquote>
 <blockquote id="ja-full">
 <div><dl class="docutils">
@@ -790,13 +791,13 @@ equator (<strong>1:</strong><em>xxxx</em> or UNIT/degree).</dd>
 <p><strong>NON-GEOGRAPHICAL PROJECTIONS:</strong></p>
 </div></blockquote>
 <blockquote id="jp-full">
-<div><p><strong>-Jp</strong>[<strong>a</strong>]<em>scale</em>[<em>/origin</em>][<strong>r</strong>|<strong>z</strong>] or <strong>-JP</strong>[<strong>a</strong>]<em>width</em>[<em>/origin</em>][<strong>r</strong>|<strong>z</strong>]
-(Polar coordinates (theta,r))</p>
-<p>Optionally insert <strong>a</strong> after <strong>-Jp</strong> [ or <strong>-JP</strong>] for azimuths CW
+<div><p><strong>-Jp</strong>[<strong>a</strong>]<em>scale</em>[<em>/origin</em>][<strong>+r</strong>|<strong>z</strong>] or <strong>-JP</strong>[<strong>a</strong>]<em>width</em>[<em>/origin</em>][<strong>+r</strong>|<strong>z</strong>]
+(Polar coordinates (<em>theta</em>, <em>r</em>))</p>
+<p>Optionally insert <strong>a</strong> after <strong>-Jp</strong> [or <strong>-JP</strong>] if <em>theta</em> is azimuths CW
 from North instead of directions CCW from East [Default]. Optionally
-append /<em>origin</em> in degrees to indicate an angular offset [0]).
-Finally, append <strong>r</strong> if r is elevations in degrees (requires s &gt;= 0
-and n &lt;= 90) or <strong>z</strong> if you want to annotate depth rather than
+append /<em>origin</em> in degrees to indicate an angular offset [0].
+Finally, append <strong>+r</strong> if <em>r</em> represents elevations in degrees (requires <em>south</em> &gt;= 0
+and <em>north</em> &lt;= 90), or append <strong>+z</strong> if you want to annotate depth rather than
 radius [Default]. Give <em>scale</em> in UNIT/r-unit.</p>
 </div></blockquote>
 <blockquote id="jx-full">
@@ -923,12 +924,12 @@ no third dimension.</p>
 <dl class="docutils" id="u-full">
 <dt><strong>-U</strong>[<em>label</em>][<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>/<em>dy</em>]</dt>
 <dd>Draw the GMT Unix System time stamp on the plot.
-By appending <strong>+j</strong><em>just</em> and/or <strong>+o</strong><em>dx/dy</em>, the
+By appending <strong>+j</strong><em>just</em> [BL] and/or <strong>+o</strong><em>dx/dy</em> [-54p/-54p], the
 user may specify the justification of the stamp and where the stamp
 should fall on the page relative to lower left corner of the plot.
-For example, +jBL+o0/0 will align the lower left corner of the time
-stamp with the bottom left corner of the plot [BL]. Optionally, append a
-<em>label</em>, or give <strong>+c</strong> which will plot the command string. The GMT
+For example, <strong>+jBL+o</strong>0/0 will align the lower left corner of the time
+stamp with the bottom left corner of the plot. Optionally, append a
+<em>label</em>, or give <strong>+c</strong> which will plot the module command string. The GMT
 parameters <a class="reference internal" href="gmt.conf.html#term-map-logo"><span class="xref std std-term">MAP_LOGO</span></a>, <a class="reference internal" href="gmt.conf.html#term-map-logo-pos"><span class="xref std std-term">MAP_LOGO_POS</span></a>,
 <a class="reference internal" href="gmt.conf.html#term-font-logo"><span class="xref std std-term">FONT_LOGO</span></a> and <a class="reference internal" href="gmt.conf.html#term-format-time-stamp"><span class="xref std std-term">FORMAT_TIME_STAMP</span></a>
 can affect the appearance; see the <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> man page for details.
@@ -939,17 +940,17 @@ The time string will be in the locale set by the environment variable
 <dt><strong>-V</strong>[<em>level</em>]</dt>
 <dd>Select verbose mode, which modulates the messages written to <em>stderr</em>.
 Choose among 7 levels of verbosity; each level adds more messages:
-<strong>q</strong> - Quiet, not even fatal error messages are produced.
-<strong>e</strong> - Error messages only.
-<strong>w</strong> - Warnings [Default].
-<strong>t</strong> - Timings (report runtimes for time-intensive algorithms).
-<strong>i</strong> - Informational messages (same as <strong>-V</strong> only).
-<strong>c</strong> - Compatibility warnings.
+<strong>q</strong> - Quiet, not even fatal error messages are produced,
+<strong>e</strong> - Error messages only,
+<strong>w</strong> - Warnings [Default],
+<strong>t</strong> - Timings (report runtimes for time-intensive algorithms),
+<strong>i</strong> - Informational messages (same as <strong>-V</strong> only),
+<strong>c</strong> - Compatibility warnings, or
 <strong>d</strong> - Debugging messages.</dd>
 </dl>
-<p id="xy-full"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>[<strong>u</strong>]]</p>
+<p id="xy-full"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>]</p>
 <dl class="docutils">
-<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>[<strong>u</strong>]]</dt>
+<dt><strong>-Y</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>]</dt>
 <dd>Shift plot origin relative to the current origin by
 (<em>xshift</em>,<em>yshift</em>) and optionally append the length unit
 (<strong>c</strong>, <strong>i</strong>, or <strong>p</strong>). You can prepend <strong>a</strong> to shift the origin
@@ -958,7 +959,7 @@ center the plot on the center of the paper (optionally add shift),
 prepend <strong>f</strong> to shift the origin relative to the fixed lower left
 corner of the page, or prepend <strong>r</strong> [Default] to move the origin
 relative to its current location. For overlays the default
-(<em>xshift</em>,<em>yshift</em>) is (r0), otherwise it is (r1i). When <strong>-X</strong>
+(<em>xshift</em>,<em>yshift</em>) is (<strong>r</strong>0), otherwise it is (<strong>r</strong>72p). When <strong>-X</strong>
 or <strong>-Y</strong> are used without any further arguments, the values from
 the last use of that option in a previous GMT command will be used.
 Note that <strong>-X</strong> and <strong>-Y</strong> can also access the previous plot dimensions
@@ -1094,15 +1095,15 @@ in the format <em>start</em>[:<em>inc</em>]:<em>stop</em>, where <em>inc</em> de
 not specified).  Append <strong>T</strong> (absolute calendar time), <strong>t</strong>
 (relative time in chosen <a class="reference internal" href="gmt.conf.html#term-time-unit"><span class="xref std std-term">TIME_UNIT</span></a> since <a class="reference internal" href="gmt.conf.html#term-time-epoch"><span class="xref std std-term">TIME_EPOCH</span></a>),
 <strong>x</strong> (longitude), <strong>y</strong> (latitude), <strong>p</strong>[<em>unit</em>] (projected
-x,y map coordinates in given unit [meter]) or <strong>f</strong> (floating point)
+x,y map coordinates in given <em>unit</em> [meter]) or <strong>f</strong> (floating point)
 to each column or column range item. Shorthands
 <strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<strong>g</strong> means
 <strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]0<strong>x</strong>,1<strong>y</strong> (geographic coordinates)
 and <strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<strong>c</strong> means
-<strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]0-1<strong>f</strong> (Cartesian coordinates)</dd>
+<strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]0:1<strong>f</strong> (Cartesian coordinates)</dd>
 </dl>
 <dl class="docutils" id="g-full">
-<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>]</dt>
+<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>+n</strong>|<strong>p</strong>]</dt>
 <dd>Examine the spacing between consecutive data points in order to
 impose breaks in the line. Append <strong>x</strong>|<strong>X</strong> or
 <strong>y</strong>|<strong>Y</strong> to define a gap when there is a large enough change
@@ -1263,7 +1264,7 @@ axis location than the plot origin.</dd>
 Give individual rows (or row ranges in the format <em>start</em>[:<em>inc</em>]:<em>stop</em>, where
 <em>inc</em> defaults to 1 if not specified) separated by commas [Default reads/writes all rows,
 starting with the first row (0)]. By default (<strong>+a</strong>) we count rows in the data set;
-append <strong>+f</strong> or <strong>+s</strong> to reset the count at the start of each file or segment.
+append <strong>+f</strong> or <strong>+s</strong> to reset the count at the start of each file or segment, respectively.
 Alternatively, use <strong>+c</strong><em>col</em> to indicate that the arguments instead
 are min/max <em>data limits</em> for the values in column <em>col</em>.
 Note: Because arguments may contain colons or be negative, your must specify <em>start</em>/<em>stop</em> instead.
@@ -1289,7 +1290,7 @@ To reverse the tests, prepend ~ before giving your first range.</dd>
 Give individual rows (or row ranges in the format <em>start</em>[:<em>inc</em>]:<em>stop</em>, where
 <em>inc</em> defaults to 1 if not specified) separated by commas [Default writes all rows,
 starting with the first row (0)]. By default (<strong>+a</strong>) we count rows in the data set;
-append <strong>+f</strong> or <strong>+s</strong> to reset the count at the start of each file or segment.
+append <strong>+f</strong> or <strong>+s</strong> to reset the count at the start of each file or segment, respectively.
 Alternatively, use <strong>+c</strong><em>col</em> to indicate that the arguments instead
 are min/max <em>data limits</em> for the values in column <em>col</em>.
 Note: Because data limits may contain colons or be negative, your must specify <em>start</em>/<em>stop</em> instead.
@@ -1298,7 +1299,7 @@ To reverse the tests, prepend ~ before giving your first range.</dd>
 </dl>
 <dl class="docutils" id="nodereg-full">
 <dt><strong>-r</strong>[<strong>g</strong>|<strong>p</strong>]</dt>
-<dd>Force <strong>g</strong>ridline or <strong>p</strong>ixel node registration [Just <strong>-r</strong> sets pixel registration].
+<dd>Force <strong>g</strong>ridline or <strong>p</strong>ixel node registration [gridline]. Just <strong>-r</strong> sets pixel registration.
 If no <strong>-r</strong> is given then gridline registration is selected.
 (Node registrations are defined in Section <a class="reference internal" href="cookbook/options.html#option-nodereg"><span class="std std-ref">Grid registration: The -r option</span></a>
 of the GMT Technical Reference and Cookbook.)</dd>
@@ -1337,7 +1338,7 @@ compiled with OpenMP support.</dd>
 swapping]. Append <strong>i</strong> to select input only or <strong>o</strong> to select
 output only. [Default affects both]. This option is typically used
 to handle (latitude, longitude) files; see also
-<strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<em>t</em>[<em>word</em>]].</dd>
+<strong>-i</strong><em>cols</em>[<strong>+l</strong>][<strong>+s</strong><em>scale</em>][<strong>+o</strong><em>offset</em>][,<em>…</em>][,<strong>t</strong>[<em>word</em>]].</dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-^</strong> or just <strong>-</strong></dt>
@@ -1566,7 +1567,7 @@ GMT documentation site <a class="reference external" href="https://docs.generic-
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 01, 2020.
+        Last updated on Feb 07, 2020.
       </span>
 
     </p>

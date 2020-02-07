@@ -257,11 +257,10 @@ or other tools.  Here we will limit our discussion to <a class="reference intern
 Its main argument is the name of the master color table (a list is
 shown if you run the module with no arguments) and the equidistant
 <em>z</em>-values to go with it.  The main options are given below.</p>
-<blockquote>
-<div><table border="1" class="docutils">
+<table border="1" class="docutils">
 <colgroup>
-<col width="16%" />
-<col width="84%" />
+<col width="13%" />
+<col width="87%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Option</th>
@@ -283,7 +282,6 @@ shown if you run the module with no arguments) and the equidistant
 </tr>
 </tbody>
 </table>
-</div></blockquote>
 <p>To make discrete and continuous color CPTs for data that ranges
 from -20 to 60, with color changes at every 10, try these two variants:</p>
 <blockquote>
@@ -305,11 +303,10 @@ then you usually do not specify an output file via stdout since
 modern mode maintains what is known as the current CPT.  However,
 if you must explicitly name an output CPT then you will need to
 add the -H option for modern mode to allow output to stdout.</p>
-<blockquote>
-<div><table border="1" class="docutils">
+<table border="1" class="docutils">
 <colgroup>
-<col width="54%" />
-<col width="46%" />
+<col width="40%" />
+<col width="60%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Option</th>
@@ -321,17 +318,13 @@ add the -H option for modern mode to allow output to stdout.</p>
 <td>The required CPT</td>
 </tr>
 <tr class="row-odd"><td><strong>-Dx</strong><em>xpos/ypos</em><strong>+w</strong><em>length/width</em>[<strong>+h</strong>]</td>
-<td>Sets the position and dimensions of scale bar.</td>
+<td>Sets the position and dimensions of scale bar. Append <strong>+h</strong> to get horizontal bar</td>
 </tr>
-<tr class="row-even"><td>&#160;</td>
-<td>Append <strong>+h</strong> to get horizontal bar</td>
-</tr>
-<tr class="row-odd"><td><strong>-I</strong><em>max_intensity</em></td>
+<tr class="row-even"><td><strong>-I</strong><em>max_intensity</em></td>
 <td>Add illumination effects</td>
 </tr>
 </tbody>
 </table>
-</div></blockquote>
 <p>Here is an example of four different ways of presenting the color bar:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_14
 	gmt makecpt -H -Crainbow -T-20/60/10 &gt; disc.cpt
@@ -391,7 +384,7 @@ Yellow, Green, Cyan, Blue, and Magenta.
 The CMY colors are the complimentary colors and are used when paints are
 mixed to produce a new color (this is how printers operate; they also add
 pure black (K) to avoid making gray from CMY).  In this coordinate system the
-angle 0-360º is the hue (H); the Saturation and Value are harder to
+angle 0-360° is the hue (H); the Saturation and Value are harder to
 explain.  Suffice it to say here that we intend to darken any pure color
 (on the cube facets) by keeping H fixed and adding black and brighten it by adding white; for
 interior points in the cube we will add or remove gray.
@@ -414,11 +407,10 @@ about 4300m so we need to make a CPT with that range.</p>
 <p>Color images are made with <a class="reference internal" href="../grdimage.html"><span class="doc">grdimage</span></a> which takes the usual
 common command options (by default the <strong>-R</strong> is taken from the data set)
 and a CPT; the main other options are:</p>
-<blockquote>
-<div><table border="1" class="docutils">
+<table border="1" class="docutils">
 <colgroup>
-<col width="23%" />
-<col width="77%" />
+<col width="22%" />
+<col width="78%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Option</th>
@@ -437,7 +429,6 @@ and a CPT; the main other options are:</p>
 </tr>
 </tbody>
 </table>
-</div></blockquote>
 <p>We want to make a plain color map with a color bar superimposed above
 the plot.  We try</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_tut_15
@@ -456,7 +447,7 @@ gmt end show
 complexity of this Rocky Mountain region.  What it needs is artificial
 illumination.  We want to simulate shading by a sun source in the east,
 hence we derive the required intensities from the gradients of the
-topography in the N90ºE direction using <a class="reference internal" href="../grdgradient.html"><span class="doc">grdgradient</span></a>.  Other than the
+topography in the N90°E direction using <a class="reference internal" href="../grdgradient.html"><span class="doc">grdgradient</span></a>.  Other than the
 required input and output filenames, the available options are</p>
 <blockquote>
 <div><table border="1" class="docutils">
@@ -464,25 +455,22 @@ required input and output filenames, the available options are</p>
 <col width="50%" />
 <col width="50%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Option</th>
-<th class="head">Purpose</th>
-</tr>
-</thead>
 <tbody valign="top">
-<tr class="row-even"><td><strong>-A</strong><em>azimuth</em></td>
-<td>Azimuthal direction for gradients</td>
+<tr class="row-odd"><td>Option
+<strong>-A</strong><em>azimuth</em></td>
+<td>Purpose
+Azimuthal direction for gradients</td>
 </tr>
-<tr class="row-odd"><td><strong>-fg</strong></td>
+<tr class="row-even"><td><strong>-fg</strong></td>
 <td>Indicates that this is a geographic grid</td>
 </tr>
-<tr class="row-even"><td><strong>-N</strong>[<strong>t</strong>|<strong>e</strong>][<strong>+s</strong><em>norm</em>][<strong>+o</strong><em>offset</em>]</td>
+<tr class="row-odd"><td><strong>-N</strong>[<strong>t</strong>|<strong>e</strong>][<strong>+s</strong><em>norm</em>][<strong>+o</strong><em>offset</em>]</td>
 <td>Normalize gradients by <em>norm/offset</em> [= 1/0 by default].</td>
 </tr>
-<tr class="row-odd"><td>&#160;</td>
+<tr class="row-even"><td>&#160;</td>
 <td>Insert <strong>t</strong> to normalize by the inverse tangent transformation.</td>
 </tr>
-<tr class="row-even"><td>&#160;</td>
+<tr class="row-odd"><td>&#160;</td>
 <td>Insert <strong>e</strong> to normalize by the cumulative Laplace distribution.</td>
 </tr>
 </tbody>
@@ -549,8 +537,8 @@ level (i.e., depth), latitude and longitude.</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>We will need to make an appropriate color scale, running from -2ºC (freezing temperature of salt
-water) to 30ºC (highest likely ocean temperature).
+<p>We will need to make an appropriate color scale, running from -2°C (freezing temperature of salt
+water) to 30°C (highest likely ocean temperature).
 Let us focus on the temperatures in Summer (that is the third season, July through
 September) at sea level (that is the first level). To plot these in a Mollweide projection we
 use:</p>
@@ -595,8 +583,7 @@ GMT module that produces perspective views of gridded data files is
 <li><strong>-p</strong><em>azimuth/elevation</em> for the vantage point.</li>
 </ol>
 <p>In addition, some options may be required:</p>
-<blockquote>
-<div><table border="1" class="docutils">
+<table border="1" class="docutils">
 <colgroup>
 <col width="19%" />
 <col width="81%" />
@@ -630,7 +617,6 @@ GMT module that produces perspective views of gridded data files is
 </tr>
 </tbody>
 </table>
-</div></blockquote>
 <div class="section" id="mesh-plot">
 <h3>Mesh-plot<a class="headerlink" href="#mesh-plot" title="Permalink to this headline">¶</a></h3>
 <p>Mesh plots work best on smaller data sets.  We again use the small
@@ -705,7 +691,7 @@ appropriate <em>dpi</em> for the final output device and let it rip.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 01, 2020.
+        Last updated on Feb 07, 2020.
       </span>
 
     </p>

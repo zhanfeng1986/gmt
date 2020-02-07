@@ -104,9 +104,9 @@
 <li class="toctree-l2"><a class="reference internal" href="introduction.html">2. Introduction</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">3. General Features</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#gmt-units">3.1. GMT units</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#distance-units">3.1.1. Distance units</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#distance-calculations">3.1.2. Distance calculations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#length-units">3.1.3. Length units</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dimension-units">3.1.1. Dimension units</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#distance-units">3.1.2. Distance units</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#distance-calculations">3.1.3. Distance calculations</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#gmt-defaults">3.2. GMT defaults</a><ul>
@@ -310,8 +310,26 @@ lengths (i.e., dimensions) of maps, it is recommended that you explicitly
 indicate the units of your arguments by appending the unit character, as
 discussed below. This will aid you in debugging, let others understand your
 scripts, and remove any uncertainty as to what unit you thought you wanted.</p>
+<div class="section" id="dimension-units">
+<h3>3.1.1. Dimension units<a class="headerlink" href="#dimension-units" title="Permalink to this headline">¶</a></h3>
+<p>GMT programs accept plot dimensional quantities (widths, offsets, etc.) in
+<strong>c</strong>m, <strong>i</strong>nch, or <strong>p</strong>oint (1/72 of an inch) <a class="footnote-reference" href="#id14" id="id1">[8]</a>. There are
+two ways to ensure that GMT understands which unit you intend to use:</p>
+<ol class="arabic simple">
+<li>Append the desired unit to the dimension you supply. This way is
+explicit and clearly communicates what you intend, e.g.,
+<strong>-JM</strong>10<strong>c</strong> means the map width being passed to the <strong>-JM</strong> switch
+is 10 cm, and modifier <strong>+o</strong>24p means we are offsetting a feature
+by 24 points from its initial location.</li>
+<li>Set the parameter <a class="reference internal" href="../gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a> to the desired unit. Then,
+all dimensions without explicit units will be interpreted accordingly.</li>
+</ol>
+<p>The latter method is less robust as other users may have a different
+default unit set and then your script may not work as intended. For portability,
+we therefore recommend you always append the desired unit explicitly.</p>
+</div>
 <div class="section" id="distance-units">
-<h3>3.1.1. Distance units<a class="headerlink" href="#distance-units" title="Permalink to this headline">¶</a></h3>
+<h3>3.1.2. Distance units<a class="headerlink" href="#distance-units" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils" id="tbl-distunits">
 <colgroup>
 <col width="16%" />
@@ -354,7 +372,7 @@ scripts, and remove any uncertainty as to what unit you thought you wanted.</p>
 </tr>
 </tbody>
 </table>
-<p>For Cartesian data and scaling the data units do not normally matter
+<p>For Cartesian data the data units do not normally matter
 (they could be kg or Lumens for all we know) and are never entered.
 Geographic data are different, as distances can be specified in a variety
 of ways. GMT programs that accept actual Earth length scales like
@@ -365,13 +383,13 @@ will be consider to be in meters. For example, a distance of 30 nautical
 miles should be given as 30<strong>n</strong>.</p>
 </div>
 <div class="section" id="distance-calculations">
-<h3>3.1.2. Distance calculations<a class="headerlink" href="#distance-calculations" title="Permalink to this headline">¶</a></h3>
+<h3>3.1.3. Distance calculations<a class="headerlink" href="#distance-calculations" title="Permalink to this headline">¶</a></h3>
 <p>The calculation of distances on Earth (or other planetary bodies)
 depends on the ellipsoidal parameters of the body (via
 <a class="reference internal" href="../gmt.conf.html#term-proj-ellipsoid"><span class="xref std std-term">PROJ_ELLIPSOID</span></a>) and the method of computation. GMT offers three
 alternatives that trade off accuracy and computation time.</p>
 <div class="section" id="flat-earth-distances">
-<h4>3.1.2.1. Flat Earth distances<a class="headerlink" href="#flat-earth-distances" title="Permalink to this headline">¶</a></h4>
+<h4>3.1.3.1. Flat Earth distances<a class="headerlink" href="#flat-earth-distances" title="Permalink to this headline">¶</a></h4>
 <p>Quick, but approximate “Flat Earth” calculations make a first-order
 correction for the spherical nature of a planetary body by computing the
 distance between two points A and B as</p>
@@ -390,7 +408,7 @@ of computation by specifying the common GMT option <strong>-j</strong> and appen
 using this mode of computation might be specified via <strong>-S</strong>50<strong>M</strong> <strong>-jf</strong>.</p>
 </div>
 <div class="section" id="great-circle-distances">
-<h4>3.1.2.2. Great circle distances<a class="headerlink" href="#great-circle-distances" title="Permalink to this headline">¶</a></h4>
+<h4>3.1.3.2. Great circle distances<a class="headerlink" href="#great-circle-distances" title="Permalink to this headline">¶</a></h4>
 <p>This is the default distance calculation, which will also approximate
 the planetary body by a sphere of mean radius <em>R</em>. However, we
 compute an exact distance between two points A and B on such a sphere
@@ -418,9 +436,9 @@ these last two settings are only used if the <a class="reference internal" href=
 is not set to “sphere”.</p>
 </div>
 <div class="section" id="geodesic-distances">
-<h4>3.1.2.3. Geodesic distances<a class="headerlink" href="#geodesic-distances" title="Permalink to this headline">¶</a></h4>
+<h4>3.1.3.3. Geodesic distances<a class="headerlink" href="#geodesic-distances" title="Permalink to this headline">¶</a></h4>
 <p>For the most accurate calculations we use a full ellipsoidal
-formulation. Currently, we are using Vincenty’s [1975] formula <a class="footnote-reference" href="#id13" id="id1">[7]</a>
+formulation. Currently, we are using Vincenty’s [1975] formula <a class="footnote-reference" href="#id13" id="id2">[7]</a>
 which is accurate to 0.5 mm. You
 select this mode of computation by using the common GMT option <strong>-j</strong>
 and appending the directive <strong>e</strong> (for ellipsoidal).
@@ -431,23 +449,6 @@ setting <a class="reference internal" href="../gmt.conf.html#term-proj-geodesic"
 or <em>Andoyer</em> for an approximate geodesic (within a few tens of meters)
 that is much faster to compute.</p>
 </div>
-</div>
-<div class="section" id="length-units">
-<h3>3.1.3. Length units<a class="headerlink" href="#length-units" title="Permalink to this headline">¶</a></h3>
-<p>GMT programs can accept dimensional quantities and plot lengths in
-<strong>c</strong>m, <strong>i</strong>nch, or <strong>p</strong>oint (1/72 of an inch) <a class="footnote-reference" href="#id14" id="id2">[8]</a>. There are
-two ways to ensure that GMT understands which unit you intend to use:</p>
-<ol class="arabic simple">
-<li>Append the desired unit to the dimension you supply. This way is
-explicit and clearly communicates what you intend, e.g.,
-<strong>-X</strong>4<strong>c</strong> means the length being passed to the <strong>-X</strong> switch
-is 4 cm.</li>
-<li>Set the parameter <a class="reference internal" href="../gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a> to the desired unit. Then,
-all dimensions without explicit unit will be interpreted accordingly.</li>
-</ol>
-<p>The latter method is less secure as other users may have a different
-unit set and your script may not work as intended. We therefore
-recommend you always supply the desired unit explicitly.</p>
 </div>
 </div>
 <div class="section" id="gmt-defaults">
@@ -1003,13 +1004,13 @@ Given as modifiers to a pen specification, one or more modifiers may be appended
 specification. The line attribute modifiers are:</p>
 <ul class="simple">
 <li><dl class="first docutils">
-<dt><strong>+o</strong><em>offset</em>[<strong>u</strong>]</dt>
+<dt><strong>+o</strong><em>offset</em></dt>
 <dd>Lines are normally drawn from the beginning to the end point. You can modify this behavior
 by requesting a gap between these terminal points and the start and end of the
 visible line.  Do this by specifying the desired offset between the terminal point and the
 start of the visible line.  Unless you are giving distances in Cartesian data units,
 please append the distance unit, <strong>u</strong>.  Depending on your desired effect, you can append
-plot distance units (i.e., <strong>c</strong>m, <strong>i</strong>nch, <strong>p</strong>oint; Section <a class="reference internal" href="#length-units">Length units</a>)) or map distance units,
+plot distance units (i.e., <strong>c</strong>m, <strong>i</strong>nch, <strong>p</strong>oint; Section <a class="reference internal" href="#dimension-units">Dimension units</a>)) or map distance units,
 such as <strong>k</strong>m, <strong>d</strong>egrees, and many other standard distance units listed in
 Section <a class="reference internal" href="#gmt-units">GMT units</a>.  If only one offset is given then it applies equally to both ends of
 the line.  Give two slash-separated distances to indicate different offsets at the
@@ -1937,7 +1938,7 @@ addition to the the required <em>refpoint</em> and anchor arguments specifying w
 are both required and optional modifiers.  These are given via these modules’ <strong>-L</strong> option.
 Here is a list of the attributes that is under your control:</p>
 <ol class="arabic simple">
-<li>Scale bar length.  Required modifier is given with <strong>+w</strong><em>length</em>[<em>unit</em>], where
+<li>Scale bar length.  Required modifier is given with <strong>+w</strong><em>length</em>, where
 <em>unit</em> is one of the recognized distance units.  An example might be <strong>+w</strong>250n for
 a bar representing 250 nautical miles at the map scale origin.</li>
 <li>Map scale origin.  Required modifier given with <strong>+c</strong>[<em>slon</em>/]<em>slat</em>, where the longitude
@@ -2175,7 +2176,7 @@ projections you may wish to specify the domain using the lower-left and upper-ri
 instead (similar to how the <strong>-R</strong> option works), by adding <strong>+r</strong>.  Some optional modifiers are available:</p>
 <ol class="arabic simple">
 <li>Set inset size.  If you specified a reference point then you must also specify the inset dimensions with the
-<strong>+w</strong><em>width</em>[<em>unit</em>][/<em>height</em>[<em>unit</em>]], where <em>height</em> defaults to <em>width</em> if not given.
+<strong>+w</strong><em>width</em>[/<em>height</em>], where <em>height</em> defaults to <em>width</em> if not given.
 Append the unit of the dimensions, which may be distance units such as km, feet, etc., and
 the map projection will be used to determine inset dimensions on the map.  For instance,
 <strong>+w</strong>300k/200k is a 300x200 km region (which depends on the projection) while <strong>+w</strong>5c
@@ -2824,21 +2825,21 @@ skipped during reading; see Section <a class="reference internal" href="options.
 <div class="section" id="directory-parameters">
 <span id="id12"></span><h2>3.28. Directory parameters<a class="headerlink" href="#directory-parameters" title="Permalink to this headline">¶</a></h2>
 <p>GMT versions prior to GMT 5 relied solely on several environment variables
-($GMT_SHAREDIR, $GMT_DATADIR, $GMT_USERDIR, and $GMT_TMPDIR), pointing
+(<strong>$GMT_SHAREDIR</strong>, <strong>$GMT_DATADIR</strong>, <strong>$GMT_USERDIR</strong>, and <strong>$GMT_TMPDIR</strong>), pointing
 to folders with data files and program settings. Beginning with version
 5, some of these locations are now (also or exclusively) configurable
 with the <a class="reference internal" href="../gmtset.html"><span class="doc">gmtset</span></a> utility.
 When an environment variable has an equivalent parameter in the <a class="reference internal" href="../gmt.conf.html"><span class="doc">gmt.conf</span></a> file,
 then the parameter setting will take precedence over the environment variable.</p>
 <dl class="docutils">
-<dt>Variable $GMT_SHAREDIR</dt>
+<dt>Variable <strong>$GMT_SHAREDIR</strong></dt>
 <dd>was sometimes required in previous GMT versions to locate the GMT
 share directory where all run-time support files such as coastlines,
 custom symbols, PostScript macros, color tables, and much more reside.
 If this parameter is not set (default), GMT will make a reasonable
 guess of the location of its share folder. Setting this variable is
 usually not required and recommended only under special circumstances.</dd>
-<dt>Variable $GMT_DATADIR and parameter DIR_DATA</dt>
+<dt>Variable <strong>$GMT_DATADIR</strong> and parameter <a class="reference internal" href="../gmt.conf.html#term-dir-data"><span class="xref std std-term">DIR_DATA</span></a></dt>
 <dd>may point to one or more directories where large and/or widely used
 data files can be placed. All GMT programs look in these directories
 when a file is specified on the command line and it is not present in
@@ -2848,28 +2849,29 @@ absolute path need not be specified. Separate multiple directories
 with commas. Any directory
 name that ends in a trailing slash (/) will be searched recursively
 (not under Windows).</dd>
-<dt>Variable $GMT_USERDIR</dt>
+<dt>Variable <strong>$GMT_USERDIR</strong></dt>
 <dd>may point to a directory where the user places custom configuration
 files (e.g., an alternate <code class="docutils literal notranslate"><span class="pre">coastline.conf</span></code> file, preferred default
 settings in <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code>, custom symbols and color palettes, math
 macros for <a class="reference internal" href="../gmtmath.html"><span class="doc">gmtmath</span></a> and <a class="reference internal" href="../grdmath.html"><span class="doc">grdmath</span></a>, and shorthands for
-gridfile extensions via <code class="docutils literal notranslate"><span class="pre">gmt.io</span></code>). When $GMT_USERDIR is not defined,
-then the default value $HOME/.gmt will be assumed. Users may also place their own
+gridfile extensions via <code class="docutils literal notranslate"><span class="pre">gmt.io</span></code>). When <strong>$GMT_USERDIR</strong> is not defined,
+then the default value <strong>$HOME</strong>/.gmt will be assumed. Users may also place their own
 data files in this directory as GMT programs will search for files
-given on the command line in both DIR_DATA and $GMT_USERDIR.</dd>
-<dt>Variable $GMT_CACHEDIR</dt>
+given on the command line in both <a class="reference internal" href="../gmt.conf.html#term-dir-data"><span class="xref std std-term">DIR_DATA</span></a> and <strong>$GMT_USERDIR</strong>.</dd>
+<dt>Variable <strong>$GMT_CACHEDIR</strong></dt>
 <dd>may point to a directory where the user places cached data files
-downloaded from the GMT data server. When $GMT_CACHEDIR is not defined,
-then the default value $HOME/.gmt/cache will be assumed. The cache
+downloaded from the GMT data server. When <strong>$GMT_CACHEDIR</strong> is not defined,
+then the default value <strong>$HOME</strong>/.gmt/cache will be assumed. The cache
 directory can be emptied by running gmt <strong>gmt clear cache</strong>.</dd>
-<dt>Variable $GMT_TMPDIR</dt>
+<dt>Variable <strong>$GMT_TMPDIR</strong></dt>
 <dd>may indicate the location, where GMT will write its state parameters
-via the two files <code class="docutils literal notranslate"><span class="pre">gmt.history</span></code> and <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code>. If $GMT_TMPDIR is not
-set, these files are written to the current directory.</dd>
-<dt>Parameter DIR_DCW</dt>
+via the two files <code class="docutils literal notranslate"><span class="pre">gmt.history</span></code> and <code class="docutils literal notranslate"><span class="pre">gmt.conf</span></code>. If <strong>$GMT_TMPDIR</strong> is not
+set, these files are written to GMT session directory [for modern mode] or
+the current directory [for classic mode].</dd>
+<dt>Parameter <a class="reference internal" href="../gmt.conf.html#term-dir-dcw"><span class="xref std std-term">DIR_DCW</span></a></dt>
 <dd>specifies where to look for the optional Digital Charts of the World
 database (for country coloring or selections).</dd>
-<dt>Parameter DIR_GSHHG</dt>
+<dt>Parameter <a class="reference internal" href="../gmt.conf.html#term-dir-gshhg"><span class="xref std std-term">DIR_GSHHG</span></a></dt>
 <dd>specifies where to look for the required
 Global Self-consistent Hierarchical High-resolution Geography database.</dd>
 </dl>
@@ -2878,7 +2880,7 @@ any of these directories.</p>
 <table class="docutils footnote" frame="void" id="id13" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[7]</a></td><td>Vicenty, T. (1975), Direct and inverse solutions of geodesics on the
+<tr><td class="label"><a class="fn-backref" href="#id2">[7]</a></td><td>Vicenty, T. (1975), Direct and inverse solutions of geodesics on the
 ellipsoid with application of nested equations, <em>Surv. Rev.,
 XXII(176)</em>, 88–93.</td></tr>
 </tbody>
@@ -2886,7 +2888,7 @@ XXII(176)</em>, 88–93.</td></tr>
 <table class="docutils footnote" frame="void" id="id14" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[8]</a></td><td>PostScript definition. In the typesetting industry a slightly
+<tr><td class="label"><a class="fn-backref" href="#id1">[8]</a></td><td>PostScript definition. In the typesetting industry a slightly
 different definition of point (1/72.27 inch) is used, presumably to
 cause needless trouble.</td></tr>
 </tbody>
@@ -2960,7 +2962,7 @@ off; see <a class="reference internal" href="../gmt.conf.html#term-ps-comments">
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 01, 2020.
+        Last updated on Feb 07, 2020.
       </span>
 
     </p>

@@ -219,13 +219,13 @@
 [ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>cpt</em> ] [ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>descriptfile</em> ]
 [ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong>[<strong>+e</strong>][<strong>+s</strong>] ]
 [ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong><strong>e</strong>|<strong>s</strong>|<strong>t</strong>|<strong>l</strong>|<strong>p</strong>|<strong>w</strong> ]
-[ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong>[<em>color</em>][<strong>+f</strong>|<strong>+n</strong>] ]
+[ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong>[<em>color</em>][<strong>+f</strong>|<strong>n</strong>] ]
 [ <a class="reference internal" href="#i"><span> <strong>-I</strong></span></a></strong><em>icon</em> ] [ <strong>-K</strong>]
 [ <a class="reference internal" href="#l"><span> <strong>-L</strong></span></a></strong><em>col1:name1</em>,<em>col2:name2</em>,… ]
 [ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong>[<strong>t</strong>|<em>col</em>|<em>name_template</em>|<em>name</em>] ]
 [ <strong>-O</strong>]
 [ <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong><strong>a</strong>|<strong>i</strong><em>az</em> ]
-[ <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong><strong>s</strong><em>scale</em>[<em>unit</em>] ]
+[ <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong><strong>s</strong><em>scale</em> ]
 [ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><strong>e</strong>|<em>w/e/s/n</em> ]
 [ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><strong>c</strong>|<strong>n</strong><em>scale</em>] ]
 [ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>title</em>[/<em>foldername</em>] ]
@@ -328,7 +328,7 @@ in the 3rd input column.  If you also need to plot the track itself
 then do that separately with <strong>-Fl</strong>.</dd>
 </dl>
 <dl class="docutils" id="g">
-<dt><strong>-G</strong>[<em>color</em>][<strong>+f</strong>|<strong>+n</strong>]</dt>
+<dt><strong>-G</strong>[<em>color</em>][<strong>+f</strong>|<strong>n</strong>]</dt>
 <dd>Sets <em>color</em> for fill (modifier <strong>+f</strong> [Default]) or label font (modifier <strong>+n</strong>).
 Fill sets infill color for symbols, extrusions, polygons and positive anomaly
 wiggles [Default is light orange at 75% transparency].  Alternatively,
@@ -393,7 +393,7 @@ to with <strong>-Qa</strong>.  The provided azimuth defines a half-circle
 centered on the selected azimuth [0] where positive anomalies
 will plot.  If outside then switch by 180 degrees.  Alternatively,
 use <strong>-Qi</strong> to set a fixed direction with no further variation.</dd>
-<dt><strong>-Qs</strong><em>scale</em>[<em>unit</em>]</dt>
+<dt><strong>-Qs</strong><em>scale</em></dt>
 <dd>Required setting for wiggle plots (i.e., it requires <strong>-Fw</strong>).
 Sets a wiggle scale in <em>z</em>-data units per the user’s units (given
 via the trailing unit taken from d|m|s|e|f|k|M|n|u [e]). This scale
@@ -422,7 +422,7 @@ Line, Polygon or Wiggle].</dd>
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [w].  </dd>
+<dd>Select verbosity level [<strong>w</strong>].  </dd>
 </dl>
 <dl class="docutils" id="w">
 <dt><strong>-W</strong>[<em>pen</em>][<em>attr</em>] <a class="reference internal" href="cookbook/features.html#wpen-attrib"><span class="std std-ref">(more …)</span></a></dt>
@@ -462,7 +462,7 @@ folder or document in the sidebar when loaded [closed].</dd>
 <dd>Specify data types of input and/or output columns.  </dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>]  <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>+n</strong>|<strong>p</strong>]  <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Determine data gaps and line breaks.  </dd>
 </dl>
 <dl class="docutils">
@@ -675,7 +675,7 @@ use it.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 01, 2020.
+        Last updated on Feb 07, 2020.
       </span>
 
     </p>

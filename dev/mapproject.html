@@ -328,7 +328,7 @@ semi-major axis and <em>inv_f</em> is the inverse flattening (0 if
 omitted). If <em>datum</em> is - or not given we assume WGS-84.</dd>
 </dl>
 <dl class="docutils" id="f">
-<dt><strong>-F</strong>[<em>unit</em>]</dt>
+<dt><strong>-F</strong></dt>
 <dd>Force 1:1 scaling, i.e., output (or input, see <strong>-I</strong>) data are in
 actual projected meters. To specify other units, append the desired
 unit (see <a class="reference internal" href="#units">Units</a>). Without <strong>-F</strong>, the output (or input, see <strong>-I</strong>)
@@ -338,16 +338,18 @@ are in the units specified by <a class="reference internal" href="gmt.conf.html#
 <dl class="docutils" id="g">
 <dt><strong>-G</strong>[<em>lon0</em>/<em>lat0</em>][<strong>+a</strong>][<strong>+i</strong>][<strong>+u</strong><em>unit</em>][<strong>+v</strong>]</dt>
 <dd>Calculate distances along track <em>or</em> to the optional <em>fixed</em> point set
-with <strong>-G</strong><em>lon0</em>/<em>lat0</em>. Append the distance unit with <strong>+u</strong> (see <a class="reference internal" href="#units">Units</a> for available
-units and how distances are computed [great circle using authalic radius]), including
-<strong>c</strong> (Cartesian distance using input coordinates) or <strong>C</strong>
+with <strong>-G</strong><em>lon0</em>/<em>lat0</em>. Append the distance unit with <strong>+u</strong> (see <a class="reference internal" href="#units">Units</a>
+for available units and how distances are computed [great circle using authalic
+radius]), including <strong>c</strong> (Cartesian distance using input coordinates) or <strong>C</strong>
 (Cartesian distance using projected coordinates). The <strong>C</strong> unit
-requires <strong>-R</strong> and <strong>-J</strong> to be set. When no fixed point is given
-we calculate accumulated distances [or by adding <strong>+a</strong>] along the
-track defined by the input points. Append <strong>+i</strong> to obtain <em>incremental</em>
-distances between successive points, or append both modifiers to get
-both distance measurements. Alternatively, append <strong>+v</strong> to obtain a
-<em>variable</em> 2nd point (<em>lon0</em>/<em>lat0</em>) via columns 3-4 in the input file.
+requires <strong>-R</strong> and <strong>-J</strong> to be set. If no fixed point is given
+we calculate <em>accumulated</em> distances whereas if a fixed point is given
+we calculate <em>incremental</em> distances.  You can override these defaults
+by adding <strong>+a</strong> for accumulated or <strong>+i</strong> for incremental distances.
+If both <em>+a*</em> and <strong>+i</strong> are given we will report both types of distances.
+Append <strong>+v</strong> to obtain a <em>variable</em> 2nd point (<em>lon0</em>/<em>lat0</em>) via columns
+3-4 in the input file; this updates the fixed point per record and thus the
+selection defaults to incremental distances.
 See <a class="reference internal" href="#output-order">Output Order</a> for how <strong>-G</strong> affects the output record.</dd>
 </dl>
 <dl class="docutils" id="i">
@@ -359,7 +361,7 @@ See <a class="reference internal" href="#output-order">Output Order</a> for how 
 <dd>Determine the shortest distance from the input data points to the
 line(s) given in the ASCII multisegment file <em>line.xy</em>. The distance
 and the coordinates of the nearest point will be appended to the
-output as three new columns. Append the distance unit (see <a class="reference internal" href="#units">Units</a>
+output as three new columns. Append the distance unit via <strong>+u</strong> (see <a class="reference internal" href="#units">Units</a>
 for available units and how distances are computed [great circle using authalic radius]),
 including <strong>c</strong> (Cartesian distance using input coordinates) or
 <strong>C</strong> (Cartesian distance using projected coordinates). The <strong>C</strong>
@@ -403,7 +405,7 @@ after the inverse projection). Make sure that the
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [w].  </dd>
+<dd>Select verbosity level [<strong>w</strong>].  </dd>
 </dl>
 <dl class="docutils" id="w">
 <dt><strong>-W</strong>[<strong>g</strong>|<strong>h</strong>|<strong>j</strong>|<strong>n</strong>|<strong>w</strong>|<strong>x</strong>]</dt>
@@ -456,7 +458,7 @@ See <a class="reference internal" href="#output-order">Output Order</a> for how 
 <dd>Specify data types of input and/or output columns.  </dd>
 </dl>
 <dl class="docutils">
-<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>u</strong>][<strong>+n</strong>|<strong>p</strong>]  <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>+n</strong>|<strong>p</strong>]  <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Determine data gaps and line breaks.  </dd>
 </dl>
 <dl class="docutils">
@@ -578,7 +580,7 @@ file coastline.xy, run</p>
 and accumulated distance along track, and estimate travel times
 assuming a fixed speed of 12 knots.  We do this with</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mapproject track.txt -Gn+a+i -Z12+a --TIME_UNIT<span class="o">=</span>h &gt; elapsed_time.txt
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mapproject track.txt -G+un+a+i -Z12+a --TIME_UNIT<span class="o">=</span>h &gt; elapsed_time.txt
 </pre></div>
 </div>
 </div></blockquote>
@@ -695,7 +697,7 @@ North-Holland Publ., ISBN: 0 444 86149 1.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 01, 2020.
+        Last updated on Feb 07, 2020.
       </span>
 
     </p>

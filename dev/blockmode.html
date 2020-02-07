@@ -257,7 +257,7 @@ choose binary input and/or output to avoid loss of precision.</p>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils" id="i">
-<dt><strong>-I</strong><em>xinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>]]</dt>
+<dt><strong>-I</strong><em>xinc</em>[<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<strong>+e</strong>|<strong>n</strong>]]</dt>
 <dd><em>x_inc</em> [and optionally <em>y_inc</em>] is the grid spacing. Optionally,
 append a suffix modifier. <strong>Geographical (degrees) coordinates</strong>: Append
 <strong>m</strong> to indicate arc minutes or <strong>s</strong> to indicate arc seconds. If one
@@ -288,10 +288,13 @@ already been initialized; use <strong>-I</strong> (and <strong>-r</strong>) to o
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
 <dt><em>table</em></dt>
-<dd>3 [or 4, see <strong>-W</strong>] column ASCII data table file(s) [or binary, see
-<strong>-bi</strong>] holding (<em>x</em>,<em>y</em>,<em>z</em>[,<em>w</em>])
-data values. [<em>w</em>] is an optional weight for the data. If no file
-is specified, <strong>blockmode</strong> will read from standard input.</dd>
+<dd><dl class="first last docutils">
+<dt>3 (or 4, see <strong>-W</strong>) column ASCII data table file(s) (or binary, see</dt>
+<dd><strong>-bi</strong>) holding (<em>x</em>,<em>y</em>,<em>z</em>[,<em>w</em>])
+data values, where [<em>w</em>] is an optional weight for the data.
+If no file is specified, <strong>blockmode</strong> will read from standard input.</dd>
+</dl>
+</dd>
 </dl>
 <dl class="docutils" id="a">
 <dt><strong>-A</strong><em>fields</em></dt>
@@ -351,7 +354,7 @@ code in the file names.</dd>
 </dl>
 <dl class="docutils" id="v">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [w].  </dd>
+<dd>Select verbosity level [<strong>w</strong>].  </dd>
 </dl>
 <dl class="docutils" id="w">
 <dt><strong>-W</strong>[<strong>i</strong>|<strong>o</strong>][<strong>+s</strong>]</dt>
@@ -490,7 +493,7 @@ called field_z.nc and field_s.nc, run:</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 01, 2020.
+        Last updated on Feb 07, 2020.
       </span>
 
     </p>

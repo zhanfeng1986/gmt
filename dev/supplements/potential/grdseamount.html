@@ -219,7 +219,7 @@
 <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em>
 [ <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong>[<em>out</em>/<em>in</em>] ]
 [ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><strong>c</strong>|<strong>d</strong>|<strong>g</strong>|<strong>p</strong> ]
-[ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong>[<em>unit</em>] ]
+[ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>unit</em> ]
 [ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong> ]
 [ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong>[<em>flattening</em>] ]
 [ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>grdfile</em> ]
@@ -227,7 +227,7 @@
 [ <a class="reference internal" href="#m"><span> <strong>-M</strong></span></a></strong><em>list</em> ] [ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong><em>norm</em> ]
 [ <a class="reference internal" href="#q"><span> <strong>-Q</strong></span></a></strong><em>bmode</em>/<em>qmode</em> ]
 [ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>scale</em> ]
-[ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>t0</em>[<strong>u</strong>][/<em>t1</em>[<strong>u</strong>]/<em>dt</em>[<strong>u</strong>]|<em>n</em>][<strong>+l</strong>] ]
+[ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong><em>t0</em>[/<em>t1</em>/<em>dt</em>][<strong>+l</strong>] ]
 [ <a class="reference internal" href="#z"><span> <strong>-Z</strong></span></a></strong><em>level</em> ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
 [ <strong>-bi</strong><a class="reference internal" href="../../gmt.html#bi-full"><span class="std std-ref">binary</span></a> ]
@@ -257,7 +257,7 @@ by each time step (see <strong>-Q</strong>).</p>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils" id="i">
-<dt><strong>-I</strong><em>xinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<em>unit</em>][<strong>+e</strong>|<strong>n</strong>]]</dt>
+<dt><strong>-I</strong><em>xinc</em>[<strong>+e</strong>|<strong>n</strong>][/<em>yinc</em>[<strong>+e</strong>|<strong>n</strong>]]</dt>
 <dd><em>x_inc</em> [and optionally <em>y_inc</em>] is the grid spacing. Optionally,
 append a suffix modifier. <strong>Geographical (degrees) coordinates</strong>: Append
 <strong>m</strong> to indicate arc minutes or <strong>s</strong> to indicate arc seconds. If one
@@ -349,10 +349,10 @@ or <strong>l</strong> for a linear volume flux history between the start and sto
 <dd>Sets optional scale factor for radii [1].</dd>
 </dl>
 <dl class="docutils" id="t">
-<dt><strong>-T</strong><em>t0</em>[<strong>u</strong>][/<em>t1</em>[<strong>u</strong>]/<em>dt</em>[<strong>u</strong>]|<em>n</em>][<strong>+l</strong>]</dt>
+<dt><strong>-T</strong><em>t0</em>[/<em>t1</em>/<em>dt</em>][<strong>+l</strong>]</dt>
 <dd>Specify <em>t0</em>, <em>t1</em>, and time increment (<em>dt</em>) for sequence of calculations
 [Default is one step, with no time dependency].  For a single specific time, just
-give start time <em>t0</em>. The unit is years; append <strong>k</strong> for kyr and <strong>M</strong> for Myr.
+give start time <em>t0</em>. Default <em>unit</em> is years; append <strong>k</strong> for kyr and <strong>M</strong> for Myr.
 For a logarithmic time scale, append <strong>+l</strong> and specify <em>n</em> steps instead of <em>dt</em>.
 Alternatively, give a file with the desired times in the first column (these times
 may have individual units appended, otherwise we assume year).  Note that the grid
@@ -384,7 +384,7 @@ km via a “Flat Earth” approximation using the current ellipsoid parameters.<
 </dl>
 <dl class="docutils">
 <dt><strong>-V</strong>[<em>level</em>] <a class="reference internal" href="../../gmt.html#v-full"><span class="std std-ref">(more …)</span></a></dt>
-<dd>Select verbosity level [w].  </dd>
+<dd>Select verbosity level [<strong>w</strong>].  </dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-r</strong>[<strong>g</strong>|<strong>p</strong>] <a class="reference internal" href="../../gmt.html#nodereg-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -463,7 +463,7 @@ gmt grdseamount -Rk-1024/1022/-1122/924 -I2000 -Gsmt_%3.1f_%s.nc t.txt -T3M/1.9M
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 01, 2020.
+        Last updated on Feb 07, 2020.
       </span>
 
     </p>
