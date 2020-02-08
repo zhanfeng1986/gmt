@@ -451,4 +451,8 @@ static inline void GMT_exit (struct GMT_CTRL *GMT, int code) {
 		exit (code);
 }
 
+#ifndef BUILD_SHARED_LIBS
+EXTERN_MSC struct GMT_HASH keys_hashnode[];
+#endif
+
 #endif  /* GMT_TYPES_H */

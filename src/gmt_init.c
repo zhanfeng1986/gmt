@@ -403,7 +403,11 @@ GMT_LOCAL struct GMT_KEYWORD_DICTIONARY gmt_common_kw[] = {
 
 /* Local variables to gmt_init.c */
 
+#ifdef BUILD_SHARED_LIBS
 static struct GMT_HASH keys_hashnode[GMT_N_KEYS];
+#else
+struct GMT_HASH keys_hashnode[GMT_N_KEYS];
+#endif
 
 #include "gmt_gsformats.h"
 
