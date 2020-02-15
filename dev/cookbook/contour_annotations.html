@@ -176,9 +176,11 @@
         </p>
         <ul>
             
-                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+                <li class="toctree-l1"><a href="https://www.generic-mapping-tools.org/"><i class="fa fa-home fa-fw"></i> GMT Homepage</a></li>
             
-                <li class="toctree-l1"><a href="https://forum.generic-mapping-tools.org/"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+                <li class="toctree-l1"><a href="https://forum.generic-mapping-tools.org/"><i class="fa fa-comment fa-fw"></i> GMT Community Forum</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
             
                 <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
             
@@ -716,7 +718,7 @@ shape of the seafloor, and travel time contours with curved labels as
 well as a few quoted lines. The final script is</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_O_9
 <span class="nv">R</span><span class="o">=</span>-R-85/5/10/55
-gmt grdgradient @App_O_topo5.nc -Nt1 -A45 -Gtopo5_int.nc
+gmt grdgradient @earth_relief_05m <span class="nv">$R</span> -Nt1 -A45 -Gtopo5_int.nc
 gmt <span class="nb">set</span> FORMAT_GEO_MAP ddd:mm:ssF FONT_ANNOT_PRIMARY +9p FONT_TITLE 22p
 gmt project -E-74/41 -C-17/28 -G10 -Q &gt; great_NY_Canaries.txt
 gmt project -E-74/41 -C2.33/48.87 -G100 -Q &gt; great_NY_Paris.txt
@@ -788,7 +790,7 @@ that New York will experience a large tsunami about 8 hours after the event.</sp
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 07, 2020.
+        Last updated on Feb 15, 2020.
       </span>
 
     </p>

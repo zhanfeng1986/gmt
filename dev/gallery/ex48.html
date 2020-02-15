@@ -135,9 +135,11 @@
         </p>
         <ul>
             
-                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+                <li class="toctree-l1"><a href="https://www.generic-mapping-tools.org/"><i class="fa fa-home fa-fw"></i> GMT Homepage</a></li>
             
-                <li class="toctree-l1"><a href="https://forum.generic-mapping-tools.org/"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+                <li class="toctree-l1"><a href="https://forum.generic-mapping-tools.org/"><i class="fa fa-comment fa-fw"></i> GMT Community Forum</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
             
                 <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
             
@@ -239,7 +241,7 @@ gmt begin ex48
 <span class="s">	118.2437W	34.0522N	142  306	LAX	BL	2c</span>
 <span class="s">	EOF</span>
 	gmt makecpt -Clightgray -T-12000,12000 -N
-	gmt grdimage @etopo10m_48.nc -I+a45+nt2 -Rg -JG205/-10/18c
+	gmt grdimage @earth_relief_10m -I+a45+nt2 -Rg -JG205/-10/18c
 	gmt sphtriangulate airports.txt -Qv &gt; near_area.txt
 	gmt makecpt -Ccategorical -T0/6/1 -N
 	gmt plot near_area.txt -L -C -t65
@@ -291,7 +293,7 @@ gmt end show
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 07, 2020.
+        Last updated on Feb 15, 2020.
       </span>
 
     </p>

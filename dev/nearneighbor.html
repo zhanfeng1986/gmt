@@ -135,9 +135,11 @@
         </p>
         <ul>
             
-                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+                <li class="toctree-l1"><a href="https://www.generic-mapping-tools.org/"><i class="fa fa-home fa-fw"></i> GMT Homepage</a></li>
             
-                <li class="toctree-l1"><a href="https://forum.generic-mapping-tools.org/"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+                <li class="toctree-l1"><a href="https://forum.generic-mapping-tools.org/"><i class="fa fa-comment fa-fw"></i> GMT Community Forum</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
             
                 <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
             
@@ -226,6 +228,7 @@
 [ <strong>-di</strong><a class="reference internal" href="gmt.html#di-full"><span class="std std-ref">nodata</span></a> ]
 [ <strong>-e</strong><a class="reference internal" href="gmt.html#e-full"><span class="std std-ref">regexp</span></a> ]
 [ <strong>-f</strong><a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">flags</span></a> ]
+[ <strong>-g</strong><a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">gaps</span></a> ]
 [ <strong>-h</strong><a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">headers</span></a> ]
 [ <strong>-i</strong><a class="reference internal" href="gmt.html#icols-full"><span class="std std-ref">flags</span></a> ]
 [ <strong>-n</strong><a class="reference internal" href="gmt.html#n-full"><span class="std std-ref">flags</span></a> ]
@@ -277,7 +280,7 @@ details. Note: if <strong>-R</strong><em>grdfile</em> is used then the grid spac
 already been initialized; use <strong>-I</strong> (and <strong>-r</strong>) to override the values.</dd>
 </dl>
 <dl class="docutils" id="n">
-<dt><strong>-N</strong><em>sectors</em>[<strong>+m</strong><em>min_sectors</em>]</dt>
+<dt><strong>-N</strong><em>sectors</em>[<strong>+m</strong><em>min_sectors</em>]|**n**</dt>
 <dd>The circular area centered on each node is divided into <em>sectors</em>
 sectors. Average values will only be computed if there is at least
 one value inside each of at least <em>min_sectors</em> of the sectors for a given
@@ -286,7 +289,8 @@ node. Nodes that fail this test are assigned the value NaN (but see
 of <em>sectors</em> (i.e., rounded up to next integer) [Default is a quadrant
 search with 100% coverage, i.e., <em>sectors</em> = <em>min_sectors</em> = 4]. Note
 that only the nearest value per sector enters into the averaging; the
-more distant points are ignored.</dd>
+more distant points are ignored.  Alternatively, use <strong>-Nn</strong> to call
+GDALʻs nearest neighbor algorithm instead.</dd>
 </dl>
 <dl class="docutils" id="r">
 <dt><strong>-R</strong><em>xmin</em>/<em>xmax</em>/<em>ymin</em>/<em>ymax</em>[<strong>+r</strong>][<strong>+u</strong><em>unit</em>] <a class="reference internal" href="gmt.html#r-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -335,6 +339,10 @@ the actual weights used in the calculations.</dd>
 <dl class="docutils">
 <dt><strong>-f</strong>[<strong>i</strong>|<strong>o</strong>]<em>colinfo</em> <a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Specify data types of input and/or output columns.  </dd>
+</dl>
+<dl class="docutils">
+<dt><strong>-g</strong>[<strong>a</strong>]<strong>x</strong>|<strong>y</strong>|<strong>d</strong>|<strong>X</strong>|<strong>Y</strong>|<strong>D</strong>|[<em>col</em>]<strong>z</strong><em>gap</em>[<strong>+n</strong>|<strong>p</strong>]  <a class="reference internal" href="gmt.html#g-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Determine data gaps and line breaks. 0x20 .. just an invisible code</dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-h</strong>[<strong>i</strong>|<strong>o</strong>][<em>n</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+m</strong><em>segheader</em>][<strong>+r</strong><em>remark</em>][<strong>+t</strong><em>title</em>] <a class="reference internal" href="gmt.html#h-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -462,7 +470,7 @@ at least one value:</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 07, 2020.
+        Last updated on Feb 15, 2020.
       </span>
 
     </p>

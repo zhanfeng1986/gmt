@@ -135,9 +135,11 @@
         </p>
         <ul>
             
-                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
+                <li class="toctree-l1"><a href="https://www.generic-mapping-tools.org/"><i class="fa fa-home fa-fw"></i> GMT Homepage</a></li>
             
-                <li class="toctree-l1"><a href="https://forum.generic-mapping-tools.org/"><i class="fa fa-comment fa-fw"></i> Contact</a></li>
+                <li class="toctree-l1"><a href="https://forum.generic-mapping-tools.org/"><i class="fa fa-comment fa-fw"></i> GMT Community Forum</a></li>
+            
+                <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt/blob/master/LICENSE.TXT"><i class="fa fa-book fa-fw"></i> License</a></li>
             
                 <li class="toctree-l1"><a href="https://github.com/GenericMappingTools/gmt"><i class="fa fa-github fa-fw"></i> Source Code</a></li>
             
@@ -216,12 +218,16 @@
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <p><strong>gmt grdtrack</strong> [ <em>xyfile</em> ] <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>grd1</em> <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>grd2</em> …
 [ <a class="reference internal" href="#a"><span> <strong>-A</strong></span></a></strong><strong>f</strong>|<strong>p</strong>|<strong>m</strong>|<strong>r</strong>|<strong>R</strong>[<strong>+l</strong>] ]
-[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>length</em>/<em>ds</em>[<em>/spacing</em>][<strong>+a</strong>][<strong>l</strong>|<strong>r</strong>][<strong>+v</strong>] ] [<a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>dfile</em> ]
+[ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>length</em>/<em>ds</em>[<em>/spacing</em>][<strong>+a</strong>|<strong>+v</strong>][<strong>l</strong>|<strong>r</strong>] ]
+[ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>dfile</em> ]
 [ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong><em>line</em> ]
+[ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong>[<strong>+n</strong>][<strong>+z</strong><em>z0</em>] ]
 [ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong> ]
 [ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em> ]
-[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>method</em>/<em>modifiers</em> ] [ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong>[<em>radius</em>][<strong>+e</strong>|<strong>p</strong>]]
-[ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ] [ <a class="reference internal" href="#z"><span> <strong>-Z</strong></span></a></strong> ]
+[ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>method</em>/<em>modifiers</em> ]
+[ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong>[<em>radius</em>][<strong>+e</strong>|<strong>p</strong>]]
+[ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
+[ <a class="reference internal" href="#z"><span> <strong>-Z</strong></span></a></strong> ]
 [ <strong>-b</strong><a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">binary</span></a> ]
 [ <strong>-d</strong><a class="reference internal" href="gmt.html#d-full"><span class="std std-ref">nodata</span></a> ]
 [ <strong>-e</strong><a class="reference internal" href="gmt.html#e-full"><span class="std std-ref">regexp</span></a> ]
@@ -296,7 +302,7 @@ given spacing to fit the track length exactly. Finally, append
 (loxodromes) instead of great circles. Ignored unless <strong>-C</strong> is used.</dd>
 </dl>
 <dl class="docutils" id="c">
-<dt><strong>-C</strong><em>length</em>/<em>ds</em>[<em>/spacing</em>][<strong>+a</strong>][<strong>l</strong>|<strong>r</strong>][<strong>+v</strong>]</dt>
+<dt><strong>-C</strong><em>length</em>/<em>ds</em>[<em>/spacing</em>][<strong>+a</strong>|<strong>+v</strong>][<strong>l</strong>|<strong>r</strong>]</dt>
 <dd>Use input line segments to create an equidistant and (optionally)
 equally-spaced set of crossing profiles along which we sample the
 grid(s) [Default simply samples the grid(s) at the input locations].
@@ -304,7 +310,8 @@ Specify two length scales that control how the sampling is done:
 <em>length</em> sets the full length of each cross-profile, while <em>ds</em> is
 the sampling spacing along each cross-profile. Optionally, append
 <strong>/</strong><em>spacing</em> for an equidistant spacing between cross-profiles
-[Default erects cross-profiles at the input coordinates]. By
+[Default erects cross-profiles at the input coordinates]; see <strong>-A</strong>
+for how resampling the input track is controlled. By
 default, all cross-profiles have the same direction (left to right
 as we look in the direction of the input line segment). Append <strong>+a</strong>
 to alternate the direction of cross-profiles, or <strong>v</strong> to enforce
@@ -353,6 +360,21 @@ great circle distances in km (if geographic).  If working with geographic
 data you can use <strong>-j</strong> to control distance calculation mode [Great Circle].
 Note: If <strong>-C</strong> is set and <em>spacing</em> is given the that sampling scheme
 overrules any modifier set in <strong>-E</strong>.</dd>
+</dl>
+<dl class="docutils" id="f">
+<dt><strong>-F</strong>[<strong>+n</strong>][<strong>+z</strong><em>z0</em>]</dt>
+<dd>Find critical points along each cross-profile.
+Requires <strong>-C</strong> and a single input grid. We examine each cross-profile generated
+and report (<em>lonc</em>, <em>latc</em>, <em>distc</em>, <em>azimuthc</em>, <em>zc</em>) at the center peak of
+maximum <em>z</em> value, (<em>lonl</em>, <em>latl</em>, <em>distl</em>) and (<em>lonr</em>, <em>latr</em>, <em>distr</em>)
+at the first and last non-NaN point whose <em>z</em>-value exceeds <em>z0</em>, respectively,
+and the <em>width</em> based on the two extreme points found. When searching for
+the center peak and the extreme first and last values that exceed the threshold
+we assume the profile is positive up.  If we instead are looking
+for a trough then you must use <strong>+n</strong> to temporarily flip the profile to positive.
+The threshold <em>z0</em> value is always given as &gt;= 0; use <strong>+z</strong> to change it [0].
+We write 12 output columns per track with an identified center peak, with values
+<em>lonc, latc, distc, azimuthc, zc, lonl, latl, distl, lonr, latr, distr, width</em>.</dd>
 </dl>
 <dl class="docutils" id="n">
 <dt><strong>-N</strong></dt>
@@ -547,20 +569,16 @@ and only write out (dist, topo) records, try:</p>
 <p>To sample the file hawaii_topo.nc along the SEASAT track track_4.xyg
 (An ASCII table containing longitude, latitude, and SEASAT-derived
 gravity, preceded by one header record):</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grdtrack track_4.xyg -Ghawaii_topo.nc -h &gt; track_4.xygt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grdtrack track_4.xyg -Ghawaii_topo.nc -h &gt; track_4.xygt
 </pre></div>
 </div>
-</div></blockquote>
 <p>To sample the Sandwell/Smith IMG format file topo.8.2.img (2 minute
 predicted bathymetry on a Mercator grid) and the Muller et al age grid
 age.3.2.nc along the lon,lat coordinates given in the file
-cruise_track.xy, try</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grdtrack cruise_track.xy -Gtopo.8.2.img,1,1 -Gage.3.2.nc &gt; depths-age.d
+cruise_track.xy, try:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grdtrack cruise_track.xy -Gtopo.8.2.img,1,1 -Gage.3.2.nc &gt; depths-age.d
 </pre></div>
 </div>
-</div></blockquote>
 <p>To sample the Sandwell/Smith IMG format file grav.18.1.img (1 minute
 free-air anomalies on a Mercator grid) along 100-km-long cross-profiles
 that are orthogonal to the line segment given in the file track.xy,
@@ -570,14 +588,17 @@ erecting cross-profiles every 25 km and sampling the grid every 3 km, try</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>To sample the grid data.nc along a line from the lower left to the upper
-right corner, using a grid spacing of 1 km on the geodesic, and output distances as well,
-try</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdtrack -ELB/RT+i1k+d -Gdata.nc -je &gt; profiles.txt
+<p>The same thing, but now determining the central anomaly location along track,
+with a threshold of 25 mGal, try:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grdtrack track.xy -Ggrav.18.1.img,0.1,1 -C100k/3/25 -F+z25 &gt; locations.txt
 </pre></div>
 </div>
-</div></blockquote>
+<p>To sample the grid data.nc along a line from the lower left to the upper
+right corner, using a grid spacing of 1 km on the geodesic, and output distances as well,
+try:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdtrack -ELB/RT+i1k+d -Gdata.nc -je &gt; profiles.txt
+</pre></div>
+</div>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
@@ -612,7 +633,7 @@ try</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 07, 2020.
+        Last updated on Feb 15, 2020.
       </span>
 
     </p>
