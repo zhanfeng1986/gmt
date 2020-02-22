@@ -266,7 +266,7 @@ gmt begin ex22
 	gmt makecpt -Cred,green,blue -T0,100,300,10000 -N
 
 	<span class="c1"># Start plotting. First lay down map, then plot quakes with size = magnitude * 0.015&quot;:</span>
-	gmt coast -Rg -JK180/22c -B45g30 -B+t<span class="s2">&quot;World-wide earthquake activity&quot;</span> -Gburlywood -Slightblue -A1000
+	gmt coast -Rg -JK180/22c -B45g30 -B+t<span class="s2">&quot;World-wide earthquake activity&quot;</span> -Gburlywood -Slightblue -A1000 -Y7c
 	gmt plot -C -Sci -Wfaint -hi1 -i2,1,3,4+s0.015 <span class="nv">$file</span>
 
 	<span class="c1"># Create legend input file for NEIS quake plot</span>
@@ -353,7 +353,7 @@ gmt end show
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 15, 2020.
+        Last updated on Feb 22, 2020.
       </span>
 
     </p>

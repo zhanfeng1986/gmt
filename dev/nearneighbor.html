@@ -218,7 +218,7 @@
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <p><strong>gmt nearneighbor</strong> [ <em>table</em> ] <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>out_grdfile</em>
 <a class="reference internal" href="#i"><span> <strong>-I</strong></span></a></strong><em>increment</em>
-<a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong><em>sectors</em>[<strong>+m</strong><em>min_sectors</em>]
+<a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong><em>sectors</em>[<strong>+m</strong><em>min_sectors</em>] | <strong>n</strong>
 <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em>
 <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>search_radius</em>
 [ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong><em>empty</em> ]
@@ -280,7 +280,7 @@ details. Note: if <strong>-R</strong><em>grdfile</em> is used then the grid spac
 already been initialized; use <strong>-I</strong> (and <strong>-r</strong>) to override the values.</dd>
 </dl>
 <dl class="docutils" id="n">
-<dt><strong>-N</strong><em>sectors</em>[<strong>+m</strong><em>min_sectors</em>]|**n**</dt>
+<dt><strong>-N</strong><em>sectors</em>[<strong>+m</strong><em>min_sectors</em>]|<strong>n</strong></dt>
 <dd>The circular area centered on each node is divided into <em>sectors</em>
 sectors. Average values will only be computed if there is at least
 one value inside each of at least <em>min_sectors</em> of the sectors for a given
@@ -470,7 +470,7 @@ at least one value:</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 15, 2020.
+        Last updated on Feb 22, 2020.
       </span>
 
     </p>

@@ -256,11 +256,11 @@ gmt begin ex11
 	gmt grdmath <span class="m">255</span> Y <span class="nv">SUB</span> <span class="o">=</span> y2.nc
 	gmt grdmath <span class="nv">255</span>       <span class="o">=</span> c2.nc
 
-	gmt plot @cut-here_11.txt -Wthinnest,. -R-51/306/0/1071 -JX8.4c/25.2c
+	gmt plot @cut-here_11.txt -Wthinnest,. -R-51/306/0/1071 -JX8.4c/25.2c -X6c
 
 	gmt <span class="nb">set</span> FONT_ANNOT_PRIMARY 12p,Helvetica-Bold
 
-	gmt grdimage x1.nc y1.nc c1.nc -JX6c/-6c -X1.25c -R0/255/0/255
+	gmt grdimage x1.nc y1.nc c1.nc -JX6c/-6c -R0/255/0/255 -X1.25c
 	gmt plot -Wthinner,white,- @rays_11.txt
 	gmt text --FONT<span class="o">=</span>white -F+a+f <span class="s">&lt;&lt;- END</span>
 <span class="s">	128 128 -45 12p 60@.</span>
@@ -355,7 +355,7 @@ gmt end show
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 15, 2020.
+        Last updated on Feb 22, 2020.
       </span>
 
     </p>

@@ -230,7 +230,7 @@ illustrates how we can create a clip path (using
 <a class="reference internal" href="../mask.html"><span class="doc">mask</span></a>) based on the data coverage to
 eliminate contours outside the constrained area. Finally (top right) we
 simply employ <a class="reference internal" href="../coast.html"><span class="doc">coast</span></a> to overlay gray
-land masses to cover up the unwanted contours, and end by plotting a
+land masses to cover up the unwanted contours, and end by plotting a red
 star at the deepest point on the map with
 <a class="reference internal" href="../plot.html"><span class="doc">plot</span></a>. This point was extracted from the
 grid files using <a class="reference internal" href="../grdinfo.html"><span class="doc">grdinfo</span></a>.  Placement of the four
@@ -263,7 +263,7 @@ gmt begin ex15
 		gmt grdclip ship.nc -Sa-1/NaN -Gship_clipped.nc
 		gmt grdcontour ship_clipped.nc -C250 -A1000 -L-8000/0 -Gd5c -c0,1
 		gmt coast -Ggray -Wthinnest
-		gmt grdinfo -Cn -M ship.nc <span class="p">|</span> gmt plot -Sa0.4c -Wthick -i10,11
+		gmt grdinfo -Cn -M ship.nc <span class="p">|</span> gmt plot -Sa0.5c -Wthick -i10,11 -Gred
 	gmt subplot end
 gmt end show
 rm -f ship.b ship_10m.b ship.nc ship_clipped.nc
@@ -298,7 +298,7 @@ rm -f ship.b ship_10m.b ship.nc ship_clipped.nc
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 15, 2020.
+        Last updated on Feb 22, 2020.
       </span>
 
     </p>

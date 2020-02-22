@@ -245,15 +245,16 @@ cat <span class="s">&lt;&lt; EOF &gt; pre.sh</span>
 <span class="s"># Set up flight path</span>
 <span class="s">gmt begin</span>
 <span class="s">	gmt project -C-73.8333/40.75 -E-80.133/25.75 -G10 -Q &gt; flight_path.txt</span>
-<span class="s">	gmt grdgradient @USEast_Coast.nc -A90 -Nt1 -Gint_US.nc</span>
+<span class="s">	gmt grdcut @earth_relief_02m -R-100/-70/10/50 -GUSEast_Coast.nc</span>
+<span class="s">	gmt grdgradient USEast_Coast.nc -A90 -Nt1 -Gint_US.nc</span>
 <span class="s">	gmt makecpt -Cglobe -H &gt; globe_US.cpt</span>
 <span class="s">gmt end</span>
 <span class="s">EOF</span>
 <span class="c1"># 2. Set up the main frame script</span>
 cat <span class="s">&lt;&lt; EOF &gt; main.sh</span>
 <span class="s">gmt begin</span>
-<span class="s">	gmt grdimage -JG\${MOVIE_COL0}/\${MOVIE_COL1}/160/210/55/0/36/34/\${MOVIE_WIDTH}+ \</span>
-<span class="s">		-Rg @USEast_Coast.nc -Iint_US.nc -Cglobe_US.cpt -X0 -Y0</span>
+<span class="s">	gmt grdimage -JG\${MOVIE_COL0}/\${MOVIE_COL1}/160/210/55/0/36/34/\${MOVIE_WIDTH}+du \</span>
+<span class="s">		-Rg USEast_Coast.nc -Iint_US.nc -Cglobe_US.cpt -X0 -Y0</span>
 <span class="s">	gmt plot -W1p flight_path.txt</span>
 <span class="s">gmt end</span>
 <span class="s">EOF</span>
@@ -294,7 +295,7 @@ rm -f main.sh pre.sh
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 15, 2020.
+        Last updated on Feb 22, 2020.
       </span>
 
     </p>

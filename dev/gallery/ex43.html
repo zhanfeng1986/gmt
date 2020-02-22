@@ -241,7 +241,7 @@ gmt begin ex43
 	grep -v <span class="s1">&#39;^#&#39;</span> <span class="nv">$file</span> &gt; B.txt
 	<span class="nv">$AWK</span> <span class="s1">&#39;{if ($7 == 0) printf &quot;%dp\n&quot;, NR}&#39;</span> A.txt &gt; sed.txt
 	gmt makecpt -Clightred,green -T0/2/1 -F+c -N
-	gmt basemap -R0.01/1e6/0.1/1e5 -JX15cl -Ba1pf3 -Bx+l<span class="s2">&quot;Log@-10@- body weight (kg)&quot;</span> -By+l<span class="s2">&quot;Log@-10@- brain weight (g)&quot;</span> -BWSne+glightblue -Y12c
+	gmt basemap -R0.01/1e6/0.1/1e5 -JX15cl -Ba1pf3 -Bx+l<span class="s2">&quot;Log@-10@- body weight (kg)&quot;</span> -By+l<span class="s2">&quot;Log@-10@- brain weight (g)&quot;</span> -BWSne+glightblue -Y10c
 	gmt plot -R-2/6/-1/5 -JX15c rls_line.txt -L+yt -Glightgoldenrod
 	sed -n -f sed.txt B.txt <span class="p">|</span> gmt text -R0.01/1e6/0.1/1e5 -JX15cl -F+f12p+jRM -Dj10p
 	gmt plot -R-2/6/-1/5 -JX15c -L+d+p0.25p,- -Gcornsilk1 rls_line.txt
@@ -306,7 +306,7 @@ gmt end show
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 15, 2020.
+        Last updated on Feb 22, 2020.
       </span>
 
     </p>

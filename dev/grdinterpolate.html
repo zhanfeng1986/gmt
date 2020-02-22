@@ -403,33 +403,25 @@ for x, y, or z coordinate, respectively.</p>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>To extract a single, new 2-D layer from the temperature.nc 3-D cube for level 3400
-using a cubic spline, try</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdinterpolate temperature.nc -T3400 -Fc -Gtemp_3400.nc
+using a cubic spline, try:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdinterpolate temperature.nc -T3400 -Fc -Gtemp_3400.nc
 </pre></div>
 </div>
-</div></blockquote>
 <p>To extract a single, new 2-D layer from the 3-D cube implied by the individual grids
 layers_*.nc, with individual layer values given via z.txt, for level 3400
-using a linear spline, try</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdinterpolate layers_*.nc -Ziz,txt -T3400 -Fl -Gtemp_3400.nc
+using a linear spline, try:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdinterpolate layers_*.nc -Ziz,txt -T3400 -Fl -Gtemp_3400.nc
 </pre></div>
 </div>
-</div></blockquote>
 <p>To resample the the temperature.nc 3-D cube for all levels from
-1500 to 2500 in steps of 50, using an Akima spline, try</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdinterpolate temperature.nc -T1500/2500/50 -Gtemperature_1500_2500.nc -Fa
+1500 to 2500 in steps of 50, using an Akima spline, try:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdinterpolate temperature.nc -T1500/2500/50 -Gtemperature_1500_2500.nc -Fa
 </pre></div>
 </div>
-</div></blockquote>
-<p>The same, but this time write individual 2-D grids per layer:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdinterpolate temperature.nc -T1500/2500/50 -Gtemperature_%4.0f.nc -Fa -Zo
+<p>The same, but this time write individual 2-D grids per layer, try:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdinterpolate temperature.nc -T1500/2500/50 -Gtemperature_%4.0f.nc -Fa -Zo
 </pre></div>
 </div>
-</div></blockquote>
 </div>
 <div class="section" id="see-also">
 <h2>See Also<a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
@@ -463,7 +455,7 @@ using a linear spline, try</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 15, 2020.
+        Last updated on Feb 22, 2020.
       </span>
 
     </p>
