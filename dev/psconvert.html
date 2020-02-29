@@ -104,23 +104,23 @@
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="users_contrib_scripts.html">Users Script Contributions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="users_contrib_symbols.html">Users Symbol Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="users-contrib-scripts.html">Users Script Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="users-contrib-symbols.html">Users Symbol Contributions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="changes.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="deprecated_defaults.html">Deprecated GMT Defaults Names</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deprecated-defaults.html">Deprecated GMT Defaults Names</a></li>
 <li class="toctree-l1"><a class="reference internal" href="switching.html">Switching between different GMT versions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="migrating.html">Migrating from an earlier GMT version</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Classic Mode</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="std_opts_classic.html">Common Options (Classic Mode)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules_classic.html">GMT Modules (Classic Mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="std-opts-classic.html">Common Options (Classic Mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules-classic.html">GMT Modules (Classic Mode)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rst_cheatsheet.html">reStructuredText Cheatsheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rst-cheatsheet.html">reStructuredText Cheatsheet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="debug.html">Debugging GMT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight C API</a></li>
@@ -446,10 +446,10 @@ argument in single-quotes (or vice versa).</p>
 <p>Further notes on the creation of georeferenced rasters.
 <strong>psconvert</strong> can create a georeferenced raster image with a world
 file OR uses GDAL to convert the GMT PostScript file to geotiff.
-GDAL uses Proj.4 for its projection library. To provide with the
+GDAL uses <a class="reference external" href="https://proj.org/">PROJ</a> for its projection library. To provide with the
 information it needs to do the georeferencing, GMT 4.5 embeds a
 comment near the start of the PostScript file defining the
-projection using Proj.4 syntax. Users with pre-GMT v4.5 PostScript
+projection using <strong>PROJ</strong> syntax. Users with pre-GMT v4.5 PostScript
 files, or even non-GMT ps files, can provide the information
 <strong>psconvert</strong> requires by manually editing a line into the
 PostScript file, prefixed with %%PROJ.</p>
@@ -465,7 +465,7 @@ PostScript file, prefixed with %%PROJ.</p>
 </div>
 <p class="last">where ‘merc’ is the keyword for the coordinate conversion; the 2 to
 5th elements contain the map limits, 6 to 9th the map limits in
-projected coordinates and the rest of the line has the regular proj4
+projected coordinates and the rest of the line has the regular <strong>PROJ</strong>
 string for this projection.</p>
 </dd>
 <dt><strong>-Z</strong></dt>
@@ -524,7 +524,7 @@ program. However, <strong>-A+u</strong> is GMT-specific.</p>
 developers make decisions that affect <strong>psconvert</strong>.  As of version 9.16 the
 SVG device has been removed.  Fortunately, quality SVG graphics can be obtained
 by first converting to PDF and then install and use the package <strong>pdf2svg</strong>.</p>
-<p>See <a class="reference internal" href="cookbook/include_figures.html#include-gmt-graphics"><span class="std std-ref">Including GMT Graphics into your Documents</span></a> of the <strong>GMT Technical Reference and Cookbook</strong> for more
+<p>See <a class="reference internal" href="cookbook/include-figures.html#include-gmt-graphics"><span class="std std-ref">Including GMT Graphics into your Documents</span></a> of the <strong>GMT Technical Reference and Cookbook</strong> for more
 information on how <strong>psconvert</strong> is used to produce graphics that can be
 inserted into other documents (articles, presentations, posters, etc.).</p>
 <p>The conversion to Geo PDFs have proven unstable and could create PDF files that could
@@ -633,7 +633,7 @@ use it.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 22, 2020.
+        Last updated on Feb 29, 2020.
       </span>
 
     </p>

@@ -104,23 +104,23 @@
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="users_contrib_scripts.html">Users Script Contributions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="users_contrib_symbols.html">Users Symbol Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="users-contrib-scripts.html">Users Script Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="users-contrib-symbols.html">Users Symbol Contributions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="changes.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="deprecated_defaults.html">Deprecated GMT Defaults Names</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deprecated-defaults.html">Deprecated GMT Defaults Names</a></li>
 <li class="toctree-l1"><a class="reference internal" href="switching.html">Switching between different GMT versions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="migrating.html">Migrating from an earlier GMT version</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Classic Mode</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="std_opts_classic.html">Common Options (Classic Mode)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules_classic.html">GMT Modules (Classic Mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="std-opts-classic.html">Common Options (Classic Mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules-classic.html">GMT Modules (Classic Mode)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rst_cheatsheet.html">reStructuredText Cheatsheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rst-cheatsheet.html">reStructuredText Cheatsheet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="debug.html">Debugging GMT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight C API</a></li>
@@ -793,11 +793,11 @@ equator (<strong>1:</strong><em>xxxx</em> or UNIT/degree).</dd>
 <p><strong>NON-GEOGRAPHICAL PROJECTIONS:</strong></p>
 </div></blockquote>
 <blockquote id="jp-full">
-<div><p><strong>-Jp</strong>[<strong>a</strong>]<em>scale</em>[<em>/origin</em>][<strong>+r</strong>|<strong>z</strong>] or <strong>-JP</strong>[<strong>a</strong>]<em>width</em>[<em>/origin</em>][<strong>+r</strong>|<strong>z</strong>]
+<div><p><strong>-Jp</strong><em>scale</em>[<strong>+a</strong>][<strong>+o</strong><em>origin</em>][<strong>+r</strong>|<strong>z</strong>] or <strong>-JP</strong><em>width</em>[<strong>+a</strong>][<strong>+o</strong><em>origin</em>][<strong>+r</strong>|<strong>z</strong>]
 (Polar coordinates (<em>theta</em>, <em>r</em>))</p>
-<p>Optionally insert <strong>a</strong> after <strong>-Jp</strong> [or <strong>-JP</strong>] if <em>theta</em> is azimuths CW
+<p>Optionally add <strong>+a</strong> if <em>theta</em> is azimuths CW
 from North instead of directions CCW from East [Default]. Optionally
-append /<em>origin</em> in degrees to indicate an angular offset [0].
+append <strong>+o</strong><em>origin</em> in degrees to indicate a CW (or CCW if <strong>+a</strong> iset set) angular offset [0].
 Finally, append <strong>+r</strong> if <em>r</em> represents elevations in degrees (requires <em>south</em> &gt;= 0
 and <em>north</em> &lt;= 90), or append <strong>+z</strong> if you want to annotate depth rather than
 radius [Default]. Give <em>scale</em> in UNIT/r-unit.</p>
@@ -836,28 +836,28 @@ projection type, the arguments of the last used <strong>-J</strong>, or the last
 <dt><strong>-Jz</strong>|<strong>Z</strong><em>parameters</em></dt>
 <dd>Set z-axis scaling; same syntax as <strong>-Jx</strong>.</dd>
 </dl>
-<dl class="docutils" id="jproj4-full">
-<dt><strong>-J&lt;proj4&gt;</strong>|<strong>EPSG:n</strong></dt>
-<dd><p class="first">Starting at GMT6 it is possible to use the <em>PROJ.4</em> library to do coordinate and datum transforms.
+<dl class="docutils" id="jproj-full">
+<dt><strong>-J</strong><em>proj</em>|<strong>EPSG:n</strong></dt>
+<dd><p class="first">Starting at GMT6 it is possible to use the <a class="reference external" href="https://proj.org/">PROJ</a> library to do coordinate and datum transforms.
 This is achieved via GDAL so it requires that GMT build is linked to that library. It is, however,
-beyond the scope of this manual to document the <em>PROJ.4</em> syntax (that is the syntax of the <em>proj</em>
-and <em>cs2cs</em> programs) so users are referred to it <a class="reference external" href="http://proj4.org/apps/index.html">http://proj4.org/apps/index.html</a> for the details.</p>
-<p>The usage of <em>PROJ.4</em> follows very closely the syntax of <em>proj</em> and <em>cs2cs</em>. The projection parameters
+beyond the scope of this manual to document the <strong>PROJ</strong> syntax (that is the syntax of the <strong>proj</strong>
+and <strong>cs2cs</strong> programs) so users are referred to <a class="reference external" href="http://proj.org/apps/index.html">PROJ Applications</a> for the details.</p>
+<p>The usage of <strong>PROJ</strong> follows very closely the syntax of <strong>proj</strong> and <strong>cs2cs</strong>. The projection parameters
 are encapsulated under the <strong>-J</strong> option. Because there are normally several parameters defining a
-referencing system separated by spaces (in <em>PROJ.4</em> or <em>GDAL</em>) we can either use double quotes as in
+referencing system separated by spaces (in <strong>PROJ</strong> or <strong>GDAL</strong>) we can either use double quotes as in
 <strong>-J</strong>”<em>+proj=merc +ellps=WGS84 +units=m</em>” or just glue all parameters like in
 <strong>-J</strong><em>+proj=merc+ellps=WGS84+units=m</em>.</p>
-<p>Using <a class="reference external" href="http://spatialreference.org">EPSG codes</a> is also possible (but need the setting of the GDAL_DATA
+<p>Using <a class="reference external" href="http://spatialreference.org">EPSG codes</a> is also possible (but need the setting of the <strong>GDAL_DATA</strong>
 environment variable to point to the GDAL’s <em>data</em> sub-directory). For example <strong>-JEPSG:4326</strong> sets
 the WGS-84 system.</p>
 <p>For <a class="reference internal" href="mapproject.html"><span class="doc">mapproject</span></a> and <a class="reference internal" href="grdproject.html"><span class="doc">grdproject</span></a> we can go directly from the
 referencing system A to B without the intermediate step of converting to geographic coordinates.
-That is obtained (like in <em>cs2cs</em>) by using the <strong>+to</strong> keyword. Example:
+That is obtained (like in <strong>cs2cs</strong>) by using the <strong>+to</strong> keyword. Example:
 <strong>-J</strong><em>EPSG:4326+to+proj=aeqd+ellps=WGS84+units=m</em>. A much awaited bonus is also that we now do not need
 to set <strong>-R</strong> to do point coordinate conversions.</p>
-<p class="last">While for point and grid conversions done by <em>mapproject</em> and <em>grdproject</em> we can use <a class="reference external" href="http://proj4.org/projections/index.html">all PROJ.4 projections</a>, the situations is, however, rather more limited for mapping purposes.
-Here, only the subset of the <em>PROJ.4</em> projections that can be mapped into the GMT projections syntax is
-available to use. Another aspect that is not present in <em>PROJ.4</em>, because it’s not a mapping library,
+<p class="last">While for point and grid conversions done by <strong>mapproject</strong> and <strong>grdproject</strong> we can use <a class="reference external" href="https://proj.org/operations/projections/index.html">all PROJ projections</a>, the situations is, however, rather more limited for mapping purposes.
+Here, only the subset of the <strong>PROJ</strong> projections that can be mapped into the GMT projections syntax is
+available to use. Another aspect that is not present in <strong>PROJ</strong>, because it’s not a mapping library,
 is how to set the map scale or map dimension. We introduced the two extensions <strong>+width=</strong><em>size</em> and
 <strong>+scale=</strong><em>1:xxxx</em> that work exactly like the <em>map width</em> and <em>scale</em> in classical GMT. It is also allowed
 to provide the scale (but NOT the width) by appending the string “/1:xxx” to the end of the projection parameters.</p>
@@ -996,7 +996,7 @@ respectively; type will be set automatically. Finally, you <em>must</em>
 append <strong>+g</strong><em>geometry</em>, where <em>geometry</em> is either POINT, LINE,
 or POLY. Optionally, prepend <strong>M</strong> for multi-versions of these
 geometries. To force the clipping of features crossing the Dateline,
-use upper-case <strong>+G</strong> instead. See <a class="reference internal" href="cookbook/ogrgmt_format.html"><span class="doc">The GMT Vector Data Format for OGR Compatibility</span></a>
+use upper-case <strong>+G</strong> instead. See <a class="reference internal" href="cookbook/ogrgmt-format.html"><span class="doc">The GMT Vector Data Format for OGR Compatibility</span></a>
 for details of the OGR/GMT file format.</dd>
 </dl>
 <dl class="docutils" id="bi-full">
@@ -1380,7 +1380,7 @@ raster image file. The optional <strong>+r</strong><em>dpi</em> sets the resolut
 the image [300]. For 1-bit rasters: use upper case <strong>P</strong>  for inverse
 video, or append <strong>+f</strong><em>color</em> and/or <strong>+b</strong><em>color</em> to specify
 fore- and background colors (no <em>color</em> given means transparency).
-See <a class="reference internal" href="cookbook/predefined_patterns.html"><span class="doc">Predefined Bit and Hachure Patterns in GMT</span></a> for information on
+See <a class="reference internal" href="cookbook/predefined-patterns.html"><span class="doc">Predefined Bit and Hachure Patterns in GMT</span></a> for information on
 individual built-in patterns.</dd>
 </dl>
 </div>
@@ -1569,7 +1569,7 @@ GMT documentation site <a class="reference external" href="https://docs.generic-
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 22, 2020.
+        Last updated on Feb 29, 2020.
       </span>
 
     </p>

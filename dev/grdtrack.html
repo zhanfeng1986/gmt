@@ -104,23 +104,23 @@
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="users_contrib_scripts.html">Users Script Contributions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="users_contrib_symbols.html">Users Symbol Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="users-contrib-scripts.html">Users Script Contributions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="users-contrib-symbols.html">Users Symbol Contributions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="changes.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="deprecated_defaults.html">Deprecated GMT Defaults Names</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deprecated-defaults.html">Deprecated GMT Defaults Names</a></li>
 <li class="toctree-l1"><a class="reference internal" href="switching.html">Switching between different GMT versions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="migrating.html">Migrating from an earlier GMT version</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Classic Mode</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="std_opts_classic.html">Common Options (Classic Mode)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules_classic.html">GMT Modules (Classic Mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="std-opts-classic.html">Common Options (Classic Mode)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules-classic.html">GMT Modules (Classic Mode)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer Resources</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CONTRIBUTING.md">Contributing Guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rst_cheatsheet.html">reStructuredText Cheatsheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rst-cheatsheet.html">reStructuredText Cheatsheet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="debug.html">Debugging GMT</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">GMT C API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="postscriptlight.html">PostScriptLight C API</a></li>
@@ -332,7 +332,7 @@ The columns will be <em>lon</em>, <em>lat</em>, <em>dist</em>, <em>azimuth</em>,
 (sampled value for each grid)</dd>
 </dl>
 <dl class="docutils" id="e">
-<dt><strong>-E</strong><em>line</em>[,<em>line</em>,…][<strong>+a</strong><em>az</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+i</strong><em>inc</em>][<strong>+l</strong><em>length</em>][<strong>+n</strong><em>np</em>][<strong>+o</strong><em>az</em>][<strong>+r</strong><em>radius</em></dt>
+<dt><strong>-E</strong><em>line</em>[,<em>line</em>,…][<strong>+a</strong><em>az</em>][<strong>+c</strong>][<strong>+d</strong>][<strong>+g</strong>][<strong>+i</strong><em>inc</em>][<strong>+l</strong><em>length</em>][<strong>+n</strong><em>np</em>][<strong>+o</strong><em>az</em>][<strong>+r</strong><em>radius</em>]</dt>
 <dd>Instead of reading input track coordinates, specify profiles via
 coordinates and modifiers. The format of each <em>line</em> is
 <em>start</em>/<em>stop</em>, where <em>start</em> or <em>stop</em> are either <em>lon</em>/<em>lat</em> (<em>x</em>/<em>y</em> for
@@ -344,7 +344,9 @@ In addition to line coordinates, you can use Z-, Z+ to mean the global
 minimum and maximum locations in the grid (only available if a
 single grid is given via <strong>-G</strong>). You may append
 <strong>+i</strong><em>inc</em> to set the sampling interval; if not given then
-we default to half the minimum grid interval.  Instead of two coordinates
+we default to half the minimum grid interval.  For a <em>line</em> along parallels
+or meridians you can add <strong>+g</strong> to report degrees of longitude or latitude
+instead of great circle distances starting at zero.  Instead of two coordinates
 you can specify an origin and one of <strong>+a</strong>, <strong>+o</strong>, or <strong>+r</strong>.
 The <strong>+a</strong> sets the azimuth of a profile of given
 length starting at the given origin, while <strong>+o</strong> centers the profile
@@ -633,7 +635,7 @@ try:</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 22, 2020.
+        Last updated on Feb 29, 2020.
       </span>
 
     </p>
