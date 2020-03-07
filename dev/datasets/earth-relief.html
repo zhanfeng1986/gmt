@@ -228,7 +228,7 @@
 <div class="figure align-center">
 <a class="reference internal image-reference" href="../_images/dem.jpg"><img alt="../_images/dem.jpg" src="../_images/dem.jpg" style="width: 709.6px; height: 355.20000000000005px;" /></a>
 </div>
-<p>In addition to the GSHHS coastlines, rivers, and borders data built into some
+<p>In addition to the GSHHG coastlines, rivers, and borders data built into some
 modules (<a class="reference internal" href="../coast.html"><span class="doc">coast</span></a>, <a class="reference internal" href="../gmtselect.html"><span class="doc">gmtselect</span></a>, <a class="reference internal" href="../grdlandmask.html"><span class="doc">grdlandmask</span></a>), we offer several
 remote global data grids that you can access via our <em>remote file</em> mechanism.
 The first time you access one of these files we will download the file from
@@ -378,8 +378,16 @@ touched in, say, 6 months (or some other interval).</li>
 <div class="section" id="offline-usage">
 <h2>Offline Usage<a class="headerlink" href="#offline-usage" title="Permalink to this headline">¶</a></h2>
 <p>If you anticipate to be without an Internet connection (or a very slow one), you can download
-all the remote files prior to losing connection, using the shell script gmt_getremote.sh in
-share/tools.  It also allows you to download all the cache files used for examples.</p>
+all the remote files prior to losing connection, using the shell script <em>gmt_getremote.sh</em> in
+<strong>share/tools</strong>. You can run the shell script:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">$(</span>gmt --show-sharedir<span class="k">)</span>/tools/gmt_getremote.sh data
+</pre></div>
+</div>
+<p>It also allows you to download all the cache files used for examples:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">$(</span>gmt --show-sharedir<span class="k">)</span>/tools/gmt_getremote.sh cache
+</pre></div>
+</div>
+<p>It may take some time to download the data from GMT server. Be patient!</p>
 </div>
 <div class="section" id="data-references">
 <h2>Data References<a class="headerlink" href="#data-references" title="Permalink to this headline">¶</a></h2>
@@ -414,7 +422,7 @@ share/tools.  It also allows you to download all the cache files used for exampl
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 29, 2020.
+        Last updated on Mar 07, 2020.
       </span>
 
     </p>

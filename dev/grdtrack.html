@@ -221,7 +221,7 @@
 [ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>length</em>/<em>ds</em>[<em>/spacing</em>][<strong>+a</strong>|<strong>+v</strong>][<strong>l</strong>|<strong>r</strong>] ]
 [ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>dfile</em> ]
 [ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong><em>line</em> ]
-[ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong>[<strong>+n</strong>][<strong>+z</strong><em>z0</em>] ]
+[ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong>[<strong>+b</strong>][<strong>+n</strong>][<strong>+z</strong><em>z0</em>] ]
 [ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong> ]
 [ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em> ]
 [ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong><em>method</em>/<em>modifiers</em> ]
@@ -364,7 +364,7 @@ Note: If <strong>-C</strong> is set and <em>spacing</em> is given the that sampl
 overrules any modifier set in <strong>-E</strong>.</dd>
 </dl>
 <dl class="docutils" id="f">
-<dt><strong>-F</strong>[<strong>+n</strong>][<strong>+z</strong><em>z0</em>]</dt>
+<dt><strong>-F</strong>[<strong>+b</strong>][<strong>+n</strong>][<strong>+z</strong><em>z0</em>]</dt>
 <dd>Find critical points along each cross-profile.
 Requires <strong>-C</strong> and a single input grid. We examine each cross-profile generated
 and report (<em>lonc</em>, <em>latc</em>, <em>distc</em>, <em>azimuthc</em>, <em>zc</em>) at the center peak of
@@ -375,6 +375,8 @@ the center peak and the extreme first and last values that exceed the threshold
 we assume the profile is positive up.  If we instead are looking
 for a trough then you must use <strong>+n</strong> to temporarily flip the profile to positive.
 The threshold <em>z0</em> value is always given as &gt;= 0; use <strong>+z</strong> to change it [0].
+Alternatively, use <strong>+b</strong> to determine the balance point and standard deviation of the profile.
+Note that we round the exact results to the nearest distance nodes.
 We write 12 output columns per track with an identified center peak, with values
 <em>lonc, latc, distc, azimuthc, zc, lonl, latl, distl, lonr, latr, distr, width</em>.</dd>
 </dl>
@@ -635,7 +637,7 @@ try:</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 29, 2020.
+        Last updated on Mar 07, 2020.
       </span>
 
     </p>

@@ -111,6 +111,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#the-intermediate-resolution-di">The intermediate resolution (<strong>-Di</strong>)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#the-high-resolution-dh">The high resolution (<strong>-Dh</strong>)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#the-full-resolution-df">The full resolution (<strong>-Df</strong>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#footnotes">Footnotes</a></li>
 </ul>
 </li>
 </ul>
@@ -252,7 +253,7 @@ data is far superior to the WDB data as far as data quality goes, but as
 noted it lacks lakes, not to mention rivers and borders. We decided to
 use the WVS whenever possible and supplement it with WDB data. We got
 these data over the Internet; they are also available on CD-ROM from the
-National Centers for Environmental Information in Boulder, Colorado <a class="footnote-reference" href="#id5" id="id1">[1]</a>.</p>
+National Centers for Environmental Information in Boulder, Colorado <a class="footnote-reference" href="#id4" id="id1">[1]</a>.</p>
 </div>
 <div class="section" id="format-required-by-gmt">
 <h2>Format required by GMT<a class="headerlink" href="#format-required-by-gmt" title="Permalink to this headline">¶</a></h2>
@@ -349,13 +350,13 @@ most of them will plot several times on the same pixel and the
 operation would take a very long time to complete. We chose to make 5
 versions on the database, corresponding to different resolutions. The
 decimation was carried out using the Douglas-Peucker (DP)
-line-reduction algorithm <a class="footnote-reference" href="#id6" id="id2">[2]</a>. We chose the cutoffs so that each
+line-reduction algorithm <a class="footnote-reference" href="#id5" id="id2">[2]</a>. We chose the cutoffs so that each
 subset was approximately 20% the size of the next higher resolution.
 The five resolutions are called <strong>f</strong>ull, <strong>h</strong>igh,
 <strong>i</strong>ntermediate, <strong>l</strong>ow, and <strong>c</strong>rude; they are accessed in
 <a class="reference internal" href="../coast.html"><span class="doc">coast</span></a>, <a class="reference internal" href="../gmtselect.html"><span class="doc">gmtselect</span></a>, and
-<a class="reference internal" href="../grdlandmask.html"><span class="doc">grdlandmask</span></a> with the <strong>-D</strong>
-option <a class="footnote-reference" href="#id7" id="id3">[3]</a>. For each of these 5 data sets (<strong>f</strong>, <strong>h</strong>, <strong>i</strong>,
+<a class="reference internal" href="../grdlandmask.html"><span class="doc">grdlandmask</span></a> with the <strong>-D</strong> option.
+For each of these 5 data sets (<strong>f</strong>, <strong>h</strong>, <strong>i</strong>,
 <strong>l</strong>, <strong>c</strong>) we specified an equidistant grid (1, 2, 5, 10, 20) and
 split all polygons into line-segments that each fit inside one of the
 many boxes defined by these grid lines. Thus, to paint the entire
@@ -366,7 +367,7 @@ came from in order to prescribe the correct paint or ignore if the
 feature is smaller than the cutoff specified by the user. The
 resulting segment coordinates were then scaled to fit in short
 integer format to preserve precision and written in netCDF format for
-ultimate portability across hardware platforms <a class="footnote-reference" href="#id8" id="id4">[4]</a>.</p>
+ultimate portability across hardware platforms <a class="footnote-reference" href="#id6" id="id3">[3]</a>.</p>
 </li>
 <li><p class="first">While we are now back to a file of line-segments we are in a much
 better position to create smaller polygons for painting. Two problems
@@ -410,17 +411,15 @@ map look “dirty”. We also add national borders to the plot. The crude
 database is heavily decimated and simplified by the DP-routine: The
 total file size of the coastlines, rivers, and borders database is only
 283 kbytes. The plot is produced by the script:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_K_1
-  gmt <span class="nb">set</span> MAP_GRID_CROSS_SIZE_PRIMARY <span class="m">0</span> MAP_ANNOT_OBLIQUE <span class="m">22</span> MAP_ANNOT_MIN_SPACING <span class="m">0</span>.3i
-  gmt coast -Rk-9000/9000/-9000/9000 -JE130.35/-0.2/3.5i -Dc <span class="se">\</span>
-    -A500 -Gburlywood -Sazure -Wthinnest -N1/thinnest,- -B20g20 -BWSne
-  <span class="nb">echo</span> <span class="m">130</span>.35 -0.2 <span class="p">|</span> gmt plot -SJ-4000 -Wthicker
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_K_1
+	gmt <span class="nb">set</span> MAP_GRID_CROSS_SIZE_PRIMARY <span class="m">0</span> MAP_ANNOT_OBLIQUE <span class="m">22</span> MAP_ANNOT_MIN_SPACING <span class="m">0</span>.3i
+	gmt coast -Rk-9000/9000/-9000/9000 -JE130.35/-0.2/3.5i -Dc <span class="se">\</span>
+		-A500 -Gburlywood -Sazure -Wthinnest -N1/thinnest,- -B20g20 -BWSne
+	<span class="nb">echo</span> <span class="m">130</span>.35 -0.2 <span class="p">|</span> gmt plot -SJ-4000 -Wthicker
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
-<div class="figure align-center" id="id9">
+<div class="figure align-center" id="id7">
 <a class="reference internal image-reference" href="../_images/GMT_App_K_1.png"><img alt="../_images/GMT_App_K_1.png" src="../_images/GMT_App_K_1.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Map using the crude resolution coastline data.</span></p>
 </div>
@@ -440,15 +439,14 @@ national borders to the plot. The low database is less decimated and
 simplified by the DP-routine: The total file size of the coastlines,
 rivers, and borders combined grows to 907 kbytes; it is the default
 resolution in GMT. The plot is generated by the script:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_K_2
-  gmt coast -Rk-2000/2000/-2000/2000 -JE130.35/-0.2/3.5i -Dl -A100 -Gburlywood -Sazure -Wthinnest -N1/thinnest,- -B10g5 -BWSne
-  <span class="nb">echo</span> <span class="m">130</span>.35 -0.2 <span class="p">|</span> gmt plot -SJ-1000 -Wthicker
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_K_2
+	gmt coast -Rk-2000/2000/-2000/2000 -JE130.35/-0.2/3.5i -Dl -A100 <span class="se">\</span>
+		-Gburlywood -Sazure -Wthinnest -N1/thinnest,- -B10g5 -BWSne
+	<span class="nb">echo</span> <span class="m">130</span>.35 -0.2 <span class="p">|</span> gmt plot -SJ-1000 -Wthicker
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
-<div class="figure align-center" id="id10">
+<div class="figure align-center" id="id8">
 <a class="reference internal image-reference" href="../_images/GMT_App_K_2.png"><img alt="../_images/GMT_App_K_2.png" src="../_images/GMT_App_K_2.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Map using the low resolution coastline data.</span></p>
 </div>
@@ -465,19 +463,15 @@ still asks for national borders none exist within our region. The
 intermediate database is moderately decimated and simplified by the
 DP-routine: The combined file size of the coastlines, rivers, and
 borders now exceeds 3.35 Mbytes. The plot is generated by the script:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_K_3
-  gmt coast -Rk-500/500/-500/500 -JE130.35/-0.2/3.5i -Di -A20 <span class="se">\</span>
-    -Gburlywood -Sazure -Wthinnest -N1/thinnest,- -B2g1 -BWSne
-  <span class="nb">echo</span> <span class="m">133</span> <span class="m">2</span> <span class="p">|</span> gmt plot -Sc1.4i -Gwhite
-  gmt basemap -Tm133/2+w1i+t45/10/5+jCM --FONT_TITLE<span class="o">=</span>12p --MAP_TICK_LENGTH_PRIMARY<span class="o">=</span><span class="m">0</span>.05i <span class="se">\</span>
-    --FONT_ANNOT_SECONDARY<span class="o">=</span>8p
-  <span class="nb">echo</span> <span class="m">130</span>.35 -0.2 <span class="p">|</span> gmt plot -SJ-200 -Wthicker
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_K_3
+	gmt coast -Rk-500/500/-500/500 -JE130.35/-0.2/3.5i -Di -A20 -Gburlywood -Sazure -Wthinnest -N1/thinnest,- -B2g1 -BWSne
+	<span class="nb">echo</span> <span class="m">133</span> <span class="m">2</span> <span class="p">|</span> gmt plot -Sc1.4i -Gwhite
+	gmt basemap -Tmg133/2+w1i+t45/10/5+jCM --FONT_TITLE<span class="o">=</span>12p --MAP_TICK_LENGTH_PRIMARY<span class="o">=</span><span class="m">0</span>.05i --FONT_ANNOT_SECONDARY<span class="o">=</span>8p
+	<span class="nb">echo</span> <span class="m">130</span>.35 -0.2 <span class="p">|</span> gmt plot -SJ-200 -Wthicker
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
-<div class="figure align-center" id="id11">
+<div class="figure align-center" id="id9">
 <a class="reference internal image-reference" href="../_images/GMT_App_K_3.png"><img alt="../_images/GMT_App_K_3.png" src="../_images/GMT_App_K_3.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Map using the intermediate resolution coastline data. We have added a compass
 rose just because we have the power to do so.</span></p>
@@ -494,16 +488,14 @@ resolution database has undergone minor decimation and simplification by
 the DP-routine: The combined file size of the coastlines, rivers, and
 borders now swells to 12.3 Mbytes. The map and the final outline box are
 generated by these commands:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_K_4
-  gmt coast -Rk-100/100/-100/100 -JE130.35/-0.2/3.5i -Dh -A1 <span class="se">\</span>
-    -Gburlywood -Sazure -Wthinnest -N1/thinnest,- -B30mg10m -BWSne
-  <span class="nb">echo</span> <span class="m">130</span>.35 -0.2 <span class="p">|</span> gmt plot -SJ-40 -Wthicker
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_K_4
+	gmt coast -Rk-100/100/-100/100 -JE130.35/-0.2/3.5i -Dh -A1 <span class="se">\</span>
+		-Gburlywood -Sazure -Wthinnest -N1/thinnest,- -B30mg10m -BWSne
+	<span class="nb">echo</span> <span class="m">130</span>.35 -0.2 <span class="p">|</span> gmt plot -SJ-40 -Wthicker
 gmt end show
 </pre></div>
 </div>
-</div></blockquote>
-<div class="figure align-center" id="id12">
+<div class="figure align-center" id="id10">
 <a class="reference internal image-reference" href="../_images/GMT_App_K_4.png"><img alt="../_images/GMT_App_K_4.png" src="../_images/GMT_App_K_4.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Map using the high resolution coastline data.</span></p>
 </div>
@@ -518,25 +510,27 @@ features are ignored. The full resolution has undergone no decimation
 and it shows: The combined file size of the coastlines, rivers, and
 borders totals a (once considered hefty) 55.9 Mbytes. Our final map is
 reproduced by the single command:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt coast -Rk-20/20/-20/20 -JE130.35/-0.2/3.5i -Df -Gburlywood <span class="se">\</span>
-            -Sazure -Wthinnest -N1/thinnest,- -B10mg2m -BWSne -pdf GMT_App_K_5
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin GMT_App_K_5
+	gmt coast -Rk-20/20/-20/20 -JE130.35/-0.2/3.5i -Df -Gburlywood -Sazure -Wthinnest -N1/thinnest,- -B10mg2m -BWSne
+gmt end show
 </pre></div>
 </div>
-</div></blockquote>
-<div class="figure align-center" id="id13">
+<div class="figure align-center" id="id11">
 <a class="reference internal image-reference" href="../_images/GMT_App_K_5.png"><img alt="../_images/GMT_App_K_5.png" src="../_images/GMT_App_K_5.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">Map using the full resolution coastline data.</span></p>
 </div>
 <p>We hope you will study these examples to enable you to make efficient
 and wise use of this vast data set.</p>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
+</div>
+<div class="section" id="footnotes">
+<h3>Footnotes<a class="headerlink" href="#footnotes" title="Permalink to this headline">¶</a></h3>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="http://www.ncei.noaa.gov/">National Centers for Environmental Information, Boulder, Colorado</a></td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id6" rules="none">
+<table class="docutils footnote" frame="void" id="id5" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>Douglas, D.H., and T. K. Peucker, 1973, Algorithms for the reduction
@@ -544,18 +538,10 @@ of the number of points required to represent a digitized line or its
 caricature, <em>Canadian Cartographer</em>, 10, 112–122.</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id7" rules="none">
+<table class="docutils footnote" frame="void" id="id6" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td>The full and high resolution files are in separate archives because
-of their size. Not all users may need these files as the intermediate
-data set is better than the data provided with version 2.2.4.</td></tr>
-</tbody>
-</table>
-<table class="docutils footnote" frame="void" id="id8" rules="none">
-<colgroup><col class="label" /><col /></colgroup>
-<tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td><td>If you need complete polygons in a simpler format, see the article on
+<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td>If you need complete polygons in a simpler format, see the article on
 GSHHG (Wessel, P., and W. H. F. Smith, 1996, A Global,
 self-consistent, hierarchical, high-resolution shoreline database,
 <em>J. Geophys. Res. 101</em>, 8741–8743).</td></tr>
@@ -588,7 +574,7 @@ self-consistent, hierarchical, high-resolution shoreline database,
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 29, 2020.
+        Last updated on Mar 07, 2020.
       </span>
 
     </p>

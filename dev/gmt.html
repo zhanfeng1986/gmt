@@ -364,7 +364,7 @@ modules. No space between the option flag and the associated arguments.</p>
 <dl class="docutils" id="b-full">
 <dt><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em></dt>
 <dd><p class="first">Set map Frame and Axes parameters. The Frame parameters are specified by</p>
-<p><strong>-B</strong>[<em>axes</em>][<strong>+b</strong>][<strong>+g</strong><em>fill</em>][<strong>+n</strong>][<strong>+o</strong><em>lon/lat</em>][<strong>+t</strong><em>title</em>]</p>
+<p><strong>-B</strong>[<em>axes</em>][<strong>+b</strong>][<strong>+g</strong><em>fill</em>][<strong>+i</strong>[<em>val</em>]][<strong>+n</strong>][<strong>+o</strong><em>lon/lat</em>][<strong>+t</strong><em>title</em>]</p>
 <p>where <em>axes</em> selects which axes to plot. By default, all 4 map boundaries
 (or plot axes) are plotted (named <strong>W</strong>, <strong>E</strong>, <strong>S</strong>, <strong>N</strong>). To customize,
 append the codes for those you want (e.g., <strong>WSn</strong>). Upper case means plot
@@ -379,6 +379,9 @@ corner and the order goes counter-clockwise. Append <strong>+b</strong> to draw 
 cube defined by <strong>-R</strong>; this modifier is also needed to display gridlines in
 the x-z, y-z planes. Note that for 3-D views the title, if given, will be
 suppressed. You can paint the interior of the canvas with <strong>+g</strong><em>fill</em>.
+Use <strong>+i</strong> to annotate an internal meridian or parallel when the axis that normally
+would be drawn and annotated does not exist (e.g., azimuthal map with 360-degree range
+has no latitude axis, and a global Hammer map has no longitude axis); optionally append the parallel or meridian [0].
 Append <strong>+n</strong> to have no frame and annotations at all [Default is controlled by the codes].
 Optionally append <strong>+o</strong><em>plon/plat</em> to draw oblique gridlines about
 specified pole [regular gridlines]. Ignored if gridlines are not
@@ -509,28 +512,28 @@ and <a class="reference internal" href="gmt.conf.html#term-map-tick-pen-primary"
 </li>
 </ul>
 <p id="j-full"><strong>-J</strong><em>parameters</em></p>
-<p>Select map projection. The following character determines the
+<p>Select map projection. The first character of <em>parameters</em> determines the
 projection. If the character is upper case then the argument(s) supplied
 as scale(s) is interpreted to be the map width (or axis lengths), else
 the scale argument(s) is the map scale (see its definition for each
-projection). UNIT is cm, inch, or point, depending on the
-<a class="reference internal" href="gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a> setting in <strong>gmt.conf</strong>, but this can be
+projection). The <em>measurement unit</em> (called UNIT below) is cm, inch, or point, depending
+on the <a class="reference internal" href="gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a> setting in <strong>gmt.conf</strong>, but this can be
 overridden on the command line by appending <strong>c</strong>, <strong>i</strong>, or <strong>p</strong> to
 the <em>scale</em> or <em>width</em> values. Append <strong>+dh</strong>, <strong>+du</strong>, or <strong>+dl</strong> to the
-given <em>width</em> if you instead want to set map height, the maximum (upper)
+given <em>width</em> if you instead want to set the map height, the maximum (upper)
 dimension, or the minimum (lower) dimension, respectively [Default is <strong>+dw</strong> for width].
 In case the central meridian is an optional parameter and it is being
 omitted, then the center of the longitude range given by the <strong>-R</strong>
 option is used. The default standard parallel is the equator.
-The ellipsoid used in the map projections is user-definable by editing
-the <strong>gmt.conf</strong> file in your home directory. 73 commonly used
+The ellipsoid used in map projections is user-definable. 73 commonly used
 ellipsoids and spheroids are currently supported, and users may also
 specify their own custom ellipsoid parameters [Default is WGS-84].
 Several GMT parameters can affect the projection: <a class="reference internal" href="gmt.conf.html#term-proj-ellipsoid"><span class="xref std std-term">PROJ_ELLIPSOID</span></a>,
 <a class="reference internal" href="gmt.conf.html#term-gmt-interpolant"><span class="xref std std-term">GMT_INTERPOLANT</span></a>, <a class="reference internal" href="gmt.conf.html#term-proj-scale-factor"><span class="xref std std-term">PROJ_SCALE_FACTOR</span></a>, and
 <a class="reference internal" href="gmt.conf.html#term-proj-length-unit"><span class="xref std std-term">PROJ_LENGTH_UNIT</span></a>; see the <a class="reference internal" href="gmt.conf.html"><span class="doc">gmt.conf</span></a> man page for details.
-Choose one of the following projections (The <strong>E</strong> or <strong>C</strong> after
-projection names stands for Equal-Area and Conformal, respectively):</p>
+Choose one of the following projections and append the required parameters
+(The <strong>E</strong> or <strong>C</strong> after projection names stands for Equal-Area and Conformal,
+respectively):</p>
 <blockquote>
 <div><strong>CYLINDRICAL PROJECTIONS:</strong></div></blockquote>
 <blockquote id="jc-full">
@@ -793,14 +796,20 @@ equator (<strong>1:</strong><em>xxxx</em> or UNIT/degree).</dd>
 <p><strong>NON-GEOGRAPHICAL PROJECTIONS:</strong></p>
 </div></blockquote>
 <blockquote id="jp-full">
-<div><p><strong>-Jp</strong><em>scale</em>[<strong>+a</strong>][<strong>+o</strong><em>origin</em>][<strong>+r</strong>|<strong>z</strong>] or <strong>-JP</strong><em>width</em>[<strong>+a</strong>][<strong>+o</strong><em>origin</em>][<strong>+r</strong>|<strong>z</strong>]
+<div><p><strong>-Jp</strong><em>scale</em>[<strong>+a</strong>][<strong>+f</strong>[<strong>e</strong>|<strong>p</strong>|<em>radius</em>]][<strong>+r</strong><em>offset</em>][<strong>+t</strong><em>origin</em>][<strong>+z</strong>[<strong>p</strong>|<em>radius</em>]]] or <strong>-JP</strong><em>width</em>[<strong>+a</strong>][<strong>+f</strong>[<strong>e</strong>|<strong>p</strong>|<em>radius</em>]][<strong>+r</strong><em>offset</em>][<strong>+t</strong><em>origin</em>][<strong>+z</strong>[<strong>p</strong>|<em>radius</em>]]
 (Polar coordinates (<em>theta</em>, <em>r</em>))</p>
-<p>Optionally add <strong>+a</strong> if <em>theta</em> is azimuths CW
-from North instead of directions CCW from East [Default]. Optionally
-append <strong>+o</strong><em>origin</em> in degrees to indicate a CW (or CCW if <strong>+a</strong> iset set) angular offset [0].
-Finally, append <strong>+r</strong> if <em>r</em> represents elevations in degrees (requires <em>south</em> &gt;= 0
-and <em>north</em> &lt;= 90), or append <strong>+z</strong> if you want to annotate depth rather than
-radius [Default]. Give <em>scale</em> in UNIT/r-unit.</p>
+<p>Give <em>scale</em> in UNIT/r-unit.  Optionally add <strong>+a</strong> if <em>theta</em> is azimuth CW
+from North instead of direction CCW from East [Default].
+Append <strong>+f</strong> to flip the radial direction to point inwards, and append <strong>e</strong> to indicate
+that <em>r</em> represents <em>elevations</em> in degrees (requires <em>south</em> &gt;= 0 and <em>north</em> &lt;= 90),
+<strong>p</strong> to select current planetary radius (determined by <a class="reference internal" href="gmt.conf.html#term-proj-ellipsoid"><span class="xref std std-term">PROJ_ELLIPSOID</span></a>) as maximum radius [<em>north</em>], or <em>radius</em>
+to specify a custom radius.
+Append <strong>+r</strong><em>offset</em> to include a radial offset in measurement units [0].
+Append <strong>+t</strong><em>origin</em> in degrees so that this angular value is aligned with the positive <em>x</em>-axis
+(or the azimuth to be aligned with the positive <em>y</em>-axis if <strong>+a</strong>) [0].
+Finally, append <strong>+z</strong> if you want to annotate depth rather than radius [Default].
+Alternatively, if your <em>r</em> data are actually depths then you can append <strong>p</strong> or <em>radius</em> to get
+radial annotations (<em>r = radius - z</em>) instead.</p>
 </div></blockquote>
 <blockquote id="jx-full">
 <div><p><strong>-Jx</strong><em>x-scale</em>[<em>/y-scale</em>] or <strong>-JX</strong><em>width</em>[<em>/height</em>] (Linear, log, and power scaling)</p>
@@ -1569,7 +1578,7 @@ GMT documentation site <a class="reference external" href="https://docs.generic-
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Feb 29, 2020.
+        Last updated on Mar 07, 2020.
       </span>
 
     </p>
