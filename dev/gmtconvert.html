@@ -230,7 +230,6 @@
 [ <a class="reference internal" href="#t"><span> <strong>-T</strong></span></a></strong>[<strong>h</strong>|<strong>d</strong>] ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
 [ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong>[<strong>+n</strong>] ]
-[ <a class="reference internal" href="#z"><span> <strong>-Z</strong></span></a></strong>[<em>first</em>][/<em>last</em>] ]
 [ <strong>-a</strong><a class="reference internal" href="gmt.html#aspatial-full"><span class="std std-ref">flags</span></a> ]
 [ <strong>-b</strong><a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">binary</span></a> ]
 [ <strong>-d</strong><a class="reference internal" href="gmt.html#d-full"><span class="std std-ref">nodata</span></a> ]
@@ -404,10 +403,6 @@ such values to the numerical output columns.  Text that cannot be converted
 (because they are not numbers) will appear as NaNs.  Use modifier <strong>+n</strong> to
 exclude the columns with NaNs.  Note: These columns are identified based on
 the first input record only.</dd>
-<dt><strong>-Z</strong>[<em>first</em>][/<em>last</em>]</dt>
-<dd>Limit output to the specified record range.  If <em>first</em> is not set it defaults
-to record 0 (very first record) and if <em>last</em> is not set then it defaults to the
-very last record.  Only records in the given range will be written out [all].</dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-a</strong>[<em>col</em>=]<em>name</em>[,<em>…</em>] <a class="reference internal" href="gmt.html#aspatial-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -604,7 +599,7 @@ where we reset the origin of the sequential numbering from 0 to 5000, try:</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 07, 2020.
+        Last updated on Mar 14, 2020.
       </span>
 
     </p>

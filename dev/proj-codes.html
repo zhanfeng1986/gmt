@@ -272,7 +272,7 @@ The projection codes for the GMT-style and the PROJ-style are tabulated below.</
 <td>Hammer equal area <a class="reference internal" href="gmt.html#jh-full"><span class="std std-ref">…</span></a></td>
 </tr>
 <tr class="row-odd"><td><strong>-JI</strong>[lon<sub>0</sub>/]<em>width</em></td>
-<td><strong>-Jsinu/</strong>lat<sub>0</sub>/<em>scale</em></td>
+<td><strong>-Jsinu/</strong>lon<sub>0</sub>/<em>scale</em></td>
 <td>Sinusoidal equal area <a class="reference internal" href="gmt.html#ji-full"><span class="std std-ref">…</span></a></td>
 </tr>
 <tr class="row-even"><td><strong>-JJ</strong>[lon<sub>0</sub>/]<em>width</em></td>
@@ -299,16 +299,16 @@ The projection codes for the GMT-style and the PROJ-style are tabulated below.</
 <td><strong>-Jrobin/</strong>[lon<sub>0</sub>/]<em>scale</em></td>
 <td>Robinson <a class="reference internal" href="gmt.html#jn-full"><span class="std std-ref">…</span></a></td>
 </tr>
-<tr class="row-even"><td><strong>-JOa</strong>lon<sub>0</sub>/lat<sub>0</sub>/<em>azim</em>/<em>width</em></td>
-<td><strong>-Jomerc/</strong>lon<sub>0</sub>/lat<sub>0</sub>/<em>azim</em>/<em>scale</em></td>
+<tr class="row-even"><td><strong>-JOa</strong>lon<sub>0</sub>/lat<sub>0</sub>/<em>azim</em>/<em>width</em>[<strong>+v</strong>]</td>
+<td><strong>-Jomerc/</strong>lon<sub>0</sub>/lat<sub>0</sub>/<em>azim</em>/<em>scale</em>[<strong>+v</strong>]</td>
 <td>Oblique Mercator, 1: origin and azim&nbsp; &nbsp;<a class="reference internal" href="gmt.html#jo-full"><span class="std std-ref">…</span></a></td>
 </tr>
-<tr class="row-odd"><td><strong>-JOb</strong>lon<sub>0</sub>/lat<sub>0</sub>/lon<sub>1</sub>/lat<sub>1</sub>/<em>width</em></td>
-<td><strong>-Jomerc/</strong>lon<sub>0</sub>/lat<sub>0</sub>/lon<sub>1</sub>/lat<sub>1</sub>/<em>scale</em></td>
+<tr class="row-odd"><td><strong>-JOb</strong>lon<sub>0</sub>/lat<sub>0</sub>/lon<sub>1</sub>/lat<sub>1</sub>/<em>width</em>[<strong>+v</strong>]</td>
+<td><strong>-Jomerc/</strong>lon<sub>0</sub>/lat<sub>0</sub>/lon<sub>1</sub>/lat<sub>1</sub>/<em>scale</em>[<strong>+v</strong>]</td>
 <td>Oblique Mercator, 2: two points <a class="reference internal" href="gmt.html#jo-full"><span class="std std-ref">…</span></a></td>
 </tr>
-<tr class="row-even"><td><strong>-JOc</strong>lon<sub>0</sub>/lat<sub>0</sub>/lon<sub>p</sub>/lat<sub>p</sub>/<em>width</em></td>
-<td><strong>-Jomercp/</strong>lon<sub>0</sub>/lat<sub>0</sub>/lon<sub>p</sub>/lat<sub>p</sub>/<em>scale</em></td>
+<tr class="row-even"><td><strong>-JOc</strong>lon<sub>0</sub>/lat<sub>0</sub>/lon<sub>p</sub>/lat<sub>p</sub>/<em>width</em>[<strong>+v</strong>]</td>
+<td><strong>-Jomercp/</strong>lon<sub>0</sub>/lat<sub>0</sub>/lon<sub>p</sub>/lat<sub>p</sub>/<em>scale</em>[<strong>+v</strong>]</td>
 <td>Oblique Mercator, 3: origin and pole <a class="reference internal" href="gmt.html#jo-full"><span class="std std-ref">…</span></a></td>
 </tr>
 <tr class="row-odd"><td><strong>-JP</strong><em>width</em>[<strong>+a</strong>][<strong>+f</strong>[<strong>e</strong>|<strong>p</strong>|<em>radius</em>]][<strong>+r</strong><em>offset</em>][<strong>+t</strong><em>origin</em>][<strong>+z</strong>[<strong>p</strong>|<em>radius</em>]]</td>
@@ -382,7 +382,7 @@ The projection codes for the GMT-style and the PROJ-style are tabulated below.</
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 07, 2020.
+        Last updated on Mar 14, 2020.
       </span>
 
     </p>

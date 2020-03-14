@@ -290,13 +290,10 @@ already been initialized; use <strong>-I</strong> (and <strong>-r</strong>) to o
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
 <dt><em>table</em></dt>
-<dd><dl class="first last docutils">
-<dt>3 (or 4, see <strong>-W</strong>) column ASCII data table file(s) (or binary, see</dt>
-<dd><strong>-bi</strong>) holding (<em>x</em>,<em>y</em>,<em>z</em>[,<em>w</em>])
+<dd>3 (or 4, see <strong>-W</strong>) column ASCII data table file(s) (or binary, see
+<strong>-bi</strong>) holding (<em>x</em>,<em>y</em>,<em>z</em>[,<em>w</em>])
 data values, where [<em>w</em>] is an optional weight for the data.
 If no file is specified, <strong>blockmode</strong> will read from standard input.</dd>
-</dl>
-</dd>
 </dl>
 <dl class="docutils" id="a">
 <dt><strong>-A</strong><em>fields</em></dt>
@@ -329,7 +326,7 @@ there are multiples. [Default mode is normally the Least Median of Squares (LMS)
 <dd>Provide Extended report which includes <strong>s</strong> (the L1 scale of the
 mode), <strong>l</strong>, the lowest value, and <strong>h</strong>, the high value for each
 block. Output order becomes
-<em>x</em>,<em>y</em>,<em>z</em>,<em>s</em>,<em>l</em>,<em>h</em>[,<em>w</em>]. [Default outputs
+<em>x</em>,<em>y</em>,<em>z</em>,<em>s</em>,<em>l</em>,<em>h</em>[,<em>w</em>]. Default outputs
 <em>x</em>,<em>y</em>,<em>z</em>[,<em>w</em>]. See <strong>-W</strong> for <em>w</em> output.</dd>
 <dt><strong>-E</strong><strong>r</strong>|<strong>s</strong>[<strong>+l</strong>|<strong>h</strong>]</dt>
 <dd>Provide source id <strong>s</strong> or record number <strong>r</strong> output, i.e., append
@@ -408,8 +405,8 @@ then append <strong>+s</strong> and we compute weight = 1/sigma.</dd>
 <dl class="docutils">
 <dt><strong>-r</strong>[<strong>g</strong>|<strong>p</strong>] <a class="reference internal" href="gmt.html#nodereg-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Set node registration [gridline]. Each block is the locus of points nearest the grid value location. Consider an example with
-<strong>-R</strong>10/15/10/15 and <strong>-I</strong>1: With the <strong>-r</strong><a class="reference internal" href="gmt.html#nodereg-full"><span class="std std-ref">reg</span></a> option, 10 &lt;=
-(<em>x</em>,<em>y</em>) &lt; 11 is one of 25 blocks; without it 9.5 &lt;= (<em>x</em>,<em>y</em>)
+<strong>-R</strong>10/15/10/15 and <strong>-I</strong>1: With <strong>-r</strong> or <strong>-rp</strong>, 10 &lt;=
+(<em>x</em>,<em>y</em>) &lt; 11 is one of 25 blocks; otherwise 9.5 &lt;= (<em>x</em>,<em>y</em>)
 &lt; 10.5 is one of 36 blocks.</dd>
 </dl>
 <dl class="docutils">
@@ -495,7 +492,7 @@ called field_z.nc and field_s.nc, run:</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 07, 2020.
+        Last updated on Mar 14, 2020.
       </span>
 
     </p>

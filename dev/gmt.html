@@ -573,7 +573,7 @@ can be any value):</p>
 (optional), and <em>scale</em> along parallel (<strong>1:</strong><em>xxxx</em> or UNIT/degree).</div></blockquote>
 </div></blockquote>
 <blockquote id="jo-full">
-<div><p><strong>-Jo</strong><em>parameters</em> (Oblique Mercator <strong>[C]</strong>).</p>
+<div><p><strong>-Jo</strong><em>parameters</em>[<strong>+v</strong>] (Oblique Mercator <strong>[C]</strong>).</p>
 <blockquote>
 <div><p>Typically used with <strong>-R</strong><em>LLx/LLy/URx/URy</em><strong>r</strong> or with projected coordinates.  Specify one of:</p>
 <dl class="docutils">
@@ -585,9 +585,10 @@ equator <em>lon1/lat1</em>, and <em>scale</em>.</dd>
 <dt><strong>-Joc</strong>|<strong>C</strong><em>lon0/lat0/lonp/latp/scale</em> or <strong>-JOc</strong>|<strong>C</strong><em>lon0/lat0/lonp/latp/width</em></dt>
 <dd>Set projection center <em>lon0/lat0</em>, pole of oblique projection
 <em>lonp/latp</em>, and <em>scale</em>.
-Give <em>scale</em> along oblique equator (<strong>1:</strong><em>xxxx</em> or UNIT/degree).
-Use upper-case <strong>A</strong>|<strong>B</strong>|<strong>C</strong> to remove enforcement of a northern hemisphere pole.</dd>
+Give <em>scale</em> along oblique equator (<strong>1:</strong><em>xxxx</em> or UNIT/degree).</dd>
 </dl>
+<p>Use upper-case <strong>A</strong>|<strong>B</strong>|<strong>C</strong> to remove enforcement of a northern hemisphere pole.
+Append <strong>+v</strong> to let the oblique Equator align with the <em>y</em>-axis [<em>x</em>-axis].</p>
 </div></blockquote>
 </div></blockquote>
 <blockquote id="jq-full">
@@ -1578,7 +1579,7 @@ GMT documentation site <a class="reference external" href="https://docs.generic-
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 07, 2020.
+        Last updated on Mar 14, 2020.
       </span>
 
     </p>

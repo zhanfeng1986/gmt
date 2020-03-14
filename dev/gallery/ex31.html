@@ -239,6 +239,10 @@ and names of the cities are used, with awk providing help in data preparation.</
 <span class="nv">AWK</span><span class="o">=</span><span class="si">${</span><span class="nv">AWK</span><span class="k">:-</span><span class="nv">awk</span><span class="si">}</span>
 
 gmt begin ex31
+	<span class="c1"># Set FONTPATH used in image conversion</span>
+	<span class="c1"># $(dirname 0) is the path to the current bash script</span>
+	gmt <span class="nb">set</span> <span class="nv">PS_CONVERT</span><span class="o">=</span><span class="s2">&quot;C-sFONTPATH=</span><span class="k">$(</span>dirname <span class="nv">$0</span><span class="k">)</span><span class="s2">/fonts&quot;</span>
+
 	<span class="c1"># create file PSL_custom_fonts.txt in current working directory</span>
 	<span class="c1"># and add PostScript font names of Linux Biolinum and Libertine</span>
 	<span class="nv">$AWK</span> <span class="s1">&#39;{print $1, 0.700, 0}&#39;</span> <span class="s">&lt;&lt;- EOF &gt; PSL_custom_fonts.txt</span>
@@ -323,7 +327,7 @@ gmt end show
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 07, 2020.
+        Last updated on Mar 14, 2020.
       </span>
 
     </p>

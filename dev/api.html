@@ -868,8 +868,8 @@ this program:</p>
     <span class="kt">void</span> <span class="o">*</span><span class="n">API</span><span class="p">;</span>                        <span class="cm">/* The API control structure */</span>
     <span class="k">struct</span> <span class="n">GMT_DATASET</span> <span class="o">*</span><span class="n">D</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>     <span class="cm">/* Structure to hold input dataset */</span>
     <span class="k">struct</span> <span class="n">GMT_GRID</span> <span class="o">*</span><span class="n">G</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>        <span class="cm">/* Structure to hold output grid */</span>
-    <span class="kt">char</span> <span class="n">input</span><span class="p">[</span><span class="n">GMT_STR16</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;&quot;</span><span class="p">};</span>     <span class="cm">/* String to hold virtual input filename */</span>
-    <span class="kt">char</span> <span class="n">output</span><span class="p">[</span><span class="n">GMT_STR16</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;&quot;</span><span class="p">};</span>    <span class="cm">/* String to hold virtual output filename */</span>
+    <span class="kt">char</span> <span class="n">input</span><span class="p">[</span><span class="n">GMT_VF_LEN</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;&quot;</span><span class="p">};</span>    <span class="cm">/* String to hold virtual input filename */</span>
+    <span class="kt">char</span> <span class="n">output</span><span class="p">[</span><span class="n">GMT_VF_LEN</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;&quot;</span><span class="p">};</span>   <span class="cm">/* String to hold virtual output filename */</span>
     <span class="kt">char</span> <span class="n">args</span><span class="p">[</span><span class="mi">128</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;&quot;</span><span class="p">};</span>            <span class="cm">/* String to hold module command arguments */</span>
 
     <span class="cm">/* Initialize the GMT session */</span>
@@ -1953,7 +1953,7 @@ The full syntax is</p>
 </div>
 </div></blockquote>
 <p>Here, <code class="docutils literal notranslate"><span class="pre">data</span></code> is the pointer to your memory object.  The function returns the
-desired filename via <code class="docutils literal notranslate"><span class="pre">filename</span></code>.  This string must be at least <code class="docutils literal notranslate"><span class="pre">GMT_STR16</span></code> bytes (16).
+desired filename via <code class="docutils literal notranslate"><span class="pre">filename</span></code>.  This string must be at least <code class="docutils literal notranslate"><span class="pre">GMT_VF_LEN</span></code> bytes (16).
 The other arguments have been discussed earlier.  Specifically for direction, use
 GMT_IN for reading and GMT_OUT for writing.  Simply pass this filename in
 the calling sequence to the module you want to use to indicate which file should
@@ -4106,7 +4106,7 @@ own threads.</td></tr>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 07, 2020.
+        Last updated on Mar 14, 2020.
       </span>
 
     </p>
