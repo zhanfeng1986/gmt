@@ -24,7 +24,7 @@ steps:
     echo 'set (VCPKG_BUILD_TYPE release)' >> ${VCPKG_INSTALLATION_ROOT}/triplets/${WIN_PLATFORM}.cmake
     cat ${VCPKG_INSTALLATION_ROOT}/triplets/${WIN_PLATFORM}.cmake
     # install libraries
-    vcpkg install netcdf-c gdal pcre fftw3[core,threads] clapack openblas --triplet ${WIN_PLATFORM}
+    vcpkg install netcdf-c gdal pcre fftw3[core,threads] clapack openblas glib --triplet ${WIN_PLATFORM}
   displayName: Install dependencies via vcpkg
   env:
     WIN_PLATFORM: "x64-windows"
