@@ -797,11 +797,19 @@ frames, <a class="reference internal" href="#term-map-frame-pen"><span class="xr
 <dd>Sets both <a class="reference internal" href="#term-map-grid-cross-size-primary"><span class="xref std std-term">MAP_GRID_CROSS_SIZE_PRIMARY</span></a> and <a class="reference internal" href="#term-map-grid-cross-size-secondary"><span class="xref std std-term">MAP_GRID_CROSS_SIZE_SECONDARY</span></a> to the value specified.
 This setting is not included in the <strong>gmt.conf</strong> file.</dd>
 <dt id="term-map-grid-cross-size-primary"><strong>MAP_GRID_CROSS_SIZE_PRIMARY</strong></dt>
-<dd>Size (&gt;= 0) of grid cross at lon-lat intersections. 0 means draw
-continuous gridlines instead [0p].</dd>
+<dd>Size of grid cross at lon-lat intersections. 0 means draw
+continuous gridlines instead.  A nonzero size will draw a symmetric grid
+cross. Signed sizes have special meaning and imply grid line ticks that
+embellish an already drawn set of gridlines: A negative size will only
+draw ticks away from Equator and Greenwich, while a positive size will
+draw symmetric ticks [0p].</dd>
 <dt id="term-map-grid-cross-size-secondary"><strong>MAP_GRID_CROSS_SIZE_SECONDARY</strong></dt>
-<dd>Size (&gt;= 0) of grid cross at secondary lon-lat intersections. 0
-means draw continuous gridlines instead [0p].</dd>
+<dd>Size of grid cross at secondary lon-lat intersections. 0 means draw
+continuous gridlines instead.  A nonzero size will draw a symmetric grid
+cross.  Signed sizes have special meaning and imply grid line ticks that
+embellish an already drawn set of gridlines: A negative size will only
+draw ticks away from Equator and Greenwich, while a positive size will
+draw symmetric ticks [0p].</dd>
 <dt id="term-map-grid-pen-primary"><strong>MAP_GRID_PEN_PRIMARY</strong></dt>
 <dd>Pen attributes used to draw primary grid lines in dpi units or
 points (append p) [default,black].</dd>
@@ -1382,7 +1390,7 @@ correspond to 1800 through 1828. [1950].</dd>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 21, 2020.
+        Last updated on Mar 27, 2020.
       </span>
 
     </p>

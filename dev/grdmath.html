@@ -224,6 +224,7 @@
 [ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em> ]
 [ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong> ]
 [ <a class="reference internal" href="#v"><span> <strong>-V</strong></span></a></strong>[<em>level</em>] ]
+[ <strong>-a</strong><a class="reference internal" href="gmt.html#aspatial-full"><span class="std std-ref">flags</span></a> ]
 [ <strong>-bi</strong><a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">binary</span></a> ]
 [ <strong>-di</strong><a class="reference internal" href="gmt.html#di-full"><span class="std std-ref">nodata</span></a> ]
 [ <strong>-f</strong><a class="reference internal" href="gmt.html#f-full"><span class="std std-ref">flags</span></a> ]
@@ -240,7 +241,7 @@
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p><strong>grdmath</strong> will perform operations like add, subtract, multiply, and
-numerous other operands on one or more grid files or constants using
+hundreds of other operands on one or more grid files or constants using
 <a class="reference external" href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">Reverse Polish Notation (RPN)</a>
 syntax.  Arbitrarily complicated expressions may therefore be evaluated; the
 final result is written to an output grid file. Grid operations are
@@ -345,6 +346,10 @@ LMSSCL, MAX, MEAN, MEDIAN, MIN, MODE, MUL, RMS, STD, SUB, VAR or XOR.</dd>
 <dd>Select verbosity level [<strong>w</strong>].  </dd>
 </dl>
 <dl class="docutils">
+<dt><strong>-a</strong>[<em>col</em>=]<em>name</em>[,<em>…</em>] <a class="reference internal" href="gmt.html#aspatial-full"><span class="std std-ref">(more …)</span></a></dt>
+<dd>Set aspatial column associations <em>col</em>=<em>name</em>.</dd>
+</dl>
+<dl class="docutils">
 <dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Select native binary format for primary input. The binary input option
 only applies to the data files needed by operators <strong>LDIST</strong>,
@@ -396,7 +401,7 @@ any module-specific option (but not the GMT common options), then exit.</dd>
 </div>
 <div class="section" id="operators">
 <h2>Operators<a class="headerlink" href="#operators" title="Permalink to this headline">¶</a></h2>
-<p>Choose among the following 209 operators. “args” are the number of input
+<p>Choose among the following 222 operators. “args” are the number of input
 and output arguments.</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -627,447 +632,451 @@ and output arguments.</p>
 <td colspan="2">2 1</td>
 <td colspan="2">A / B</td>
 </tr>
-<tr class="row-even"><td><strong>DUP</strong></td>
+<tr class="row-even"><td><strong>DOT</strong></td>
+<td colspan="2">2 1</td>
+<td colspan="2">2-D (Cartesian) or 3-D (geographic) dot products between nodes and stack (A, B) unit vector(s)</td>
+</tr>
+<tr class="row-odd"><td><strong>DUP</strong></td>
 <td colspan="2">1 2</td>
 <td colspan="2">Places duplicate of A on the stack</td>
 </tr>
-<tr class="row-odd"><td><strong>ECDF</strong></td>
+<tr class="row-even"><td><strong>ECDF</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Exponential cumulative distribution function for x = A and lambda = B</td>
 </tr>
-<tr class="row-even"><td><strong>ECRIT</strong></td>
+<tr class="row-odd"><td><strong>ECRIT</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Exponential distribution critical value for alpha = A and lambda = B</td>
 </tr>
-<tr class="row-odd"><td><strong>EPDF</strong></td>
+<tr class="row-even"><td><strong>EPDF</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Exponential probability density function for x = A and lambda = B</td>
 </tr>
-<tr class="row-even"><td><strong>ERF</strong></td>
+<tr class="row-odd"><td><strong>ERF</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Error function erf (A)</td>
 </tr>
-<tr class="row-odd"><td><strong>ERFC</strong></td>
+<tr class="row-even"><td><strong>ERFC</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Complementary Error function erfc (A)</td>
 </tr>
-<tr class="row-even"><td><strong>EQ</strong></td>
+<tr class="row-odd"><td><strong>EQ</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">1 if A == B, else 0</td>
 </tr>
-<tr class="row-odd"><td><strong>ERFINV</strong></td>
+<tr class="row-even"><td><strong>ERFINV</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Inverse error function of A</td>
 </tr>
-<tr class="row-even"><td><strong>EXCH</strong></td>
+<tr class="row-odd"><td><strong>EXCH</strong></td>
 <td colspan="2">2 2</td>
 <td colspan="2">Exchanges A and B on the stack</td>
 </tr>
-<tr class="row-odd"><td><strong>EXP</strong></td>
+<tr class="row-even"><td><strong>EXP</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">exp (A)</td>
 </tr>
-<tr class="row-even"><td><strong>FACT</strong></td>
+<tr class="row-odd"><td><strong>FACT</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">A! (A factorial)</td>
 </tr>
-<tr class="row-odd"><td><strong>EXTREMA</strong></td>
+<tr class="row-even"><td><strong>EXTREMA</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Local Extrema: +2/-2 is max/min, +1/-1 is saddle with max/min in x, 0 elsewhere</td>
 </tr>
-<tr class="row-even"><td><strong>FCDF</strong></td>
+<tr class="row-odd"><td><strong>FCDF</strong></td>
 <td colspan="2">3 1</td>
 <td colspan="2">F cumulative distribution function for F = A, nu1 = B, and nu2 = C</td>
 </tr>
-<tr class="row-odd"><td><strong>FCRIT</strong></td>
+<tr class="row-even"><td><strong>FCRIT</strong></td>
 <td colspan="2">3 1</td>
 <td colspan="2">F distribution critical value for alpha = A, nu1 = B, and nu2 = C</td>
 </tr>
-<tr class="row-even"><td><strong>FLIPLR</strong></td>
+<tr class="row-odd"><td><strong>FLIPLR</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Reverse order of values in each row</td>
 </tr>
-<tr class="row-odd"><td><strong>FLIPUD</strong></td>
+<tr class="row-even"><td><strong>FLIPUD</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Reverse order of values in each column</td>
 </tr>
-<tr class="row-even"><td><strong>FLOOR</strong></td>
+<tr class="row-odd"><td><strong>FLOOR</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">floor (A) (greatest integer &lt;= A)</td>
 </tr>
-<tr class="row-odd"><td><strong>FMOD</strong></td>
+<tr class="row-even"><td><strong>FMOD</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">A % B (remainder after truncated division)</td>
 </tr>
-<tr class="row-even"><td><strong>FPDF</strong></td>
+<tr class="row-odd"><td><strong>FPDF</strong></td>
 <td colspan="2">3 1</td>
 <td colspan="2">F probability density function for F = A, nu1 = B, and nu2 = C</td>
 </tr>
-<tr class="row-odd"><td><strong>GE</strong></td>
+<tr class="row-even"><td><strong>GE</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">1 if A &gt;= B, else 0</td>
 </tr>
-<tr class="row-even"><td><strong>GT</strong></td>
+<tr class="row-odd"><td><strong>GT</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">1 if A &gt; B, else 0</td>
 </tr>
-<tr class="row-odd"><td><strong>HSV2RGB</strong></td>
+<tr class="row-even"><td><strong>HSV2RGB</strong></td>
 <td colspan="2">3 3</td>
 <td colspan="2">Convert h,s,v triplets to r,g,b triplets, with h = A (0-360), s = B and v = C (both in 0-1)</td>
 </tr>
-<tr class="row-even"><td><strong>HSV2RGB</strong></td>
+<tr class="row-odd"><td><strong>HSV2RGB</strong></td>
 <td colspan="2">3 3</td>
 <td colspan="2">Convert h,s,v triplets to r,g,b triplets, with h = A (0-360), s = B and v = C (0-1)</td>
 </tr>
-<tr class="row-odd"><td colspan="5"><strong>HSV2XYZ</strong>   | 3 3   | Convert h,s,v triplets to x,t,z triplets, with h = A (0-360), s = B and v = C (0-1)</td>
+<tr class="row-even"><td colspan="5"><strong>HSV2XYZ</strong>   | 3 3   | Convert h,s,v triplets to x,t,z triplets, with h = A (0-360), s = B and v = C (0-1)</td>
 </tr>
-<tr class="row-even"><td colspan="5"><strong>HYPOT</strong>     | 2 1   | hypot (A, B) = sqrt (A*A + B*B)</td>
+<tr class="row-odd"><td colspan="5"><strong>HYPOT</strong>     | 2 1   | hypot (A, B) = sqrt (A*A + B*B)</td>
 </tr>
-<tr class="row-odd"><td><strong>I0</strong></td>
+<tr class="row-even"><td><strong>I0</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Modified Bessel function of A (1st kind, order 0)</td>
 </tr>
-<tr class="row-even"><td><strong>I1</strong></td>
+<tr class="row-odd"><td><strong>I1</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Modified Bessel function of A (1st kind, order 1)</td>
 </tr>
-<tr class="row-odd"><td><strong>IFELSE</strong></td>
+<tr class="row-even"><td><strong>IFELSE</strong></td>
 <td colspan="2">3 1</td>
 <td colspan="2">B if A != 0, else C</td>
 </tr>
-<tr class="row-even"><td><strong>IN</strong></td>
+<tr class="row-odd"><td><strong>IN</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Modified Bessel function of A (1st kind, order B)</td>
 </tr>
-<tr class="row-odd"><td><strong>INRANGE</strong></td>
+<tr class="row-even"><td><strong>INRANGE</strong></td>
 <td colspan="2">3 1</td>
 <td colspan="2">1 if B &lt;= A &lt;= C, else 0</td>
 </tr>
-<tr class="row-even"><td><strong>INSIDE</strong></td>
+<tr class="row-odd"><td><strong>INSIDE</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">1 when inside or on polygon(s) in A, else 0</td>
 </tr>
-<tr class="row-odd"><td><strong>INV</strong></td>
+<tr class="row-even"><td><strong>INV</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">1 / A</td>
 </tr>
-<tr class="row-even"><td><strong>ISFINITE</strong></td>
+<tr class="row-odd"><td><strong>ISFINITE</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">1 if A is finite, else 0</td>
 </tr>
-<tr class="row-odd"><td><strong>ISNAN</strong></td>
+<tr class="row-even"><td><strong>ISNAN</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">1 if A == NaN, else 0</td>
 </tr>
-<tr class="row-even"><td><strong>J0</strong></td>
+<tr class="row-odd"><td><strong>J0</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Bessel function of A (1st kind, order 0)</td>
 </tr>
-<tr class="row-odd"><td><strong>J1</strong></td>
+<tr class="row-even"><td><strong>J1</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Bessel function of A (1st kind, order 1)</td>
 </tr>
-<tr class="row-even"><td><strong>JN</strong></td>
+<tr class="row-odd"><td><strong>JN</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Bessel function of A (1st kind, order B)</td>
 </tr>
-<tr class="row-odd"><td><strong>K0</strong></td>
+<tr class="row-even"><td><strong>K0</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Modified Kelvin function of A (2nd kind, order 0)</td>
 </tr>
-<tr class="row-even"><td><strong>K1</strong></td>
+<tr class="row-odd"><td><strong>K1</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Modified Bessel function of A (2nd kind, order 1)</td>
 </tr>
-<tr class="row-odd"><td><strong>KEI</strong></td>
+<tr class="row-even"><td><strong>KEI</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">kei (A)</td>
 </tr>
-<tr class="row-even"><td><strong>KER</strong></td>
+<tr class="row-odd"><td><strong>KER</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">ker (A)</td>
 </tr>
-<tr class="row-odd"><td><strong>KM2DEG</strong></td>
+<tr class="row-even"><td><strong>KM2DEG</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Converts Kilometers to Spherical Degrees</td>
 </tr>
-<tr class="row-even"><td><strong>KN</strong></td>
+<tr class="row-odd"><td><strong>KN</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Modified Bessel function of A (2nd kind, order B)</td>
 </tr>
-<tr class="row-odd"><td><strong>KURT</strong></td>
+<tr class="row-even"><td><strong>KURT</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Kurtosis of A</td>
 </tr>
-<tr class="row-even"><td><strong>LAB2HSV</strong></td>
+<tr class="row-odd"><td><strong>LAB2HSV</strong></td>
 <td colspan="2">3 3</td>
 <td colspan="2">Convert l,a,b triplets to h,s,v triplets</td>
 </tr>
-<tr class="row-odd"><td><strong>LAB2RGB</strong></td>
+<tr class="row-even"><td><strong>LAB2RGB</strong></td>
 <td colspan="2">3 3</td>
 <td colspan="2">Convert l,a,b triplets to r,g,b triplets</td>
 </tr>
-<tr class="row-even"><td><strong>LAB2XYZ</strong></td>
+<tr class="row-odd"><td><strong>LAB2XYZ</strong></td>
 <td colspan="2">3 3</td>
 <td colspan="2">Convert l,a,b triplets to x,y,z triplets</td>
 </tr>
-<tr class="row-odd"><td><strong>LCDF</strong></td>
+<tr class="row-even"><td><strong>LCDF</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Laplace cumulative distribution function for z = A</td>
 </tr>
-<tr class="row-even"><td><strong>LCRIT</strong></td>
+<tr class="row-odd"><td><strong>LCRIT</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Laplace distribution critical value for alpha = A</td>
 </tr>
-<tr class="row-odd"><td><strong>LDIST</strong></td>
+<tr class="row-even"><td><strong>LDIST</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Compute minimum distance (in km if -fg) from lines in multi-segment ASCII file A</td>
 </tr>
-<tr class="row-even"><td><strong>LDIST2</strong></td>
+<tr class="row-odd"><td><strong>LDIST2</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">As LDIST, from lines in ASCII file B but only to nodes where A != 0</td>
 </tr>
-<tr class="row-odd"><td><strong>LDISTG</strong></td>
+<tr class="row-even"><td><strong>LDISTG</strong></td>
 <td colspan="2">0 1</td>
 <td colspan="2">As LDIST, but operates on the GSHHG dataset (see -A, -D for options).</td>
 </tr>
-<tr class="row-even"><td><strong>LE</strong></td>
+<tr class="row-odd"><td><strong>LE</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">1 if A &lt;= B, else 0</td>
 </tr>
-<tr class="row-odd"><td><strong>LOG</strong></td>
+<tr class="row-even"><td><strong>LOG</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">log (A) (natural log)</td>
 </tr>
-<tr class="row-even"><td><strong>LOG10</strong></td>
+<tr class="row-odd"><td><strong>LOG10</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">log10 (A) (base 10)</td>
 </tr>
-<tr class="row-odd"><td><strong>LOG1P</strong></td>
+<tr class="row-even"><td><strong>LOG1P</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">log (1+A) (accurate for small A)</td>
 </tr>
-<tr class="row-even"><td><strong>LOG2</strong></td>
+<tr class="row-odd"><td><strong>LOG2</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">log2 (A) (base 2)</td>
 </tr>
-<tr class="row-odd"><td><strong>LMSSCL</strong></td>
+<tr class="row-even"><td><strong>LMSSCL</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">LMS (Least Median of Squares) scale estimate (LMS STD) of A</td>
 </tr>
-<tr class="row-even"><td><strong>LMSSCLW</strong></td>
+<tr class="row-odd"><td><strong>LMSSCLW</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Weighted LMS (Least Median of Squares) scale estimate (LMS STD) of A for weights in B</td>
 </tr>
-<tr class="row-odd"><td><strong>LOWER</strong></td>
+<tr class="row-even"><td><strong>LOWER</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">The lowest (minimum) value of A</td>
 </tr>
-<tr class="row-even"><td><strong>LPDF</strong></td>
+<tr class="row-odd"><td><strong>LPDF</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Laplace probability density function for z = A</td>
 </tr>
-<tr class="row-odd"><td><strong>LRAND</strong></td>
+<tr class="row-even"><td><strong>LRAND</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Laplace random noise with mean A and std. deviation B</td>
 </tr>
-<tr class="row-even"><td><strong>LT</strong></td>
+<tr class="row-odd"><td><strong>LT</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">1 if A &lt; B, else 0</td>
 </tr>
-<tr class="row-odd"><td><strong>MAD</strong></td>
+<tr class="row-even"><td><strong>MAD</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Median Absolute Deviation (L1 STD) of A</td>
 </tr>
-<tr class="row-even"><td><strong>MAX</strong></td>
+<tr class="row-odd"><td><strong>MAX</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Maximum of A and B</td>
 </tr>
-<tr class="row-odd"><td><strong>MEAN</strong></td>
+<tr class="row-even"><td><strong>MEAN</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Mean value of A</td>
 </tr>
-<tr class="row-even"><td><strong>MEANW</strong></td>
+<tr class="row-odd"><td><strong>MEANW</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Weighted mean value of A for weights in B</td>
 </tr>
-<tr class="row-odd"><td><strong>MEDIAN</strong></td>
+<tr class="row-even"><td><strong>MEDIAN</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Median value of A</td>
 </tr>
-<tr class="row-even"><td><strong>MEDIANW</strong></td>
+<tr class="row-odd"><td><strong>MEDIANW</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Weighted median value of A for weights in B</td>
 </tr>
-<tr class="row-odd"><td><strong>MIN</strong></td>
+<tr class="row-even"><td><strong>MIN</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Minimum of A and B</td>
 </tr>
-<tr class="row-even"><td><strong>MOD</strong></td>
+<tr class="row-odd"><td><strong>MOD</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">A mod B (remainder after floored division)</td>
 </tr>
-<tr class="row-odd"><td><strong>MODE</strong></td>
+<tr class="row-even"><td><strong>MODE</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Mode value (Least Median of Squares) of A</td>
 </tr>
-<tr class="row-even"><td><strong>MODEW</strong></td>
+<tr class="row-odd"><td><strong>MODEW</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Weighted mode value (Least Median of Squares) of A for weights in B</td>
 </tr>
-<tr class="row-odd"><td><strong>MUL</strong></td>
+<tr class="row-even"><td><strong>MUL</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">A * B</td>
 </tr>
-<tr class="row-even"><td><strong>NAN</strong></td>
+<tr class="row-odd"><td><strong>NAN</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">NaN if A == B, else A</td>
 </tr>
-<tr class="row-odd"><td><strong>NEG</strong></td>
+<tr class="row-even"><td><strong>NEG</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">-A</td>
 </tr>
-<tr class="row-even"><td><strong>NEQ</strong></td>
+<tr class="row-odd"><td><strong>NEQ</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">1 if A != B, else 0</td>
 </tr>
-<tr class="row-odd"><td><strong>NORM</strong></td>
+<tr class="row-even"><td><strong>NORM</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Normalize (A) so max(A)-min(A) = 1</td>
 </tr>
-<tr class="row-even"><td><strong>NOT</strong></td>
+<tr class="row-odd"><td><strong>NOT</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">NaN if A == NaN, 1 if A == 0, else 0</td>
 </tr>
-<tr class="row-odd"><td><strong>NRAND</strong></td>
+<tr class="row-even"><td><strong>NRAND</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Normal, random values with mean A and std. deviation B</td>
 </tr>
-<tr class="row-even"><td><strong>OR</strong></td>
+<tr class="row-odd"><td><strong>OR</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">NaN if B == NaN, else A</td>
 </tr>
-<tr class="row-odd"><td><strong>PCDF</strong></td>
+<tr class="row-even"><td><strong>PCDF</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Poisson cumulative distribution function for x = A and lambda = B</td>
 </tr>
-<tr class="row-even"><td><strong>PDIST</strong></td>
+<tr class="row-odd"><td><strong>PDIST</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Compute minimum distance (in km if -fg) from points in ASCII file A</td>
 </tr>
-<tr class="row-odd"><td><strong>PDIST2</strong></td>
+<tr class="row-even"><td><strong>PDIST2</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">As PDIST, from points in ASCII file B but only to nodes where A != 0</td>
 </tr>
-<tr class="row-even"><td><strong>PERM</strong></td>
+<tr class="row-odd"><td><strong>PERM</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Permutations n_P_r, with n = A and r = B</td>
 </tr>
-<tr class="row-odd"><td><strong>PLM</strong></td>
+<tr class="row-even"><td><strong>PLM</strong></td>
 <td colspan="2">3 1</td>
 <td colspan="2">Associated Legendre polynomial P(A) degree B order C</td>
 </tr>
-<tr class="row-even"><td><strong>PLMg</strong></td>
+<tr class="row-odd"><td><strong>PLMg</strong></td>
 <td colspan="2">3 1</td>
 <td colspan="2">Normalized associated Legendre polynomial P(A) degree B order C (geophysical convention)</td>
 </tr>
-<tr class="row-odd"><td><strong>POINT</strong></td>
+<tr class="row-even"><td><strong>POINT</strong></td>
 <td colspan="2">1 2</td>
 <td colspan="2">Compute mean x and y from ASCII file A and place them on the stack</td>
 </tr>
-<tr class="row-even"><td><strong>POP</strong></td>
+<tr class="row-odd"><td><strong>POP</strong></td>
 <td colspan="2">1 0</td>
 <td colspan="2">Delete top element from the stack</td>
 </tr>
-<tr class="row-odd"><td><strong>POW</strong></td>
+<tr class="row-even"><td><strong>POW</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">A ^ B</td>
 </tr>
-<tr class="row-even"><td><strong>PPDF</strong></td>
+<tr class="row-odd"><td><strong>PPDF</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Poisson distribution P(x,lambda), with x = A and lambda = B</td>
 </tr>
-<tr class="row-odd"><td><strong>PQUANT</strong></td>
+<tr class="row-even"><td><strong>PQUANT</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">The B’th Quantile (0-100%) of A</td>
 </tr>
-<tr class="row-even"><td><strong>PQUANTW</strong></td>
+<tr class="row-odd"><td><strong>PQUANTW</strong></td>
 <td colspan="2">3 1</td>
 <td colspan="2">The C’th weighted quantile (0-100%) of A for weights in B</td>
 </tr>
-<tr class="row-odd"><td><strong>PSI</strong></td>
+<tr class="row-even"><td><strong>PSI</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Psi (or Digamma) of A</td>
 </tr>
-<tr class="row-even"><td><strong>PV</strong></td>
+<tr class="row-odd"><td><strong>PV</strong></td>
 <td colspan="2">3 1</td>
 <td colspan="2">Legendre function Pv(A) of degree v = real(B) + imag(C)</td>
 </tr>
-<tr class="row-odd"><td><strong>QV</strong></td>
+<tr class="row-even"><td><strong>QV</strong></td>
 <td colspan="2">3 1</td>
 <td colspan="2">Legendre function Qv(A) of degree v = real(B) + imag(C)</td>
 </tr>
-<tr class="row-even"><td><strong>R2</strong></td>
+<tr class="row-odd"><td><strong>R2</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">R2 = A^2 + B^2</td>
 </tr>
-<tr class="row-odd"><td><strong>R2D</strong></td>
+<tr class="row-even"><td><strong>R2D</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Convert Radians to Degrees</td>
 </tr>
-<tr class="row-even"><td><strong>RAND</strong></td>
+<tr class="row-odd"><td><strong>RAND</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Uniform random values between A and B</td>
 </tr>
-<tr class="row-odd"><td><strong>RCDF</strong></td>
+<tr class="row-even"><td><strong>RCDF</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Rayleigh cumulative distribution function for z = A</td>
 </tr>
-<tr class="row-even"><td><strong>RCRIT</strong></td>
+<tr class="row-odd"><td><strong>RCRIT</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Rayleigh distribution critical value for alpha = A</td>
 </tr>
-<tr class="row-odd"><td><strong>RGB2HSV</strong></td>
+<tr class="row-even"><td><strong>RGB2HSV</strong></td>
 <td colspan="2">3 3</td>
 <td colspan="2">Convert r,g,b triplets to h,s,v triplets, with r = A, g = B, and b = C (all in 0-255 range)</td>
 </tr>
-<tr class="row-even"><td><strong>RGB2LAB</strong></td>
+<tr class="row-odd"><td><strong>RGB2LAB</strong></td>
 <td colspan="2">3 3</td>
 <td colspan="2">Convert r,g,b triplets to l,a,b triplets, with r = A, g = B, and b = C (in 0-255 range)</td>
 </tr>
-<tr class="row-odd"><td><strong>RGB2XYZ</strong></td>
+<tr class="row-even"><td><strong>RGB2XYZ</strong></td>
 <td colspan="2">3 3</td>
 <td colspan="2">Convert r,g,b triplets to x,y,x triplets, with r = A, g = B, and b = C (in 0-255 range)</td>
 </tr>
-<tr class="row-even"><td><strong>RINT</strong></td>
+<tr class="row-odd"><td><strong>RINT</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">rint (A) (round to integral value nearest to A)</td>
 </tr>
-<tr class="row-odd"><td><strong>RMS</strong></td>
+<tr class="row-even"><td><strong>RMS</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Root-mean-square of A</td>
 </tr>
-<tr class="row-even"><td><strong>RMSW</strong></td>
+<tr class="row-odd"><td><strong>RMSW</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Root-mean-square of A for weights in B</td>
 </tr>
-<tr class="row-odd"><td><strong>RPDF</strong></td>
+<tr class="row-even"><td><strong>RPDF</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Rayleigh probability density function for z = A</td>
 </tr>
-<tr class="row-even"><td><strong>ROLL</strong></td>
+<tr class="row-odd"><td><strong>ROLL</strong></td>
 <td colspan="2">2 0</td>
 <td colspan="2">Cyclicly shifts the top A stack items by an amount B</td>
 </tr>
-<tr class="row-odd"><td><strong>ROTX</strong></td>
+<tr class="row-even"><td><strong>ROTX</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Rotate A by the (constant) shift B in x-direction</td>
 </tr>
-<tr class="row-even"><td><strong>ROTY</strong></td>
+<tr class="row-odd"><td><strong>ROTY</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Rotate A by the (constant) shift B in y-direction</td>
 </tr>
-<tr class="row-odd"><td><strong>SDIST</strong></td>
+<tr class="row-even"><td><strong>SDIST</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Spherical (Great circle|geodesic) distance (in km) between nodes and stack (A, B) <a href="#openModal">Example</a>
 <div id="openModal" class="modalDialog">
@@ -1078,195 +1087,195 @@ and output arguments.</p>
  </div>
 </div></td>
 </tr>
-<tr class="row-even"><td><strong>SDIST2</strong></td>
+<tr class="row-odd"><td><strong>SDIST2</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">As SDIST but only to nodes that are != 0</td>
 </tr>
-<tr class="row-odd"><td><strong>SAZ</strong></td>
+<tr class="row-even"><td><strong>SAZ</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Spherical azimuth from grid nodes to stack lon, lat (i.e., A, B)</td>
 </tr>
-<tr class="row-even"><td><strong>SBAZ</strong></td>
+<tr class="row-odd"><td><strong>SBAZ</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Spherical back-azimuth from grid nodes to stack lon, lat (i.e., A, B)</td>
 </tr>
-<tr class="row-odd"><td><strong>SEC</strong></td>
+<tr class="row-even"><td><strong>SEC</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">sec (A) (A in radians)</td>
 </tr>
-<tr class="row-even"><td><strong>SECD</strong></td>
+<tr class="row-odd"><td><strong>SECD</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">sec (A) (A in degrees)</td>
 </tr>
-<tr class="row-odd"><td><strong>SIGN</strong></td>
+<tr class="row-even"><td><strong>SIGN</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">sign (+1 or -1) of A</td>
 </tr>
-<tr class="row-even"><td><strong>SIN</strong></td>
+<tr class="row-odd"><td><strong>SIN</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">sin (A) (A in radians)</td>
 </tr>
-<tr class="row-odd"><td><strong>SINC</strong></td>
+<tr class="row-even"><td><strong>SINC</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">sinc (A) (sin (pi*A)/(pi*A))</td>
 </tr>
-<tr class="row-even"><td><strong>SIND</strong></td>
+<tr class="row-odd"><td><strong>SIND</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">sin (A) (A in degrees)</td>
 </tr>
-<tr class="row-odd"><td><strong>SINH</strong></td>
+<tr class="row-even"><td><strong>SINH</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">sinh (A)</td>
 </tr>
-<tr class="row-even"><td><strong>SKEW</strong></td>
+<tr class="row-odd"><td><strong>SKEW</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Skewness of A</td>
 </tr>
-<tr class="row-odd"><td><strong>SQR</strong></td>
+<tr class="row-even"><td><strong>SQR</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">A^2</td>
 </tr>
-<tr class="row-even"><td><strong>SQRT</strong></td>
+<tr class="row-odd"><td><strong>SQRT</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">sqrt (A)</td>
 </tr>
-<tr class="row-odd"><td><strong>STD</strong></td>
+<tr class="row-even"><td><strong>STD</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Standard deviation of A</td>
 </tr>
-<tr class="row-even"><td><strong>STDW</strong></td>
+<tr class="row-odd"><td><strong>STDW</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Weighted standard deviation of A for weights in B</td>
 </tr>
-<tr class="row-odd"><td><strong>STEP</strong></td>
+<tr class="row-even"><td><strong>STEP</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Heaviside step function: H(A)</td>
 </tr>
-<tr class="row-even"><td><strong>STEPX</strong></td>
+<tr class="row-odd"><td><strong>STEPX</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Heaviside step function in x: H(x-A)</td>
 </tr>
-<tr class="row-odd"><td><strong>STEPY</strong></td>
+<tr class="row-even"><td><strong>STEPY</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Heaviside step function in y: H(y-A)</td>
 </tr>
-<tr class="row-even"><td><strong>SUB</strong></td>
+<tr class="row-odd"><td><strong>SUB</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">A - B</td>
 </tr>
-<tr class="row-odd"><td><strong>SUM</strong></td>
+<tr class="row-even"><td><strong>SUM</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Sum of all values in A</td>
 </tr>
-<tr class="row-even"><td><strong>TAN</strong></td>
+<tr class="row-odd"><td><strong>TAN</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">tan (A) (A in radians)</td>
 </tr>
-<tr class="row-odd"><td><strong>TAND</strong></td>
+<tr class="row-even"><td><strong>TAND</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">tan (A) (A in degrees)</td>
 </tr>
-<tr class="row-even"><td><strong>TANH</strong></td>
+<tr class="row-odd"><td><strong>TANH</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">tanh (A)</td>
 </tr>
-<tr class="row-odd"><td><strong>TAPER</strong></td>
+<tr class="row-even"><td><strong>TAPER</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Unit weights cosine-tapered to zero within A and B of x and y grid margins</td>
 </tr>
-<tr class="row-even"><td><strong>TCDF</strong></td>
+<tr class="row-odd"><td><strong>TCDF</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Student’s t cumulative distribution function for t = A, and nu = B</td>
 </tr>
-<tr class="row-odd"><td><strong>TCRIT</strong></td>
+<tr class="row-even"><td><strong>TCRIT</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Student’s t distribution critical value for alpha = A and nu = B</td>
 </tr>
-<tr class="row-even"><td><strong>TN</strong></td>
+<tr class="row-odd"><td><strong>TN</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Chebyshev polynomial Tn(-1&lt;t&lt;+1,n), with t = A, and n = B</td>
 </tr>
-<tr class="row-odd"><td><strong>TPDF</strong></td>
+<tr class="row-even"><td><strong>TPDF</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Student’s t probability density function for t = A, and nu = B</td>
 </tr>
-<tr class="row-even"><td><strong>TRIM</strong></td>
+<tr class="row-odd"><td><strong>TRIM</strong></td>
 <td colspan="2">3 1</td>
 <td colspan="2">Alpha-trim C to NaN if values fall in tails A and B (in percentage)</td>
 </tr>
-<tr class="row-odd"><td><strong>UPPER</strong></td>
+<tr class="row-even"><td><strong>UPPER</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">The highest (maximum) value of A</td>
 </tr>
-<tr class="row-even"><td><strong>VAR</strong></td>
+<tr class="row-odd"><td><strong>VAR</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Variance of A</td>
 </tr>
-<tr class="row-odd"><td><strong>VARW</strong></td>
+<tr class="row-even"><td><strong>VARW</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Weighted variance of A for weights in B</td>
 </tr>
-<tr class="row-even"><td><strong>WCDF</strong></td>
+<tr class="row-odd"><td><strong>WCDF</strong></td>
 <td colspan="2">3 1</td>
 <td colspan="2">Weibull cumulative distribution function for x = A, scale = B, and shape = C</td>
 </tr>
-<tr class="row-odd"><td><strong>WCRIT</strong></td>
+<tr class="row-even"><td><strong>WCRIT</strong></td>
 <td colspan="2">3 1</td>
 <td colspan="2">Weibull distribution critical value for alpha = A, scale = B, and shape = C</td>
 </tr>
-<tr class="row-even"><td><strong>WPDF</strong></td>
+<tr class="row-odd"><td><strong>WPDF</strong></td>
 <td colspan="2">3 1</td>
 <td colspan="2">Weibull density distribution P(x,scale,shape), with x = A, scale = B, and shape = C</td>
 </tr>
-<tr class="row-odd"><td><strong>WRAP</strong></td>
+<tr class="row-even"><td><strong>WRAP</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">wrap A in radians onto [-pi,pi]</td>
 </tr>
-<tr class="row-even"><td><strong>XOR</strong></td>
+<tr class="row-odd"><td><strong>XOR</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">0 if A == NaN and B == NaN, NaN if B == NaN, else A</td>
 </tr>
-<tr class="row-odd"><td><strong>XYZ2HSV</strong></td>
+<tr class="row-even"><td><strong>XYZ2HSV</strong></td>
 <td colspan="2">3 3</td>
 <td colspan="2">Convert x,y,x triplets to h,s,v triplets</td>
 </tr>
-<tr class="row-even"><td><strong>XYZ2LAB</strong></td>
+<tr class="row-odd"><td><strong>XYZ2LAB</strong></td>
 <td colspan="2">3 3</td>
 <td colspan="2">Convert x,y,x triplets to l,a,b triplets</td>
 </tr>
-<tr class="row-odd"><td><strong>XYZ2RGB</strong></td>
+<tr class="row-even"><td><strong>XYZ2RGB</strong></td>
 <td colspan="2">3 3</td>
 <td colspan="2">Convert x,y,x triplets to r,g,b triplets</td>
 </tr>
-<tr class="row-even"><td><strong>Y0</strong></td>
+<tr class="row-odd"><td><strong>Y0</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Bessel function of A (2nd kind, order 0)</td>
 </tr>
-<tr class="row-odd"><td><strong>Y1</strong></td>
+<tr class="row-even"><td><strong>Y1</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Bessel function of A (2nd kind, order 1)</td>
 </tr>
-<tr class="row-even"><td><strong>YLM</strong></td>
+<tr class="row-odd"><td><strong>YLM</strong></td>
 <td colspan="2">2 2</td>
 <td colspan="2">Re and Im orthonormalized spherical harmonics degree A order B</td>
 </tr>
-<tr class="row-odd"><td><strong>YLMg</strong></td>
+<tr class="row-even"><td><strong>YLMg</strong></td>
 <td colspan="2">2 2</td>
 <td colspan="2">Cos and Sin normalized spherical harmonics degree A order B (geophysical convention)</td>
 </tr>
-<tr class="row-even"><td><strong>YN</strong></td>
+<tr class="row-odd"><td><strong>YN</strong></td>
 <td colspan="2">2 1</td>
 <td colspan="2">Bessel function of A (2nd kind, order B)</td>
 </tr>
-<tr class="row-odd"><td><strong>ZCDF</strong></td>
+<tr class="row-even"><td><strong>ZCDF</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Normal cumulative distribution function for z = A</td>
 </tr>
-<tr class="row-even"><td><strong>ZPDF</strong></td>
+<tr class="row-odd"><td><strong>ZPDF</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Normal probability density function for z = A</td>
 </tr>
-<tr class="row-odd"><td><strong>ZCRIT</strong></td>
+<tr class="row-even"><td><strong>ZCRIT</strong></td>
 <td colspan="2">1 1</td>
 <td colspan="2">Normal distribution critical value for alpha = A</td>
 </tr>
@@ -1433,6 +1442,9 @@ list of such operators is: <strong>LDIST</strong>, <strong>LDIST2</strong>, <str
 <li><p class="first">Operators <strong>DEG2KM</strong> and <strong>KM2DEG</strong> are only exact when a spherical Earth
 is selected with <a class="reference internal" href="gmt.conf.html#term-proj-ellipsoid"><span class="xref std std-term">PROJ_ELLIPSOID</span></a>.</p>
 </li>
+<li><p class="first">Operator <strong>DOT</strong> normalizes 2-D vectors before the dot-product takes place.
+For 3-D vector they are all unit vectors to begin with.</p>
+</li>
 <li><p class="first">The color-triplet conversion functions (<strong>RGB2HSV</strong>, etc.) includes not
 only r,g,b and h,s,v triplet conversions, but also l,a,b (CIE L a b ) and
 sRGB (x, y, z) conversions between all four color spaces.</p>
@@ -1539,81 +1551,59 @@ The examples that use remote files (file names starting with <code class="docuti
 can be cut and pasted into your terminal for testing.
 Other commands requiring input files are just dummy examples of the types
 of uses that are common but cannot be run verbatim as written.</p>
-<p>To compute all distances to north pole:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath -Rg -I1 <span class="m">0</span> <span class="m">90</span> <span class="nv">SDIST</span> <span class="o">=</span> dist_to_NP.nc
+<p>To compute all distances to north pole, try:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath -Rg -I1 <span class="m">0</span> <span class="m">90</span> <span class="nv">SDIST</span> <span class="o">=</span> dist_to_NP.nc
 </pre></div>
 </div>
-</div></blockquote>
-<p>To take log10 of the average of 2 files, use</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath file1.nc file2.nc ADD <span class="m">0</span>.5 MUL <span class="nv">LOG10</span> <span class="o">=</span> file3.nc
+<p>To take log10 of the average of 2 files, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath file1.nc file2.nc ADD <span class="m">0</span>.5 MUL <span class="nv">LOG10</span> <span class="o">=</span> file3.nc
 </pre></div>
 </div>
-</div></blockquote>
 <p>Given the file ages.nc, which holds seafloor ages in m.y., use the
-relation depth(in m) = 2500 + 350 * sqrt (age) to estimate normal seafloor depths:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath ages.nc SQRT <span class="m">350</span> MUL <span class="m">2500</span> <span class="nv">ADD</span> <span class="o">=</span> depths.nc
+relation depth(in m) = 2500 + 350 * sqrt (age) to estimate normal seafloor depths, try:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath ages.nc SQRT <span class="m">350</span> MUL <span class="m">2500</span> <span class="nv">ADD</span> <span class="o">=</span> depths.nc
 </pre></div>
 </div>
-</div></blockquote>
 <p>To find the angle a (in degrees) of the largest principal stress from
 the stress tensor given by the three files s_xx.nc s_yy.nc, and
-s_xy.nc from the relation tan (2*a) = 2 * s_xy / (s_xx - s_yy), use</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath <span class="m">2</span> s_xy.nc MUL s_xx.nc s_yy.nc SUB DIV ATAN <span class="m">2</span> <span class="nv">DIV</span> <span class="o">=</span> direction.nc
+s_xy.nc from the relation tan (2*a) = 2 * s_xy / (s_xx - s_yy), use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath <span class="m">2</span> s_xy.nc MUL s_xx.nc s_yy.nc SUB DIV ATAN <span class="m">2</span> <span class="nv">DIV</span> <span class="o">=</span> direction.nc
 </pre></div>
 </div>
-</div></blockquote>
 <p>To calculate the fully normalized spherical harmonic of degree 8 and
 order 4 on a 1 by 1 degree world map, using the real amplitude 0.4 and
-the imaginary amplitude 1.1:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath -R0/360/-90/90 -I1 <span class="m">8</span> <span class="m">4</span> YLM <span class="m">1</span>.1 MUL EXCH <span class="m">0</span>.4 MUL <span class="nv">ADD</span> <span class="o">=</span> harm.nc
+the imaginary amplitude 1.1, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath -R0/360/-90/90 -I1 <span class="m">8</span> <span class="m">4</span> YLM <span class="m">1</span>.1 MUL EXCH <span class="m">0</span>.4 MUL <span class="nv">ADD</span> <span class="o">=</span> harm.nc
 </pre></div>
 </div>
-</div></blockquote>
-<p>To extract the locations of local maxima that exceed 100 mGal in the file faa.nc:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath faa.nc DUP EXTREMA <span class="m">2</span> EQ MUL DUP <span class="m">100</span> GT MUL <span class="m">0</span> <span class="nv">NAN</span> <span class="o">=</span> z.nc
+<p>To extract the locations of local maxima that exceed 100 mGal in the file faa.nc, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath faa.nc DUP EXTREMA <span class="m">2</span> EQ MUL DUP <span class="m">100</span> GT MUL <span class="m">0</span> <span class="nv">NAN</span> <span class="o">=</span> z.nc
 gmt grd2xyz z.nc -s &gt; max.xyz
 </pre></div>
 </div>
-</div></blockquote>
 <p>To demonstrate the use of named variables, consider this radial wave
-where we store and recall the normalized radial arguments in radians:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath -R0/10/0/10 -I0.25 <span class="m">5</span> <span class="m">5</span> CDIST <span class="m">2</span> MUL PI MUL <span class="m">5</span> DIV STO@r COS @r SIN <span class="nv">MUL</span> <span class="o">=</span> wave.nc
+where we store and recall the normalized radial arguments in radians by:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath -R0/10/0/10 -I0.25 <span class="m">5</span> <span class="m">5</span> CDIST <span class="m">2</span> MUL PI MUL <span class="m">5</span> DIV STO@r COS @r SIN <span class="nv">MUL</span> <span class="o">=</span> wave.nc
 </pre></div>
 </div>
-</div></blockquote>
-<p>To create a dumb file saved as a 32 bits float GeoTiff using GDAL, run</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath -Rd -I10 X Y <span class="nv">MUL</span> <span class="o">=</span> lixo.tiff<span class="o">=</span>gd:GTiff
+<p>To create a dumb file saved as a 32 bits float GeoTiff using GDAL, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath -Rd -I10 X Y <span class="nv">MUL</span> <span class="o">=</span> lixo.tiff<span class="o">=</span>gd:GTiff
 </pre></div>
 </div>
-</div></blockquote>
 <p>To compute distances in km from the line trace.txt for the area represented by the
-geographic grid data.grd, run</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath -Rdata.grd trace.txt <span class="nv">LDIST</span> <span class="o">=</span> dist_from_line.grd
+geographic grid data.grd, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath -Rdata.grd trace.txt <span class="nv">LDIST</span> <span class="o">=</span> dist_from_line.grd
 </pre></div>
 </div>
-</div></blockquote>
 <p>To demonstrate the stack-reducing effect of <strong>-S</strong>, we compute the standard deviation
-per node of all the grids matching the name model_*.grd using</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath model_*.grd -S <span class="nv">STD</span> <span class="o">=</span> std_of_models.grd
+per node of all the grids matching the name model_*.grd using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath model_*.grd -S <span class="nv">STD</span> <span class="o">=</span> std_of_models.grd
 </pre></div>
 </div>
-</div></blockquote>
-<p>To create a geotiff with resolution 0.5x0.5 degrees with distances in km from the coast line, use</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grdmath -RNO,IS -Dc -I.5 <span class="nv">LDISTG</span> <span class="o">=</span> distance.tif<span class="o">=</span>gd:GTIFF
+<p>To create a geotiff with resolution 0.5x0.5 degrees with distances in km from the coast line, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grdmath -RNO,IS -Dc -I.5 <span class="nv">LDISTG</span> <span class="o">=</span> distance.tif<span class="o">=</span>gd:GTIFF
 </pre></div>
 </div>
-</div></blockquote>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
@@ -1659,7 +1649,7 @@ Publishing Corp.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 21, 2020.
+        Last updated on Mar 27, 2020.
       </span>
 
     </p>

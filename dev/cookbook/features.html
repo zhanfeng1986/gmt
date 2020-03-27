@@ -691,7 +691,8 @@ can override that selection by setting the environmental parameter <strong>$GMT_
 the default setting for <a class="reference internal" href="../gmt.conf.html#term-gmt-data-server"><span class="xref std std-term">GMT_DATA_SERVER</span></a>.  Alternatively, configure the CMake
 parameter GMT_DATA_SERVER at compile time.</li>
 <li>If your Internet connection is slow or nonexistent (e.g., on a plane) you can also
-set the size of the largest datafile to download via <a class="reference internal" href="../gmt.conf.html#term-gmt-data-server-limit"><span class="xref std std-term">GMT_DATA_SERVER_LIMIT</span></a> to be 0.</li>
+limit the size of the largest datafile to download via <a class="reference internal" href="../gmt.conf.html#term-gmt-data-server-limit"><span class="xref std std-term">GMT_DATA_SERVER_LIMIT</span></a> or
+you can temporarily turn off such downloads by setting <a class="reference internal" href="../gmt.conf.html#term-gmt-auto-download"><span class="xref std std-term">GMT_AUTO_DOWNLOAD</span></a> off.</li>
 </ol>
 <p>The user cache (<a class="reference internal" href="../gmt.conf.html#term-dir-cache"><span class="xref std std-term">DIR_CACHE</span></a>) and all its contents can be cleared any time
 via the command <strong>gmt clear cache</strong>, while the server directory with downloaded data
@@ -1031,15 +1032,16 @@ at the end, via <strong>-W</strong>2p<strong>+o</strong>1c/500k.</span></p>
 <li><dl class="first docutils">
 <dt><strong>+s</strong></dt>
 <dd>Normally, all PostScript line drawing is implemented as a linear spline, i.e., we simply
-draw straight line-segments between the given data points.  Use this modifier to render the
-line using Bezier splines for a smoother curve.</dd>
+draw straight line-segments between the map-projected data points.  Use this modifier to render the
+line using Bezier splines for a smoother curve. <strong>Note</strong>: The spline is fit to the projected
+2-D coordinates, not the raw user coordinates (i.e., it is not a spherical surface spline).</dd>
 </dl>
 </li>
 </ul>
 <div class="figure align-center" id="id28">
 <span id="line-bezier"></span><a class="reference internal image-reference" href="../_images/GMT_bezier.png"><img alt="../_images/GMT_bezier.png" src="../_images/GMT_bezier.png" style="width: 500px;" /></a>
 <p class="caption"><span class="caption-text">(left) Normal plotting of line given input points (red circles) via <strong>-W</strong>2p. (right) Letting
-the points be interpolated by a Bezier cubic spline via <strong>-W</strong>2p<strong>+s</strong>.</span></p>
+the projected points be interpolated by a Bezier cubic spline via <strong>-W</strong>2p<strong>+s</strong>.</span></p>
 </div>
 <ul class="simple">
 <li><dl class="first docutils">
@@ -2964,7 +2966,7 @@ off; see <a class="reference internal" href="../gmt.conf.html#term-ps-comments">
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 21, 2020.
+        Last updated on Mar 27, 2020.
       </span>
 
     </p>

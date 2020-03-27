@@ -607,7 +607,10 @@ will appear centered above the plot frame.</p>
 </li>
 <li><p class="first"><strong>-B</strong>[<strong>p</strong>|<strong>s</strong>][<strong>x</strong>|<strong>y</strong>|<strong>z</strong>]<em>intervals</em></p>
 <p>The first optional flag following <strong>-B</strong> selects <strong>p</strong> (rimary) [Default] or
-<strong>s</strong> (econdary) axes information (mostly used for time axes annotations).
+<strong>s</strong> (econdary) axes information (mostly used for time axes annotations but
+is available for geographic axes as well. <strong>Note</strong>: primary refers to annotations
+closest to the axis and secondary to annotations further away.  Hence, primary
+annotation-, tick-, and gridline-intervals must be shorter than their secondary counterparts).
 The [<strong>x</strong>|<strong>y</strong>|<strong>z</strong>] flags specify which axes you are providing information for.
 If none are given then we default to <strong>xy</strong>.  If you wish to give different annotation intervals
 or labels for the various axes then you must repeat the <strong>B</strong> option for
@@ -1041,8 +1044,7 @@ cat <span class="s">&lt;&lt; EOF &gt;| yannots.txt</span>
 <span class="s">EOF</span>
 
 gmt begin GMT_-B_custom
-	gmt basemap -R416/542/0/6.2831852 -JX-12c/6c -Bpx25f5g25+u<span class="s2">&quot; Ma&quot;</span> -Bpycyannots.txt -BWS+glightblue
-	gmt basemap -R416/542/0/6.2831852 -Bsxcxannots.txt -Bsy0 -BWS <span class="se">\</span>
+	gmt basemap -R416/542/0/6.2831852 -JX-12c/6c -Bpx25f5g25+u<span class="s2">&quot; Ma&quot;</span> -Bpycyannots.txt -Bsxcxannots.txt -BWS+glightblue <span class="se">\</span>
 		--MAP_ANNOT_OFFSET_SECONDARY<span class="o">=</span>10p --MAP_GRID_PEN_SECONDARY<span class="o">=</span>2p
 gmt end show
 </pre></div>
@@ -1629,7 +1631,7 @@ context they are considered “other”. Thus, when we refer to
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 21, 2020.
+        Last updated on Mar 27, 2020.
       </span>
 
     </p>
