@@ -1172,6 +1172,20 @@ problem by splitting polygons into a west and east polygon or inserting
 artificial helper lines that makes a cut into the pole and back.  Such
 doctored polygons may be misrepresented in GMT.</p>
 </div>
+<div class="section" id="bezier-spline">
+<h2>Bezier spline<a class="headerlink" href="#bezier-spline" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>+s</strong> modifier to pen settings (<strong>-W</strong>) is limited to plotting lines and
+polygons.  Lines with embellishments (fronts, decorated, or quoted lines) are
+excluded.</p>
+</div>
+<div class="section" id="auto-legend">
+<h2>Auto-Legend<a class="headerlink" href="#auto-legend" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>-l</strong> option for symbols expects the symbol color, size, and type to be given
+on the command line.  If you have variable symbol sizes then you must append <strong>+s</strong><em>size</em> to set
+a suitable size for the legend entry.  For other symbol cases the <strong>-l</strong> option will
+be ignored.  Legend entries also work for lines and polygons, but not more complicated
+features such as decorated and quoted lines, fronts, etc.</p>
+</div>
 <div class="section" id="auto-legend-entries">
 <h2>Auto-legend entries<a class="headerlink" href="#auto-legend-entries" title="Permalink to this headline">¶</a></h2>
 <p>This module allows you to use the <strong>-l</strong> option to specify an automatic legend entry.
@@ -1211,7 +1225,7 @@ to supply a legend size (i.e., length of a line symbol) via the <strong>+s</stro
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 27, 2020.
+        Last updated on Mar 31, 2020.
       </span>
 
     </p>
