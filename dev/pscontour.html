@@ -371,14 +371,16 @@ boundaries are then used as contour levels. If the CPT has
 annotation flags in the last column then those contours will be
 annotated. By default all contours are labeled; use <strong>-An</strong> to
 disable all annotations.</li>
-<li>If <em>contours</em> is a file but not a CPT, it is expected to
-contain contour levels in column 1 and a
-C(ontour) OR A(nnotate) in
-col 2. The levels marked C (or c) are contoured, the levels marked A
-(or a) are contoured and annotated. Optionally, a third column may
-be present and contain the fixed annotation angle for this contour
-level. If so, an optional fourth column may be present and hold a
-contour-specific pen.</li>
+<li>If <em>contours</em> is a file but not a CPT, it is expected to contain
+one record per contour, with information given in the order
+<em>contour-level</em> [<em>angle</em>] <strong>C</strong>|<strong>c</strong>|<strong>A</strong>|<strong>a</strong> [<em>pen</em>],
+where items in brackets are optional.  The levels marked <strong>C</strong> (or <strong>c</strong>)
+are contoured, while the levels marked <strong>A</strong> (or <strong>a</strong>) are both contoured
+and annotated. If the annotation <em>angle</em> is present we will plot the label
+at that fixed angle [aligned with the contour].  Finally, a contour-
+specific <em>pen</em> may be present and will override the pen set by <strong>-W</strong>
+for this contour level only. <strong>Note</strong>: Please specify <em>pen</em> in proper
+format so it can be distinguished from a plain number like <em>angle</em>.</li>
 <li>If <em>contours</em> is a string with comma-separated values it is interpreted
 as those specific contours only.  To indicate a single specific contour
 you must append a trailing comma to separate it from a contour interval.
@@ -716,7 +718,7 @@ Geometry (Philadelphia, PA), 124-133, ACM, May 1996.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Mar 31, 2020.
+        Last updated on Apr 11, 2020.
       </span>
 
     </p>
