@@ -9,7 +9,7 @@ trigger:
     - master
     - 6.?
     - 5.4
-    - win-debug
+    - win-test
     - refs/tags/*
 
 # Global variables
