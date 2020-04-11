@@ -149,7 +149,7 @@ steps:
     # disable MinGW's path conversion, see #1035.
     export MSYS_NO_PATHCONV=1
     cd build
-    ls ${HOME}/.gmt/*
+    ls ${HOME}/.gmt/
     ctest ${CTEST_ARGS} -R ex
     #ctest ${CTEST_ARGS} || ctest ${CTEST_ARGS} --rerun-failed || ctest ${CTEST_ARGS} --rerun-failed
   displayName: Full tests
