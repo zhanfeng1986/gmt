@@ -255,7 +255,7 @@
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
 <p>Reads (<em>x</em>,<em>y</em>) pairs from <em>files</em> [or standard input] and will plot lines, polygons, or symbols at those locations on a map.
 If a symbol is selected and no symbol size given, then it will interpret the third column of the input data as symbol size.
-Symbols whose <em>size</em> is &lt;= 0 are skipped. If no symbolsare specified then the symbol code (see <strong>-S</strong> below) must be present as
+Symbols whose <em>size</em> is &lt;= 0 are skipped. If no symbols are specified then the symbol code (see <strong>-S</strong> below) must be present as
 last column in the input. If <strong>-S</strong> is not used, a line connecting the data points will be drawn instead. To explicitly close
 polygons, use <strong>-L</strong>. Select a fill with <strong>-G</strong>. If <strong>-G</strong> is set, <strong>-W</strong> will control whether the polygon outline is drawn or not.
 If a symbol is selected, <strong>-G</strong> and <strong>-W</strong> determines the fill and outline/no outline, respectively.</p>
@@ -403,7 +403,9 @@ Append <strong>+D</strong> to build asymmetrical envelope around y(x) using devi
 Append <strong>+b</strong> to build asymmetrical envelope around y(x) using bounds yl(x) and yh(x) from extra columns 3-4.
 Append <strong>+xl</strong>|<strong>r</strong>|<em>x0</em> to connect first and last point to anchor points at either <em>xmin</em>, <em>xmax</em>, or <em>x0</em>, or
 append <strong>+yb</strong>|<strong>t</strong>|<em>y0</em> to connect first and last point to anchor points at either <em>ymin</em>, <em>ymax</em>, or <em>y0</em>.
-Polygon may be painted (<strong>-G</strong>) and optionally outlined by adding <strong>+p</strong><em>pen</em> [no outline].</dd>
+Polygon may be painted (<strong>-G</strong>) and optionally outlined by adding <strong>+p</strong><em>pen</em> [no outline].
+<strong>Note</strong>: When options like <strong>-G</strong> and <strong>-Z</strong> are passed via segment headers you will need <strong>-L</strong> to ensure
+your segments are interpreted as polygons.</dd>
 </dl>
 <dl class="docutils" id="n">
 <dt><strong>-N</strong>[<strong>c</strong>|<strong>r</strong>]</dt>
@@ -1044,11 +1046,11 @@ be a straight Cartesian vector. Yes, the old GMT4 vector shape remains accessibl
 you specify a vector (<strong>-Sv</strong>|<strong>V</strong>) using the GMT4 syntax, explained here: <em>size</em>, if present, will
 be interpreted as <em>arrowwidth/headlength/headwidth</em> [Default is 0.075c/0.3c/0.25c (or
 0.03i/0.12i/0.1i)]. By default, arrow attributes remain invariant to the length of the
-arrow. To have the size of the vector scale down with decreasing size, append <strong>n</strong><em>norm</em>,
-where vectors shorter than <em>norm</em> will have their attributes scaled by length/<em>norm</em>.
-To center the vector on the balance point, use <strong>−Svb</strong>; to align point with the vector head,
-use <strong>−Svh</strong>; to align point with the vector tail, use <strong>−Svt</strong> [Default]. To give the
-head point’s coordinates instead of direction and length, use <strong>−Svs</strong>. Upper case
+arrow. To have the size of the vector scale down with decreasing size, append <strong>+n</strong><em>norm</em>,
+where vectors shorter than <em>norm</em> will have their attributes scaled by <em>length</em>/<em>norm</em>.
+To center the vector on the balance point, use <strong>-Svb</strong>; to align point with the vector head,
+use <strong>-Svh</strong>; to align point with the vector tail, use <strong>-Svt</strong> [Default]. To give the
+head point’s coordinates instead of direction and length, use <strong>-Svs</strong>. Upper case
 <strong>B</strong>, <strong>H</strong>, <strong>T</strong>, <strong>S</strong> will draw a double-headed vector [Default is single head].</p>
 </div>
 <div class="section" id="examples">
@@ -1242,7 +1244,7 @@ to supply a legend size (i.e., length of a line symbol) via the <strong>+s</stro
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Apr 11, 2020.
+        Last updated on Apr 18, 2020.
       </span>
 
     </p>

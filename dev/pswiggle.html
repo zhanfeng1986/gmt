@@ -317,19 +317,19 @@ if <strong>-DJ</strong> is used then <em>justify</em> defaults to the mirror opp
 <strong>-DJ</strong> is used to place a scale outside the map frame while <strong>-Dj</strong> is used to place it inside the frame.
 Move scale label to the left side with <strong>+al</strong> [Default is to the right of the scale].
 Append <strong>+l</strong> to set the <em>z</em> unit label that is used in the scale label [no unit].
-The <strong>FONT_ANNOT_PRIMARY</strong> is used for the font setting.</p>
+The <a class="reference internal" href="gmt.conf.html#term-font-annot-primary"><span class="xref std std-term">FONT_ANNOT_PRIMARY</span></a> is used for the font setting.</p>
 </dd>
 </dl>
 <dl class="docutils" id="f">
 <dt><strong>-F</strong>[<strong>+c</strong><em>clearances</em>][<strong>+g</strong><em>fill</em>][<strong>+i</strong>[[<em>gap</em>/]<em>pen</em>]][<strong>+p</strong>[<em>pen</em>]][<strong>+r</strong>[<em>radius</em>]][<strong>+s</strong>[[<em>dx</em>/<em>dy</em>/][<em>shade</em>]]]</dt>
 <dd>Without further options, draws a rectangular border around the vertical scale bar using
-<strong>MAP_FRAME_PEN</strong>; specify a different pen with <strong>+p</strong><em>pen</em>.
+<a class="reference internal" href="gmt.conf.html#term-map-frame-pen"><span class="xref std std-term">MAP_FRAME_PEN</span></a>; specify a different pen with <strong>+p</strong><em>pen</em>.
 Add <strong>+g</strong><em>fill</em> to fill the scale panel [no fill].
 Append <strong>+c</strong><em>clearance</em> where <em>clearance</em> is either <em>gap</em>, <em>xgap</em>/<em>ygap</em>,
 or <em>lgap</em>/<em>rgap</em>/<em>bgap</em>/<em>tgap</em> where these items are uniform, separate in
 x- and y-direction, or individual side spacings between scale and border.
 Append <strong>+i</strong> to draw a secondary, inner border as well. We use a uniform
-<em>gap</em> between borders of 2<strong>p</strong> and the <strong>MAP_DEFAULTS_PEN</strong>
+<em>gap</em> between borders of 2<strong>p</strong> and the <a class="reference internal" href="gmt.conf.html#term-map-default-pen"><span class="xref std std-term">MAP_DEFAULT_PEN</span></a>
 unless other values are specified. Append <strong>+r</strong> to draw rounded
 rectangular borders instead, with a 6<strong>p</strong> corner radius. You can
 override this radius by appending another value. Finally, append
@@ -526,7 +526,7 @@ see if this is the problem, you should do this:</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Apr 11, 2020.
+        Last updated on Apr 18, 2020.
       </span>
 
     </p>

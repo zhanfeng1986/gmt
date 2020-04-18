@@ -555,11 +555,11 @@ be a straight Cartesian vector. Yes, the old GMT4 vector shape remains accessibl
 you specify a vector (<strong>-Sv</strong>|<strong>V</strong>) using the GMT4 syntax, explained here: <em>size</em>, if present, will
 be interpreted as <em>arrowwidth/headlength/headwidth</em> [Default is 0.075c/0.3c/0.25c (or
 0.03i/0.12i/0.1i)]. By default, arrow attributes remain invariant to the length of the
-arrow. To have the size of the vector scale down with decreasing size, append <strong>n</strong><em>norm</em>,
-where vectors shorter than <em>norm</em> will have their attributes scaled by length/<em>norm</em>.
-To center the vector on the balance point, use <strong>−Svb</strong>; to align point with the vector head,
-use <strong>−Svh</strong>; to align point with the vector tail, use <strong>−Svt</strong> [Default]. To give the
-head point’s coordinates instead of direction and length, use <strong>−Svs</strong>. Upper case
+arrow. To have the size of the vector scale down with decreasing size, append <strong>+n</strong><em>norm</em>,
+where vectors shorter than <em>norm</em> will have their attributes scaled by <em>length</em>/<em>norm</em>.
+To center the vector on the balance point, use <strong>-Svb</strong>; to align point with the vector head,
+use <strong>-Svh</strong>; to align point with the vector tail, use <strong>-Svt</strong> [Default]. To give the
+head point’s coordinates instead of direction and length, use <strong>-Svs</strong>. Upper case
 <strong>B</strong>, <strong>H</strong>, <strong>T</strong>, <strong>S</strong> will draw a double-headed vector [Default is single head].</p>
 </div>
 <div class="section" id="classic-mode-arguments">
@@ -646,7 +646,7 @@ Geophysics at University of Wisconsin-Madison, Madison, Wisconsin, USA</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Apr 11, 2020.
+        Last updated on Apr 18, 2020.
       </span>
 
     </p>

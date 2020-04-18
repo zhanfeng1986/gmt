@@ -306,8 +306,8 @@ the <em>refpoint</em> via a 2-char justification code that refers to the (invisi
 You can offset the reference point via <strong>+o</strong><em>dx</em>/<em>dy</em> in the direction implied by <em>code</em> or <strong>+j</strong><em>justify</em>.</p>
 <p class="last">For <strong>-Dj</strong> or <strong>-DJ</strong> with codes TC, BC, ML, MR (i.e., centered on one of the map sides) we
 pre-calculate all further settings.  Specifically, the <em>length</em> is set to 80% of the map side,
-horizontal or vertical depends on the side, the offset is MAP_LABEL_OFFSET for <strong>Dj</strong> with an
-extra offset MAP_FRAME_WIDTH for <strong>DJ</strong>, and annotations are placed on the side of the scale facing
+horizontal or vertical depends on the side, the offset is <a class="reference internal" href="gmt.conf.html#term-map-label-offset"><span class="xref std std-term">MAP_LABEL_OFFSET</span></a> for <strong>Dj</strong> with an
+extra offset <a class="reference internal" href="gmt.conf.html#term-map-frame-width"><span class="xref std std-term">MAP_FRAME_WIDTH</span></a> for <strong>DJ</strong>, and annotations are placed on the side of the scale facing
 away from the map frame.
 However, you can override any of these with these modifiers:
 Append <strong>+w</strong> followed by the <em>length</em> and <em>width</em> of the color bar.  If <em>width</em> is not
@@ -338,13 +338,13 @@ If not given, the default argument is JBC (Place color bar centered beneath curr
 <dl class="docutils" id="f">
 <dt><strong>-F</strong>[<strong>+c</strong><em>clearances</em>][<strong>+g</strong><em>fill</em>][<strong>+i</strong>[[<em>gap</em>/]<em>pen</em>]][<strong>+p</strong>[<em>pen</em>]][<strong>+r</strong>[<em>radius</em>]][<strong>+s</strong>[[<em>dx</em>/<em>dy</em>/][<em>shade</em>]]]</dt>
 <dd>Without further options, draws a rectangular border around the scale using
-<strong>MAP_FRAME_PEN</strong>; specify a different pen with <strong>+p</strong><em>pen</em>.
+<a class="reference internal" href="gmt.conf.html#term-map-frame-pen"><span class="xref std std-term">MAP_FRAME_PEN</span></a>; specify a different pen with <strong>+p</strong><em>pen</em>.
 Add <strong>+g</strong><em>fill</em> to fill the scale panel [no fill].
 Append <strong>+c</strong><em>clearance</em> where <em>clearance</em> is either <em>gap</em>, <em>xgap</em>/<em>ygap</em>,
 or <em>lgap</em>/<em>rgap</em>/<em>bgap</em>/<em>tgap</em> where these items are uniform, separate in
 x- and y-direction, or individual side spacings between scale and border.
 Append <strong>+i</strong> to draw a secondary, inner border as well. We use a uniform
-<em>gap</em> between borders of 2<strong>p</strong> and the <strong>MAP_DEFAULTS_PEN</strong>
+<em>gap</em> between borders of 2<strong>p</strong> and the <a class="reference internal" href="gmt.conf.html#term-map-default-pen"><span class="xref std std-term">MAP_DEFAULT_PEN</span></a>
 unless other values are specified. Append <strong>+r</strong> to draw rounded
 rectangular borders instead, with a 6<strong>p</strong> corner radius. You can
 override this radius by appending another value. Finally, append
@@ -564,7 +564,7 @@ symbol at the left, unless <strong>+n</strong> was used in which case we center 
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Apr 11, 2020.
+        Last updated on Apr 18, 2020.
       </span>
 
     </p>

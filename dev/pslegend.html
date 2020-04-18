@@ -240,7 +240,7 @@
 <p>Makes legends that can be overlaid on maps. It reads
 specific legend-related information from an input file [or stdin].
 Unless otherwise noted, annotations will be made using the primary
-annotation font and size in effect (i.e., FONT_ANNOT_PRIMARY)</p>
+annotation font and size in effect (i.e., <a class="reference internal" href="gmt.conf.html#term-font-annot-primary"><span class="xref std std-term">FONT_ANNOT_PRIMARY</span></a>)</p>
 </div>
 <div class="section" id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this headline">¶</a></h2>
@@ -278,13 +278,13 @@ font size [1.1].</p>
 <dl class="docutils" id="f">
 <dt><strong>-F</strong>[<strong>+c</strong><em>clearances</em>][<strong>+g</strong><em>fill</em>][<strong>+i</strong>[[<em>gap</em>/]<em>pen</em>]][<strong>+p</strong>[<em>pen</em>]][<strong>+r</strong>[<em>radius</em>]][<strong>+s</strong>[[<em>dx</em>/<em>dy</em>/][<em>shade</em>]]]</dt>
 <dd>Without further options, draws a rectangular border around the legend using
-<strong>MAP_FRAME_PEN</strong>; specify a different pen with <strong>+p</strong><em>pen</em>.
+<a class="reference internal" href="gmt.conf.html#term-map-frame-pen"><span class="xref std std-term">MAP_FRAME_PEN</span></a>; specify a different pen with <strong>+p</strong><em>pen</em>.
 Add <strong>+g</strong><em>fill</em> to fill the legend box [no fill].
 Append <strong>+c</strong><em>clearance</em> where <em>clearance</em> is either <em>gap</em>, <em>xgap</em>/<em>ygap</em>,
 or <em>lgap</em>/<em>rgap</em>/<em>bgap</em>/<em>tgap</em> where these items are uniform, separate in
 x- and y-direction, or individual side spacings between scale and border.
 Append <strong>+i</strong> to draw a secondary, inner border as well. We use a uniform
-<em>gap</em> between borders of 2<strong>p</strong> and the <strong>MAP_DEFAULTS_PEN</strong>
+<em>gap</em> between borders of 2<strong>p</strong> and the <a class="reference internal" href="gmt.conf.html#term-map-default-pen"><span class="xref std std-term">MAP_DEFAULT_PEN</span></a>
 unless other values are specified. Append <strong>+r</strong> to draw rounded
 rectangular borders instead, with a 6<strong>p</strong> corner radius. You can
 override this radius by appending another value. Finally, append
@@ -382,7 +382,7 @@ Use <strong>-</strong> to reset to default color.</dd>
 across the legend with one quarter of the line-spacing left blank
 above and below the line. Two gaps of <em>offset</em> units are left blank
 between the horizontal line and the left and right frame sides [0]. If
-no pen is given we use MAP_GRID_PEN_PRIMARY, and if <em>pen</em> is
+no pen is given we use <a class="reference internal" href="gmt.conf.html#term-map-grid-pen-primary"><span class="xref std std-term">MAP_GRID_PEN_PRIMARY</span></a>, and if <em>pen</em> is
 set to <strong>-</strong> then no visible line is drawn (we just remember the location
 as a possible start/stop point for a vertical line; see <strong>V</strong>).  To <em>not</em> add the
 quarter line-spacing before the line, add <strong>-</strong>.  To <em>not</em> add the spacing
@@ -401,14 +401,14 @@ addition to the standard units (<strong>i</strong>, <strong>c</strong>, <strong>
 <strong>l</strong> for lines. A negative <em>gap</em> will move the current line upwards (thus closing a gap).</dd>
 <dt><strong>H</strong> <em>font</em>|<strong>-</strong> <em>header</em></dt>
 <dd>The <strong>H</strong> record plots a centered text string using the specified
-font parameters. Use <strong>-</strong> to default to size and fonttype of <strong>FONT_TITLE</strong>.</dd>
+font parameters. Use <strong>-</strong> to default to size and fonttype of <a class="reference internal" href="gmt.conf.html#term-font-title"><span class="xref std std-term">FONT_TITLE</span></a>.</dd>
 <dt><strong>I</strong> <em>imagefile width justification</em></dt>
 <dd>Place an EPS or raster image in the legend justified relative to
 the current point. The image <em>width</em> determines the size of the image on the page.</dd>
 <dt><strong>L</strong> <em>font</em>|<strong>-</strong> <em>justification label</em></dt>
 <dd>The <strong>L</strong> record plots a (L)eft, (C)entered, or (R)ight-justified
 text string within a column using the specified font parameters. Use
-<strong>-</strong> to default to the size and font type of <strong>FONT_LABEL</strong>.</dd>
+<strong>-</strong> to default to the size and font type of <a class="reference internal" href="gmt.conf.html#term-font-label"><span class="xref std std-term">FONT_LABEL</span></a>.</dd>
 <dt><strong>M</strong> <em>slon</em>|<strong>-</strong> <em>slat</em> <em>length</em>[<strong>+a</strong><em>align</em>][<strong>+f</strong>][<strong>+l</strong>[<em>label</em>]][<strong>+u</strong>] [<strong>-F</strong><em>param</em>] [ <strong>-R</strong><em>w/e/s/n</em> <strong>-J</strong><em>param</em> ]</dt>
 <dd>Place a map scale in the legend. Specify <em>slon slat</em>, the point on
 the map where the scale applies (<em>slon</em> is only meaningful for
@@ -452,7 +452,7 @@ value to <strong>-</strong>.</dd>
 <dd>Plots the selected symbol with specified diameter, fill, and outline
 (see <a class="reference internal" href="plot.html"><span class="doc">plot</span></a>). The symbol is centered at <em>dx1</em> from the left margin
 of the column, with the optional explanatory <em>text</em> starting <em>dx2</em>
-from the margin, printed with <strong>FONT_ANNOT_PRIMARY</strong>. If <em>dx1</em> is given
+from the margin, printed with <a class="reference internal" href="gmt.conf.html#term-font-annot-primary"><span class="xref std std-term">FONT_ANNOT_PRIMARY</span></a>. If <em>dx1</em> is given
 as <strong>-</strong> then it is automatically computed from half the largest symbol size.
 If <em>dx2</em> is given as <strong>-</strong> then it is automatically computed as 1.5
 times the largest symbol size.  Use <strong>-</strong> if
@@ -477,7 +477,7 @@ arguments into a single, comma-separated string and use that as the
 symbol size (again, see <a class="reference internal" href="plot.html"><span class="doc">plot</span></a> for details on the arguments needed).</dd>
 <dt><strong>T</strong> <em>paragraph-text</em></dt>
 <dd>One or more of these <strong>T</strong> records with <em>paragraph-text</em> printed
-with <strong>FONT_ANNOT_PRIMARY</strong>. To specify special positioning and
+with <a class="reference internal" href="gmt.conf.html#term-font-annot-primary"><span class="xref std std-term">FONT_ANNOT_PRIMARY</span></a>. To specify special positioning and
 typesetting arrangements, or to enter a paragraph break, use the
 optional <strong>P</strong> record.</dd>
 <dt><strong>V</strong> [<em>offset</em>] <em>pen</em></dt>
@@ -623,7 +623,7 @@ rm -f tt.cpt
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Apr 11, 2020.
+        Last updated on Apr 18, 2020.
       </span>
 
     </p>

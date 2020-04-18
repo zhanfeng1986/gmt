@@ -285,12 +285,13 @@ GRID FILE FORMATS below.)</dd>
 <dl class="docutils" id="a">
 <dt><strong>-A</strong><em>out_img</em>[<strong>=</strong><em>driver</em>]</dt>
 <dd>Save an image in a raster format instead of PostScript. Use extension .ppm for a Portable
-Pixel Map format. For GDAL-aware versions there are more choices: Append <em>out_img</em> to select
+Pixel Map format which is the only raster format GMT can natively write. For GMT installations
+configured with GDAL support there are more choices: Append <em>out_img</em> to select
 the image file name and extension. If the extension is one of .bmp, .gif, .jpg, .png, or .tif
 then no driver information is required. For other output formats you must append the required
 GDAL driver. The <em>driver</em> is the driver code name used by GDAL; see your GDAL installation’s
-documentation for available drivers. Append a +c&lt;options&gt; string where <em>options</em> is a list of
-one or more concatenated number of GDAL -co options. For example, to write a GeoPDF with the
+documentation for available drivers. Append a <strong>+c</strong><em>options</em> string where <em>options</em> is a list of
+one or more concatenated number of GDAL <strong>-co</strong> options. For example, to write a GeoPDF with the
 TerraGo format use <em>=PDF+cGEO_ENCODING=OGC_BP</em>. Notes: (1) If a tiff file (.tif) is selected
 then we will write a GeoTiff image if the GMT projection syntax translates into a PROJ syntax,
 otherwise a plain tiff file is produced. (2) Any vector elements will be lost.</dd>
@@ -663,7 +664,7 @@ CPTs.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Apr 11, 2020.
+        Last updated on Apr 18, 2020.
       </span>
 
     </p>
