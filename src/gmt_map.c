@@ -7731,6 +7731,7 @@ uint64_t gmt_compact_line (struct GMT_CTRL *GMT, double *x, double *y, uint64_t 
 
 /*! . */
 int gmt_project_init (struct GMT_CTRL *GMT, struct GMT_GRID_HEADER *header, double *inc, unsigned int n_columns, unsigned int n_rows, unsigned int dpi, unsigned int offset) {
+	struct GMT_GRID_HEADER_HIDDEN *HH = gmt_get_H_hidden (header); 
 	GMT_Report (GMT->parent, GMT_MSG_DEBUG, "gmt_project_init: IN: Inc [%.12g/%.12g] n_columns/n_rows [%u/%u] dpi = %u offset = %u\n",
 		inc[0], inc[1], n_columns, n_rows, dpi, offset);
 
@@ -7773,7 +7774,7 @@ int gmt_project_init (struct GMT_CTRL *GMT, struct GMT_GRID_HEADER *header, doub
 
 	gmt_RI_prepare (GMT, header);	/* Ensure -R -I consistency and set n_columns, n_rows */
 	gmt_M_err_pass (GMT, gmt_grd_RI_verify (GMT, header, 1), "");
-	gmt_M_grd_setpad (GMT, header, GMT->current.io.pad);			/* Assign default pad */
+	if (!HH->reset_pad) gmt_M_grd_setpad (GMT, header, GMT->current.io.pad);			/* Assign default pad unless pad is already being manipulated */
 	gmt_set_grddim (GMT, header);	/* Set all dimensions before returning */
 
 	GMT_Report (GMT->parent, GMT_MSG_INFORMATION, "Grid projection from size %dx%d to %dx%d\n", n_columns, n_rows, header->n_columns, header->n_rows);
