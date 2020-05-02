@@ -223,7 +223,7 @@
 [ <a class="reference internal" href="#b"><span> <strong>-B</strong></span></a></strong>[<strong>p</strong>|<strong>s</strong>]<em>parameters</em> ]
 [ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>cpt</em> ]
 [ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>dx</em>/<em>dy</em>[/<em>dz</em>] ]
-[ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>fill</em> ]
+[ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>fill</em>|<strong>+z</strong> ]
 [ <a class="reference internal" href="#i"><span> <strong>-I</strong></span></a></strong>[<em>intens</em>] ]
 [ <a class="reference internal" href="#l"><span> <strong>-L</strong></span></a></strong>[<strong>+b</strong>|<strong>d</strong>|<strong>D</strong>][<strong>+xl</strong>|<strong>r</strong>|<em>x0</em>][<strong>+yl</strong>|<strong>r</strong>|<em>y0</em>][<strong>+p</strong><em>pen</em>] ]
 [ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong> ]
@@ -234,7 +234,7 @@
 [ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong>[<em>pen</em>][<em>attr</em>] ]
 [ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>] ]
 [ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>] ]
-[ <a class="reference internal" href="#z"><span> <strong>-Z</strong></span></a></strong><em>value</em>|<em>file</em>[<strong>+f</strong>|<strong>l</strong>]]
+[ <a class="reference internal" href="#z"><span> <strong>-Z</strong></span></a></strong><em>value</em>|<em>file</em>]
 [ <strong>-a</strong><a class="reference internal" href="gmt.html#aspatial-full"><span class="std std-ref">flags</span></a> ]
 [ <strong>-bi</strong><a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">binary</span></a> ]
 [ <strong>-di</strong><a class="reference internal" href="gmt.html#di-full"><span class="std std-ref">nodata</span></a> ]
@@ -331,7 +331,9 @@ then we select the current CPT.</dd>
 <dt><strong>-G</strong><em>fill</em> <a class="reference internal" href="cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Select color or pattern for filling of symbols or polygons [Default is no fill].
 Note that the module will search for <strong>-G</strong> and <strong>-W</strong> strings in all the
-segment headers and let any values thus found over-ride the command line settings.</dd>
+segment headers and let any values thus found over-ride the command line settings.
+If <strong>-Z</strong> is set, use <strong>-G+z</strong> to assign fill color via <strong>-C</strong><em>cpt</em> and the
+<em>z</em>-values obtained.</dd>
 </dl>
 <dl class="docutils" id="i">
 <dt><strong>-I</strong><em>intens</em></dt>
@@ -826,7 +828,9 @@ the decorated lines on a segment-by-segment basis.</p>
 width = default, color = black, style = solid]. If the modifier <strong>+cl</strong>
 is appended then the color of the line are taken from the CPT (see
 <strong>-C</strong>). If instead modifier <strong>+cf</strong> is appended then the color from the cpt
-file is applied to symbol fill.  Use just <strong>+c</strong> for both effects.</dd>
+file is applied to symbol fill.  Use just <strong>+c</strong> for both effects.
+If <strong>-Z</strong> is set, then append <strong>+z</strong> to <strong>-W</strong> to assign pen color via <strong>-C</strong><em>cpt</em> and the
+<em>z</em>-values obtained.</dd>
 </dl>
 <p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>]</p>
 <dl class="docutils">
@@ -834,11 +838,11 @@ file is applied to symbol fill.  Use just <strong>+c</strong> for both effects.<
 <dd>Shift plot origin.</dd>
 </dl>
 <dl class="docutils" id="z">
-<dt><strong>-Z</strong><em>value</em>|<em>file</em>[<strong>+f</strong>|<strong>l</strong>]</dt>
+<dt><strong>-Z</strong><em>value</em>|<em>file</em></dt>
 <dd>Instead of specifying a symbol or polygon fill and outline color via <strong>-G</strong> and <strong>-W</strong>,
 give both a <em>value</em> via <strong>-Z</strong> and a color lookup table via <strong>-C</strong>.  Alternatively,
 give the name of a <em>file</em> with one z-value (read from the last column) for each polygon in the input data.
-To just set the fill or outline, append <strong>+f</strong> or <strong>+l</strong>, respectively [both].</dd>
+To apply the color obtain to a fill, use <strong>-G+z</strong>; to apply it to the pen color, append <strong>+z</strong> to <strong>-W</strong>.</dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-a</strong>[<em>col</em>=]<em>name</em>[,<em>…</em>] <a class="reference internal" href="gmt.html#aspatial-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -1021,7 +1025,7 @@ southeast at 30 degree elevation, use:</p>
 </div></blockquote>
 <p>To plot a point with color and outline dictated by the <em>t.cpt</em> file for the <em>level</em>-value 65, try</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">175</span> <span class="m">30</span> <span class="m">0</span> <span class="p">|</span> gmt plot3d -R150/200/20/50 -JM15c -Sc0.5c -Z65 -Ct.cpt -pdf map
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">175</span> <span class="m">30</span> <span class="m">0</span> <span class="p">|</span> gmt plot3d -R150/200/20/50 -JM15c -B -Sc0.5c -Z65 -G+z -Ct.cpt -pdf map
 </pre></div>
 </div>
 </div></blockquote>
@@ -1123,7 +1127,7 @@ original polygon.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Apr 25, 2020.
+        Last updated on May 02, 2020.
       </span>
 
     </p>

@@ -275,6 +275,12 @@ in your browser via gmt <a class="reference internal" href="docs.html"><span cla
 <dd>Write a GMT modern mode script template to stdout. Optionally append the desired
 scripting language among <em>bash</em>, <em>csh</em>, or <em>batch</em>.  Default is the main shell
 closest to your current shell (e.g., bash for zsh, csh for tcsh).</dd>
+<dt><strong>--new-glue</strong>=<em>name</em></dt>
+<dd>Write the C code glue needed when building third-party supplements as shared
+libraries.  The <em>name</em> is the name of the shared library. Run <strong>gmt</strong> in the directory
+of the supplement and the glue code will be written to <em>stdout</em>.  Including this C code
+when building the shared library means <strong>gmt</strong> can list available modules via the
+<strong>--show-modules</strong>, <strong>--help</strong> options.  We recommend saving the code to gmt_<em>name</em>_glue.c.</dd>
 <dt><strong>--show-bindir</strong></dt>
 <dd>Show directory of executables and exit.</dd>
 <dt><strong>--show-citation</strong></dt>
@@ -1582,7 +1588,7 @@ GMT documentation site <a class="reference external" href="https://docs.generic-
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Apr 25, 2020.
+        Last updated on May 02, 2020.
       </span>
 
     </p>

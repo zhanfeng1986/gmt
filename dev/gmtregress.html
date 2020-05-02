@@ -494,9 +494,10 @@ Alternatively, append <strong>+e</strong> to keep <em>inc</em> exact and adjust 
 <div class="section" id="note">
 <h2>Note:<a class="headerlink" href="#note" title="Permalink to this headline">¶</a></h2>
 <p>The output segment header will contain all the various statistics we compute for each segment.
-These are in order: N (number of points), x0 (weighted mean x), y0 (weighted mean y),
-angle (of line), E (misfit), slope, intercept, sigma_slope, sigma_intercept, correlation (r),
-coefficient of determination (R).</p>
+These are in order: <em>N</em> (number of points), <em>x0</em> (weighted mean x), <em>y0</em> (weighted mean y),
+<em>angle</em> (of line), <em>E</em> (misfit), <em>slope</em>, <em>intercept</em>, <em>sigma_slope</em>, and <em>sigma_intercept</em>.  More the
+standard regression (<strong>-Ey</strong>) we also report the Pearsonian correlation (<em>r</em>) and
+coefficient of determination (<em>R</em>).</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
@@ -587,7 +588,7 @@ equations for the slope, intercept, and standard errors of the best straight lin
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Apr 25, 2020.
+        Last updated on May 02, 2020.
       </span>
 
     </p>

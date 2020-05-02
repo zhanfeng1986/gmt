@@ -224,7 +224,7 @@
 [ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong><em>dx</em>/<em>dy</em> ]
 [ <a class="reference internal" href="#e"><span> <strong>-E</strong></span></a></strong>[<strong>x</strong>|<strong>y</strong>|<strong>X</strong>|<strong>Y</strong>][<strong>+a</strong>][<strong>+cl</strong>|<strong>f</strong>][<strong>+n</strong>][<strong>+w</strong><em>cap</em>][<strong>+p</strong><em>pen</em>] ]
 [ <a class="reference internal" href="#f"><span> <strong>-F</strong></span></a></strong>[<strong>c</strong>|<strong>n</strong>|<strong>r</strong>][<strong>a</strong>|<strong>f</strong>|<strong>s</strong>|<strong>r</strong>|<em>refpoint</em>] ]
-[ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>fill</em> ]
+[ <a class="reference internal" href="#g"><span> <strong>-G</strong></span></a></strong><em>fill</em>|<strong>+z</strong> ]
 [ <a class="reference internal" href="#i"><span> <strong>-I</strong></span></a></strong>[<em>intens</em>] ]
 [ <a class="reference internal" href="#l"><span> <strong>-L</strong></span></a></strong>[<strong>+b</strong>|<strong>d</strong>|<strong>D</strong>][<strong>+xl</strong>|<strong>r</strong>|<em>x0</em>][<strong>+yl</strong>|<strong>r</strong>|<em>y0</em>][<strong>+p</strong><em>pen</em>] ]
 [ <a class="reference internal" href="#n"><span> <strong>-N</strong></span></a></strong>[<strong>c</strong>|<strong>r</strong>] ]
@@ -234,7 +234,7 @@
 [ <a class="reference internal" href="#w"><span> <strong>-W</strong></span></a></strong>[<em>pen</em>][<em>attr</em>] ]
 [ <a class="reference internal" href="#x"><span> <strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>] ]
 [ <a class="reference internal" href="#y"><span> <strong>-Y</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>yshift</em>] ]
-[ <a class="reference internal" href="#z"><span> <strong>-Z</strong></span></a></strong><em>value</em>|<em>file</em>[<strong>+f</strong>|<strong>l</strong>]]
+[ <a class="reference internal" href="#z"><span> <strong>-Z</strong></span></a></strong><em>value</em>|<em>file</em>]
 [ <strong>-a</strong><a class="reference internal" href="gmt.html#aspatial-full"><span class="std std-ref">flags</span></a> ]
 [ <strong>-bi</strong><a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">binary</span></a> ]
 [ <strong>-di</strong><a class="reference internal" href="gmt.html#di-full"><span class="std std-ref">nodata</span></a> ]
@@ -361,10 +361,12 @@ the coordinates of a <em>refpoint</em> which will serve as a fixed external
 reference point for all groups.</dd>
 </dl>
 <dl class="docutils" id="g">
-<dt><strong>-G</strong><em>fill</em> <a class="reference internal" href="cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-G</strong><em>fill</em>|<strong>+z</strong> <a class="reference internal" href="cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Select color or pattern for filling of symbols or polygons [Default is no fill].
 Note that this module will search for <strong>-G</strong> and <strong>-W</strong> strings in all the
-segment headers and let any values thus found over-ride the command line settings.</dd>
+segment headers and let any values thus found over-ride the command line settings.
+If <strong>-Z</strong> is set, use <strong>-G+z</strong> to assign fill color via <strong>-C</strong><em>cpt</em> and the
+<em>z</em>-values obtained.</dd>
 </dl>
 <dl class="docutils" id="i">
 <dt><strong>-I</strong><em>intens</em></dt>
@@ -885,7 +887,9 @@ indicate plot distance on the map or append map distance units instead (see belo
 use <strong>+vb</strong> and <strong>+ve</strong> to specify separate vector specs at each end [shared specs].
 Because <strong>+v</strong> may take additional modifiers it must necessarily be given
 at the end of the pen specification.
-See the <a class="reference internal" href="#vector-attributes">Vector Attributes</a> for more information.</dd>
+See the <a class="reference internal" href="#vector-attributes">Vector Attributes</a> for more information.
+If <strong>-Z</strong> is set, then append <strong>+z</strong> to <strong>-W</strong> to assign pen color via <strong>-C</strong><em>cpt</em> and the
+<em>z</em>-values obtained.</dd>
 </dl>
 <p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>]</p>
 <dl class="docutils">
@@ -893,11 +897,11 @@ See the <a class="reference internal" href="#vector-attributes">Vector Attribute
 <dd>Shift plot origin.</dd>
 </dl>
 <dl class="docutils" id="z">
-<dt><strong>-Z</strong><em>value</em>|<em>file</em>[<strong>+f</strong>|<strong>l</strong>]</dt>
+<dt><strong>-Z</strong><em>value</em>|<em>file</em></dt>
 <dd>Instead of specifying a symbol or polygon fill and outline color via <strong>-G</strong> and <strong>-W</strong>,
 give both a <em>value</em> via <strong>-Z</strong> and a color lookup table via <strong>-C</strong>.  Alternatively,
 give the name of a <em>file</em> with one z-value (read from the last column) for each polygon in the input data.
-To just set the fill or outline, append <strong>+f</strong> or <strong>+l</strong>, respectively [both].</dd>
+To apply the color obtain to a fill, use <strong>-G+z</strong>; to apply it to the pen color, append <strong>+z</strong> to <strong>-W</strong>.</dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -1086,9 +1090,9 @@ sides 0.25 inch on the left side of the line, spaced every 0.8 inch, use</p>
 </pre></div>
 </div>
 </div></blockquote>
-<p>To plot a point with color dictated by the <em>t.cpt</em> file for the <em>z</em>-value 65, try</p>
+<p>To plot a circle with color dictated by the <em>t.cpt</em> file for the <em>z</em>-value 65, try</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">175</span> <span class="m">30</span> <span class="p">|</span> gmt plot -R150/200/20/50 -JM15c -Sc0.5c -Zf65 -Ct.cpt -pdf map
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="m">175</span> <span class="m">30</span> <span class="p">|</span> gmt plot -R150/200/20/50 -JM15c -B -Sc0.5c -Z65 -Ct.cpt -G+z -pdf map
 </pre></div>
 </div>
 </div></blockquote>
@@ -1244,7 +1248,7 @@ to supply a legend size (i.e., length of a line symbol) via the <strong>+s</stro
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Apr 25, 2020.
+        Last updated on May 02, 2020.
       </span>
 
     </p>

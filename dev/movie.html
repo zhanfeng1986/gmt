@@ -325,7 +325,7 @@ to only use every <em>stride</em> frame, with <em>stride</em> being one of a fix
 <dt><strong>-E</strong><em>titlepage</em>[<strong>+d</strong><em>duration</em>[<strong>s</strong>]][<strong>+f</strong>[<strong>i</strong>|<strong>o</strong>]<em>fade</em>[<strong>s</strong>]]</dt>
 <dd>Give <em>titlepage</em> script that creates a static title page for the movie [no title].
 Alternatively, <em>titlepage</em> can be a PostScript plot layer of dimensions exactly matching the cancas size.
-Control how long it should be displayed with <strong>+d</strong> in number of frames (append <em>s*</em> for duration in seconds instead) [4s].
+Control how long it should be displayed with <strong>+d</strong> in number of frames (append <strong>s</strong> for duration in seconds instead) [4s].
 Optionally, supply <em>fade</em> <strong>i</strong>n and <strong>o</strong>ut durations (in frames or seconds [1s]) as well [no fading].
 Fading affects the beginning and end of the title page <em>duration</em>.</dd>
 </dl>
@@ -352,7 +352,7 @@ by <em>factor</em>, rasterizes the frame, then downsamples the image by the same
 the <em>factor</em>, the smoother the transitions.  Because processing time increases with <em>factor</em> we suggest you
 try values in the 2-5 range.  Note that images can also suffer from quantizing when the original data have
 much higher resolution than your final frame pixel dimensions.  The <strong>-H</strong> option may then be used to smooth the
-result to avoid aliasing [no downsampling].  This effect is called <cite>sub-pixel rendering &lt;https://en.wikipedia.org/wiki/Subpixel_rendering&gt;</cite>.</dd>
+result to avoid aliasing [no downsampling].  This effect is called <a class="reference external" href="https://en.wikipedia.org/wiki/Subpixel_rendering">subpixel</a> rendering.</dd>
 </dl>
 <dl class="docutils" id="i">
 <dt><strong>-I</strong><em>includefile</em></dt>
@@ -532,8 +532,8 @@ from <strong>-Sb</strong> and computes needed data files and possibly a backgrou
 argument and builds the frame image), and <em>movie_cleanup</em> (removes temporary files at the end of the
 run). For each frame there is a separate <em>movie_params_######</em> script that provides frame-specific
 variables (e.g., frame number and anything given via <strong>-T</strong>).  The pre- and post-flight scripts have
-access to the information in <em>movie_init</em> while the frame script in addition has access to the frame-
-specific parameter file.  Using the <strong>-Q</strong> option will just produce these scripts which you can then examine.</p>
+access to the information in <em>movie_init</em> while the frame script in addition has access to the frame-specific
+parameter file.  Using the <strong>-Q</strong> option will just produce these scripts which you can then examine.</p>
 <p>The conversion of PNG frames to an animated GIF (<strong>-F</strong>gif) relies on <a class="reference external" href="http://www.graphicsmagick.org/">GraphicsMagick</a>.
 Thus, <strong>gm</strong> must be accessible via your standard search path. Likewise, the conversion of
 PNG frames to an MP4 (<strong>-F</strong>mp4) or WebM (<strong>-F</strong>webm) movie relies on <a class="reference external" href="https://www.ffmpeg.org/">FFmpeg</a>.</p>
@@ -695,7 +695,7 @@ ffmpeg -i top.mp4 -i bottom.mp4 -filter_complex <span class="nv">vstack</span><s
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Apr 25, 2020.
+        Last updated on May 02, 2020.
       </span>
 
     </p>

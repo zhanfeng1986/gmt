@@ -217,6 +217,7 @@
 <div class="section" id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
 <p><strong>gmt grdvolume</strong> <em>grdfile</em> [ <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>cval</em> or <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><em>low/high/delta</em> or <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><strong>r</strong><em>low/high</em> or <a class="reference internal" href="#c"><span> <strong>-C</strong></span></a></strong><strong>r</strong><em>cval</em>]
+[ <a class="reference internal" href="#d"><span> <strong>-D</strong></span></a></strong> ]
 [ <a class="reference internal" href="#l"><span> <strong>-L</strong></span></a></strong><em>base</em> ]
 [ <a class="reference internal" href="#r"><span> <strong>-R</strong></span></a></strong><em>region</em> ]
 [ <a class="reference internal" href="#s"><span> <strong>-S</strong></span></a></strong>[<em>unit</em>] ]
@@ -230,8 +231,8 @@
 </div>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
-<p><strong>grdvolume</strong> reads a 2-D grid file and calculates the volume contained between the surface and the plane specified
-by the given contour (or zero if not given) and reports the area, volume, and maximum mean height (volume/area).
+<p><strong>grdvolume</strong> reads a 2-D grid file and calculates the volume contained below the surface and above the plane specified
+by the given contour (or zero if not given) and reports the contour, area, volume, and maximum mean height (volume/area).
 Alternatively, specify a range of contours to be tried and <strong>grdvolume</strong> will determine the volume and area inside
 the contour for all contour values. Using <strong>-T</strong>, the contour that produced the maximum mean height (or maximum
 curvature of heights vs contour value) is reported as well. This feature may be used with <a class="reference internal" href="grdfilter.html"><span class="doc">grdfilter</span></a>
@@ -248,13 +249,21 @@ in designing an Optimal Robust Separator [<em>Wessel</em>, 1998].</p>
 <h2>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils" id="c">
 <dt><strong>-C</strong><em>cval</em> or <strong>-C</strong><em>low/high/delta</em> or <strong>-Cr</strong><em>low/high</em> or <strong>-Cr</strong><em>cval</em></dt>
-<dd>find area, volume and mean height (volume/area) inside the <em>cval</em> contour. Alternatively, search using
+<dd>find area, volume and mean height (volume/area) inside and above the <em>cval</em> contour. Alternatively, search using
 all contours from <em>low</em> to <em>high</em> in steps of <em>delta</em>. [Default returns area, volume and mean height
 of the entire grid]. The area is measured in the plane of the contour. The <strong>Cr</strong> form on the other
-hand computes the volume between the grid surface and the plans defined by <em>low</em> and <em>high</em>,
+hand computes the volume below the grid surface and above the planes defined by <em>low</em> and <em>high</em>,
 or below <em>cval</em> and grid’s minimum. Note that this is an <em>outside</em> volume whilst the other forms
 compute an <em>inside</em> (below the surface) area volume. Use this form to compute for example the volume
-of water between two contours.</dd>
+of water between two contours. <strong>Note</strong>: If no <strong>-C</strong> is given then there is no contour and we return
+the entire grid area, volume and the mean height; <em>cval</em> will be reported as 0 but we are not tracing
+a zero-contour (which we do if <strong>-C</strong>0 is given).</dd>
+</dl>
+<dl class="docutils" id="d">
+<dt><strong>-D</strong></dt>
+<dd>Requires <strong>-C</strong><em>low/high/delta</em> and will compute the area and volume of each horizontal <em>slice</em> as defined by the
+contours.  The reported contour and area values refer to the base of the slice, and the <em>height</em> is set to <em>delta</em>
+(since that is the thickness of all slices).</dd>
 </dl>
 <dl class="docutils" id="l">
 <dt><strong>-L</strong><em>base</em></dt>
@@ -327,13 +336,13 @@ of uses that are common but cannot be run verbatim as written.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdvolume @earth_relief_05m -R190/210/15/25 -C0 -Sk -Z0.001
 </pre></div>
 </div>
-<p>To find the volume between the surface peaks.nc and the contour z = 250 m in meters, use</p>
+<p>To find the volume below the surface peaks.nc and above the contour z = 250 m in meters, use</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdvolume peaks.nc -Se -C250
 </pre></div>
 </div>
 </div></blockquote>
-<p>To search for the contour, between 100 and 300 in steps of 10, that
+<p>To search for the contour, ranging from 100 to 300 in steps of 10, that
 maximizes the ratio of volume to surface area for the file peaks.nc, use</p>
 <blockquote>
 <div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdvolume peaks.nc -C0/300/10 -Th &gt; results.d
@@ -353,9 +362,21 @@ maximizes the ratio of volume to surface area for the file peaks.nc, use</p>
 </div>
 </div></blockquote>
 </div>
+<div class="section" id="volume-integration">
+<h2>Volume integration<a class="headerlink" href="#volume-integration" title="Permalink to this headline">¶</a></h2>
+<p>The surface will be approximated using a bilinear expression for the <em>z</em>-value inside each grid box
+defined by four grid nodes: <span class="math notranslate nohighlight">\(z(x,y) = z_0 + z_x^{'}x + z_y^{'}y + z_{xy}^{''}xy\)</span>, where the
+first term is the grid value at the lower left corner of the cell (where our relative coordinates
+<em>x</em> = <em>y</em> = 0). The primed <em>z</em>-values are derivatives in <em>x</em>, <em>y</em>, and both directions, respectively.
+We analytically integrate this expression within each box, allowing for straight line contour intersections
+to go through a box and affect the integration domain and limits.</p>
+</div>
 <div class="section" id="notes">
 <h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
+<li>The output of <strong>grdvolume</strong> is one or more records (one per contour if <strong>-C</strong>
+is set to search multiple contours) containing <em>contour area volume volume/area</em>.
+These records are written to standard output.</li>
 <li>For geographical grids we convert degrees to “Flat Earth” distances in
 meter.  You can use <strong>-S</strong> to select another distance unit.  The
 area is then reported in this unit squared while the volume is reported
@@ -407,7 +428,7 @@ regional-residual separation of geophysical data, <em>Math. Geol.</em>, <strong>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Apr 25, 2020.
+        Last updated on May 02, 2020.
       </span>
 
     </p>

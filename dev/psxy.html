@@ -363,10 +363,12 @@ the coordinates of a <em>refpoint</em> which will serve as a fixed external
 reference point for all groups.</dd>
 </dl>
 <dl class="docutils" id="g">
-<dt><strong>-G</strong><em>fill</em> <a class="reference internal" href="cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
+<dt><strong>-G</strong><em>fill</em>|<strong>+z</strong> <a class="reference internal" href="cookbook/features.html#gfill-attrib"><span class="std std-ref">(more …)</span></a></dt>
 <dd>Select color or pattern for filling of symbols or polygons [Default is no fill].
 Note that this module will search for <strong>-G</strong> and <strong>-W</strong> strings in all the
-segment headers and let any values thus found over-ride the command line settings.</dd>
+segment headers and let any values thus found over-ride the command line settings.
+If <strong>-Z</strong> is set, use <strong>-G+z</strong> to assign fill color via <strong>-C</strong><em>cpt</em> and the
+<em>z</em>-values obtained.</dd>
 </dl>
 <dl class="docutils" id="i">
 <dt><strong>-I</strong><em>intens</em></dt>
@@ -887,7 +889,9 @@ indicate plot distance on the map or append map distance units instead (see belo
 use <strong>+vb</strong> and <strong>+ve</strong> to specify separate vector specs at each end [shared specs].
 Because <strong>+v</strong> may take additional modifiers it must necessarily be given
 at the end of the pen specification.
-See the <a class="reference internal" href="#vector-attributes">Vector Attributes</a> for more information.</dd>
+See the <a class="reference internal" href="#vector-attributes">Vector Attributes</a> for more information.
+If <strong>-Z</strong> is set, then append <strong>+z</strong> to <strong>-W</strong> to assign pen color via <strong>-C</strong><em>cpt</em> and the
+<em>z</em>-values obtained.</dd>
 </dl>
 <p id="x"><strong>-X</strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>]</p>
 <dl class="docutils">
@@ -895,11 +899,11 @@ See the <a class="reference internal" href="#vector-attributes">Vector Attribute
 <dd>Shift plot origin.</dd>
 </dl>
 <dl class="docutils" id="z">
-<dt><strong>-Z</strong><em>value</em>|<em>file</em>[<strong>+f</strong>|<strong>l</strong>]</dt>
+<dt><strong>-Z</strong><em>value</em>|<em>file</em></dt>
 <dd>Instead of specifying a symbol or polygon fill and outline color via <strong>-G</strong> and <strong>-W</strong>,
 give both a <em>value</em> via <strong>-Z</strong> and a color lookup table via <strong>-C</strong>.  Alternatively,
 give the name of a <em>file</em> with one z-value (read from the last column) for each polygon in the input data.
-To just set the fill or outline, append <strong>+f</strong> or <strong>+l</strong>, respectively [both].</dd>
+To apply the color obtain to a fill, use <strong>-G+z</strong>; to apply it to the pen color, append <strong>+z</strong> to <strong>-W</strong>.</dd>
 </dl>
 <dl class="docutils">
 <dt><strong>-bi</strong>[<em>ncols</em>][<strong>t</strong>] <a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">(more …)</span></a></dt>
@@ -1252,7 +1256,7 @@ features such as decorated and quoted lines, fronts, etc.</p>
         
         &copy; Copyright 2020, The GMT Team.
       <span class="lastupdated">
-        Last updated on Apr 25, 2020.
+        Last updated on May 02, 2020.
       </span>
 
     </p>
